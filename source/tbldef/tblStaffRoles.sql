@@ -1,0 +1,14 @@
+CREATE TABLE [tblStaffRoles] (
+  [RoleID] AUTOINCREMENT CONSTRAINT [Index_36095817_2EC9_4B4B] UNIQUE  CONSTRAINT [Index_AE0BDD26_2B72_4407] UNIQUE  CONSTRAINT [Index_D68DAAC1_35B2_46DF] UNIQUE  CONSTRAINT [PrimaryKey] PRIMARY KEY  UNIQUE  NOT NULL ,
+  [DisasterID] VARCHAR (255),
+  [StaffID] VARCHAR (255),
+  [Position] VARCHAR (255),
+  [StartDate] DATETIME ,
+  [EndDate] DATETIME ,
+  [EnteredBy] VARCHAR (255),
+  [TimeEntered] VARCHAR (255),
+  [Work Site] VARCHAR (255),
+  [Hotel] VARCHAR (255),
+  [Hotel Address] VARCHAR (255),
+  [Hotel Phone] VARCHAR (255)
+)

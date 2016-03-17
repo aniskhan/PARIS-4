@@ -1,0 +1,15 @@
+﻿ID	Step Number	Description	Primary Location	Phase
+1	Step 1	Applicant's Briefing	Field	1
+2	Step 2	Applicant Eligibility Determination	Field	1
+3	Step 3	Assign Program Delivery Manager	Field	1
+4	Step 4	Exploratory Call	Field	1
+5	Step 5	Recovery Scoping Meeting	Field	1
+6	Step 6	Document Intake, Sorting and Routing	PARC	2
+7	Step 7	Review of Project Routing Sheets	PARC	2
+8	Step 8	Site Inspections	Field	2
+9	Step 9	Determination of Damage Eligibility	Field	2
+10	Step 10	Scope of Work and Cost Estimate	PARC	3
+11	Step 11	Validation	PARC	3
+12	Step 12	Review Queues	PARC	4
+13	Step 13	Obligation	Field	4
+14	Step 14	Determination Memo Process	Field	4

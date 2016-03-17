@@ -1,0 +1,20 @@
+﻿Item	SourceType
+Codes and Standards	Project
+Cost Justification (such as use Historical data)	Project
+Direct Administrative Cost	Project
+Facility Ownership/Usage	RPA
+Force Account Equipment	Project
+Force Account Labor	Project
+Fringe Benefits	Project
+Insurance Policy	RPA
+IRS Tax Exempt 501 (c) or (e) OR Document from State	RPA
+Justification on Services (Charter, By-Laws, etc)	RPA
+Mutual Aid Agreement	Project
+Other	Project
+Other	RPA
+Participation in Debris Alternative Procedures	RPA
+Permits	Project
+PNP Facility Questionnaire (FF 90-121)	RPA
+Procurement Documents	Project
+RPA (FF 90-49)	RPA
+SBA Notification (for non-critical PNP)	RPA

@@ -1,0 +1,20 @@
+CREATE TABLE [importSites] (
+  [ID] AUTOINCREMENT CONSTRAINT [ID] PRIMARY KEY  UNIQUE  NOT NULL  CONSTRAINT [Index_17A793F8_F513_4D4A] UNIQUE  CONSTRAINT [Index_7418C6E5_1AB9_48EE] UNIQUE  CONSTRAINT [Index_F682D4D8_157E_44BF] UNIQUE ,
+  [Line #] VARCHAR (255),
+  [Category] VARCHAR (255),
+  [Name of site/facility] VARCHAR (255),
+  [E911 Street Address or Closest Intersection] VARCHAR (255),
+  [Latitiude] VARCHAR (255),
+  [Longitude] VARCHAR (255),
+  [Describe Damage] VARCHAR (255),
+  [Cause of Damage  (wind, flood, etc)] VARCHAR (255),
+  [Requires Site Inspection? (Yes or No)] VARCHAR (255),
+  [Approx# Cost] VARCHAR (255),
+  [% Work Complete] VARCHAR (255),
+  [Labor Type: MAA,MOU, FA, C, FA/C, DR] VARCHAR (255),
+  [EHP Issues? (H, E, B)] VARCHAR (255),
+  [Facility insured?  Y/N] VARCHAR (255),
+  [Has received PA grant(s) on this facility in a previous Stafford] VARCHAR (255),
+  [Is there a potential mitigation opportunity? Y/N] VARCHAR (255),
+  [Subrecipient priority (Low, Med, High)] VARCHAR (255)
+)

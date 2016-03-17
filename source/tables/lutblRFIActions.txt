@@ -1,0 +1,17 @@
+﻿RFI	Phase	Phase #
+		
+		
+DDD - Damage Eligibility	Damage Intake & Eligibility Review	2
+Documentation Request	Damage Intake & Eligibility Review	2
+EHP Compliance Review	Compliance Reviews	4
+EHP Information	Damage Intake & Eligibility Review	2
+Insurance Compliance Review	Compliance Reviews	4
+Insurance Information	Damage Intake & Eligibility Review	2
+List of Damages	Operational Planning	1
+Mitigation Compliance Review	Compliance Reviews	4
+Mitigation Information	Damage Intake & Eligibility Review	2
+PNP Review	Operational Planning	1
+RPA Review	Operational Planning	1
+Site Inspection	Damage Intake & Eligibility Review	2
+Subrecipient Cost Estimate	Grant Scoping and Costing	3
+Subrecipient Scope of Work	Grant Scoping and Costing	3

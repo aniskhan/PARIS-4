@@ -1,0 +1,10 @@
+﻿Category	Description
+A	Debris Removal
+B	Emergency Protective Measures
+C	Roads and Bridges
+D	Water Control Facilities
+E	Buildings and Equipment
+F	Utilities
+G	Parks, Recreational Facilities, and Other Items
+H	Fire Management
+Z	State Management

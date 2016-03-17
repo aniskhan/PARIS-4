@@ -1,0 +1,4 @@
+﻿Disaster Type	Description
+DR	Major Disaster
+EM	Emergency Disaster
+FM	Fire Management
