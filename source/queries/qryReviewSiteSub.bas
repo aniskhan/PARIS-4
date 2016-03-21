@@ -21,6 +21,7 @@ Begin OutputColumns
     Expression ="IIf([ReviewuserID] Is Null,\"\",[qrynames].[Reverse Full Name])"
     Alias ="CompletedBy"
     Expression ="IIf([CompletedUserID] Is Null,\"\",[qryNames_1].[Reverse Full Name])"
+    Expression ="revtblSite.Comments"
 End
 Begin Joins
     LeftTable ="revtblSite"
@@ -94,17 +95,21 @@ Begin
         dbText "Name" ="revtblSite.ReviewCheckOutDate"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="revtblSite.Comments"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1418
-    Bottom =851
+    Right =942
+    Bottom =860
     Left =-1
     Top =-1
-    Right =1402
-    Bottom =573
+    Right =926
+    Bottom =556
     Left =0
     Top =0
     ColumnsShown =539

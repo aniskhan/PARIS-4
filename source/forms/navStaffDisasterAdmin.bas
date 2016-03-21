@@ -15,13 +15,13 @@ Begin Form
     Width =15735
     DatasheetFontHeight =11
     ItemSuffix =7
-    Right =5625
-    Bottom =7005
+    Right =13875
+    Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0x75f20fb0b4b9e440
+        0xd044d820d9b9e440
     End
-    RecordSource ="fqryDeterminationMemo"
+    RecordSource ="fqryDisasterInfo"
     Caption ="Disaster / Staff Administration"
     DatasheetFontName ="Calibri"
     PrtMip = Begin

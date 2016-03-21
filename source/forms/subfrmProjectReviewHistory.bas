@@ -14,8 +14,8 @@ Begin Form
     GridY =24
     Width =12300
     DatasheetFontHeight =11
-    ItemSuffix =84
-    Right =13875
+    ItemSuffix =96
+    Right =20520
     Bottom =12645
     DatasheetGridlinesColor =15132391
     OrderBy ="[ReviewEntryDate] DESC"
@@ -68,6 +68,33 @@ Begin Form
             BorderShade =65.0
             GridlineThemeColorIndex =1
             GridlineShade =65.0
+        End
+        Begin CommandButton
+            FontSize =11
+            FontWeight =400
+            FontName ="Calibri"
+            ForeThemeColorIndex =0
+            ForeTint =75.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+            UseTheme =1
+            Shape =1
+            Gradient =12
+            BackThemeColorIndex =4
+            BackTint =60.0
+            BorderLineStyle =0
+            BorderColor =16777215
+            BorderThemeColorIndex =4
+            BorderTint =60.0
+            ThemeFontIndex =1
+            HoverThemeColorIndex =4
+            HoverTint =40.0
+            PressedThemeColorIndex =4
+            PressedShade =75.0
+            HoverForeThemeColorIndex =0
+            HoverForeTint =75.0
+            PressedForeThemeColorIndex =0
+            PressedForeTint =75.0
         End
         Begin TextBox
             AddColon = NotDefault
@@ -174,11 +201,11 @@ Begin Form
                 End
                 Begin Label
                     FontUnderline = NotDefault
-                    OverlapFlags =85
+                    OverlapFlags =93
                     TextAlign =2
-                    Left =3720
+                    Left =10440
                     Top =60
-                    Width =1620
+                    Width =1800
                     Height =600
                     FontWeight =700
                     LeftMargin =44
@@ -187,15 +214,15 @@ Begin Form
                     BottomMargin =22
                     BorderColor =8355711
                     Name ="Label12"
-                    Caption ="Review Started"
+                    Caption ="Comment"
                     GroupTable =4
                     GridlineColor =10921638
-                    LayoutCachedLeft =3720
+                    LayoutCachedLeft =10440
                     LayoutCachedTop =60
-                    LayoutCachedWidth =5340
+                    LayoutCachedWidth =12240
                     LayoutCachedHeight =660
-                    ColumnStart =2
-                    ColumnEnd =2
+                    ColumnStart =6
+                    ColumnEnd =6
                     LayoutGroup =1
                     ForeTint =100.0
                     GroupTable =4
@@ -204,7 +231,7 @@ Begin Form
                     FontUnderline = NotDefault
                     OverlapFlags =85
                     TextAlign =2
-                    Left =5400
+                    Left =3720
                     Top =60
                     Width =1665
                     Height =600
@@ -218,12 +245,12 @@ Begin Form
                     Caption ="Assigned to"
                     GroupTable =4
                     GridlineColor =10921638
-                    LayoutCachedLeft =5400
+                    LayoutCachedLeft =3720
                     LayoutCachedTop =60
-                    LayoutCachedWidth =7065
+                    LayoutCachedWidth =5385
                     LayoutCachedHeight =660
-                    ColumnStart =3
-                    ColumnEnd =3
+                    ColumnStart =2
+                    ColumnEnd =2
                     LayoutGroup =1
                     ForeTint =100.0
                     GroupTable =4
@@ -232,7 +259,7 @@ Begin Form
                     FontUnderline = NotDefault
                     OverlapFlags =85
                     TextAlign =2
-                    Left =7125
+                    Left =5445
                     Top =60
                     Width =1620
                     Height =600
@@ -246,23 +273,51 @@ Begin Form
                     Caption ="Review Complete"
                     GroupTable =4
                     GridlineColor =10921638
-                    LayoutCachedLeft =7125
+                    LayoutCachedLeft =5445
                     LayoutCachedTop =60
-                    LayoutCachedWidth =8745
+                    LayoutCachedWidth =7065
                     LayoutCachedHeight =660
-                    ColumnStart =4
-                    ColumnEnd =4
+                    ColumnStart =3
+                    ColumnEnd =3
                     LayoutGroup =1
                     ForeTint =100.0
                     GroupTable =4
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =10620
+                    Top =331
+                    Width =1500
+                    Height =299
+                    ForeColor =4210752
+                    Name ="cmdFullComments"
+                    Caption ="Full Comments"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =10620
+                    LayoutCachedTop =331
+                    LayoutCachedWidth =12120
+                    LayoutCachedHeight =630
+                    BackColor =15123357
+                    BorderColor =15123357
+                    HoverColor =15652797
+                    PressedColor =11957550
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
                 End
                 Begin Label
                     FontUnderline = NotDefault
                     OverlapFlags =85
                     TextAlign =2
-                    Left =10320
+                    Left =8640
                     Top =60
-                    Width =1950
+                    Width =1739
                     Height =600
                     FontWeight =700
                     LeftMargin =44
@@ -274,12 +329,12 @@ Begin Form
                     Caption ="Result"
                     GroupTable =4
                     GridlineColor =10921638
-                    LayoutCachedLeft =10320
+                    LayoutCachedLeft =8640
                     LayoutCachedTop =60
-                    LayoutCachedWidth =12270
+                    LayoutCachedWidth =10379
                     LayoutCachedHeight =660
-                    ColumnStart =6
-                    ColumnEnd =6
+                    ColumnStart =5
+                    ColumnEnd =5
                     LayoutGroup =1
                     ForeTint =100.0
                     GroupTable =4
@@ -288,7 +343,7 @@ Begin Form
                     FontUnderline = NotDefault
                     OverlapFlags =85
                     TextAlign =2
-                    Left =8805
+                    Left =7125
                     Top =60
                     Width =1455
                     Height =600
@@ -302,12 +357,12 @@ Begin Form
                     Caption ="Completed By"
                     GroupTable =4
                     GridlineColor =10921638
-                    LayoutCachedLeft =8805
+                    LayoutCachedLeft =7125
                     LayoutCachedTop =60
-                    LayoutCachedWidth =10260
+                    LayoutCachedWidth =8580
                     LayoutCachedHeight =660
-                    ColumnStart =5
-                    ColumnEnd =5
+                    ColumnStart =4
+                    ColumnEnd =4
                     LayoutGroup =1
                     ForeTint =100.0
                     GroupTable =4
@@ -363,11 +418,49 @@ Begin Form
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =3720
+                    Left =10440
                     Top =30
-                    Width =1620
+                    Width =1800
                     Height =334
                     ColumnWidth =1905
+                    FontSize =10
+                    TabIndex =6
+                    LeftMargin =44
+                    TopMargin =22
+                    RightMargin =44
+                    BottomMargin =22
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="ReviewCheckOutDate"
+                    ControlSource ="=IIf(Len(Nz([Comments],\"\"))>15,Left([Comments],12) & \"...\",Nz([Comments],\"\""
+                        "))"
+                    Format ="Short Date"
+                    GroupTable =4
+                    GridlineColor =10921638
+                    ShowDatePicker =0
+
+                    LayoutCachedLeft =10440
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =12240
+                    LayoutCachedHeight =364
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =6
+                    ColumnEnd =6
+                    LayoutGroup =1
+                    GroupTable =4
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =85
+                    TextAlign =2
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =3720
+                    Top =30
+                    Width =1665
+                    Height =334
                     FontSize =10
                     TabIndex =2
                     LeftMargin =44
@@ -376,15 +469,14 @@ Begin Form
                     BottomMargin =22
                     BorderColor =10921638
                     ForeColor =4210752
-                    Name ="ReviewCheckOutDate"
-                    ControlSource ="ReviewCheckOutDate"
-                    Format ="Short Date"
+                    Name ="ReviewUserID"
+                    ControlSource ="AssignedTo"
                     GroupTable =4
                     GridlineColor =10921638
 
                     LayoutCachedLeft =3720
                     LayoutCachedTop =30
-                    LayoutCachedWidth =5340
+                    LayoutCachedWidth =5385
                     LayoutCachedHeight =364
                     RowStart =1
                     RowEnd =1
@@ -400,47 +492,12 @@ Begin Form
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =5400
-                    Top =30
-                    Width =1665
-                    Height =334
-                    FontSize =10
-                    TabIndex =3
-                    LeftMargin =44
-                    TopMargin =22
-                    RightMargin =44
-                    BottomMargin =22
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="ReviewUserID"
-                    ControlSource ="AssignedTo"
-                    GroupTable =4
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =5400
-                    LayoutCachedTop =30
-                    LayoutCachedWidth =7065
-                    LayoutCachedHeight =364
-                    RowStart =1
-                    RowEnd =1
-                    ColumnStart =3
-                    ColumnEnd =3
-                    LayoutGroup =1
-                    GroupTable =4
-                End
-                Begin TextBox
-                    Locked = NotDefault
-                    OldBorderStyle =0
-                    OverlapFlags =85
-                    TextAlign =2
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =7125
+                    Left =5445
                     Top =30
                     Width =1620
                     Height =334
                     FontSize =10
-                    TabIndex =4
+                    TabIndex =3
                     LeftMargin =44
                     TopMargin =22
                     RightMargin =44
@@ -453,14 +510,14 @@ Begin Form
                     GroupTable =4
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =7125
+                    LayoutCachedLeft =5445
                     LayoutCachedTop =30
-                    LayoutCachedWidth =8745
+                    LayoutCachedWidth =7065
                     LayoutCachedHeight =364
                     RowStart =1
                     RowEnd =1
-                    ColumnStart =4
-                    ColumnEnd =4
+                    ColumnStart =3
+                    ColumnEnd =3
                     LayoutGroup =1
                     GroupTable =4
                 End
@@ -503,12 +560,12 @@ Begin Form
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =10320
+                    Left =8640
                     Top =30
-                    Width =1950
+                    Width =1739
                     Height =334
                     FontSize =10
-                    TabIndex =6
+                    TabIndex =5
                     LeftMargin =44
                     TopMargin =22
                     RightMargin =44
@@ -520,14 +577,14 @@ Begin Form
                     GroupTable =4
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =10320
+                    LayoutCachedLeft =8640
                     LayoutCachedTop =30
-                    LayoutCachedWidth =12270
+                    LayoutCachedWidth =10379
                     LayoutCachedHeight =364
                     RowStart =1
                     RowEnd =1
-                    ColumnStart =6
-                    ColumnEnd =6
+                    ColumnStart =5
+                    ColumnEnd =5
                     LayoutGroup =1
                     ForeThemeColorIndex =2
                     ForeTint =100.0
@@ -540,12 +597,12 @@ Begin Form
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =8805
+                    Left =7125
                     Top =30
                     Width =1455
                     Height =334
                     FontSize =10
-                    TabIndex =5
+                    TabIndex =4
                     LeftMargin =44
                     TopMargin =22
                     RightMargin =44
@@ -557,14 +614,14 @@ Begin Form
                     GroupTable =4
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =8805
+                    LayoutCachedLeft =7125
                     LayoutCachedTop =30
-                    LayoutCachedWidth =10260
+                    LayoutCachedWidth =8580
                     LayoutCachedHeight =364
                     RowStart =1
                     RowEnd =1
-                    ColumnStart =5
-                    ColumnEnd =5
+                    ColumnStart =4
+                    ColumnEnd =4
                     LayoutGroup =1
                     GroupTable =4
                 End
@@ -580,3 +637,64 @@ Begin Form
         End
     End
 End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+'Commentting on this page will be page specific only.
+'For in depth commentting please refer to frmRpaReview.
+
+Private Const FormItemType As String = "Project"
+
+'BUTTONS
+Private Sub cmdFullComments_Click()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cmdFullComments_Click"
+'///Error Handling
+
+'///Code
+    DoCmd.OpenReport "rptProjectHistory", acViewReport, , GetItemDims.WhereID(False), acWindowNormal
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+End Sub
+
+'INTERNAL STANDARD CODE
+
+Private Function GetItemDims(Optional ReviewName As String = "") As classItemDims
+    Dim ItemDims As New classItemDims   ' eventually what is passed out.  Creates new object
+'    each time it is called
+
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "GetItemDims"
+'///Error Handling
+
+'///Code
+    ItemDims.LoadByForm Me, FormItemType, ReviewName
+    Set GetItemDims = ItemDims
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Function
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+End Function

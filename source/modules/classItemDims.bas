@@ -318,7 +318,7 @@ Public Sub LoadByForm(frm As Form, formType As String, Optional ReviewName As St
     If NeedsApplicantID Then pApplicantID = Nz(frm.[ApplicantID], "")
     If NeedsProjectID Then pProjectID = Nz(frm.[ProjectID], 0)
     If NeedsSiteID Then pSiteID = Nz(frm.[SiteID], 0)
-    If NeedsLaneID Then pLaneID = Nz(frm.[Lane Assigned], "")
+    If NeedsLaneID Then pLaneID = FetchLane
     If NeedsRfiID Then pRfiID = Nz(frm.[RfiID], 0)
     If NeedsDmID Then pDmID = Nz(frm.[DmID], 0)
 End Sub
@@ -337,3 +337,11 @@ Public Sub ConvertToDM(DmID As Long)
         pDmID = DmID
     End If
 End Sub
+
+Private Function FetchLane() As String
+    Dim WhereCondition As String
+    WhereCondition = "[DisasterID]='" & pDisasterID & "'"
+    WhereCondition = WhereCondition & " and [ApplicantID]='" & pApplicantID & "'"
+    WhereCondition = WhereCondition & " and [ProjectID]=" & pProjectID
+    FetchLane = Nz(DLookup("[Lane Assigned]", "tblProjects", WhereCondition), "")
+End Function

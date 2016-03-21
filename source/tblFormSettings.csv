@@ -1,0 +1,92 @@
+frmName,frmRecordSource,rsUpdatable,frmFilter,frmFilterOnLoad,frmOrderBy,frmDataEntry,frmAllowAdditions,frmAllowDeletions,frmAllowEdits,frmAllowFilters
+frmAssignPDC,fqryRpaAssignPdc,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmDDDCompleteforProject,fqryProjectStCheckSiteStatus,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmDeterminationMemo,fqryDeterminationMemo,FALSE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmDisasterInformation,fqryDisasterInfo,TRUE,,FALSE,,FALSE,TRUE,FALSE,TRUE,TRUE
+frmDIUProcessProjectRoutingSheet,fqryProjectLaneSelect,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmDocTransmittal,fqryDisasterInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmDownLoadNewFE,,FALSE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmEnterListofDamages,fqryRpaProjectEntry,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmEnterListofProjects,fqryRpaProjectEntry,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmExpeditedLaneComplianceReviews,fqryProjectInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmExpeditedLaneDI,fqryProjectExIdea,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmExpeditedScopingCosting,fqryProjectExSowCost,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmInitialRSMProjections,frqyProjectionUpdateInfo,TRUE,,FALSE,,FALSE,TRUE,FALSE,TRUE,TRUE
+frmNavMainUserPositions,fqryNavMainUserPositions,TRUE,,FALSE,,FALSE,FALSE,FALSE,FALSE,FALSE
+frmProcessProjectRoutingSheet PDC,fqryProjectEntry,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmProjectSiteLink,fqryProjectFormulation,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmReportApplicantSearch,rqryRpaEnterRSM,FALSE,,FALSE,[Subrecipient Name],FALSE,FALSE,FALSE,TRUE,TRUE
+frmReviewResult,,FALSE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmRFIConcurrence,fqryRfiConcurrence,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmRFIReceipt,fqryRfiReceipt,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmRFIRequest,fqryRfiRequest,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmRFITransmittal,fqryRfiTransmittal,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmRpaReview,fqryRpaReview,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmRpaSearch,qryRpaSearch,TRUE,,FALSE,[Subrecipient Name] DESC,FALSE,FALSE,FALSE,TRUE,TRUE
+frmSiteInspectionWorkOrder-SITFL,fqryProjectInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmSiteStInspectionAssign,fqrySiteStInspectionAssignment,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmSpcializedLaneAssignTechSpecialists,fqryProjectStWorkOrderDev,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmSpecializedAssignPM,fqryProjectStWorkOrderDev,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmSpecializedsiteInspections,fqryProjectInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmSpecializedSiteInspectionWorkOrder-CFC,fqryProjectInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmStaff,fqryStaffInfo,TRUE,,FALSE,,FALSE,TRUE,FALSE,TRUE,TRUE
+frmStaffSearch,qryStaffSearch,TRUE,,FALSE,[UserID],FALSE,FALSE,FALSE,TRUE,TRUE
+frmStAssignDvs,fqryProjectStAssignDvs,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmStDvsSiteReview,fqrySiteStDvsSiteReview,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmStlaneScopingCosting,fqrySiteStScopingCosting,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmStSiteConcurrence,fqryProjectStDddConcurrence,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmSTSiteInspections,fqryProjectStInspection,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmStWorkOrderDev,fqryProjectStWorkOrderDev,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmSubrecipientBriefing,fqrySubrecipientBriefingInfo,TRUE,,FALSE,,TRUE,TRUE,FALSE,TRUE,TRUE
+frmSubrecipientExploratoryCall,fqryRpaExploratoryCall,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmSubrecipientExploratoryCallEEI,fqrySubrecipientExploratoryCallEEIInfo,TRUE,,FALSE,,FALSE,TRUE,FALSE,TRUE,TRUE
+frmSubrecipientRSM,fqryRpaScopingMeeting,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmTasks,,FALSE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+frmUpdateRSMProjections,fqryUpdateRSMProjections,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+navMain,tblDisaster,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+navProjectFormulation,fqryDisasterSubrecipient,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+navReports,fqryDisasterInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,FALSE,TRUE
+navRFIProcess,fqryDisasterInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+navSpecializedLane-IDEA,fqryDisasterInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+navStaffDisasterAdmin,fqryDisasterInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+navStandardLane,fqryDisasterInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+subform-DDD Complete,fqrySiteStDddConcurrence,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+subform-DDD Status-Site Inspection Needed,fqrySiteStPendingSiteInspector,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+subform-DDD Status-VS,fqrySiteStPendingVS,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+subformDeterminationMemoBanner,fqryDeterminationMemoBanner,TRUE,,FALSE,,FALSE,FALSE,FALSE,FALSE,FALSE
+subformEnterListofDamages,fqrySiteInfo,TRUE,,FALSE,,FALSE,TRUE,FALSE,TRUE,TRUE
+subformRFIbanner,fqryRfiBanner,TRUE,,FALSE,,FALSE,FALSE,FALSE,FALSE,FALSE
+subformRFIRequestedInformation,fqryRFIRequestedInfo,TRUE,,FALSE,,FALSE,TRUE,FALSE,TRUE,TRUE
+subformSites,fqrySiteInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+subformSpecializedSiteInspections,"SELECT tblSites.DisasterID, tblSites.ApplicantID, tblSites.ProjectID, tblSites.SiteID, tblSiteInspections.ID, tblSiteInspections.[FEMA PDC], tblSiteInspections.[Assigned Site Inspector], tblSiteInspections.[Date Assigned], tblSiteInspections.[Inspection Date -Start], tblSiteInspections.[Inspection Date - Finish], tblSiteInspections.[Subrecipient Participant], tblSiteInspections.[Recipient Participant], tblSiteInspections.[PDC Participated], tblSiteInspections.[EHP Participated], tblSiteInspections.[Mitigation Specialist Participated], tblSiteInspections.[Insurance Specialist Participated], tblSiteInspections.[Inpection Notes], tblSiteInspections.[Inspection Complete], tblSiteInspections.[Additional Inspection needed], tblSiteInspections.[Reason for Additional Inspections], tblSiteInspections.[Inpection Report Complete], tblSiteInspections.[Subrecipient acknowledges recipeipt of SIR], tblSiteInspections.[Eligibility Concerns], tblSiteInspections.[PDC Notified  WO Complete], tblSiteInspections.[SITFL Notified WO Complete], tblSiteInspections.[DDD Entered into EMMIE], tblSiteInspections.[Date of meetng with PDC to brief DDD], tblSiteInspections.[FEMA PDC Concurs with DDD], tblSiteInspections.[State PDC Concurs with DDD], tblSiteInspections.[Subrecipeint Concurs with DDD], tblSiteInspections.[DIU Attaches DDD in EMMIE], tblProjects.[Date Assigned], tblProjects.[Assigned Site Inspector], tblProjects.[Scheduled Date of Site Inspection], tblSites.[Draft DDD] FROM tblProjects LEFT JOIN (tblSites LEFT JOIN tblSiteInspections ON tblSites.SiteID = tblSiteInspections.SiteID) ON tblProjects.ProjectID = tblSites.ProjectID;",FALSE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+subfrmBannerGeneral,fqryBannerGeneral,TRUE,,FALSE,,FALSE,FALSE,FALSE,FALSE,FALSE
+subfrmDisasterInfo,fqryDisasterInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,FALSE,FALSE
+subfrmDisasterInfoExtend,fqryDisasterInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,FALSE,FALSE
+subfrmDisasterInfoRevised,fqryDisasterInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,FALSE,FALSE
+subfrmDisasterInfoRevised short,fqryDisasterInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,FALSE,FALSE
+subfrmDVSSiteReviewSelect,fqryDVSSiteReviewSelect,TRUE,,FALSE,,FALSE,FALSE,FALSE,FALSE,TRUE
+subfrmEnterProjects,fqryProjectInfo,TRUE,,FALSE,,FALSE,TRUE,FALSE,TRUE,TRUE
+subfrmInspectionAssignSiteSelect,fqrySiteStInspectionAssignment,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+subfrmInspectionSiteSelect,fqrySiteStInspectionSelect,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+subfrmInspectStSiteInspection,fqryInspectStSiteInspection,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+subfrmlProjects banner,fqryBannerProjects,FALSE,,FALSE,,FALSE,FALSE,FALSE,FALSE,TRUE
+subfrmNavMainUserPositions,fqryNavMainUserPositions,TRUE,,FALSE,,FALSE,FALSE,FALSE,FALSE,TRUE
+subfrmProjectReviewHistory,qryReviewProjectSub,TRUE,,FALSE,[ReviewEntryDate] DESC,FALSE,FALSE,FALSE,TRUE,TRUE
+subfrmProjectSites,fqrySiteInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+subfrmProjectSitesDIU,fqrySiteInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+subfrmRfiReviewHistory,qryReviewRfiSub,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+subfrmRpaInfo,fqryRpaInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+subfrmRpaInfo short,fqryRpaInfo,TRUE,,TRUE,,FALSE,FALSE,FALSE,TRUE,TRUE
+subfrmRpaReviewHistory,qryReviewSub,TRUE,,FALSE,[ReviewEntryDate] DESC,FALSE,FALSE,FALSE,TRUE,TRUE
+subfrmSiteAssignment,fqrySiteInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+subfrmSiteReviewHistory,qryReviewSiteSub,TRUE,,FALSE,[ReviewEntryDate] DESC,FALSE,FALSE,FALSE,TRUE,TRUE
+subfrmSitesScopeCost,fqrySiteInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+subfrmSiteStInspection,fqrySiteStInspection,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+subfrmSITFLAssignProjects,fqryProjectInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+subfrmSITFLAssignProjects-DDD Complete,fqryProjectInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+subfrmSITFLAssignProjects-Site Inspection,fqryProjectInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+subfrmSpecializedAssignsProjects,fqryProjectInfo,TRUE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+subfrmSpecializedSiteInspections,"SELECT tblSites.DisasterID, tblSites.ApplicantID, tblSites.ProjectID, tblSites.SiteID, tblSiteInspections.ID, tblSiteInspections.[FEMA PDC], tblSiteInspections.[Assigned Site Inspector], tblSiteInspections.[Date Assigned], tblSiteInspections.[Inspection Date -Start], tblSiteInspections.[Inspection Date - Finish], tblSiteInspections.[Subrecipient Participant], tblSiteInspections.[Recipient Participant], tblSiteInspections.[PDC Participated], tblSiteInspections.[EHP Participated], tblSiteInspections.[Mitigation Specialist Participated], tblSiteInspections.[Insurance Specialist Participated], tblSiteInspections.[Inpection Notes], tblSiteInspections.[Inspection Complete], tblSiteInspections.[Additional Inspection needed], tblSiteInspections.[Reason for Additional Inspections], tblSiteInspections.[Inpection Report Complete], tblSiteInspections.[Subrecipient acknowledges recipeipt of SIR], tblSiteInspections.[Eligibility Concerns], tblSiteInspections.[PDC Notified  WO Complete], tblSiteInspections.[SITFL Notified WO Complete], tblSiteInspections.[DDD Entered into EMMIE], tblSiteInspections.[Date of meetng with PDC to brief DDD], tblSiteInspections.[FEMA PDC Concurs with DDD], tblSiteInspections.[State PDC Concurs with DDD], tblSiteInspections.[Subrecipeint Concurs with DDD], tblSiteInspections.[DIU Attaches DDD in EMMIE], tblProjects.[Date Assigned], tblProjects.[Assigned Site Inspector], tblProjects.[Scheduled Date of Site Inspection], tblSites.[Draft DDD] FROM tblProjects LEFT JOIN (tblSites LEFT JOIN tblSiteInspections ON tblSites.SiteID = tblSiteInspections.SiteID) ON tblProjects.ProjectID = tblSites.ProjectID;",FALSE,,FALSE,,FALSE,FALSE,FALSE,TRUE,TRUE
+subfrmStaffAssignments,fqryStaffRoleInfo,TRUE,,FALSE,,FALSE,TRUE,FALSE,TRUE,TRUE
+subfrmTasks,qryTaskUnionByUserOversight,TRUE,[positionTier] = 0 and [ReviewUserID] is Null,FALSE,,FALSE,FALSE,FALSE,FALSE,TRUE
+subfrmUpdateRSMProjections,fqryProjectionsMaxUpdate_ALL,FALSE,,FALSE,,FALSE,TRUE,FALSE,TRUE,TRUE
