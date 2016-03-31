@@ -16,7 +16,7 @@ Public Function CheckReview(ItemDims As classItemDims) As Boolean
     WhereCondition = ItemDims.WhereID
     WhereCondition = WhereCondition & " and [ReviewExitDate] is null"
     
-    
+'Debug.Print "debug print From reviews.checkreview:"; WhereCondition
     Count = DCount("ReviewID", ItemDims.ReviewTable, WhereCondition)
     If Count > 0 Then
         CheckReview = True
@@ -46,7 +46,6 @@ Public Function CheckPermission(ItemDims As classItemDims, UserName As String) A
         WhereCondition = WhereCondition & " and [StartDate] <= Date()"
         WhereCondition = WhereCondition & " and ([EndDate] is null or [EndDate] >= Date())"
     
-   
         Count = DCount("RoleID", "tblStaffRoles", WhereCondition)
         
         
@@ -57,6 +56,7 @@ Public Function CheckPermission(ItemDims As classItemDims, UserName As String) A
             WhereConditionPosition = "[Position]='" & Position & "'"
             Position = Nz(DLookup("ReportsTo", "hashtblPositionHierarchy", WhereConditionPosition), "")
         End If
+        
     Loop
 End Function
 
@@ -164,7 +164,7 @@ Public Function CompleteReview(ItemDims As classItemDims, UserName As String, Di
 
 End Function
 
-Public Sub EnterReview(ItemDims As classItemDims, Optional Assignto As String = "", Optional Comment As Variant = "")
+Public Sub EnterReview(ItemDims As classItemDims, Optional Assignto As Variant = "", Optional Comment As Variant = "")
     Dim Db As Database
     Dim recEditStatus As Recordset
     Dim WhereCondition As String
@@ -186,6 +186,7 @@ Public Sub EnterReview(ItemDims As classItemDims, Optional Assignto As String = 
             If ItemDims.NeedsProjectID Then recEditStatus![ProjectID] = ItemDims.ProjectID
             If ItemDims.NeedsSiteID Then recEditStatus![SiteID] = ItemDims.SiteID
             If ItemDims.NeedsRfiID Then recEditStatus![RfiID] = ItemDims.RfiID
+            If ItemDims.NeedsRfiItemID Then recEditStatus![RfiItemID] = ItemDims.RfiItemID
             If ItemDims.NeedsLaneID Then recEditStatus![Lane Assigned] = ItemDims.LaneID
             recEditStatus![ReviewType] = ItemDims.ReviewType
             recEditStatus![ReviewEntryDate] = Now

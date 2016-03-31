@@ -17,15 +17,15 @@ Private Sub WriteChangeToFile(strForm As String)
     
 End Sub
 Public Function InCollection(col As Collection, key As String) As Boolean
-  Dim var As Variant
+  Dim Var As Variant
   Dim errNumber As Long
 
   InCollection = False
-  Set var = Nothing
+  Set Var = Nothing
 
   Err.Clear
   On Error Resume Next
-    var = col.Item(key)
+    Var = col.Item(key)
     errNumber = CLng(Err.Number)
   On Error GoTo 0
 

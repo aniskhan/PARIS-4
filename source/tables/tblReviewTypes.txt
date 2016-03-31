@@ -3,16 +3,16 @@
 2	RPA	OCC Review	20	1	2	frmRPAreview	OCC	
 3	RPA	PAGS Review	30	1	2	frmRPAreview	DPAGS	
 4	RPA	Assign PDM	40	1	3	frmAssignPDC	PDTFL	
-5	RPA	Exploratory Call	50	1	4	frmSubrecipientExploratoryCall	PDTFL	DIUS
+5	RPA	Exploratory Call	50	1	4	frmSubrecipientExploratoryCall	PDTFL	
 6	RPA	DIU Enter Call	60	1	4	frmSubrecipientExploratoryCall	DIUL	DIUS
-7	RPA	Scoping Meeting	60	1	5	frmSubrecipientRSM	PDTFL	DIUS
+7	RPA	Scoping Meeting	60	1	5	frmSubrecipientRSM	PDTFL	
 8	RPA	DIU Enter RSM	70	1	5	frmSubrecipientRSM	DIUL	DIUS
 9	RPA	Enter Projects	70	1	6	navProjectFormulation	PDTFL	
 10	RPA	Ops RPA Eligibility	40	1	2	frmRPAreview	OPSL	ODIU
 11	RPA	Exit Briefing	80	4	13		PDTFL	
-12	Project	Project Entry	5	1	7	frmProcessProjectRoutingSheet PDC	PDTFL	
-13	Project	DIU Lane Select	10	2	6	frmDIUProcessProjectRoutingSheet	DIUL	DIUS
-14	EXProject	Assign DVS	15	2	9	frmExpeditedLaneDI	EXGL	
+12	Project	Project Entry	10	1	7	frmProcessProjectRoutingSheet PDC	PDTFL	
+13	Project	DIU Lane Select	20	2	6	frmDIUProcessProjectRoutingSheet	DIUL	DIUS
+14	EXProject	Assign DVS	10	2	9	frmExpeditedLaneDI	EXGL	
 15	EXProject	Validation	20	2	9	frmExpeditedLaneDI	EXGL	EXDVS
 16	EXProject	DDD Entry	30	2	9	frmExpeditedLaneDI	EXGL	EXDVS
 17	EXProject	DDD with PDM	40	2	9	frmExpeditedLaneDI	EXGL	EXDVS
@@ -49,10 +49,10 @@
 51	Site	Validation Assignment	41	2	11	frmSiteInspectionWorkOrder	SITFL	SI
 52	Site	Validation	51	2	8	subfrmSiteStInspection	SITFL	SI
 53	STProject	Check Site Status	34	2	9	frmDDDCompleteforProject	SITFL	
-54	RFI	RFI Creation	10	1	1	frmRFIRequest	DIUS	
-55	RFI	PDM Concurrence	20	1	1	frmRFIConcurrence	PDTFL	
-56	RFI	Transmittal	30	1	1	frmRFITransmittal	PDTFL	
-57	RFI	Pending Receipt	40	1	1	frmRFIReceipt	DIUL	DIUS
+54	RFI	RFI Creation	10	1	1	frmRFIRouting	DIUS	
+55	RFI	PDM Concurrence	20	1	1	frmRFIRouting	PDTFL	
+56	RFI	Transmittal	30	1	1	frmRFIRouting	PDTFL	
+57	RFIResponse	Pending Receipt	40	1	1	frmRFIItemAssessment	DIUL	DIUS
 58	RPA	DIU Update EMMIE Projections	75	1	12	frmUpdateRSMProjections	DIUS	
-59	SPProject	Assign DVS	10	2	9		SPGL	
-60	SPProject	Specialized Lane	10	2	9		SPGL	
+59	RFIResponse	Assess RFI Response	50	1	1	frmRFIItemAssessment	PDTFL	
+60	RFI	Mark RFI Complete	40	1	1	frmRFIRouting	PDTFL	

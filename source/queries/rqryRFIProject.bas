@@ -1,8 +1,8 @@
 ﻿Operation =1
 Option =0
 Begin InputTables
-    Name ="rqryRFIRouting"
     Name ="tblRFIRequestedInformation"
+    Name ="rqryRFIRouting"
     Name ="tblSites"
     Name ="qdProjectRef"
 End
@@ -10,7 +10,8 @@ Begin OutputColumns
     Expression ="rqryRFIRouting.*"
     Alias ="DueDate"
     Expression ="[Date Sent to Recipient]+[Response Time Requested]"
-    Expression ="tblRFIRequestedInformation.[Item Type]"
+    Alias ="Item"
+    Expression ="tblRFIRequestedInformation.ItemType"
     Expression ="tblRFIRequestedInformation.[Reason Requested]"
     Alias ="RIRfiID"
     Expression ="tblRFIRequestedInformation.RfiID"
@@ -28,19 +29,19 @@ Begin Joins
     Flag =3
     LeftTable ="tblRFIRequestedInformation"
     RightTable ="tblSites"
-    Expression ="tblRFIRequestedInformation.SiteID = tblSites.SiteID"
+    Expression ="tblRFIRequestedInformation.ProjectID = tblSites.ProjectID"
     Flag =2
     LeftTable ="tblRFIRequestedInformation"
     RightTable ="tblSites"
-    Expression ="tblRFIRequestedInformation.ProjectID = tblSites.ProjectID"
+    Expression ="tblRFIRequestedInformation.SiteID = tblSites.SiteID"
     Flag =2
     LeftTable ="rqryRFIRouting"
     RightTable ="qdProjectRef"
-    Expression ="rqryRFIRouting.ProjectID = qdProjectRef.ProjectID"
+    Expression ="rqryRFIRouting.DisasterID = qdProjectRef.DisasterID"
     Flag =1
     LeftTable ="rqryRFIRouting"
     RightTable ="qdProjectRef"
-    Expression ="rqryRFIRouting.DisasterID = qdProjectRef.DisasterID"
+    Expression ="rqryRFIRouting.ProjectID = qdProjectRef.ProjectID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -55,10 +56,6 @@ dbBoolean "TotalsRow" ="0"
 Begin
     Begin
         dbText "Name" ="DueDate"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblRFIRequestedInformation.[Item Type]"
         dbLong "AggregateType" ="-1"
     End
     Begin
@@ -166,68 +163,47 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="Response Time Requested"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Full Reference"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="JFO Street Address"
+        dbText "Name" ="Item"
         dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="Date Sent to Recipient"
-        dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="Name of Site/Facility"
-        dbLong "AggregateType" ="-1"
+        dbText "Name" ="Response Time Requested"
     End
     Begin
-        dbText "Name" ="Item Type"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="HSIN Address"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="RFI Response Email Address"
-        dbLong "AggregateType" ="-1"
+        dbText "Name" ="JFO Street Address"
     End
     Begin
         dbText "Name" ="JFO City, State, Zip"
-        dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="Reason Requested"
-        dbLong "AggregateType" ="-1"
+        dbText "Name" ="HSIN Address"
+    End
+    Begin
+        dbText "Name" ="RFI Response Email Address"
+    End
+    Begin
+        dbText "Name" ="Name of Site/Facility"
+    End
+    Begin
+        dbText "Name" ="Full Reference"
     End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1114
-    Bottom =539
+    Right =1305
+    Bottom =860
     Left =-1
     Top =-1
-    Right =1098
-    Bottom =453
+    Right =1289
+    Bottom =436
     Left =0
     Top =0
     ColumnsShown =539
-    Begin
-        Left =43
-        Top =14
-        Right =265
-        Bottom =448
-        Top =0
-        Name ="rqryRFIRouting"
-        Name =""
-    End
     Begin
         Left =312
         Top =25
@@ -235,6 +211,15 @@ Begin
         Bottom =264
         Top =0
         Name ="tblRFIRequestedInformation"
+        Name =""
+    End
+    Begin
+        Left =43
+        Top =14
+        Right =265
+        Bottom =448
+        Top =0
+        Name ="rqryRFIRouting"
         Name =""
     End
     Begin

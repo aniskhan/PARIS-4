@@ -1119,7 +1119,7 @@ End Function
 '            Reviews.EnterReview GetItemDims("Determination Memo")
 '        Case "RFI"
 '            Reviews.EnterReview GetItemDims("RFI")
-'            DoCmd.OpenForm "frmRFIRequest", , , GetItemDims.WhereID(False)
+'            DoCmd.OpenForm "frmRFIRouting", , , GetItemDims.WhereID(False)
 '        Case "RSN"
 '            Reviews.EnterReview GetItemDims(ReviewType), frm.cboAssign, "Reassigned to " & frm.cboAssign
 '        Case "RW"

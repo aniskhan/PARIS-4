@@ -17,8 +17,8 @@ Begin Form
     Width =16740
     DatasheetFontHeight =11
     ItemSuffix =102
-    Right =14160
-    Bottom =7830
+    Right =14910
+    Bottom =12645
     DatasheetGridlinesColor =15132391
     Filter ="[Assigned PDC] = 'akhandka'"
     RecSrcDt = Begin
@@ -1737,7 +1737,7 @@ Private Sub HandleStandardDisposition(ReviewType As String, frm As Form)
         Case "RFI"
             Reviews.CreateRFI GetItemDims(ReviewType)
             Reviews.EnterReview GetItemDims("RFI")
-            DoCmd.OpenForm "frmRFIRequest", , , GetItemDims.WhereID(False)
+            DoCmd.OpenForm "frmRFIRouting", , , GetItemDims.WhereID(False)
         Case "RSN"
             Reviews.EnterReview GetItemDims(ReviewType), frm.cboAssign, "Reassigned to " & frm.cboAssign
         Case "RW"

@@ -13,6 +13,7 @@ Begin OutputColumns
     Expression ="revtblRfi.ProjectID"
     Expression ="revtblRfi.SiteID"
     Expression ="revtblRfi.RfiID"
+    Expression ="revtblRfi.[RfiItemID]"
     Expression ="revtblRfi.ReviewType"
     Expression ="revtblRfi.ReviewEntryDate"
     Expression ="revtblRfi.ReviewCheckOutDate"
@@ -109,12 +110,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =942
+    Right =1305
     Bottom =860
     Left =-1
     Top =-1
-    Right =926
-    Bottom =505
+    Right =1289
+    Bottom =488
     Left =0
     Top =0
     ColumnsShown =539
@@ -122,7 +123,7 @@ Begin
         Left =48
         Top =12
         Right =192
-        Bottom =365
+        Bottom =393
         Top =0
         Name ="revtblRfi"
         Name =""

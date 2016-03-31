@@ -1,14 +1,15 @@
 ﻿Operation =1
 Option =0
 Begin InputTables
-    Name ="rqryRFIRouting"
     Name ="tblRFIRequestedInformation"
+    Name ="rqryRFIRouting"
 End
 Begin OutputColumns
     Expression ="rqryRFIRouting.*"
     Alias ="DueDate"
     Expression ="[Date Sent to Recipient]+[Response Time Requested]"
-    Expression ="tblRFIRequestedInformation.[Item Type]"
+    Alias ="Item"
+    Expression ="tblRFIRequestedInformation.ItemType"
     Expression ="tblRFIRequestedInformation.[Reason Requested]"
     Alias ="RIRfiID"
     Expression ="tblRFIRequestedInformation.RfiID"
@@ -137,51 +138,58 @@ Begin
     End
     Begin
         dbText "Name" ="Date Sent to Recipient"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="Response Time Requested"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="JFO Street Address"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="JFO City, State, Zip"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="HSIN Address"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="RFI Response Email Address"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="Item Type"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="Reason Requested"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblRFIRequestedInformation.ItemType"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Item"
+        dbLong "AggregateType" ="-1"
     End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1114
-    Bottom =539
+    Right =1305
+    Bottom =860
     Left =-1
     Top =-1
-    Right =1098
-    Bottom =521
+    Right =1289
+    Bottom =504
     Left =0
     Top =0
     ColumnsShown =539
-    Begin
-        Left =43
-        Top =14
-        Right =265
-        Bottom =448
-        Top =0
-        Name ="rqryRFIRouting"
-        Name =""
-    End
     Begin
         Left =312
         Top =25
@@ -189,6 +197,15 @@ Begin
         Bottom =264
         Top =0
         Name ="tblRFIRequestedInformation"
+        Name =""
+    End
+    Begin
+        Left =43
+        Top =14
+        Right =265
+        Bottom =448
+        Top =0
+        Name ="rqryRFIRouting"
         Name =""
     End
 End

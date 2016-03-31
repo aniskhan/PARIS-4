@@ -17,9 +17,10 @@ Begin Form
     Width =17520
     DatasheetFontHeight =11
     ItemSuffix =21
-    Right =13875
+    Right =21855
     Bottom =12645
     DatasheetGridlinesColor =15132391
+    Filter ="[ApplicantID]='071-UJ7OI-00'"
     RecSrcDt = Begin
         0x2dd52d8a50b9e440
     End
