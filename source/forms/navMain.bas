@@ -17,8 +17,8 @@ Begin Form
     Width =15480
     DatasheetFontHeight =11
     ItemSuffix =123
-    Right =4965
-    Bottom =7005
+    Right =19515
+    Bottom =12645
     TimerInterval =30
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -4112,9 +4112,14 @@ masterVerID = DMax("VerID", "tblFrontEnd_Version_History", "isEnabled = True")
 masterFEVersion = DLookup("FEVersionNumber", "tblFrontEnd_Version_History", "VerID =" & masterVerID)
 
 
-isCurrVerEnabled = DLookup("isEnabled", "tblFrontEnd_Version_History", "FEVersionNumber = '" _
-    & thisFEVersion & "'")
-   
+If IsNull(DLookup("isEnabled", "tblFrontEnd_Version_History", "FEVersionNumber = '" _
+        & thisFEVersion & "'")) Then
+        Debug.Print "This version of PARIS is not logged in tblFrontEnd_VersionHistory."
+        isCurrVerEnabled = False
+    Else
+    isCurrVerEnabled = DLookup("isEnabled", "tblFrontEnd_Version_History", "FEVersionNumber = '" _
+        & thisFEVersion & "'")
+End If
 
    
 If thisFEVersion <> masterFEVersion Then

@@ -6,6 +6,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     PictureAlignment =2
@@ -15,9 +16,10 @@ Begin Form
     Width =31680
     DatasheetFontHeight =11
     ItemSuffix =42
-    Right =5625
-    Bottom =7005
+    Right =19335
+    Bottom =7830
     DatasheetGridlinesColor =15132391
+    Filter ="[DisasterID]='4258'"
     RecSrcDt = Begin
         0x03e109b0b4b9e440
     End
@@ -166,7 +168,7 @@ Begin Form
                     BackColor =14282978
                     BorderColor =8355711
                     Name ="lbHeader"
-                    Caption ="Complete Project Routing Sheet"
+                    Caption ="Project Formulation Menu"
                     GridlineColor =10921638
                     LayoutCachedWidth =16560
                     LayoutCachedHeight =660
@@ -1061,11 +1063,11 @@ PROC_ERR:
 End Sub
 
 Private Sub cmdOpenSubmit_Click()
-    DoCmd.OpenForm "frmProcessProjectRoutingSheet PDC", , "[Assigned PDC] = '" & Environ("UserName") & "'"
+    DoCmd.OpenForm "frmProcessProjectRoutingSheet PDC", , , "[Assigned PDC] = '" & Environ("UserName") & "'"
 End Sub
 
 Private Sub cmdProjectFormulation_Click()
-    DoCmd.OpenForm "frmProjectSiteLink", , "[Assigned PDC] = '" & Environ("UserName") & "'"
+    DoCmd.OpenForm "frmProjectSiteLink", , , "[Assigned PDC] = '" & Environ("UserName") & "'"
 End Sub
 
 

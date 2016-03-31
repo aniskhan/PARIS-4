@@ -17,9 +17,10 @@ Begin Form
     Width =16620
     DatasheetFontHeight =11
     ItemSuffix =127
-    Right =13875
+    Right =22080
     Bottom =12645
     DatasheetGridlinesColor =15132391
+    Filter ="[Assigned PDC] = 'vrhoads'"
     RecSrcDt = Begin
         0xf695692093b8e440
     End
@@ -346,6 +347,7 @@ Begin Form
                 End
                 Begin TextBox
                     EnterKeyBehavior = NotDefault
+                    ScrollBars =2
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =180
@@ -563,6 +565,7 @@ Begin Form
                 End
                 Begin TextBox
                     EnterKeyBehavior = NotDefault
+                    ScrollBars =2
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =2640
@@ -612,6 +615,7 @@ Begin Form
                 End
                 Begin TextBox
                     EnterKeyBehavior = NotDefault
+                    ScrollBars =2
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =2640
@@ -2545,7 +2549,7 @@ Private Sub CompleteReview(ReviewType As String)
         If Access.CurrentProject.AllForms("frmReviewResult").IsLoaded Then
             Set frm = Forms("frmReviewResult")
             If PostDialogCheck(ReviewType, frm.cboResult) Then
-                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult) Then
+                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
                     HandleDisposition ReviewType, frm
                 End If
             End If

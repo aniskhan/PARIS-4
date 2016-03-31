@@ -7,6 +7,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ViewsAllowed =1
@@ -14,12 +15,13 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =16500
+    Width =17040
     DatasheetFontHeight =11
-    ItemSuffix =111
-    Right =20235
-    Bottom =12645
+    ItemSuffix =112
+    Right =15315
+    Bottom =7830
     DatasheetGridlinesColor =15132391
+    Filter ="[ID] = 30"
     RecSrcDt = Begin
         0x998eff7ddbb2e440
     End
@@ -2429,6 +2431,43 @@ Begin Form
                     WebImagePaddingBottom =1
                     Overlaps =1
                 End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    Left =15600
+                    Top =7140
+                    Height =315
+                    TabIndex =44
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="FinalizeDate"
+                    ControlSource ="FinalizeDate"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =15600
+                    LayoutCachedTop =7140
+                    LayoutCachedWidth =17040
+                    LayoutCachedHeight =7455
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =13800
+                            Top =7140
+                            Width =1230
+                            Height =315
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label111"
+                            Caption ="FinalizeDate"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =13800
+                            LayoutCachedTop =7140
+                            LayoutCachedWidth =15030
+                            LayoutCachedHeight =7455
+                        End
+                    End
+                End
             End
         End
         Begin FormFooter
@@ -2983,7 +3022,7 @@ Private Sub CompleteReview(ReviewType As String)
         If Access.CurrentProject.AllForms("frmReviewResult").IsLoaded Then
             Set frm = Forms("frmReviewResult")
             If PostDialogCheck(ReviewType, frm.cboResult) Then
-                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult) Then
+                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
                     HandleDisposition ReviewType, frm
                 End If
             End If

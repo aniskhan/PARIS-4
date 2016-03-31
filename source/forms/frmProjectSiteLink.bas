@@ -7,6 +7,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ViewsAllowed =1
@@ -17,15 +18,16 @@ Begin Form
     Width =16620
     DatasheetFontHeight =11
     ItemSuffix =71
-    Right =13875
-    Bottom =12645
+    Right =15315
+    Bottom =7830
     DatasheetGridlinesColor =15132391
+    Filter ="[Assigned PDC] = 'nlietzk1'"
     OnApplyFilter ="[Event Procedure]"
     RecSrcDt = Begin
         0xfb12f06e2ea9e440
     End
     RecordSource ="fqryProjectFormulation"
-    Caption ="Project Site Link"
+    Caption ="Logical Project Grouping"
     OnCurrent ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
@@ -201,7 +203,7 @@ Begin Form
                     BackColor =14282978
                     BorderColor =8355711
                     Name ="lbHeader"
-                    Caption ="Complete Project Routing Sheet"
+                    Caption ="Logical Project Grouping"
                     GridlineColor =10921638
                     LayoutCachedWidth =16500
                     LayoutCachedHeight =660
@@ -1497,14 +1499,15 @@ Begin Form
                 End
                 Begin TextBox
                     TabStop = NotDefault
+                    ScrollBars =2
                     OverlapFlags =215
-                    BackStyle =0
                     IMESentenceMode =3
                     Left =2130
                     Top =5160
                     Width =11430
                     Height =600
                     TabIndex =5
+                    BackColor =13431551
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="Formulation Notes"
@@ -1516,6 +1519,8 @@ Begin Form
                     LayoutCachedTop =5160
                     LayoutCachedWidth =13560
                     LayoutCachedHeight =5760
+                    BackThemeColorIndex =7
+                    BackTint =20.0
                     Begin
                         Begin Label
                             OverlapFlags =215

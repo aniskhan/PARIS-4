@@ -14,9 +14,11 @@ Begin Form
     GridY =24
     Width =16500
     DatasheetFontHeight =11
-    ItemSuffix =68
-    Right =5625
-    Bottom =7005
+    ItemSuffix =70
+    Left =60
+    Top =5160
+    Right =16425
+    Bottom =11760
     DatasheetGridlinesColor =15132391
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin
@@ -165,6 +167,24 @@ Begin Form
                     LayoutCachedHeight =6540
                     BackThemeColorIndex =-1
                 End
+                Begin Rectangle
+                    BackStyle =1
+                    OverlapFlags =223
+                    Left =5880
+                    Top =5340
+                    Width =7440
+                    Height =780
+                    BackColor =13431551
+                    BorderColor =10921638
+                    Name ="Box68"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =5880
+                    LayoutCachedTop =5340
+                    LayoutCachedWidth =13320
+                    LayoutCachedHeight =6120
+                    BackThemeColorIndex =7
+                    BackTint =20.0
+                End
                 Begin TextBox
                     Visible = NotDefault
                     Enabled = NotDefault
@@ -252,6 +272,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    ScrollBars =2
                     OverlapFlags =215
                     TextAlign =1
                     IMESentenceMode =3
@@ -304,7 +325,7 @@ Begin Form
                     IMESentenceMode =3
                     Left =4860
                     Top =900
-                    Width =4320
+                    Width =6540
                     Height =363
                     ColumnOrder =4
                     TabIndex =2
@@ -319,7 +340,7 @@ Begin Form
 
                     LayoutCachedLeft =4860
                     LayoutCachedTop =900
-                    LayoutCachedWidth =9180
+                    LayoutCachedWidth =11400
                     LayoutCachedHeight =1263
                     BackThemeColorIndex =7
                     BackTint =20.0
@@ -437,7 +458,7 @@ Begin Form
                     IMESentenceMode =3
                     Left =2400
                     Top =2640
-                    Width =4320
+                    Width =4620
                     Height =363
                     ColumnOrder =6
                     TabIndex =6
@@ -452,7 +473,7 @@ Begin Form
 
                     LayoutCachedLeft =2400
                     LayoutCachedTop =2640
-                    LayoutCachedWidth =6720
+                    LayoutCachedWidth =7020
                     LayoutCachedHeight =3003
                     BackThemeColorIndex =7
                     BackTint =20.0
@@ -1596,6 +1617,23 @@ Begin Form
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
                     Overlaps =1
+                End
+                Begin Label
+                    OverlapFlags =215
+                    TextAlign =2
+                    Left =6000
+                    Top =5400
+                    Width =1440
+                    Height =660
+                    BorderColor =8355711
+                    ForeColor =8355711
+                    Name ="Label69"
+                    Caption ="Click to navigate sites"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =6000
+                    LayoutCachedTop =5400
+                    LayoutCachedWidth =7440
+                    LayoutCachedHeight =6060
                 End
             End
         End

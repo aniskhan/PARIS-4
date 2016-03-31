@@ -2,9 +2,16 @@
 Option =0
 Begin InputTables
     Name ="tblSites"
+    Name ="tblDisaster"
 End
 Begin OutputColumns
     Expression ="tblSites.*"
+End
+Begin Joins
+    LeftTable ="tblDisaster"
+    RightTable ="tblSites"
+    Expression ="tblDisaster.DisasterID = tblSites.DisasterID"
+    Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -21,12 +28,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =853
-    Bottom =484
+    Right =1492
+    Bottom =851
     Left =-1
     Top =-1
-    Right =837
-    Bottom =363
+    Right =1476
+    Bottom =346
     Left =0
     Top =0
     ColumnsShown =539
@@ -37,6 +44,15 @@ Begin
         Bottom =156
         Top =0
         Name ="tblSites"
+        Name =""
+    End
+    Begin
+        Left =240
+        Top =12
+        Right =384
+        Bottom =156
+        Top =0
+        Name ="tblDisaster"
         Name =""
     End
 End

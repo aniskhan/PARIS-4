@@ -16,8 +16,10 @@ Begin Form
     Width =14100
     DatasheetFontHeight =11
     ItemSuffix =117
-    Right =13875
-    Bottom =12645
+    Left =345
+    Top =2145
+    Right =17280
+    Bottom =3195
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0x6d3a787aada8e440
@@ -145,6 +147,14 @@ Begin Form
             ForeShade =50.0
             GridlineThemeColorIndex =1
             GridlineShade =65.0
+        End
+        Begin Subform
+            BorderLineStyle =0
+            BorderThemeColorIndex =1
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+            BorderShade =65.0
+            ShowPageHeaderAndPageFooter =1
         End
         Begin EmptyCell
             Height =240

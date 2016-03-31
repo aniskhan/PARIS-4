@@ -17,8 +17,8 @@ Begin Form
     Width =16500
     DatasheetFontHeight =11
     ItemSuffix =111
-    Right =13875
-    Bottom =12645
+    Right =19260
+    Bottom =12900
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0x6fcc3bcd72a5e440
@@ -1342,7 +1342,7 @@ Private Sub CompleteReview(ReviewType As String)
         If Access.CurrentProject.AllForms("frmReviewResult").IsLoaded Then
             Set frm = Forms("frmReviewResult")
             If PostDialogCheck(ReviewType, frm.cboResult) Then
-                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult) Then
+                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
                     HandleDisposition ReviewType, frm
                 End If
             End If

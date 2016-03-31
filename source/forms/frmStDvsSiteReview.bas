@@ -14,7 +14,7 @@ Begin Form
     Width =17580
     DatasheetFontHeight =11
     ItemSuffix =82
-    Right =13875
+    Right =11685
     Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -566,7 +566,6 @@ Begin Form
                 Begin ComboBox
                     LimitToList = NotDefault
                     Locked = NotDefault
-                    RowSourceTypeInt =1
                     OldBorderStyle =0
                     OverlapFlags =223
                     TextAlign =1
@@ -579,14 +578,13 @@ Begin Form
                     Width =2370
                     Height =375
                     TabIndex =8
-                    BoundColumn =1
                     BackColor =15527148
                     BorderColor =10921638
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                     Name ="Damage Level"
                     ControlSource ="Damage Level"
-                    RowSourceType ="Value List"
-                    RowSource ="\"Repair\";\"Funtional but needs repair\";\"Repair\";\"Repair need to restore fu"
-                        "nction\""
+                    RowSourceType ="Table/Query"
+                    RowSource ="lutblPriority"
                     ColumnWidths ="1440;2999"
                     EventProcPrefix ="Damage_Level"
                     GridlineColor =10921638
@@ -2630,7 +2628,7 @@ Private Sub CompleteReview(ReviewType As String)
         If Access.CurrentProject.AllForms("frmReviewResult").IsLoaded Then
             Set frm = Forms("frmReviewResult")
             If PostDialogCheck(ReviewType, frm.cboResult) Then
-                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult) Then
+                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
                     HandleDisposition ReviewType, frm
                 End If
             End If

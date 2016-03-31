@@ -125,7 +125,7 @@ Public Sub StartReview(ItemDims As classItemDims, UserName As String, Optional S
     Set Db = Nothing
 
 End Sub
-Public Function CompleteReview(ItemDims As classItemDims, UserName As String, Disposition As String) As Boolean
+Public Function CompleteReview(ItemDims As classItemDims, UserName As String, Disposition As String, Optional Comment As Variant = "") As Boolean
     Dim Db As Database
     Dim recEditStatus As Recordset
     Dim WhereCondition As String
@@ -152,6 +152,7 @@ Public Function CompleteReview(ItemDims As classItemDims, UserName As String, Di
             recEditStatus![CompletedUserID] = UserName
             recEditStatus![ReviewExitDate] = Now
             recEditStatus![Disposition] = Disposition
+            If Comment <> "" Then recEditStatus![Comments] = Comment
         recEditStatus.Update
             
         CompleteReview = True
@@ -163,7 +164,7 @@ Public Function CompleteReview(ItemDims As classItemDims, UserName As String, Di
 
 End Function
 
-Public Sub EnterReview(ItemDims As classItemDims, Optional Assignto As String = "", Optional Comment As String = "")
+Public Sub EnterReview(ItemDims As classItemDims, Optional Assignto As String = "", Optional Comment As Variant = "")
     Dim Db As Database
     Dim recEditStatus As Recordset
     Dim WhereCondition As String

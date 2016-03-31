@@ -16,14 +16,15 @@ Begin Form
     GridY =24
     Width =16740
     DatasheetFontHeight =11
-    ItemSuffix =101
-    Right =20235
-    Bottom =12645
+    ItemSuffix =102
+    Right =14160
+    Bottom =7830
     DatasheetGridlinesColor =15132391
+    Filter ="[Assigned PDC] = 'akhandka'"
     RecSrcDt = Begin
-        0xcff31d1835aee440
+        0x56e847dc56bae440
     End
-    RecordSource ="fqryProjectEntry"
+    RecordSource ="fqryProjectFormulation"
     Caption ="PRS Review and Submittal"
     OnCurrent ="[Event Procedure]"
     DatasheetFontName ="Calibri"
@@ -945,7 +946,7 @@ Begin Form
                     BackColor =14282978
                     BorderColor =8355711
                     Name ="lbFooter"
-                    Caption ="Damage Intake and Eligibility Determinations"
+                    Caption ="Operational Planning"
                     FontName ="Broadway"
                     GridlineColor =10921638
                     LayoutCachedWidth =16560
@@ -958,15 +959,15 @@ Begin Form
                 Begin Rectangle
                     BackStyle =1
                     OverlapFlags =223
-                    Left =10260
+                    Left =8280
                     Top =60
-                    Width =6120
+                    Width =8100
                     Height =780
                     BackColor =13431551
                     BorderColor =10921638
                     Name ="Box99"
                     GridlineColor =10921638
-                    LayoutCachedLeft =10260
+                    LayoutCachedLeft =8280
                     LayoutCachedTop =60
                     LayoutCachedWidth =16380
                     LayoutCachedHeight =840
@@ -1385,6 +1386,23 @@ Begin Form
                     WebImagePaddingBottom =1
                     Overlaps =1
                 End
+                Begin Label
+                    OverlapFlags =215
+                    TextAlign =2
+                    Left =8340
+                    Top =120
+                    Width =2040
+                    Height =555
+                    BorderColor =8355711
+                    ForeColor =8355711
+                    Name ="Label101"
+                    Caption ="Click to navigate between Projects"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =8340
+                    LayoutCachedTop =120
+                    LayoutCachedWidth =10380
+                    LayoutCachedHeight =675
+                End
             End
         End
     End
@@ -1680,7 +1698,7 @@ Private Sub CompleteReview(ReviewType As String)
         If Access.CurrentProject.AllForms("frmReviewResult").IsLoaded Then
             Set frm = Forms("frmReviewResult")
             If PostDialogCheck(ReviewType, frm.cboResult) Then
-                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult) Then
+                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
                     HandleDisposition ReviewType, frm
                 End If
             End If

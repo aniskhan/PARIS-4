@@ -11,7 +11,6 @@ Begin OutputColumns
     Expression ="tblProjects.*"
     Expression ="tblSubRecipient.[Assigned PDC]"
     Expression ="revtblProject.ReviewType"
-    Expression ="tblProjects.[Lane Recommendation]"
 End
 Begin Joins
     LeftTable ="tblProjects"
@@ -479,17 +478,73 @@ Begin
         dbText "Name" ="tblProjects.[Lane Recommendation]"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="tblProjects.Mitgation Specialists requested"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Mitigation Site Inspection Report Requested"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Subrecipient and Recipient Concur"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.EHP Site Inspection Report Required"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Assigned EHP Specialists"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Cost Estimate Developed by"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Insurance Inspection Report Required"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Scheduled Time of Site Inspection"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Assigned Mitigation Specialist"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Insurance Specialist requested for Site Inspection"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Assigned Insurance Specialist"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Inspection Notes"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.PDM Briefs Recipient-Subrecipient"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Scope of Work Developed by"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =724
-    Bottom =664
+    Right =961
+    Bottom =539
     Left =-1
     Top =-1
-    Right =708
-    Bottom =504
+    Right =945
+    Bottom =256
     Left =0
     Top =0
     ColumnsShown =539

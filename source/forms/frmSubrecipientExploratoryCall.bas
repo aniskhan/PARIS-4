@@ -17,12 +17,12 @@ Begin Form
     Width =17040
     DatasheetFontHeight =11
     ItemSuffix =200
-    Right =20235
+    Right =11685
     Bottom =12645
     DatasheetGridlinesColor =15132391
-    Filter ="[Assigned PDC] = 'vrhoads'"
+    Filter ="[Assigned PDC] = 'akhandka'"
     RecSrcDt = Begin
-        0x93dd7dcc31b9e440
+        0x8718747050bae440
     End
     RecordSource ="fqryRpaExploratoryCall"
     Caption ="Exploratory Call"
@@ -284,6 +284,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    ScrollBars =2
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =2400
@@ -417,6 +418,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    ScrollBars =2
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =7140
@@ -1723,6 +1725,8 @@ Begin Form
                     ForeColor =4210752
                     Name ="tbChecklistSent"
                     ControlSource ="RSM Agenda sent to Subrecipient"
+                    Format ="Short Date"
+                    InputMask ="00/00/0000;0;_"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =5160
@@ -1735,15 +1739,13 @@ Begin Form
                         Begin Label
                             OverlapFlags =215
                             TextAlign =3
-                            Left =120
                             Top =9600
-                            Width =4980
+                            Width =5100
                             Height =420
                             FontSize =14
                             Name ="Label195"
-                            Caption ="RSM Information emailed to Applicant:"
+                            Caption ="Date RSM Info emailed to Applicant:"
                             GridlineColor =10921638
-                            LayoutCachedLeft =120
                             LayoutCachedTop =9600
                             LayoutCachedWidth =5100
                             LayoutCachedHeight =10020
@@ -2725,7 +2727,7 @@ Private Sub CompleteReview(ReviewType As String)
         If Access.CurrentProject.AllForms("frmReviewResult").IsLoaded Then
             Set frm = Forms("frmReviewResult")
             If PostDialogCheck(ReviewType, frm.cboResult) Then
-                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult) Then
+                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
                     HandleDisposition ReviewType, frm
                 End If
             End If

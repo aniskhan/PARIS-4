@@ -6,6 +6,7 @@ Where ="(((revtblSite.ReviewType)=\"Inspection\" Or (revtblSite.ReviewType)=\"Va
 Begin InputTables
     Name ="tblSites"
     Name ="revtblSite"
+    Name ="tblDisaster"
 End
 Begin OutputColumns
     Expression ="tblSites.DisasterID"
@@ -35,6 +36,10 @@ Begin Joins
     LeftTable ="tblSites"
     RightTable ="revtblSite"
     Expression ="tblSites.SiteID = revtblSite.SiteID"
+    Flag =1
+    LeftTable ="revtblSite"
+    RightTable ="tblDisaster"
+    Expression ="revtblSite.DisasterID = tblDisaster.DisasterID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -92,12 +97,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =1202
+    Right =1492
     Bottom =851
     Left =-1
     Top =-1
-    Right =1186
-    Bottom =401
+    Right =1476
+    Bottom =384
     Left =0
     Top =0
     ColumnsShown =539
@@ -117,6 +122,15 @@ Begin
         Bottom =338
         Top =0
         Name ="revtblSite"
+        Name =""
+    End
+    Begin
+        Left =646
+        Top =12
+        Right =790
+        Bottom =156
+        Top =0
+        Name ="tblDisaster"
         Name =""
     End
 End

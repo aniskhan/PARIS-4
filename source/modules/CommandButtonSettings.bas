@@ -67,6 +67,17 @@ On Error Resume Next
                     End With
                 Else
                '''''TODO 'check for changes TODO: how to handle conflicting updates?
+               
+'                    With rs
+'                        .Edit
+'                        !UseTheme = ctl.UseTheme
+'                        !HoverColor = ctl.HoverColor
+'                        !PressedColor = ctl.PressedColor
+'                        !HoverForeColor = ctl.HoverForeColor
+'                        !PressedForeColor = ctl.PressedForeColor
+'                        .Update
+'                    End With
+                    
                     If rs!UseTheme <> ctl.UseTheme Then
                         Debug.Print "Use Theme Setting Changed:", frm.name, ctl.name, rs!UseTheme, ctl.UseTheme
                     End If

@@ -16,8 +16,8 @@ Begin Form
     Width =17939
     DatasheetFontHeight =11
     ItemSuffix =169
-    Right =20235
-    Bottom =12615
+    Right =22080
+    Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0xdfc5c038afa8e440
@@ -395,6 +395,7 @@ Begin Form
                     ForeTint =100.0
                 End
                 Begin TextBox
+                    ScrollBars =2
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =4740
@@ -823,6 +824,7 @@ Begin Form
                     Overlaps =1
                 End
                 Begin TextBox
+                    ScrollBars =2
                     OverlapFlags =247
                     IMESentenceMode =3
                     Left =180
@@ -1100,6 +1102,7 @@ Begin Form
                     LayoutCachedHeight =9000
                 End
                 Begin TextBox
+                    ScrollBars =2
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =9300
@@ -2336,7 +2339,7 @@ Private Sub CompleteReview(ReviewType As String)
             If PostDialogCheck(ReviewType, frm.cboResult) Then
             
 '                Attempts to complete the review.  If there are any errors, it will not start the next reviews.
-                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult) Then
+                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
                     
 '                    Page specific code for the disposition.  Most dispositions will redirect to standard
 '                    disposition code below
