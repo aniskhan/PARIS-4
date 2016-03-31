@@ -11,6 +11,9 @@ Begin OutputColumns
     Expression ="[First Name] & \" \" & [Last Name]"
     Alias ="Reverse Full Name"
     Expression ="[Last Name] & \", \" & [First Name]"
+    Alias ="Cap Name"
+    Expression ="Left([First Name],1) & LCase(Right([First Name],Len([First Name])-1)) & \" \" & "
+        "Left([Last Name],1) & LCase(Right([Last Name],Len([Last Name])-1))"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -42,17 +45,23 @@ Begin
         dbText "Name" ="Reverse Full Name"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="Cap Name"
+        dbInteger "ColumnWidth" ="3180"
+        dbBoolean "ColumnHidden" ="0"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1394
-    Bottom =851
+    Right =1301
+    Bottom =860
     Left =-1
     Top =-1
-    Right =1378
-    Bottom =589
+    Right =1285
+    Bottom =572
     Left =0
     Top =0
     ColumnsShown =539

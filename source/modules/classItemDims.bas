@@ -5,83 +5,86 @@ Attribute VB_Exposed = False
 Option Compare Database
 Option Explicit
 
-Private pItemType As String
-Private pReviewType As String
-Private pDisasterID As String
-Private pApplicantID As String
-Private pProjectID As Long
-Private pSiteID As Long
-Private pLaneID As String
-Private pRfiID As Long
-Private pDmID As Long
-Private pRfiItemType As String
+Private Type Dimensions
+    pItemType As String
+    pReviewType As String
+    pDisasterID As String
+    pApplicantID As String
+    pProjectID As Long
+    pSiteID As Long
+    pLaneID As String
+    pRfiID As Long
+    pDmID As Long
+    pRfiItemType As String
+End Type
 
+Private Dims As Dimensions
 
 Public Property Get DisasterID() As String
-    DisasterID = pDisasterID
+    DisasterID = Dims.pDisasterID
 End Property
 Public Property Let DisasterID(DimValue As String)
-    pDisasterID = DimValue
+    Dims.pDisasterID = DimValue
 End Property
 
 Public Property Get ItemType() As String
-    ItemType = pItemType
+    ItemType = Dims.pItemType
 End Property
 Public Property Let ItemType(DimValue As String)
-    pItemType = DimValue
+    Dims.pItemType = DimValue
 End Property
 
 Public Property Get ApplicantID() As String
-    ApplicantID = pApplicantID
+    ApplicantID = Dims.pApplicantID
 End Property
 Public Property Let ApplicantID(DimValue As String)
-    pApplicantID = DimValue
+    Dims.pApplicantID = DimValue
 End Property
 
 Public Property Get ProjectID() As Long
-    ProjectID = pProjectID
+    ProjectID = Dims.pProjectID
 End Property
 Public Property Let ProjectID(DimValue As Long)
-    pProjectID = DimValue
+    Dims.pProjectID = DimValue
 End Property
 
 Public Property Get SiteID() As Long
-    SiteID = pSiteID
+    SiteID = Dims.pSiteID
 End Property
 Public Property Let SiteID(DimValue As Long)
-    pSiteID = DimValue
+    Dims.pSiteID = DimValue
 End Property
 
 Public Property Get LaneID() As String
-    LaneID = pLaneID
+    LaneID = Dims.pLaneID
 End Property
 Public Property Let LaneID(DimValue As String)
-    pLaneID = DimValue
+    Dims.pLaneID = DimValue
 End Property
 
 Public Property Get RfiID() As Long
-    RfiID = pRfiID
+    RfiID = Dims.pRfiID
 End Property
 Public Property Let RfiID(DimValue As Long)
-    pRfiID = DimValue
+    Dims.pRfiID = DimValue
 End Property
 Public Property Get DmID() As Long
-    DmID = pDmID
+    DmID = Dims.pDmID
 End Property
 Public Property Let DmID(DimValue As Long)
-    pDmID = DimValue
+    Dims.pDmID = DimValue
 End Property
 
 
 Public Property Get ReviewType() As String
-    ReviewType = pReviewType
+    ReviewType = Dims.pReviewType
 End Property
 Public Property Let ReviewType(DimValue As String)
-    pReviewType = DimValue
+    Dims.pReviewType = DimValue
 End Property
 
 Public Property Get ReviewTable() As String
-    Select Case pItemType
+    Select Case Dims.pItemType
         Case "RPA"
             ReviewTable = "revtblRpa"
         Case "Project"
@@ -93,31 +96,31 @@ Public Property Get ReviewTable() As String
         Case "DM"
             ReviewTable = "revtblDm"
         Case Else
-            Debug.Print "classDims Get ReviewTable", pItemType
+            Debug.Print "classDims Get ReviewTable", Dims.pItemType
     End Select
 End Property
 
 Public Property Get WhereID(Optional IncludeReview As Boolean = True) As String
     Dim WhereCondition As String
     
-    WhereCondition = "[DisasterID]='" & pDisasterID & "'"
+    WhereCondition = "[DisasterID]='" & Dims.pDisasterID & "'"
     If NeedsApplicantID Then
-        WhereCondition = WhereCondition & " and [ApplicantID]='" & pApplicantID & "'"
+        WhereCondition = WhereCondition & " and [ApplicantID]='" & Dims.pApplicantID & "'"
     End If
     If NeedsProjectID Then
-        WhereCondition = WhereCondition & " and [ProjectID]=" & pProjectID
+        WhereCondition = WhereCondition & " and [ProjectID]=" & Dims.pProjectID
     End If
     If NeedsSiteID Then
-        WhereCondition = WhereCondition & " and [SiteID]=" & pSiteID
+        WhereCondition = WhereCondition & " and [SiteID]=" & Dims.pSiteID
     End If
     If NeedsRfiID Then
-        WhereCondition = WhereCondition & " and [RfiID]=" & pRfiID
+        WhereCondition = WhereCondition & " and [RfiID]=" & Dims.pRfiID
     End If
     If NeedsDmID Then
-        WhereCondition = WhereCondition & " and [DmID]=" & pDmID
+        WhereCondition = WhereCondition & " and [DmID]=" & Dims.pDmID
     End If
     If IncludeReview Then
-        WhereCondition = WhereCondition & " and [ReviewType]='" & pReviewType & "'"
+        WhereCondition = WhereCondition & " and [ReviewType]='" & Dims.pReviewType & "'"
     End If
 
     
@@ -126,13 +129,13 @@ Public Property Get WhereID(Optional IncludeReview As Boolean = True) As String
 End Property
 Public Property Get AssignedSI() As String
     Dim WhereCondition As String
-    If pItemType <> "Site" Then
+    If Dims.pItemType <> "Site" Then
         AssignedSI = ""
     Else
-        WhereCondition = "[DisasterID]='" & pDisasterID & "'"
-        WhereCondition = WhereCondition & " and [ApplicantID]='" & pApplicantID & "'"
-        WhereCondition = WhereCondition & " and [ProjectID]=" & pProjectID
-        WhereCondition = WhereCondition & " and [SiteID]=" & pSiteID
+        WhereCondition = "[DisasterID]='" & Dims.pDisasterID & "'"
+        WhereCondition = WhereCondition & " and [ApplicantID]='" & Dims.pApplicantID & "'"
+        WhereCondition = WhereCondition & " and [ProjectID]=" & Dims.pProjectID
+        WhereCondition = WhereCondition & " and [SiteID]=" & Dims.pSiteID
     
         AssignedSI = Nz(DLookup("[Assigned Site Inspector]", "tblSites", WhereCondition), "")
     End If
@@ -141,20 +144,33 @@ End Property
 Public Property Get AssignedPDC() As String
     Dim WhereCondition As String
     
-    WhereCondition = "[DisasterID]='" & pDisasterID & "'"
-    WhereCondition = WhereCondition & " and [ApplicantID]='" & pApplicantID & "'"
+    WhereCondition = "[DisasterID]='" & Dims.pDisasterID & "'"
+    WhereCondition = WhereCondition & " and [ApplicantID]='" & Dims.pApplicantID & "'"
 
     AssignedPDC = Nz(DLookup("[Assigned PDC]", "tblSubrecipient", WhereCondition), "")
     
 End Property
+Public Property Get ReviewChild() As String
+    Dim WhereCondition As String
+    If Dims.pReviewType = "" Then
+        ReviewChild = ""
+    Else
+        
+        WhereCondition = "([ItemType] = '" & Dims.pItemType & "' or [ItemType] = '" & Dims.pLaneID & Dims.pItemType & "')"
+        WhereCondition = WhereCondition & " and [ReviewType]='" & Dims.pReviewType & "'"
+        
+        ReviewChild = Nz(DLookup("ChildReviewName", "tblReviewTypes", WhereCondition), "")
+    End If
+    
+End Property
 Public Property Get ReviewPhase() As String
     Dim WhereCondition As String
-    If pReviewType = "" Then
+    If Dims.pReviewType = "" Then
         ReviewPhase = 0
     Else
         
-        WhereCondition = "([ItemType] = '" & pItemType & "' or [ItemType] = '" & pLaneID & pItemType & "')"
-        WhereCondition = WhereCondition & " and [ReviewType]='" & pReviewType & "'"
+        WhereCondition = "([ItemType] = '" & Dims.pItemType & "' or [ItemType] = '" & Dims.pLaneID & Dims.pItemType & "')"
+        WhereCondition = WhereCondition & " and [ReviewType]='" & Dims.pReviewType & "'"
         
         ReviewPhase = Nz(DLookup("Phase", "tblReviewTypes", WhereCondition), 0)
     End If
@@ -162,12 +178,12 @@ Public Property Get ReviewPhase() As String
 End Property
 Public Property Get ReviewStep() As String
     Dim WhereCondition As String
-    If pReviewType = "" Then
+    If Dims.pReviewType = "" Then
         ReviewStep = 0
     Else
         
-        WhereCondition = "([ItemType] = '" & pItemType & "' or [ItemType] = '" & pLaneID & pItemType & "')"
-        WhereCondition = WhereCondition & " and [ReviewType]='" & pReviewType & "'"
+        WhereCondition = "([ItemType] = '" & Dims.pItemType & "' or [ItemType] = '" & Dims.pLaneID & Dims.pItemType & "')"
+        WhereCondition = WhereCondition & " and [ReviewType]='" & Dims.pReviewType & "'"
         
         ReviewStep = Nz(DLookup("Step", "tblReviewTypes", WhereCondition), 0)
     End If
@@ -176,15 +192,15 @@ End Property
 
 Public Property Get OpenString() As String
     Dim Args As String
-    If pItemType <> "" Then Args = "|Type|" & pItemType & "|"
-    If pDisasterID <> "" Then Args = Args & "|DisasterID|" & pDisasterID & "|"
-    If pApplicantID <> "" Then Args = Args & "|ApplicantID|" & pApplicantID & "|"
-    If pProjectID <> 0 Then Args = Args & "|ProjectID|" & pProjectID & "|"
-    If pSiteID <> 0 Then Args = Args & "|SiteID|" & pSiteID & "|"
-    If pLaneID <> "" Then Args = Args & "|LaneID|" & pLaneID & "|"
-    If pRfiID <> 0 Then Args = Args & "|RfiID|" & pRfiID & "|"
-    If pDmID <> 0 Then Args = Args & "|DmID|" & pDmID & "|"
-    If pReviewType <> "" Then Args = Args & "|ReviewType|" & pReviewType & "|"
+    If Dims.pItemType <> "" Then Args = "|Type|" & Dims.pItemType & "|"
+    If Dims.pDisasterID <> "" Then Args = Args & "|DisasterID|" & Dims.pDisasterID & "|"
+    If Dims.pApplicantID <> "" Then Args = Args & "|ApplicantID|" & Dims.pApplicantID & "|"
+    If Dims.pProjectID <> 0 Then Args = Args & "|ProjectID|" & Dims.pProjectID & "|"
+    If Dims.pSiteID <> 0 Then Args = Args & "|SiteID|" & Dims.pSiteID & "|"
+    If Dims.pLaneID <> "" Then Args = Args & "|LaneID|" & Dims.pLaneID & "|"
+    If Dims.pRfiID <> 0 Then Args = Args & "|RfiID|" & Dims.pRfiID & "|"
+    If Dims.pDmID <> 0 Then Args = Args & "|DmID|" & Dims.pDmID & "|"
+    If Dims.pReviewType <> "" Then Args = Args & "|ReviewType|" & Dims.pReviewType & "|"
     OpenString = Args
 End Property
 Public Property Let OpenString(strArgs As String)
@@ -193,46 +209,46 @@ End Property
 
 Public Function VerifyReady() As Boolean
     VerifyReady = False
-    Select Case pReviewType
+    Select Case Dims.pReviewType
         Case "RPA"
-            VerifyReady = pReviewType <> "" And pDisasterID <> "" And pApplicantID <> ""
+            VerifyReady = Dims.pReviewType <> "" And Dims.pDisasterID <> "" And Dims.pApplicantID <> ""
         Case "Project"
-            VerifyReady = pReviewType <> "" And pDisasterID <> "" And pApplicantID <> "" And pProjectID <> 0
+            VerifyReady = Dims.pReviewType <> "" And Dims.pDisasterID <> "" And Dims.pApplicantID <> "" And Dims.pProjectID <> 0
         Case Else
-            Debug.Print "classDims VerifyReady", pReviewType
+            Debug.Print "classDims VerifyReady", Dims.pReviewType
     End Select
 End Function
 Public Function NeedsProjectID() As Boolean
     NeedsProjectID = False
-    If pItemType = "Project" Then NeedsProjectID = True
-    If pItemType = "Site" Then NeedsProjectID = True
-    If pItemType = "RFI" Or pItemType = "DM" Then
-        If pRfiItemType = "Project" Then NeedsProjectID = True
-        If pRfiItemType = "Site" Then NeedsProjectID = True
+    If Dims.pItemType = "Project" Then NeedsProjectID = True
+    If Dims.pItemType = "Site" Then NeedsProjectID = True
+    If Dims.pItemType = "RFI" Or Dims.pItemType = "DM" Then
+        If Dims.pRfiItemType = "Project" Then NeedsProjectID = True
+        If Dims.pRfiItemType = "Site" Then NeedsProjectID = True
     End If
 End Function
 Public Function NeedsSiteID() As Boolean
     NeedsSiteID = False
-    If pItemType = "Site" Then NeedsSiteID = True
-    If pItemType = "RFI" Or pItemType = "DM" Then
-        If pRfiItemType = "Site" Then NeedsSiteID = True
+    If Dims.pItemType = "Site" Then NeedsSiteID = True
+    If Dims.pItemType = "RFI" Or Dims.pItemType = "DM" Then
+        If Dims.pRfiItemType = "Site" Then NeedsSiteID = True
     End If
 End Function
 Public Function NeedsRfiID() As Boolean
     NeedsRfiID = False
-    If pItemType = "RFI" Then NeedsRfiID = True
+    If Dims.pItemType = "RFI" Then NeedsRfiID = True
 End Function
 Public Function NeedsDmID() As Boolean
     NeedsDmID = False
-    If pItemType = "DM" Then NeedsDmID = True
+    If Dims.pItemType = "DM" Then NeedsDmID = True
 End Function
 Public Function NeedsLaneID() As Boolean
     NeedsLaneID = False
-    If pItemType = "Project" Then NeedsLaneID = True
-    If pItemType = "Site" Then NeedsLaneID = True
-    If pItemType = "RFI" Or pItemType = "DM" Then
-        If pRfiItemType = "Project" Then NeedsLaneID = True
-        If pRfiItemType = "Site" Then NeedsLaneID = True
+    If Dims.pItemType = "Project" Then NeedsLaneID = True
+    If Dims.pItemType = "Site" Then NeedsLaneID = True
+    If Dims.pItemType = "RFI" Or Dims.pItemType = "DM" Then
+        If Dims.pRfiItemType = "Project" Then NeedsLaneID = True
+        If Dims.pRfiItemType = "Site" Then NeedsLaneID = True
     End If
 End Function
 Public Function NeedsReviewType() As Boolean
@@ -241,13 +257,13 @@ Public Function NeedsReviewType() As Boolean
 End Function
 Public Function NeedsApplicantID() As Boolean
     NeedsApplicantID = False
-    If pItemType = "RPA" Then NeedsApplicantID = True
-    If pItemType = "Project" Then NeedsApplicantID = True
-    If pItemType = "Site" Then NeedsApplicantID = True
-    If pItemType = "RFI" Or pItemType = "DM" Then
-        If pRfiItemType = "RPA" Then NeedsApplicantID = True
-        If pRfiItemType = "Project" Then NeedsApplicantID = True
-        If pRfiItemType = "Site" Then NeedsApplicantID = True
+    If Dims.pItemType = "RPA" Then NeedsApplicantID = True
+    If Dims.pItemType = "Project" Then NeedsApplicantID = True
+    If Dims.pItemType = "Site" Then NeedsApplicantID = True
+    If Dims.pItemType = "RFI" Or Dims.pItemType = "DM" Then
+        If Dims.pRfiItemType = "RPA" Then NeedsApplicantID = True
+        If Dims.pRfiItemType = "Project" Then NeedsApplicantID = True
+        If Dims.pRfiItemType = "Site" Then NeedsApplicantID = True
     End If
 End Function
 
@@ -285,23 +301,23 @@ Private Sub ParseSegment(strArgument As String)
     
     Select Case VarName
         Case "DisasterID"
-            pDisasterID = VarValue
+            Dims.pDisasterID = VarValue
         Case "Type"
-            pItemType = VarValue
+            Dims.pItemType = VarValue
         Case "ApplicantID"
-            pApplicantID = VarValue
+            Dims.pApplicantID = VarValue
         Case "ReviewType"
-            pReviewType = VarValue
+            Dims.pReviewType = VarValue
         Case "LaneID"
-            pLaneID = VarValue
+            Dims.pLaneID = VarValue
         Case "ProjectID"
-            pProjectID = CLng(VarValue)
+            Dims.pProjectID = CLng(VarValue)
         Case "SiteID"
-            pSiteID = CLng(VarValue)
+            Dims.pSiteID = CLng(VarValue)
         Case "RfiID"
-            pRfiID = CLng(VarValue)
+            Dims.pRfiID = CLng(VarValue)
         Case "DmID"
-            pDmID = CLng(VarValue)
+            Dims.pDmID = CLng(VarValue)
         Case Else
             Debug.Print "ItemDims Parse OpenArg VarName-Else", VarName
     End Select
@@ -311,37 +327,48 @@ Private Sub ParseSegment(strArgument As String)
 End Sub
 
 Public Sub LoadByForm(frm As Form, formType As String, Optional ReviewName As String = "")
-    pItemType = formType
-    If pItemType = "RFI" Or pItemType = "DM" Then pRfiItemType = Nz(frm.[ItemType], "")
-    pReviewType = ReviewName
-    pDisasterID = Nz(frm.[DisasterID], "")
-    If NeedsApplicantID Then pApplicantID = Nz(frm.[ApplicantID], "")
-    If NeedsProjectID Then pProjectID = Nz(frm.[ProjectID], 0)
-    If NeedsSiteID Then pSiteID = Nz(frm.[SiteID], 0)
-    If NeedsLaneID Then pLaneID = FetchLane
-    If NeedsRfiID Then pRfiID = Nz(frm.[RfiID], 0)
-    If NeedsDmID Then pDmID = Nz(frm.[DmID], 0)
+    Dims.pItemType = formType
+    If Dims.pItemType = "RFI" Or Dims.pItemType = "DM" Then Dims.pRfiItemType = Nz(frm.[ItemType], "")
+    Dims.pReviewType = ReviewName
+    Dims.pDisasterID = Nz(frm.[DisasterID], "")
+    If NeedsApplicantID Then Dims.pApplicantID = Nz(frm.[ApplicantID], "")
+    If NeedsProjectID Then Dims.pProjectID = Nz(frm.[ProjectID], 0)
+    If NeedsSiteID Then Dims.pSiteID = Nz(frm.[SiteID], 0)
+    If NeedsLaneID Then Dims.pLaneID = FetchLane
+    If NeedsRfiID Then Dims.pRfiID = Nz(frm.[RfiID], 0)
+    If NeedsDmID Then Dims.pDmID = Nz(frm.[DmID], 0)
 End Sub
 
 Public Sub ConvertToRFI(RfiID As Long)
-    If pItemType <> "RFI" Then
-        pRfiItemType = pItemType
-        pItemType = "RFI"
-        pRfiID = RfiID
+    If Dims.pItemType <> "RFI" Then
+        Dims.pRfiItemType = Dims.pItemType
+        Dims.pItemType = "RFI"
+        Dims.pRfiID = RfiID
     End If
 End Sub
 Public Sub ConvertToDM(DmID As Long)
-    If pItemType <> "DM" Then
-        pRfiItemType = pItemType
-        pItemType = "DM"
-        pDmID = DmID
+    If Dims.pItemType <> "DM" Then
+        Dims.pRfiItemType = Dims.pItemType
+        Dims.pItemType = "DM"
+        Dims.pDmID = DmID
     End If
 End Sub
 
 Private Function FetchLane() As String
     Dim WhereCondition As String
-    WhereCondition = "[DisasterID]='" & pDisasterID & "'"
-    WhereCondition = WhereCondition & " and [ApplicantID]='" & pApplicantID & "'"
-    WhereCondition = WhereCondition & " and [ProjectID]=" & pProjectID
+    WhereCondition = "[DisasterID]='" & Dims.pDisasterID & "'"
+    WhereCondition = WhereCondition & " and [ApplicantID]='" & Dims.pApplicantID & "'"
+    WhereCondition = WhereCondition & " and [ProjectID]=" & Dims.pProjectID
     FetchLane = Nz(DLookup("[Lane Assigned]", "tblProjects", WhereCondition), "")
 End Function
+
+Public Function Clone(Optional NewReviewType As String = "") As classItemDims
+    Dim Result As New classItemDims
+    Result.SetDims = Dims
+    If NewReviewType <> "" Then Result.ReviewType = NewReviewType
+    Set Clone = Result
+End Function
+
+Friend Property Let SetDims(NewDims As Dimensions)
+    Dims = NewDims
+End Property

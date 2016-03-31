@@ -17,7 +17,7 @@ Begin Form
     Width =16740
     DatasheetFontHeight =11
     ItemSuffix =93
-    Right =22080
+    Right =15045
     Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -214,7 +214,7 @@ Begin Form
                     Left =13620
                     Top =120
                     Width =3000
-                    Height =4860
+                    Height =3420
                     BackColor =15788753
                     BorderColor =10921638
                     Name ="Box84"
@@ -222,22 +222,22 @@ Begin Form
                     LayoutCachedLeft =13620
                     LayoutCachedTop =120
                     LayoutCachedWidth =16620
-                    LayoutCachedHeight =4980
+                    LayoutCachedHeight =3540
                     BackThemeColorIndex =-1
                 End
                 Begin Rectangle
                     BackStyle =1
                     OverlapFlags =93
                     Left =13620
-                    Top =5400
+                    Top =3960
                     Width =3000
-                    Height =5640
+                    Height =7080
                     BackColor =13431551
                     BorderColor =10921638
                     Name ="Box90"
                     GridlineColor =10921638
                     LayoutCachedLeft =13620
-                    LayoutCachedTop =5400
+                    LayoutCachedTop =3960
                     LayoutCachedWidth =16620
                     LayoutCachedHeight =11040
                     BackThemeColorIndex =7
@@ -974,7 +974,7 @@ Begin Form
                 Begin CommandButton
                     OverlapFlags =215
                     Left =13920
-                    Top =5640
+                    Top =4440
                     Width =2160
                     Height =780
                     FontSize =13
@@ -987,9 +987,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =13920
-                    LayoutCachedTop =5640
+                    LayoutCachedTop =4440
                     LayoutCachedWidth =16080
-                    LayoutCachedHeight =6420
+                    LayoutCachedHeight =5220
                     UseTheme =1
                     BackColor =15123357
                     BorderColor =15123357
@@ -1148,8 +1148,8 @@ Begin Form
                     BackStyle =1
                     OverlapFlags =215
                     TextAlign =2
-                    Left =13605
-                    Top =5040
+                    Left =13620
+                    Top =3600
                     Width =3015
                     Height =360
                     FontSize =12
@@ -1160,10 +1160,10 @@ Begin Form
                     Name ="Label91"
                     Caption ="DIU Select Lane for Project"
                     GridlineColor =10921638
-                    LayoutCachedLeft =13605
-                    LayoutCachedTop =5040
-                    LayoutCachedWidth =16620
-                    LayoutCachedHeight =5400
+                    LayoutCachedLeft =13620
+                    LayoutCachedTop =3600
+                    LayoutCachedWidth =16635
+                    LayoutCachedHeight =3960
                     BackThemeColorIndex =8
                     BackShade =75.0
                     ForeThemeColorIndex =1
@@ -1218,6 +1218,53 @@ Begin Form
                             LayoutCachedTop =6780
                             LayoutCachedWidth =16365
                             LayoutCachedHeight =7095
+                            ForeTint =100.0
+                        End
+                    End
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    Enabled = NotDefault
+                    RowSourceTypeInt =1
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    Left =13860
+                    Top =6060
+                    Width =2340
+                    Height =315
+                    TabIndex =20
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="cboDocumentation"
+                    ControlSource ="DocumentationAttached"
+                    RowSourceType ="Value List"
+                    RowSource ="\"All Documents Attached\";\"Partial Documents Attached\";\"No Documents Attache"
+                        "d\""
+                    ColumnWidths ="2880"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =13860
+                    LayoutCachedTop =6060
+                    LayoutCachedWidth =16200
+                    LayoutCachedHeight =6375
+                    ForeThemeColorIndex =0
+                    ForeTint =75.0
+                    ForeShade =100.0
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =13860
+                            Top =5700
+                            Width =2370
+                            Height =315
+                            BorderColor =8355711
+                            Name ="Label103"
+                            Caption ="Documentation attached"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =13860
+                            LayoutCachedTop =5700
+                            LayoutCachedWidth =16230
+                            LayoutCachedHeight =6015
                             ForeTint =100.0
                         End
                     End
@@ -2082,9 +2129,10 @@ Private Sub CompleteReview(ReviewType As String)
         If Access.CurrentProject.AllForms("frmReviewResult").IsLoaded Then
             Set frm = Forms("frmReviewResult")
             If PostDialogCheck(ReviewType, frm.cboResult) Then
-                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
-                    HandleDisposition ReviewType, frm
-                End If
+'                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
+'                    HandleDisposition ReviewType, frm
+'                End If
+                CompleteReviewStandard GetItemDims(ReviewType), Me.Form, frm
             End If
             DoCmd.Close acForm, "frmReviewResult"
         Else

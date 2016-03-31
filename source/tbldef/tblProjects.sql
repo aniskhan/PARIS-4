@@ -117,5 +117,6 @@ CREATE TABLE [tblProjects] (
   [Scope of Work Developed by] VARCHAR (255),
   [Cost Estimate Developed by] VARCHAR (255),
   [Scheduled Time of Site Inspection] DATETIME ,
+  [DocumentationAttached] VARCHAR (255),
    CONSTRAINT [PrimaryKey] PRIMARY KEY ([DisasterID], [ApplicantID], [ProjectID])
 )

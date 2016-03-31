@@ -19,6 +19,7 @@ Begin OutputColumns
     Expression ="tblProjects.[EMMIE Update Application  Number]"
     Expression ="tblProjects.[Date Entered Into Update Application]"
     Expression ="tblProjects.[Lane Recommendation]"
+    Expression ="tblProjects.DocumentationAttached"
 End
 Begin Joins
     LeftTable ="tblProjects"
@@ -92,17 +93,21 @@ Begin
         dbText "Name" ="tblProjects.[Lane Recommendation]"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="tblProjects.DocumentationAttached"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =858
+    Right =976
     Bottom =860
     Left =-1
     Top =-1
-    Right =842
-    Bottom =555
+    Right =960
+    Bottom =512
     Left =0
     Top =0
     ColumnsShown =539
@@ -110,7 +115,7 @@ Begin
         Left =12
         Top =12
         Right =284
-        Bottom =557
+        Bottom =395
         Top =0
         Name ="tblProjects"
         Name =""

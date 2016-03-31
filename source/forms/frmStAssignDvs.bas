@@ -17,7 +17,7 @@ Begin Form
     Width =16560
     DatasheetFontHeight =11
     ItemSuffix =96
-    Right =22080
+    Right =12615
     Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -223,6 +223,7 @@ Begin Form
                         "StaffRoles.EndDate)>=Date()) And ((tblStaffRoles.Position)=\"STDVS\")); "
                     ColumnWidths ="0;2880"
                     StatusBarText ="lookup of staff by position"
+                    OnChange ="[Event Procedure]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =480
@@ -1375,6 +1376,31 @@ Option Explicit
 'For in depth commentting please refer to frmRpaReview.
 
 Private Const FormItemType As String = "Project" 'used in determining what type of record is handled
+
+Private Sub cboAssignDvs_Change()
+'This ensures that the reports showing the DVS change when a new one is selected.
+
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cboAssignDvs_Change"
+'///Error Handling
+
+'///Code
+    Me.Dirty = False
+    Me.subrptPdc.Requery
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+
+End Sub
 
 'BUTTONS
 Private Sub cmdAssignDvsComplete_Click()

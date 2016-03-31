@@ -17,7 +17,7 @@ Begin Form
     Width =16560
     DatasheetFontHeight =11
     ItemSuffix =35
-    Right =22080
+    Right =14385
     Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -801,8 +801,8 @@ Begin Form
                     BorderColor =10921638
                     Name ="subfrmRpaInfo short"
                     SourceObject ="Form.subfrmRpaInfo short"
-                    LinkChildFields ="DisasterID"
-                    LinkMasterFields ="DisasterID"
+                    LinkChildFields ="DisasterID;ApplicantID"
+                    LinkMasterFields ="DisasterID;ApplicantID"
                     EventProcPrefix ="subfrmRpaInfo_short"
                     GridlineColor =10921638
 

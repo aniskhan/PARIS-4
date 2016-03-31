@@ -16,11 +16,11 @@ Begin Form
     GridY =24
     Width =16740
     DatasheetFontHeight =11
-    ItemSuffix =102
-    Right =14160
-    Bottom =7830
+    ItemSuffix =104
+    Right =14385
+    Bottom =12645
     DatasheetGridlinesColor =15132391
-    Filter ="[Assigned PDC] = 'akhandka'"
+    Filter ="[Assigned PDC] = 'nlietzk1'"
     RecSrcDt = Begin
         0x56e847dc56bae440
     End
@@ -825,7 +825,7 @@ Begin Form
                     IMESentenceMode =3
                     ColumnCount =2
                     Left =13680
-                    Top =7920
+                    Top =8220
                     Width =2340
                     Height =315
                     TabIndex =13
@@ -842,9 +842,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =13680
-                    LayoutCachedTop =7920
+                    LayoutCachedTop =8220
                     LayoutCachedWidth =16020
-                    LayoutCachedHeight =8235
+                    LayoutCachedHeight =8535
                     ForeThemeColorIndex =0
                     ForeTint =75.0
                     ForeShade =100.0
@@ -852,7 +852,7 @@ Begin Form
                         Begin Label
                             OverlapFlags =215
                             Left =13680
-                            Top =7560
+                            Top =7860
                             Width =2340
                             Height =315
                             BorderColor =8355711
@@ -860,9 +860,9 @@ Begin Form
                             Caption ="Lane Recommendation"
                             GridlineColor =10921638
                             LayoutCachedLeft =13680
-                            LayoutCachedTop =7560
+                            LayoutCachedTop =7860
                             LayoutCachedWidth =16020
-                            LayoutCachedHeight =7875
+                            LayoutCachedHeight =8175
                             ForeTint =100.0
                         End
                     End
@@ -873,7 +873,7 @@ Begin Form
                     Left =13260
                     Top =5460
                     Width =3180
-                    Height =1905
+                    Height =1380
                     BorderColor =8355711
                     ForeColor =8355711
                     Name ="Label97"
@@ -883,7 +883,7 @@ Begin Form
                     LayoutCachedLeft =13260
                     LayoutCachedTop =5460
                     LayoutCachedWidth =16440
-                    LayoutCachedHeight =7365
+                    LayoutCachedHeight =6840
                 End
                 Begin Label
                     BackStyle =1
@@ -924,6 +924,52 @@ Begin Form
                     LayoutCachedWidth =13020
                     LayoutCachedHeight =5340
                     BorderThemeColorIndex =1
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    RowSourceTypeInt =1
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    Left =13680
+                    Top =7320
+                    Width =2340
+                    Height =315
+                    TabIndex =15
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="cboDocumentation"
+                    ControlSource ="DocumentationAttached"
+                    RowSourceType ="Value List"
+                    RowSource ="\"All Documents Attached\";\"Partial Documents Attached\";\"No Documents Attache"
+                        "d\""
+                    ColumnWidths ="2880"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =13680
+                    LayoutCachedTop =7320
+                    LayoutCachedWidth =16020
+                    LayoutCachedHeight =7635
+                    ForeThemeColorIndex =0
+                    ForeTint =75.0
+                    ForeShade =100.0
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =13680
+                            Top =6960
+                            Width =2370
+                            Height =315
+                            BorderColor =8355711
+                            Name ="Label103"
+                            Caption ="Documentation attached"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =13680
+                            LayoutCachedTop =6960
+                            LayoutCachedWidth =16050
+                            LayoutCachedHeight =7275
+                            ForeTint =100.0
+                        End
+                    End
                 End
             End
         End

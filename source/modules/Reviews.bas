@@ -279,7 +279,24 @@ Public Sub PushAllChildren(ItemDims As classItemDims, UserName As String, Dispos
     Set Db = Nothing
 
 End Sub
-Public Sub PushSomeChildren(ItemDims As classItemDims, UserName As String, Disposition As String, Optional EnterChildReview As String = "", Optional CheckPhrase As String = "")
+Public Sub CompleteAndPushAll(ItemDims As classItemDims, CompletedBy As String, Disposition As String, Optional Comment As Variant = "", Optional PushToReview As String = "", Optional AssignChildTo As String = "")
+    Dim CompleteDims As classItemDims
+    Dim EnterDims As classItemDims
+    Dim PushChildDims As classItemDims
+    Dim ChildEnterReviewName As String
+    
+    Set CompleteDims = ItemDims.Clone
+    If CompleteReview(CompleteDims, CompletedBy, Disposition, Comment) Then
+        Set EnterDims = ItemDims.Clone(PushToReview)
+        ChildEnterReviewName = EnterDims.ReviewChild
+        EnterReview EnterDims, AssignChildTo
+        
+        Set PushChildDims = ItemDims.Clone(ItemDims.ReviewChild)
+        
+        PushAllChildren PushChildDims, CompletedBy, Disposition, ChildEnterReviewName, AssignChildTo
+    End If
+End Sub
+Public Sub PushSomeChildren(ItemDims As classItemDims, UserName As String, Disposition As String, Optional EnterChildReview As String = "", Optional CheckPhrase As String = "", Optional CheckPhraseSource As String = "")
     Dim Db As Database
     Dim recChildren As Recordset
     Dim ChildDim As New classItemDims
@@ -319,7 +336,11 @@ Public Sub PushSomeChildren(ItemDims As classItemDims, UserName As String, Dispo
     
     WhereCondition = ItemDims.WhereID(False)
     
-    sql = "Select " & ChildIdName & " AS ID From " & ChildTable
+    If CheckPhraseSource = "" Then
+        sql = "Select " & ChildIdName & " AS ID From " & ChildTable
+    Else
+        sql = "Select " & ChildIdName & " AS ID From " & CheckPhraseSource
+    End If
     sql = sql & " Where " & WhereCondition & " and " & CheckPhrase & ";"
     
     
@@ -477,3 +498,84 @@ Public Sub CreateDM(ItemDims As classItemDims)
     Set Db = Nothing
 
 End Sub
+
+    Select Case frm.cboResult
+        Case "SUB"
+'            Main section of page specific code. Creates new reviews as needed.
+            Select Case ReviewType
+                Case "DIU Lane Select"
+'                    Creates the next project review and moves all sites as needed.  Will need to adjust for specialized.
+                    Reviews.EnterReview GetItemDims("Assign DVS")
+                    If Me![Lane Assigned] = "ST" Then
+                        Reviews.PushAllChildren GetItemDims("DIU Lane Select"), Environ("UserName"), frm.cboResult, "Assign DVS"
+                    Else
+                        Reviews.PushAllChildren GetItemDims("DIU Lane Select"), Environ("UserName"), frm.cboResult
+                    End If
+                Case Else
+                    Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & ReviewType
+            End Select
+        Case Else
+            Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & frm.cboResult
+    End Select
+    
+    
+
+Public Sub CompleteReviewStandard(ItemDims As classItemDims, CurrentForm As Form, ReviewResultForm As Form)
+    Select Case ReviewResultForm.cboResult
+'        Most review dispositions have fairly standard code.
+        Case "DM"
+            CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "Determination Memo", CurrentUserID
+        Case "RFI"
+            Reviews.CreateRFI ItemDims.Clone
+            CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "RFI", CurrentUserID
+            DoCmd.OpenForm "frmRFIRequest", , , ItemDims.WhereID(False)
+        Case "RSN"
+            CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), ItemDims.ReviewType, ReviewResultForm.cboAssign
+        Case "RW"
+            CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), ReviewResultForm.cboRework, ReviewResultForm.cboAssign
+        Case "SUB"
+'            Main section of page specific code. Creates new reviews as needed.
+            Select Case ItemDims.ReviewType
+                Case "DIU Lane Select"
+                    Select Case CurrentForm![Lane Assigned]
+                        Case "ST"
+                            CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "Assign DVS"
+                        Case "EX"
+                            CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "Assign DVS"
+                        Case "SP"
+                            CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "Specialized Lane"
+                        Case Else
+                            Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & CurrentForm![Lane Assigned]
+                    End Select
+                
+                Case "Assign DVS"
+                    CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "Generate Work Order", CurrentForm![Assigned Data Validation Specialist]
+                
+                Case "DVS Review"
+                    If CompleteReview(ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, "")) Then
+                        WhereCondition = ItemDims.WhereID(False)
+     
+                        CheckPhrase = "[Ready For SI]='Yes' and [Marked For SI]='No'"
+                        If DCount("SiteID", "fqryDVSSiteReviewSelect", WhereCondition & " and " & CheckPhrase) > 0 Then
+                            EnterReview ItemDims.Clone("Inspection Assignment")
+                            PushSomeChildren ItemDims.Clone("Draft DDD"), CurrentUserID, frm.cboResult, "Ready for Concurrence", CheckPhrase, "fqryDVSSiteReviewSelect"
+                        End If
+                        
+                        If DCount("ProjectID", ItemDims.ReviewTable, WhereCondition & " and ([ReviewType] = 'Inspection Assignment' or [ReviewType] = 'Validation Assignment')") = 0 Then
+                            CheckPhrase = "[Ready For SI]='Yes' and [Marked For SI]='Yes'"
+                            If DCount("SiteID", "tblSites", WhereCondition & " and " & CheckPhrase) > 0 Then
+                                EnterReview ItemDims.Clone("Inspection Assignment")
+                                PushSomeChildren ItemDims.Clone("Draft DDD"), CurrentUserID, frm.cboResult, "Inspection Assignment", CheckPhrase, "fqryDVSSiteReviewSelect"
+                            End If
+                        End If
+                    End If
+                
+                Case Else
+                    Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & ItemDims.ReviewType
+            End Select
+        Case Else
+            Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & ReviewResultForm.cboResult
+    End Select
+End Sub
+
+                   

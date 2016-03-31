@@ -534,17 +534,21 @@ Begin
         dbText "Name" ="tblProjects.Scope of Work Developed by"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="tblProjects.DocumentationAttached"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =961
-    Bottom =539
+    Right =976
+    Bottom =860
     Left =-1
     Top =-1
-    Right =945
-    Bottom =256
+    Right =960
+    Bottom =508
     Left =0
     Top =0
     ColumnsShown =539

@@ -87,5 +87,9 @@ CREATE TABLE [tblSites] (
   [Inspection Report Complete] BIT DEFAULT No,
   [Eligibility Concerns] LONGTEXT ,
   [Scheduled Time of Site Inspection] DATETIME ,
+  [DimensionsKnown] VARCHAR (255),
+  [DimensionsFrom] VARCHAR (255),
+  [PartOfVerificationSample] VARCHAR (255),
+  [KnownDimensionsInEMMIE] VARCHAR (255),
    CONSTRAINT [PrimaryKey] PRIMARY KEY ([DisasterID], [ApplicantID], [ProjectID], [SiteID])
 )
