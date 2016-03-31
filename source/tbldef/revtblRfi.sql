@@ -6,6 +6,7 @@ CREATE TABLE [revtblRfi] (
   [SiteID] LONG ,
   [Lane Assigned] VARCHAR (255),
   [RfiID] LONG DEFAULT 0,
+  [RfiItemID] LONG DEFAULT 0,
   [ReviewType] VARCHAR (255),
   [ItemSequence] LONG ,
   [ReviewEntryDate] DATETIME ,

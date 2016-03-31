@@ -110,17 +110,21 @@ Begin
         dbText "Name" ="RfiID"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="RfiItemID"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =985
-    Bottom =860
+    Right =681
+    Bottom =539
     Left =-1
     Top =-1
-    Right =969
-    Bottom =402
+    Right =665
+    Bottom =351
     Left =0
     Top =0
     ColumnsShown =539

@@ -1,6 +1,7 @@
 ﻿Operation =1
 Option =0
-Where ="(((tblReviewTypes.ItemType)=\"RFI\") AND ((revtblRfi.ReviewExitDate) Is Null))"
+Where ="(((tblReviewTypes.ItemType)=\"RFI\" Or (tblReviewTypes.ItemType)=\"RFIResponse\""
+    ") AND ((revtblRfi.ReviewExitDate) Is Null))"
 Begin InputTables
     Name ="revtblRfi"
     Name ="tblSubRecipient"
@@ -115,23 +116,24 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="RfiID"
+        dbText "Name" ="DmID"
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="DmID"
+        dbText "Name" ="revtblRfi.RfiItemID"
+        dbLong "AggregateType" ="-1"
     End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =985
-    Bottom =860
+    Right =681
+    Bottom =539
     Left =-1
     Top =-1
-    Right =969
-    Bottom =237
+    Right =665
+    Bottom =186
     Left =0
     Top =0
     ColumnsShown =539

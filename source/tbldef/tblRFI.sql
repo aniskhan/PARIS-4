@@ -6,7 +6,6 @@ CREATE TABLE [tblRFI] (
   [ProjectID] LONG ,
   [Lane Assigned] VARCHAR (255),
   [SiteID] LONG ,
-  [RFI Action] VARCHAR (255),
   [RFI Reason] LONGTEXT ,
   [Response Time Requested] LONG ,
   [Date Sent to Recipient] DATETIME ,
@@ -16,5 +15,6 @@ CREATE TABLE [tblRFI] (
   [ReviewFromPhase] LONG DEFAULT 0,
   [ReviewFromStep] LONG DEFAULT 0,
   [RfiCanceled] BIT DEFAULT No,
-  [CreatedBy] VARCHAR (255)
+  [CreatedBy] VARCHAR (255),
+  [RfiSatisfied] BIT DEFAULT No
 )
