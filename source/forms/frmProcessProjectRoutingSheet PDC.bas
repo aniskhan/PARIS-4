@@ -16,13 +16,8 @@ Begin Form
     GridY =24
     Width =16740
     DatasheetFontHeight =11
-<<<<<<< HEAD
     ItemSuffix =104
     Right =14385
-=======
-    ItemSuffix =102
-    Right =14910
->>>>>>> clone-ARK-fromBase-2016.03.22
     Bottom =12645
     DatasheetGridlinesColor =15132391
     Filter ="[Assigned PDC] = 'nlietzk1'"

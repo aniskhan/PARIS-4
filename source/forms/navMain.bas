@@ -17,11 +17,7 @@ Begin Form
     Width =15480
     DatasheetFontHeight =11
     ItemSuffix =123
-<<<<<<< HEAD
     Right =20175
-=======
-    Right =19785
->>>>>>> clone-ARK-fromBase-2016.03.22
     Bottom =12645
     TimerInterval =30
     DatasheetGridlinesColor =15132391
