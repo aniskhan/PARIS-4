@@ -12,12 +12,14 @@ Begin Form
     GridY =24
     Width =10230
     DatasheetFontHeight =11
-    ItemSuffix =14
-    Right =5625
-    Bottom =7005
+    ItemSuffix =16
+    Left =705
+    Top =3585
+    Right =12495
+    Bottom =5475
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0xf0158eaeb4b9e440
+        0xe7f6b90474bae440
     End
     RecordSource ="fqryRFIRequestedInfo"
     Caption ="subformRFIRequestedInformation"
@@ -153,11 +155,12 @@ Begin Form
                     Height =330
                     ColumnWidth =2550
                     ColumnOrder =1
+                    TabIndex =1
                     BorderColor =10921638
                     ForeColor =3484194
                     ColumnInfo ="\"\";\"\";\"10\";\"510\""
                     Name ="Item Type"
-                    ControlSource ="Item Type"
+                    ControlSource ="ItemType"
                     RowSourceType ="Table/Query"
                     RowSource ="lutblRFIItemType"
                     ColumnWidths ="1440"
@@ -178,7 +181,7 @@ Begin Form
                             BorderColor =8355711
                             ForeColor =8355711
                             Name ="Item Type_Label"
-                            Caption ="Item Type"
+                            Caption ="ItemType"
                             EventProcPrefix ="Item_Type_Label"
                             GridlineColor =10921638
                             LayoutCachedLeft =180
@@ -198,9 +201,9 @@ Begin Form
                     Top =2100
                     Width =7260
                     Height =1140
-                    ColumnWidth =5115
-                    ColumnOrder =5
-                    TabIndex =1
+                    ColumnWidth =6915
+                    ColumnOrder =3
+                    TabIndex =2
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="Reason Requested"
@@ -240,8 +243,8 @@ Begin Form
                     Top =840
                     Width =2220
                     Height =315
-                    ColumnOrder =3
-                    TabIndex =2
+                    ColumnOrder =2
+                    TabIndex =3
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="Text10"
@@ -268,6 +271,44 @@ Begin Form
                             LayoutCachedTop =840
                             LayoutCachedWidth =5370
                             LayoutCachedHeight =1155
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    TextAlign =1
+                    IMESentenceMode =3
+                    Left =2220
+                    Top =420
+                    Height =315
+                    ColumnWidth =765
+                    ColumnOrder =0
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="tbRfiItemID"
+                    ControlSource ="RfiItemID"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =2220
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =3660
+                    LayoutCachedHeight =735
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =420
+                            Top =420
+                            Width =270
+                            Height =315
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label14"
+                            Caption ="RfiItemID"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =420
+                            LayoutCachedTop =420
+                            LayoutCachedWidth =690
+                            LayoutCachedHeight =735
                         End
                     End
                 End

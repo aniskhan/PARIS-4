@@ -8,5 +8,6 @@ CREATE TABLE [tblReviewTypes] (
   [FormName] VARCHAR (255),
   [Position] VARCHAR (255),
   [AssignToPosition] VARCHAR (255),
+  [ChildReviewName] VARCHAR (255),
    CONSTRAINT [PrimaryKey] PRIMARY KEY ([ItemType], [ReviewType])
 )

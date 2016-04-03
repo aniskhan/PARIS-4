@@ -9,20 +9,21 @@ Begin Form
     AllowAdditions = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
+    ScrollBars =0
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =13140
+    Width =18915
     DatasheetFontHeight =11
-    ItemSuffix =20
-    Left =465
-    Top =2265
-    Right =13890
-    Bottom =5985
+    ItemSuffix =25
+    Left =345
+    Top =6165
+    Right =16815
+    Bottom =9255
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0xa12c2df930b5e440
+        0x0a0bc6513cbae440
     End
     RecordSource ="fqryInspectStSiteInspection"
     Caption ="tblSiteInspections subform"
@@ -140,19 +141,36 @@ Begin Form
             BackTint =20.0
         End
         Begin Section
-            Height =3720
-            BackColor =15788753
+            Height =3300
+            BackColor =15590879
             Name ="Detail"
             AlternateBackColor =13431551
             AlternateBackThemeColorIndex =7
             AlternateBackTint =20.0
             Begin
+                Begin Rectangle
+                    BackStyle =1
+                    OverlapFlags =93
+                    Left =10500
+                    Top =240
+                    Width =2340
+                    Height =1380
+                    BackColor =13431551
+                    BorderColor =10921638
+                    Name ="Box22"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =10500
+                    LayoutCachedTop =240
+                    LayoutCachedWidth =12840
+                    LayoutCachedHeight =1620
+                    BackThemeColorIndex =7
+                    BackTint =20.0
+                End
                 Begin TextBox
                     OverlapFlags =93
                     IMESentenceMode =3
-                    Left =1560
-                    Top =960
-                    Width =3000
+                    Left =1200
+                    Top =900
                     Height =330
                     ColumnWidth =1770
                     ColumnOrder =4
@@ -162,17 +180,17 @@ Begin Form
                     EventProcPrefix ="Inspection_Date__Start"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =1560
-                    LayoutCachedTop =960
-                    LayoutCachedWidth =4560
-                    LayoutCachedHeight =1290
+                    LayoutCachedLeft =1200
+                    LayoutCachedTop =900
+                    LayoutCachedWidth =2640
+                    LayoutCachedHeight =1230
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =420
-                            Top =600
+                            Left =60
+                            Top =540
                             Width =2145
                             Height =315
                             BorderColor =8355711
@@ -180,10 +198,10 @@ Begin Form
                             Caption ="Inspection Date"
                             EventProcPrefix ="Inspection_Date__Start_Label"
                             GridlineColor =10921638
-                            LayoutCachedLeft =420
-                            LayoutCachedTop =600
-                            LayoutCachedWidth =2565
-                            LayoutCachedHeight =915
+                            LayoutCachedLeft =60
+                            LayoutCachedTop =540
+                            LayoutCachedWidth =2205
+                            LayoutCachedHeight =855
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
                         End
@@ -193,9 +211,8 @@ Begin Form
                     Enabled = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =1560
-                    Top =1380
-                    Width =3000
+                    Left =3540
+                    Top =900
                     Height =330
                     ColumnWidth =1725
                     ColumnOrder =5
@@ -206,17 +223,17 @@ Begin Form
                     EventProcPrefix ="Inspection_Date___Finish"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =1560
-                    LayoutCachedTop =1380
-                    LayoutCachedWidth =4560
-                    LayoutCachedHeight =1710
+                    LayoutCachedLeft =3540
+                    LayoutCachedTop =900
+                    LayoutCachedWidth =4980
+                    LayoutCachedHeight =1230
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =780
-                            Top =1380
+                            Left =2760
+                            Top =900
                             Width =720
                             Height =315
                             BorderColor =8355711
@@ -224,10 +241,10 @@ Begin Form
                             Caption ="Finish:"
                             EventProcPrefix ="Inspection_Date___Finish_Label"
                             GridlineColor =10921638
-                            LayoutCachedLeft =780
-                            LayoutCachedTop =1380
-                            LayoutCachedWidth =1500
-                            LayoutCachedHeight =1695
+                            LayoutCachedLeft =2760
+                            LayoutCachedTop =900
+                            LayoutCachedWidth =3480
+                            LayoutCachedHeight =1215
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
                         End
@@ -236,8 +253,8 @@ Begin Form
                 Begin TextBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =8700
-                    Top =1500
+                    Left =2580
+                    Top =1860
                     Width =3630
                     Height =360
                     ColumnOrder =7
@@ -248,28 +265,28 @@ Begin Form
                     EventProcPrefix ="Subrecipient_Participant"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =8700
-                    LayoutCachedTop =1500
-                    LayoutCachedWidth =12330
-                    LayoutCachedHeight =1860
+                    LayoutCachedLeft =2580
+                    LayoutCachedTop =1860
+                    LayoutCachedWidth =6210
+                    LayoutCachedHeight =2220
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =6300
-                            Top =1500
-                            Width =2310
-                            Height =315
+                            Left =420
+                            Top =1860
+                            Width =2100
+                            Height =360
                             BorderColor =8355711
                             Name ="Subrecipient Participant_Label"
-                            Caption ="Subrecipient Participant"
+                            Caption ="Applicant Participant:"
                             EventProcPrefix ="Subrecipient_Participant_Label"
                             GridlineColor =10921638
-                            LayoutCachedLeft =6300
-                            LayoutCachedTop =1500
-                            LayoutCachedWidth =8610
-                            LayoutCachedHeight =1815
+                            LayoutCachedLeft =420
+                            LayoutCachedTop =1860
+                            LayoutCachedWidth =2520
+                            LayoutCachedHeight =2220
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
                         End
@@ -278,8 +295,8 @@ Begin Form
                 Begin TextBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =8670
-                    Top =1920
+                    Left =2580
+                    Top =1440
                     Width =3630
                     Height =360
                     ColumnOrder =8
@@ -290,28 +307,28 @@ Begin Form
                     EventProcPrefix ="Recipient_Participant"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =8670
-                    LayoutCachedTop =1920
-                    LayoutCachedWidth =12300
-                    LayoutCachedHeight =2280
+                    LayoutCachedLeft =2580
+                    LayoutCachedTop =1440
+                    LayoutCachedWidth =6210
+                    LayoutCachedHeight =1800
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =6300
-                            Top =1920
-                            Width =2280
-                            Height =330
+                            Left =420
+                            Top =1440
+                            Width =2100
+                            Height =360
                             BorderColor =8355711
                             Name ="Recipient Participant_Label"
-                            Caption ="Recipient Participant"
+                            Caption ="Recipient Participant:"
                             EventProcPrefix ="Recipient_Participant_Label"
                             GridlineColor =10921638
-                            LayoutCachedLeft =6300
-                            LayoutCachedTop =1920
-                            LayoutCachedWidth =8580
-                            LayoutCachedHeight =2250
+                            LayoutCachedLeft =420
+                            LayoutCachedTop =1440
+                            LayoutCachedWidth =2520
+                            LayoutCachedHeight =1800
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
                         End
@@ -319,8 +336,8 @@ Begin Form
                 End
                 Begin CheckBox
                     OverlapFlags =85
-                    Left =6240
-                    Top =60
+                    Left =6360
+                    Top =120
                     ColumnOrder =9
                     TabIndex =4
                     BorderColor =10921638
@@ -329,15 +346,15 @@ Begin Form
                     EventProcPrefix ="PDC_Participated"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =6240
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =6500
-                    LayoutCachedHeight =300
+                    LayoutCachedLeft =6360
+                    LayoutCachedTop =120
+                    LayoutCachedWidth =6620
+                    LayoutCachedHeight =360
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =6600
-                            Top =60
+                            Left =6720
+                            Top =120
                             Width =1620
                             Height =315
                             BorderColor =8355711
@@ -345,10 +362,10 @@ Begin Form
                             Caption ="PDM Participated"
                             EventProcPrefix ="PDC_Participated_Label"
                             GridlineColor =10921638
-                            LayoutCachedLeft =6600
-                            LayoutCachedTop =60
-                            LayoutCachedWidth =8220
-                            LayoutCachedHeight =375
+                            LayoutCachedLeft =6720
+                            LayoutCachedTop =120
+                            LayoutCachedWidth =8340
+                            LayoutCachedHeight =435
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
                         End
@@ -356,8 +373,8 @@ Begin Form
                 End
                 Begin CheckBox
                     OverlapFlags =85
-                    Left =6240
-                    Top =420
+                    Left =6360
+                    Top =480
                     ColumnOrder =10
                     TabIndex =5
                     BorderColor =10921638
@@ -366,15 +383,15 @@ Begin Form
                     EventProcPrefix ="EHP_Participated"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =6240
-                    LayoutCachedTop =420
-                    LayoutCachedWidth =6500
-                    LayoutCachedHeight =660
+                    LayoutCachedLeft =6360
+                    LayoutCachedTop =480
+                    LayoutCachedWidth =6620
+                    LayoutCachedHeight =720
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =6600
-                            Top =420
+                            Left =6720
+                            Top =480
                             Width =1605
                             Height =315
                             BorderColor =8355711
@@ -382,10 +399,10 @@ Begin Form
                             Caption ="EHP Participated"
                             EventProcPrefix ="EHP_Participated_Label"
                             GridlineColor =10921638
-                            LayoutCachedLeft =6600
-                            LayoutCachedTop =420
-                            LayoutCachedWidth =8205
-                            LayoutCachedHeight =735
+                            LayoutCachedLeft =6720
+                            LayoutCachedTop =480
+                            LayoutCachedWidth =8325
+                            LayoutCachedHeight =795
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
                         End
@@ -393,8 +410,8 @@ Begin Form
                 End
                 Begin CheckBox
                     OverlapFlags =85
-                    Left =6240
-                    Top =780
+                    Left =6360
+                    Top =840
                     ColumnOrder =11
                     TabIndex =6
                     BorderColor =10921638
@@ -403,15 +420,15 @@ Begin Form
                     EventProcPrefix ="Mitigation_Specialist_Participated"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =6240
-                    LayoutCachedTop =780
-                    LayoutCachedWidth =6500
-                    LayoutCachedHeight =1020
+                    LayoutCachedLeft =6360
+                    LayoutCachedTop =840
+                    LayoutCachedWidth =6620
+                    LayoutCachedHeight =1080
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =6600
-                            Top =780
+                            Left =6720
+                            Top =840
                             Width =3135
                             Height =315
                             BorderColor =8355711
@@ -419,10 +436,10 @@ Begin Form
                             Caption ="Mitigation Specialist Participated"
                             EventProcPrefix ="Mitigation_Specialist_Participated_Label"
                             GridlineColor =10921638
-                            LayoutCachedLeft =6600
-                            LayoutCachedTop =780
-                            LayoutCachedWidth =9735
-                            LayoutCachedHeight =1095
+                            LayoutCachedLeft =6720
+                            LayoutCachedTop =840
+                            LayoutCachedWidth =9855
+                            LayoutCachedHeight =1155
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
                         End
@@ -430,8 +447,8 @@ Begin Form
                 End
                 Begin CheckBox
                     OverlapFlags =85
-                    Left =6240
-                    Top =1080
+                    Left =6360
+                    Top =1140
                     ColumnOrder =12
                     TabIndex =7
                     BorderColor =10921638
@@ -440,15 +457,15 @@ Begin Form
                     EventProcPrefix ="Insurance_Specialist_Participated"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =6240
-                    LayoutCachedTop =1080
-                    LayoutCachedWidth =6500
-                    LayoutCachedHeight =1320
+                    LayoutCachedLeft =6360
+                    LayoutCachedTop =1140
+                    LayoutCachedWidth =6620
+                    LayoutCachedHeight =1380
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =6600
-                            Top =1140
+                            Left =6720
+                            Top =1200
                             Width =3075
                             Height =315
                             BorderColor =8355711
@@ -456,46 +473,48 @@ Begin Form
                             Caption ="Insurance Specialist Participated"
                             EventProcPrefix ="Insurance_Specialist_Participated_Label"
                             GridlineColor =10921638
-                            LayoutCachedLeft =6600
-                            LayoutCachedTop =1140
-                            LayoutCachedWidth =9675
-                            LayoutCachedHeight =1455
+                            LayoutCachedLeft =6720
+                            LayoutCachedTop =1200
+                            LayoutCachedWidth =9795
+                            LayoutCachedHeight =1515
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
                         End
                     End
                 End
                 Begin CheckBox
-                    OverlapFlags =85
-                    Left =420
-                    Top =2400
+                    OverlapFlags =93
+                    Left =13080
+                    Top =300
+                    Width =320
+                    ColumnWidth =2025
                     TabIndex =8
                     BorderColor =10921638
-                    Name ="Additional Inspection needed"
-                    ControlSource ="Additional Inspection needed"
-                    EventProcPrefix ="Additional_Inspection_needed"
+                    Name ="Subrecipient acknowledges recipeipt of SIR"
+                    ControlSource ="Subrecipient acknowledges recipeipt of SIR"
+                    EventProcPrefix ="Subrecipient_acknowledges_recipeipt_of_SIR"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =420
-                    LayoutCachedTop =2400
-                    LayoutCachedWidth =680
-                    LayoutCachedHeight =2640
+                    LayoutCachedLeft =13080
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =13400
+                    LayoutCachedHeight =540
                     Begin
                         Begin Label
-                            OverlapFlags =119
-                            Left =660
-                            Top =2400
-                            Width =2835
-                            Height =315
+                            OverlapFlags =255
+                            Left =13320
+                            Top =300
+                            Width =2820
+                            Height =840
                             BorderColor =8355711
-                            Name ="Additional Inspection needed_Label"
-                            Caption ="Additional Inspection needed"
-                            EventProcPrefix ="Additional_Inspection_needed_Label"
+                            Name ="Subrecipient acknowledges recipeipt of SIR_Label"
+                            Caption ="Subrecipient acknowledges receipt of Site Inspection Report (SIR) "
+                            EventProcPrefix ="Subrecipient_acknowledges_recipeipt_of_SIR_Label"
                             GridlineColor =10921638
-                            LayoutCachedLeft =660
-                            LayoutCachedTop =2400
-                            LayoutCachedWidth =3495
-                            LayoutCachedHeight =2715
+                            LayoutCachedLeft =13320
+                            LayoutCachedTop =300
+                            LayoutCachedWidth =16140
+                            LayoutCachedHeight =1140
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
                         End
@@ -507,8 +526,8 @@ Begin Form
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =420
-                    Top =3060
-                    Width =12600
+                    Top =2700
+                    Width =15660
                     Height =540
                     ColumnWidth =2340
                     TabIndex =9
@@ -519,17 +538,17 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =420
-                    LayoutCachedTop =3060
-                    LayoutCachedWidth =13020
-                    LayoutCachedHeight =3600
+                    LayoutCachedTop =2700
+                    LayoutCachedWidth =16080
+                    LayoutCachedHeight =3240
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                     Begin
                         Begin Label
                             OverlapFlags =93
                             Left =420
-                            Top =2760
-                            Width =6540
+                            Top =2400
+                            Width =3780
                             Height =330
                             BorderColor =8355711
                             Name ="Reason for Additional Inspections_Label"
@@ -537,47 +556,9 @@ Begin Form
                             EventProcPrefix ="Reason_for_Additional_Inspections_Label"
                             GridlineColor =10921638
                             LayoutCachedLeft =420
-                            LayoutCachedTop =2760
-                            LayoutCachedWidth =6960
-                            LayoutCachedHeight =3090
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                        End
-                    End
-                End
-                Begin CheckBox
-                    OverlapFlags =85
-                    Left =4200
-                    Top =2400
-                    Width =320
-                    ColumnWidth =2025
-                    TabIndex =10
-                    BorderColor =10921638
-                    Name ="Subrecipient acknowledges recipeipt of SIR"
-                    ControlSource ="Subrecipient acknowledges recipeipt of SIR"
-                    EventProcPrefix ="Subrecipient_acknowledges_recipeipt_of_SIR"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =4200
-                    LayoutCachedTop =2400
-                    LayoutCachedWidth =4520
-                    LayoutCachedHeight =2640
-                    Begin
-                        Begin Label
-                            OverlapFlags =247
-                            Left =4440
-                            Top =2400
-                            Width =6195
-                            Height =315
-                            BorderColor =8355711
-                            Name ="Subrecipient acknowledges recipeipt of SIR_Label"
-                            Caption ="Subrecipient acknowledges receipt of Site Inspection Report (SIR) "
-                            EventProcPrefix ="Subrecipient_acknowledges_recipeipt_of_SIR_Label"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =4440
                             LayoutCachedTop =2400
-                            LayoutCachedWidth =10635
-                            LayoutCachedHeight =2715
+                            LayoutCachedWidth =4200
+                            LayoutCachedHeight =2730
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
                         End
@@ -585,60 +566,183 @@ Begin Form
                 End
                 Begin Label
                     OverlapFlags =87
-                    Left =780
-                    Top =960
+                    Left =420
+                    Top =900
                     Width =780
                     Height =360
                     BorderColor =8355711
                     Name ="Label67"
                     Caption ="Start:"
                     GridlineColor =10921638
-                    LayoutCachedLeft =780
-                    LayoutCachedTop =960
-                    LayoutCachedWidth =1560
-                    LayoutCachedHeight =1320
+                    LayoutCachedLeft =420
+                    LayoutCachedTop =900
+                    LayoutCachedWidth =1200
+                    LayoutCachedHeight =1260
                     ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    TextAlign =1
+                    IMESentenceMode =3
+                    Left =1020
+                    Top =120
+                    Width =1920
+                    Height =315
+                    FontSize =14
+                    FontWeight =700
+                    TabIndex =10
+                    BorderColor =10921638
+                    ForeColor =9917743
+                    Name ="Text20"
+                    ControlSource ="SiteID"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =1020
+                    LayoutCachedTop =120
+                    LayoutCachedWidth =2940
+                    LayoutCachedHeight =435
+                    ForeThemeColorIndex =8
+                    ForeTint =100.0
+                    ForeShade =75.0
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =120
+                            Width =900
+                            Height =315
+                            FontSize =14
+                            FontWeight =700
+                            BorderColor =8355711
+                            ForeColor =9917743
+                            Name ="Label21"
+                            Caption ="Site ID:"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =60
+                            LayoutCachedTop =120
+                            LayoutCachedWidth =960
+                            LayoutCachedHeight =435
+                            ForeThemeColorIndex =8
+                            ForeTint =100.0
+                            ForeShade =75.0
+                        End
+                    End
+                End
+                Begin Label
+                    OverlapFlags =223
+                    TextAlign =2
+                    Left =10740
+                    Top =300
+                    Width =1920
+                    Height =660
+                    BorderColor =8355711
+                    Name ="Label23"
+                    Caption ="Click to Finalize and send to next review"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =10740
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =12660
+                    LayoutCachedHeight =960
                     ForeTint =100.0
                 End
                 Begin CommandButton
                     TabStop = NotDefault
-                    OverlapFlags =85
-                    Left =10860
-                    Top =180
+                    OverlapFlags =223
+                    Left =11040
+                    Top =900
                     Width =1320
                     Height =600
                     FontSize =12
                     FontWeight =700
                     TabIndex =11
-                    ForeColor =4210752
+                    ForeColor =16777215
                     Name ="cmdFinalize"
                     Caption ="Finalize Inspection"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =10860
-                    LayoutCachedTop =180
-                    LayoutCachedWidth =12180
-                    LayoutCachedHeight =780
+                    LayoutCachedLeft =11040
+                    LayoutCachedTop =900
+                    LayoutCachedWidth =12360
+                    LayoutCachedHeight =1500
+                    ForeThemeColorIndex =1
+                    ForeTint =100.0
                     Gradient =0
-                    BackColor =14282978
-                    BackThemeColorIndex =9
-                    BackTint =20.0
+                    BackColor =9917743
+                    BackThemeColorIndex =8
+                    BackTint =100.0
+                    BackShade =75.0
                     BorderColor =15123357
-                    HoverColor =14602694
-                    HoverThemeColorIndex =-1
+                    HoverColor =9917743
+                    HoverThemeColorIndex =8
                     HoverTint =100.0
-                    PressedColor =16247774
+                    HoverShade =75.0
+                    PressedColor =14282978
+                    PressedThemeColorIndex =9
                     PressedTint =20.0
                     PressedShade =100.0
-                    HoverForeThemeColorIndex =-1
-                    HoverForeTint =100.0
-                    PressedForeThemeColorIndex =-1
+                    HoverForeColor =13431551
+                    HoverForeThemeColorIndex =7
+                    HoverForeTint =20.0
+                    PressedForeColor =0
                     PressedForeTint =100.0
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
+                    Overlaps =1
+                End
+                Begin CheckBox
+                    OverlapFlags =93
+                    Left =13020
+                    Top =1200
+                    TabIndex =12
+                    BorderColor =10921638
+                    Name ="Additional Inspection needed"
+                    ControlSource ="Additional Inspection needed"
+                    EventProcPrefix ="Additional_Inspection_needed"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =13020
+                    LayoutCachedTop =1200
+                    LayoutCachedWidth =13280
+                    LayoutCachedHeight =1440
+                    Begin
+                        Begin Label
+                            OverlapFlags =127
+                            Left =13260
+                            Top =1200
+                            Width =2835
+                            Height =315
+                            BorderColor =8355711
+                            Name ="Additional Inspection needed_Label"
+                            Caption ="Additional Inspection needed"
+                            EventProcPrefix ="Additional_Inspection_needed_Label"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =13260
+                            LayoutCachedTop =1200
+                            LayoutCachedWidth =16095
+                            LayoutCachedHeight =1515
+                            ForeThemeColorIndex =-1
+                            ForeTint =100.0
+                        End
+                    End
+                End
+                Begin Rectangle
+                    SpecialEffect =2
+                    OverlapFlags =247
+                    Left =10080
+                    Top =120
+                    Width =6120
+                    Height =1740
+                    BorderColor =10921638
+                    Name ="Box24"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =10080
+                    LayoutCachedTop =120
+                    LayoutCachedWidth =16200
+                    LayoutCachedHeight =1860
                 End
             End
         End
@@ -977,7 +1081,7 @@ End Function
 '        If Access.CurrentProject.AllForms("frmReviewResult").IsLoaded Then
 '            Set frm = Forms("frmReviewResult")
 '            If PostDialogCheck(ReviewType, frm.cboResult) Then
-'                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult) Then
+'                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
 '                    HandleDisposition ReviewType, frm
 '                End If
 '            End If
@@ -1015,7 +1119,7 @@ End Function
 '            Reviews.EnterReview GetItemDims("Determination Memo")
 '        Case "RFI"
 '            Reviews.EnterReview GetItemDims("RFI")
-'            DoCmd.OpenForm "frmRFIRequest", , , GetItemDims.WhereID(False)
+'            DoCmd.OpenForm "frmRFIRouting", , , GetItemDims.WhereID(False)
 '        Case "RSN"
 '            Reviews.EnterReview GetItemDims(ReviewType), frm.cboAssign, "Reassigned to " & frm.cboAssign
 '        Case "RW"

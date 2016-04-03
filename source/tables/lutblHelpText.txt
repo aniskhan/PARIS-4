@@ -1,0 +1,8 @@
+﻿helpTextID	frmName	Title	HelpText
+1	frmRFIRouting	View RFI	View a print-preview of the current RFI.
+2	frmRFIRouting	Cancel RFI	You can cancel an RFI at any point in the process. Typical reasons to cancel an RFI: 1) the information requested is no longer required; 2) the information was received prior to the RFI being transmitted.
+3	frmRFIRouting	Submit RFI to Concurrence	Once draft RFI is complete, submit to secondary review for RFI concurrence. The RFI Item Type will dictate who must complete concurrence: RPA = PAGS; Project = PDM.
+4	frmRFIRouting	Concurrence Review Complete	Marks the letter signed and indicates who completed the review. The RFI Item Type will dictate who must complete concurrence: RPA = PAGS; Project = PDM.
+5	frmRFIRouting	RFI Transmitted to Applicant	Date the RFI was transmitted to the Applicant is required.
+6	frmRFIRouting	Assess Information Received	Opens RFI Item Assessment Form. The date each requested item is received is noted (typically by the PDM). This generates a task to the creator of the RFI to assess whether or not the item is accepted (i.e. does it satisfy the reason requested?)
+7	frmRFIRouting	RFI Complete	Marks all information received for RFI. The RFI is considered fully satisfied / closed.

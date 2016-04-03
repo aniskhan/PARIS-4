@@ -1,7 +1,6 @@
 CREATE TABLE [tblSubRecipientExploratoryCall] (
   [DisasterID] VARCHAR (255),
   [ApplicantID] VARCHAR (255),
-  [Subrecipient Name] VARCHAR (255),
   [Eligible] BIT ,
   [Type] VARCHAR (255),
   [Status] VARCHAR (255),

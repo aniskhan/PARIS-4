@@ -2,6 +2,7 @@
 Option =0
 Begin InputTables
     Name ="tblSiteInspections"
+    Name ="tblProjects"
 End
 Begin OutputColumns
     Expression ="tblSiteInspections.ID"
@@ -21,6 +22,12 @@ Begin OutputColumns
     Expression ="tblSiteInspections.[Additional Inspection needed]"
     Expression ="tblSiteInspections.[Subrecipient acknowledges recipeipt of SIR]"
     Expression ="tblSiteInspections.[Lane Assigned]"
+End
+Begin Joins
+    LeftTable ="tblSiteInspections"
+    RightTable ="tblProjects"
+    Expression ="tblSiteInspections.ID = tblProjects.ID"
+    Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -85,12 +92,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =754
-    Bottom =834
+    Right =1153
+    Bottom =860
     Left =-1
     Top =-1
-    Right =738
-    Bottom =572
+    Right =1137
+    Bottom =504
     Left =0
     Top =0
     ColumnsShown =539
@@ -101,6 +108,15 @@ Begin
         Bottom =450
         Top =0
         Name ="tblSiteInspections"
+        Name =""
+    End
+    Begin
+        Left =382
+        Top =12
+        Right =526
+        Bottom =156
+        Top =0
+        Name ="tblProjects"
         Name =""
     End
 End

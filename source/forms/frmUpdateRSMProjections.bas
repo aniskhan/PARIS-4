@@ -14,12 +14,13 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =16500
+    Width =17040
     DatasheetFontHeight =11
-    ItemSuffix =111
-    Right =20235
-    Bottom =12645
+    ItemSuffix =112
+    Right =15315
+    Bottom =7830
     DatasheetGridlinesColor =15132391
+    Filter ="[ID] = 30"
     RecSrcDt = Begin
         0x998eff7ddbb2e440
     End
@@ -2429,6 +2430,43 @@ Begin Form
                     WebImagePaddingBottom =1
                     Overlaps =1
                 End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    Left =15600
+                    Top =7140
+                    Height =315
+                    TabIndex =44
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="FinalizeDate"
+                    ControlSource ="FinalizeDate"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =15600
+                    LayoutCachedTop =7140
+                    LayoutCachedWidth =17040
+                    LayoutCachedHeight =7455
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =13800
+                            Top =7140
+                            Width =1230
+                            Height =315
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label111"
+                            Caption ="FinalizeDate"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =13800
+                            LayoutCachedTop =7140
+                            LayoutCachedWidth =15030
+                            LayoutCachedHeight =7455
+                        End
+                    End
+                End
             End
         End
         Begin FormFooter
@@ -2540,7 +2578,7 @@ Dim UserIsDIU As Boolean ' Tracks if the current user is a DIU or DIUL
 
 'BUTTONS
 Private Sub cmdFinalize_Click()
-Dim Db As Database
+Dim db As Database
 Dim rsRev As Recordset
 Dim rsLastCompRev As Recordset ' last completed DIU EMMIE update
 Dim rsLastChange As Recordset ' last logged change to audit log
@@ -2557,12 +2595,12 @@ Dim DateLastChange As Date
     Me![FinalizeUserID] = Environ("UserName")
     RepaintForm (UserIsPDC)
 
-Set Db = CurrentDb
+Set db = CurrentDb
 ' Check if an unfinished review exists before adding another
-Set rsRev = Db.OpenRecordset("SELECT * FROM [revtblRpa] WHERE ((([revtblRpa].[ReviewType]) = 'DIU Update EMMIE Projections') AND (([revtblRpa].[ReviewExitDate]) Is Null) AND (([revtblRpa].[ApplicantID]) = '" & Me.ApplicantID & "'))")
+Set rsRev = db.OpenRecordset("SELECT * FROM [revtblRpa] WHERE ((([revtblRpa].[ReviewType]) = 'DIU Update EMMIE Projections') AND (([revtblRpa].[ReviewExitDate]) Is Null) AND (([revtblRpa].[ApplicantID]) = '" & Me.ApplicantID & "'))")
 
-Set rsLastCompRev = Db.OpenRecordset("SELECT MAX (ReviewExitDate) As lastCompReview FROM [revtblRpa] WHERE ((([revtblRpa].[ReviewType]) = 'DIU Update EMMIE Projections') AND (([revtblRpa].[ReviewExitDate]) Is Not Null) AND (([revtblRpa].[ApplicantID]) = '" & Me.ApplicantID & "'))")
-Set rsLastChange = Db.OpenRecordset("SELECT MAX (EditDate) As lastChange FROM [tblAuditTrail] WHERE ((([tblAuditTrail].[SourceTable]) = 'fqryUpdateRSMProjections') AND  (([tblAuditTrail].[ApplicantID]) = '" & Me.ApplicantID & "'))")
+Set rsLastCompRev = db.OpenRecordset("SELECT MAX (ReviewExitDate) As lastCompReview FROM [revtblRpa] WHERE ((([revtblRpa].[ReviewType]) = 'DIU Update EMMIE Projections') AND (([revtblRpa].[ReviewExitDate]) Is Not Null) AND (([revtblRpa].[ApplicantID]) = '" & Me.ApplicantID & "'))")
+Set rsLastChange = db.OpenRecordset("SELECT MAX (EditDate) As lastChange FROM [tblAuditTrail] WHERE ((([tblAuditTrail].[SourceTable]) = 'fqryUpdateRSMProjections') AND  (([tblAuditTrail].[ApplicantID]) = '" & Me.ApplicantID & "'))")
 
 
 DateLastReview = CDate(Nz(rsLastCompRev![lastCompReview], 0))
@@ -2732,10 +2770,10 @@ End Sub
 
 Private Sub Form_Open(Cancel As Integer)
 Dim rs As Recordset
-Dim Db As Database
+Dim db As Database
 Dim countUnfiltered As Integer
 Dim frm As Form
-Set Db = CurrentDb
+Set db = CurrentDb
 Set frm = Me.Form
 
     'Form Open is typically used on forms that have incoming openArg strings
@@ -2768,7 +2806,7 @@ Else
             UserIsPDC = True
         End If
         
-        Set rs = Db.OpenRecordset("qryUserPositions")
+        Set rs = db.OpenRecordset("qryUserPositions")
             rs.MoveFirst
             While Not rs.EOF
                 If rs!Position = "DIUL" Or rs!Position = "DIUS" Then
@@ -2983,7 +3021,7 @@ Private Sub CompleteReview(ReviewType As String)
         If Access.CurrentProject.AllForms("frmReviewResult").IsLoaded Then
             Set frm = Forms("frmReviewResult")
             If PostDialogCheck(ReviewType, frm.cboResult) Then
-                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult) Then
+                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
                     HandleDisposition ReviewType, frm
                 End If
             End If
@@ -3043,7 +3081,7 @@ Private Sub HandleStandardDisposition(ReviewType As String, frm As Form)
         Case "RFI"
             Reviews.CreateRFI GetItemDims(ReviewType)
             Reviews.EnterReview GetItemDims("RFI")
-            DoCmd.OpenForm "frmRFIRequest", , , GetItemDims.WhereID(False)
+            DoCmd.OpenForm "frmRFIRouting", , , GetItemDims.WhereID(False)
         Case "RSN"
             Reviews.EnterReview GetItemDims(ReviewType), frm.cboAssign, "Reassigned to " & frm.cboAssign
         Case "RW"

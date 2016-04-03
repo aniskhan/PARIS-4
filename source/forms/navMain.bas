@@ -17,8 +17,8 @@ Begin Form
     Width =15480
     DatasheetFontHeight =11
     ItemSuffix =123
-    Right =4965
-    Bottom =7005
+    Right =18435
+    Bottom =7695
     TimerInterval =30
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -3578,7 +3578,7 @@ Begin Form
                         ColumnsShown =8
                         Begin
                             Action ="OpenForm"
-                            Argument ="navRFIProcess"
+                            Argument ="navRFI-DMProcess"
                             Argument ="0"
                             Argument =""
                             Argument =""
@@ -3589,10 +3589,10 @@ Begin Form
                             Comment ="_AXL:<?xml version=\"1.0\" encoding=\"UTF-16\" standalone=\"no\"?>\015\012<UserI"
                                 "nterfaceMacro For=\"cmdOpenRFINav\" xmlns=\"http://schemas.microsoft.com/office/"
                                 "accessservices/2009/11/application\"><Statements><Action Name=\"OpenForm\"><Argu"
-                                "ment Name=\"FormName\">navRFIProc"
+                                "ment Name=\"FormName\">navRFI-DMP"
                         End
                         Begin
-                            Comment ="_AXL:ess</Argument></Action></Statements></UserInterfaceMacro>"
+                            Comment ="_AXL:rocess</Argument></Action></Statements></UserInterfaceMacro>"
                         End
                     End
 
@@ -4112,22 +4112,27 @@ masterVerID = DMax("VerID", "tblFrontEnd_Version_History", "isEnabled = True")
 masterFEVersion = DLookup("FEVersionNumber", "tblFrontEnd_Version_History", "VerID =" & masterVerID)
 
 
-isCurrVerEnabled = DLookup("isEnabled", "tblFrontEnd_Version_History", "FEVersionNumber = '" _
-    & thisFEVersion & "'")
-   
+If IsNull(DLookup("isEnabled", "tblFrontEnd_Version_History", "FEVersionNumber = '" _
+        & thisFEVersion & "'")) Then
+        Debug.Print "This version of PARIS is not logged in tblFrontEnd_VersionHistory."
+        isCurrVerEnabled = False
+    Else
+    isCurrVerEnabled = DLookup("isEnabled", "tblFrontEnd_Version_History", "FEVersionNumber = '" _
+        & thisFEVersion & "'")
+End If
 
-   
+
 If thisFEVersion <> masterFEVersion Then
     Me.lbFEStatus.Caption = "An Updated Version is Available"
     Me.txtFEVer.BorderColor = lngRed
-   
+
     If isCurrVerEnabled = False Then
         Me.lbFEStatus.Caption = "Must Update to Newest Version"
         DoCmd.OpenForm "frmDownloadNewFE", acNormal
         DoCmd.Close acForm, Me.name
         Exit Sub
     End If
-    
+
 Else
     Me.lbFEStatus.Caption = "Current Version:"
     Me.txtFEVer.BorderColor = lngGray

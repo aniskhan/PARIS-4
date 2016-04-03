@@ -181,6 +181,7 @@ Begin Form
                     BackTint =20.0
                 End
                 Begin TextBox
+                    ScrollBars =2
                     OverlapFlags =215
                     TextAlign =1
                     IMESentenceMode =3
@@ -884,6 +885,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    ScrollBars =2
                     OverlapFlags =215
                     TextAlign =1
                     IMESentenceMode =3

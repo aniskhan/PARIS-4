@@ -7,6 +7,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ViewsAllowed =1
@@ -17,15 +18,16 @@ Begin Form
     Width =16620
     DatasheetFontHeight =11
     ItemSuffix =71
-    Right =13875
-    Bottom =12645
+    Right =15315
+    Bottom =7830
     DatasheetGridlinesColor =15132391
+    Filter ="[Assigned PDC] = 'nlietzk1'"
     OnApplyFilter ="[Event Procedure]"
     RecSrcDt = Begin
         0xfb12f06e2ea9e440
     End
     RecordSource ="fqryProjectFormulation"
-    Caption ="Project Site Link"
+    Caption ="Logical Project Grouping"
     OnCurrent ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
@@ -201,7 +203,7 @@ Begin Form
                     BackColor =14282978
                     BorderColor =8355711
                     Name ="lbHeader"
-                    Caption ="Complete Project Routing Sheet"
+                    Caption ="Logical Project Grouping"
                     GridlineColor =10921638
                     LayoutCachedWidth =16500
                     LayoutCachedHeight =660
@@ -450,9 +452,9 @@ Begin Form
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblProjects.ProjectID AS ID, tblProjects.[Application Title] AS Title, tb"
                         "lProjects.[Project Category] AS Cat, revtblProject.ReviewType, revtblProject.Rev"
-                        "iewExitDate FROM tblProjects INNER JOIN revtblProject ON (tblProjects.DisasterID"
-                        " = revtblProject.DisasterID) AND (tblProjects.ApplicantID = revtblProject.Applic"
-                        "antID) AND (tblProjects.ProjectID = revtblProject.ProjectID) WHERE (((revtblProj"
+                        "iewExitDate FROM tblProjects INNER JOIN revtblProject ON (tblProjects.ProjectID "
+                        "= revtblProject.ProjectID) AND (tblProjects.ApplicantID = revtblProject.Applican"
+                        "tID) AND (tblProjects.DisasterID = revtblProject.DisasterID) WHERE (((revtblProj"
                         "ect.ReviewType)=\"Project Entry\") And ((revtblProject.ReviewExitDate) Is Null) "
                         "And ((tblProjects.ApplicantID)=Forms!frmProjectSiteLink![PA ID]) And ((tblProjec"
                         "ts.DisasterID)=Forms!frmProjectSiteLink![Disaster Number])) ORDER BY tblProjects"
@@ -516,9 +518,9 @@ Begin Form
                         "ion], tblSites.[Requires Site Inspection] AS [SI?], tblSites.[% Work Complete] A"
                         "S [% Com], tblSites.[EHP Issues? (H, E, B)] AS EHP, tblSites.[Subrecipient prior"
                         "ity (Low, Med, High)] AS Priority FROM tblSites INNER JOIN revtblSite ON (tblSit"
-                        "es.DisasterID = revtblSite.DisasterID) AND (tblSites.ApplicantID = revtblSite.Ap"
-                        "plicantID) AND (tblSites.ProjectID = revtblSite.ProjectID) AND (tblSites.SiteID "
-                        "= revtblSite.SiteID) WHERE (((revtblSite.ReviewType)=\"Site Entry\") And ((revtb"
+                        "es.SiteID = revtblSite.SiteID) AND (tblSites.ProjectID = revtblSite.ProjectID) A"
+                        "ND (tblSites.ApplicantID = revtblSite.ApplicantID) AND (tblSites.DisasterID = re"
+                        "vtblSite.DisasterID) WHERE (((revtblSite.ReviewType)=\"Site Entry\") And ((revtb"
                         "lSite.ReviewExitDate) Is Null) And ((tblSites.DisasterID)=Forms!frmProjectSiteLi"
                         "nk![Disaster Number]) And ((tblSites.ApplicantID)=Forms!frmProjectSiteLink![PA I"
                         "D])) ORDER BY tblSites.SiteID; "
@@ -662,11 +664,11 @@ Begin Form
                     Name ="cboPaID"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblSubRecipient.ApplicantID, tblSubRecipient.[Subrecipient Name] FROM (tb"
-                        "lSubRecipient INNER JOIN tblProjects ON (tblSubRecipient.[ApplicantID] = tblProj"
-                        "ects.[ApplicantID]) AND (tblSubRecipient.[DisasterID] = tblProjects.[DisasterID]"
-                        ")) INNER JOIN revtblProject ON (tblProjects.ProjectID = revtblProject.ProjectID)"
-                        " AND (tblProjects.ApplicantID = revtblProject.ApplicantID) AND (tblProjects.Disa"
-                        "sterID = revtblProject.DisasterID) WHERE (((revtblProject.ReviewType)=\"Project "
+                        "lSubRecipient INNER JOIN tblProjects ON (tblSubRecipient.[DisasterID] = tblProje"
+                        "cts.[DisasterID]) AND (tblSubRecipient.[ApplicantID] = tblProjects.[ApplicantID]"
+                        ")) INNER JOIN revtblProject ON (tblProjects.DisasterID = revtblProject.DisasterI"
+                        "D) AND (tblProjects.ApplicantID = revtblProject.ApplicantID) AND (tblProjects.Pr"
+                        "ojectID = revtblProject.ProjectID) WHERE (((revtblProject.ReviewType)=\"Project "
                         "Entry\") AND ((revtblProject.ReviewExitDate) Is Null)) GROUP BY tblSubRecipient."
                         "ApplicantID, tblSubRecipient.[Subrecipient Name], tblSubRecipient.DisasterID HAV"
                         "ING (((tblSubRecipient.DisasterID)=[Forms]![navMain]![DisasterID])); "
@@ -1497,14 +1499,15 @@ Begin Form
                 End
                 Begin TextBox
                     TabStop = NotDefault
+                    ScrollBars =2
                     OverlapFlags =215
-                    BackStyle =0
                     IMESentenceMode =3
                     Left =2130
                     Top =5160
                     Width =11430
                     Height =600
                     TabIndex =5
+                    BackColor =13431551
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="Formulation Notes"
@@ -1516,6 +1519,8 @@ Begin Form
                     LayoutCachedTop =5160
                     LayoutCachedWidth =13560
                     LayoutCachedHeight =5760
+                    BackThemeColorIndex =7
+                    BackTint =20.0
                     Begin
                         Begin Label
                             OverlapFlags =215
@@ -1879,7 +1884,7 @@ Private Sub listProjects_AfterUpdate()
 End Sub
 Private Sub UpdateSite(DR As String, ApplicantID As String, ref As Long, Site As Long)
 '    Debug.Print "UpdateSite"
-    Dim Db As Database
+    Dim db As Database
     Dim recEditStatus As Recordset
     Dim WhereCondition As String
     Dim recEditReview As Recordset
@@ -1888,9 +1893,9 @@ Private Sub UpdateSite(DR As String, ApplicantID As String, ref As Long, Site As
     WhereCondition = WhereCondition & " and [ApplicantID]='" & ApplicantID & "'"
     WhereCondition = WhereCondition & " and [SiteID]=" & Site
         
-    Set Db = CurrentDb()
+    Set db = CurrentDb()
     
-    Set recEditStatus = Db.OpenRecordset("tblSites", dbOpenDynaset)
+    Set recEditStatus = db.OpenRecordset("tblSites", dbOpenDynaset)
     
     recEditStatus.FindFirst WhereCondition
     
@@ -1904,7 +1909,7 @@ Private Sub UpdateSite(DR As String, ApplicantID As String, ref As Long, Site As
         recEditStatus.Update
     End If
     
-    Set recEditReview = Db.OpenRecordset("revtblSite", dbOpenDynaset)
+    Set recEditReview = db.OpenRecordset("revtblSite", dbOpenDynaset)
     WhereCondition = WhereCondition & " and [ReviewType]='Site Entry'"
 '    WhereCondition = WhereCondition & " and [ReviewCheckOutDate] is not null"
     WhereCondition = WhereCondition & " and [ReviewExitDate] is null"
@@ -1927,7 +1932,7 @@ Private Sub UpdateSite(DR As String, ApplicantID As String, ref As Long, Site As
     
     recEditStatus.Close
     Set recEditStatus = Nothing
-    Set Db = Nothing
+    Set db = Nothing
 
 End Sub
 Private Sub UpdateCboApplicantRows(AddFilter As Boolean)

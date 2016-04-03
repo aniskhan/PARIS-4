@@ -36,13 +36,13 @@ End Function
 
 Function nonLookupTablesLinked() As Boolean
 
-Dim Db As Database
+Dim db As Database
 Dim tdf As TableDef
 
-Set Db = CurrentDb()
+Set db = CurrentDb()
 nonLookupTablesLinked = True
 
-For Each tdf In Db.TableDefs
+For Each tdf In db.TableDefs
 
     If Left(tdf.name, 2) <> "lu" And _
     Left(tdf.name, 4) <> "MSys" And _
@@ -111,7 +111,7 @@ Dim dbFSTool As Database
 Dim rsFormSettings As Recordset
 Dim strPathFSTool As String
 
-Dim Db As Database
+Dim db As Database
 Dim objFound As Boolean
 Dim obj As AccessObject
 Dim frm As Form
@@ -183,7 +183,7 @@ End If
 
 rsFormSettings.Close
 Set wksp = Nothing
-Set Db = Nothing
+Set db = Nothing
 
 End Function
 
@@ -196,7 +196,7 @@ Dim dbFSTool As Database
 Dim rsFormSettings As Recordset
 Dim strPathFSTool As String
 
-Dim Db As Database
+Dim db As Database
 Dim objFound As Boolean
 Dim obj As AccessObject
 Dim frm As Form
@@ -259,7 +259,7 @@ End If
 
 rsFormSettings.Close
 Set wksp = Nothing
-Set Db = Nothing
+Set db = Nothing
 
      
 End Function
@@ -272,7 +272,7 @@ Dim dbFSTool As Database
 Dim rs As Recordset
 Dim strPathFSTool As String
 
-Dim Db As Database
+Dim db As Database
 
 Dim obj As AccessObject
 Dim frm As Form
@@ -362,7 +362,7 @@ End If
 
 rs.Close
 Set wksp = Nothing
-Set Db = Nothing
+Set db = Nothing
 
 
 Application.Echo True

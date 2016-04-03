@@ -15,7 +15,7 @@ Begin Form
     Width =16560
     DatasheetFontHeight =11
     ItemSuffix =66
-    Right =13875
+    Right =14385
     Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -867,6 +867,7 @@ Begin Form
                     ForeTint =100.0
                 End
                 Begin Label
+                    Visible = NotDefault
                     OverlapFlags =215
                     Left =14340
                     Top =2580
@@ -1651,7 +1652,7 @@ Private Sub CompleteReview(ReviewType As String)
         If Access.CurrentProject.AllForms("frmReviewResult").IsLoaded Then
             Set frm = Forms("frmReviewResult")
             If PostDialogCheck(ReviewType, frm.cboResult) Then
-                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult) Then
+                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
                     HandleDisposition ReviewType, frm
                 End If
             End If
@@ -1690,7 +1691,7 @@ Private Sub HandleStandardDisposition(ReviewType As String, frm As Form)
         Case "RFI"
             Reviews.CreateRFI GetItemDims(ReviewType)
             Reviews.EnterReview GetItemDims("RFI")
-            DoCmd.OpenForm "frmRFIRequest", , , GetItemDims.WhereID(False)
+            DoCmd.OpenForm "frmRFIRouting", , , GetItemDims.WhereID(False)
         Case "RSN"
             Reviews.EnterReview GetItemDims(ReviewType), frm.cboAssign, "Reassigned to " & frm.cboAssign
         Case "RW"

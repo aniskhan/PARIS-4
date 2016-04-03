@@ -14,9 +14,9 @@ Begin Form
     GridY =24
     Width =9210
     DatasheetFontHeight =11
-    ItemSuffix =65
-    Right =5625
-    Bottom =7005
+    ItemSuffix =68
+    Right =14385
+    Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0xb286dab0b4b9e440
@@ -570,63 +570,15 @@ Begin Form
                         End
                     End
                 End
-                Begin ComboBox
-                    LimitToList = NotDefault
-                    Locked = NotDefault
-                    ColumnHidden = NotDefault
-                    OverlapFlags =85
-                    IMESentenceMode =3
-                    ColumnCount =2
-                    Left =7740
-                    Top =2700
-                    Height =315
-                    ColumnOrder =10
-                    TabIndex =9
-                    BorderColor =10921638
-                    ForeColor =3484194
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
-                    Name ="Lane Assigned"
-                    ControlSource ="Lane Assigned"
-                    RowSourceType ="Table/Query"
-                    RowSource ="SELECT [lutblLanes].LaneID, [lutblLanes].LaneName FROM lutblLanes ORDER BY [lutb"
-                        "lLanes].Order; "
-                    ColumnWidths ="0;1440"
-                    StatusBarText ="Project Routing Sheet"
-                    EventProcPrefix ="Lane_Assigned"
-                    GridlineColor =10921638
-                    AllowValueListEdits =0
-
-                    LayoutCachedLeft =7740
-                    LayoutCachedTop =2700
-                    LayoutCachedWidth =9180
-                    LayoutCachedHeight =3015
-                    Begin
-                        Begin Label
-                            OverlapFlags =85
-                            Left =5940
-                            Top =2700
-                            Width =1395
-                            Height =315
-                            BorderColor =8355711
-                            ForeColor =8355711
-                            Name ="Label63"
-                            Caption ="Lane Assigned"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =5940
-                            LayoutCachedTop =2700
-                            LayoutCachedWidth =7335
-                            LayoutCachedHeight =3015
-                        End
-                    End
-                End
                 Begin TextBox
+                    Locked = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =5760
                     Top =720
                     Height =315
                     ColumnOrder =6
-                    TabIndex =10
+                    TabIndex =9
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="Reviewed"
@@ -654,6 +606,81 @@ Begin Form
                             LayoutCachedTop =720
                             LayoutCachedWidth =5745
                             LayoutCachedHeight =1035
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =6480
+                    Top =2400
+                    Height =315
+                    TabIndex =10
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="Ready For SI"
+                    ControlSource ="Ready For SI"
+                    EventProcPrefix ="Ready_For_SI"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =6480
+                    LayoutCachedTop =2400
+                    LayoutCachedWidth =7920
+                    LayoutCachedHeight =2715
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =4680
+                            Top =2400
+                            Width =1200
+                            Height =315
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label65"
+                            Caption ="Ready For SI"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =4680
+                            LayoutCachedTop =2400
+                            LayoutCachedWidth =5880
+                            LayoutCachedHeight =2715
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =6480
+                    Top =2760
+                    Height =315
+                    TabIndex =11
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="Text66"
+                    ControlSource ="Marked For SI"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =6480
+                    LayoutCachedTop =2760
+                    LayoutCachedWidth =7920
+                    LayoutCachedHeight =3075
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =4680
+                            Top =2760
+                            Width =1335
+                            Height =315
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label67"
+                            Caption ="Marked For SI"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =4680
+                            LayoutCachedTop =2760
+                            LayoutCachedWidth =6015
+                            LayoutCachedHeight =3075
                         End
                     End
                 End

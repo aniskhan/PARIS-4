@@ -31,13 +31,13 @@ Dim dbFSTool As Database
 Dim strPathFSTool As String
 
 Dim obj As AccessObject
-Dim Db As Database
+Dim db As Database
 Dim frm As Form
 Dim rs As Recordset
 Dim rsFilter As String
 Dim ctl As Control
 
-Set Db = CurrentDb()
+Set db = CurrentDb()
 
 strPathFSTool = "C:\PARIS-4\production\formSettings\PARIS_FormSettings.accdb"
 Set wksp = CreateWorkspace("", "admin", "", dbUseJet)
@@ -67,6 +67,17 @@ On Error Resume Next
                     End With
                 Else
                '''''TODO 'check for changes TODO: how to handle conflicting updates?
+               
+'                    With rs
+'                        .Edit
+'                        !UseTheme = ctl.UseTheme
+'                        !HoverColor = ctl.HoverColor
+'                        !PressedColor = ctl.PressedColor
+'                        !HoverForeColor = ctl.HoverForeColor
+'                        !PressedForeColor = ctl.PressedForeColor
+'                        .Update
+'                    End With
+                    
                     If rs!UseTheme <> ctl.UseTheme Then
                         Debug.Print "Use Theme Setting Changed:", frm.name, ctl.name, rs!UseTheme, ctl.UseTheme
                     End If
@@ -96,7 +107,7 @@ DoCmd.Close acForm, frm.name, acSaveNo
 Next obj
 
 
-Set Db = Nothing
+Set db = Nothing
 Set dbFSTool = Nothing
 
 Application.Echo True
@@ -108,13 +119,13 @@ Dim dbFSTool As Database
 Dim strPathFSTool As String
 
 Dim obj As AccessObject
-Dim Db As Database
+Dim db As Database
 Dim frm As Form
 Dim rs As Recordset
 Dim rsFilter As String
 Dim ctl As Control
 
-Set Db = CurrentDb()
+Set db = CurrentDb()
 
 strPathFSTool = "C:\PARIS-4\production\formSettings\PARIS_FormSettings.accdb"
 Set wksp = CreateWorkspace("", "admin", "", dbUseJet)
@@ -180,7 +191,7 @@ DoCmd.Close acForm, frm.name, acSaveYes
 Next obj
 
 
-Set Db = Nothing
+Set db = Nothing
 Set dbFSTool = Nothing
 
 Application.Echo True

@@ -17,9 +17,9 @@ Begin Form
     GridY =24
     Width =13500
     DatasheetFontHeight =11
-    ItemSuffix =82
-    Right =5625
-    Bottom =7005
+    ItemSuffix =84
+    Right =14910
+    Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0x37d478b0b4b9e440
@@ -1013,45 +1013,6 @@ Begin Form
                         End
                     End
                 End
-                Begin CheckBox
-                    OverlapFlags =215
-                    Left =7740
-                    Top =1770
-                    Width =240
-                    Height =300
-                    TabIndex =12
-                    BorderColor =13431551
-                    Name ="Check68"
-                    ControlSource ="Requires Site Inspection"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =7740
-                    LayoutCachedTop =1770
-                    LayoutCachedWidth =7980
-                    LayoutCachedHeight =2070
-                    BorderThemeColorIndex =7
-                    BorderTint =20.0
-                    BorderShade =100.0
-                    Begin
-                        Begin Label
-                            OverlapFlags =247
-                            Left =7970
-                            Top =1740
-                            Width =2715
-                            Height =315
-                            FontSize =12
-                            ForeColor =0
-                            Name ="Label69"
-                            Caption ="Site Inspection Needed"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =7970
-                            LayoutCachedTop =1740
-                            LayoutCachedWidth =10685
-                            LayoutCachedHeight =2055
-                            ForeTint =100.0
-                        End
-                    End
-                End
                 Begin TextBox
                     OverlapFlags =85
                     BackStyle =0
@@ -1059,7 +1020,7 @@ Begin Form
                     Left =3420
                     Top =480
                     Width =960
-                    TabIndex =13
+                    TabIndex =12
                     Name ="Category"
                     ControlSource ="Category"
                     GridlineColor =10921638
@@ -1095,7 +1056,7 @@ Begin Form
                     Left =1080
                     Top =3000
                     Width =1350
-                    TabIndex =14
+                    TabIndex =13
                     Name ="Latitude"
                     ControlSource ="Latitude"
                     GridlineColor =10921638
@@ -1131,7 +1092,7 @@ Begin Form
                     Left =3840
                     Top =3000
                     Width =1350
-                    TabIndex =18
+                    TabIndex =17
                     Name ="Longitude"
                     ControlSource ="Longitude"
                     GridlineColor =10921638
@@ -1169,7 +1130,7 @@ Begin Form
                     Left =1920
                     Top =3420
                     Width =4860
-                    TabIndex =21
+                    TabIndex =20
                     Name ="Describe Damage"
                     ControlSource ="Describe Damage"
                     EventProcPrefix ="Describe_Damage"
@@ -1210,7 +1171,7 @@ Begin Form
                     Top =1800
                     Width =960
                     Height =360
-                    TabIndex =22
+                    TabIndex =21
                     BackColor =13431551
                     BorderColor =10921638
                     ForeColor =3484194
@@ -1261,7 +1222,7 @@ Begin Form
                     Top =1320
                     Width =990
                     Height =360
-                    TabIndex =20
+                    TabIndex =19
                     BackColor =13431551
                     BorderColor =10921638
                     ForeColor =4210752
@@ -1305,13 +1266,14 @@ Begin Form
                     End
                 End
                 Begin ComboBox
+                    LimitToList = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =4350
                     Top =1320
                     Width =990
                     Height =360
-                    TabIndex =19
+                    TabIndex =18
                     BackColor =13431551
                     BorderColor =10921638
                     ForeColor =4210752
@@ -1414,7 +1376,7 @@ Begin Form
                     Top =4320
                     Width =720
                     Height =315
-                    TabIndex =15
+                    TabIndex =14
                     BorderColor =10921638
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"10\";\"510\""
@@ -1460,7 +1422,7 @@ Begin Form
                     Top =4740
                     Width =720
                     Height =315
-                    TabIndex =16
+                    TabIndex =15
                     BorderColor =10921638
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"10\";\"510\""
@@ -1507,7 +1469,7 @@ Begin Form
                     Top =5160
                     Width =720
                     Height =315
-                    TabIndex =17
+                    TabIndex =16
                     BorderColor =10921638
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"10\";\"510\""
@@ -1542,6 +1504,54 @@ Begin Form
                             LayoutCachedWidth =4260
                             LayoutCachedHeight =5520
                             ForeThemeColorIndex =-1
+                            ForeTint =100.0
+                        End
+                    End
+                End
+                Begin ComboBox
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    ColumnCount =2
+                    Left =7680
+                    Top =1740
+                    Width =1020
+                    Height =363
+                    TabIndex =22
+                    BackColor =13431551
+                    BorderColor =10921638
+                    ForeColor =3484194
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
+                    Name ="cboRequiresSiteInspection"
+                    ControlSource ="Requires Site Inspection"
+                    RowSourceType ="Table/Query"
+                    RowSource ="qryYesNo"
+                    ColumnWidths ="360;1440"
+                    StatusBarText ="LoD"
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    LayoutCachedLeft =7680
+                    LayoutCachedTop =1740
+                    LayoutCachedWidth =8700
+                    LayoutCachedHeight =2103
+                    BackThemeColorIndex =7
+                    BackTint =20.0
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =8880
+                            Top =1740
+                            Width =2520
+                            Height =360
+                            FontSize =12
+                            ForeColor =0
+                            Name ="Label83"
+                            Caption ="Requires Site Inspection?"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =8880
+                            LayoutCachedTop =1740
+                            LayoutCachedWidth =11400
+                            LayoutCachedHeight =2100
                             ForeTint =100.0
                         End
                     End

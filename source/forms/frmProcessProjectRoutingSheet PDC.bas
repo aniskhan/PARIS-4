@@ -7,6 +7,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ViewsAllowed =1
@@ -16,14 +17,15 @@ Begin Form
     GridY =24
     Width =16740
     DatasheetFontHeight =11
-    ItemSuffix =101
-    Right =20235
+    ItemSuffix =104
+    Right =14385
     Bottom =12645
     DatasheetGridlinesColor =15132391
+    Filter ="[Assigned PDC] = 'nlietzk1'"
     RecSrcDt = Begin
-        0xcff31d1835aee440
+        0x56e847dc56bae440
     End
-    RecordSource ="fqryProjectEntry"
+    RecordSource ="fqryProjectFormulation"
     Caption ="PRS Review and Submittal"
     OnCurrent ="[Event Procedure]"
     DatasheetFontName ="Calibri"
@@ -824,7 +826,7 @@ Begin Form
                     IMESentenceMode =3
                     ColumnCount =2
                     Left =13680
-                    Top =7920
+                    Top =8220
                     Width =2340
                     Height =315
                     TabIndex =13
@@ -841,9 +843,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =13680
-                    LayoutCachedTop =7920
+                    LayoutCachedTop =8220
                     LayoutCachedWidth =16020
-                    LayoutCachedHeight =8235
+                    LayoutCachedHeight =8535
                     ForeThemeColorIndex =0
                     ForeTint =75.0
                     ForeShade =100.0
@@ -851,7 +853,7 @@ Begin Form
                         Begin Label
                             OverlapFlags =215
                             Left =13680
-                            Top =7560
+                            Top =7860
                             Width =2340
                             Height =315
                             BorderColor =8355711
@@ -859,9 +861,9 @@ Begin Form
                             Caption ="Lane Recommendation"
                             GridlineColor =10921638
                             LayoutCachedLeft =13680
-                            LayoutCachedTop =7560
+                            LayoutCachedTop =7860
                             LayoutCachedWidth =16020
-                            LayoutCachedHeight =7875
+                            LayoutCachedHeight =8175
                             ForeTint =100.0
                         End
                     End
@@ -872,7 +874,7 @@ Begin Form
                     Left =13260
                     Top =5460
                     Width =3180
-                    Height =1905
+                    Height =1380
                     BorderColor =8355711
                     ForeColor =8355711
                     Name ="Label97"
@@ -882,7 +884,7 @@ Begin Form
                     LayoutCachedLeft =13260
                     LayoutCachedTop =5460
                     LayoutCachedWidth =16440
-                    LayoutCachedHeight =7365
+                    LayoutCachedHeight =6840
                 End
                 Begin Label
                     BackStyle =1
@@ -924,6 +926,52 @@ Begin Form
                     LayoutCachedHeight =5340
                     BorderThemeColorIndex =1
                 End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    RowSourceTypeInt =1
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    Left =13680
+                    Top =7320
+                    Width =2340
+                    Height =315
+                    TabIndex =15
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="cboDocumentation"
+                    ControlSource ="DocumentationAttached"
+                    RowSourceType ="Value List"
+                    RowSource ="\"All Documents Attached\";\"Partial Documents Attached\";\"No Documents Attache"
+                        "d\""
+                    ColumnWidths ="2880"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =13680
+                    LayoutCachedTop =7320
+                    LayoutCachedWidth =16020
+                    LayoutCachedHeight =7635
+                    ForeThemeColorIndex =0
+                    ForeTint =75.0
+                    ForeShade =100.0
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =13680
+                            Top =6960
+                            Width =2370
+                            Height =315
+                            BorderColor =8355711
+                            Name ="Label103"
+                            Caption ="Documentation attached"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =13680
+                            LayoutCachedTop =6960
+                            LayoutCachedWidth =16050
+                            LayoutCachedHeight =7275
+                            ForeTint =100.0
+                        End
+                    End
+                End
             End
         End
         Begin FormFooter
@@ -945,7 +993,7 @@ Begin Form
                     BackColor =14282978
                     BorderColor =8355711
                     Name ="lbFooter"
-                    Caption ="Damage Intake and Eligibility Determinations"
+                    Caption ="Operational Planning"
                     FontName ="Broadway"
                     GridlineColor =10921638
                     LayoutCachedWidth =16560
@@ -958,15 +1006,15 @@ Begin Form
                 Begin Rectangle
                     BackStyle =1
                     OverlapFlags =223
-                    Left =10260
+                    Left =8280
                     Top =60
-                    Width =6120
+                    Width =8100
                     Height =780
                     BackColor =13431551
                     BorderColor =10921638
                     Name ="Box99"
                     GridlineColor =10921638
-                    LayoutCachedLeft =10260
+                    LayoutCachedLeft =8280
                     LayoutCachedTop =60
                     LayoutCachedWidth =16380
                     LayoutCachedHeight =840
@@ -1385,6 +1433,23 @@ Begin Form
                     WebImagePaddingBottom =1
                     Overlaps =1
                 End
+                Begin Label
+                    OverlapFlags =215
+                    TextAlign =2
+                    Left =8340
+                    Top =120
+                    Width =2040
+                    Height =555
+                    BorderColor =8355711
+                    ForeColor =8355711
+                    Name ="Label101"
+                    Caption ="Click to navigate between Projects"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =8340
+                    LayoutCachedTop =120
+                    LayoutCachedWidth =10380
+                    LayoutCachedHeight =675
+                End
             End
         End
     End
@@ -1680,7 +1745,7 @@ Private Sub CompleteReview(ReviewType As String)
         If Access.CurrentProject.AllForms("frmReviewResult").IsLoaded Then
             Set frm = Forms("frmReviewResult")
             If PostDialogCheck(ReviewType, frm.cboResult) Then
-                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult) Then
+                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
                     HandleDisposition ReviewType, frm
                 End If
             End If
@@ -1719,7 +1784,7 @@ Private Sub HandleStandardDisposition(ReviewType As String, frm As Form)
         Case "RFI"
             Reviews.CreateRFI GetItemDims(ReviewType)
             Reviews.EnterReview GetItemDims("RFI")
-            DoCmd.OpenForm "frmRFIRequest", , , GetItemDims.WhereID(False)
+            DoCmd.OpenForm "frmRFIRouting", , , GetItemDims.WhereID(False)
         Case "RSN"
             Reviews.EnterReview GetItemDims(ReviewType), frm.cboAssign, "Reassigned to " & frm.cboAssign
         Case "RW"

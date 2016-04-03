@@ -95,14 +95,6 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="tblSubRecipient.[Recipient POC]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSubRecipient.[Subrecipient POC]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="tblProjects.[Inspection Notes]"
         dbLong "AggregateType" ="-1"
     End
@@ -114,17 +106,69 @@ Begin
         dbText "Name" ="tblProjects.[Subrecipient POC]"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="tblProjects.[Site Inspection Location]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.[Assigned EHP Specialists]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.[Mitgation Specialists requested]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.[Assign Site Inspection]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.[Assigned Site Inspector]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.[Insurance Specialist requested for Site Inspection]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.[SITFL Reviews Work Order]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.[SITFL Contacts PDC to schedule]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.[Mitigation Site Inspection Report Requested]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.[Work Order Recieved by SITFL]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.[Scheduled Date of Site Inspection]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.[EHP Site Inspection Report Required]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.[Assigned Mitigation Specialist]"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1158
+    Right =1153
     Bottom =860
     Left =-1
     Top =-1
-    Right =1142
-    Bottom =567
+    Right =1137
+    Bottom =533
     Left =0
     Top =0
     ColumnsShown =539

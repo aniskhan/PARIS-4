@@ -18,11 +18,11 @@ Begin Form
     GridY =24
     Width =6480
     DatasheetFontHeight =11
-    ItemSuffix =9
-    Left =-27631
-    Top =4320
-    Right =-20896
-    Bottom =7515
+    ItemSuffix =11
+    Left =1800
+    Top =2505
+    Right =15120
+    Bottom =10335
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0xfa536e9313a4e440
@@ -90,6 +90,23 @@ Begin Form
             PressedForeThemeColorIndex =0
             PressedForeTint =75.0
         End
+        Begin TextBox
+            AddColon = NotDefault
+            FELineBreak = NotDefault
+            BorderLineStyle =0
+            LabelX =-1800
+            FontSize =11
+            FontName ="Calibri"
+            AsianLineBreak =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ThemeFontIndex =1
+            ForeThemeColorIndex =0
+            ForeTint =75.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin ListBox
             BorderLineStyle =0
             LabelX =-1800
@@ -124,7 +141,7 @@ Begin Form
             GridlineShade =65.0
         End
         Begin Section
-            Height =3210
+            Height =4920
             Name ="Detail"
             AlternateBackColor =15921906
             AlternateBackThemeColorIndex =1
@@ -165,8 +182,8 @@ Begin Form
                     IMESentenceMode =3
                     ColumnCount =2
                     Left =1500
-                    Top =2280
-                    Width =2460
+                    Top =3960
+                    Width =3660
                     Height =315
                     TabIndex =1
                     BorderColor =10921638
@@ -179,16 +196,16 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =1500
-                    LayoutCachedTop =2280
-                    LayoutCachedWidth =3960
-                    LayoutCachedHeight =2595
+                    LayoutCachedTop =3960
+                    LayoutCachedWidth =5160
+                    LayoutCachedHeight =4275
                     ForeThemeColorIndex =0
                     ForeShade =100.0
                     Begin
                         Begin Label
                             Visible = NotDefault
                             OverlapFlags =85
-                            Top =2280
+                            Top =3960
                             Width =1395
                             Height =315
                             BorderColor =8355711
@@ -196,9 +213,9 @@ Begin Form
                             Name ="lbAssignTo"
                             Caption ="Assign To"
                             GridlineColor =10921638
-                            LayoutCachedTop =2280
+                            LayoutCachedTop =3960
                             LayoutCachedWidth =1395
-                            LayoutCachedHeight =2595
+                            LayoutCachedHeight =4275
                         End
                     End
                 End
@@ -209,8 +226,8 @@ Begin Form
                     IMESentenceMode =3
                     ColumnCount =2
                     Left =1500
-                    Top =2715
-                    Width =2460
+                    Top =4395
+                    Width =3660
                     Height =315
                     TabIndex =2
                     BorderColor =10921638
@@ -224,16 +241,16 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =1500
-                    LayoutCachedTop =2715
-                    LayoutCachedWidth =3960
-                    LayoutCachedHeight =3030
+                    LayoutCachedTop =4395
+                    LayoutCachedWidth =5160
+                    LayoutCachedHeight =4710
                     ForeThemeColorIndex =0
                     ForeShade =100.0
                     Begin
                         Begin Label
                             Visible = NotDefault
                             OverlapFlags =85
-                            Top =2715
+                            Top =4395
                             Width =1395
                             Height =315
                             BorderColor =8355711
@@ -241,9 +258,9 @@ Begin Form
                             Name ="lbRework"
                             Caption ="Rework To"
                             GridlineColor =10921638
-                            LayoutCachedTop =2715
+                            LayoutCachedTop =4395
                             LayoutCachedWidth =1395
-                            LayoutCachedHeight =3030
+                            LayoutCachedHeight =4710
                         End
                     End
                 End
@@ -255,7 +272,7 @@ Begin Form
                     Top =540
                     Width =2460
                     Height =1560
-                    TabIndex =3
+                    TabIndex =4
                     BorderColor =10921638
                     Name ="cboResult"
                     RowSourceType ="Table/Query"
@@ -285,6 +302,40 @@ Begin Form
                             LayoutCachedTop =540
                             LayoutCachedWidth =1395
                             LayoutCachedHeight =855
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1500
+                    Top =2280
+                    Width =3660
+                    Height =1530
+                    TabIndex =3
+                    BorderColor =10921638
+                    Name ="tbComments"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =1500
+                    LayoutCachedTop =2280
+                    LayoutCachedWidth =5160
+                    LayoutCachedHeight =3810
+                    ForeTint =100.0
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Top =2280
+                            Width =1395
+                            Height =315
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label10"
+                            Caption ="Comments"
+                            GridlineColor =10921638
+                            LayoutCachedTop =2280
+                            LayoutCachedWidth =1395
+                            LayoutCachedHeight =2595
                         End
                     End
                 End

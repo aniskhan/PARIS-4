@@ -17,7 +17,7 @@ Begin Form
     Width =16560
     DatasheetFontHeight =11
     ItemSuffix =96
-    Right =20235
+    Right =12615
     Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -223,6 +223,7 @@ Begin Form
                         "StaffRoles.EndDate)>=Date()) And ((tblStaffRoles.Position)=\"STDVS\")); "
                     ColumnWidths ="0;2880"
                     StatusBarText ="lookup of staff by position"
+                    OnChange ="[Event Procedure]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =480
@@ -1376,6 +1377,31 @@ Option Explicit
 
 Private Const FormItemType As String = "Project" 'used in determining what type of record is handled
 
+Private Sub cboAssignDvs_Change()
+'This ensures that the reports showing the DVS change when a new one is selected.
+
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cboAssignDvs_Change"
+'///Error Handling
+
+'///Code
+    Me.Dirty = False
+    Me.subrptPdc.Requery
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+
+End Sub
+
 'BUTTONS
 Private Sub cmdAssignDvsComplete_Click()
 '///Error Handling
@@ -1714,7 +1740,7 @@ Private Sub CompleteReview(ReviewType As String)
         If Access.CurrentProject.AllForms("frmReviewResult").IsLoaded Then
             Set frm = Forms("frmReviewResult")
             If PostDialogCheck(ReviewType, frm.cboResult) Then
-                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult) Then
+                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
                     HandleDisposition ReviewType, frm
                 End If
             End If
@@ -1753,7 +1779,7 @@ Private Sub HandleStandardDisposition(ReviewType As String, frm As Form)
         Case "RFI"
             Reviews.CreateRFI GetItemDims(ReviewType)
             Reviews.EnterReview GetItemDims("RFI")
-            DoCmd.OpenForm "frmRFIRequest", , , GetItemDims.WhereID(False)
+            DoCmd.OpenForm "frmRFIRouting", , , GetItemDims.WhereID(False)
         Case "RSN"
             Reviews.EnterReview GetItemDims(ReviewType), frm.cboAssign, "Reassigned to " & frm.cboAssign
         Case "RW"

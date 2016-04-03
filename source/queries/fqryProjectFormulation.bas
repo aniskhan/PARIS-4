@@ -11,20 +11,19 @@ Begin OutputColumns
     Expression ="tblProjects.*"
     Expression ="tblSubRecipient.[Assigned PDC]"
     Expression ="revtblProject.ReviewType"
-    Expression ="tblProjects.[Lane Recommendation]"
 End
 Begin Joins
-    LeftTable ="tblProjects"
-    RightTable ="tblSubRecipient"
-    Expression ="tblProjects.DisasterID = tblSubRecipient.DisasterID"
-    Flag =1
     LeftTable ="tblProjects"
     RightTable ="tblSubRecipient"
     Expression ="tblProjects.ApplicantID = tblSubRecipient.ApplicantID"
     Flag =1
     LeftTable ="tblProjects"
+    RightTable ="tblSubRecipient"
+    Expression ="tblProjects.DisasterID = tblSubRecipient.DisasterID"
+    Flag =1
+    LeftTable ="tblProjects"
     RightTable ="revtblProject"
-    Expression ="tblProjects.ProjectID = revtblProject.ProjectID"
+    Expression ="tblProjects.DisasterID = revtblProject.DisasterID"
     Flag =1
     LeftTable ="tblProjects"
     RightTable ="revtblProject"
@@ -32,7 +31,7 @@ Begin Joins
     Flag =1
     LeftTable ="tblProjects"
     RightTable ="revtblProject"
-    Expression ="tblProjects.DisasterID = revtblProject.DisasterID"
+    Expression ="tblProjects.ProjectID = revtblProject.ProjectID"
     Flag =1
 End
 Begin OrderBy
@@ -479,17 +478,77 @@ Begin
         dbText "Name" ="tblProjects.[Lane Recommendation]"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="tblProjects.Mitgation Specialists requested"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Mitigation Site Inspection Report Requested"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Subrecipient and Recipient Concur"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.EHP Site Inspection Report Required"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Assigned EHP Specialists"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Cost Estimate Developed by"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Insurance Inspection Report Required"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Scheduled Time of Site Inspection"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Assigned Mitigation Specialist"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Insurance Specialist requested for Site Inspection"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Assigned Insurance Specialist"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Inspection Notes"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.PDM Briefs Recipient-Subrecipient"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Scope of Work Developed by"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.DocumentationAttached"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =724
-    Bottom =664
+    Right =1153
+    Bottom =860
     Left =-1
     Top =-1
-    Right =708
-    Bottom =504
+    Right =1137
+    Bottom =491
     Left =0
     Top =0
     ColumnsShown =539

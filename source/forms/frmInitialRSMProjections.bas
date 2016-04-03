@@ -16,8 +16,8 @@ Begin Form
     Width =16620
     DatasheetFontHeight =11
     ItemSuffix =110
-    Right =5625
-    Bottom =7005
+    Right =22080
+    Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0x288517b0b4b9e440
@@ -2913,7 +2913,7 @@ End Sub
 '        If Access.CurrentProject.AllForms("frmReviewResult").IsLoaded Then
 '            Set frm = Forms("frmReviewResult")
 '            If PostDialogCheck(ReviewType, frm.cboResult) Then
-'                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult) Then
+'                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
 '                    HandleDisposition ReviewType, frm
 '                End If
 '            End If
@@ -2951,7 +2951,7 @@ End Sub
 '            Reviews.EnterReview GetItemDims("Determination Memo")
 '        Case "RFI"
 '            Reviews.EnterReview GetItemDims("RFI")
-'            DoCmd.OpenForm "frmRFIRequest", , , GetItemDims.WhereID(False)
+'            DoCmd.OpenForm "frmRFIRouting", , , GetItemDims.WhereID(False)
 '        Case "RSN"
 '            Reviews.EnterReview GetItemDims(ReviewType), frm.cboAssign, "Reassigned to " & frm.cboAssign
 '        Case "RW"

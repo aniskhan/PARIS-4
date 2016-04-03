@@ -5,12 +5,16 @@ Begin InputTables
     Name ="tblRFIRequestedInformation"
     Name ="tblSites"
     Name ="qdProjectRef"
+    Name ="tblSubRecipient"
+    Name ="qryNames"
+    Name ="tblStaff"
 End
 Begin OutputColumns
     Expression ="rqryRFIRouting.*"
     Alias ="DueDate"
     Expression ="[Date Sent to Recipient]+[Response Time Requested]"
-    Expression ="tblRFIRequestedInformation.[Item Type]"
+    Alias ="Item"
+    Expression ="tblRFIRequestedInformation.ItemType"
     Expression ="tblRFIRequestedInformation.[Reason Requested]"
     Alias ="RIRfiID"
     Expression ="tblRFIRequestedInformation.RfiID"
@@ -20,6 +24,10 @@ Begin OutputColumns
     Expression ="tblRFIRequestedInformation.SiteID"
     Expression ="tblSites.[Name of Site/Facility]"
     Expression ="qdProjectRef.[Full Reference]"
+    Alias ="PDM Name"
+    Expression ="qryNames.[Cap Name]"
+    Alias ="PDM Contact"
+    Expression ="tblStaff.[Cell Number]"
 End
 Begin Joins
     LeftTable ="tblRFIRequestedInformation"
@@ -42,6 +50,22 @@ Begin Joins
     RightTable ="qdProjectRef"
     Expression ="rqryRFIRouting.DisasterID = qdProjectRef.DisasterID"
     Flag =1
+    LeftTable ="rqryRFIRouting"
+    RightTable ="tblSubRecipient"
+    Expression ="rqryRFIRouting.DisasterID = tblSubRecipient.DisasterID"
+    Flag =1
+    LeftTable ="rqryRFIRouting"
+    RightTable ="tblSubRecipient"
+    Expression ="rqryRFIRouting.ApplicantID = tblSubRecipient.ApplicantID"
+    Flag =1
+    LeftTable ="tblSubRecipient"
+    RightTable ="qryNames"
+    Expression ="tblSubRecipient.[Assigned PDC] = qryNames.UserID"
+    Flag =2
+    LeftTable ="tblSubRecipient"
+    RightTable ="tblStaff"
+    Expression ="tblSubRecipient.[Assigned PDC] = tblStaff.UserID"
+    Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -55,10 +79,6 @@ dbBoolean "TotalsRow" ="0"
 Begin
     Begin
         dbText "Name" ="DueDate"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblRFIRequestedInformation.[Item Type]"
         dbLong "AggregateType" ="-1"
     End
     Begin
@@ -166,43 +186,15 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="Response Time Requested"
+        dbText "Name" ="PDM Name"
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="Full Reference"
+        dbText "Name" ="PDM Contact"
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="JFO Street Address"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Date Sent to Recipient"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Name of Site/Facility"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Item Type"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="HSIN Address"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="RFI Response Email Address"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="JFO City, State, Zip"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Reason Requested"
+        dbText "Name" ="Item"
         dbLong "AggregateType" ="-1"
     End
 End
@@ -210,49 +202,76 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =1114
-    Bottom =539
+    Right =1098
+    Bottom =860
     Left =-1
     Top =-1
-    Right =1098
-    Bottom =453
-    Left =0
+    Right =1082
+    Bottom =368
+    Left =541
     Top =0
     ColumnsShown =539
     Begin
-        Left =43
+        Left =-498
         Top =14
-        Right =265
+        Right =-276
         Bottom =448
         Top =0
         Name ="rqryRFIRouting"
         Name =""
     End
     Begin
-        Left =312
-        Top =25
-        Right =567
-        Bottom =264
+        Left =-25
+        Top =31
+        Right =230
+        Bottom =270
         Top =0
         Name ="tblRFIRequestedInformation"
         Name =""
     End
     Begin
-        Left =648
-        Top =37
-        Right =837
-        Bottom =437
+        Left =301
+        Top =32
+        Right =490
+        Bottom =432
         Top =0
         Name ="tblSites"
         Name =""
     End
     Begin
-        Left =367
-        Top =235
-        Right =511
-        Bottom =379
+        Left =-174
+        Top =243
+        Right =-30
+        Bottom =387
         Top =0
         Name ="qdProjectRef"
+        Name =""
+    End
+    Begin
+        Left =422
+        Top =11
+        Right =566
+        Bottom =155
+        Top =0
+        Name ="tblSubRecipient"
+        Name =""
+    End
+    Begin
+        Left =744
+        Top =19
+        Right =913
+        Bottom =166
+        Top =0
+        Name ="qryNames"
+        Name =""
+    End
+    Begin
+        Left =679
+        Top =218
+        Right =823
+        Bottom =362
+        Top =0
+        Name ="tblStaff"
         Name =""
     End
 End

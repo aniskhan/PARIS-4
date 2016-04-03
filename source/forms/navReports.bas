@@ -16,8 +16,8 @@ Begin Form
     Width =15660
     DatasheetFontHeight =11
     ItemSuffix =30
-    Right =5625
-    Bottom =7005
+    Right =11685
+    Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0x3d95abb0b4b9e440
@@ -64,7 +64,6 @@ Begin Form
             ForeTint =75.0
             GridlineThemeColorIndex =1
             GridlineShade =65.0
-            UseTheme =1
             Shape =1
             Gradient =12
             BackThemeColorIndex =4
@@ -74,14 +73,6 @@ Begin Form
             BorderThemeColorIndex =4
             BorderTint =60.0
             ThemeFontIndex =1
-            HoverThemeColorIndex =4
-            HoverTint =40.0
-            PressedThemeColorIndex =4
-            PressedShade =75.0
-            HoverForeThemeColorIndex =0
-            HoverForeTint =75.0
-            PressedForeThemeColorIndex =0
-            PressedForeTint =75.0
         End
         Begin TextBox
             AddColon = NotDefault
@@ -316,12 +307,21 @@ Begin Form
                     LayoutCachedTop =3600
                     LayoutCachedWidth =3975
                     LayoutCachedHeight =4140
+                    UseTheme =255
                     BackColor =15123357
                     BorderColor =15123357
                     HoverColor =15652797
+                    HoverThemeColorIndex =4
+                    HoverTint =40.0
                     PressedColor =11957550
+                    PressedThemeColorIndex =4
+                    PressedShade =75.0
                     HoverForeColor =4210752
+                    HoverForeThemeColorIndex =0
+                    HoverForeTint =75.0
                     PressedForeColor =4210752
+                    PressedForeThemeColorIndex =0
+                    PressedForeTint =75.0
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
@@ -365,12 +365,21 @@ Begin Form
                     LayoutCachedTop =2880
                     LayoutCachedWidth =3975
                     LayoutCachedHeight =3420
+                    UseTheme =255
                     BackColor =15123357
                     BorderColor =15123357
                     HoverColor =15652797
+                    HoverThemeColorIndex =4
+                    HoverTint =40.0
                     PressedColor =11957550
+                    PressedThemeColorIndex =4
+                    PressedShade =75.0
                     HoverForeColor =4210752
+                    HoverForeThemeColorIndex =0
+                    HoverForeTint =75.0
                     PressedForeColor =4210752
+                    PressedForeThemeColorIndex =0
+                    PressedForeTint =75.0
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
@@ -398,14 +407,6 @@ Begin Form
                     BackThemeColorIndex =-1
                     BackTint =100.0
                     BorderColor =15123357
-                    HoverColor =15527148
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedColor =15527148
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
@@ -433,23 +434,14 @@ Begin Form
                     BackThemeColorIndex =-1
                     BackTint =100.0
                     BorderColor =15123357
-                    HoverColor =15527148
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedColor =15527148
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
                 End
                 Begin CommandButton
-                    Enabled = NotDefault
                     OverlapFlags =85
-                    Left =540
+                    Left =480
                     Top =2220
                     Width =3480
                     Height =540
@@ -458,24 +450,47 @@ Begin Form
                     Name ="Command19"
                     Caption ="Scoping Meeting Report"
                     GridlineColor =10921638
+                    OnClickEmMacro = Begin
+                        Version =196611
+                        ColumnsShown =0
+                        Begin
+                            Action ="OpenReport"
+                            Argument ="rptRpaEnterRSM"
+                            Argument ="5"
+                            Argument =""
+                            Argument =""
+                            Argument ="0"
+                        End
+                        Begin
+                            Comment ="_AXL:<?xml version=\"1.0\" encoding=\"UTF-16\" standalone=\"no\"?>\015\012<UserI"
+                                "nterfaceMacro For=\"Command19\" Event=\"OnClick\" xmlns=\"http://schemas.microso"
+                                "ft.com/office/accessservices/2009/11/application\"><Statements><Action Name=\"Op"
+                                "enReport\"><Argument Name=\"Report"
+                        End
+                        Begin
+                            Comment ="_AXL:Name\">rptRpaEnterRSM</Argument></Action></Statements></UserInterfaceMacro>"
+                        End
+                    End
 
-                    LayoutCachedLeft =540
+                    LayoutCachedLeft =480
                     LayoutCachedTop =2220
-                    LayoutCachedWidth =4020
+                    LayoutCachedWidth =3960
                     LayoutCachedHeight =2760
-                    Gradient =0
-                    BackColor =15527148
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
+                    UseTheme =255
+                    BackColor =15123357
                     BorderColor =15123357
-                    HoverColor =15527148
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedColor =15527148
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
+                    HoverColor =15652797
+                    HoverThemeColorIndex =4
+                    HoverTint =40.0
+                    PressedColor =11957550
+                    PressedThemeColorIndex =4
+                    PressedShade =75.0
                     HoverForeColor =4210752
+                    HoverForeThemeColorIndex =0
+                    HoverForeTint =75.0
                     PressedForeColor =4210752
+                    PressedForeThemeColorIndex =0
+                    PressedForeTint =75.0
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
@@ -483,7 +498,7 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =540
+                    Left =480
                     Top =1500
                     Width =3480
                     Height =540
@@ -515,16 +530,25 @@ Begin Form
                         End
                     End
 
-                    LayoutCachedLeft =540
+                    LayoutCachedLeft =480
                     LayoutCachedTop =1500
-                    LayoutCachedWidth =4020
+                    LayoutCachedWidth =3960
                     LayoutCachedHeight =2040
+                    UseTheme =255
                     BackColor =15123357
                     BorderColor =15123357
                     HoverColor =15652797
+                    HoverThemeColorIndex =4
+                    HoverTint =40.0
                     PressedColor =11957550
+                    PressedThemeColorIndex =4
+                    PressedShade =75.0
                     HoverForeColor =4210752
+                    HoverForeThemeColorIndex =0
+                    HoverForeTint =75.0
                     PressedForeColor =4210752
+                    PressedForeThemeColorIndex =0
+                    PressedForeTint =75.0
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
@@ -553,14 +577,6 @@ Begin Form
                     BackThemeColorIndex =-1
                     BackTint =100.0
                     BorderColor =15123357
-                    HoverColor =15527148
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedColor =15527148
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
@@ -588,14 +604,6 @@ Begin Form
                     BackThemeColorIndex =-1
                     BackTint =100.0
                     BorderColor =15123357
-                    HoverColor =15527148
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedColor =15527148
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
@@ -623,14 +631,6 @@ Begin Form
                     BackThemeColorIndex =-1
                     BackTint =100.0
                     BorderColor =15123357
-                    HoverColor =15527148
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedColor =15527148
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
@@ -658,14 +658,6 @@ Begin Form
                     BackThemeColorIndex =-1
                     BackTint =100.0
                     BorderColor =15123357
-                    HoverColor =15527148
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedColor =15527148
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
@@ -693,14 +685,6 @@ Begin Form
                     BackThemeColorIndex =-1
                     BackTint =100.0
                     BorderColor =15123357
-                    HoverColor =15527148
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedColor =15527148
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
@@ -744,12 +728,21 @@ Begin Form
                     LayoutCachedTop =1500
                     LayoutCachedWidth =7800
                     LayoutCachedHeight =2040
+                    UseTheme =255
                     BackColor =15123357
                     BorderColor =15123357
                     HoverColor =15652797
+                    HoverThemeColorIndex =4
+                    HoverTint =40.0
                     PressedColor =11957550
+                    PressedThemeColorIndex =4
+                    PressedShade =75.0
                     HoverForeColor =4210752
+                    HoverForeThemeColorIndex =0
+                    HoverForeTint =75.0
                     PressedForeColor =4210752
+                    PressedForeThemeColorIndex =0
+                    PressedForeTint =75.0
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
@@ -793,12 +786,21 @@ Begin Form
                     LayoutCachedTop =5100
                     LayoutCachedWidth =3960
                     LayoutCachedHeight =5700
+                    UseTheme =255
                     BackColor =15123357
                     BorderColor =15123357
                     HoverColor =15652797
+                    HoverThemeColorIndex =4
+                    HoverTint =40.0
                     PressedColor =11957550
+                    PressedThemeColorIndex =4
+                    PressedShade =75.0
                     HoverForeColor =4210752
+                    HoverForeThemeColorIndex =0
+                    HoverForeTint =75.0
                     PressedForeColor =4210752
+                    PressedForeThemeColorIndex =0
+                    PressedForeTint =75.0
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
@@ -846,10 +848,6 @@ Begin Form
                     LayoutCachedHeight =465
                     BackColor =15123357
                     BorderColor =15123357
-                    HoverColor =15652797
-                    PressedColor =11957550
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1

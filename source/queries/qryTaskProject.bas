@@ -33,15 +33,15 @@ End
 Begin Joins
     LeftTable ="tblProjects"
     RightTable ="tblSubRecipient"
-    Expression ="tblProjects.[DisasterID] = tblSubRecipient.[DisasterID]"
+    Expression ="tblProjects.[ApplicantID] = tblSubRecipient.[ApplicantID]"
     Flag =1
     LeftTable ="tblProjects"
     RightTable ="tblSubRecipient"
-    Expression ="tblProjects.[ApplicantID] = tblSubRecipient.[ApplicantID]"
+    Expression ="tblProjects.[DisasterID] = tblSubRecipient.[DisasterID]"
     Flag =1
     LeftTable ="revtblProject"
     RightTable ="tblProjects"
-    Expression ="revtblProject.ProjectID = tblProjects.ProjectID"
+    Expression ="revtblProject.DisasterID = tblProjects.DisasterID"
     Flag =1
     LeftTable ="revtblProject"
     RightTable ="tblProjects"
@@ -49,7 +49,7 @@ Begin Joins
     Flag =1
     LeftTable ="revtblProject"
     RightTable ="tblProjects"
-    Expression ="revtblProject.DisasterID = tblProjects.DisasterID"
+    Expression ="revtblProject.ProjectID = tblProjects.ProjectID"
     Flag =1
     LeftTable ="revtblProject"
     RightTable ="tblReviewTypes"
@@ -116,21 +116,27 @@ Begin
     End
     Begin
         dbText "Name" ="RfiID"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="DmID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="RfiItemID"
+        dbLong "AggregateType" ="-1"
     End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =985
+    Right =1153
     Bottom =860
     Left =-1
     Top =-1
-    Right =969
-    Bottom =487
+    Right =1137
+    Bottom =211
     Left =0
     Top =0
     ColumnsShown =539

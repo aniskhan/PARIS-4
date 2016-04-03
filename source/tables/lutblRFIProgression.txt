@@ -1,0 +1,11 @@
+﻿ID	FurthestProgression	Lane	FurthestProgressionReviewType	FurthestProgressionReviewItemType	RecommendedReviewType	RecommendedReviewItemType
+1	Hold in Phase 1					
+2	Hold in DVS Review	EX				
+3	Hold in Phase 2	EX				
+4	Hold in Phase 3	EX				
+5	Hold in DVS Review	ST				
+6	Hold in Phase 2	ST				
+7	Hold in Phase 3	ST				
+8	Hold in DVS Review	SP				
+9	Hold in Phase 2	SP				
+10	Hold in Phase 3	SP				

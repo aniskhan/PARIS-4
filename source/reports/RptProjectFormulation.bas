@@ -14,6 +14,8 @@ Begin Report
     DatasheetFontHeight =11
     ItemSuffix =76
     DatasheetGridlinesColor =15132391
+    Filter ="([qryProjectFormulationReport].[Subrecipient Name] In (\"LINN COUNTY ROAD DEPART"
+        "MENT\",\"NEWBERG SCHOOL DISTRICT 29 JT\"))"
     RecSrcDt = Begin
         0x8e596cd791b1e440
     End
@@ -21,7 +23,7 @@ Begin Report
     Caption ="RptProjectFormulation"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
-        0x6801000068010000680100006801000000000000106800009402000001000000 ,
+        0x68010000680100006801000068010000000000009c5400009402000001000000 ,
         0x010000006801000000000000a10700000100000001000000
     End
     FilterOnLoad =0

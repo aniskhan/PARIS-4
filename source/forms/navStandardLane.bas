@@ -15,8 +15,8 @@ Begin Form
     Width =16410
     DatasheetFontHeight =11
     ItemSuffix =33
-    Right =5625
-    Bottom =7005
+    Right =24375
+    Bottom =12765
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0x6f3868aeb4b9e440
@@ -123,7 +123,7 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =1200
+            Height =1140
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -162,7 +162,7 @@ Begin Form
                     OverlapFlags =85
                     Left =60
                     Top =60
-                    Width =15840
+                    Width =15900
                     Height =1080
                     FontSize =20
                     FontWeight =700
@@ -173,7 +173,7 @@ Begin Form
                     GridlineColor =10921638
                     LayoutCachedLeft =60
                     LayoutCachedTop =60
-                    LayoutCachedWidth =15900
+                    LayoutCachedWidth =15960
                     LayoutCachedHeight =1140
                     BackThemeColorIndex =-1
                     ForeThemeColorIndex =-1

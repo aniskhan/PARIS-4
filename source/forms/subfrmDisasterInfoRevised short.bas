@@ -18,8 +18,8 @@ Begin Form
     Width =13740
     DatasheetFontHeight =11
     ItemSuffix =120
-    Right =5625
-    Bottom =7005
+    Right =14385
+    Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0x84c4b2b0b4b9e440
@@ -254,6 +254,7 @@ Begin Form
                     ForeTint =100.0
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     TabStop = NotDefault
                     DecimalPlaces =0
                     OldBorderStyle =0
@@ -344,6 +345,7 @@ Begin Form
                     BackTint =40.0
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     TabStop = NotDefault
                     OldBorderStyle =0
                     OverlapFlags =223
@@ -405,6 +407,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     TabStop = NotDefault
                     OverlapFlags =223
                     TextAlign =2
@@ -467,6 +470,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     TabStop = NotDefault
                     OverlapFlags =223
                     TextAlign =2
@@ -553,6 +557,7 @@ Begin Form
                     ForeTint =100.0
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     TabStop = NotDefault
                     OverlapFlags =215
                     TextAlign =2
@@ -600,6 +605,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     TabStop = NotDefault
                     DecimalPlaces =0
                     OldBorderStyle =0
@@ -644,6 +650,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     TabStop = NotDefault
                     DecimalPlaces =0
                     OldBorderStyle =0
@@ -688,6 +695,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     TabStop = NotDefault
                     OldBorderStyle =0
                     OverlapFlags =247

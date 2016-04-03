@@ -14,15 +14,17 @@ Begin Form
     GridY =24
     Width =16500
     DatasheetFontHeight =11
-    ItemSuffix =68
-    Right =5625
-    Bottom =7005
+    ItemSuffix =70
+    Left =405
+    Top =6045
+    Right =16515
+    Bottom =12675
     DatasheetGridlinesColor =15132391
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin
-        0x3c19f5aeb4b9e440
+        0xf33f0d8fabbbe440
     End
-    RecordSource ="fqrySiteInfo"
+    RecordSource ="fqrySiteEnterListofDamages"
     Caption ="subformEnterListofDamages"
     BeforeUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"
@@ -75,7 +77,6 @@ Begin Form
             ForeTint =75.0
             GridlineThemeColorIndex =1
             GridlineShade =65.0
-            UseTheme =1
             Shape =1
             Gradient =12
             BackThemeColorIndex =4
@@ -85,14 +86,6 @@ Begin Form
             BorderThemeColorIndex =4
             BorderTint =60.0
             ThemeFontIndex =1
-            HoverThemeColorIndex =4
-            HoverTint =40.0
-            PressedThemeColorIndex =4
-            PressedShade =75.0
-            HoverForeThemeColorIndex =0
-            HoverForeTint =75.0
-            PressedForeThemeColorIndex =0
-            PressedForeTint =75.0
         End
         Begin CheckBox
             BorderLineStyle =0
@@ -164,6 +157,24 @@ Begin Form
                     LayoutCachedWidth =16440
                     LayoutCachedHeight =6540
                     BackThemeColorIndex =-1
+                End
+                Begin Rectangle
+                    BackStyle =1
+                    OverlapFlags =223
+                    Left =5880
+                    Top =5340
+                    Width =7440
+                    Height =780
+                    BackColor =13431551
+                    BorderColor =10921638
+                    Name ="Box68"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =5880
+                    LayoutCachedTop =5340
+                    LayoutCachedWidth =13320
+                    LayoutCachedHeight =6120
+                    BackThemeColorIndex =7
+                    BackTint =20.0
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -252,6 +263,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    ScrollBars =2
                     OverlapFlags =215
                     TextAlign =1
                     IMESentenceMode =3
@@ -304,7 +316,7 @@ Begin Form
                     IMESentenceMode =3
                     Left =4860
                     Top =900
-                    Width =4320
+                    Width =6540
                     Height =363
                     ColumnOrder =4
                     TabIndex =2
@@ -319,7 +331,7 @@ Begin Form
 
                     LayoutCachedLeft =4860
                     LayoutCachedTop =900
-                    LayoutCachedWidth =9180
+                    LayoutCachedWidth =11400
                     LayoutCachedHeight =1263
                     BackThemeColorIndex =7
                     BackTint =20.0
@@ -350,7 +362,7 @@ Begin Form
                     Left =1560
                     Top =1380
                     Height =363
-                    ColumnOrder =0
+                    ColumnOrder =1
                     TabIndex =3
                     BackColor =13431551
                     BorderColor =10921638
@@ -437,7 +449,7 @@ Begin Form
                     IMESentenceMode =3
                     Left =2400
                     Top =2640
-                    Width =4320
+                    Width =4620
                     Height =363
                     ColumnOrder =6
                     TabIndex =6
@@ -452,7 +464,7 @@ Begin Form
 
                     LayoutCachedLeft =2400
                     LayoutCachedTop =2640
-                    LayoutCachedWidth =6720
+                    LayoutCachedWidth =7020
                     LayoutCachedHeight =3003
                     BackThemeColorIndex =7
                     BackTint =20.0
@@ -541,7 +553,7 @@ Begin Form
                     Name ="Requires Site Inspection"
                     ControlSource ="Requires Site Inspection"
                     RowSourceType ="Table/Query"
-                    RowSource ="lutblYesNoUnk"
+                    RowSource ="qryYesNo"
                     ColumnWidths ="360;1440"
                     StatusBarText ="LoD"
                     EventProcPrefix ="Requires_Site_Inspection"
@@ -1155,10 +1167,6 @@ Begin Form
                     LayoutCachedHeight =5925
                     BackColor =15123357
                     BorderColor =15123357
-                    HoverColor =15652797
-                    PressedColor =11957550
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
@@ -1175,6 +1183,7 @@ Begin Form
                     Top =120
                     Width =1530
                     Height =300
+                    ColumnOrder =0
                     FontSize =14
                     BorderColor =10921638
                     ForeColor =16777215
@@ -1283,17 +1292,8 @@ Begin Form
                     LayoutCachedWidth =8760
                     LayoutCachedHeight =6000
                     PictureCaptionArrangement =3
-                    UseTheme =0
                     BackColor =15123357
                     BorderColor =15123357
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeThemeColorIndex =-1
-                    HoverForeTint =100.0
-                    PressedForeThemeColorIndex =-1
-                    PressedForeTint =100.0
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
@@ -1372,17 +1372,8 @@ Begin Form
                     LayoutCachedWidth =11355
                     LayoutCachedHeight =6000
                     PictureCaptionArrangement =3
-                    UseTheme =0
                     BackColor =15123357
                     BorderColor =15123357
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeThemeColorIndex =-1
-                    HoverForeTint =100.0
-                    PressedForeThemeColorIndex =-1
-                    PressedForeTint =100.0
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
@@ -1477,17 +1468,8 @@ Begin Form
                     LayoutCachedTop =5400
                     LayoutCachedWidth =9396
                     LayoutCachedHeight =5976
-                    UseTheme =0
                     BackColor =15123357
                     BorderColor =15123357
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeThemeColorIndex =-1
-                    HoverForeTint =100.0
-                    PressedForeThemeColorIndex =-1
-                    PressedForeTint =100.0
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
@@ -1580,22 +1562,30 @@ Begin Form
                     LayoutCachedTop =5400
                     LayoutCachedWidth =10056
                     LayoutCachedHeight =5976
-                    UseTheme =0
                     BackColor =15123357
                     BorderColor =15123357
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeThemeColorIndex =-1
-                    HoverForeTint =100.0
-                    PressedForeThemeColorIndex =-1
-                    PressedForeTint =100.0
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
                     Overlaps =1
+                End
+                Begin Label
+                    OverlapFlags =215
+                    TextAlign =2
+                    Left =6000
+                    Top =5400
+                    Width =1440
+                    Height =660
+                    BorderColor =8355711
+                    ForeColor =8355711
+                    Name ="Label69"
+                    Caption ="Click to navigate sites"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =6000
+                    LayoutCachedTop =5400
+                    LayoutCachedWidth =7440
+                    LayoutCachedHeight =6060
                 End
             End
         End

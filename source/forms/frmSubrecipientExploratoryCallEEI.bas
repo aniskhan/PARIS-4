@@ -6,6 +6,7 @@ Begin Form
     NavigationButtons = NotDefault
     AllowDeletions = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ViewsAllowed =1
@@ -16,9 +17,10 @@ Begin Form
     Width =15483
     DatasheetFontHeight =11
     ItemSuffix =285
-    Right =5625
-    Bottom =7005
+    Right =18210
+    Bottom =12510
     DatasheetGridlinesColor =15132391
+    Filter ="[DisasterID]='4258' and [ApplicantID]='067-73650-00'"
     RecSrcDt = Begin
         0x399cd2afb4b9e440
     End

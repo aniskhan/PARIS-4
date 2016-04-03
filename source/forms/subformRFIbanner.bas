@@ -18,11 +18,11 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =11520
+    Width =11400
     DatasheetFontHeight =11
-    ItemSuffix =11
-    Right =25020
-    Bottom =12765
+    ItemSuffix =12
+    Right =19320
+    Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0x5f45d0440fb7e440
@@ -90,6 +90,14 @@ Begin Form
             GridlineThemeColorIndex =1
             GridlineShade =65.0
         End
+        Begin Subform
+            BorderLineStyle =0
+            BorderThemeColorIndex =1
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+            BorderShade =65.0
+            ShowPageHeaderAndPageFooter =1
+        End
         Begin FormHeader
             Height =0
             BackColor =15921906
@@ -100,7 +108,7 @@ Begin Form
             BackShade =95.0
         End
         Begin Section
-            Height =2040
+            Height =1980
             BackColor =15921906
             Name ="Detail"
             AlternateBackColor =15921906
@@ -123,6 +131,7 @@ Begin Form
                     Height =360
                     ColumnWidth =3000
                     FontSize =12
+                    TabIndex =1
                     BorderColor =10921638
                     ForeColor =3484194
                     Name ="DisasterID"
@@ -163,24 +172,25 @@ Begin Form
                     EnterKeyBehavior = NotDefault
                     OldBorderStyle =0
                     OverlapFlags =93
+                    TextAlign =1
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =7260
+                    Left =7140
                     Top =480
                     Width =1800
                     Height =360
                     ColumnWidth =3000
                     FontSize =12
-                    TabIndex =3
+                    TabIndex =2
                     BorderColor =10921638
                     ForeColor =3484194
                     Name ="ApplicantID"
                     ControlSource ="ApplicantID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =7260
+                    LayoutCachedLeft =7140
                     LayoutCachedTop =480
-                    LayoutCachedWidth =9060
+                    LayoutCachedWidth =8940
                     LayoutCachedHeight =840
                     ForeThemeColorIndex =2
                     ForeTint =100.0
@@ -191,7 +201,7 @@ Begin Form
                     TabStop = NotDefault
                     EnterKeyBehavior = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =87
+                    OverlapFlags =95
                     BackStyle =0
                     IMESentenceMode =3
                     Left =5580
@@ -218,6 +228,7 @@ Begin Form
                     Begin
                         Begin Label
                             OverlapFlags =93
+                            TextAlign =1
                             Left =5580
                             Top =480
                             Width =1500
@@ -226,7 +237,7 @@ Begin Form
                             FontWeight =700
                             BorderColor =8355711
                             Name ="Applicant Name_Label"
-                            Caption ="Subrecipient:"
+                            Caption ="Applicant:"
                             EventProcPrefix ="Applicant_Name_Label"
                             GridlineColor =10921638
                             LayoutCachedLeft =5580
@@ -274,7 +285,6 @@ Begin Form
                     ColumnWidth =1440
                     FontSize =16
                     FontWeight =700
-                    TabIndex =5
                     BorderColor =10921638
                     ForeColor =8210719
                     Name ="RFI Tracking #"
@@ -293,14 +303,15 @@ Begin Form
                     Locked = NotDefault
                     TabStop = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =93
+                    OverlapFlags =95
+                    TextAlign =1
                     BackStyle =0
                     IMESentenceMode =3
                     Left =1860
                     Top =540
                     Height =360
                     FontSize =12
-                    TabIndex =6
+                    TabIndex =3
                     BorderColor =10921638
                     ForeColor =3484194
                     Name ="ItemType"
@@ -317,19 +328,20 @@ Begin Form
                     Begin
                         Begin Label
                             OverlapFlags =93
+                            TextAlign =1
                             Left =300
                             Top =540
-                            Width =1500
+                            Width =1560
                             Height =360
                             FontSize =12
                             FontWeight =700
                             BorderColor =8355711
                             Name ="Label8"
-                            Caption ="ItemType"
+                            Caption ="Item Type:"
                             GridlineColor =10921638
                             LayoutCachedLeft =300
                             LayoutCachedTop =540
-                            LayoutCachedWidth =1800
+                            LayoutCachedWidth =1860
                             LayoutCachedHeight =900
                             ForeTint =100.0
                         End
@@ -339,11 +351,13 @@ Begin Form
                     Locked = NotDefault
                     TabStop = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =93
+                    OverlapFlags =95
+                    TextAlign =1
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =1860
-                    Top =1620
+                    Left =7140
+                    Top =1200
+                    Width =3120
                     Height =360
                     FontSize =12
                     TabIndex =7
@@ -353,126 +367,31 @@ Begin Form
                     ControlSource ="ReviewFrom"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =1860
-                    LayoutCachedTop =1620
-                    LayoutCachedWidth =3300
-                    LayoutCachedHeight =1980
-                    ForeThemeColorIndex =2
-                    ForeTint =100.0
-                    ForeShade =50.0
-                    Begin
-                        Begin Label
-                            OverlapFlags =93
-                            Left =300
-                            Top =1620
-                            Width =1500
-                            Height =360
-                            FontSize =12
-                            FontWeight =700
-                            BorderColor =8355711
-                            Name ="Label9"
-                            Caption ="ReviewFrom"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =300
-                            LayoutCachedTop =1620
-                            LayoutCachedWidth =1800
-                            LayoutCachedHeight =1980
-                            ForeTint =100.0
-                        End
-                    End
-                End
-                Begin TextBox
-                    Locked = NotDefault
-                    TabStop = NotDefault
-                    OldBorderStyle =0
-                    OverlapFlags =85
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =8640
-                    Top =1380
-                    Width =2760
-                    Height =360
-                    FontSize =12
-                    TabIndex =8
-                    BorderColor =10921638
-                    ForeColor =3484194
-                    Name ="CreatedBy"
-                    ControlSource ="CreatedByName"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =8640
-                    LayoutCachedTop =1380
-                    LayoutCachedWidth =11400
-                    LayoutCachedHeight =1740
-                    ForeThemeColorIndex =2
-                    ForeTint =100.0
-                    ForeShade =50.0
-                    Begin
-                        Begin Label
-                            OverlapFlags =85
-                            Left =7500
-                            Top =1380
-                            Width =1035
-                            Height =360
-                            FontSize =12
-                            FontWeight =700
-                            BorderColor =8355711
-                            Name ="Label10"
-                            Caption ="CreatedBy"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =7500
-                            LayoutCachedTop =1380
-                            LayoutCachedWidth =8535
-                            LayoutCachedHeight =1740
-                            ForeTint =100.0
-                        End
-                    End
-                End
-                Begin TextBox
-                    Locked = NotDefault
-                    TabStop = NotDefault
-                    OldBorderStyle =0
-                    OverlapFlags =95
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =1860
-                    Top =900
-                    Width =3660
-                    Height =360
-                    FontSize =12
-                    TabIndex =1
-                    BorderColor =10921638
-                    ForeColor =3484194
-                    Name ="RFI Phase"
-                    ControlSource ="PhaseName"
-                    EventProcPrefix ="RFI_Phase"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =1860
-                    LayoutCachedTop =900
-                    LayoutCachedWidth =5520
-                    LayoutCachedHeight =1260
+                    LayoutCachedLeft =7140
+                    LayoutCachedTop =1200
+                    LayoutCachedWidth =10260
+                    LayoutCachedHeight =1560
                     ForeThemeColorIndex =2
                     ForeTint =100.0
                     ForeShade =50.0
                     Begin
                         Begin Label
                             OverlapFlags =95
-                            Left =300
-                            Top =900
+                            TextAlign =1
+                            Left =5580
+                            Top =1200
                             Width =1500
                             Height =360
                             FontSize =12
                             FontWeight =700
                             BorderColor =8355711
-                            Name ="RFI Phase_Label"
-                            Caption ="Process Phase"
-                            EventProcPrefix ="RFI_Phase_Label"
+                            Name ="Label9"
+                            Caption ="Review From:"
                             GridlineColor =10921638
-                            LayoutCachedLeft =300
-                            LayoutCachedTop =900
-                            LayoutCachedWidth =1800
-                            LayoutCachedHeight =1260
+                            LayoutCachedLeft =5580
+                            LayoutCachedTop =1200
+                            LayoutCachedWidth =7080
+                            LayoutCachedHeight =1560
                             ForeTint =100.0
                         End
                     End
@@ -482,14 +401,115 @@ Begin Form
                     TabStop = NotDefault
                     OldBorderStyle =0
                     OverlapFlags =87
+                    TextAlign =1
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =7140
+                    Top =1560
+                    Width =2760
+                    Height =360
+                    FontSize =12
+                    TabIndex =9
+                    BorderColor =10921638
+                    ForeColor =3484194
+                    Name ="CreatedBy"
+                    ControlSource ="CreatedByName"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =7140
+                    LayoutCachedTop =1560
+                    LayoutCachedWidth =9900
+                    LayoutCachedHeight =1920
+                    ForeThemeColorIndex =2
+                    ForeTint =100.0
+                    ForeShade =50.0
+                    Begin
+                        Begin Label
+                            OverlapFlags =87
+                            TextAlign =1
+                            Left =5580
+                            Top =1560
+                            Width =1500
+                            Height =360
+                            FontSize =12
+                            FontWeight =700
+                            BorderColor =8355711
+                            Name ="Label10"
+                            Caption ="Created By:"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =5580
+                            LayoutCachedTop =1560
+                            LayoutCachedWidth =7080
+                            LayoutCachedHeight =1920
+                            ForeTint =100.0
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =95
+                    TextAlign =1
                     BackStyle =0
                     IMESentenceMode =3
                     Left =1860
-                    Top =1260
+                    Top =1200
                     Width =3660
                     Height =360
                     FontSize =12
-                    TabIndex =2
+                    TabIndex =6
+                    BorderColor =10921638
+                    ForeColor =3484194
+                    Name ="RFI Phase"
+                    ControlSource ="PhaseName"
+                    EventProcPrefix ="RFI_Phase"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =1860
+                    LayoutCachedTop =1200
+                    LayoutCachedWidth =5520
+                    LayoutCachedHeight =1560
+                    ForeThemeColorIndex =2
+                    ForeTint =100.0
+                    ForeShade =50.0
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            TextAlign =1
+                            Left =300
+                            Top =1200
+                            Width =1560
+                            Height =360
+                            FontSize =12
+                            FontWeight =700
+                            BorderColor =8355711
+                            Name ="RFI Phase_Label"
+                            Caption ="Process Phase:"
+                            EventProcPrefix ="RFI_Phase_Label"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =300
+                            LayoutCachedTop =1200
+                            LayoutCachedWidth =1860
+                            LayoutCachedHeight =1560
+                            ForeTint =100.0
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =87
+                    TextAlign =1
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =1860
+                    Top =1560
+                    Width =3660
+                    Height =360
+                    FontSize =12
+                    TabIndex =8
                     BorderColor =10921638
                     ForeColor =3484194
                     Name ="RFI Step"
@@ -498,30 +518,79 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =1860
-                    LayoutCachedTop =1260
+                    LayoutCachedTop =1560
                     LayoutCachedWidth =5520
-                    LayoutCachedHeight =1620
+                    LayoutCachedHeight =1920
                     ForeThemeColorIndex =2
                     ForeTint =100.0
                     ForeShade =50.0
                     Begin
                         Begin Label
-                            OverlapFlags =87
+                            OverlapFlags =95
+                            TextAlign =1
                             Left =300
-                            Top =1260
-                            Width =1500
+                            Top =1560
+                            Width =1560
                             Height =360
                             FontSize =12
                             FontWeight =700
                             BorderColor =8355711
                             Name ="RFI Step_Label"
-                            Caption ="Process Step"
+                            Caption ="Process Step:"
                             EventProcPrefix ="RFI_Step_Label"
                             GridlineColor =10921638
                             LayoutCachedLeft =300
-                            LayoutCachedTop =1260
-                            LayoutCachedWidth =1800
-                            LayoutCachedHeight =1620
+                            LayoutCachedTop =1560
+                            LayoutCachedWidth =1860
+                            LayoutCachedHeight =1920
+                            ForeTint =100.0
+                        End
+                    End
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    OverlapFlags =247
+                    TextAlign =1
+                    IMESentenceMode =3
+                    Left =1860
+                    Top =900
+                    Width =660
+                    Height =315
+                    FontSize =12
+                    TabIndex =5
+                    BackColor =15921906
+                    BorderColor =10921638
+                    ForeColor =3484194
+                    Name ="ProjectID"
+                    ControlSource ="ProjectID"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =1860
+                    LayoutCachedTop =900
+                    LayoutCachedWidth =2520
+                    LayoutCachedHeight =1215
+                    BackShade =95.0
+                    ForeThemeColorIndex =2
+                    ForeTint =100.0
+                    ForeShade =50.0
+                    Begin
+                        Begin Label
+                            OverlapFlags =223
+                            TextAlign =1
+                            Left =300
+                            Top =900
+                            Width =1560
+                            Height =315
+                            FontSize =12
+                            FontWeight =700
+                            BorderColor =8355711
+                            Name ="Label11"
+                            Caption ="Project ID:"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =300
+                            LayoutCachedTop =900
+                            LayoutCachedWidth =1860
+                            LayoutCachedHeight =1215
                             ForeTint =100.0
                         End
                     End

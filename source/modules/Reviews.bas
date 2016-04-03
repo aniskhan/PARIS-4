@@ -16,7 +16,7 @@ Public Function CheckReview(ItemDims As classItemDims) As Boolean
     WhereCondition = ItemDims.WhereID
     WhereCondition = WhereCondition & " and [ReviewExitDate] is null"
     
-    
+'Debug.Print "debug print From reviews.checkreview:"; WhereCondition
     Count = DCount("ReviewID", ItemDims.ReviewTable, WhereCondition)
     If Count > 0 Then
         CheckReview = True
@@ -46,7 +46,6 @@ Public Function CheckPermission(ItemDims As classItemDims, UserName As String) A
         WhereCondition = WhereCondition & " and [StartDate] <= Date()"
         WhereCondition = WhereCondition & " and ([EndDate] is null or [EndDate] >= Date())"
     
-   
         Count = DCount("RoleID", "tblStaffRoles", WhereCondition)
         
         
@@ -57,6 +56,7 @@ Public Function CheckPermission(ItemDims As classItemDims, UserName As String) A
             WhereConditionPosition = "[Position]='" & Position & "'"
             Position = Nz(DLookup("ReportsTo", "hashtblPositionHierarchy", WhereConditionPosition), "")
         End If
+        
     Loop
 End Function
 
@@ -97,15 +97,15 @@ Public Function GetAssignToPosition(ItemType As String, ReviewType As String) As
 End Function
 
 Public Sub StartReview(ItemDims As classItemDims, UserName As String, Optional Silent As Boolean = False)
-    Dim Db As Database
+    Dim db As Database
     Dim recEditStatus As Recordset
     Dim WhereCondition As String
     
     WhereCondition = ItemDims.WhereID
     WhereCondition = WhereCondition & " and [ReviewCheckOutDate] is null"
 
-    Set Db = CurrentDb()
-    Set recEditStatus = Db.OpenRecordset(ItemDims.ReviewTable, dbOpenDynaset)
+    Set db = CurrentDb()
+    Set recEditStatus = db.OpenRecordset(ItemDims.ReviewTable, dbOpenDynaset)
     
     recEditStatus.FindFirst WhereCondition
     
@@ -122,11 +122,11 @@ Public Sub StartReview(ItemDims As classItemDims, UserName As String, Optional S
     
     recEditStatus.Close
     Set recEditStatus = Nothing
-    Set Db = Nothing
+    Set db = Nothing
 
 End Sub
-Public Function CompleteReview(ItemDims As classItemDims, UserName As String, Disposition As String) As Boolean
-    Dim Db As Database
+Public Function CompleteReview(ItemDims As classItemDims, UserName As String, Disposition As String, Optional Comment As Variant = "") As Boolean
+    Dim db As Database
     Dim recEditStatus As Recordset
     Dim WhereCondition As String
     
@@ -138,8 +138,8 @@ Public Function CompleteReview(ItemDims As classItemDims, UserName As String, Di
     WhereCondition = WhereCondition & " and [ReviewCheckOutDate] is not null"
     WhereCondition = WhereCondition & " and [ReviewExitDate] is null"
 
-    Set Db = CurrentDb()
-    Set recEditStatus = Db.OpenRecordset(ItemDims.ReviewTable, dbOpenDynaset)
+    Set db = CurrentDb()
+    Set recEditStatus = db.OpenRecordset(ItemDims.ReviewTable, dbOpenDynaset)
     
     recEditStatus.FindFirst WhereCondition
     
@@ -152,6 +152,7 @@ Public Function CompleteReview(ItemDims As classItemDims, UserName As String, Di
             recEditStatus![CompletedUserID] = UserName
             recEditStatus![ReviewExitDate] = Now
             recEditStatus![Disposition] = Disposition
+            If Comment <> "" Then recEditStatus![Comments] = Comment
         recEditStatus.Update
             
         CompleteReview = True
@@ -159,12 +160,12 @@ Public Function CompleteReview(ItemDims As classItemDims, UserName As String, Di
     
     recEditStatus.Close
     Set recEditStatus = Nothing
-    Set Db = Nothing
+    Set db = Nothing
 
 End Function
 
-Public Sub EnterReview(ItemDims As classItemDims, Optional Assignto As String = "", Optional Comment As String = "")
-    Dim Db As Database
+Public Sub EnterReview(ItemDims As classItemDims, Optional Assignto As Variant = "", Optional Comment As Variant = "")
+    Dim db As Database
     Dim recEditStatus As Recordset
     Dim WhereCondition As String
     Dim Count As Integer
@@ -176,8 +177,8 @@ Public Sub EnterReview(ItemDims As classItemDims, Optional Assignto As String = 
     Count = DCount("ReviewID", ItemDims.ReviewTable, WhereCondition)
     If Count = 0 Then
     
-        Set Db = CurrentDb()
-        Set recEditStatus = Db.OpenRecordset(ItemDims.ReviewTable, dbOpenDynaset)
+        Set db = CurrentDb()
+        Set recEditStatus = db.OpenRecordset(ItemDims.ReviewTable, dbOpenDynaset)
         
         recEditStatus.AddNew
             recEditStatus![DisasterID] = ItemDims.DisasterID
@@ -185,6 +186,7 @@ Public Sub EnterReview(ItemDims As classItemDims, Optional Assignto As String = 
             If ItemDims.NeedsProjectID Then recEditStatus![ProjectID] = ItemDims.ProjectID
             If ItemDims.NeedsSiteID Then recEditStatus![SiteID] = ItemDims.SiteID
             If ItemDims.NeedsRfiID Then recEditStatus![RfiID] = ItemDims.RfiID
+            If ItemDims.NeedsRfiItemID Then recEditStatus![RfiItemID] = ItemDims.RfiItemID
             If ItemDims.NeedsLaneID Then recEditStatus![Lane Assigned] = ItemDims.LaneID
             recEditStatus![ReviewType] = ItemDims.ReviewType
             recEditStatus![ReviewEntryDate] = Now
@@ -197,11 +199,11 @@ Public Sub EnterReview(ItemDims As classItemDims, Optional Assignto As String = 
     End If
     
     Set recEditStatus = Nothing
-    Set Db = Nothing
+    Set db = Nothing
 
 End Sub
 Public Sub PushAllChildren(ItemDims As classItemDims, UserName As String, Disposition As String, Optional EnterChildReview As String = "", Optional AssignChildTo As String = "")
-    Dim Db As Database
+    Dim db As Database
     Dim recChildren As Recordset
     Dim ChildDim As New classItemDims
     Dim WhereCondition As String
@@ -244,8 +246,8 @@ Public Sub PushAllChildren(ItemDims As classItemDims, UserName As String, Dispos
     sql = sql & " Where " & WhereCondition & ";"
     
     
-    Set Db = CurrentDb()
-    Set recChildren = Db.OpenRecordset(sql)
+    Set db = CurrentDb()
+    Set recChildren = db.OpenRecordset(sql)
     If recChildren.BOF And recChildren.EOF Then
         Debug.Print "Push Child Failed.  Empty record set.", sql
         'return false? do nothing?
@@ -275,11 +277,28 @@ Public Sub PushAllChildren(ItemDims As classItemDims, UserName As String, Dispos
     
     recChildren.Close
     Set recChildren = Nothing
-    Set Db = Nothing
+    Set db = Nothing
 
 End Sub
-Public Sub PushSomeChildren(ItemDims As classItemDims, UserName As String, Disposition As String, Optional EnterChildReview As String = "", Optional CheckPhrase As String = "")
-    Dim Db As Database
+Public Sub CompleteAndPushAll(ItemDims As classItemDims, CompletedBy As String, Disposition As String, Optional Comment As Variant = "", Optional PushToReview As String = "", Optional AssignChildTo As String = "")
+    Dim CompleteDims As classItemDims
+    Dim EnterDims As classItemDims
+    Dim PushChildDims As classItemDims
+    Dim ChildEnterReviewName As String
+    
+    Set CompleteDims = ItemDims.Clone
+    If CompleteReview(CompleteDims, CompletedBy, Disposition, Comment) Then
+        Set EnterDims = ItemDims.Clone(PushToReview)
+        ChildEnterReviewName = EnterDims.ReviewChild
+        EnterReview EnterDims, AssignChildTo
+        
+        Set PushChildDims = ItemDims.Clone(ItemDims.ReviewChild)
+        
+        PushAllChildren PushChildDims, CompletedBy, Disposition, ChildEnterReviewName, AssignChildTo
+    End If
+End Sub
+Public Sub PushSomeChildren(ItemDims As classItemDims, UserName As String, Disposition As String, Optional EnterChildReview As String = "", Optional CheckPhrase As String = "", Optional CheckPhraseSource As String = "")
+    Dim db As Database
     Dim recChildren As Recordset
     Dim ChildDim As New classItemDims
     Dim WhereCondition As String
@@ -318,12 +337,16 @@ Public Sub PushSomeChildren(ItemDims As classItemDims, UserName As String, Dispo
     
     WhereCondition = ItemDims.WhereID(False)
     
-    sql = "Select " & ChildIdName & " AS ID From " & ChildTable
+    If CheckPhraseSource = "" Then
+        sql = "Select " & ChildIdName & " AS ID From " & ChildTable
+    Else
+        sql = "Select " & ChildIdName & " AS ID From " & CheckPhraseSource
+    End If
     sql = sql & " Where " & WhereCondition & " and " & CheckPhrase & ";"
     
     
-    Set Db = CurrentDb()
-    Set recChildren = Db.OpenRecordset(sql)
+    Set db = CurrentDb()
+    Set recChildren = db.OpenRecordset(sql)
     If recChildren.BOF And recChildren.EOF Then
         Debug.Print "Push Child Failed.  Empty record set.", sql
         'return false? do nothing?
@@ -358,7 +381,7 @@ Public Sub PushSomeChildren(ItemDims As classItemDims, UserName As String, Dispo
     
     recChildren.Close
     Set recChildren = Nothing
-    Set Db = Nothing
+    Set db = Nothing
 
 End Sub
 
@@ -367,12 +390,12 @@ Public Function CurrentUserID() As String
 End Function
 
 Public Sub CreateSiteInspection(ItemDims As classItemDims)
-    Dim Db As Database
+    Dim db As Database
     Dim recEditStatus As Recordset
     
 
-    Set Db = CurrentDb()
-    Set recEditStatus = Db.OpenRecordset("tblSiteInspections", dbOpenDynaset)
+    Set db = CurrentDb()
+    Set recEditStatus = db.OpenRecordset("tblSiteInspections", dbOpenDynaset)
     
     recEditStatus.AddNew
         recEditStatus![DisasterID] = ItemDims.DisasterID
@@ -387,17 +410,17 @@ Public Sub CreateSiteInspection(ItemDims As classItemDims)
     
     recEditStatus.Close
     Set recEditStatus = Nothing
-    Set Db = Nothing
+    Set db = Nothing
 
 End Sub
 Public Sub CreateRFI(ItemDims As classItemDims)
-    Dim Db As Database
+    Dim db As Database
     Dim recAddRFI As Recordset
     Dim RfiID As Long
         
 
-    Set Db = CurrentDb()
-    Set recAddRFI = Db.OpenRecordset("tblRFI", dbOpenDynaset)
+    Set db = CurrentDb()
+    Set recAddRFI = db.OpenRecordset("tblRFI", dbOpenDynaset)
     
     recAddRFI.AddNew
         If Nz(ItemDims.ItemType, "") <> "" Then recAddRFI![ItemType] = ItemDims.ItemType
@@ -416,7 +439,7 @@ Public Sub CreateRFI(ItemDims As classItemDims)
     Debug.Print "Initial RfiID", RfiID
     'Check RFI ID and fetch if needed (dao vs switch to a sql backend
     If RfiID = 0 Then
-        RfiID = Db.OpenRecordset("SELECT @@IDENTITY")(0)
+        RfiID = db.OpenRecordset("SELECT @@IDENTITY")(0)
     End If
     Debug.Print "Revised RfiID", RfiID
     
@@ -430,17 +453,17 @@ Public Sub CreateRFI(ItemDims As classItemDims)
     EnterReview ItemDims, CurrentUserID
     
     Set recAddRFI = Nothing
-    Set Db = Nothing
+    Set db = Nothing
 
 End Sub
 Public Sub CreateDM(ItemDims As classItemDims)
-    Dim Db As Database
+    Dim db As Database
     Dim recAddDM As Recordset
     Dim DmID As Long
         
 
-    Set Db = CurrentDb()
-    Set recAddDM = Db.OpenRecordset("tblDeterminationMemo", dbOpenDynaset)
+    Set db = CurrentDb()
+    Set recAddDM = db.OpenRecordset("tblDeterminationMemo", dbOpenDynaset)
     
     recAddDM.AddNew
         If Nz(ItemDims.ItemType, "") <> "" Then recAddDM![ItemType] = ItemDims.ItemType
@@ -459,7 +482,7 @@ Public Sub CreateDM(ItemDims As classItemDims)
     Debug.Print "Initial DmID", DmID
     'Check RFI ID and fetch if needed (dao vs switch to a sql backend
     If DmID = 0 Then
-        DmID = Db.OpenRecordset("SELECT @@IDENTITY")(0)
+        DmID = db.OpenRecordset("SELECT @@IDENTITY")(0)
     End If
     Debug.Print "Revised DmID", DmID
     
@@ -473,6 +496,87 @@ Public Sub CreateDM(ItemDims As classItemDims)
     EnterReview ItemDims, CurrentUserID
     
     Set recAddDM = Nothing
-    Set Db = Nothing
+    Set db = Nothing
 
 End Sub
+
+    Select Case frm.cboResult
+        Case "SUB"
+'            Main section of page specific code. Creates new reviews as needed.
+            Select Case ReviewType
+                Case "DIU Lane Select"
+'                    Creates the next project review and moves all sites as needed.  Will need to adjust for specialized.
+                    Reviews.EnterReview GetItemDims("Assign DVS")
+                    If Me![Lane Assigned] = "ST" Then
+                        Reviews.PushAllChildren GetItemDims("DIU Lane Select"), Environ("UserName"), frm.cboResult, "Assign DVS"
+                    Else
+                        Reviews.PushAllChildren GetItemDims("DIU Lane Select"), Environ("UserName"), frm.cboResult
+                    End If
+                Case Else
+                    Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & ReviewType
+            End Select
+        Case Else
+            Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & frm.cboResult
+    End Select
+    
+    
+
+Public Sub CompleteReviewStandard(ItemDims As classItemDims, CurrentForm As Form, ReviewResultForm As Form)
+    Select Case ReviewResultForm.cboResult
+'        Most review dispositions have fairly standard code.
+        Case "DM"
+            CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "Determination Memo", CurrentUserID
+        Case "RFI"
+            Reviews.CreateRFI ItemDims.Clone
+            CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "RFI", CurrentUserID
+            DoCmd.OpenForm "frmRFIRequest", , , ItemDims.WhereID(False)
+        Case "RSN"
+            CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), ItemDims.ReviewType, ReviewResultForm.cboAssign
+        Case "RW"
+            CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), ReviewResultForm.cboRework, ReviewResultForm.cboAssign
+        Case "SUB"
+'            Main section of page specific code. Creates new reviews as needed.
+            Select Case ItemDims.ReviewType
+                Case "DIU Lane Select"
+                    Select Case CurrentForm![Lane Assigned]
+                        Case "ST"
+                            CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "Assign DVS"
+                        Case "EX"
+                            CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "Assign DVS"
+                        Case "SP"
+                            CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "Specialized Lane"
+                        Case Else
+                            Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & CurrentForm![Lane Assigned]
+                    End Select
+                
+                Case "Assign DVS"
+                    CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "Generate Work Order", CurrentForm![Assigned Data Validation Specialist]
+                
+                Case "DVS Review"
+                    If CompleteReview(ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, "")) Then
+                        WhereCondition = ItemDims.WhereID(False)
+     
+                        CheckPhrase = "[Ready For SI]='Yes' and [Marked For SI]='No'"
+                        If DCount("SiteID", "fqryDVSSiteReviewSelect", WhereCondition & " and " & CheckPhrase) > 0 Then
+                            EnterReview ItemDims.Clone("Inspection Assignment")
+                            PushSomeChildren ItemDims.Clone("Draft DDD"), CurrentUserID, frm.cboResult, "Ready for Concurrence", CheckPhrase, "fqryDVSSiteReviewSelect"
+                        End If
+                        
+                        If DCount("ProjectID", ItemDims.ReviewTable, WhereCondition & " and ([ReviewType] = 'Inspection Assignment' or [ReviewType] = 'Validation Assignment')") = 0 Then
+                            CheckPhrase = "[Ready For SI]='Yes' and [Marked For SI]='Yes'"
+                            If DCount("SiteID", "tblSites", WhereCondition & " and " & CheckPhrase) > 0 Then
+                                EnterReview ItemDims.Clone("Inspection Assignment")
+                                PushSomeChildren ItemDims.Clone("Draft DDD"), CurrentUserID, frm.cboResult, "Inspection Assignment", CheckPhrase, "fqryDVSSiteReviewSelect"
+                            End If
+                        End If
+                    End If
+                
+                Case Else
+                    Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & ItemDims.ReviewType
+            End Select
+        Case Else
+            Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & ReviewResultForm.cboResult
+    End Select
+End Sub
+
+                   
