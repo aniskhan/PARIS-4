@@ -70,10 +70,10 @@ Public Property Let RfiID(DimValue As Long)
     Dims.pRfiID = DimValue
 End Property
 Public Property Get RfiItemID() As Long
-    RfiItemID = pRfiItemID
+    RfiItemID = Dims.pRfiItemID
 End Property
 Public Property Let RfiItemID(DimValue As Long)
-    pRfiItemID = DimValue
+    Dims.pRfiItemID = DimValue
 End Property
 Public Property Get DmID() As Long
     DmID = Dims.pDmID
@@ -126,7 +126,7 @@ Public Property Get WhereID(Optional IncludeReview As Boolean = True) As String
         WhereCondition = WhereCondition & " and [RfiID]=" & Dims.pRfiID
     End If
     If NeedsRfiItemID Then
-        WhereCondition = WhereCondition & " and [RfiItemID]=" & pRfiItemID
+        WhereCondition = WhereCondition & " and [RfiItemID]=" & Dims.pRfiItemID
     End If
     If NeedsDmID Then
         WhereCondition = WhereCondition & " and [DmID]=" & Dims.pDmID
@@ -254,7 +254,7 @@ End Function
 
 Public Function NeedsRfiItemID() As Boolean
     NeedsRfiItemID = False
-    If pItemType = "RFIResponse" Then NeedsRfiItemID = True
+    If Dims.pItemType = "RFIResponse" Then NeedsRfiItemID = True
 End Function
 Public Function NeedsRfiID() As Boolean
     NeedsRfiID = False
@@ -368,10 +368,10 @@ End Sub
 
 
 Public Sub ConvertToRfiResponse(RfiItemID As Long)
-    If pItemType <> "RFIResponse" Then
-        pRfiItemType = pItemType
-        pItemID = "RFIResponse"
-        pRfiItemID = RfiItemID
+    If Dims.pItemType <> "RFIResponse" Then
+        Dims.pRfiItemType = Dims.pItemType
+        Dims.pItemID = "RFIResponse"
+        Dims.pRfiItemID = RfiItemID
     End If
 End Sub
 Public Sub ConvertToRFI(RfiID As Long)

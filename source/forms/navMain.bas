@@ -17,8 +17,8 @@ Begin Form
     Width =15480
     DatasheetFontHeight =11
     ItemSuffix =123
-    Right =20175
-    Bottom =12645
+    Right =18435
+    Bottom =7695
     TimerInterval =30
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -3578,7 +3578,7 @@ Begin Form
                         ColumnsShown =8
                         Begin
                             Action ="OpenForm"
-                            Argument ="navRFIProcess"
+                            Argument ="navRFI-DMProcess"
                             Argument ="0"
                             Argument =""
                             Argument =""
@@ -3589,10 +3589,10 @@ Begin Form
                             Comment ="_AXL:<?xml version=\"1.0\" encoding=\"UTF-16\" standalone=\"no\"?>\015\012<UserI"
                                 "nterfaceMacro For=\"cmdOpenRFINav\" xmlns=\"http://schemas.microsoft.com/office/"
                                 "accessservices/2009/11/application\"><Statements><Action Name=\"OpenForm\"><Argu"
-                                "ment Name=\"FormName\">navRFIProc"
+                                "ment Name=\"FormName\">navRFI-DMP"
                         End
                         Begin
-                            Comment ="_AXL:ess</Argument></Action></Statements></UserInterfaceMacro>"
+                            Comment ="_AXL:rocess</Argument></Action></Statements></UserInterfaceMacro>"
                         End
                     End
 

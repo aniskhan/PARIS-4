@@ -130,7 +130,7 @@ Begin Form
             BackThemeColorIndex =1
             Begin
                 Begin Label
-                    OverlapFlags =93
+                    OverlapFlags =85
                     TextAlign =1
                     Left =300
                     Top =60
@@ -159,7 +159,7 @@ Begin Form
                 End
                 Begin Label
                     BackStyle =1
-                    OverlapFlags =215
+                    OverlapFlags =85
                     Left =60
                     Top =60
                     Width =15900

@@ -15,16 +15,16 @@ Begin Form
     Width =16500
     DatasheetFontHeight =11
     ItemSuffix =70
-    Left =60
-    Top =4680
-    Right =16425
-    Bottom =11280
+    Left =405
+    Top =6045
+    Right =16515
+    Bottom =12675
     DatasheetGridlinesColor =15132391
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin
-        0x3c19f5aeb4b9e440
+        0xf33f0d8fabbbe440
     End
-    RecordSource ="fqrySiteInfo"
+    RecordSource ="fqrySiteEnterListofDamages"
     Caption ="subformEnterListofDamages"
     BeforeUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"

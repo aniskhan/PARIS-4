@@ -192,7 +192,6 @@ Begin Report
                     LayoutCachedHeight =840
                 End
                 Begin CommandButton
-                    OverlapFlags =4
                     Left =9900
                     Top =300
                     Width =1680
@@ -225,7 +224,6 @@ Begin Report
                     Overlaps =1
                 End
                 Begin CommandButton
-                    OverlapFlags =4
                     Left =11700
                     Top =300
                     Width =1680

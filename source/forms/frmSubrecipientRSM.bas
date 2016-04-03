@@ -7,6 +7,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ViewsAllowed =1
@@ -20,7 +21,7 @@ Begin Form
     Right =22080
     Bottom =12645
     DatasheetGridlinesColor =15132391
-    Filter ="[Assigned PDC] = 'vrhoads'"
+    Filter ="[Assigned PDC] = 'nlietzk1'"
     RecSrcDt = Begin
         0xf695692093b8e440
     End

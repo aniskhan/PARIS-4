@@ -7,21 +7,22 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     ViewsAllowed =1
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =15855
+    Width =15780
     DatasheetFontHeight =11
-    ItemSuffix =215
-    Left =30615
-    Top =2505
-    Right =-20506
-    Bottom =15150
+    ItemSuffix =220
+    Left =21780
+    Top =2070
+    Right =-27496
+    Bottom =5475
     DatasheetGridlinesColor =15132391
-    Filter ="[DisasterID]='4258' and [RfiID]=38"
+    Filter ="[DisasterID]='4258' and [ApplicantID]='011-U293R-00' and [RfiID]=4"
     RecSrcDt = Begin
         0xeaf644ba95bae440
     End
@@ -219,7 +220,7 @@ Begin Form
                     OverlapFlags =85
                     TextAlign =2
                     Left =13680
-                    Top =120
+                    Top =60
                     Width =1995
                     Height =300
                     BorderColor =8355711
@@ -229,9 +230,9 @@ Begin Form
                     GroupTable =6
                     GridlineColor =10921638
                     LayoutCachedLeft =13680
-                    LayoutCachedTop =120
+                    LayoutCachedTop =60
                     LayoutCachedWidth =15675
-                    LayoutCachedHeight =420
+                    LayoutCachedHeight =360
                     LayoutGroup =2
                     GroupTable =6
                 End
@@ -316,9 +317,10 @@ Begin Form
             BackThemeColorIndex =1
             Begin
                 Begin CommandButton
+                    Enabled = NotDefault
                     OverlapFlags =85
-                    Left =12120
-                    Top =30
+                    Left =12420
+                    Top =60
                     Width =1560
                     Height =315
                     TabIndex =6
@@ -328,10 +330,10 @@ Begin Form
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =12120
-                    LayoutCachedTop =30
-                    LayoutCachedWidth =13680
-                    LayoutCachedHeight =345
+                    LayoutCachedLeft =12420
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =13980
+                    LayoutCachedHeight =375
                     RowStart =1
                     RowEnd =1
                     ColumnStart =7
@@ -425,6 +427,7 @@ Begin Form
                     ForeShade =100.0
                 End
                 Begin CommandButton
+                    Enabled = NotDefault
                     OverlapFlags =85
                     Left =8760
                     Top =30
@@ -486,8 +489,8 @@ Begin Form
                 End
                 Begin Label
                     OverlapFlags =85
-                    Left =15240
-                    Top =30
+                    Left =15540
+                    Top =60
                     Width =240
                     Height =315
                     BorderColor =8355711
@@ -495,20 +498,21 @@ Begin Form
                     Name ="Label168"
                     Caption ="*"
                     GridlineColor =10921638
-                    LayoutCachedLeft =15240
-                    LayoutCachedTop =30
-                    LayoutCachedWidth =15480
-                    LayoutCachedHeight =345
+                    LayoutCachedLeft =15540
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =15780
+                    LayoutCachedHeight =375
                     RowStart =1
                     RowEnd =1
                     ColumnStart =9
                     ColumnEnd =9
                 End
                 Begin ComboBox
+                    Enabled = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =13740
-                    Top =30
+                    Left =14040
+                    Top =60
                     Height =315
                     TabIndex =7
                     BorderColor =10921638
@@ -521,10 +525,10 @@ Begin Form
                     StatusBarText ="Y/N:Does the response satisfy the RFI? No means the RFI will remain open"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =13740
-                    LayoutCachedTop =30
-                    LayoutCachedWidth =15180
-                    LayoutCachedHeight =345
+                    LayoutCachedLeft =14040
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =15480
+                    LayoutCachedHeight =375
                     RowStart =1
                     RowEnd =1
                     ColumnStart =8
@@ -534,6 +538,7 @@ Begin Form
                     ForeShade =100.0
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =85
                     TextAlign =1
                     IMESentenceMode =3
@@ -581,6 +586,49 @@ Begin Form
                     LayoutCachedWidth =15480
                     LayoutCachedHeight =960
                 End
+                Begin TextBox
+                    OldBorderStyle =0
+                    OverlapFlags =85
+                    TextAlign =2
+                    IMESentenceMode =3
+                    Left =5160
+                    Width =5250
+                    Height =915
+                    TabIndex =1
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="tbAllItemsRcvd"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =5160
+                    LayoutCachedWidth =10410
+                    LayoutCachedHeight =915
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =120
+                    Top =780
+                    Width =120
+                    Height =60
+                    ForeColor =4210752
+                    Name ="Command219"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =120
+                    LayoutCachedTop =780
+                    LayoutCachedWidth =240
+                    LayoutCachedHeight =840
+                    UseTheme =1
+                    Gradient =0
+                    BackThemeColorIndex =-1
+                    BackTint =100.0
+                    BorderThemeColorIndex =-1
+                    BorderTint =100.0
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                End
             End
         End
     End
@@ -626,10 +674,7 @@ End Sub
 
 Private Sub cmdAssessResp_Click()
 
-Dim Db As Database
-Dim rsRfiItems As Recordset
-Dim strSQL As String
-'Dim rfiComplete As Boolean 'this variable checks if all items have been  accepted
+
 
 '///Error Handling
     If gcfHandleErrors Then On Error GoTo PROC_ERR
@@ -639,22 +684,7 @@ Dim strSQL As String
 '///Code
     Me.Dirty = False
     
-    Set Db = CurrentDb()
-    strSQL = "SELECT * FROM [tblRFIRequestedInformation] WHERE RfiID =" & Me.RfiID
-    Set rsRfiItems = Db.OpenRecordset(strSQL)
-    isRfiComplete = True
-    
-    'Check if all items have been accepted
-    With rsRfiItems
-        .MoveFirst
-        Do Until rsRfiItems.EOF = True
-            'Debug.Print rsRfiItems!RfiItemID, rsRfiItems!isRequestSatisfied
-            If rsRfiItems!isRequestSatisfied <> "Y" Then
-                isRfiComplete = False
-            End If
-        .MoveNext
-        Loop
-    End With
+    Call allItemsRcvd
     
     'Debug.Print isRfiComplete
     If Me.cboIsRequestSatisfied.Value = "" Then
@@ -680,7 +710,28 @@ End Sub
 
 
 'OTHER PAGE EVENTS
+Private Sub allItemsRcvd()
+Dim Db As Database
+Dim rsRfiItems As Recordset
+Dim strSQL As String
 
+Set Db = CurrentDb()
+strSQL = "SELECT * FROM [tblRFIRequestedInformation] WHERE RfiID =" & Me.RfiID
+Set rsRfiItems = Db.OpenRecordset(strSQL)
+isRfiComplete = True
+
+'Check if all items have been accepted
+With rsRfiItems
+    .MoveFirst
+    Do Until rsRfiItems.EOF = True
+        'Debug.Print rsRfiItems!RfiItemID, rsRfiItems!isRequestSatisfied
+        If rsRfiItems!isRequestSatisfied <> "Y" Then
+            isRfiComplete = False
+        End If
+    .MoveNext
+    Loop
+End With
+End Sub
 Private Sub Form_Load()
 '///Error Handling
     If gcfHandleErrors Then On Error GoTo PROC_ERR
@@ -692,7 +743,7 @@ Private Sub Form_Load()
 FormFilter.RecordFilterCheck Me.Form, FormItemType
 
 'Adjust Size of modal window, measurement in twips, 1440 per inch
-DoCmd.MoveSize , , 11 * 1440, 3 * 1440
+DoCmd.MoveSize , , 11.5 * 1440, 3 * 1440
 
 
 DoCmd.OpenForm ("frmRFIRouting")
@@ -723,6 +774,14 @@ Private Sub Form_Current()
 
 '///Code
     RepaintForm
+    Call allItemsRcvd
+    
+    If isRfiComplete = True Then
+        Me.tbAllItemsRcvd.Value = "All requested items have been received and accepted. Please mark the RFI complete."
+    Else
+        Me.tbAllItemsRcvd.Value = ""
+    End If
+    'Debug.Print isRfiComplete
 '///Code
 
 '///ErrorHandling
@@ -784,7 +843,7 @@ Private Sub EnableFormArea(AreaName As String, Optional Override As String = "")
         Case "Pending Receipt"
             Me.cmdRspRcvd.Enabled = CanEnable
             Me.tbDateResponseReceived.Enabled = CanEnable
-        
+       Debug.Print CanEnable
         Case "Assess RFI Response"
            Me.cmdAssessResp.Enabled = CanEnable
            Me.cboIsRequestSatisfied.Enabled = CanEnable

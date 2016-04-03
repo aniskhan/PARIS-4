@@ -9,12 +9,16 @@ Begin OutputColumns
     Expression ="fqryRfiBanner.*"
     Expression ="tblRFI.[Date Sent to Recipient]"
     Expression ="tblRFI.[Response Time Requested]"
+    Expression ="tblRFI.[RFI Reason]"
+    Expression ="tblRFI.[Transmittal Method]"
     Alias ="DueDate"
     Expression ="[Date Sent to Recipient]+[Response Time Requested]"
     Expression ="tblDisaster.[JFO Street Address]"
     Expression ="tblDisaster.[JFO City, State, Zip]"
     Expression ="tblDisaster.[HSIN Address]"
     Expression ="tblDisaster.[RFI Response Email Address]"
+    Expression ="tblRFI.RfiSatisfied"
+    Expression ="tblRFI.RfiCanceled"
 End
 Begin Joins
     LeftTable ="fqryRfiBanner"
@@ -117,34 +121,32 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="Date Sent to Recipient"
+        dbText "Name" ="tblRFI.RfiSatisfied"
+        dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="Response Time Requested"
+        dbText "Name" ="tblRFI.[RFI Reason]"
+        dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="JFO Street Address"
+        dbText "Name" ="tblRFI.RfiCanceled"
+        dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="JFO City, State, Zip"
-    End
-    Begin
-        dbText "Name" ="HSIN Address"
-    End
-    Begin
-        dbText "Name" ="RFI Response Email Address"
+        dbText "Name" ="tblRFI.[Transmittal Method]"
+        dbLong "AggregateType" ="-1"
     End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1644
-    Bottom =851
+    Right =1065
+    Bottom =860
     Left =-1
     Top =-1
-    Right =1628
-    Bottom =589
+    Right =1049
+    Bottom =521
     Left =0
     Top =0
     ColumnsShown =539
