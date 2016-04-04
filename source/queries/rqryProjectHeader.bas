@@ -75,6 +75,9 @@ Begin
         dbText "Name" ="tblProjects.[Project Category]"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="Full Reference"
+    End
 End
 Begin
     State =0

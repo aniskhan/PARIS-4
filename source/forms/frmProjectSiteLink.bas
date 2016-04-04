@@ -21,7 +21,7 @@ Begin Form
     Right =15315
     Bottom =7830
     DatasheetGridlinesColor =15132391
-    Filter ="[Assigned PDC] = 'akhandka'"
+    Filter ="[Assigned PDC] = 'nlietzk1'"
     OnApplyFilter ="[Event Procedure]"
     RecSrcDt = Begin
         0xfb12f06e2ea9e440

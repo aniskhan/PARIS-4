@@ -15,7 +15,7 @@ Begin Form
     Width =17640
     DatasheetFontHeight =11
     ItemSuffix =186
-    Right =19920
+    Right =13590
     Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -1098,13 +1098,15 @@ Private Sub cmdConcurrentRFI_Click()
 
 '///Code
     If MultiCheck("Pending RFI") Then
-        MsgBox ("There is already a Pending RFI. You can not create another.  If you are trying to mark the review as done pending an RFI, please complete the review and select RFI as the result.")
+        MsgBox ("There is already a Pending RFI. You can not create another.  If you are trying to mark the review as complete pending an RFI, please complete the review and select RFI as the result.")
         End
     Else
+            
+'''''''' <<<<<<CHECK AFTER RFI REDO
             Reviews.CreateRFI GetItemDims(ReviewType)
             Reviews.EnterReview GetItemDims("RFI")
             DoCmd.OpenForm "frmRFIRequest", , , GetItemDims.WhereID(False)
-    End
+    End If
         
 '///Code
 
@@ -1121,17 +1123,30 @@ End Sub
 
 'BUTTONS
 Private Sub cmdSendToSI_Click()
+    Dim CheckPhrase As String
 '///Error Handling
     If gcfHandleErrors Then On Error GoTo PROC_ERR
     PushCallStack Me.name & "." & "cmdSendToSI_Click"
 '///Error Handling
 
 '///Code
-    If PreDialogCheck("Send to SI") Then
-        CheckPhrase = "[Ready For SI]='Yes' and [Marked For SI]='Yes'"
-        If DCount("SiteID", "tblSites", WhereCondition & " and " & CheckPhrase) > 0 Then
-            EnterReview ItemDims.Clone("Inspection Assignment")
-            PushSomeChildren ItemDims.Clone("Draft DDD"), CurrentUserID, frm.cboResult, "Inspection Assignment", CheckPhrase, "fqryDVSSiteReviewSelect"
+    If MultiCheck("Pending RFI Dimensions") Then
+        MsgBox ("This project has an RFI with a Dimensions being requested.  Cannot be sent to Site Inspection until those items are resolved.")
+        End
+    ElseIf Not MultiCheck("Ready for SI") Then
+        MsgBox ("This project has sites that have not been triaged.  Look in the list for any that say no in Ready for SI.")
+        End
+    ElseIf Not MultiCheck("Marked for SI") Then
+        MsgBox ("This project has no sites that have been marked to have a site inspection. No site inspection is needed.")
+        End
+    ElseIf MultiCheck("Already Sent to SI") Then
+        MsgBox ("This project has already been sent to site inspection and cannot be sent again.")
+        End
+    Else
+        CheckPhrase = "[Marked For SI]='Yes'"
+        If DCount("SiteID", "tblSites", GetItemDims.WhereID(False) & " and " & CheckPhrase) > 0 Then
+            EnterReview GetItemDims("Inspection Assignment")
+            EnterSomeChildren GetItemDims("DVS Review"), "Inspection Assignment", CheckPhrase, "fqryDVSSiteReviewSelect"
         End If
     End If
 '///Code
@@ -1292,14 +1307,17 @@ Private Function MultiCheck(CheckType As String) As Boolean
 '///Error Handling
 
 '///Code
-'    No checks on this page.
     Select Case CheckType
         Case "Pending RFI"
+'''''''' <<<<<<CHECK AFTER RFI REDO
+                MultiCheck = False
             
-        Case "Pending Dimensions"
+        Case "Pending RFI Dimensions"
+'''''''' <<<<<<CHECK AFTER RFI REDO
+                MultiCheck = False
         
         Case "Ready for SI"
-            WhereCondition = ItemDims.WhereID(False)
+            WhereCondition = GetItemDims.WhereID(False)
             WhereCondition = WhereCondition & " and [Ready For SI]='No'"
             If DCount("SiteID", "fqryDVSSiteReviewSelect", WhereCondition) > 0 Then
 '                MsgBox ("There are sites that have not been fully triaged and are marked 'No' for Ready for SI.")
@@ -1309,7 +1327,7 @@ Private Function MultiCheck(CheckType As String) As Boolean
             End If
         
         Case "Sites Marked for SI"
-            WhereCondition = ItemDims.WhereID(False)
+            WhereCondition = GetItemDims.WhereID(False)
             WhereCondition = WhereCondition & " and [Marked For SI]='Yes'"
             If DCount("SiteID", "fqryDVSSiteReviewSelect", WhereCondition) = 0 Then
                 MultiCheck = False
@@ -1318,9 +1336,9 @@ Private Function MultiCheck(CheckType As String) As Boolean
             End If
         
         Case "Already Sent to SI"
-            WhereCondition = ItemDims.WhereID(False)
+            WhereCondition = GetItemDims.WhereID(False)
             WhereCondition = WhereCondition & " and ([ReviewType] = 'Inspection Assignment' or [ReviewType] = 'Validation Assignment')"
-            If DCount("ProjectID", ItemDims.ReviewTable, WhereCondition) = 0 Then
+            If DCount("ProjectID", GetItemDims.ReviewTable, WhereCondition) = 0 Then
                 MultiCheck = True
             Else
                 MultiCheck = False
@@ -1354,28 +1372,8 @@ Private Function PreDialogCheck(ReviewType As String) As Boolean
 '///Error Handling
 
 '///Code
-    Select Case ReviewType
-        Case "DVS Review"
-            WhereCondition = GetItemDims.WhereID(False)
-            WhereCondition = WhereCondition & " and [DVS -Site Inspection Required] is null"
-            If DCount("SiteID", "tblSites", WhereCondition) > 0 Then
-                MsgBox "All Sites must be marked as either yes or no for Site Inpection Required before this can be submitted to the next step."
-                PreDialogCheck = False
-            Else
-                PreDialogCheck = True
-            End If
-'        Case "DVS Draft DDD"
-'            WhereCondition = GetItemDims.WhereID(False)
-'            WhereCondition = WhereCondition & " and [DVS -Site Inspection Required] ='N' and [Draft DDD] is null"
-'            If DCount("SiteID", "tblSites", WhereCondition) > 0 Then
-'                MsgBox "All Sites must have a Draft DDD before this can be submitted to the next step."
-'                PreDialogCheck = False
-'            Else
-'                PreDialogCheck = True
-'            End If
-        Case Else
-            Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & ReviewType
-    End Select
+'    check is moved to post check to allow for uncompleted work re-assign.
+            PreDialogCheck = True
 '///Code
 
 '///ErrorHandling
@@ -1400,14 +1398,29 @@ Private Function PostDialogCheck(ReviewType As String, DialogResult As String) A
 
 '///Code
 '   No Check Needed.
-    PostDialogCheck = True
     Select Case ReviewType
         Case "DVS Review"
-            If submit Then
-            check if awaiting RFI
-            check if sent to site inspector
-            
+            If DialogResult = "SUB" Then
+                If Not MultiCheck("Ready for SI") Then
+                    MsgBox ("This project has sites that have not been triaged.  Look in the list for any that say no in Ready for SI.")
+                    PostDialogCheck = False
+                ElseIf (Not MultiCheck("Already Sent to SI")) And MultiCheck("Marked for SI") Then
+                    MsgBox ("This project has sites marked for site inspection, but has not been sent yet.  Please use the Send to Site Inspection button.")
+                    PostDialogCheck = False
+                ElseIf MultiCheck("Pending RFI Dimensions") Then
+                    MsgBox ("This project has an RFI with a Dimensions being requested.  Select RFI in the popup window to mark this review as done, pending an RFI response.")
+                    PostDialogCheck = False
+                ElseIf MultiCheck("Already Sent to SI") Then
+                    MsgBox ("This project has already been sent to site inspection and cannot be sent again.")
+                    PostDialogCheck = False
+                Else
+                    PostDialogCheck = True
+                End If
+            Else
+                PostDialogCheck = True
+            End If
         Case Else
+            PostDialogCheck = False
             Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & ReviewType
     End Select
 '///Code
@@ -1555,9 +1568,10 @@ Private Sub CompleteReview(ReviewType As String)
         If Access.CurrentProject.AllForms("frmReviewResult").IsLoaded Then
             Set frm = Forms("frmReviewResult")
             If PostDialogCheck(ReviewType, frm.cboResult) Then
-                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
-                    HandleDisposition ReviewType, frm
-                End If
+'                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
+'                    HandleDisposition ReviewType, frm
+'                End If
+                CompleteReviewStandard GetItemDims(ReviewType), Me.Form, frm
             End If
             DoCmd.Close acForm, "frmReviewResult"
         Else

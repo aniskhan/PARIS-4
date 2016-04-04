@@ -236,9 +236,6 @@ Begin
         dbText "Name" ="tblSites.[Inspection Notes]"
         dbLong "AggregateType" ="-1"
     End
-    Begin
-        dbText "Name" ="Lane Assigned"
-    End
 End
 Begin
     State =0

@@ -80,9 +80,6 @@ Begin
         dbText "Name" ="Scoping Meetings Scheduled"
         dbLong "AggregateType" ="0"
     End
-    Begin
-        dbText "Name" ="County"
-    End
 End
 Begin
     State =0

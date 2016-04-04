@@ -113,6 +113,15 @@ Begin
         dbText "Name" ="lutblLanes.Order"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="Full Reference"
+    End
+    Begin
+        dbText "Name" ="LaneName"
+    End
+    Begin
+        dbText "Name" ="Order"
+    End
 End
 Begin
     State =0

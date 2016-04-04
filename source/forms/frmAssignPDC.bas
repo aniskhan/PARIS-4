@@ -17,7 +17,7 @@ Begin Form
     Width =16500
     DatasheetFontHeight =11
     ItemSuffix =111
-    Right =19260
+    Right =19920
     Bottom =12900
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -1032,24 +1032,12 @@ Private Const FormItemType As String = "RPA" 'used in determining what type of r
 
 'BUTTONS
 Private Sub cmdAssignPdcComplete_Click()
-'///Error Handling
-    If gcfHandleErrors Then On Error GoTo PROC_ERR
-    PushCallStack Me.name & "." & "cmdAssignPdcComplete_Click"
-'///Error Handling
+ERR_HANDLE: If gcfHandleErrors Then On Error GoTo PROC_ERR: PushCallStack Me.name & "." & "cmdAssignPdcComplete_Click"  '///Error Handling
 
-'///Code
     CompleteReview "Assign PDM"
-'///Code
 
-'///ErrorHandling
-PROC_EXIT:
-    PopCallStack
-    Exit Sub
-    
-PROC_ERR:
-    GlobalErrHandler
-    Resume PROC_EXIT
-'///ErrorHandline
+PROC_EXIT:  PopCallStack: Exit Sub               '///ErrorHandling
+PROC_ERR:   GlobalErrHandler: Resume PROC_EXIT   '///ErrorHandline
 End Sub
 
 

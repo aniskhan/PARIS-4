@@ -36,6 +36,8 @@ Begin OutputColumns
     Expression ="tblSites.[Subrecipient priority (Low, Med, High)]"
     Expression ="tblSites.[Critical Facility]"
     Expression ="tblSites.[Date Expected to be 100% Complete]"
+    Expression ="tblSites.[% Work Complete]"
+    Expression ="tblSites.[Labor Type]"
 End
 Begin Joins
     LeftTable ="tblProjects"
@@ -190,134 +192,28 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="[DisasterID]"
+        dbText "Name" ="tblDisaster.DisasterID"
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="[Incident Period Start]"
+        dbText "Name" ="tblSites.[% Work Complete]"
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="tblProjects.ApplicantID"
+        dbText "Name" ="tblSites.[Labor Type]"
         dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="[State]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="[Incident Period End]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="[Disaster Type]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblProjects.[% Work Complete]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblProjects.[Approximate Cost]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="[Declaration Date]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblProjects.[Work Complete \"As OF\" Date]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="DisasterID"
-    End
-    Begin
-        dbText "Name" ="State"
-    End
-    Begin
-        dbText "Name" ="Disaster Type"
-    End
-    Begin
-        dbText "Name" ="Declaration Date"
-    End
-    Begin
-        dbText "Name" ="Incident Period Start"
-    End
-    Begin
-        dbText "Name" ="Incident Period End"
-    End
-    Begin
-        dbText "Name" ="ProjectID"
-    End
-    Begin
-        dbText "Name" ="Project Category"
-    End
-    Begin
-        dbText "Name" ="Application Title"
-    End
-    Begin
-        dbText "Name" ="SiteID"
-    End
-    Begin
-        dbText "Name" ="Category"
-    End
-    Begin
-        dbText "Name" ="Name of Site/Facility"
-    End
-    Begin
-        dbText "Name" ="E911 Street Address or Closest Intersection"
-    End
-    Begin
-        dbText "Name" ="Latitude"
-    End
-    Begin
-        dbText "Name" ="Longitude"
-    End
-    Begin
-        dbText "Name" ="Describe Damage"
-    End
-    Begin
-        dbText "Name" ="Cause of Damage  (wind, flood, etc)"
-    End
-    Begin
-        dbText "Name" ="Requires Site Inspection"
-    End
-    Begin
-        dbText "Name" ="Approximate Cost"
-    End
-    Begin
-        dbText "Name" ="EHP Issues? (H, E, B)"
-    End
-    Begin
-        dbText "Name" ="Facility insured?"
-    End
-    Begin
-        dbText "Name" ="Has Recieved PA grant in prior Stafford Act Disasters?"
-    End
-    Begin
-        dbText "Name" ="Is there a potential mitigation opportunity?"
-    End
-    Begin
-        dbText "Name" ="Subrecipient priority (Low, Med, High)"
-    End
-    Begin
-        dbText "Name" ="Critical Facility"
-    End
-    Begin
-        dbText "Name" ="Date Expected to be 100% Complete"
     End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1617
-    Bottom =851
+    Right =923
+    Bottom =860
     Left =-1
     Top =-1
-    Right =1601
-    Bottom =254
+    Right =907
+    Bottom =237
     Left =0
     Top =0
     ColumnsShown =539

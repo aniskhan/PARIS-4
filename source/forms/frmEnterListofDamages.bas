@@ -7,6 +7,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ViewsAllowed =1
@@ -17,10 +18,10 @@ Begin Form
     Width =17520
     DatasheetFontHeight =11
     ItemSuffix =21
-    Right =21855
+    Right =15045
     Bottom =12645
     DatasheetGridlinesColor =15132391
-    Filter ="[ApplicantID]='071-UJ7OI-00'"
+    Filter ="[DisasterID]='4258'AND[Assigned PDC] = 'nlietzk1'"
     RecSrcDt = Begin
         0x2dd52d8a50b9e440
     End
@@ -750,7 +751,7 @@ Private Sub ColumnOrder()
 
 '///Code
         ' Ensure Column order matches List of Damages Excel Spreadsheet
-        Me.subformEnterListofDamages!SiteID.ColumnOrder = 1
+        Me.subformEnterListofDamages![SiteID].ColumnOrder = 1
         Me.subformEnterListofDamages!Category.ColumnOrder = 2
         Me.subformEnterListofDamages![Name of Site/Facility].ColumnOrder = 3
         Me.subformEnterListofDamages![E911 Street Address or Closest Intersection].ColumnOrder = 4

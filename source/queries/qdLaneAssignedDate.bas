@@ -67,15 +67,6 @@ Begin
         dbBoolean "ColumnHidden" ="0"
         dbLong "AggregateType" ="-1"
     End
-    Begin
-        dbText "Name" ="DisasterID"
-    End
-    Begin
-        dbText "Name" ="ApplicantID"
-    End
-    Begin
-        dbText "Name" ="ProjectID"
-    End
 End
 Begin
     State =0

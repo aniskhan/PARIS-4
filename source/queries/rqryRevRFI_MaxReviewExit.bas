@@ -73,9 +73,6 @@ Begin
         dbBoolean "ColumnHidden" ="0"
         dbLong "AggregateType" ="-1"
     End
-    Begin
-        dbText "Name" ="MaxOfReviewExitDate"
-    End
 End
 Begin
     State =0

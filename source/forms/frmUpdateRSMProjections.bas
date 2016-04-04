@@ -7,7 +7,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ViewsAllowed =1
@@ -2674,7 +2673,7 @@ strSQL = strSQL & "SELECT " & _
 "[Number of Complex Projects], [60 Day Submittal Date], [Projected Date 100% PW Submitted], " & _
 "[Actual Date 100% PWs Submitted], [Insurance Policy Received], [Debris Contracts Received], " & _
 "[List of Damages Provided], [Date List of Damages Provided], [Partial List of Damages], [Complete list of Damages] " & _
-"FROM tblProjectionUpdates WHERE ID = " & Me.ID
+"FROM tblProjectionUpdates WHERE ID = " ' & Me.ID
 
 
 CurrentDb.Execute strSQL

@@ -196,36 +196,6 @@ Begin
         dbText "Name" ="PDM Contact"
         dbLong "AggregateType" ="-1"
     End
-    Begin
-        dbText "Name" ="Date Sent to Recipient"
-    End
-    Begin
-        dbText "Name" ="Response Time Requested"
-    End
-    Begin
-        dbText "Name" ="JFO Street Address"
-    End
-    Begin
-        dbText "Name" ="JFO City, State, Zip"
-    End
-    Begin
-        dbText "Name" ="HSIN Address"
-    End
-    Begin
-        dbText "Name" ="RFI Response Email Address"
-    End
-    Begin
-        dbText "Name" ="Item Type"
-    End
-    Begin
-        dbText "Name" ="Reason Requested"
-    End
-    Begin
-        dbText "Name" ="Name of Site/Facility"
-    End
-    Begin
-        dbText "Name" ="Full Reference"
-    End
 End
 Begin
     State =0

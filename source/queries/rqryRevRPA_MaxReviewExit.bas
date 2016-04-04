@@ -69,9 +69,6 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="MaxOfreviewexitdate"
-    End
-    Begin
         dbText "Name" ="PIVOT"
         dbLong "AggregateType" ="-1"
     End
@@ -118,24 +115,6 @@ Begin
     Begin
         dbText "Name" ="tblSubRecipient.DisasterID"
         dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Assign PDM"
-    End
-    Begin
-        dbText "Name" ="OCC Review"
-    End
-    Begin
-        dbText "Name" ="PAGS Review"
-    End
-    Begin
-        dbText "Name" ="DIU Enter RSM"
-    End
-    Begin
-        dbText "Name" ="DIU Enter Call"
-    End
-    Begin
-        dbText "Name" ="Ops RPA Eligibility"
     End
 End
 Begin
