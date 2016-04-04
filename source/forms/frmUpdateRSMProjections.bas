@@ -7,6 +7,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ViewsAllowed =1
@@ -16,11 +17,11 @@ Begin Form
     GridY =24
     Width =17040
     DatasheetFontHeight =11
-    ItemSuffix =112
-    Right =15315
-    Bottom =7830
+    ItemSuffix =113
+    Right =19920
+    Bottom =12645
     DatasheetGridlinesColor =15132391
-    Filter ="[ID] = 30"
+    Filter ="[ID] = 47"
     RecSrcDt = Begin
         0x998eff7ddbb2e440
     End
@@ -2575,6 +2576,8 @@ Private Const FormItemType As String = "RPA" 'used in determining what type of r
 Private ItemDims As New classItemDims 'used by form open and load to help with filters.
 Dim UserIsPDC As Boolean ' Tracks if the current user is an assigned PDC
 Dim UserIsDIU As Boolean ' Tracks if the current user is a DIU or DIUL
+Dim UserIsADM As Boolean ' Tracks if the current user is an ADM
+
 
 'BUTTONS
 Private Sub cmdFinalize_Click()
@@ -2593,7 +2596,7 @@ Dim DateLastChange As Date
 
     Me![FinalizeDate] = Now()
     Me![FinalizeUserID] = Environ("UserName")
-    RepaintForm (UserIsPDC)
+    Call RepaintForm(UserIsPDC, UserIsDIU, UserIsADM)
 
 Set Db = CurrentDb
 ' Check if an unfinished review exists before adding another
@@ -2753,7 +2756,7 @@ Private Sub Form_BeforeUpdate(Cancel As Integer)
 '///Error Handling
 
 '///Code
-Call AuditTrail(Me, ApplicantID)
+Call AuditTrail(Me, ApplicantID, Me.ID)
 '///Code
 
 '///ErrorHandling
@@ -2794,17 +2797,18 @@ Else
     
     UserIsPDC = False
     UserIsDIU = False
-        If DCount("*", "fqryProjectionsMaxUpdate_PDC") < 0 Then
-            With Me!subfrm_fqryProjectionsMaxUpdate.Form
-                .RecordSource = "fqryProjectionsMaxUpdate_ALL"
-            End With
-            UserIsPDC = False
-        Else
-            With Me!subfrm_fqryProjectionsMaxUpdate.Form
-                .RecordSource = "fqryProjectionsMaxUpdate_PDC"
-            End With
-            UserIsPDC = True
-        End If
+    UserIsADM = False
+              
+        Set rs = Db.OpenRecordset("qryUserPositions")
+            rs.MoveFirst
+            While Not rs.EOF
+                If rs!Position = "ADM" Then
+                    UserIsADM = True
+                Else
+                End If
+                rs.MoveNext
+            Wend
+            Set rs = Nothing
         
         Set rs = Db.OpenRecordset("qryUserPositions")
             rs.MoveFirst
@@ -2816,6 +2820,18 @@ Else
                 rs.MoveNext
             Wend
             Set rs = Nothing
+        
+        If DCount("*", "fqryProjectionsMaxUpdate_PDC") = 0 Then
+            With Me!subfrm_fqryProjectionsMaxUpdate.Form
+                .RecordSource = "fqryProjectionsMaxUpdate_ALL"
+            End With
+            UserIsPDC = False
+        Else
+            With Me!subfrm_fqryProjectionsMaxUpdate.Form
+                .RecordSource = "fqryProjectionsMaxUpdate_PDC"
+            End With
+            UserIsPDC = True
+        End If
 End If
 '///Code
 
@@ -2838,7 +2854,7 @@ Private Sub Form_Current()
 '///Error Handling
 
 '///Code
-    RepaintForm (UserIsPDC)
+    Call RepaintForm(UserIsPDC, UserIsDIU, UserIsADM)
     
 '///Code
 
@@ -2882,7 +2898,7 @@ PROC_ERR:
 End Sub
 
 'INTERNAL PAGE SPECIFIC CODE
-Private Sub RepaintForm(IsPDC As Boolean)
+Private Sub RepaintForm(IsPDC As Boolean, IsDIU As Boolean, IsADM As Boolean)
 
 '///Error Handling
     If gcfHandleErrors Then On Error GoTo PROC_ERR
@@ -2891,7 +2907,7 @@ Private Sub RepaintForm(IsPDC As Boolean)
 
 '///Code
 
-Select Case IsPDC
+Select Case IsPDC Or IsADM
     Case True
         If IsNull(Me.[FinalizeDate]) Then
             EnableFormArea "Projections"

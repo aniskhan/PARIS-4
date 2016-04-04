@@ -2,7 +2,6 @@
 VersionRequired =20
 Begin Form
     PopUp = NotDefault
-    Modal = NotDefault
     AutoCenter = NotDefault
     AllowDeletions = NotDefault
     DividingLines = NotDefault
@@ -17,18 +16,19 @@ Begin Form
     Width =15780
     DatasheetFontHeight =11
     ItemSuffix =220
-    Left =21780
-    Top =2070
-    Right =-27496
-    Bottom =5475
+    Left =29280
+    Top =9105
+    Right =-19996
+    Bottom =12510
     DatasheetGridlinesColor =15132391
-    Filter ="[DisasterID]='4258' and [ApplicantID]='011-U293R-00' and [RfiID]=4"
+    Filter ="[DisasterID]='4258' and [ApplicantID]='000-UKM82-00' and [RfiID]=7"
     RecSrcDt = Begin
         0xeaf644ba95bae440
     End
     RecordSource ="fqryRfiItems"
     Caption ="frmRFIResponseAssessment"
     OnCurrent ="[Event Procedure]"
+    BeforeUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
@@ -651,6 +651,8 @@ Private Sub cmdRspRcvd_Click()
 '///Error Handling
 
 '///Code
+    Me.Dirty = False ' must write change for audit table
+    
     If IsNull(Me.tbDateResponseReceived.Value) Then
         MsgBox ("Please enter the date the requested item was received.")
         Me.tbDateResponseReceived.SetFocus
@@ -682,7 +684,7 @@ Private Sub cmdAssessResp_Click()
 '///Error Handling
 
 '///Code
-    Me.Dirty = False
+    Me.Dirty = False ' must write change for audit table and for call to allItemsRcvd to return correct result
     
     Call allItemsRcvd
     
@@ -732,6 +734,29 @@ With rsRfiItems
     Loop
 End With
 End Sub
+
+Private Sub Form_BeforeUpdate(Cancel As Integer)
+
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "Form_BeforeUpdate"
+'///Error Handling
+
+'///Code
+Call AuditTrail(Me, ApplicantID, Me.RfiItemID)
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+End Sub
+
 Private Sub Form_Load()
 '///Error Handling
     If gcfHandleErrors Then On Error GoTo PROC_ERR
@@ -843,7 +868,7 @@ Private Sub EnableFormArea(AreaName As String, Optional Override As String = "")
         Case "Pending Receipt"
             Me.cmdRspRcvd.Enabled = CanEnable
             Me.tbDateResponseReceived.Enabled = CanEnable
-       Debug.Print CanEnable
+
         Case "Assess RFI Response"
            Me.cmdAssessResp.Enabled = CanEnable
            Me.cboIsRequestSatisfied.Enabled = CanEnable
@@ -912,7 +937,7 @@ Private Sub CompleteReview(ReviewType As String)
         DoCmd.OpenForm "frmReviewResult", , , , , acDialog, GetItemDims(ReviewType).OpenString
         If Access.CurrentProject.AllForms("frmReviewResult").IsLoaded Then
             Set frm = Forms("frmReviewResult")
-            If PostDialogCheck(ReviewType, frm.cboResult) Then
+            If PostDialogCheck(ReviewType, frm.cboResult, frm.tbComments, frm.cboRework) Then
                 If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
                     HandleDisposition ReviewType, frm
                 End If
@@ -960,7 +985,7 @@ PROC_ERR:
 '///ErrorHandling
 
 End Function
-Private Function PostDialogCheck(ReviewType As String, DialogResult As String) As Boolean
+Private Function PostDialogCheck(ReviewType As String, DialogResult As String, Optional Comments As Variant = "", Optional ReworkTo As Variant = "") As Boolean
 '    This page specific code checks the form for any issues before completing the review. True = pass
 
 '///Error Handling
@@ -981,6 +1006,18 @@ Private Function PostDialogCheck(ReviewType As String, DialogResult As String) A
             If ReviewType = "Assess RFI Response" And Me.cboIsRequestSatisfied.Value <> "Y" Then
                 PostDialogCheck = False
                 MsgBox ("If the response is not accepted, then the item must be reworked to 'Pending Receipt.' ")
+            Else
+                PostDialogCheck = True
+            End If
+        Case "RW"
+            If ReviewType = "Assess RFI Response" And Me.cboIsRequestSatisfied.Value = "N" Then
+                If Nz(Comments, "") = "" Or Nz(ReworkTo, "") = "" Then
+                    PostDialogCheck = False
+                    MsgBox ("You must leave comments regarding why the infomation received does not satisfy the RFI in addition to reworking to 'Pending Receipt'.")
+                Else
+                    PostDialogCheck = True
+                    Me.tbDateResponseReceived = Null
+                End If
             Else
                 PostDialogCheck = True
             End If
@@ -1016,7 +1053,7 @@ Dim WhereCondition As String
     Select Case frm.cboResult
         Case "DM", "RFI", "RSN", "RW"
             HandleStandardDisposition ReviewType, frm
-        Case "SUB"
+         Case "SUB"
 '            Main section of page specific code. Creates new reviews as needed.
             Select Case ReviewType
 
@@ -1044,7 +1081,6 @@ Dim WhereCondition As String
                                 .Filter = "[RfiID] =" & Me.RfiID 'TODO need to make this grab from itemdims
                                 .FilterOn = True
                             End With
-                        'DoCmd.Close acForm, "frmRFIItemAssessment"
                     End If
 
                 Case Else

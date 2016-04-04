@@ -16,10 +16,10 @@ Begin Form
     Width =18000
     DatasheetFontHeight =11
     ItemSuffix =71
-    Right =18435
-    Bottom =7665
+    Right =13530
+    Bottom =12645
     DatasheetGridlinesColor =15132391
-    Filter ="[RfiID] =6"
+    Filter ="[DisasterID]='4258' and [ApplicantID]='000-UKM82-00'"
     RecSrcDt = Begin
         0x52203c39b5bbe440
     End
@@ -204,6 +204,25 @@ Begin Form
                     LayoutCachedWidth =13320
                     LayoutCachedHeight =4080
                     BackThemeColorIndex =-1
+                    Begin
+                        Begin Label
+                            OverlapFlags =223
+                            Left =360
+                            Top =3180
+                            Width =2820
+                            Height =360
+                            BorderColor =8355711
+                            Name ="Label51"
+                            Caption ="RFI Reason (Internal Notes)"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =360
+                            LayoutCachedTop =3180
+                            LayoutCachedWidth =3180
+                            LayoutCachedHeight =3540
+                            ForeThemeColorIndex =-1
+                            ForeTint =100.0
+                        End
+                    End
                 End
                 Begin TextBox
                     OverlapFlags =215
@@ -424,23 +443,6 @@ Begin Form
                             LayoutCachedHeight =315
                         End
                     End
-                End
-                Begin Label
-                    OverlapFlags =215
-                    Left =360
-                    Top =3180
-                    Width =2820
-                    Height =360
-                    BorderColor =8355711
-                    Name ="Label51"
-                    Caption ="RFI Reason (Internal Notes)"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =360
-                    LayoutCachedTop =3180
-                    LayoutCachedWidth =3180
-                    LayoutCachedHeight =3540
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
                 End
                 Begin CommandButton
                     Enabled = NotDefault
@@ -1861,7 +1863,7 @@ Dim rsRevTblRfi As Recordset
                     '''Enter a Pending Receipt review for every item requested
                     Set Db = CurrentDb()
                     Set rsRfiItem = Db.OpenRecordset("SELECT * FROM tblRFIRequestedInformation WHERE [RfiID] =" & Me.RfiID)
-                    Set rsRevTblRfi = Db.OpenRecordset("revtblRfi", , 8)
+                    Set rsRevTblRfi = Db.OpenRecordset("revtblRfi", , dbAppendOnly)
                      
                     If rsRfiItem.BOF And rsRfiItem.EOF Then
 
