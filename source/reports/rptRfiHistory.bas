@@ -112,7 +112,6 @@ Begin Report
             AlternateBackShade =95.0
             Begin
                 Begin Label
-                    OverlapFlags =81
                     Left =60
                     Top =60
                     Width =5970
@@ -173,7 +172,6 @@ Begin Report
             BackThemeColorIndex =1
             Begin
                 Begin Label
-                    OverlapFlags =81
                     TextAlign =2
                     Left =2580
                     Top =2280
@@ -182,7 +180,7 @@ Begin Report
                     FontWeight =700
                     BorderColor =8355711
                     Name ="ReviewEntryDate_Label"
-                    Caption ="Review Submitted Date"
+                    Caption ="Review \015\012Entry Date"
                     Tag ="DetachedLabel"
                     GridlineStyleBottom =1
                     GridlineColor =10921638
@@ -193,7 +191,6 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Label
-                    OverlapFlags =81
                     TextAlign =2
                     Top =2280
                     Width =1740
@@ -211,7 +208,6 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Label
-                    OverlapFlags =81
                     TextAlign =2
                     Left =5880
                     Top =2280
@@ -231,7 +227,6 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Label
-                    OverlapFlags =81
                     TextAlign =2
                     Left =7500
                     Top =2280
@@ -251,7 +246,6 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Label
-                    OverlapFlags =81
                     TextAlign =2
                     Left =10800
                     Top =2280
@@ -271,7 +265,6 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Label
-                    OverlapFlags =81
                     TextAlign =2
                     Left =4200
                     Top =2280
@@ -291,7 +284,6 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Label
-                    OverlapFlags =81
                     TextAlign =2
                     Left =9120
                     Top =2280
@@ -312,7 +304,6 @@ Begin Report
                 End
                 Begin Subform
                     Locked = NotDefault
-                    OverlapFlags =81
                     Width =12240
                     Height =2160
                     Name ="subformlRFIbanner"
@@ -325,7 +316,6 @@ Begin Report
                     LayoutCachedHeight =2160
                 End
                 Begin Label
-                    OverlapFlags =81
                     TextAlign =2
                     Left =1800
                     Top =2280
@@ -343,7 +333,6 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Line
-                    OverlapFlags =81
                     Left =60
                     Top =2880
                     Width =12180
@@ -368,7 +357,6 @@ Begin Report
                 Begin TextBox
                     CanGrow = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =81
                     TextAlign =2
                     IMESentenceMode =3
                     Left =2580
@@ -392,7 +380,6 @@ Begin Report
                     CanGrow = NotDefault
                     FontItalic = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =81
                     IMESentenceMode =3
                     Left =60
                     Top =60
@@ -415,7 +402,6 @@ Begin Report
                 Begin TextBox
                     CanGrow = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =81
                     TextAlign =2
                     IMESentenceMode =3
                     Left =5880
@@ -439,7 +425,6 @@ Begin Report
                 Begin TextBox
                     CanGrow = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =81
                     TextAlign =2
                     IMESentenceMode =3
                     Left =7500
@@ -463,7 +448,6 @@ Begin Report
                 Begin TextBox
                     CanGrow = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =81
                     TextAlign =2
                     IMESentenceMode =3
                     Left =10800
@@ -485,7 +469,6 @@ Begin Report
                 Begin TextBox
                     CanGrow = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =81
                     TextAlign =2
                     IMESentenceMode =3
                     Left =4200
@@ -507,7 +490,6 @@ Begin Report
                 Begin TextBox
                     CanGrow = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =81
                     TextAlign =2
                     IMESentenceMode =3
                     Left =9120
@@ -528,7 +510,6 @@ Begin Report
                 End
                 Begin TextBox
                     CanGrow = NotDefault
-                    OverlapFlags =81
                     TextAlign =1
                     BackStyle =0
                     IMESentenceMode =3
@@ -555,7 +536,6 @@ Begin Report
                     ColumnEnd =1
                     Begin
                         Begin Label
-                            OverlapFlags =81
                             TextAlign =1
                             Left =960
                             Top =1020
@@ -579,7 +559,6 @@ Begin Report
                 End
                 Begin TextBox
                     OldBorderStyle =0
-                    OverlapFlags =81
                     TextAlign =2
                     IMESentenceMode =3
                     Left =1800
@@ -599,7 +578,6 @@ Begin Report
                     LayoutCachedHeight =600
                 End
                 Begin TextBox
-                    OverlapFlags =81
                     TextAlign =1
                     BackStyle =0
                     IMESentenceMode =3
@@ -624,7 +602,6 @@ Begin Report
                     ColumnEnd =1
                     Begin
                         Begin Label
-                            OverlapFlags =81
                             TextAlign =1
                             Left =960
                             Top =660

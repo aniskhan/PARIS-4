@@ -16,10 +16,10 @@ Begin Form
     Width =18000
     DatasheetFontHeight =11
     ItemSuffix =71
-    Right =24435
+    Right =19920
     Bottom =12615
     DatasheetGridlinesColor =15132391
-    Filter ="[RfiCanceled] = False AND [RfiSatisfied] = False"
+    Filter ="[RfiID] =9"
     RecSrcDt = Begin
         0x52203c39b5bbe440
     End
@@ -1387,7 +1387,6 @@ Option Explicit
 
 Private Const FormItemType As String = "RFI" 'used in determining what type of record is handled
 
-
 'HELP BUTTONS
 
 Private Sub cmdHelpViewRFI_Click()
@@ -1423,6 +1422,10 @@ Private Sub cmdCancelRFI_Click()
 '///Error Handling
 
 '///Code
+If Me.RfiSatisfied = True Then
+    MsgBox ("This RFI has already been marked complete. It can no longer be cancelled.")
+    Exit Sub
+Else
     MsgResult = MsgBox("Are you sure you want to do this?  This will end the RFI and return to the original review.", vbYesNo)
     If MsgResult = vbYes Then
         If Reviews.CompleteReview(GetItemDims("RFI Creation"), Environ("UserName"), "WD") Then
@@ -1439,6 +1442,7 @@ Private Sub cmdCancelRFI_Click()
     Else
         'do nothing
     End If
+End If
     RepaintForm
 '///Code
 
@@ -1573,6 +1577,7 @@ Private Sub cmdRfiComplete_Click()
 '///Error Handling
 '///Code
 '''TODO: Should the RFI return to original review, or should it just end?
+
     CompleteReview "Mark RFI Complete"
 '///Code
 
@@ -1816,9 +1821,6 @@ PROC_ERR:
 
 End Function
 
-
-
-
 Private Sub HandleDisposition(ReviewType As String, frm As Form)
 '''NON-STANDARD CODE ... DO NOT COPY!!
 Dim AssignRfiTo As String
@@ -1826,6 +1828,7 @@ Dim WhereCondition As String
 Dim Db As Database
 Dim rsRfiItem As Recordset
 Dim rsRevTblRfi As Recordset
+Dim ParentItem As classItemDims
 '///Error Handling
     If gcfHandleErrors Then On Error GoTo PROC_ERR
     PushCallStack Me.name & "." & "HandleDisposition"
@@ -1891,7 +1894,15 @@ Dim rsRevTblRfi As Recordset
     
                 Case "Mark RFI Complete"
                     Me.RfiSatisfied = True
-    
+                    Set ParentItem = GetItemDims
+                    ParentItem.ItemType = [ItemType]
+                    ParentItem.ReviewType = "RFI"
+                    Reviews.StartReview ParentItem, Environ("UserName"), True
+                    If Reviews.CompleteReview(ParentItem, Environ("UserName"), frm.cboResult) Then
+                    End If
+                    ParentItem.ReviewType = [ReviewFrom]
+                    Reviews.EnterReview ParentItem, [CreatedBy]
+            
                 Case Else
                     Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & ReviewType
             End Select

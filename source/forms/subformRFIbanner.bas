@@ -21,7 +21,7 @@ Begin Form
     Width =11400
     DatasheetFontHeight =11
     ItemSuffix =12
-    Right =19320
+    Right =13530
     Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -175,7 +175,7 @@ Begin Form
                     TextAlign =1
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =7140
+                    Left =7860
                     Top =480
                     Width =1800
                     Height =360
@@ -188,9 +188,9 @@ Begin Form
                     ControlSource ="ApplicantID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =7140
+                    LayoutCachedLeft =7860
                     LayoutCachedTop =480
-                    LayoutCachedWidth =8940
+                    LayoutCachedWidth =9660
                     LayoutCachedHeight =840
                     ForeThemeColorIndex =2
                     ForeTint =100.0
@@ -204,7 +204,7 @@ Begin Form
                     OverlapFlags =95
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =5580
+                    Left =6300
                     Top =840
                     Width =4680
                     Height =360
@@ -218,9 +218,9 @@ Begin Form
                     EventProcPrefix ="Applicant_Name"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =5580
+                    LayoutCachedLeft =6300
                     LayoutCachedTop =840
-                    LayoutCachedWidth =10260
+                    LayoutCachedWidth =10980
                     LayoutCachedHeight =1200
                     ForeThemeColorIndex =2
                     ForeTint =100.0
@@ -229,7 +229,7 @@ Begin Form
                         Begin Label
                             OverlapFlags =93
                             TextAlign =1
-                            Left =5580
+                            Left =6300
                             Top =480
                             Width =1500
                             Height =360
@@ -240,9 +240,9 @@ Begin Form
                             Caption ="Applicant:"
                             EventProcPrefix ="Applicant_Name_Label"
                             GridlineColor =10921638
-                            LayoutCachedLeft =5580
+                            LayoutCachedLeft =6300
                             LayoutCachedTop =480
-                            LayoutCachedWidth =7080
+                            LayoutCachedWidth =7800
                             LayoutCachedHeight =840
                             ForeTint =100.0
                         End
@@ -355,7 +355,7 @@ Begin Form
                     TextAlign =1
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =7140
+                    Left =7860
                     Top =1200
                     Width =3120
                     Height =360
@@ -367,9 +367,9 @@ Begin Form
                     ControlSource ="ReviewFrom"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =7140
+                    LayoutCachedLeft =7860
                     LayoutCachedTop =1200
-                    LayoutCachedWidth =10260
+                    LayoutCachedWidth =10980
                     LayoutCachedHeight =1560
                     ForeThemeColorIndex =2
                     ForeTint =100.0
@@ -378,7 +378,7 @@ Begin Form
                         Begin Label
                             OverlapFlags =95
                             TextAlign =1
-                            Left =5580
+                            Left =6300
                             Top =1200
                             Width =1500
                             Height =360
@@ -388,9 +388,9 @@ Begin Form
                             Name ="Label9"
                             Caption ="Review From:"
                             GridlineColor =10921638
-                            LayoutCachedLeft =5580
+                            LayoutCachedLeft =6300
                             LayoutCachedTop =1200
-                            LayoutCachedWidth =7080
+                            LayoutCachedWidth =7800
                             LayoutCachedHeight =1560
                             ForeTint =100.0
                         End
@@ -404,7 +404,7 @@ Begin Form
                     TextAlign =1
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =7140
+                    Left =7860
                     Top =1560
                     Width =2760
                     Height =360
@@ -416,9 +416,9 @@ Begin Form
                     ControlSource ="CreatedByName"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =7140
+                    LayoutCachedLeft =7860
                     LayoutCachedTop =1560
-                    LayoutCachedWidth =9900
+                    LayoutCachedWidth =10620
                     LayoutCachedHeight =1920
                     ForeThemeColorIndex =2
                     ForeTint =100.0
@@ -427,7 +427,7 @@ Begin Form
                         Begin Label
                             OverlapFlags =87
                             TextAlign =1
-                            Left =5580
+                            Left =6300
                             Top =1560
                             Width =1500
                             Height =360
@@ -437,9 +437,9 @@ Begin Form
                             Name ="Label10"
                             Caption ="Created By:"
                             GridlineColor =10921638
-                            LayoutCachedLeft =5580
+                            LayoutCachedLeft =6300
                             LayoutCachedTop =1560
-                            LayoutCachedWidth =7080
+                            LayoutCachedWidth =7800
                             LayoutCachedHeight =1920
                             ForeTint =100.0
                         End
@@ -455,7 +455,7 @@ Begin Form
                     IMESentenceMode =3
                     Left =1860
                     Top =1200
-                    Width =3660
+                    Width =4200
                     Height =360
                     FontSize =12
                     TabIndex =6
@@ -468,7 +468,7 @@ Begin Form
 
                     LayoutCachedLeft =1860
                     LayoutCachedTop =1200
-                    LayoutCachedWidth =5520
+                    LayoutCachedWidth =6060
                     LayoutCachedHeight =1560
                     ForeThemeColorIndex =2
                     ForeTint =100.0

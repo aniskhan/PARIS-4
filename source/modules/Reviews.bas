@@ -668,7 +668,7 @@ Public Sub CompleteReviewStandard(ItemDims As classItemDims, CurrentForm As Form
         Case "RFI"
             Reviews.CreateRFI ItemDims.Clone
             CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "RFI", CurrentUserID
-            DoCmd.OpenForm "frmRFIRequest", , , ItemDims.WhereID(False)
+            DoCmd.OpenForm "frmRFIRouting", , , ItemDims.WhereID(False)
         Case "RSN"
             CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), ItemDims.ReviewType, ReviewResultForm.cboAssign
         Case "RW"

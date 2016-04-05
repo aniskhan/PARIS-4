@@ -5,6 +5,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ViewsAllowed =1
@@ -18,6 +19,7 @@ Begin Form
     Right =22080
     Bottom =12645
     DatasheetGridlinesColor =15132391
+    Filter ="[DisasterID]='4258' and [ApplicantID]='043-UNE2N-00' and [ProjectID]=3"
     RecSrcDt = Begin
         0xb8f3af4051b5e440
     End

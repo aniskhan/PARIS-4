@@ -105,9 +105,6 @@ Begin
         dbText "Name" ="tblSubRecipient.[Subrecipient Name]"
         dbLong "AggregateType" ="-1"
     End
-    Begin
-        dbText "Name" ="Subrecipient Name"
-    End
 End
 Begin
     State =0

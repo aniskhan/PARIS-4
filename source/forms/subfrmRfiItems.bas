@@ -14,8 +14,10 @@ Begin Form
     Width =14805
     DatasheetFontHeight =11
     ItemSuffix =154
-    Right =18435
-    Bottom =7695
+    Left =405
+    Top =5685
+    Right =13515
+    Bottom =8655
     DatasheetGridlinesColor =15132391
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin
@@ -192,7 +194,7 @@ Begin Form
                     TextAlign =1
                     Left =4830
                     Top =30
-                    Width =3780
+                    Width =7770
                     Height =315
                     BorderColor =8355711
                     ForeColor =8355711
@@ -204,7 +206,7 @@ Begin Form
                     GridlineColor =10921638
                     LayoutCachedLeft =4830
                     LayoutCachedTop =30
-                    LayoutCachedWidth =8610
+                    LayoutCachedWidth =12600
                     LayoutCachedHeight =345
                     ColumnStart =4
                     ColumnEnd =4
@@ -251,6 +253,7 @@ Begin Form
             End
         End
         Begin Section
+            CanGrow = NotDefault
             Height =375
             Name ="Detail"
             AlternateBackColor =15523798
@@ -285,6 +288,7 @@ Begin Form
                     GroupTable =2
                 End
                 Begin TextBox
+                    CanGrow = NotDefault
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
                     OverlapFlags =85
@@ -292,7 +296,7 @@ Begin Form
                     IMESentenceMode =3
                     Left =4830
                     Top =30
-                    Width =3780
+                    Width =7770
                     Height =315
                     ColumnWidth =3000
                     TabIndex =3
@@ -306,7 +310,7 @@ Begin Form
 
                     LayoutCachedLeft =4830
                     LayoutCachedTop =30
-                    LayoutCachedWidth =8610
+                    LayoutCachedWidth =12600
                     LayoutCachedHeight =345
                     RowStart =1
                     RowEnd =1

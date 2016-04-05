@@ -4,7 +4,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
     AllowEdits = NotDefault
     DefaultView =2
     ViewsAllowed =2
@@ -17,7 +16,7 @@ Begin Form
     ItemSuffix =61
     Left =240
     Top =660
-    Right =12960
+    Right =12705
     Bottom =8160
     DatasheetGridlinesColor =15132391
     Filter ="[positionTier] = 0 and [ReviewUserID] is Null"

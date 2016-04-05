@@ -6,27 +6,26 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     ViewsAllowed =1
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =15780
+    Width =15480
     DatasheetFontHeight =11
-    ItemSuffix =220
-    Left =29280
-    Top =9105
-    Right =-19996
-    Bottom =12510
+    ItemSuffix =228
+    Left =30225
+    Top =2505
+    Right =-21781
+    Bottom =15150
     DatasheetGridlinesColor =15132391
     Filter ="[DisasterID]='4258' and [ApplicantID]='000-UKM82-00' and [RfiID]=7"
     RecSrcDt = Begin
         0xeaf644ba95bae440
     End
     RecordSource ="fqryRfiItems"
-    Caption ="frmRFIResponseAssessment"
+    Caption ="RFI Response Assessment"
     OnCurrent ="[Event Procedure]"
     BeforeUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"
@@ -130,7 +129,7 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =442
+            Height =435
             BackColor =15064278
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
@@ -159,7 +158,7 @@ Begin Form
                     ColumnEnd =1
                 End
                 Begin Label
-                    OverlapFlags =85
+                    OverlapFlags =93
                     TextAlign =1
                     Left =1620
                     Top =30
@@ -180,7 +179,7 @@ Begin Form
                     ColumnEnd =3
                 End
                 Begin Label
-                    OverlapFlags =93
+                    OverlapFlags =85
                     TextAlign =1
                     Left =30
                     Top =30
@@ -199,19 +198,19 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =10680
+                    Left =8685
                     Top =60
-                    Width =1170
+                    Width =2535
                     Height =300
                     BorderColor =8355711
                     ForeColor =8355711
                     Name ="Label116"
-                    Caption ="Date Rcvd"
+                    Caption ="Mark Item Recieved"
                     GroupTable =5
                     GridlineColor =10921638
-                    LayoutCachedLeft =10680
+                    LayoutCachedLeft =8685
                     LayoutCachedTop =60
-                    LayoutCachedWidth =11850
+                    LayoutCachedWidth =11220
                     LayoutCachedHeight =360
                     LayoutGroup =1
                     GroupTable =5
@@ -219,9 +218,9 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =13680
+                    Left =12420
                     Top =60
-                    Width =1995
+                    Width =2415
                     Height =300
                     BorderColor =8355711
                     ForeColor =8355711
@@ -229,9 +228,9 @@ Begin Form
                     Caption ="Response Accepted?"
                     GroupTable =6
                     GridlineColor =10921638
-                    LayoutCachedLeft =13680
+                    LayoutCachedLeft =12420
                     LayoutCachedTop =60
-                    LayoutCachedWidth =15675
+                    LayoutCachedWidth =14835
                     LayoutCachedHeight =360
                     LayoutGroup =2
                     GroupTable =6
@@ -259,24 +258,27 @@ Begin Form
                     Visible = NotDefault
                     OverlapFlags =223
                     IMESentenceMode =3
-                    Top =120
+                    Left =1500
+                    Top =60
                     Height =315
                     ColumnOrder =0
+                    TabIndex =3
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="DisasterID"
                     ControlSource ="DisasterID"
                     GridlineColor =10921638
 
-                    LayoutCachedTop =120
-                    LayoutCachedWidth =1440
-                    LayoutCachedHeight =435
+                    LayoutCachedLeft =1500
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =2940
+                    LayoutCachedHeight =375
                 End
                 Begin TextBox
                     Visible = NotDefault
                     OverlapFlags =255
                     IMESentenceMode =3
-                    Top =60
+                    Left =1500
                     Height =315
                     ColumnOrder =1
                     TabIndex =1
@@ -286,27 +288,150 @@ Begin Form
                     ControlSource ="ApplicantID"
                     GridlineColor =10921638
 
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =1440
-                    LayoutCachedHeight =375
+                    LayoutCachedLeft =1500
+                    LayoutCachedWidth =2940
+                    LayoutCachedHeight =315
                 End
                 Begin TextBox
                     Visible = NotDefault
                     OverlapFlags =247
                     IMESentenceMode =3
-                    Left =120
+                    Left =1500
                     Height =315
                     ColumnOrder =2
-                    TabIndex =2
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="RfiID"
                     ControlSource ="RfiID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =120
-                    LayoutCachedWidth =1560
+                    LayoutCachedLeft =1500
+                    LayoutCachedWidth =2940
                     LayoutCachedHeight =315
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =11400
+                    Top =60
+                    Width =480
+                    Height =300
+                    TabIndex =2
+                    ForeColor =4210752
+                    Name ="cmdHelpItemRcvd"
+                    OnClick ="[Event Procedure]"
+                    Tag ="8"
+                    GridlineColor =10921638
+                    ImageData = Begin
+                        0x2800000010000000100000000100200000000000000000000000000000000000 ,
+                        0x000000000000000000000000000000000000000000000000b17d4a27b17d4a8d ,
+                        0xb17d4acfb17d4affb17d4affb17d4acfb17d4a8db17d4a270000000000000000 ,
+                        0x0000000000000000000000000000000000000000b17d4a72b17d4af6b17d4aff ,
+                        0xb17d4affb17d4affb17d4affb17d4affb17d4affb17d4af6b17d4a7200000000 ,
+                        0x000000000000000000000000b17d4a06b17d4ab7b17d4affb17d4affb17d4aff ,
+                        0xb17d4affffffffffffffffffb17d4affb17d4affb17d4affb17d4affb17d4ab7 ,
+                        0xb17d4a060000000000000000b17d4a93b17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affffffffffffffffffb17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4a9000000000b17d4a2db17d4afcb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affc1976effc1976effb17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4afcb17d4a2db17d4a93b17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xc1976effffffffffe9daccffb17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affb17d4a90b17d4adbb17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb8895bfffefdfdfff9f4f0ffba8c5fffb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affb17d4ad5b17d4af9b17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affdac2aafffffffffff4ede5ffb98b5dffb17d4affb17d4affb17d4aff ,
+                        0xb17d4affb17d4af3b17d4af9b17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affb17d4affe0cbb7fffffffffff3ebe3ffb8895bffb17d4affb17d4aff ,
+                        0xb17d4affb17d4af0b17d4ad8b17d4affb17d4affb17d4affb17d4affbf946aff ,
+                        0xb17d4affb17d4affb17d4affe3d0bdffffffffffdbc3acffb17d4affb17d4aff ,
+                        0xb17d4affb17d4ad5b17d4a90b17d4affb17d4affb27f4cfff9f6f2ffffffffff ,
+                        0xc1976effb17d4affb17d4affd4b79bffffffffffe0cbb7ffb17d4affb17d4aff ,
+                        0xb17d4affb17d4a8db17d4a2db17d4afcb17d4affb17d4affd9c0a8ffffffffff ,
+                        0xf5eee8ffd2b497ffd8bda3fffbf9f6fffdfcfbffc1976effb17d4affb17d4aff ,
+                        0xb17d4afcb17d4a2a00000000b17d4a90b17d4affb17d4affb27f4cffd9c0a8ff ,
+                        0xfefdfdfffffffffffffffffff7f1ecffc7a27dffb17d4affb17d4affb17d4aff ,
+                        0xb17d4a8d0000000000000000b17d4a06b17d4ab7b17d4affb17d4affb17d4aff ,
+                        0xb78859ffc7a27dffc1976effb17d4affb17d4affb17d4affb17d4affb17d4ab7 ,
+                        0xb17d4a0600000000000000000000000000000000b17d4a72b17d4af6b17d4aff ,
+                        0xb17d4affb17d4affb17d4affb17d4affb17d4affb17d4af6b17d4a7200000000 ,
+                        0x000000000000000000000000000000000000000000000000b17d4a27b17d4a8d ,
+                        0xb17d4accb17d4afcb17d4afcb17d4accb17d4a8db17d4a270000000000000000 ,
+                        0x0000000000000000
+                    End
+                    BackStyle =0
+
+                    LayoutCachedLeft =11400
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =11880
+                    LayoutCachedHeight =360
+                    Gradient =0
+                    BackColor =15123357
+                    BorderColor =15123357
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =14940
+                    Top =60
+                    Width =480
+                    Height =300
+                    TabIndex =4
+                    ForeColor =4210752
+                    Name ="cmdHelpItemAssess"
+                    OnClick ="[Event Procedure]"
+                    Tag ="9"
+                    GridlineColor =10921638
+                    ImageData = Begin
+                        0x2800000010000000100000000100200000000000000000000000000000000000 ,
+                        0x000000000000000000000000000000000000000000000000b17d4a27b17d4a8d ,
+                        0xb17d4acfb17d4affb17d4affb17d4acfb17d4a8db17d4a270000000000000000 ,
+                        0x0000000000000000000000000000000000000000b17d4a72b17d4af6b17d4aff ,
+                        0xb17d4affb17d4affb17d4affb17d4affb17d4affb17d4af6b17d4a7200000000 ,
+                        0x000000000000000000000000b17d4a06b17d4ab7b17d4affb17d4affb17d4aff ,
+                        0xb17d4affffffffffffffffffb17d4affb17d4affb17d4affb17d4affb17d4ab7 ,
+                        0xb17d4a060000000000000000b17d4a93b17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affffffffffffffffffb17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4a9000000000b17d4a2db17d4afcb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affc1976effc1976effb17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4afcb17d4a2db17d4a93b17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xc1976effffffffffe9daccffb17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affb17d4a90b17d4adbb17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb8895bfffefdfdfff9f4f0ffba8c5fffb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affb17d4ad5b17d4af9b17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affdac2aafffffffffff4ede5ffb98b5dffb17d4affb17d4affb17d4aff ,
+                        0xb17d4affb17d4af3b17d4af9b17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affb17d4affe0cbb7fffffffffff3ebe3ffb8895bffb17d4affb17d4aff ,
+                        0xb17d4affb17d4af0b17d4ad8b17d4affb17d4affb17d4affb17d4affbf946aff ,
+                        0xb17d4affb17d4affb17d4affe3d0bdffffffffffdbc3acffb17d4affb17d4aff ,
+                        0xb17d4affb17d4ad5b17d4a90b17d4affb17d4affb27f4cfff9f6f2ffffffffff ,
+                        0xc1976effb17d4affb17d4affd4b79bffffffffffe0cbb7ffb17d4affb17d4aff ,
+                        0xb17d4affb17d4a8db17d4a2db17d4afcb17d4affb17d4affd9c0a8ffffffffff ,
+                        0xf5eee8ffd2b497ffd8bda3fffbf9f6fffdfcfbffc1976effb17d4affb17d4aff ,
+                        0xb17d4afcb17d4a2a00000000b17d4a90b17d4affb17d4affb27f4cffd9c0a8ff ,
+                        0xfefdfdfffffffffffffffffff7f1ecffc7a27dffb17d4affb17d4affb17d4aff ,
+                        0xb17d4a8d0000000000000000b17d4a06b17d4ab7b17d4affb17d4affb17d4aff ,
+                        0xb78859ffc7a27dffc1976effb17d4affb17d4affb17d4affb17d4affb17d4ab7 ,
+                        0xb17d4a0600000000000000000000000000000000b17d4a72b17d4af6b17d4aff ,
+                        0xb17d4affb17d4affb17d4affb17d4affb17d4affb17d4af6b17d4a7200000000 ,
+                        0x000000000000000000000000000000000000000000000000b17d4a27b17d4a8d ,
+                        0xb17d4accb17d4afcb17d4afcb17d4accb17d4a8db17d4a270000000000000000 ,
+                        0x0000000000000000
+                    End
+                    BackStyle =0
+
+                    LayoutCachedLeft =14940
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =15420
+                    LayoutCachedHeight =360
+                    Gradient =0
+                    BackColor =15123357
+                    BorderColor =15123357
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
                 End
             End
         End
@@ -487,26 +612,6 @@ Begin Form
                     ColumnStart =4
                     ColumnEnd =4
                 End
-                Begin Label
-                    OverlapFlags =85
-                    Left =15540
-                    Top =60
-                    Width =240
-                    Height =315
-                    BorderColor =8355711
-                    ForeColor =8355711
-                    Name ="Label168"
-                    Caption ="*"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =15540
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =15780
-                    LayoutCachedHeight =375
-                    RowStart =1
-                    RowEnd =1
-                    ColumnStart =9
-                    ColumnEnd =9
-                End
                 Begin ComboBox
                     Enabled = NotDefault
                     OverlapFlags =85
@@ -564,28 +669,12 @@ Begin Form
             End
         End
         Begin FormFooter
-            Height =960
+            Height =1200
             Name ="FormFooter"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             BackThemeColorIndex =1
             Begin
-                Begin Label
-                    OverlapFlags =85
-                    Left =12720
-                    Top =60
-                    Width =2760
-                    Height =900
-                    BorderColor =8355711
-                    ForeColor =8355711
-                    Name ="Label167"
-                    Caption ="*If the Response is not accepted, rework back to \"Pending Receipt\""
-                    GridlineColor =10921638
-                    LayoutCachedLeft =12720
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =15480
-                    LayoutCachedHeight =960
-                End
                 Begin TextBox
                     OldBorderStyle =0
                     OverlapFlags =85
@@ -605,7 +694,7 @@ Begin Form
                     LayoutCachedHeight =915
                 End
                 Begin CommandButton
-                    OverlapFlags =85
+                    OverlapFlags =93
                     Left =120
                     Top =780
                     Width =120
@@ -628,6 +717,82 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
+                    Overlaps =1
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Width =480
+                    Height =300
+                    TabIndex =2
+                    ForeColor =4210752
+                    Name ="cmdHelpForm"
+                    OnClick ="[Event Procedure]"
+                    Tag ="10"
+                    GridlineColor =10921638
+                    ImageData = Begin
+                        0x2800000010000000100000000100200000000000000000000000000000000000 ,
+                        0x000000000000000000000000000000000000000000000000b17d4a27b17d4a8d ,
+                        0xb17d4acfb17d4affb17d4affb17d4acfb17d4a8db17d4a270000000000000000 ,
+                        0x0000000000000000000000000000000000000000b17d4a72b17d4af6b17d4aff ,
+                        0xb17d4affb17d4affb17d4affb17d4affb17d4affb17d4af6b17d4a7200000000 ,
+                        0x000000000000000000000000b17d4a06b17d4ab7b17d4affb17d4affb17d4aff ,
+                        0xb17d4affffffffffffffffffb17d4affb17d4affb17d4affb17d4affb17d4ab7 ,
+                        0xb17d4a060000000000000000b17d4a93b17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affffffffffffffffffb17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4a9000000000b17d4a2db17d4afcb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affc1976effc1976effb17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4afcb17d4a2db17d4a93b17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xc1976effffffffffe9daccffb17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affb17d4a90b17d4adbb17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb8895bfffefdfdfff9f4f0ffba8c5fffb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affb17d4ad5b17d4af9b17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affdac2aafffffffffff4ede5ffb98b5dffb17d4affb17d4affb17d4aff ,
+                        0xb17d4affb17d4af3b17d4af9b17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affb17d4affe0cbb7fffffffffff3ebe3ffb8895bffb17d4affb17d4aff ,
+                        0xb17d4affb17d4af0b17d4ad8b17d4affb17d4affb17d4affb17d4affbf946aff ,
+                        0xb17d4affb17d4affb17d4affe3d0bdffffffffffdbc3acffb17d4affb17d4aff ,
+                        0xb17d4affb17d4ad5b17d4a90b17d4affb17d4affb27f4cfff9f6f2ffffffffff ,
+                        0xc1976effb17d4affb17d4affd4b79bffffffffffe0cbb7ffb17d4affb17d4aff ,
+                        0xb17d4affb17d4a8db17d4a2db17d4afcb17d4affb17d4affd9c0a8ffffffffff ,
+                        0xf5eee8ffd2b497ffd8bda3fffbf9f6fffdfcfbffc1976effb17d4affb17d4aff ,
+                        0xb17d4afcb17d4a2a00000000b17d4a90b17d4affb17d4affb27f4cffd9c0a8ff ,
+                        0xfefdfdfffffffffffffffffff7f1ecffc7a27dffb17d4affb17d4affb17d4aff ,
+                        0xb17d4a8d0000000000000000b17d4a06b17d4ab7b17d4affb17d4affb17d4aff ,
+                        0xb78859ffc7a27dffc1976effb17d4affb17d4affb17d4affb17d4affb17d4ab7 ,
+                        0xb17d4a0600000000000000000000000000000000b17d4a72b17d4af6b17d4aff ,
+                        0xb17d4affb17d4affb17d4affb17d4affb17d4affb17d4af6b17d4a7200000000 ,
+                        0x000000000000000000000000000000000000000000000000b17d4a27b17d4a8d ,
+                        0xb17d4accb17d4afcb17d4afcb17d4accb17d4a8db17d4a270000000000000000 ,
+                        0x0000000000000000
+                    End
+                    BackStyle =0
+
+                    LayoutCachedWidth =480
+                    LayoutCachedHeight =300
+                    Gradient =0
+                    BackColor =15123357
+                    BorderColor =15123357
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
+                End
+                Begin Label
+                    OverlapFlags =215
+                    Left =60
+                    Top =360
+                    Width =600
+                    Height =840
+                    BorderColor =8355711
+                    ForeColor =8355711
+                    Name ="Label227"
+                    Caption ="About This Form"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =360
+                    LayoutCachedWidth =660
+                    LayoutCachedHeight =1200
                 End
             End
         End
@@ -643,7 +808,20 @@ Attribute VB_Exposed = False
 
 Private Const FormItemType As String = "RFIResponse" 'used in determining what type of record is handled
 Private isRfiComplete As Boolean
+' HELP BUTTONS
+Private Sub cmdHelpForm_Click()
+Call getHelpText(Me.name, Screen.ActiveControl.name, CInt(Screen.ActiveControl.tag))
+End Sub
 
+Private Sub cmdHelpItemAssess_Click()
+Call getHelpText(Me.name, Screen.ActiveControl.name, CInt(Screen.ActiveControl.tag))
+End Sub
+
+Private Sub cmdHelpItemRcvd_Click()
+Call getHelpText(Me.name, Screen.ActiveControl.name, CInt(Screen.ActiveControl.tag))
+End Sub
+
+'ACTION BUTTONS
 Private Sub cmdRspRcvd_Click()
 '///Error Handling
     If gcfHandleErrors Then On Error GoTo PROC_ERR
@@ -675,9 +853,6 @@ PROC_ERR:
 End Sub
 
 Private Sub cmdAssessResp_Click()
-
-
-
 '///Error Handling
     If gcfHandleErrors Then On Error GoTo PROC_ERR
     PushCallStack Me.name & "." & "cmdRspRcvd_Click"
@@ -708,8 +883,6 @@ PROC_ERR:
     Resume PROC_EXIT
 '///ErrorHandling
 End Sub
-
-
 
 'OTHER PAGE EVENTS
 Private Sub allItemsRcvd()

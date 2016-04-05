@@ -116,8 +116,6 @@ Begin
         dbText "Name" ="tblSubRecipient.DisasterID"
         dbLong "AggregateType" ="-1"
     End
-<<<<<<< HEAD
-=======
     Begin
         dbText "Name" ="Assign PDM"
         dbLong "AggregateType" ="-1"
@@ -142,10 +140,9 @@ Begin
         dbText "Name" ="PAGS Review"
         dbLong "AggregateType" ="-1"
     End
-    Begin
+	Begin
         dbText "Name" ="MaxOfreviewexitdate"
     End
->>>>>>> ARK-RFI_2016.04.03
 End
 Begin
     State =0
