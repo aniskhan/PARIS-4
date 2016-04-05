@@ -33,11 +33,7 @@ End
 Begin Joins
     LeftTable ="revtblSite"
     RightTable ="tblSites"
-    Expression ="revtblSite.ApplicantID = tblSites.ApplicantID"
-    Flag =1
-    LeftTable ="revtblSite"
-    RightTable ="tblSites"
-    Expression ="revtblSite.SiteID = tblSites.SiteID"
+    Expression ="revtblSite.DisasterID = tblSites.DisasterID"
     Flag =1
     LeftTable ="revtblSite"
     RightTable ="tblSites"
@@ -45,7 +41,11 @@ Begin Joins
     Flag =1
     LeftTable ="revtblSite"
     RightTable ="tblSites"
-    Expression ="revtblSite.DisasterID = tblSites.DisasterID"
+    Expression ="revtblSite.SiteID = tblSites.SiteID"
+    Flag =1
+    LeftTable ="revtblSite"
+    RightTable ="tblSites"
+    Expression ="revtblSite.ApplicantID = tblSites.ApplicantID"
     Flag =1
     LeftTable ="revtblSite"
     RightTable ="tblReviewTypes"
@@ -53,7 +53,7 @@ Begin Joins
     Flag =1
     LeftTable ="tblProjects"
     RightTable ="tblSites"
-    Expression ="tblProjects.ProjectID = tblSites.ProjectID"
+    Expression ="tblProjects.DisasterID = tblSites.DisasterID"
     Flag =1
     LeftTable ="tblProjects"
     RightTable ="tblSites"
@@ -61,15 +61,15 @@ Begin Joins
     Flag =1
     LeftTable ="tblProjects"
     RightTable ="tblSites"
-    Expression ="tblProjects.DisasterID = tblSites.DisasterID"
-    Flag =1
-    LeftTable ="tblProjects"
-    RightTable ="tblSubRecipient"
-    Expression ="tblProjects.ApplicantID = tblSubRecipient.ApplicantID"
+    Expression ="tblProjects.ProjectID = tblSites.ProjectID"
     Flag =1
     LeftTable ="tblProjects"
     RightTable ="tblSubRecipient"
     Expression ="tblProjects.DisasterID = tblSubRecipient.DisasterID"
+    Flag =1
+    LeftTable ="tblProjects"
+    RightTable ="tblSubRecipient"
+    Expression ="tblProjects.ApplicantID = tblSubRecipient.ApplicantID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -149,12 +149,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =681
-    Bottom =539
+    Right =1153
+    Bottom =860
     Left =-1
     Top =-1
-    Right =665
-    Bottom =201
+    Right =1137
+    Bottom =184
     Left =0
     Top =0
     ColumnsShown =539

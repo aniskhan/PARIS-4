@@ -6,6 +6,7 @@ Begin InputTables
     Name ="qryNames"
     Alias ="qryNames_1"
     Name ="lutblReviewDisposition"
+    Name ="tblRFI"
 End
 Begin OutputColumns
     Expression ="revtblRfi.DisasterID"
@@ -13,7 +14,7 @@ Begin OutputColumns
     Expression ="revtblRfi.ProjectID"
     Expression ="revtblRfi.SiteID"
     Expression ="revtblRfi.RfiID"
-    Expression ="revtblRfi.[RfiItemID]"
+    Expression ="revtblRfi.RfiItemID"
     Expression ="revtblRfi.ReviewType"
     Expression ="revtblRfi.ReviewEntryDate"
     Expression ="revtblRfi.ReviewCheckOutDate"
@@ -24,6 +25,7 @@ Begin OutputColumns
     Alias ="CompletedBy"
     Expression ="IIf([CompletedUserID] Is Null,\"\",[qryNames_1].[Reverse Full Name])"
     Expression ="revtblRfi.Comments"
+    Expression ="tblRFI.ItemType"
 End
 Begin Joins
     LeftTable ="revtblRfi"
@@ -38,6 +40,10 @@ Begin Joins
     RightTable ="lutblReviewDisposition"
     Expression ="revtblRfi.Disposition = lutblReviewDisposition.DispID"
     Flag =2
+    LeftTable ="revtblRfi"
+    RightTable ="tblRFI"
+    Expression ="revtblRfi.RfiID = tblRFI.RfiID"
+    Flag =1
 End
 Begin OrderBy
     Expression ="revtblRfi.ReviewEntryDate"
@@ -105,17 +111,25 @@ Begin
         dbText "Name" ="revtblRfi.Comments"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="tblRFI.ItemType"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="revtblRfi.RfiItemID"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1305
+    Right =1646
     Bottom =860
     Left =-1
     Top =-1
-    Right =1289
-    Bottom =488
+    Right =1204
+    Bottom =454
     Left =0
     Top =0
     ColumnsShown =539
@@ -153,6 +167,15 @@ Begin
         Bottom =353
         Top =0
         Name ="lutblReviewDisposition"
+        Name =""
+    End
+    Begin
+        Left =240
+        Top =12
+        Right =384
+        Bottom =156
+        Top =0
+        Name ="tblRFI"
         Name =""
     End
 End

@@ -51,10 +51,6 @@ dbByte "RecordsetType" ="0"
 dbBoolean "TotalsRow" ="0"
 Begin
     Begin
-        dbText "Name" ="Full Name"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="lutblReviewDisposition.Disposition"
         dbLong "AggregateType" ="-1"
     End
@@ -71,11 +67,11 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="DisasterID"
+        dbText "Name" ="revtblProject.Comments"
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="ApplicantID"
+        dbText "Name" ="Full Name"
         dbLong "AggregateType" ="-1"
     End
     Begin
@@ -83,19 +79,11 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="ReviewType"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="ReviewEntryDate"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="ReviewCheckOutDate"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="ReviewExitDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ReviewType"
         dbLong "AggregateType" ="-1"
     End
     Begin
@@ -103,7 +91,43 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="revtblProject.Comments"
+        dbText "Name" ="revtblProject.ApplicantID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="revtblProject.ProjectID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="revtblProject.ReviewCheckOutDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="DisasterID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ReviewEntryDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="revtblProject.ReviewType"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="revtblProject.ReviewEntryDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ApplicantID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ReviewCheckOutDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="revtblProject.ReviewExitDate"
         dbLong "AggregateType" ="-1"
     End
 End
@@ -111,12 +135,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =942
+    Right =1509
     Bottom =860
     Left =-1
     Top =-1
-    Right =926
-    Bottom =420
+    Right =1493
+    Bottom =386
     Left =0
     Top =0
     ColumnsShown =539

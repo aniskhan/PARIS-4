@@ -7,42 +7,42 @@ End
 Begin OutputColumns
     Expression ="tblSubRecipient.[Subrecipient Name]"
     Expression ="tblSubRecipient.[Assigned PDC]"
-    Expression ="[tblDeterminationMemo].DMid"
-    Expression ="[tblDeterminationMemo].ItemType"
-    Expression ="[tblDeterminationMemo].DisasterID"
-    Expression ="[tblDeterminationMemo].ApplicantID"
-    Expression ="[tblDeterminationMemo].ProjectID"
-    Expression ="[tblDeterminationMemo].[Lane Assigned]"
-    Expression ="[tblDeterminationMemo].SiteID"
-    Expression ="[tblDeterminationMemo].[Determination Action]"
-    Expression ="[tblDeterminationMemo].[Determination Reason]"
-    Expression ="[tblDeterminationMemo].[Memo Assigned to]"
-    Expression ="[tblDeterminationMemo].[Response Time Requested]"
-    Expression ="[tblDeterminationMemo].[Date memo complete]"
-    Expression ="[tblDeterminationMemo].[Date Returned from Recipient]"
-    Expression ="[tblDeterminationMemo].[Transmittal letter Prepared by]"
-    Expression ="[tblDeterminationMemo].[Date letter complete]"
-    Expression ="[tblDeterminationMemo].[Date PMTFL Concurs]"
-    Expression ="[tblDeterminationMemo].[Date PAGS Concurs]"
-    Expression ="[tblDeterminationMemo].[Date FCO signs letter]"
-    Expression ="[tblDeterminationMemo].[DateTransmitted to Recipient]"
-    Expression ="[tblDeterminationMemo].[Date Trasmitted to Applicant]"
-    Expression ="[tblDeterminationMemo].[Transmittal Method]"
-    Expression ="[tblDeterminationMemo].ReviewFrom"
-    Expression ="[tblDeterminationMemo].ReviewFromPhase"
-    Expression ="[tblDeterminationMemo].ReviewFromStep"
-    Expression ="[tblDeterminationMemo].DMCanceled"
-    Expression ="[tblDeterminationMemo].CreatedBy"
-    Expression ="[tblDeterminationMemo].Comments"
+    Expression ="tblDeterminationMemo.DMid"
+    Expression ="tblDeterminationMemo.ItemType"
+    Expression ="tblDeterminationMemo.DisasterID"
+    Expression ="tblDeterminationMemo.ApplicantID"
+    Expression ="tblDeterminationMemo.ProjectID"
+    Expression ="tblDeterminationMemo.[Lane Assigned]"
+    Expression ="tblDeterminationMemo.SiteID"
+    Expression ="tblDeterminationMemo.[Determination Action]"
+    Expression ="tblDeterminationMemo.[Determination Reason]"
+    Expression ="tblDeterminationMemo.[Memo Assigned to]"
+    Expression ="tblDeterminationMemo.[Response Time Requested]"
+    Expression ="tblDeterminationMemo.[Date memo complete]"
+    Expression ="tblDeterminationMemo.[Date Returned from Recipient]"
+    Expression ="tblDeterminationMemo.[Transmittal letter Prepared by]"
+    Expression ="tblDeterminationMemo.[Date letter complete]"
+    Expression ="tblDeterminationMemo.[Date PMTFL Concurs]"
+    Expression ="tblDeterminationMemo.[Date PAGS Concurs]"
+    Expression ="tblDeterminationMemo.[Date FCO signs letter]"
+    Expression ="tblDeterminationMemo.[DateTransmitted to Recipient]"
+    Expression ="tblDeterminationMemo.[Date Trasmitted to Applicant]"
+    Expression ="tblDeterminationMemo.[Transmittal Method]"
+    Expression ="tblDeterminationMemo.ReviewFrom"
+    Expression ="tblDeterminationMemo.ReviewFromPhase"
+    Expression ="tblDeterminationMemo.ReviewFromStep"
+    Expression ="tblDeterminationMemo.DMCanceled"
+    Expression ="tblDeterminationMemo.CreatedBy"
+    Expression ="tblDeterminationMemo.Comments"
 End
 Begin Joins
     LeftTable ="tblSubRecipient"
     RightTable ="tblDeterminationMemo"
-    Expression ="tblSubRecipient.ApplicantID=[tblDeterminationMemo].ApplicantID"
+    Expression ="tblSubRecipient.ApplicantID = tblDeterminationMemo.ApplicantID"
     Flag =1
     LeftTable ="tblSubRecipient"
     RightTable ="tblDeterminationMemo"
-    Expression ="tblSubRecipient.DisasterID=[tblDeterminationMemo].DisasterID"
+    Expression ="tblSubRecipient.DisasterID = tblDeterminationMemo.DisasterID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -70,12 +70,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =1428
+    Right =1153
     Bottom =860
     Left =-1
     Top =-1
-    Right =1412
-    Bottom =351
+    Right =1137
+    Bottom =334
     Left =0
     Top =0
     ColumnsShown =539
@@ -89,12 +89,12 @@ Begin
         Name =""
     End
     Begin
-        Left =540
-        Top =21
-        Right =794
-        Bottom =639
+        Left =48
+        Top =12
+        Right =192
+        Bottom =156
         Top =0
-        Name ="tbDeterminationMemo"
+        Name ="tblDeterminationMemo"
         Name =""
     End
 End

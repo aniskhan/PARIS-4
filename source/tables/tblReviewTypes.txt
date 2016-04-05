@@ -49,10 +49,12 @@
 51	Site	Validation Assignment	41	2	11	frmSiteInspectionWorkOrder	SITFL	SI	
 52	Site	Validation	51	2	8	subfrmSiteStInspection	SITFL	SI	
 53	STProject	Check Site Status	34	2	9	frmDDDCompleteforProject	SITFL		
-54	RFI	RFI Creation	10	1	1	frmRFIRequest	DIUS		
-55	RFI	PDM Concurrence	20	1	1	frmRFIConcurrence	PDTFL		
-56	RFI	Transmittal	30	1	1	frmRFITransmittal	PDTFL		
-57	RFI	Pending Receipt	40	1	1	frmRFIReceipt	DIUL	DIUS	
+54	RFI	RFI Creation	10	1	1	frmRFIRouting	DIUS		
+55	RFI	PDM Concurrence	20	1	1	frmRFIRouting	PDTFL		
+56	RFI	Transmittal	30	1	1	frmRFIRouting	PDTFL		
+57	RFIResponse	Pending Receipt	40	1	1	frmRFIItemAssessment	DIUL	DIUS	
 58	RPA	DIU Update EMMIE Projections	75	1	12	frmUpdateRSMProjections	DIUS		
 59	SPProject	Specialized Lane	30	2	2		SPGL		Specialized Lane-Site
 60	Site	Specialized Lane-Site	30	2	2		SPGL		
+61	RFI	Mark RFI Complete	60	1	1	frmRFIRouting	PDTFL		
+63	RFIResponse	Assess RFI Response	50	1	1	frmRFIItemAssessment	PDTFL		

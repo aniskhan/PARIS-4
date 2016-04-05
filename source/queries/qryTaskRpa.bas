@@ -33,11 +33,11 @@ End
 Begin Joins
     LeftTable ="revtblRpa"
     RightTable ="tblSubRecipient"
-    Expression ="revtblRpa.DisasterID = tblSubRecipient.DisasterID"
+    Expression ="revtblRpa.ApplicantID = tblSubRecipient.ApplicantID"
     Flag =1
     LeftTable ="revtblRpa"
     RightTable ="tblSubRecipient"
-    Expression ="revtblRpa.ApplicantID = tblSubRecipient.ApplicantID"
+    Expression ="revtblRpa.DisasterID = tblSubRecipient.DisasterID"
     Flag =1
     LeftTable ="revtblRpa"
     RightTable ="tblReviewTypes"
@@ -119,12 +119,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =681
-    Bottom =539
+    Right =1153
+    Bottom =860
     Left =-1
     Top =-1
-    Right =665
-    Bottom =351
+    Right =1137
+    Bottom =334
     Left =0
     Top =0
     ColumnsShown =539

@@ -370,7 +370,7 @@ End Sub
 Public Sub ConvertToRfiResponse(RfiItemID As Long)
     If Dims.pItemType <> "RFIResponse" Then
         Dims.pRfiItemType = Dims.pItemType
-        Dims.pItemType = "RFIResponse"
+        Dims.pItemID = "RFIResponse"
         Dims.pRfiItemID = RfiItemID
     End If
 End Sub

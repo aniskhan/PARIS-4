@@ -33,15 +33,15 @@ End
 Begin Joins
     LeftTable ="tblProjects"
     RightTable ="tblSubRecipient"
-    Expression ="tblProjects.[DisasterID] = tblSubRecipient.[DisasterID]"
+    Expression ="tblProjects.[ApplicantID] = tblSubRecipient.[ApplicantID]"
     Flag =1
     LeftTable ="tblProjects"
     RightTable ="tblSubRecipient"
-    Expression ="tblProjects.[ApplicantID] = tblSubRecipient.[ApplicantID]"
+    Expression ="tblProjects.[DisasterID] = tblSubRecipient.[DisasterID]"
     Flag =1
     LeftTable ="revtblProject"
     RightTable ="tblProjects"
-    Expression ="revtblProject.ProjectID = tblProjects.ProjectID"
+    Expression ="revtblProject.DisasterID = tblProjects.DisasterID"
     Flag =1
     LeftTable ="revtblProject"
     RightTable ="tblProjects"
@@ -49,7 +49,7 @@ Begin Joins
     Flag =1
     LeftTable ="revtblProject"
     RightTable ="tblProjects"
-    Expression ="revtblProject.DisasterID = tblProjects.DisasterID"
+    Expression ="revtblProject.ProjectID = tblProjects.ProjectID"
     Flag =1
     LeftTable ="revtblProject"
     RightTable ="tblReviewTypes"
@@ -131,12 +131,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =681
-    Bottom =539
+    Right =1153
+    Bottom =860
     Left =-1
     Top =-1
-    Right =665
-    Bottom =228
+    Right =1137
+    Bottom =211
     Left =0
     Top =0
     ColumnsShown =539

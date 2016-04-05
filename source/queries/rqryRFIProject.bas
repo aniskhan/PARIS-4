@@ -13,7 +13,8 @@ Begin OutputColumns
     Expression ="rqryRFIRouting.*"
     Alias ="DueDate"
     Expression ="[Date Sent to Recipient]+[Response Time Requested]"
-    Expression ="tblRFIRequestedInformation.[Item Type]"
+    Alias ="Item"
+    Expression ="tblRFIRequestedInformation.ItemType"
     Expression ="tblRFIRequestedInformation.[Reason Requested]"
     Alias ="RIRfiID"
     Expression ="tblRFIRequestedInformation.RfiID"
@@ -78,10 +79,6 @@ dbBoolean "TotalsRow" ="0"
 Begin
     Begin
         dbText "Name" ="DueDate"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblRFIRequestedInformation.[Item Type]"
         dbLong "AggregateType" ="-1"
     End
     Begin
@@ -196,17 +193,21 @@ Begin
         dbText "Name" ="PDM Contact"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="Item"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1301
+    Right =1098
     Bottom =860
     Left =-1
     Top =-1
-    Right =960
-    Bottom =402
+    Right =1082
+    Bottom =368
     Left =541
     Top =0
     ColumnsShown =539
@@ -220,19 +221,19 @@ Begin
         Name =""
     End
     Begin
-        Left =-229
-        Top =25
-        Right =26
-        Bottom =264
+        Left =-25
+        Top =31
+        Right =230
+        Bottom =270
         Top =0
         Name ="tblRFIRequestedInformation"
         Name =""
     End
     Begin
-        Left =107
-        Top =37
-        Right =296
-        Bottom =437
+        Left =301
+        Top =32
+        Right =490
+        Bottom =432
         Top =0
         Name ="tblSites"
         Name =""
@@ -247,28 +248,28 @@ Begin
         Name =""
     End
     Begin
-        Left =339
-        Top =45
-        Right =483
-        Bottom =189
+        Left =422
+        Top =11
+        Right =566
+        Bottom =155
         Top =0
         Name ="tblSubRecipient"
         Name =""
     End
     Begin
-        Left =550
-        Top =62
-        Right =719
-        Bottom =209
+        Left =744
+        Top =19
+        Right =913
+        Bottom =166
         Top =0
         Name ="qryNames"
         Name =""
     End
     Begin
-        Left =514
-        Top =208
-        Right =658
-        Bottom =352
+        Left =679
+        Top =218
+        Right =823
+        Bottom =362
         Top =0
         Name ="tblStaff"
         Name =""

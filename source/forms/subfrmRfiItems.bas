@@ -5,6 +5,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowDesignChanges = NotDefault
+    ScrollBars =2
     ViewsAllowed =1
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
@@ -13,10 +14,8 @@ Begin Form
     Width =14805
     DatasheetFontHeight =11
     ItemSuffix =154
-    Left =285
-    Top =4740
-    Right =15450
-    Bottom =7680
+    Right =18435
+    Bottom =7695
     DatasheetGridlinesColor =15132391
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin
@@ -174,7 +173,7 @@ Begin Form
                     BorderColor =8355711
                     ForeColor =8355711
                     Name ="Item Type_Label"
-                    Caption ="Item Requested"
+                    Caption ="Item Requested*"
                     Tag ="DetachedLabel"
                     EventProcPrefix ="Item_Type_Label"
                     GroupTable =2
@@ -425,7 +424,7 @@ Private Sub Form_AfterInsert()
 '///Code
 Me.DisasterID = Forms!frmRFIRouting!DisasterID
 Me.ApplicantID = Forms!frmRFIRouting!ApplicantID
-Me.ProjectID = Forms!frmRFIRouting!ProjectID
+Me.ProjectID = Nz(Forms!frmRFIRouting!ProjectID, 0) 'Must preserve default 0 for projectID to ensure sucessful whereID
 '///Code
 
 '///ErrorHandling

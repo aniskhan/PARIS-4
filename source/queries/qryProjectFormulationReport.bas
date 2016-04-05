@@ -36,8 +36,6 @@ Begin OutputColumns
     Expression ="tblSites.[Subrecipient priority (Low, Med, High)]"
     Expression ="tblSites.[Critical Facility]"
     Expression ="tblSites.[Date Expected to be 100% Complete]"
-    Expression ="tblSites.[% Work Complete]"
-    Expression ="tblSites.[Labor Type]"
 End
 Begin Joins
     LeftTable ="tblProjects"
@@ -192,15 +190,43 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="tblDisaster.DisasterID"
+        dbText "Name" ="[DisasterID]"
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="tblSites.[% Work Complete]"
+        dbText "Name" ="[Incident Period Start]"
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="tblSites.[Labor Type]"
+        dbText "Name" ="tblProjects.ApplicantID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[State]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[Incident Period End]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[Disaster Type]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.[% Work Complete]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.[Approximate Cost]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[Declaration Date]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.[Work Complete \"As OF\" Date]"
         dbLong "AggregateType" ="-1"
     End
 End
@@ -208,11 +234,11 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =923
+    Right =1153
     Bottom =860
     Left =-1
     Top =-1
-    Right =907
+    Right =1137
     Bottom =237
     Left =0
     Top =0

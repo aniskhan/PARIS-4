@@ -10,6 +10,7 @@ Begin OutputColumns
     Expression ="revtblRfi.ApplicantID"
     Expression ="revtblRfi.ReviewType"
     Expression ="tblSubRecipient.County"
+    Expression ="revtblRfi.RfiID"
 End
 Begin Joins
     LeftTable ="revtblRfi"
@@ -27,6 +28,8 @@ Begin Groups
     Expression ="revtblRfi.ReviewType"
     GroupLevel =0
     Expression ="tblSubRecipient.County"
+    GroupLevel =0
+    Expression ="revtblRfi.RfiID"
     GroupLevel =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -51,25 +54,29 @@ Begin
         dbText "Name" ="revtblRfi.ApplicantID"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="revtblRfi.RfiID"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1090
-    Bottom =539
+    Right =919
+    Bottom =860
     Left =-1
     Top =-1
-    Right =885
-    Bottom =294
+    Right =903
+    Bottom =260
     Left =0
     Top =0
     ColumnsShown =543
     Begin
         Left =48
         Top =12
-        Right =192
-        Bottom =156
+        Right =211
+        Bottom =209
         Top =0
         Name ="revtblRfi"
         Name =""
