@@ -16,10 +16,10 @@ Begin Form
     Width =18000
     DatasheetFontHeight =11
     ItemSuffix =71
-    Right =13530
-    Bottom =12645
+    Right =24435
+    Bottom =12615
     DatasheetGridlinesColor =15132391
-    Filter ="[DisasterID]='4258' and [ApplicantID]='000-UKM82-00'"
+    Filter ="[RfiCanceled] = False AND [RfiSatisfied] = False"
     RecSrcDt = Begin
         0x52203c39b5bbe440
     End
@@ -206,7 +206,7 @@ Begin Form
                     BackThemeColorIndex =-1
                     Begin
                         Begin Label
-                            OverlapFlags =223
+                            OverlapFlags =215
                             Left =360
                             Top =3180
                             Width =2820
