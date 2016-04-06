@@ -16,6 +16,39 @@ dbBoolean "FilterOnLoad" ="0"
 dbBoolean "OrderByOnLoad" ="-1"
 dbBoolean "TotalsRow" ="0"
 Begin
+    Begin
+        dbText "Name" ="RfiItemID"
+    End
+    Begin
+        dbText "Name" ="DisasterID"
+    End
+    Begin
+        dbText "Name" ="ApplicantID"
+    End
+    Begin
+        dbText "Name" ="RfiID"
+    End
+    Begin
+        dbText "Name" ="SiteID"
+    End
+    Begin
+        dbText "Name" ="ProjectID"
+    End
+    Begin
+        dbText "Name" ="ItemType"
+    End
+    Begin
+        dbText "Name" ="Reason Requested"
+    End
+    Begin
+        dbText "Name" ="DateResponseReceived"
+    End
+    Begin
+        dbText "Name" ="isResponseReceived"
+    End
+    Begin
+        dbText "Name" ="isRequestSatisfied"
+    End
 End
 Begin
     State =0

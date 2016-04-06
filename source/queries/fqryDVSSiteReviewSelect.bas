@@ -2,6 +2,7 @@
 Option =0
 Begin InputTables
     Name ="tblSites"
+    Name ="qdReadyforSI"
 End
 Begin OutputColumns
     Expression ="tblSites.DisasterID"
@@ -15,20 +16,26 @@ Begin OutputColumns
     Expression ="tblSites.[DVS -Site Inspection Required]"
     Alias ="Reviewed"
     Expression ="IIf([DVS -Site Inspection Required] Is Null,\"No\",\"Yes\")"
-    Alias ="Ready For SI"
-    Expression ="IIf(Nz([% Work Complete])<=0,\"Yes\",IIf(Nz([% Work Complete])<1,IIf(Nz([Dimensi"
-        "onsKnown],\"\")=\"N\",\"Yes\",IIf(Nz([KnownDimensionsInEMMIE],\"\")=\"Y\",\"Yes\""
-        ",\"No\")),IIf(Nz([DimensionsKnown],\"\")=\"N\",IIf(Nz([DimensionsFrom],\"\")=\"S"
-        "ite Inspection\",\"Yes\",IIf(Nz([PartOfVerificationSample],\"\")=\"N\",\"Yes\",\""
-        "No\")),IIf(Nz([PartOfVerificationSample],\"\")=\"N\",\"Yes\",IIf(Nz([KnownDimens"
-        "ionsInEMMIE],\"\")=\"Y\",\"Yes\",\"No\")))))"
-    Alias ="Marked For SI"
-    Expression ="IIf(Nz([% Work Complete])<=0,\"Yes\",IIf(Nz([% Work Complete])<1,IIf(Nz([Dimensi"
-        "onsKnown],\"\")=\"N\",\"Yes\",IIf(Nz([KnownDimensionsInEMMIE],\"\")=\"Y\",\"Yes\""
-        ",\"\")),IIf(Nz([DimensionsKnown],\"\")=\"N\",IIf(Nz([DimensionsFrom],\"\")=\"Sit"
-        "e Inspection\",\"Yes\",IIf(Nz([PartOfVerificationSample],\"\")=\"N\",\"No\",\"\""
-        ")),IIf(Nz([PartOfVerificationSample],\"\")=\"N\",\"No\",IIf(Nz([KnownDimensionsI"
-        "nEMMIE],\"\")=\"Y\",\"Yes\",\"\")))))"
+    Expression ="qdReadyforSI.[Ready For SI]"
+    Expression ="qdReadyforSI.[Marked For SI]"
+End
+Begin Joins
+    LeftTable ="tblSites"
+    RightTable ="qdReadyforSI"
+    Expression ="tblSites.DisasterID = qdReadyforSI.DisasterID"
+    Flag =1
+    LeftTable ="tblSites"
+    RightTable ="qdReadyforSI"
+    Expression ="tblSites.ProjectID = qdReadyforSI.ProjectID"
+    Flag =1
+    LeftTable ="tblSites"
+    RightTable ="qdReadyforSI"
+    Expression ="tblSites.SiteID = qdReadyforSI.SiteID"
+    Flag =1
+    LeftTable ="tblSites"
+    RightTable ="qdReadyforSI"
+    Expression ="tblSites.ApplicantID = qdReadyforSI.ApplicantID"
+    Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="0"
@@ -88,17 +95,25 @@ Begin
         dbText "Name" ="Marked for SI"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="qdReadyforSI.[Ready For SI]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="qdReadyforSI.[Marked For SI]"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =976
+    Right =923
     Bottom =860
     Left =-1
     Top =-1
-    Right =960
-    Bottom =320
+    Right =907
+    Bottom =303
     Left =0
     Top =0
     ColumnsShown =539
@@ -109,6 +124,15 @@ Begin
         Bottom =328
         Top =0
         Name ="tblSites"
+        Name =""
+    End
+    Begin
+        Left =587
+        Top =15
+        Right =731
+        Bottom =187
+        Top =0
+        Name ="qdReadyforSI"
         Name =""
     End
 End

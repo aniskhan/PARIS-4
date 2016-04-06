@@ -39,7 +39,7 @@
 39	Site	NA5	110	2	8		SITFL		
 40	Site	Scoping and Costing	120	3	10	frmStlaneScopingCosting	STGL	STPAS	
 41	Site	Enter SOW in EMMIE	130	3	10	subfrmSitesScopeCost	STGL	STPAS	
-42	STProject	Submit in EMMIE	50	3	10	frmStlaneScopingCosting	CFC		Enter SOW in EMMIE
+42	STProject	Submit in EMMIE	50	3	10	frmStlaneScopingCosting	QAS		Enter SOW in EMMIE
 43	Project	Compliance Review	1000	4		frmExpeditedLaneComplianceReviews	CFC		
 44	Site	Assign DVS	25	2	11	frmStAssignDvs	STGL	STDVS	
 45	STProject	DVS Draft DDD	25	2	9	frmStWorkOrderDev	STDVS		Draft DDD
@@ -48,7 +48,7 @@
 48	Site	Ready for Concurrence	60	2	8	frmStSiteConcurrence	SITFL		
 51	Site	Validation Assignment	41	2	11	frmSiteInspectionWorkOrder	SITFL	SI	
 52	Site	Validation	51	2	8	subfrmSiteStInspection	SITFL	SI	
-53	STProject	Check Site Status	34	2	9	frmDDDCompleteforProject	SITFL		
+53	STProject	Check Site Status	34	2	9	frmDDDCompleteforProject	SITFL		Ready for Concurrence
 54	RFI	RFI Creation	10	1	1	frmRFIRequest	DIUS		
 55	RFI	PDM Concurrence	20	1	1	frmRFIConcurrence	PDTFL		
 56	RFI	Transmittal	30	1	1	frmRFITransmittal	PDTFL		
@@ -56,3 +56,5 @@
 58	RPA	DIU Update EMMIE Projections	75	1	12	frmUpdateRSMProjections	DIUS		
 59	SPProject	Specialized Lane	30	2	2		SPGL		Specialized Lane-Site
 60	Site	Specialized Lane-Site	30	2	2		SPGL		
+61	STProject	DVS Review	20	2	9	frmStWorkOrderDev	STDVS		DVS Review
+62	Site	DVS Review	30	2	11	frmStDvsSiteReview	STGL	STDVS	

@@ -261,18 +261,19 @@ Begin
     End
     Begin
         dbText "Name" ="Marked For SI"
+        dbLong "AggregateType" ="-1"
     End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =923
+    Right =1345
     Bottom =860
     Left =-1
     Top =-1
-    Right =907
-    Bottom =470
+    Right =1329
+    Bottom =453
     Left =0
     Top =0
     ColumnsShown =539

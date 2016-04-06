@@ -14,8 +14,8 @@ Begin Form
     Width =17580
     DatasheetFontHeight =11
     ItemSuffix =100
-    Right =19260
-    Bottom =12615
+    Right =19920
+    Bottom =12645
     DatasheetGridlinesColor =15132391
     Filter ="[DisasterID]='4258' and [ApplicantID]='009-058BD-00' and [ProjectID]=7 and [Site"
         "ID]=3"

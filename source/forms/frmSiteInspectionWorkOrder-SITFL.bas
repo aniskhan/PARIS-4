@@ -15,7 +15,7 @@ Begin Form
     Width =20460
     DatasheetFontHeight =11
     ItemSuffix =183
-    Right =19260
+    Right =19920
     Bottom =12615
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -1951,14 +1951,7 @@ Private Function PreDialogCheck(ReviewType As String) As Boolean
 
 '///Code
 '    Create check for each site have inspector assigned
-    WhereCondition = GetItemDims.WhereID(False)
-    WhereCondition = WhereCondition & " and [Assigned Site Inspector] is null and ([DVS -Site Inspection Required] = 'Y' or [Site Requires DDD Validation]=True)"
-    If DCount("SiteID", "tblSites", WhereCondition) > 0 Then
-        MsgBox "All Sites must have an Assigned Site Inspector before this can be submitted to the next step."
-        PreDialogCheck = False
-    Else
         PreDialogCheck = True
-    End If
 
 '///Code
 
@@ -1975,6 +1968,7 @@ PROC_ERR:
 End Function
 
 Private Function PostDialogCheck(ReviewType As String, DialogResult As String) As Boolean
+    Dim WhereCondition As String
 '    This page specific code checks the form for any issues before completing the review. True = pass
 
 '///Error Handling
@@ -1985,6 +1979,18 @@ Private Function PostDialogCheck(ReviewType As String, DialogResult As String) A
 '///Code
 '   No Check Needed.
     PostDialogCheck = True
+    If DialogResult = "SUB" Then
+        WhereCondition = GetItemDims.WhereID(False)
+        WhereCondition = WhereCondition & " and [Assigned Site Inspector] is null and [Marked For SI]='Yes'"
+        If DCount("SiteID", "qdReadyforSI", WhereCondition) > 0 Then
+            MsgBox "All Sites must have an Assigned Site Inspector before this can be submitted to the next step."
+            PostDialogCheck = False
+        Else
+            PostDialogCheck = True
+        End If
+    Else
+        PostDialogCheck = True
+    End If
 '///Code
 
 '///ErrorHandling
@@ -2115,9 +2121,10 @@ Private Sub CompleteReview(ReviewType As String)
         If Access.CurrentProject.AllForms("frmReviewResult").IsLoaded Then
             Set frm = Forms("frmReviewResult")
             If PostDialogCheck(ReviewType, frm.cboResult) Then
-                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
-                    HandleDisposition ReviewType, frm
-                End If
+'                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
+'                    HandleDisposition ReviewType, frm
+'                End If
+                CompleteReviewStandard GetItemDims(ReviewType), Me.Form, frm
             End If
             DoCmd.Close acForm, "frmReviewResult"
         Else

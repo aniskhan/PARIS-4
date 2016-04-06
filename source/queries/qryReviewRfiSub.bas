@@ -105,6 +105,39 @@ Begin
         dbText "Name" ="revtblRfi.Comments"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="DisasterID"
+    End
+    Begin
+        dbText "Name" ="ApplicantID"
+    End
+    Begin
+        dbText "Name" ="ProjectID"
+    End
+    Begin
+        dbText "Name" ="SiteID"
+    End
+    Begin
+        dbText "Name" ="RfiID"
+    End
+    Begin
+        dbText "Name" ="RfiItemID"
+    End
+    Begin
+        dbText "Name" ="ReviewType"
+    End
+    Begin
+        dbText "Name" ="ReviewEntryDate"
+    End
+    Begin
+        dbText "Name" ="ReviewCheckOutDate"
+    End
+    Begin
+        dbText "Name" ="ReviewExitDate"
+    End
+    Begin
+        dbText "Name" ="Comments"
+    End
 End
 Begin
     State =0

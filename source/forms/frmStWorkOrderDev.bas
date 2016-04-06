@@ -1102,10 +1102,9 @@ Private Sub cmdConcurrentRFI_Click()
         End
     Else
             
-'''''''' <<<<<<CHECK AFTER RFI REDO
             Reviews.CreateRFI GetItemDims(ReviewType)
-            Reviews.EnterReview GetItemDims("RFI")
-            DoCmd.OpenForm "frmRFIRequest", , , GetItemDims.WhereID(False)
+            Reviews.EnterReview GetItemDims("RFI"), Environ(
+            DoCmd.OpenForm "frmRFIRouting", , , GetItemDims.WhereID(False)
     End If
         
 '///Code
@@ -1309,18 +1308,27 @@ Private Function MultiCheck(CheckType As String) As Boolean
 '///Code
     Select Case CheckType
         Case "Pending RFI"
-'''''''' <<<<<<CHECK AFTER RFI REDO
+            WhereCondition = GetItemDims.WhereID(False)
+            WhereCondition = WhereCondition
+            If DCount("SiteID", "qryRfiOpenwHolds", WhereCondition) > 0 Then
                 MultiCheck = False
+            Else
+                MultiCheck = True
+            End If
             
         Case "Pending RFI Dimensions"
-'''''''' <<<<<<CHECK AFTER RFI REDO
+            WhereCondition = GetItemDims.WhereID(False)
+            WhereCondition = WhereCondition & " and [FurthestProgression]='Hold in DVS Review'"
+            If DCount("SiteID", "qryRfiOpenwHolds", WhereCondition) > 0 Then
                 MultiCheck = False
+            Else
+                MultiCheck = True
+            End If
         
         Case "Ready for SI"
             WhereCondition = GetItemDims.WhereID(False)
             WhereCondition = WhereCondition & " and [Ready For SI]='No'"
             If DCount("SiteID", "fqryDVSSiteReviewSelect", WhereCondition) > 0 Then
-'                MsgBox ("There are sites that have not been fully triaged and are marked 'No' for Ready for SI.")
                 MultiCheck = False
             Else
                 MultiCheck = True

@@ -14,13 +14,15 @@ Begin Form
     Width =19080
     DatasheetFontHeight =11
     ItemSuffix =15
-    Right =13875
-    Bottom =12645
+    Left =1065
+    Top =9225
+    Right =17235
+    Bottom =10875
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0x4bd3c896b5b1e440
+        0x93087a4d30bce440
     End
-    RecordSource ="fqrySiteStInspectionAssignment"
+    RecordSource ="fqrySiteStInspectionAssignmentSelect"
     Caption ="subformSites"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
