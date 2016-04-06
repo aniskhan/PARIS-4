@@ -5,6 +5,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ViewsAllowed =1
@@ -12,12 +13,13 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =22380
+    Width =17640
     DatasheetFontHeight =11
-    ItemSuffix =184
-    Right =22080
+    ItemSuffix =186
+    Right =13590
     Bottom =12645
     DatasheetGridlinesColor =15132391
+    Filter ="[DisasterID]='4258' and [ApplicantID]='009-058BD-00' and [ProjectID]=7"
     RecSrcDt = Begin
         0x4fc1e0fd12b1e440
     End
@@ -149,7 +151,7 @@ Begin Form
                     BackStyle =1
                     OverlapFlags =93
                     Top =60
-                    Width =20160
+                    Width =17520
                     Height =660
                     FontSize =20
                     FontWeight =700
@@ -159,7 +161,7 @@ Begin Form
                     Caption ="Standard Lane - Validation Specialists Reviews Sites"
                     GridlineColor =10921638
                     LayoutCachedTop =60
-                    LayoutCachedWidth =20160
+                    LayoutCachedWidth =17520
                     LayoutCachedHeight =720
                     BackThemeColorIndex =-1
                     ForeTint =100.0
@@ -168,11 +170,10 @@ Begin Form
                     Visible = NotDefault
                     OverlapFlags =215
                     IMESentenceMode =3
-                    Left =7740
+                    Left =12000
                     Top =240
                     Width =1530
                     Height =315
-                    ColumnWidth =1530
                     ColumnOrder =0
                     FontSize =12
                     FontWeight =700
@@ -183,9 +184,9 @@ Begin Form
                     EventProcPrefix ="Reference_Number"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =7740
+                    LayoutCachedLeft =12000
                     LayoutCachedTop =240
-                    LayoutCachedWidth =9270
+                    LayoutCachedWidth =13530
                     LayoutCachedHeight =555
                     BackThemeColorIndex =-1
                     ForeThemeColorIndex =-1
@@ -194,7 +195,7 @@ Begin Form
                         Begin Label
                             Visible = NotDefault
                             OverlapFlags =215
-                            Left =4860
+                            Left =9120
                             Top =240
                             Width =2790
                             Height =345
@@ -205,147 +206,10 @@ Begin Form
                             Caption ="Project Reference Number"
                             EventProcPrefix ="Reference_Number_Label"
                             GridlineColor =10921638
-                            LayoutCachedLeft =4860
+                            LayoutCachedLeft =9120
                             LayoutCachedTop =240
-                            LayoutCachedWidth =7650
+                            LayoutCachedWidth =11910
                             LayoutCachedHeight =585
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                        End
-                    End
-                End
-                Begin TextBox
-                    Visible = NotDefault
-                    EnterKeyBehavior = NotDefault
-                    ScrollBars =2
-                    OverlapFlags =223
-                    IMESentenceMode =3
-                    Left =10140
-                    Top =240
-                    Width =2565
-                    Height =300
-                    ColumnWidth =3000
-                    ColumnOrder =1
-                    FontSize =12
-                    FontWeight =700
-                    TabIndex =1
-                    BackColor =15527148
-                    BorderColor =10921638
-                    Name ="County"
-                    ControlSource ="County"
-                    StatusBarText ="Should be a lookup"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =10140
-                    LayoutCachedTop =240
-                    LayoutCachedWidth =12705
-                    LayoutCachedHeight =540
-                    BackThemeColorIndex =-1
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                    Begin
-                        Begin Label
-                            Visible = NotDefault
-                            OverlapFlags =215
-                            Left =9300
-                            Top =240
-                            Width =735
-                            Height =315
-                            FontSize =12
-                            FontWeight =700
-                            BorderColor =8355711
-                            Name ="County_Label"
-                            Caption ="County"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =9300
-                            LayoutCachedTop =240
-                            LayoutCachedWidth =10035
-                            LayoutCachedHeight =555
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                        End
-                    End
-                End
-                Begin TextBox
-                    Visible = NotDefault
-                    OverlapFlags =223
-                    IMESentenceMode =3
-                    Left =13440
-                    Top =240
-                    Width =3600
-                    Height =315
-                    ColumnOrder =2
-                    TabIndex =2
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="Text149"
-                    ControlSource ="Assigned FEMA PDC"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =13440
-                    LayoutCachedTop =240
-                    LayoutCachedWidth =17040
-                    LayoutCachedHeight =555
-                    Begin
-                        Begin Label
-                            Visible = NotDefault
-                            OverlapFlags =247
-                            Left =12060
-                            Top =240
-                            Width =1320
-                            Height =315
-                            FontSize =12
-                            FontWeight =600
-                            BorderColor =8355711
-                            Name ="Label150"
-                            Caption ="FEMA PDM"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =12060
-                            LayoutCachedTop =240
-                            LayoutCachedWidth =13380
-                            LayoutCachedHeight =555
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                        End
-                    End
-                End
-                Begin TextBox
-                    Visible = NotDefault
-                    OverlapFlags =215
-                    IMESentenceMode =3
-                    Left =17280
-                    Top =300
-                    Width =3180
-                    Height =315
-                    ColumnOrder =3
-                    TabIndex =3
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="Text151"
-                    ControlSource ="Assigned State PDC"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =17280
-                    LayoutCachedTop =300
-                    LayoutCachedWidth =20460
-                    LayoutCachedHeight =615
-                    Begin
-                        Begin Label
-                            OverlapFlags =247
-                            Left =16020
-                            Top =300
-                            Width =1200
-                            Height =315
-                            FontSize =12
-                            FontWeight =600
-                            BorderColor =8355711
-                            Name ="Label152"
-                            Caption ="State PDM"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =16020
-                            LayoutCachedTop =300
-                            LayoutCachedWidth =17220
-                            LayoutCachedHeight =615
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
                         End
@@ -366,14 +230,14 @@ Begin Form
                     BackStyle =1
                     OverlapFlags =93
                     Top =4920
-                    Width =17460
+                    Width =14700
                     Height =3240
                     BackColor =13431551
                     BorderColor =10921638
                     Name ="Box180"
                     GridlineColor =10921638
                     LayoutCachedTop =4920
-                    LayoutCachedWidth =17460
+                    LayoutCachedWidth =14700
                     LayoutCachedHeight =8160
                     BackThemeColorIndex =7
                     BackTint =20.0
@@ -386,7 +250,7 @@ Begin Form
                     OverlapFlags =223
                     Left =360
                     Top =5460
-                    Width =16740
+                    Width =14265
                     Height =420
                     FontSize =14
                     FontWeight =700
@@ -394,21 +258,20 @@ Begin Form
                     BorderColor =8355711
                     ForeColor =13431551
                     Name ="Label103"
-                    Caption ="Double Click to Review and Edit Site Information- Each Site must be marked \"Rev"
-                        "iewed\" before Project Can be Submitted"
+                    Caption ="Double Click to Review and Edit Site Information"
                     GridlineColor =10921638
                     LayoutCachedLeft =360
                     LayoutCachedTop =5460
-                    LayoutCachedWidth =17100
+                    LayoutCachedWidth =14625
                     LayoutCachedHeight =5880
                     BackThemeColorIndex =-1
                     ForeThemeColorIndex =7
                     ForeTint =20.0
                 End
                 Begin Subform
-                    OverlapFlags =215
+                    OverlapFlags =85
                     SpecialEffect =2
-                    Width =17466
+                    Width =14706
                     Height =1380
                     BorderColor =10921638
                     Name ="subfrmDisasterInfoRevised short"
@@ -418,14 +281,14 @@ Begin Form
                     EventProcPrefix ="subfrmDisasterInfoRevised_short"
                     GridlineColor =10921638
 
-                    LayoutCachedWidth =17466
+                    LayoutCachedWidth =14706
                     LayoutCachedHeight =1380
                 End
                 Begin Subform
-                    OverlapFlags =215
+                    OverlapFlags =85
                     SpecialEffect =2
                     Top =1440
-                    Width =17460
+                    Width =14700
                     Height =1380
                     TabIndex =1
                     BorderColor =10921638
@@ -437,13 +300,13 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedTop =1440
-                    LayoutCachedWidth =17460
+                    LayoutCachedWidth =14700
                     LayoutCachedHeight =2820
                 End
                 Begin Subform
-                    OverlapFlags =215
+                    OverlapFlags =85
                     Top =8220
-                    Width =17460
+                    Width =14700
                     Height =2520
                     TabIndex =2
                     BorderColor =10921638
@@ -454,14 +317,14 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedTop =8220
-                    LayoutCachedWidth =17460
+                    LayoutCachedWidth =14700
                     LayoutCachedHeight =10740
                 End
                 Begin Subform
                     OverlapFlags =215
                     Left =360
                     Top =5880
-                    Width =16740
+                    Width =14265
                     Height =2100
                     TabIndex =3
                     BorderColor =10921638
@@ -473,14 +336,14 @@ Begin Form
 
                     LayoutCachedLeft =360
                     LayoutCachedTop =5880
-                    LayoutCachedWidth =17100
+                    LayoutCachedWidth =14625
                     LayoutCachedHeight =7980
                 End
                 Begin Subform
-                    OverlapFlags =215
+                    OverlapFlags =87
                     SpecialEffect =2
                     Top =2880
-                    Width =17460
+                    Width =14700
                     Height =1560
                     TabIndex =4
                     BorderColor =10921638
@@ -491,61 +354,61 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedTop =2880
-                    LayoutCachedWidth =17460
+                    LayoutCachedWidth =14700
                     LayoutCachedHeight =4440
                 End
                 Begin Rectangle
                     BackStyle =1
-                    OverlapFlags =223
-                    Left =17400
+                    OverlapFlags =93
+                    Left =14760
                     Width =2760
                     Height =10740
                     BackColor =15788753
                     BorderColor =10921638
                     Name ="Box161"
                     GridlineColor =10921638
-                    LayoutCachedLeft =17400
-                    LayoutCachedWidth =20160
+                    LayoutCachedLeft =14760
+                    LayoutCachedWidth =17520
                     LayoutCachedHeight =10740
                     BackThemeColorIndex =-1
                 End
                 Begin Rectangle
                     BackStyle =1
                     OverlapFlags =223
-                    Left =17700
+                    Left =15060
                     Top =4980
                     Width =2280
-                    Height =3360
+                    Height =5640
                     BackColor =13431551
                     BorderColor =10921638
                     Name ="Box175"
                     GridlineColor =10921638
-                    LayoutCachedLeft =17700
+                    LayoutCachedLeft =15060
                     LayoutCachedTop =4980
-                    LayoutCachedWidth =19980
-                    LayoutCachedHeight =8340
+                    LayoutCachedWidth =17340
+                    LayoutCachedHeight =10620
                     BackThemeColorIndex =7
                     BackTint =20.0
                 End
                 Begin CommandButton
                     OverlapFlags =215
-                    Left =17940
-                    Top =6000
-                    Width =1740
-                    Height =1560
+                    Left =15180
+                    Top =5160
+                    Width =1980
+                    Height =1020
                     FontSize =14
                     FontWeight =700
                     TabIndex =5
                     ForeColor =13431551
-                    Name ="cmdDvsSubmitWorkOrder"
-                    Caption ="DVS Submits to SITFL"
+                    Name ="cmdSendToSI"
+                    Caption ="Send to Site Inspection"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =17940
-                    LayoutCachedTop =6000
-                    LayoutCachedWidth =19680
-                    LayoutCachedHeight =7560
+                    LayoutCachedLeft =15180
+                    LayoutCachedTop =5160
+                    LayoutCachedWidth =17160
+                    LayoutCachedHeight =6180
                     ForeThemeColorIndex =7
                     ForeTint =20.0
                     UseTheme =1
@@ -568,132 +431,25 @@ Begin Form
                     WebImagePaddingBottom =1
                     Overlaps =1
                 End
-                Begin Label
-                    Visible = NotDefault
-                    OverlapFlags =85
-                    Left =20220
-                    Top =1620
-                    Width =2160
-                    Height =660
-                    BorderColor =8355711
-                    ForeColor =8355711
-                    Name ="Label167"
-                    Caption ="Changes needed like DARTS"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =20220
-                    LayoutCachedTop =1620
-                    LayoutCachedWidth =22380
-                    LayoutCachedHeight =2280
-                End
-                Begin Label
-                    Visible = NotDefault
-                    OverlapFlags =85
-                    Left =20220
-                    Top =2340
-                    Width =2160
-                    Height =600
-                    BorderColor =8355711
-                    ForeColor =8355711
-                    Name ="Label168"
-                    Caption ="Review Compete Like DARTS"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =20220
-                    LayoutCachedTop =2340
-                    LayoutCachedWidth =22380
-                    LayoutCachedHeight =2940
-                End
-                Begin Label
-                    Visible = NotDefault
-                    OverlapFlags =85
-                    Left =20460
-                    Top =3180
-                    Width =1320
-                    Height =600
-                    BorderColor =8355711
-                    ForeColor =8355711
-                    Name ="Label171"
-                    Caption ="RFI Preparation"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =20460
-                    LayoutCachedTop =3180
-                    LayoutCachedWidth =21780
-                    LayoutCachedHeight =3780
-                End
-                Begin Label
-                    Visible = NotDefault
-                    OverlapFlags =215
-                    Left =17640
-                    Top =120
-                    Width =2220
-                    Height =4680
-                    FontSize =14
-                    FontWeight =700
-                    BorderColor =8355711
-                    Name ="Label165"
-                    Caption ="Project Level Review - Project Level Documentation such as insurance\015\012RFI "
-                        "development- Mandatory for each project cah \015\012Command button to open below"
-                        " by Site Review"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =17640
-                    LayoutCachedTop =120
-                    LayoutCachedWidth =19860
-                    LayoutCachedHeight =4800
-                    ForeTint =100.0
-                End
-                Begin Label
-                    OverlapFlags =215
-                    TextAlign =2
-                    Left =17820
-                    Top =5100
-                    Width =1980
-                    Height =825
-                    BorderColor =8355711
-                    Name ="Label176"
-                    Caption ="Click to Submit to Site Inspection/DDD Development"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =17820
-                    LayoutCachedTop =5100
-                    LayoutCachedWidth =19800
-                    LayoutCachedHeight =5925
-                    ForeTint =100.0
-                End
-                Begin Rectangle
-                    BackStyle =1
-                    OverlapFlags =223
-                    Left =17700
-                    Top =7680
-                    Width =2280
-                    Height =2700
-                    BackColor =13431551
-                    BorderColor =10921638
-                    Name ="Box176"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =17700
-                    LayoutCachedTop =7680
-                    LayoutCachedWidth =19980
-                    LayoutCachedHeight =10380
-                    BackThemeColorIndex =7
-                    BackTint =20.0
-                End
                 Begin CommandButton
                     OverlapFlags =215
-                    Left =17940
-                    Top =8700
+                    Left =15300
+                    Top =7680
                     Width =1740
                     Height =1440
                     FontSize =14
                     FontWeight =700
                     TabIndex =7
                     ForeColor =13431551
-                    Name ="cmdDvsSubmitDraftDDD"
-                    Caption ="DVS Submits Draft DDD"
+                    Name ="cmdDvsSubmit"
+                    Caption ="Complete DVS Review"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =17940
-                    LayoutCachedTop =8700
-                    LayoutCachedWidth =19680
-                    LayoutCachedHeight =10140
+                    LayoutCachedLeft =15300
+                    LayoutCachedTop =7680
+                    LayoutCachedWidth =17040
+                    LayoutCachedHeight =9120
                     ForeThemeColorIndex =7
                     ForeTint =20.0
                     UseTheme =1
@@ -715,23 +471,6 @@ Begin Form
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
                     Overlaps =1
-                End
-                Begin Label
-                    OverlapFlags =215
-                    TextAlign =2
-                    Left =17820
-                    Top =7800
-                    Width =1980
-                    Height =825
-                    BorderColor =8355711
-                    Name ="Label178"
-                    Caption ="Click to Submit to Site Validation/DDD Concurrence"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =17820
-                    LayoutCachedTop =7800
-                    LayoutCachedWidth =19800
-                    LayoutCachedHeight =8625
-                    ForeTint =100.0
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -740,7 +479,7 @@ Begin Form
                     OverlapFlags =215
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =13320
+                    Left =10680
                     Top =4980
                     Width =3780
                     Height =420
@@ -755,9 +494,9 @@ Begin Form
                     StatusBarText ="EX"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =13320
+                    LayoutCachedLeft =10680
                     LayoutCachedTop =4980
-                    LayoutCachedWidth =17100
+                    LayoutCachedWidth =14460
                     LayoutCachedHeight =5400
                     BackThemeColorIndex =7
                     BackTint =20.0
@@ -767,7 +506,7 @@ Begin Form
                     Begin
                         Begin Label
                             OverlapFlags =215
-                            Left =9360
+                            Left =6720
                             Top =4980
                             Width =3855
                             Height =390
@@ -778,9 +517,9 @@ Begin Form
                             Caption ="Assigned Validation Specialist:"
                             EventProcPrefix ="Assigned_Data_Validation_Specialist_Label"
                             GridlineColor =10921638
-                            LayoutCachedLeft =9360
+                            LayoutCachedLeft =6720
                             LayoutCachedTop =4980
-                            LayoutCachedWidth =13215
+                            LayoutCachedWidth =10575
                             LayoutCachedHeight =5370
                             ForeTint =100.0
                         End
@@ -788,16 +527,16 @@ Begin Form
                 End
                 Begin Rectangle
                     BackStyle =1
-                    OverlapFlags =223
+                    OverlapFlags =95
                     Top =4440
-                    Width =17460
+                    Width =14700
                     Height =480
                     BackColor =9917743
                     BorderColor =10921638
                     Name ="Box181"
                     GridlineColor =10921638
                     LayoutCachedTop =4440
-                    LayoutCachedWidth =17460
+                    LayoutCachedWidth =14700
                     LayoutCachedHeight =4920
                     BackThemeColorIndex =8
                     BackShade =75.0
@@ -823,6 +562,63 @@ Begin Form
                     ForeThemeColorIndex =1
                     ForeTint =100.0
                 End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =15180
+                    Top =6420
+                    Width =1980
+                    Height =1020
+                    FontSize =14
+                    FontWeight =700
+                    TabIndex =8
+                    ForeColor =13431551
+                    Name ="cmdConcurrentRFI"
+                    Caption ="Create Concurrent RFI"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =15180
+                    LayoutCachedTop =6420
+                    LayoutCachedWidth =17160
+                    LayoutCachedHeight =7440
+                    ForeThemeColorIndex =7
+                    ForeTint =20.0
+                    UseTheme =1
+                    Gradient =0
+                    BackColor =12874308
+                    BackThemeColorIndex =8
+                    BackTint =100.0
+                    BorderColor =15123357
+                    HoverColor =14282978
+                    HoverThemeColorIndex =9
+                    HoverTint =20.0
+                    PressedColor =12874308
+                    PressedThemeColorIndex =8
+                    HoverForeColor =0
+                    HoverForeThemeColorIndex =0
+                    PressedForeThemeColorIndex =1
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
+                End
+                Begin Label
+                    OverlapFlags =215
+                    Left =15180
+                    Top =9360
+                    Width =2040
+                    Height =1095
+                    BorderColor =8355711
+                    Name ="Label185"
+                    Caption ="Use \"Complete DVS Review\" to Rework or Reassign"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =15180
+                    LayoutCachedTop =9360
+                    LayoutCachedWidth =17220
+                    LayoutCachedHeight =10455
+                    ForeTint =100.0
+                End
             End
         End
         Begin FormFooter
@@ -836,7 +632,7 @@ Begin Form
                     BackStyle =1
                     OverlapFlags =93
                     TextFontFamily =82
-                    Width =20160
+                    Width =17460
                     Height =960
                     FontSize =20
                     BackColor =15788753
@@ -845,7 +641,7 @@ Begin Form
                     Caption ="Intake Damage and Eligibility Analysis"
                     FontName ="Broadway"
                     GridlineColor =10921638
-                    LayoutCachedWidth =20160
+                    LayoutCachedWidth =17460
                     LayoutCachedHeight =960
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -854,7 +650,7 @@ Begin Form
                 Begin Rectangle
                     BackStyle =1
                     OverlapFlags =223
-                    Left =13920
+                    Left =11280
                     Top =60
                     Width =6060
                     Height =840
@@ -862,16 +658,16 @@ Begin Form
                     BorderColor =10921638
                     Name ="Box183"
                     GridlineColor =10921638
-                    LayoutCachedLeft =13920
+                    LayoutCachedLeft =11280
                     LayoutCachedTop =60
-                    LayoutCachedWidth =19980
+                    LayoutCachedWidth =17340
                     LayoutCachedHeight =900
                     BackThemeColorIndex =7
                     BackTint =20.0
                 End
                 Begin CommandButton
                     OverlapFlags =215
-                    Left =14340
+                    Left =11700
                     Top =180
                     Width =576
                     Height =576
@@ -936,9 +732,9 @@ Begin Form
                         0x0000000000000000
                     End
 
-                    LayoutCachedLeft =14340
+                    LayoutCachedLeft =11700
                     LayoutCachedTop =180
-                    LayoutCachedWidth =14916
+                    LayoutCachedWidth =12276
                     LayoutCachedHeight =756
                     BackColor =15123357
                     BorderColor =15123357
@@ -950,7 +746,7 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =215
-                    Left =15000
+                    Left =12360
                     Top =180
                     Width =576
                     Height =576
@@ -1033,9 +829,9 @@ Begin Form
                         0x0000000000000000
                     End
 
-                    LayoutCachedLeft =15000
+                    LayoutCachedLeft =12360
                     LayoutCachedTop =180
-                    LayoutCachedWidth =15576
+                    LayoutCachedWidth =12936
                     LayoutCachedHeight =756
                     BackColor =15123357
                     BorderColor =15123357
@@ -1047,7 +843,7 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =215
-                    Left =15780
+                    Left =13140
                     Top =180
                     Width =576
                     Height =576
@@ -1127,9 +923,9 @@ Begin Form
                         0x0000000000000000
                     End
 
-                    LayoutCachedLeft =15780
+                    LayoutCachedLeft =13140
                     LayoutCachedTop =180
-                    LayoutCachedWidth =16356
+                    LayoutCachedWidth =13716
                     LayoutCachedHeight =756
                     BackColor =15123357
                     BorderColor =15123357
@@ -1141,7 +937,7 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =215
-                    Left =16440
+                    Left =13800
                     Top =180
                     Width =576
                     Height =576
@@ -1207,9 +1003,9 @@ Begin Form
                         0x0000000000000000
                     End
 
-                    LayoutCachedLeft =16440
+                    LayoutCachedLeft =13800
                     LayoutCachedTop =180
-                    LayoutCachedWidth =17016
+                    LayoutCachedWidth =14376
                     LayoutCachedHeight =756
                     BackColor =15123357
                     BorderColor =15123357
@@ -1221,7 +1017,7 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =215
-                    Left =18060
+                    Left =15420
                     Top =180
                     Width =1680
                     Height =540
@@ -1249,9 +1045,9 @@ Begin Form
                         End
                     End
 
-                    LayoutCachedLeft =18060
+                    LayoutCachedLeft =15420
                     LayoutCachedTop =180
-                    LayoutCachedWidth =19740
+                    LayoutCachedWidth =17100
                     LayoutCachedHeight =720
                     ForeThemeColorIndex =1
                     ForeTint =100.0
@@ -1296,15 +1092,65 @@ Option Explicit
 
 Private Const FormItemType As String = "Project" 'used in determining what type of record is handled
 
+Private Sub cmdConcurrentRFI_Click()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cmdConcurrentRFI_Click"
+'///Error Handling
+
+'///Code
+    If MultiCheck("Pending RFI") Then
+        MsgBox ("There is already a Pending RFI. You can not create another.  If you are trying to mark the review as complete pending an RFI, please complete the review and select RFI as the result.")
+        End
+    Else
+            
+'''''''' <<<<<<CHECK AFTER RFI REDO
+            Reviews.CreateRFI GetItemDims(ReviewType)
+            Reviews.EnterReview GetItemDims("RFI")
+            DoCmd.OpenForm "frmRFIRouting", , , GetItemDims.WhereID(False)
+    End If
+        
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+End Sub
+
 'BUTTONS
-Private Sub cmdDvsSubmitWorkOrder_Click()
+Private Sub cmdSendToSI_Click()
+    Dim CheckPhrase As String
 '///Error Handling
     If gcfHandleErrors Then On Error GoTo PROC_ERR
-    PushCallStack Me.name & "." & "cmdDvsSubmitWorkOrder_Click"
+    PushCallStack Me.name & "." & "cmdSendToSI_Click"
 '///Error Handling
 
 '///Code
-    CompleteReview "Generate Work Order"
+    If MultiCheck("Pending RFI Dimensions") Then
+        MsgBox ("This project has an RFI with a Dimensions being requested.  Cannot be sent to Site Inspection until those items are resolved.")
+        End
+    ElseIf Not MultiCheck("Ready for SI") Then
+        MsgBox ("This project has sites that have not been triaged.  Look in the list for any that say no in Ready for SI.")
+        End
+    ElseIf Not MultiCheck("Marked for SI") Then
+        MsgBox ("This project has no sites that have been marked to have a site inspection. No site inspection is needed.")
+        End
+    ElseIf MultiCheck("Already Sent to SI") Then
+        MsgBox ("This project has already been sent to site inspection and cannot be sent again.")
+        End
+    Else
+        CheckPhrase = "[Marked For SI]='Yes'"
+        If DCount("SiteID", "tblSites", GetItemDims.WhereID(False) & " and " & CheckPhrase) > 0 Then
+            EnterReview GetItemDims("Inspection Assignment")
+            EnterSomeChildren GetItemDims("DVS Review"), "Inspection Assignment", CheckPhrase, "fqryDVSSiteReviewSelect"
+        End If
+    End If
 '///Code
 
 '///ErrorHandling
@@ -1318,14 +1164,14 @@ PROC_ERR:
 '///ErrorHandling
 End Sub
 
-Private Sub cmdDvsSubmitDraftDDD_Click()
+Private Sub cmdDvsSubmit_Click()
 '///Error Handling
     If gcfHandleErrors Then On Error GoTo PROC_ERR
-    PushCallStack Me.name & "." & "cmdDvsSubmitDraftDDD_Click"
+    PushCallStack Me.name & "." & "cmdDvsSubmit_Click"
 '///Error Handling
 
 '///Code
-    CompleteReview "DVS Draft DDD"
+    CompleteReview "DVS Review"
 '///Code
 
 '///ErrorHandling
@@ -1338,6 +1184,7 @@ PROC_ERR:
     Resume PROC_EXIT
 '///ErrorHandling
 End Sub
+
 
 
 'OTHER PAGE EVENTS
@@ -1428,10 +1275,10 @@ Private Sub EnableFormArea(AreaName As String, Optional Override As String = "")
     
     Select Case AreaName
         Case "Generate Work Order"
-            Me.cmdDvsSubmitWorkOrder.Enabled = CanEnable
+'            Me.cmdDvsSubmitWorkOrder.Enabled = CanEnable
             If CanEnable Then Me.subfrmDVSSiteReview.Form.FilterOn = False
         Case "DVS Draft DDD"
-            Me.cmdDvsSubmitDraftDDD.Enabled = CanEnable
+'            Me.cmdDvsSubmitDraftDDD.Enabled = CanEnable
             If CanEnable And EnableFormLocking Then Me.subfrmDVSSiteReview.Form.Filter = "[DVS -Site Inspection Required] ='N'"
             If CanEnable And EnableFormLocking Then Me.subfrmDVSSiteReview.Form.FilterOn = True
         Case Else
@@ -1452,6 +1299,71 @@ PROC_ERR:
 
 End Sub
 
+Private Function MultiCheck(CheckType As String) As Boolean
+    Dim WhereCondition As String
+'    This page specific code checks the form for any issues before opening the dialog.  True = pass
+
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "MultiCheck"
+'///Error Handling
+
+'///Code
+    Select Case CheckType
+        Case "Pending RFI"
+'''''''' <<<<<<CHECK AFTER RFI REDO
+                MultiCheck = False
+            
+        Case "Pending RFI Dimensions"
+'''''''' <<<<<<CHECK AFTER RFI REDO
+                MultiCheck = False
+        
+        Case "Ready for SI"
+            WhereCondition = GetItemDims.WhereID(False)
+            WhereCondition = WhereCondition & " and [Ready For SI]='No'"
+            If DCount("SiteID", "fqryDVSSiteReviewSelect", WhereCondition) > 0 Then
+'                MsgBox ("There are sites that have not been fully triaged and are marked 'No' for Ready for SI.")
+                MultiCheck = False
+            Else
+                MultiCheck = True
+            End If
+        
+        Case "Sites Marked for SI"
+            WhereCondition = GetItemDims.WhereID(False)
+            WhereCondition = WhereCondition & " and [Marked For SI]='Yes'"
+            If DCount("SiteID", "fqryDVSSiteReviewSelect", WhereCondition) = 0 Then
+                MultiCheck = False
+            Else
+                MultiCheck = True
+            End If
+        
+        Case "Already Sent to SI"
+            WhereCondition = GetItemDims.WhereID(False)
+            WhereCondition = WhereCondition & " and ([ReviewType] = 'Inspection Assignment' or [ReviewType] = 'Validation Assignment')"
+            If DCount("ProjectID", GetItemDims.ReviewTable, WhereCondition) = 0 Then
+                MultiCheck = True
+            Else
+                MultiCheck = False
+            End If
+'        Case ""
+'        Case ""
+        Case Else
+            Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & CheckType
+    End Select
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Function
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+
+End Function
+
 Private Function PreDialogCheck(ReviewType As String) As Boolean
     Dim WhereCondition As String
 '    This page specific code checks the form for any issues before opening the dialog.  True = pass
@@ -1462,29 +1374,8 @@ Private Function PreDialogCheck(ReviewType As String) As Boolean
 '///Error Handling
 
 '///Code
-'    No checks on this page.
-    Select Case ReviewType
-        Case "Generate Work Order"
-            WhereCondition = GetItemDims.WhereID(False)
-            WhereCondition = WhereCondition & " and [DVS -Site Inspection Required] is null"
-            If DCount("SiteID", "tblSites", WhereCondition) > 0 Then
-                MsgBox "All Sites must be marked as either yes or no for Site Inpection Required before this can be submitted to the next step."
-                PreDialogCheck = False
-            Else
-                PreDialogCheck = True
-            End If
-        Case "DVS Draft DDD"
-            WhereCondition = GetItemDims.WhereID(False)
-            WhereCondition = WhereCondition & " and [DVS -Site Inspection Required] ='N' and [Draft DDD] is null"
-            If DCount("SiteID", "tblSites", WhereCondition) > 0 Then
-                MsgBox "All Sites must have a Draft DDD before this can be submitted to the next step."
-                PreDialogCheck = False
-            Else
-                PreDialogCheck = True
-            End If
-        Case Else
-            Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & ReviewType
-    End Select
+'    check is moved to post check to allow for uncompleted work re-assign.
+            PreDialogCheck = True
 '///Code
 
 '///ErrorHandling
@@ -1509,7 +1400,31 @@ Private Function PostDialogCheck(ReviewType As String, DialogResult As String) A
 
 '///Code
 '   No Check Needed.
-    PostDialogCheck = True
+    Select Case ReviewType
+        Case "DVS Review"
+            If DialogResult = "SUB" Then
+                If Not MultiCheck("Ready for SI") Then
+                    MsgBox ("This project has sites that have not been triaged.  Look in the list for any that say no in Ready for SI.")
+                    PostDialogCheck = False
+                ElseIf (Not MultiCheck("Already Sent to SI")) And MultiCheck("Marked for SI") Then
+                    MsgBox ("This project has sites marked for site inspection, but has not been sent yet.  Please use the Send to Site Inspection button.")
+                    PostDialogCheck = False
+                ElseIf MultiCheck("Pending RFI Dimensions") Then
+                    MsgBox ("This project has an RFI with a Dimensions being requested.  Select RFI in the popup window to mark this review as done, pending an RFI response.")
+                    PostDialogCheck = False
+                ElseIf MultiCheck("Already Sent to SI") Then
+                    MsgBox ("This project has already been sent to site inspection and cannot be sent again.")
+                    PostDialogCheck = False
+                Else
+                    PostDialogCheck = True
+                End If
+            Else
+                PostDialogCheck = True
+            End If
+        Case Else
+            PostDialogCheck = False
+            Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & ReviewType
+    End Select
 '///Code
 
 '///ErrorHandling
@@ -1655,9 +1570,10 @@ Private Sub CompleteReview(ReviewType As String)
         If Access.CurrentProject.AllForms("frmReviewResult").IsLoaded Then
             Set frm = Forms("frmReviewResult")
             If PostDialogCheck(ReviewType, frm.cboResult) Then
-                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
-                    HandleDisposition ReviewType, frm
-                End If
+'                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
+'                    HandleDisposition ReviewType, frm
+'                End If
+                CompleteReviewStandard GetItemDims(ReviewType), Me.Form, frm
             End If
             DoCmd.Close acForm, "frmReviewResult"
         Else
@@ -1694,7 +1610,7 @@ Private Sub HandleStandardDisposition(ReviewType As String, frm As Form)
         Case "RFI"
             Reviews.CreateRFI GetItemDims(ReviewType)
             Reviews.EnterReview GetItemDims("RFI")
-            DoCmd.OpenForm "frmRFIRequest", , , GetItemDims.WhereID(False)
+            DoCmd.OpenForm "frmRFIRouting", , , GetItemDims.WhereID(False)
         Case "RSN"
             Reviews.EnterReview GetItemDims(ReviewType), frm.cboAssign, "Reassigned to " & frm.cboAssign
         Case "RW"

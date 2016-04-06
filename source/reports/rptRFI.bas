@@ -704,7 +704,7 @@ Begin Report
                     ForeColor =3484194
                     ColumnInfo ="\"\";\"\";\"10\";\"510\""
                     Name ="Item Type"
-                    ControlSource ="Item Type"
+                    ControlSource ="ItemType"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT [newlkupRFIItemType].[Item] FROM newlkupRFIItemType; "
                     ColumnWidths ="1440"

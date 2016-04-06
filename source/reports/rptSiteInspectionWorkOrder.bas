@@ -14,7 +14,7 @@ Begin Report
     GridY =24
     Width =15120
     DatasheetFontHeight =11
-    ItemSuffix =103
+    ItemSuffix =104
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0xacbbc78694b8e440
@@ -103,10 +103,7 @@ Begin Report
         End
         Begin BreakLevel
             GroupHeader = NotDefault
-            ControlSource ="Subrecipient Name"
-        End
-        Begin BreakLevel
-            GroupHeader = NotDefault
+            GroupFooter = NotDefault
             ControlSource ="ProjectID"
         End
         Begin BreakLevel
@@ -114,7 +111,7 @@ Begin Report
         End
         Begin FormHeader
             KeepTogether = NotDefault
-            Height =1620
+            Height =540
             BackColor =15064278
             Name ="ReportHeader"
             AlternateBackThemeColorIndex =1
@@ -131,7 +128,7 @@ Begin Report
                     FontWeight =700
                     BorderColor =8355711
                     ForeColor =12874308
-                    Name ="Label50"
+                    Name ="Label103"
                     Caption ="Standard Lane Site Inspection Work Order"
                     GridlineColor =10921638
                     LayoutCachedWidth =15060
@@ -139,282 +136,16 @@ Begin Report
                     ForeThemeColorIndex =8
                     ForeTint =100.0
                 End
-                Begin Label
-                    TextAlign =1
-                    Left =3780
-                    Top =540
-                    Width =1500
-                    Height =405
-                    FontSize =16
-                    FontWeight =700
-                    BorderColor =8355711
-                    ForeColor =12874308
-                    Name ="DisasterID_Label"
-                    Caption ="Disaster ID:"
-                    Tag ="DetachedLabel"
-                    GridlineStyleBottom =1
-                    GridlineColor =10921638
-                    LayoutCachedLeft =3780
-                    LayoutCachedTop =540
-                    LayoutCachedWidth =5280
-                    LayoutCachedHeight =945
-                    ForeThemeColorIndex =8
-                    ForeTint =100.0
-                End
-                Begin Label
-                    TextAlign =1
-                    Left =7080
-                    Top =540
-                    Width =780
-                    Height =405
-                    FontSize =16
-                    FontWeight =700
-                    BorderColor =8355711
-                    ForeColor =12874308
-                    Name ="State_Label"
-                    Caption ="State:"
-                    Tag ="DetachedLabel"
-                    GridlineStyleBottom =1
-                    GridlineColor =10921638
-                    LayoutCachedLeft =7080
-                    LayoutCachedTop =540
-                    LayoutCachedWidth =7860
-                    LayoutCachedHeight =945
-                    ForeThemeColorIndex =8
-                    ForeTint =100.0
-                End
-                Begin ComboBox
-                    OldBorderStyle =0
-                    BackStyle =0
-                    IMESentenceMode =3
-                    ListWidth =1440
-                    Left =7860
-                    Top =540
-                    Width =780
-                    Height =420
-                    ColumnOrder =2
-                    FontSize =16
-                    FontWeight =700
-                    BorderColor =10921638
-                    ColumnInfo ="\"\";\"\";\"10\";\"510\""
-                    Name ="State"
-                    ControlSource ="State"
-                    RowSourceType ="Table/Query"
-                    RowSource ="SELECT lutblState.StateID FROM lutblState; "
-                    ColumnWidths ="1440"
-                    GridlineColor =10921638
-                    AllowValueListEdits =0
-
-                    LayoutCachedLeft =7860
-                    LayoutCachedTop =540
-                    LayoutCachedWidth =8640
-                    LayoutCachedHeight =960
-                    ForeThemeColorIndex =0
-                    ForeShade =100.0
-                End
-                Begin TextBox
-                    OldBorderStyle =0
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =5280
-                    Top =540
-                    Width =1560
-                    Height =420
-                    ColumnOrder =3
-                    FontSize =16
-                    FontWeight =700
-                    TabIndex =1
-                    BorderColor =10921638
-                    Name ="DisasterID"
-                    ControlSource ="DisasterID"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =5280
-                    LayoutCachedTop =540
-                    LayoutCachedWidth =6840
-                    LayoutCachedHeight =960
-                    ForeTint =100.0
-                End
-                Begin Label
-                    TextAlign =1
-                    Left =8820
-                    Top =540
-                    Width =1080
-                    Height =405
-                    FontSize =16
-                    FontWeight =700
-                    BorderColor =8355711
-                    ForeColor =12874308
-                    Name ="County_Label"
-                    Caption ="County:"
-                    Tag ="DetachedLabel"
-                    GridlineStyleBottom =1
-                    GridlineColor =10921638
-                    LayoutCachedLeft =8820
-                    LayoutCachedTop =540
-                    LayoutCachedWidth =9900
-                    LayoutCachedHeight =945
-                    ForeThemeColorIndex =8
-                    ForeTint =100.0
-                End
-                Begin TextBox
-                    OldBorderStyle =0
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =9900
-                    Top =540
-                    Width =1560
-                    Height =420
-                    ColumnOrder =4
-                    FontSize =16
-                    FontWeight =700
-                    TabIndex =2
-                    BorderColor =10921638
-                    Name ="County"
-                    ControlSource ="County"
-                    StatusBarText ="Import"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =9900
-                    LayoutCachedTop =540
-                    LayoutCachedWidth =11460
-                    LayoutCachedHeight =960
-                    ForeTint =100.0
-                End
-                Begin TextBox
-                    DecimalPlaces =0
-                    OldBorderStyle =0
-                    TextAlign =2
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =4200
-                    Top =1020
-                    Width =6000
-                    Height =480
-                    ColumnOrder =0
-                    FontSize =18
-                    FontWeight =700
-                    TabIndex =3
-                    BackColor =14282978
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="Subrecipient Name"
-                    ControlSource ="Subrecipient Name"
-                    StatusBarText ="Import"
-                    EventProcPrefix ="Subrecipient_Name"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =4200
-                    LayoutCachedTop =1020
-                    LayoutCachedWidth =10200
-                    LayoutCachedHeight =1500
-                    BackThemeColorIndex =9
-                    BackTint =20.0
-                End
-                Begin Label
-                    TextAlign =1
-                    Left =60
-                    Top =1020
-                    Width =1980
-                    Height =600
-                    FontSize =18
-                    FontWeight =700
-                    BorderColor =8355711
-                    ForeColor =12874308
-                    Name ="ApplicantID_Label"
-                    Caption ="Applicant ID:"
-                    Tag ="DetachedLabel"
-                    GridlineStyleBottom =1
-                    GridlineColor =10921638
-                    LayoutCachedLeft =60
-                    LayoutCachedTop =1020
-                    LayoutCachedWidth =2040
-                    LayoutCachedHeight =1620
-                    ForeThemeColorIndex =8
-                    ForeTint =100.0
-                End
-                Begin TextBox
-                    OldBorderStyle =0
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =2040
-                    Top =1020
-                    Width =2160
-                    Height =480
-                    ColumnOrder =1
-                    FontSize =18
-                    TabIndex =4
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="ApplicantID"
-                    ControlSource ="ApplicantID"
-                    StatusBarText ="Import"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =2040
-                    LayoutCachedTop =1020
-                    LayoutCachedWidth =4200
-                    LayoutCachedHeight =1500
-                End
-                Begin Label
-                    TextAlign =1
-                    Left =10320
-                    Top =1020
-                    Width =2280
-                    Height =480
-                    FontSize =18
-                    FontWeight =700
-                    BorderColor =8355711
-                    ForeColor =12874308
-                    Name ="Assigned PDC_Label"
-                    Caption ="Assigned PDC:"
-                    Tag ="DetachedLabel"
-                    EventProcPrefix ="Assigned_PDC_Label"
-                    GridlineStyleBottom =1
-                    GridlineColor =10921638
-                    LayoutCachedLeft =10320
-                    LayoutCachedTop =1020
-                    LayoutCachedWidth =12600
-                    LayoutCachedHeight =1500
-                    ForeThemeColorIndex =8
-                    ForeTint =100.0
-                End
-                Begin TextBox
-                    OldBorderStyle =0
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =12540
-                    Top =1020
-                    Width =2460
-                    Height =480
-                    ColumnOrder =5
-                    FontSize =18
-                    FontWeight =700
-                    TabIndex =5
-                    BackColor =14282978
-                    BorderColor =10921638
-                    Name ="Assigned PDC"
-                    ControlSource ="Assigned PDC"
-                    StatusBarText ="Assign PDC"
-                    EventProcPrefix ="Assigned_PDC"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =12540
-                    LayoutCachedTop =1020
-                    LayoutCachedWidth =15000
-                    LayoutCachedHeight =1500
-                    BackThemeColorIndex =9
-                    BackTint =20.0
-                    ForeTint =100.0
-                End
             End
         End
         Begin PageHeader
             Height =540
+            BackColor =15064278
             Name ="PageHeaderSection"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
-            BackThemeColorIndex =1
+            BackThemeColorIndex =2
+            BackTint =20.0
             Begin
                 Begin Label
                     FontUnderline = NotDefault
@@ -438,37 +169,31 @@ Begin Report
         Begin BreakHeader
             KeepTogether = NotDefault
             CanGrow = NotDefault
-            Height =0
-            Name ="GroupHeader0"
-            AlternateBackColor =15921906
-            AlternateBackThemeColorIndex =1
-            AlternateBackShade =95.0
-            BackThemeColorIndex =1
-        End
-        Begin BreakHeader
-            KeepTogether = NotDefault
-            CanGrow = NotDefault
-            Height =4440
-            BreakLevel =1
+            Height =5520
+            BackColor =15064278
             Name ="GroupHeader1"
-            AlternateBackColor =15921906
-            AlternateBackThemeColorIndex =1
-            AlternateBackShade =95.0
-            BackThemeColorIndex =1
+            AlternateBackColor =15064278
+            AlternateBackThemeColorIndex =2
+            AlternateBackTint =20.0
+            BackThemeColorIndex =2
+            BackTint =20.0
             Begin
                 Begin Rectangle
                     Left =60
+                    Top =1080
                     Width =8580
                     Height =3960
                     BorderColor =10921638
                     Name ="Box79"
                     GridlineColor =10921638
                     LayoutCachedLeft =60
+                    LayoutCachedTop =1080
                     LayoutCachedWidth =8640
-                    LayoutCachedHeight =3960
+                    LayoutCachedHeight =5040
                 End
                 Begin Rectangle
                     Left =8640
+                    Top =1080
                     Width =6420
                     Height =4440
                     BackColor =15921906
@@ -476,8 +201,9 @@ Begin Report
                     Name ="Box67"
                     GridlineColor =10921638
                     LayoutCachedLeft =8640
+                    LayoutCachedTop =1080
                     LayoutCachedWidth =15060
-                    LayoutCachedHeight =4440
+                    LayoutCachedHeight =5520
                     BackShade =95.0
                 End
                 Begin TextBox
@@ -486,7 +212,7 @@ Begin Report
                     TextAlign =1
                     IMESentenceMode =3
                     Left =1800
-                    Top =1920
+                    Top =3000
                     Width =1080
                     Height =360
                     FontSize =16
@@ -497,15 +223,15 @@ Begin Report
                     GridlineColor =10921638
 
                     LayoutCachedLeft =1800
-                    LayoutCachedTop =1920
+                    LayoutCachedTop =3000
                     LayoutCachedWidth =2880
-                    LayoutCachedHeight =2280
+                    LayoutCachedHeight =3360
                     ForeTint =100.0
                 End
                 Begin Label
                     TextAlign =1
                     Left =360
-                    Top =1920
+                    Top =3000
                     Width =1440
                     Height =360
                     FontSize =16
@@ -518,16 +244,16 @@ Begin Report
                     GridlineStyleBottom =1
                     GridlineColor =10921638
                     LayoutCachedLeft =360
-                    LayoutCachedTop =1920
+                    LayoutCachedTop =3000
                     LayoutCachedWidth =1800
-                    LayoutCachedHeight =2280
+                    LayoutCachedHeight =3360
                     ForeThemeColorIndex =8
                     ForeTint =100.0
                 End
                 Begin Label
                     TextAlign =1
                     Left =9300
-                    Top =1800
+                    Top =2880
                     Width =1920
                     Height =315
                     FontSize =12
@@ -541,16 +267,16 @@ Begin Report
                     GridlineStyleBottom =1
                     GridlineColor =10921638
                     LayoutCachedLeft =9300
-                    LayoutCachedTop =1800
+                    LayoutCachedTop =2880
                     LayoutCachedWidth =11220
-                    LayoutCachedHeight =2115
+                    LayoutCachedHeight =3195
                     ForeThemeColorIndex =8
                     ForeTint =100.0
                 End
                 Begin Label
                     TextAlign =1
                     Left =9300
-                    Top =1380
+                    Top =2460
                     Width =1560
                     Height =315
                     FontSize =12
@@ -564,16 +290,16 @@ Begin Report
                     GridlineStyleBottom =1
                     GridlineColor =10921638
                     LayoutCachedLeft =9300
-                    LayoutCachedTop =1380
+                    LayoutCachedTop =2460
                     LayoutCachedWidth =10860
-                    LayoutCachedHeight =1695
+                    LayoutCachedHeight =2775
                     ForeThemeColorIndex =8
                     ForeTint =100.0
                 End
                 Begin TextBox
                     IMESentenceMode =3
                     Left =11220
-                    Top =1800
+                    Top =2880
                     Width =2880
                     Height =330
                     FontSize =12
@@ -587,14 +313,14 @@ Begin Report
                     GridlineColor =10921638
 
                     LayoutCachedLeft =11220
-                    LayoutCachedTop =1800
+                    LayoutCachedTop =2880
                     LayoutCachedWidth =14100
-                    LayoutCachedHeight =2130
+                    LayoutCachedHeight =3210
                 End
                 Begin TextBox
                     IMESentenceMode =3
                     Left =10860
-                    Top =1380
+                    Top =2460
                     Width =2700
                     Height =330
                     FontSize =12
@@ -608,14 +334,14 @@ Begin Report
                     GridlineColor =10921638
 
                     LayoutCachedLeft =10860
-                    LayoutCachedTop =1380
+                    LayoutCachedTop =2460
                     LayoutCachedWidth =13560
-                    LayoutCachedHeight =1710
+                    LayoutCachedHeight =2790
                 End
                 Begin Label
                     TextAlign =1
                     Left =3240
-                    Top =1920
+                    Top =3000
                     Width =2340
                     Height =360
                     FontSize =16
@@ -629,16 +355,16 @@ Begin Report
                     GridlineStyleBottom =1
                     GridlineColor =10921638
                     LayoutCachedLeft =3240
-                    LayoutCachedTop =1920
+                    LayoutCachedTop =3000
                     LayoutCachedWidth =5580
-                    LayoutCachedHeight =2280
+                    LayoutCachedHeight =3360
                     ForeThemeColorIndex =8
                     ForeTint =100.0
                 End
                 Begin Label
                     TextAlign =1
                     Left =360
-                    Top =2340
+                    Top =3420
                     Width =1860
                     Height =300
                     FontSize =12
@@ -651,15 +377,15 @@ Begin Report
                     GridlineStyleBottom =1
                     GridlineColor =10921638
                     LayoutCachedLeft =360
-                    LayoutCachedTop =2340
+                    LayoutCachedTop =3420
                     LayoutCachedWidth =2220
-                    LayoutCachedHeight =2640
+                    LayoutCachedHeight =3720
                     ForeTint =100.0
                 End
                 Begin Label
                     TextAlign =1
                     Left =360
-                    Top =2700
+                    Top =3780
                     Width =3180
                     Height =300
                     FontSize =12
@@ -672,9 +398,9 @@ Begin Report
                     GridlineStyleBottom =1
                     GridlineColor =10921638
                     LayoutCachedLeft =360
-                    LayoutCachedTop =2700
+                    LayoutCachedTop =3780
                     LayoutCachedWidth =3540
-                    LayoutCachedHeight =3000
+                    LayoutCachedHeight =4080
                     ForeTint =100.0
                 End
                 Begin ComboBox
@@ -683,7 +409,7 @@ Begin Report
                     IMESentenceMode =3
                     ColumnCount =2
                     Left =5580
-                    Top =1920
+                    Top =3000
                     Width =780
                     Height =360
                     FontSize =12
@@ -701,9 +427,9 @@ Begin Report
                     AllowValueListEdits =0
 
                     LayoutCachedLeft =5580
-                    LayoutCachedTop =1920
+                    LayoutCachedTop =3000
                     LayoutCachedWidth =6360
-                    LayoutCachedHeight =2280
+                    LayoutCachedHeight =3360
                     ForeThemeColorIndex =0
                     ForeShade =100.0
                 End
@@ -712,7 +438,7 @@ Begin Report
                     TextAlign =1
                     IMESentenceMode =3
                     Left =2280
-                    Top =2340
+                    Top =3420
                     Width =6300
                     Height =300
                     ColumnWidth =1425
@@ -726,9 +452,9 @@ Begin Report
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2280
-                    LayoutCachedTop =2340
+                    LayoutCachedTop =3420
                     LayoutCachedWidth =8580
-                    LayoutCachedHeight =2640
+                    LayoutCachedHeight =3720
                     ForeTint =100.0
                 End
                 Begin ComboBox
@@ -739,7 +465,7 @@ Begin Report
                     IMESentenceMode =3
                     ListWidth =1440
                     Left =3600
-                    Top =2700
+                    Top =3780
                     Width =4980
                     Height =300
                     FontSize =12
@@ -756,9 +482,9 @@ Begin Report
                     GridlineColor =10921638
 
                     LayoutCachedLeft =3600
-                    LayoutCachedTop =2700
+                    LayoutCachedTop =3780
                     LayoutCachedWidth =8580
-                    LayoutCachedHeight =3000
+                    LayoutCachedHeight =4080
                     ForeThemeColorIndex =0
                     ForeShade =100.0
                 End
@@ -766,7 +492,7 @@ Begin Report
                     BackStyle =1
                     OldBorderStyle =1
                     Left =60
-                    Top =1380
+                    Top =2460
                     Width =8580
                     Height =480
                     FontSize =22
@@ -778,9 +504,9 @@ Begin Report
                     Caption ="Project Information"
                     GridlineColor =10921638
                     LayoutCachedLeft =60
-                    LayoutCachedTop =1380
+                    LayoutCachedTop =2460
                     LayoutCachedWidth =8640
-                    LayoutCachedHeight =1860
+                    LayoutCachedHeight =2940
                     BackShade =95.0
                     ForeThemeColorIndex =8
                     ForeTint =100.0
@@ -789,7 +515,7 @@ Begin Report
                     BackStyle =1
                     OldBorderStyle =1
                     Left =60
-                    Top =3960
+                    Top =5040
                     Width =8580
                     Height =480
                     FontSize =22
@@ -801,9 +527,9 @@ Begin Report
                     Caption ="     Site Details"
                     GridlineColor =10921638
                     LayoutCachedLeft =60
-                    LayoutCachedTop =3960
+                    LayoutCachedTop =5040
                     LayoutCachedWidth =8640
-                    LayoutCachedHeight =4440
+                    LayoutCachedHeight =5520
                     BackShade =95.0
                     ForeThemeColorIndex =8
                     ForeTint =100.0
@@ -812,7 +538,7 @@ Begin Report
                     FontUnderline = NotDefault
                     TextAlign =2
                     Left =8760
-                    Top =60
+                    Top =1140
                     Width =6180
                     Height =600
                     FontSize =22
@@ -823,16 +549,16 @@ Begin Report
                     Caption ="Site Inspection Participants\015\012"
                     GridlineColor =10921638
                     LayoutCachedLeft =8760
-                    LayoutCachedTop =60
+                    LayoutCachedTop =1140
                     LayoutCachedWidth =14940
-                    LayoutCachedHeight =660
+                    LayoutCachedHeight =1740
                     ForeThemeColorIndex =8
                     ForeTint =100.0
                 End
                 Begin TextBox
                     IMESentenceMode =3
                     Left =11700
-                    Top =2220
+                    Top =3300
                     Width =2400
                     Height =330
                     TabIndex =6
@@ -843,13 +569,13 @@ Begin Report
                     GridlineColor =10921638
 
                     LayoutCachedLeft =11700
-                    LayoutCachedTop =2220
+                    LayoutCachedTop =3300
                     LayoutCachedWidth =14100
-                    LayoutCachedHeight =2550
+                    LayoutCachedHeight =3630
                     Begin
                         Begin Label
                             Left =9300
-                            Top =2220
+                            Top =3300
                             Width =2400
                             Height =315
                             FontWeight =700
@@ -859,9 +585,9 @@ Begin Report
                             Caption ="Assigned EHP Specialists:"
                             GridlineColor =10921638
                             LayoutCachedLeft =9300
-                            LayoutCachedTop =2220
+                            LayoutCachedTop =3300
                             LayoutCachedWidth =11700
-                            LayoutCachedHeight =2535
+                            LayoutCachedHeight =3615
                             ForeThemeColorIndex =8
                             ForeTint =100.0
                         End
@@ -870,7 +596,7 @@ Begin Report
                 Begin TextBox
                     IMESentenceMode =3
                     Left =12180
-                    Top =2640
+                    Top =3720
                     Width =2460
                     Height =330
                     TabIndex =7
@@ -881,13 +607,13 @@ Begin Report
                     GridlineColor =10921638
 
                     LayoutCachedLeft =12180
-                    LayoutCachedTop =2640
+                    LayoutCachedTop =3720
                     LayoutCachedWidth =14640
-                    LayoutCachedHeight =2970
+                    LayoutCachedHeight =4050
                     Begin
                         Begin Label
                             Left =9300
-                            Top =2640
+                            Top =3720
                             Width =2880
                             Height =315
                             FontWeight =700
@@ -897,9 +623,9 @@ Begin Report
                             Caption ="Assigned Mitigation Specialist:"
                             GridlineColor =10921638
                             LayoutCachedLeft =9300
-                            LayoutCachedTop =2640
+                            LayoutCachedTop =3720
                             LayoutCachedWidth =12180
-                            LayoutCachedHeight =2955
+                            LayoutCachedHeight =4035
                             ForeThemeColorIndex =8
                             ForeTint =100.0
                         End
@@ -908,7 +634,7 @@ Begin Report
                 Begin TextBox
                     IMESentenceMode =3
                     Left =12120
-                    Top =3060
+                    Top =4140
                     Width =2520
                     Height =330
                     TabIndex =8
@@ -919,13 +645,13 @@ Begin Report
                     GridlineColor =10921638
 
                     LayoutCachedLeft =12120
-                    LayoutCachedTop =3060
+                    LayoutCachedTop =4140
                     LayoutCachedWidth =14640
-                    LayoutCachedHeight =3390
+                    LayoutCachedHeight =4470
                     Begin
                         Begin Label
                             Left =9300
-                            Top =3060
+                            Top =4140
                             Width =2820
                             Height =315
                             FontWeight =700
@@ -935,9 +661,9 @@ Begin Report
                             Caption ="Assigned Insurance Specialist:"
                             GridlineColor =10921638
                             LayoutCachedLeft =9300
-                            LayoutCachedTop =3060
+                            LayoutCachedTop =4140
                             LayoutCachedWidth =12120
-                            LayoutCachedHeight =3375
+                            LayoutCachedHeight =4455
                             ForeThemeColorIndex =8
                             ForeTint =100.0
                         End
@@ -946,7 +672,7 @@ Begin Report
                 Begin TextBox
                     IMESentenceMode =3
                     Left =12120
-                    Top =720
+                    Top =1800
                     Width =2820
                     Height =375
                     FontSize =16
@@ -960,9 +686,9 @@ Begin Report
                     GridlineColor =10921638
 
                     LayoutCachedLeft =12120
-                    LayoutCachedTop =720
+                    LayoutCachedTop =1800
                     LayoutCachedWidth =14940
-                    LayoutCachedHeight =1095
+                    LayoutCachedHeight =2175
                     BackThemeColorIndex =9
                     BackTint =20.0
                     ForeThemeColorIndex =8
@@ -970,7 +696,7 @@ Begin Report
                     Begin
                         Begin Label
                             Left =8820
-                            Top =720
+                            Top =1800
                             Width =3240
                             Height =375
                             FontSize =16
@@ -981,9 +707,9 @@ Begin Report
                             Caption ="Assigned Site Inspector:"
                             GridlineColor =10921638
                             LayoutCachedLeft =8820
-                            LayoutCachedTop =720
+                            LayoutCachedTop =1800
                             LayoutCachedWidth =12060
-                            LayoutCachedHeight =1095
+                            LayoutCachedHeight =2175
                             ForeThemeColorIndex =8
                             ForeTint =100.0
                         End
@@ -992,7 +718,7 @@ Begin Report
                 Begin Label
                     TextAlign =1
                     Left =300
-                    Top =960
+                    Top =2040
                     Width =2640
                     Height =315
                     FontSize =12
@@ -1005,9 +731,9 @@ Begin Report
                     GridlineStyleBottom =1
                     GridlineColor =10921638
                     LayoutCachedLeft =300
-                    LayoutCachedTop =960
+                    LayoutCachedTop =2040
                     LayoutCachedWidth =2940
-                    LayoutCachedHeight =1275
+                    LayoutCachedHeight =2355
                     ForeTint =100.0
                 End
                 Begin TextBox
@@ -1015,7 +741,7 @@ Begin Report
                     OldBorderStyle =0
                     IMESentenceMode =3
                     Left =3060
-                    Top =960
+                    Top =2040
                     Width =4560
                     Height =315
                     FontSize =12
@@ -1030,16 +756,16 @@ Begin Report
                     GridlineColor =10921638
 
                     LayoutCachedLeft =3060
-                    LayoutCachedTop =960
+                    LayoutCachedTop =2040
                     LayoutCachedWidth =7620
-                    LayoutCachedHeight =1275
+                    LayoutCachedHeight =2355
                     BackThemeColorIndex =9
                     BackTint =20.0
                 End
                 Begin Label
                     TextAlign =1
                     Left =300
-                    Top =540
+                    Top =1620
                     Width =3540
                     Height =315
                     FontSize =12
@@ -1052,9 +778,9 @@ Begin Report
                     GridlineStyleBottom =1
                     GridlineColor =10921638
                     LayoutCachedLeft =300
-                    LayoutCachedTop =540
+                    LayoutCachedTop =1620
                     LayoutCachedWidth =3840
-                    LayoutCachedHeight =855
+                    LayoutCachedHeight =1935
                     ForeTint =100.0
                 End
                 Begin TextBox
@@ -1062,7 +788,7 @@ Begin Report
                     TextAlign =2
                     IMESentenceMode =3
                     Left =3900
-                    Top =540
+                    Top =1620
                     Width =3720
                     Height =330
                     FontSize =12
@@ -1078,9 +804,9 @@ Begin Report
                     ShowDatePicker =1
 
                     LayoutCachedLeft =3900
-                    LayoutCachedTop =540
+                    LayoutCachedTop =1620
                     LayoutCachedWidth =7620
-                    LayoutCachedHeight =870
+                    LayoutCachedHeight =1950
                     BackThemeColorIndex =9
                     BackTint =20.0
                 End
@@ -1088,6 +814,7 @@ Begin Report
                     BackStyle =1
                     OldBorderStyle =1
                     Left =60
+                    Top =1080
                     Width =8580
                     Height =480
                     FontSize =22
@@ -1099,8 +826,9 @@ Begin Report
                     Caption ="Site Inspection Information"
                     GridlineColor =10921638
                     LayoutCachedLeft =60
+                    LayoutCachedTop =1080
                     LayoutCachedWidth =8640
-                    LayoutCachedHeight =480
+                    LayoutCachedHeight =1560
                     BackShade =95.0
                     ForeThemeColorIndex =8
                     ForeTint =100.0
@@ -1108,7 +836,7 @@ Begin Report
                 Begin TextBox
                     IMESentenceMode =3
                     Left =1500
-                    Top =3060
+                    Top =4140
                     Width =7080
                     Height =765
                     FontSize =10
@@ -1120,16 +848,16 @@ Begin Report
                     GridlineColor =10921638
 
                     LayoutCachedLeft =1500
-                    LayoutCachedTop =3060
+                    LayoutCachedTop =4140
                     LayoutCachedWidth =8580
-                    LayoutCachedHeight =3825
+                    LayoutCachedHeight =4905
                     BackThemeColorIndex =9
                     BackTint =20.0
                     ForeTint =100.0
                     Begin
                         Begin Label
                             Left =360
-                            Top =3060
+                            Top =4140
                             Width =1140
                             Height =420
                             FontSize =12
@@ -1139,12 +867,261 @@ Begin Report
                             Caption ="Site Notes:"
                             GridlineColor =10921638
                             LayoutCachedLeft =360
-                            LayoutCachedTop =3060
+                            LayoutCachedTop =4140
                             LayoutCachedWidth =1500
-                            LayoutCachedHeight =3480
+                            LayoutCachedHeight =4560
                             ForeTint =100.0
                         End
                     End
+                End
+                Begin Label
+                    TextAlign =1
+                    Left =3720
+                    Width =1500
+                    Height =405
+                    FontSize =16
+                    FontWeight =700
+                    BorderColor =8355711
+                    ForeColor =12874308
+                    Name ="DisasterID_Label"
+                    Caption ="Disaster ID:"
+                    Tag ="DetachedLabel"
+                    GridlineStyleBottom =1
+                    GridlineColor =10921638
+                    LayoutCachedLeft =3720
+                    LayoutCachedWidth =5220
+                    LayoutCachedHeight =405
+                    ForeThemeColorIndex =8
+                    ForeTint =100.0
+                End
+                Begin Label
+                    TextAlign =1
+                    Left =7020
+                    Width =780
+                    Height =405
+                    FontSize =16
+                    FontWeight =700
+                    BorderColor =8355711
+                    ForeColor =12874308
+                    Name ="State_Label"
+                    Caption ="State:"
+                    Tag ="DetachedLabel"
+                    GridlineStyleBottom =1
+                    GridlineColor =10921638
+                    LayoutCachedLeft =7020
+                    LayoutCachedWidth =7800
+                    LayoutCachedHeight =405
+                    ForeThemeColorIndex =8
+                    ForeTint =100.0
+                End
+                Begin ComboBox
+                    OldBorderStyle =0
+                    BackStyle =0
+                    IMESentenceMode =3
+                    ListWidth =1440
+                    Left =7800
+                    Width =780
+                    Height =420
+                    FontSize =16
+                    FontWeight =700
+                    TabIndex =13
+                    BorderColor =10921638
+                    ColumnInfo ="\"\";\"\";\"10\";\"510\""
+                    Name ="State"
+                    ControlSource ="State"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT lutblState.StateID FROM lutblState; "
+                    ColumnWidths ="1440"
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    LayoutCachedLeft =7800
+                    LayoutCachedWidth =8580
+                    LayoutCachedHeight =420
+                    ForeThemeColorIndex =0
+                    ForeShade =100.0
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =5220
+                    Width =1560
+                    Height =420
+                    FontSize =16
+                    FontWeight =700
+                    TabIndex =14
+                    BorderColor =10921638
+                    Name ="DisasterID"
+                    ControlSource ="DisasterID"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =5220
+                    LayoutCachedWidth =6780
+                    LayoutCachedHeight =420
+                    ForeTint =100.0
+                End
+                Begin Label
+                    TextAlign =1
+                    Left =8760
+                    Width =1080
+                    Height =405
+                    FontSize =16
+                    FontWeight =700
+                    BorderColor =8355711
+                    ForeColor =12874308
+                    Name ="County_Label"
+                    Caption ="County:"
+                    Tag ="DetachedLabel"
+                    GridlineStyleBottom =1
+                    GridlineColor =10921638
+                    LayoutCachedLeft =8760
+                    LayoutCachedWidth =9840
+                    LayoutCachedHeight =405
+                    ForeThemeColorIndex =8
+                    ForeTint =100.0
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =9840
+                    Width =1560
+                    Height =420
+                    FontSize =16
+                    FontWeight =700
+                    TabIndex =15
+                    BorderColor =10921638
+                    Name ="County"
+                    ControlSource ="County"
+                    StatusBarText ="Import"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =9840
+                    LayoutCachedWidth =11400
+                    LayoutCachedHeight =420
+                    ForeTint =100.0
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    OldBorderStyle =0
+                    TextAlign =2
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =4140
+                    Top =480
+                    Width =6000
+                    Height =480
+                    FontSize =18
+                    FontWeight =700
+                    TabIndex =16
+                    BackColor =14282978
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="Subrecipient Name"
+                    ControlSource ="Subrecipient Name"
+                    StatusBarText ="Import"
+                    EventProcPrefix ="Subrecipient_Name"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =4140
+                    LayoutCachedTop =480
+                    LayoutCachedWidth =10140
+                    LayoutCachedHeight =960
+                    BackThemeColorIndex =9
+                    BackTint =20.0
+                End
+                Begin Label
+                    TextAlign =1
+                    Top =480
+                    Width =1980
+                    Height =600
+                    FontSize =18
+                    FontWeight =700
+                    BorderColor =8355711
+                    ForeColor =12874308
+                    Name ="ApplicantID_Label"
+                    Caption ="Applicant ID:"
+                    Tag ="DetachedLabel"
+                    GridlineStyleBottom =1
+                    GridlineColor =10921638
+                    LayoutCachedTop =480
+                    LayoutCachedWidth =1980
+                    LayoutCachedHeight =1080
+                    ForeThemeColorIndex =8
+                    ForeTint =100.0
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =1980
+                    Top =480
+                    Width =2160
+                    Height =480
+                    FontSize =18
+                    TabIndex =17
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="ApplicantID"
+                    ControlSource ="ApplicantID"
+                    StatusBarText ="Import"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =1980
+                    LayoutCachedTop =480
+                    LayoutCachedWidth =4140
+                    LayoutCachedHeight =960
+                End
+                Begin Label
+                    TextAlign =1
+                    Left =10260
+                    Top =480
+                    Width =2340
+                    Height =480
+                    FontSize =18
+                    FontWeight =700
+                    BorderColor =8355711
+                    ForeColor =12874308
+                    Name ="Assigned PDC_Label"
+                    Caption ="Assigned PDM:"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="Assigned_PDC_Label"
+                    GridlineStyleBottom =1
+                    GridlineColor =10921638
+                    LayoutCachedLeft =10260
+                    LayoutCachedTop =480
+                    LayoutCachedWidth =12600
+                    LayoutCachedHeight =960
+                    ForeThemeColorIndex =8
+                    ForeTint =100.0
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =12480
+                    Top =480
+                    Width =2460
+                    Height =480
+                    FontSize =18
+                    FontWeight =700
+                    TabIndex =18
+                    BackColor =14282978
+                    BorderColor =10921638
+                    Name ="Assigned PDC"
+                    ControlSource ="Assigned PDC"
+                    StatusBarText ="Assign PDC"
+                    EventProcPrefix ="Assigned_PDC"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =12480
+                    LayoutCachedTop =480
+                    LayoutCachedWidth =14940
+                    LayoutCachedHeight =960
+                    BackThemeColorIndex =9
+                    BackTint =20.0
+                    ForeTint =100.0
                 End
             End
         End
@@ -1747,7 +1724,7 @@ Begin Report
                     IMESentenceMode =3
                     Left =2175
                     Top =1260
-                    Width =1200
+                    Width =1365
                     Height =300
                     TabIndex =12
                     BorderColor =10921638
@@ -1758,7 +1735,7 @@ Begin Report
 
                     LayoutCachedLeft =2175
                     LayoutCachedTop =1260
-                    LayoutCachedWidth =3375
+                    LayoutCachedWidth =3540
                     LayoutCachedHeight =1560
                     ForeTint =100.0
                 End
@@ -1768,7 +1745,7 @@ Begin Report
                     IMESentenceMode =3
                     Left =4755
                     Top =1260
-                    Width =1140
+                    Width =1425
                     Height =300
                     TabIndex =13
                     BorderColor =10921638
@@ -1779,7 +1756,7 @@ Begin Report
 
                     LayoutCachedLeft =4755
                     LayoutCachedTop =1260
-                    LayoutCachedWidth =5895
+                    LayoutCachedWidth =6180
                     LayoutCachedHeight =1560
                     ForeTint =100.0
                 End
@@ -1824,6 +1801,18 @@ Begin Report
                     ForeTint =100.0
                 End
             End
+        End
+        Begin BreakFooter
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            CanShrink = NotDefault
+            ForceNewPage =2
+            Height =0
+            Name ="GroupFooter0"
+            AlternateBackColor =15921906
+            AlternateBackThemeColorIndex =1
+            AlternateBackShade =95.0
+            BackThemeColorIndex =1
         End
         Begin PageFooter
             Height =570

@@ -20,6 +20,8 @@ Begin Form
     Right =25020
     Bottom =12765
     DatasheetGridlinesColor =15132391
+    Filter ="[DisasterID]='4258' and [ApplicantID]='000-U0D8R-00'AND[Assigned PDC] = 'nlietzk"
+        "1'"
     RecSrcDt = Begin
         0x414d06ad50b9e440
     End

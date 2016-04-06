@@ -15,15 +15,15 @@ End
 Begin Joins
     LeftTable ="tblProjects"
     RightTable ="tblSubRecipient"
-    Expression ="tblProjects.DisasterID = tblSubRecipient.DisasterID"
-    Flag =1
-    LeftTable ="tblProjects"
-    RightTable ="tblSubRecipient"
     Expression ="tblProjects.ApplicantID = tblSubRecipient.ApplicantID"
     Flag =1
     LeftTable ="tblProjects"
+    RightTable ="tblSubRecipient"
+    Expression ="tblProjects.DisasterID = tblSubRecipient.DisasterID"
+    Flag =1
+    LeftTable ="tblProjects"
     RightTable ="revtblProject"
-    Expression ="tblProjects.ProjectID = revtblProject.ProjectID"
+    Expression ="tblProjects.DisasterID = revtblProject.DisasterID"
     Flag =1
     LeftTable ="tblProjects"
     RightTable ="revtblProject"
@@ -31,7 +31,7 @@ Begin Joins
     Flag =1
     LeftTable ="tblProjects"
     RightTable ="revtblProject"
-    Expression ="tblProjects.DisasterID = revtblProject.DisasterID"
+    Expression ="tblProjects.ProjectID = revtblProject.ProjectID"
     Flag =1
 End
 Begin OrderBy
@@ -534,17 +534,21 @@ Begin
         dbText "Name" ="tblProjects.Scope of Work Developed by"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="tblProjects.DocumentationAttached"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =961
-    Bottom =539
+    Right =1153
+    Bottom =860
     Left =-1
     Top =-1
-    Right =945
-    Bottom =256
+    Right =1137
+    Bottom =491
     Left =0
     Top =0
     ColumnsShown =539

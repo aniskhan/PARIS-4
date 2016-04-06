@@ -33,11 +33,11 @@ End
 Begin Joins
     LeftTable ="revtblRpa"
     RightTable ="tblSubRecipient"
-    Expression ="revtblRpa.DisasterID = tblSubRecipient.DisasterID"
+    Expression ="revtblRpa.ApplicantID = tblSubRecipient.ApplicantID"
     Flag =1
     LeftTable ="revtblRpa"
     RightTable ="tblSubRecipient"
-    Expression ="revtblRpa.ApplicantID = tblSubRecipient.ApplicantID"
+    Expression ="revtblRpa.DisasterID = tblSubRecipient.DisasterID"
     Flag =1
     LeftTable ="revtblRpa"
     RightTable ="tblReviewTypes"
@@ -110,17 +110,21 @@ Begin
         dbText "Name" ="RfiID"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="RfiItemID"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =985
+    Right =1153
     Bottom =860
     Left =-1
     Top =-1
-    Right =969
-    Bottom =402
+    Right =1137
+    Bottom =334
     Left =0
     Top =0
     ColumnsShown =539

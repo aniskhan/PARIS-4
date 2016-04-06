@@ -6,7 +6,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     PictureAlignment =2
@@ -16,8 +15,8 @@ Begin Form
     Width =31680
     DatasheetFontHeight =11
     ItemSuffix =42
-    Right =19335
-    Bottom =7830
+    Right =19920
+    Bottom =12645
     DatasheetGridlinesColor =15132391
     Filter ="[DisasterID]='4258'"
     RecSrcDt = Begin
@@ -869,6 +868,51 @@ Begin Form
                     BorderShade =65.0
                     ForeThemeColorIndex =8
                     ForeTint =100.0
+                End
+                Begin CommandButton
+                    Enabled = NotDefault
+                    OverlapFlags =215
+                    Left =13980
+                    Top =9720
+                    Width =2280
+                    Height =1020
+                    FontSize =13
+                    FontWeight =700
+                    TabIndex =11
+                    ForeColor =16777215
+                    Name ="cmdSendToExitBriefing"
+                    Caption ="Send Applicant to Exit Briefing"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =13980
+                    LayoutCachedTop =9720
+                    LayoutCachedWidth =16260
+                    LayoutCachedHeight =10740
+                    ForeThemeColorIndex =1
+                    ForeTint =100.0
+                    UseTheme =1
+                    Gradient =0
+                    BackColor =9917743
+                    BackThemeColorIndex =8
+                    BackTint =100.0
+                    BackShade =75.0
+                    BorderColor =15123357
+                    HoverColor =9917743
+                    HoverThemeColorIndex =8
+                    HoverShade =75.0
+                    PressedColor =14282978
+                    PressedThemeColorIndex =9
+                    PressedTint =20.0
+                    HoverForeColor =13431551
+                    HoverForeThemeColorIndex =7
+                    HoverForeTint =20.0
+                    PressedForeColor =0
+                    PressedForeThemeColorIndex =0
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
                 End
             End
         End

@@ -6,17 +6,19 @@ Begin Form
     DividingLines = NotDefault
     AllowAdditions = NotDefault
     AllowDesignChanges = NotDefault
-    DefaultView =2
+    DefaultView =0
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
     Width =17580
     DatasheetFontHeight =11
-    ItemSuffix =82
-    Right =11685
-    Bottom =12645
+    ItemSuffix =100
+    Right =19260
+    Bottom =12615
     DatasheetGridlinesColor =15132391
+    Filter ="[DisasterID]='4258' and [ApplicantID]='009-058BD-00' and [ProjectID]=7 and [Site"
+        "ID]=3"
     RecSrcDt = Begin
         0x0255a2a713b1e440
     End
@@ -176,7 +178,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =12660
+            Height =14040
             Name ="Detail"
             AlternateBackColor =15921906
             AlternateBackThemeColorIndex =1
@@ -188,25 +190,26 @@ Begin Form
                     OverlapFlags =93
                     Top =1380
                     Width =17520
-                    Height =8520
+                    Height =10080
                     BackColor =16247774
                     BorderColor =10921638
                     Name ="Box74"
                     GridlineColor =10921638
                     LayoutCachedTop =1380
                     LayoutCachedWidth =17520
-                    LayoutCachedHeight =9900
+                    LayoutCachedHeight =11460
                     BackThemeColorIndex =4
                     BackTint =20.0
                 End
                 Begin TextBox
+                    Visible = NotDefault
                     Enabled = NotDefault
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
-                    OverlapFlags =215
+                    OverlapFlags =223
                     IMESentenceMode =3
                     Left =14820
-                    Top =2340
+                    Top =5280
                     Width =2070
                     Height =300
                     ColumnWidth =3000
@@ -217,14 +220,15 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =14820
-                    LayoutCachedTop =2340
+                    LayoutCachedTop =5280
                     LayoutCachedWidth =16890
-                    LayoutCachedHeight =2640
+                    LayoutCachedHeight =5580
                     Begin
                         Begin Label
-                            OverlapFlags =215
+                            Visible = NotDefault
+                            OverlapFlags =223
                             Left =13740
-                            Top =2340
+                            Top =5280
                             Width =1020
                             Height =315
                             BorderColor =8355711
@@ -233,20 +237,21 @@ Begin Form
                             Caption ="DisasterID"
                             GridlineColor =10921638
                             LayoutCachedLeft =13740
-                            LayoutCachedTop =2340
+                            LayoutCachedTop =5280
                             LayoutCachedWidth =14760
-                            LayoutCachedHeight =2655
+                            LayoutCachedHeight =5595
                         End
                     End
                 End
                 Begin TextBox
+                    Visible = NotDefault
                     Enabled = NotDefault
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =14820
-                    Top =2700
+                    Top =5700
                     Width =2070
                     Height =360
                     ColumnWidth =3000
@@ -258,14 +263,15 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =14820
-                    LayoutCachedTop =2700
+                    LayoutCachedTop =5700
                     LayoutCachedWidth =16890
-                    LayoutCachedHeight =3060
+                    LayoutCachedHeight =6060
                     Begin
                         Begin Label
+                            Visible = NotDefault
                             OverlapFlags =215
                             Left =13620
-                            Top =2700
+                            Top =5700
                             Width =1155
                             Height =315
                             BorderColor =8355711
@@ -274,18 +280,19 @@ Begin Form
                             Caption ="ApplicantID"
                             GridlineColor =10921638
                             LayoutCachedLeft =13620
-                            LayoutCachedTop =2700
+                            LayoutCachedTop =5700
                             LayoutCachedWidth =14775
-                            LayoutCachedHeight =3015
+                            LayoutCachedHeight =6015
                         End
                     End
                 End
                 Begin TextBox
+                    Visible = NotDefault
                     Enabled = NotDefault
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =15360
-                    Top =3180
+                    Top =6120
                     Width =1530
                     Height =330
                     ColumnWidth =1530
@@ -297,14 +304,15 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =15360
-                    LayoutCachedTop =3180
+                    LayoutCachedTop =6120
                     LayoutCachedWidth =16890
-                    LayoutCachedHeight =3510
+                    LayoutCachedHeight =6450
                     Begin
                         Begin Label
+                            Visible = NotDefault
                             OverlapFlags =215
                             Left =14340
-                            Top =3180
+                            Top =6120
                             Width =930
                             Height =315
                             BorderColor =8355711
@@ -313,9 +321,9 @@ Begin Form
                             Caption ="ProjectID"
                             GridlineColor =10921638
                             LayoutCachedLeft =14340
-                            LayoutCachedTop =3180
+                            LayoutCachedTop =6120
                             LayoutCachedWidth =15270
-                            LayoutCachedHeight =3495
+                            LayoutCachedHeight =6435
                         End
                     End
                 End
@@ -626,7 +634,7 @@ Begin Form
                     TextAlign =1
                     IMESentenceMode =3
                     Left =10860
-                    Top =5520
+                    Top =8520
                     Width =6060
                     Height =360
                     TabIndex =9
@@ -638,9 +646,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =10860
-                    LayoutCachedTop =5520
+                    LayoutCachedTop =8520
                     LayoutCachedWidth =16920
-                    LayoutCachedHeight =5880
+                    LayoutCachedHeight =8880
                     BackThemeColorIndex =7
                     BackTint =20.0
                     ForeThemeColorIndex =-1
@@ -649,7 +657,7 @@ Begin Form
                         Begin Label
                             OverlapFlags =215
                             Left =8580
-                            Top =5520
+                            Top =8520
                             Width =2220
                             Height =360
                             FontSize =12
@@ -659,9 +667,9 @@ Begin Form
                             EventProcPrefix ="Site_Notes_Label"
                             GridlineColor =10921638
                             LayoutCachedLeft =8580
-                            LayoutCachedTop =5520
+                            LayoutCachedTop =8520
                             LayoutCachedWidth =10800
-                            LayoutCachedHeight =5880
+                            LayoutCachedHeight =8880
                             ForeTint =100.0
                         End
                     End
@@ -1096,7 +1104,7 @@ Begin Form
                     IMESentenceMode =3
                     ListWidth =1440
                     Left =10560
-                    Top =3000
+                    Top =6000
                     Width =1320
                     Height =360
                     TabIndex =18
@@ -1111,16 +1119,16 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =10560
-                    LayoutCachedTop =3000
+                    LayoutCachedTop =6000
                     LayoutCachedWidth =11880
-                    LayoutCachedHeight =3360
+                    LayoutCachedHeight =6360
                     BackThemeColorIndex =7
                     BackTint =20.0
                     Begin
                         Begin Label
                             OverlapFlags =215
                             Left =8580
-                            Top =3000
+                            Top =6000
                             Width =1920
                             Height =360
                             FontSize =12
@@ -1129,9 +1137,9 @@ Begin Form
                             Caption ="Legal Responsiblity"
                             GridlineColor =10921638
                             LayoutCachedLeft =8580
-                            LayoutCachedTop =3000
+                            LayoutCachedTop =6000
                             LayoutCachedWidth =10500
-                            LayoutCachedHeight =3360
+                            LayoutCachedHeight =6360
                             ForeTint =100.0
                         End
                     End
@@ -1145,7 +1153,7 @@ Begin Form
                     IMESentenceMode =3
                     ListWidth =1440
                     Left =11280
-                    Top =3420
+                    Top =6420
                     Width =1320
                     Height =360
                     TabIndex =19
@@ -1160,16 +1168,16 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =11280
-                    LayoutCachedTop =3420
+                    LayoutCachedTop =6420
                     LayoutCachedWidth =12600
-                    LayoutCachedHeight =3780
+                    LayoutCachedHeight =6780
                     BackThemeColorIndex =7
                     BackTint =20.0
                     Begin
                         Begin Label
                             OverlapFlags =215
                             Left =8580
-                            Top =3420
+                            Top =6420
                             Width =2640
                             Height =360
                             FontSize =12
@@ -1178,9 +1186,9 @@ Begin Form
                             Caption ="Damage in Declared Area"
                             GridlineColor =10921638
                             LayoutCachedLeft =8580
-                            LayoutCachedTop =3420
+                            LayoutCachedTop =6420
                             LayoutCachedWidth =11220
-                            LayoutCachedHeight =3780
+                            LayoutCachedHeight =6780
                             ForeTint =100.0
                         End
                     End
@@ -1194,7 +1202,7 @@ Begin Form
                     IMESentenceMode =3
                     ListWidth =1440
                     Left =11280
-                    Top =3840
+                    Top =6840
                     Width =1320
                     Height =360
                     TabIndex =20
@@ -1209,16 +1217,16 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =11280
-                    LayoutCachedTop =3840
+                    LayoutCachedTop =6840
                     LayoutCachedWidth =12600
-                    LayoutCachedHeight =4200
+                    LayoutCachedHeight =7200
                     BackThemeColorIndex =7
                     BackTint =20.0
                     Begin
                         Begin Label
                             OverlapFlags =215
                             Left =8580
-                            Top =3840
+                            Top =6840
                             Width =2625
                             Height =360
                             FontSize =12
@@ -1227,9 +1235,9 @@ Begin Form
                             Caption ="Damage Caused by Event"
                             GridlineColor =10921638
                             LayoutCachedLeft =8580
-                            LayoutCachedTop =3840
+                            LayoutCachedTop =6840
                             LayoutCachedWidth =11205
-                            LayoutCachedHeight =4200
+                            LayoutCachedHeight =7200
                             ForeTint =100.0
                         End
                     End
@@ -1238,7 +1246,7 @@ Begin Form
                     FontUnderline = NotDefault
                     OverlapFlags =215
                     Left =8280
-                    Top =2580
+                    Top =5580
                     Width =3840
                     Height =360
                     FontSize =12
@@ -1249,9 +1257,9 @@ Begin Form
                     Caption ="General Eligibility"
                     GridlineColor =10921638
                     LayoutCachedLeft =8280
-                    LayoutCachedTop =2580
+                    LayoutCachedTop =5580
                     LayoutCachedWidth =12120
-                    LayoutCachedHeight =2940
+                    LayoutCachedHeight =5940
                     ForeThemeColorIndex =8
                     ForeTint =100.0
                 End
@@ -1259,7 +1267,7 @@ Begin Form
                     FontUnderline = NotDefault
                     OverlapFlags =215
                     Left =8280
-                    Top =7320
+                    Top =8940
                     Width =3780
                     Height =420
                     FontSize =12
@@ -1267,23 +1275,24 @@ Begin Form
                     BorderColor =8355711
                     ForeColor =12874308
                     Name ="Label27"
-                    Caption ="Completed Work"
+                    Caption ="Comments"
                     GridlineColor =10921638
                     LayoutCachedLeft =8280
-                    LayoutCachedTop =7320
+                    LayoutCachedTop =8940
                     LayoutCachedWidth =12060
-                    LayoutCachedHeight =7740
+                    LayoutCachedHeight =9360
                     ForeThemeColorIndex =8
                     ForeTint =100.0
                 End
                 Begin TextBox
+                    Visible = NotDefault
                     SpecialEffect =4
                     BorderWidth =3
                     OverlapFlags =215
                     TextAlign =1
                     IMESentenceMode =3
-                    Left =10200
-                    Top =6480
+                    Left =6180
+                    Top =10560
                     Width =2100
                     Height =360
                     TabIndex =21
@@ -1294,17 +1303,18 @@ Begin Form
                     ControlSource ="Work Complete"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =10200
-                    LayoutCachedTop =6480
-                    LayoutCachedWidth =12300
-                    LayoutCachedHeight =6840
+                    LayoutCachedLeft =6180
+                    LayoutCachedTop =10560
+                    LayoutCachedWidth =8280
+                    LayoutCachedHeight =10920
                     BackThemeColorIndex =7
                     BackTint =20.0
                     Begin
                         Begin Label
+                            Visible = NotDefault
                             OverlapFlags =215
-                            Left =8580
-                            Top =6480
+                            Left =4560
+                            Top =10560
                             Width =1530
                             Height =360
                             FontSize =12
@@ -1312,23 +1322,24 @@ Begin Form
                             Name ="Label33"
                             Caption ="Work Complete"
                             GridlineColor =10921638
-                            LayoutCachedLeft =8580
-                            LayoutCachedTop =6480
-                            LayoutCachedWidth =10110
-                            LayoutCachedHeight =6840
+                            LayoutCachedLeft =4560
+                            LayoutCachedTop =10560
+                            LayoutCachedWidth =6090
+                            LayoutCachedHeight =10920
                             ForeTint =100.0
                         End
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     SpecialEffect =4
                     BorderWidth =3
-                    OverlapFlags =223
+                    OverlapFlags =215
                     TextAlign =1
                     IMESentenceMode =3
-                    Left =10860
-                    Top =8220
-                    Width =6000
+                    Left =11580
+                    Top =9420
+                    Width =5280
                     Height =960
                     TabIndex =22
                     BackColor =13431551
@@ -1338,28 +1349,28 @@ Begin Form
                     ControlSource ="Draft DDD"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =10860
-                    LayoutCachedTop =8220
+                    LayoutCachedLeft =11580
+                    LayoutCachedTop =9420
                     LayoutCachedWidth =16860
-                    LayoutCachedHeight =9180
+                    LayoutCachedHeight =10380
                     BackThemeColorIndex =7
                     BackTint =20.0
                     Begin
                         Begin Label
-                            OverlapFlags =223
+                            OverlapFlags =215
                             Left =8640
-                            Top =8220
-                            Width =2220
+                            Top =9420
+                            Width =2745
                             Height =360
                             FontSize =12
                             BorderColor =8355711
                             Name ="Label42"
-                            Caption ="Draft DDD for Review"
+                            Caption ="Comments to Site Inspector"
                             GridlineColor =10921638
                             LayoutCachedLeft =8640
-                            LayoutCachedTop =8220
-                            LayoutCachedWidth =10860
-                            LayoutCachedHeight =8580
+                            LayoutCachedTop =9420
+                            LayoutCachedWidth =11385
+                            LayoutCachedHeight =9780
                             ForeTint =100.0
                         End
                     End
@@ -1368,7 +1379,7 @@ Begin Form
                     FontUnderline = NotDefault
                     OverlapFlags =215
                     Left =8280
-                    Top =4260
+                    Top =7260
                     Width =3840
                     Height =360
                     FontSize =12
@@ -1379,17 +1390,18 @@ Begin Form
                     Caption ="Documentation Review"
                     GridlineColor =10921638
                     LayoutCachedLeft =8280
-                    LayoutCachedTop =4260
+                    LayoutCachedTop =7260
                     LayoutCachedWidth =12120
-                    LayoutCachedHeight =4620
+                    LayoutCachedHeight =7620
                     ForeThemeColorIndex =8
                     ForeTint =100.0
                 End
                 Begin Label
+                    Visible = NotDefault
                     FontUnderline = NotDefault
                     OverlapFlags =215
-                    Left =8280
-                    Top =6060
+                    Left =4260
+                    Top =10140
                     Width =3840
                     Height =360
                     FontSize =12
@@ -1399,22 +1411,23 @@ Begin Form
                     Name ="Label48"
                     Caption ="Site Inspection Required"
                     GridlineColor =10921638
-                    LayoutCachedLeft =8280
-                    LayoutCachedTop =6060
-                    LayoutCachedWidth =12120
-                    LayoutCachedHeight =6420
+                    LayoutCachedLeft =4260
+                    LayoutCachedTop =10140
+                    LayoutCachedWidth =8100
+                    LayoutCachedHeight =10500
                     ForeThemeColorIndex =8
                     ForeTint =100.0
                 End
                 Begin TextBox
                     Visible = NotDefault
+                    Enabled = NotDefault
                     SpecialEffect =4
                     BorderWidth =3
-                    OverlapFlags =247
+                    OverlapFlags =215
                     TextAlign =1
                     IMESentenceMode =3
-                    Left =11100
-                    Top =8880
+                    Left =11085
+                    Top =10440
                     Width =2160
                     Height =360
                     TabIndex =23
@@ -1425,17 +1438,17 @@ Begin Form
                     ControlSource ="Site Validation Returned"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =11100
-                    LayoutCachedTop =8880
-                    LayoutCachedWidth =13260
-                    LayoutCachedHeight =9240
+                    LayoutCachedLeft =11085
+                    LayoutCachedTop =10440
+                    LayoutCachedWidth =13245
+                    LayoutCachedHeight =10800
                     BackThemeColorIndex =7
                     BackTint =20.0
                     Begin
                         Begin Label
-                            OverlapFlags =247
-                            Left =8640
-                            Top =8880
+                            OverlapFlags =215
+                            Left =8625
+                            Top =10440
                             Width =2355
                             Height =360
                             FontSize =12
@@ -1443,19 +1456,19 @@ Begin Form
                             Name ="Label50"
                             Caption ="Site Validation Returned"
                             GridlineColor =10921638
-                            LayoutCachedLeft =8640
-                            LayoutCachedTop =8880
-                            LayoutCachedWidth =10995
-                            LayoutCachedHeight =9240
+                            LayoutCachedLeft =8625
+                            LayoutCachedTop =10440
+                            LayoutCachedWidth =10980
+                            LayoutCachedHeight =10800
                             ForeTint =100.0
                         End
                     End
                 End
                 Begin Label
                     Visible = NotDefault
-                    OverlapFlags =247
-                    Left =13620
-                    Top =9060
+                    OverlapFlags =215
+                    Left =13605
+                    Top =10620
                     Width =1500
                     Height =555
                     BorderColor =8355711
@@ -1463,10 +1476,10 @@ Begin Form
                     Name ="Label52"
                     Caption ="Pass or Fail??  What happens?"
                     GridlineColor =10921638
-                    LayoutCachedLeft =13620
-                    LayoutCachedTop =9060
-                    LayoutCachedWidth =15120
-                    LayoutCachedHeight =9615
+                    LayoutCachedLeft =13605
+                    LayoutCachedTop =10620
+                    LayoutCachedWidth =15105
+                    LayoutCachedHeight =11175
                 End
                 Begin Line
                     BorderWidth =2
@@ -1488,8 +1501,8 @@ Begin Form
                     Visible = NotDefault
                     BackStyle =1
                     OverlapFlags =215
-                    Left =8355
-                    Top =9420
+                    Left =8340
+                    Top =10980
                     Width =1440
                     Height =360
                     FontSize =14
@@ -1500,10 +1513,10 @@ Begin Form
                     Name ="Label55"
                     Caption ="DVS Start"
                     GridlineColor =10921638
-                    LayoutCachedLeft =8355
-                    LayoutCachedTop =9420
-                    LayoutCachedWidth =9795
-                    LayoutCachedHeight =9780
+                    LayoutCachedLeft =8340
+                    LayoutCachedTop =10980
+                    LayoutCachedWidth =9780
+                    LayoutCachedHeight =11340
                     BackThemeColorIndex =8
                     ForeThemeColorIndex =1
                     ForeTint =100.0
@@ -1511,9 +1524,9 @@ Begin Form
                 Begin Label
                     Visible = NotDefault
                     BackStyle =1
-                    OverlapFlags =247
-                    Left =15240
-                    Top =9120
+                    OverlapFlags =215
+                    Left =15225
+                    Top =10680
                     Width =1440
                     Height =360
                     FontSize =14
@@ -1524,10 +1537,10 @@ Begin Form
                     Name ="Label56"
                     Caption ="DVS Stop?"
                     GridlineColor =10921638
-                    LayoutCachedLeft =15240
-                    LayoutCachedTop =9120
-                    LayoutCachedWidth =16680
-                    LayoutCachedHeight =9480
+                    LayoutCachedLeft =15225
+                    LayoutCachedTop =10680
+                    LayoutCachedWidth =16665
+                    LayoutCachedHeight =11040
                     BackThemeColorIndex =4
                     BackTint =20.0
                     ForeThemeColorIndex =8
@@ -1537,8 +1550,8 @@ Begin Form
                     Visible = NotDefault
                     BackStyle =1
                     OverlapFlags =215
-                    Left =10095
-                    Top =9360
+                    Left =10080
+                    Top =10920
                     Width =3240
                     Height =420
                     FontSize =14
@@ -1548,17 +1561,17 @@ Begin Form
                     Name ="Label57"
                     Caption ="DVS Site Review Complete"
                     GridlineColor =10921638
-                    LayoutCachedLeft =10095
-                    LayoutCachedTop =9360
-                    LayoutCachedWidth =13335
-                    LayoutCachedHeight =9780
+                    LayoutCachedLeft =10080
+                    LayoutCachedTop =10920
+                    LayoutCachedWidth =13320
+                    LayoutCachedHeight =11340
                     BackThemeColorIndex =8
                     ForeThemeColorIndex =1
                     ForeTint =100.0
                 End
                 Begin Subform
                     OverlapFlags =85
-                    Top =9960
+                    Top =11520
                     Width =17520
                     Height =2520
                     TabIndex =24
@@ -1569,16 +1582,16 @@ Begin Form
                     LinkMasterFields ="DisasterID;ProjectID;SiteID"
                     GridlineColor =10921638
 
-                    LayoutCachedTop =9960
+                    LayoutCachedTop =11520
                     LayoutCachedWidth =17520
-                    LayoutCachedHeight =12480
+                    LayoutCachedHeight =14040
                 End
                 Begin CheckBox
                     SpecialEffect =4
                     OverlapFlags =215
                     BorderWidth =3
                     Left =11280
-                    Top =4800
+                    Top =7800
                     TabIndex =25
                     BorderColor =10921638
                     Name ="Documentation Reviewed"
@@ -1587,14 +1600,14 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =11280
-                    LayoutCachedTop =4800
+                    LayoutCachedTop =7800
                     LayoutCachedWidth =11540
-                    LayoutCachedHeight =5040
+                    LayoutCachedHeight =8040
                     Begin
                         Begin Label
                             OverlapFlags =215
                             Left =8580
-                            Top =4740
+                            Top =7740
                             Width =2580
                             Height =315
                             FontSize =12
@@ -1603,9 +1616,9 @@ Begin Form
                             Caption ="Documentation Reviewed"
                             GridlineColor =10921638
                             LayoutCachedLeft =8580
-                            LayoutCachedTop =4740
+                            LayoutCachedTop =7740
                             LayoutCachedWidth =11160
-                            LayoutCachedHeight =5055
+                            LayoutCachedHeight =8055
                             ForeTint =100.0
                         End
                     End
@@ -1615,7 +1628,7 @@ Begin Form
                     OverlapFlags =215
                     BorderWidth =3
                     Left =11160
-                    Top =5220
+                    Top =8220
                     TabIndex =26
                     BorderColor =10921638
                     Name ="Documentation Complete"
@@ -1624,14 +1637,14 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =11160
-                    LayoutCachedTop =5220
+                    LayoutCachedTop =8220
                     LayoutCachedWidth =11420
-                    LayoutCachedHeight =5460
+                    LayoutCachedHeight =8460
                     Begin
                         Begin Label
                             OverlapFlags =215
                             Left =8580
-                            Top =5160
+                            Top =8160
                             Width =2520
                             Height =315
                             FontSize =12
@@ -1640,19 +1653,21 @@ Begin Form
                             Caption ="Documentation Complete"
                             GridlineColor =10921638
                             LayoutCachedLeft =8580
-                            LayoutCachedTop =5160
+                            LayoutCachedTop =8160
                             LayoutCachedWidth =11100
-                            LayoutCachedHeight =5475
+                            LayoutCachedHeight =8475
                             ForeTint =100.0
                         End
                     End
                 End
                 Begin CheckBox
+                    Visible = NotDefault
+                    Enabled = NotDefault
                     SpecialEffect =4
                     OverlapFlags =215
                     BorderWidth =3
-                    Left =11640
-                    Top =7860
+                    Left =7620
+                    Top =9780
                     TabIndex =27
                     BorderColor =10921638
                     Name ="Site Requires DDD Validation"
@@ -1661,15 +1676,16 @@ Begin Form
                     EventProcPrefix ="Site_Requires_DDD_Validation"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =11640
-                    LayoutCachedTop =7860
-                    LayoutCachedWidth =11900
-                    LayoutCachedHeight =8100
+                    LayoutCachedLeft =7620
+                    LayoutCachedTop =9780
+                    LayoutCachedWidth =7880
+                    LayoutCachedHeight =10020
                     Begin
                         Begin Label
+                            Visible = NotDefault
                             OverlapFlags =215
-                            Left =8640
-                            Top =7800
+                            Left =4620
+                            Top =9720
                             Width =2880
                             Height =315
                             FontSize =12
@@ -1677,23 +1693,24 @@ Begin Form
                             Name ="Label67"
                             Caption ="Site Requires DDD Validation"
                             GridlineColor =10921638
-                            LayoutCachedLeft =8640
-                            LayoutCachedTop =7800
-                            LayoutCachedWidth =11520
-                            LayoutCachedHeight =8115
+                            LayoutCachedLeft =4620
+                            LayoutCachedTop =9720
+                            LayoutCachedWidth =7500
+                            LayoutCachedHeight =10035
                             ForeTint =100.0
                         End
                     End
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
+                    Visible = NotDefault
                     SpecialEffect =4
                     BorderWidth =3
                     OverlapFlags =215
                     IMESentenceMode =3
                     ColumnCount =2
-                    Left =11100
-                    Top =6900
+                    Left =7080
+                    Top =10980
                     Width =960
                     Height =315
                     TabIndex =28
@@ -1712,17 +1729,18 @@ Begin Form
                     GridlineColor =10921638
                     AllowValueListEdits =0
 
-                    LayoutCachedLeft =11100
-                    LayoutCachedTop =6900
-                    LayoutCachedWidth =12060
-                    LayoutCachedHeight =7215
+                    LayoutCachedLeft =7080
+                    LayoutCachedTop =10980
+                    LayoutCachedWidth =8040
+                    LayoutCachedHeight =11295
                     BackThemeColorIndex =7
                     BackTint =20.0
                     Begin
                         Begin Label
+                            Visible = NotDefault
                             OverlapFlags =215
-                            Left =8580
-                            Top =6900
+                            Left =4560
+                            Top =10980
                             Width =2400
                             Height =315
                             FontSize =12
@@ -1730,10 +1748,10 @@ Begin Form
                             Name ="Label70"
                             Caption ="Site Inspection Required"
                             GridlineColor =10921638
-                            LayoutCachedLeft =8580
-                            LayoutCachedTop =6900
-                            LayoutCachedWidth =10980
-                            LayoutCachedHeight =7215
+                            LayoutCachedLeft =4560
+                            LayoutCachedTop =10980
+                            LayoutCachedWidth =6960
+                            LayoutCachedHeight =11295
                             ForeTint =100.0
                         End
                     End
@@ -1800,7 +1818,7 @@ Begin Form
                     Enabled = NotDefault
                     OverlapFlags =215
                     Left =14520
-                    Top =4620
+                    Top =7620
                     Width =2100
                     Height =780
                     FontSize =16
@@ -1812,9 +1830,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =14520
-                    LayoutCachedTop =4620
+                    LayoutCachedTop =7620
                     LayoutCachedWidth =16620
-                    LayoutCachedHeight =5400
+                    LayoutCachedHeight =8400
                     ForeThemeColorIndex =1
                     ForeTint =100.0
                     UseTheme =1
@@ -1844,7 +1862,7 @@ Begin Form
                     Enabled = NotDefault
                     OverlapFlags =215
                     Left =12300
-                    Top =4620
+                    Top =7620
                     Width =2100
                     Height =780
                     FontSize =16
@@ -1856,9 +1874,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =12300
-                    LayoutCachedTop =4620
+                    LayoutCachedTop =7620
                     LayoutCachedWidth =14400
-                    LayoutCachedHeight =5400
+                    LayoutCachedHeight =8400
                     ForeThemeColorIndex =1
                     ForeTint =100.0
                     UseTheme =1
@@ -1883,6 +1901,324 @@ Begin Form
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
                     Overlaps =1
+                End
+                Begin Label
+                    FontUnderline = NotDefault
+                    OverlapFlags =215
+                    Left =8280
+                    Top =2280
+                    Width =1080
+                    Height =360
+                    FontSize =12
+                    FontWeight =700
+                    BorderColor =8355711
+                    ForeColor =12874308
+                    Name ="Label82"
+                    Caption ="Triage"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =8280
+                    LayoutCachedTop =2280
+                    LayoutCachedWidth =9360
+                    LayoutCachedHeight =2640
+                    ForeThemeColorIndex =8
+                    ForeTint =100.0
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    SpecialEffect =4
+                    BorderWidth =3
+                    OverlapFlags =223
+                    TextAlign =1
+                    IMESentenceMode =3
+                    Left =10380
+                    Top =2700
+                    Width =1140
+                    Height =360
+                    TabIndex =32
+                    BackColor =13431551
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="tbAmountWorkComplete"
+                    ControlSource ="% Work Complete"
+                    Format ="Percent"
+                    AfterUpdate ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =10380
+                    LayoutCachedTop =2700
+                    LayoutCachedWidth =11520
+                    LayoutCachedHeight =3060
+                    BackThemeColorIndex =7
+                    BackTint =20.0
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =8580
+                            Top =2700
+                            Width =1740
+                            Height =315
+                            FontSize =12
+                            BorderColor =8355711
+                            Name ="Label83"
+                            Caption ="% Work Complete"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =8580
+                            LayoutCachedTop =2700
+                            LayoutCachedWidth =10320
+                            LayoutCachedHeight =3015
+                            ForeTint =100.0
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =223
+                    Left =11580
+                    Top =2700
+                    Width =900
+                    TabIndex =33
+                    ForeColor =4210752
+                    Name ="cmdAdjust"
+                    Caption ="Adjust"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =11580
+                    LayoutCachedTop =2700
+                    LayoutCachedWidth =12480
+                    LayoutCachedHeight =3060
+                    BackColor =15123357
+                    BorderColor =15123357
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    SpecialEffect =4
+                    BorderWidth =3
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    ColumnCount =2
+                    Left =12360
+                    Top =3240
+                    Width =960
+                    Height =315
+                    TabIndex =34
+                    BackColor =13431551
+                    BorderColor =10921638
+                    ForeColor =3484194
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
+                    Name ="cboDimensionsKnown"
+                    ControlSource ="DimensionsKnown"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT lutblYesNoUnk.YNU, lutblYesNoUnk.Description FROM lutblYesNoUnk WHERE ((("
+                        "lutblYesNoUnk.YNU)<>\"U\")); "
+                    ColumnWidths ="0;720"
+                    StatusBarText ="DVS Validation"
+                    OnChange ="[Event Procedure]"
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    LayoutCachedLeft =12360
+                    LayoutCachedTop =3240
+                    LayoutCachedWidth =13320
+                    LayoutCachedHeight =3555
+                    BackThemeColorIndex =7
+                    BackTint =20.0
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =8580
+                            Top =3060
+                            Width =3720
+                            Height =540
+                            FontSize =12
+                            BorderColor =8355711
+                            Name ="Label89"
+                            Caption ="Are the dimensions known for the completed work?"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =8580
+                            LayoutCachedTop =3060
+                            LayoutCachedWidth =12300
+                            LayoutCachedHeight =3600
+                            ForeTint =100.0
+                        End
+                    End
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    RowSourceTypeInt =1
+                    SpecialEffect =4
+                    BorderWidth =3
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    Left =11340
+                    Top =3780
+                    Width =1980
+                    Height =315
+                    TabIndex =35
+                    BackColor =13431551
+                    BorderColor =10921638
+                    ForeColor =3484194
+                    Name ="cboDimensionsFrom"
+                    ControlSource ="DimensionsFrom"
+                    RowSourceType ="Value List"
+                    RowSource ="\"Site Inspection\";\"RFI to Applicant\""
+                    ColumnWidths ="2880"
+                    StatusBarText ="DVS Validation"
+                    OnChange ="[Event Procedure]"
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    LayoutCachedLeft =11340
+                    LayoutCachedTop =3780
+                    LayoutCachedWidth =13320
+                    LayoutCachedHeight =4095
+                    BackThemeColorIndex =7
+                    BackTint =20.0
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =8580
+                            Top =3660
+                            Width =2700
+                            Height =540
+                            FontSize =12
+                            BorderColor =8355711
+                            Name ="Label93"
+                            Caption ="Where will dimensions come from?"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =8580
+                            LayoutCachedTop =3660
+                            LayoutCachedWidth =11280
+                            LayoutCachedHeight =4200
+                            ForeTint =100.0
+                        End
+                    End
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    SpecialEffect =4
+                    BorderWidth =3
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    ColumnCount =2
+                    Left =12360
+                    Top =4320
+                    Width =960
+                    Height =315
+                    TabIndex =36
+                    BackColor =13431551
+                    BorderColor =10921638
+                    ForeColor =3484194
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
+                    Name ="cboSampleVerify"
+                    ControlSource ="PartOfVerificationSample"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT lutblYesNoUnk.YNU, lutblYesNoUnk.Description FROM lutblYesNoUnk WHERE ((("
+                        "lutblYesNoUnk.YNU)<>\"U\")); "
+                    ColumnWidths ="0;720"
+                    StatusBarText ="DVS Validation"
+                    AfterUpdate ="[Event Procedure]"
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    LayoutCachedLeft =12360
+                    LayoutCachedTop =4320
+                    LayoutCachedWidth =13320
+                    LayoutCachedHeight =4635
+                    BackThemeColorIndex =7
+                    BackTint =20.0
+                    Begin
+                        Begin Label
+                            OverlapFlags =223
+                            Left =8580
+                            Top =4260
+                            Width =3780
+                            Height =600
+                            FontSize =12
+                            BorderColor =8355711
+                            Name ="Label96"
+                            Caption ="Will this site be included in a field verification of completed work?"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =8580
+                            LayoutCachedTop =4260
+                            LayoutCachedWidth =12360
+                            LayoutCachedHeight =4860
+                            ForeTint =100.0
+                        End
+                    End
+                End
+                Begin Label
+                    OverlapFlags =247
+                    Left =13380
+                    Top =2580
+                    Width =3540
+                    Height =2940
+                    BorderColor =8355711
+                    ForeColor =8355711
+                    Name ="lbTriage"
+                    Caption ="N/A"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =13380
+                    LayoutCachedTop =2580
+                    LayoutCachedWidth =16920
+                    LayoutCachedHeight =5520
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    SpecialEffect =4
+                    BorderWidth =3
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    ColumnCount =2
+                    Left =12360
+                    Top =4980
+                    Width =960
+                    Height =315
+                    TabIndex =37
+                    BackColor =13431551
+                    BorderColor =10921638
+                    ForeColor =3484194
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
+                    Name ="cboKnownDimensionsInEMMIE"
+                    ControlSource ="KnownDimensionsInEMMIE"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT lutblYesNoUnk.YNU, lutblYesNoUnk.Description FROM lutblYesNoUnk WHERE ((("
+                        "lutblYesNoUnk.YNU)<>\"U\")); "
+                    ColumnWidths ="0;720"
+                    StatusBarText ="DVS Validation"
+                    AfterUpdate ="[Event Procedure]"
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    LayoutCachedLeft =12360
+                    LayoutCachedTop =4980
+                    LayoutCachedWidth =13320
+                    LayoutCachedHeight =5295
+                    BackThemeColorIndex =7
+                    BackTint =20.0
+                    Begin
+                        Begin Label
+                            OverlapFlags =223
+                            Left =8580
+                            Top =4920
+                            Width =3780
+                            Height =600
+                            FontSize =12
+                            BorderColor =8355711
+                            Name ="Label99"
+                            Caption ="Have the known dimensions been reviewed and entered into EMMIE?"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =8580
+                            LayoutCachedTop =4920
+                            LayoutCachedWidth =12360
+                            LayoutCachedHeight =5520
+                            ForeTint =100.0
+                        End
+                    End
                 End
             End
         End
@@ -1954,6 +2290,7 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
+                    Overlaps =1
                 End
                 Begin CommandButton
                     Visible = NotDefault
@@ -2327,27 +2664,138 @@ Option Explicit
 Private Const FormItemType As String = "Site" 'used in determining what type of record is handled
 
 'BUTTONS
-'Private Sub cmdAssignPdcComplete_Click()
-''///Error Handling
-'    If gcfHandleErrors Then On Error GoTo PROC_ERR
-'    PushCallStack Me.name & "." & "cmdAssignPdcComplete_Click"
-''///Error Handling
-'
-''///Code
-'    CompleteReview "Assign PDC"
-''///Code
-'
-''///ErrorHandling
-'PROC_EXIT:
-'    PopCallStack
-'    Exit Sub
-'
-'PROC_ERR:
-'    GlobalErrHandler
-'    Resume PROC_EXIT
-''///ErrorHandling
-'End Sub
 
+Private Sub cboDimensionsKnown_Change()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cboDimensionsKnown_Change"
+'///Error Handling
+
+'///Code
+    DescribeCurrentResults
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+
+
+End Sub
+
+Private Sub cboDimensionsFrom_Change()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cboDimensionsFrom_Change"
+'///Error Handling
+
+'///Code
+    DescribeCurrentResults
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+End Sub
+
+
+Private Sub cboKnownDimensionsInEMMIE_AfterUpdate()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cboSampleVerify_AfterUpdate"
+'///Error Handling
+
+'///Code
+    DescribeCurrentResults
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+End Sub
+
+Private Sub cboSampleVerify_AfterUpdate()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cboSampleVerify_AfterUpdate"
+'///Error Handling
+
+'///Code
+    DescribeCurrentResults
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+End Sub
+
+Private Sub cmdAdjust_Click()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cmdAdjust_Click"
+'///Error Handling
+
+'///Code
+    Me.tbAmountWorkComplete.Enabled = Not Me.tbAmountWorkComplete.Enabled
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+
+End Sub
+
+Private Sub tbAmountWorkComplete_AfterUpdate()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "tbAmountWorkComplete_AfterUpdate"
+'///Error Handling
+
+'///Code
+    Me.cboKnownDimensionsInEMMIE = Null
+    DescribeCurrentResults
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+
+End Sub
 
 'OTHER PAGE EVENTS
 
@@ -2379,7 +2827,6 @@ Private Sub Form_Load()
 '///Error Handling
 
 '///Code
-
     FormFilter.RecordFilterCheck Me.Form, FormItemType
 '///Code
 
@@ -2397,6 +2844,96 @@ End Sub
 'INTERNAL PAGE SPECIFIC CODE
 
 
+Private Sub DescribeCurrentResults()
+    Dim Description As String
+    Dim wc As Single
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "DescribeCurrentResults"
+'///Error Handling
+
+'///Code
+    wc = Nz(Me.tbAmountWorkComplete)
+    If wc <= 0 Then
+        Description = "No work completed. Automatic site inspection needed."
+        Me.cboDimensionsKnown.Visible = False
+        Me.cboDimensionsFrom.Visible = False
+        Me.cboSampleVerify.Visible = False
+        Me.cboKnownDimensionsInEMMIE.Visible = True
+        Me.cboKnownDimensionsInEMMIE.Enabled = False
+        Me.cboKnownDimensionsInEMMIE = "Y"
+    Else
+        Me.cboDimensionsKnown.Visible = True
+        Me.cboSampleVerify.Visible = True
+        
+        If wc < 1 Then
+            Description = Format(Nz(Me.tbAmountWorkComplete), "percent") & " work completed. Site inspection needed for remaining " & Format(1 - Nz(Me.tbAmountWorkComplete), "percent") & "."
+            Me.cboDimensionsFrom = "Site Inspection"
+            Me.cboDimensionsFrom.Enabled = False
+            Me.cboSampleVerify = "Y"
+            Me.cboSampleVerify.Enabled = False
+        Else
+            Description = "All work completed."
+            Me.cboDimensionsFrom.Enabled = True
+            Me.cboSampleVerify.Enabled = True
+        End If
+        
+        If Nz(Me.cboDimensionsKnown, "") = "Y" Then
+            Description = Description & " Dimensions are known so RFI will not prevent sample verification."
+            Me.cboDimensionsFrom.Visible = False
+            Me.cboKnownDimensionsInEMMIE.Visible = True
+            Me.cboKnownDimensionsInEMMIE.Enabled = True
+        ElseIf Nz(Me.cboDimensionsKnown, "") = "N" Then
+            Me.cboDimensionsFrom.Visible = True
+            Me.cboKnownDimensionsInEMMIE.Visible = False
+            
+            If Nz(Me.cboDimensionsFrom, "") = "RFI to Applicant" Then
+                Description = Description & " RFI will block site inspection from being ordered."
+                Me.cboSampleVerify.Enabled = True
+                If Nz(Me.cboSampleVerify, "") = "Y" Then
+                    Me.cboKnownDimensionsInEMMIE = "N"
+                End If
+            ElseIf Nz(Me.cboDimensionsFrom, "") = "Site Inspection" Then
+                Description = Description & " RFI will not prevent site inspection."
+                Me.cboSampleVerify = "Y"
+                Me.cboSampleVerify.Enabled = False
+            Else
+            End If
+        Else
+            Me.cboDimensionsFrom.Visible = False
+            Me.cboKnownDimensionsInEMMIE.Visible = False
+        
+        End If
+        If Nz(Me.cboSampleVerify, "") = "Y" Then
+            Description = Description & " This site is selected as part of the field verification sample."
+            If Nz(Me.cboKnownDimensionsInEMMIE, "") = "Y" Then
+                Description = Description & " This site is ready for site inspection."
+            Else
+                Description = Description & " Known dimension review must be completed before sending to site inspection."
+            End If
+        ElseIf Nz(Me.cboSampleVerify, "") = "N" Then
+            Description = Description & " This site is not part of the field verification sample. This site is not blocking a site inspection from being ordered."
+            Me.cboKnownDimensionsInEMMIE.Visible = False
+        Else
+            Me.cboKnownDimensionsInEMMIE.Visible = False
+        End If
+    End If
+    Me.lbTriage.Caption = Description
+' =IIf([DimensionsFrom] Is Null,"Please Select",IIf([DimensionsFrom]="Site Inspection","RFI will not prevent sample verificaiton","RFI will block site inspection from being ordered"))
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+End Sub
+
+
 Private Sub RepaintForm()
 
 '///Error Handling
@@ -2408,6 +2945,7 @@ Private Sub RepaintForm()
     EnableFormArea "Generate Work Order"
     EnableFormArea "Draft DDD"
     Me.subHistory.Requery
+    DescribeCurrentResults
 '///Code
 
 '///ErrorHandling
@@ -2667,7 +3205,7 @@ Private Sub HandleStandardDisposition(ReviewType As String, frm As Form)
         Case "RFI"
             Reviews.CreateRFI GetItemDims(ReviewType)
             Reviews.EnterReview GetItemDims("RFI")
-            DoCmd.OpenForm "frmRFIRequest", , , GetItemDims.WhereID(False)
+            DoCmd.OpenForm "frmRFIRouting", , , GetItemDims.WhereID(False)
         Case "RSN"
             Reviews.EnterReview GetItemDims(ReviewType), frm.cboAssign, "Reassigned to " & frm.cboAssign
         Case "RW"

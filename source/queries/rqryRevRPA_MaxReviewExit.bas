@@ -69,9 +69,6 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="MaxOfreviewexitdate"
-    End
-    Begin
         dbText "Name" ="PIVOT"
         dbLong "AggregateType" ="-1"
     End
@@ -121,33 +118,42 @@ Begin
     End
     Begin
         dbText "Name" ="Assign PDM"
-    End
-    Begin
-        dbText "Name" ="OCC Review"
-    End
-    Begin
-        dbText "Name" ="PAGS Review"
-    End
-    Begin
-        dbText "Name" ="DIU Enter RSM"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="DIU Enter Call"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="DIU Enter RSM"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="OCC Review"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="Ops RPA Eligibility"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="PAGS Review"
+        dbLong "AggregateType" ="-1"
+    End
+	Begin
+        dbText "Name" ="MaxOfreviewexitdate"
     End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =901
-    Bottom =539
+    Right =1153
+    Bottom =860
     Left =-1
     Top =-1
-    Right =885
-    Bottom =318
+    Right =1137
+    Bottom =301
     Left =0
     Top =0
     ColumnsShown =559

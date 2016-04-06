@@ -15,16 +15,16 @@ Begin Form
     Width =16500
     DatasheetFontHeight =11
     ItemSuffix =70
-    Left =60
-    Top =5160
-    Right =16425
-    Bottom =11760
+    Left =405
+    Top =6045
+    Right =16515
+    Bottom =12675
     DatasheetGridlinesColor =15132391
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin
-        0x3c19f5aeb4b9e440
+        0xf33f0d8fabbbe440
     End
-    RecordSource ="fqrySiteInfo"
+    RecordSource ="fqrySiteEnterListofDamages"
     Caption ="subformEnterListofDamages"
     BeforeUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"
@@ -77,7 +77,6 @@ Begin Form
             ForeTint =75.0
             GridlineThemeColorIndex =1
             GridlineShade =65.0
-            UseTheme =1
             Shape =1
             Gradient =12
             BackThemeColorIndex =4
@@ -87,14 +86,6 @@ Begin Form
             BorderThemeColorIndex =4
             BorderTint =60.0
             ThemeFontIndex =1
-            HoverThemeColorIndex =4
-            HoverTint =40.0
-            PressedThemeColorIndex =4
-            PressedShade =75.0
-            HoverForeThemeColorIndex =0
-            HoverForeTint =75.0
-            PressedForeThemeColorIndex =0
-            PressedForeTint =75.0
         End
         Begin CheckBox
             BorderLineStyle =0
@@ -371,7 +362,7 @@ Begin Form
                     Left =1560
                     Top =1380
                     Height =363
-                    ColumnOrder =0
+                    ColumnOrder =1
                     TabIndex =3
                     BackColor =13431551
                     BorderColor =10921638
@@ -562,7 +553,7 @@ Begin Form
                     Name ="Requires Site Inspection"
                     ControlSource ="Requires Site Inspection"
                     RowSourceType ="Table/Query"
-                    RowSource ="lutblYesNoUnk"
+                    RowSource ="qryYesNo"
                     ColumnWidths ="360;1440"
                     StatusBarText ="LoD"
                     EventProcPrefix ="Requires_Site_Inspection"
@@ -1176,10 +1167,6 @@ Begin Form
                     LayoutCachedHeight =5925
                     BackColor =15123357
                     BorderColor =15123357
-                    HoverColor =15652797
-                    PressedColor =11957550
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
@@ -1196,6 +1183,7 @@ Begin Form
                     Top =120
                     Width =1530
                     Height =300
+                    ColumnOrder =0
                     FontSize =14
                     BorderColor =10921638
                     ForeColor =16777215
@@ -1304,17 +1292,8 @@ Begin Form
                     LayoutCachedWidth =8760
                     LayoutCachedHeight =6000
                     PictureCaptionArrangement =3
-                    UseTheme =0
                     BackColor =15123357
                     BorderColor =15123357
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeThemeColorIndex =-1
-                    HoverForeTint =100.0
-                    PressedForeThemeColorIndex =-1
-                    PressedForeTint =100.0
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
@@ -1393,17 +1372,8 @@ Begin Form
                     LayoutCachedWidth =11355
                     LayoutCachedHeight =6000
                     PictureCaptionArrangement =3
-                    UseTheme =0
                     BackColor =15123357
                     BorderColor =15123357
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeThemeColorIndex =-1
-                    HoverForeTint =100.0
-                    PressedForeThemeColorIndex =-1
-                    PressedForeTint =100.0
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
@@ -1498,17 +1468,8 @@ Begin Form
                     LayoutCachedTop =5400
                     LayoutCachedWidth =9396
                     LayoutCachedHeight =5976
-                    UseTheme =0
                     BackColor =15123357
                     BorderColor =15123357
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeThemeColorIndex =-1
-                    HoverForeTint =100.0
-                    PressedForeThemeColorIndex =-1
-                    PressedForeTint =100.0
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
@@ -1601,17 +1562,8 @@ Begin Form
                     LayoutCachedTop =5400
                     LayoutCachedWidth =10056
                     LayoutCachedHeight =5976
-                    UseTheme =0
                     BackColor =15123357
                     BorderColor =15123357
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeThemeColorIndex =-1
-                    HoverForeTint =100.0
-                    PressedForeThemeColorIndex =-1
-                    PressedForeTint =100.0
                     WebImagePaddingLeft =2
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1

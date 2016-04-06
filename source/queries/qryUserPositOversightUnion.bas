@@ -19,4 +19,8 @@ Begin
         dbText "Name" ="Position"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="positionTier"
+        dbLong "AggregateType" ="-1"
+    End
 End

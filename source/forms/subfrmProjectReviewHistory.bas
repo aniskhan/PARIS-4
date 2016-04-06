@@ -15,7 +15,7 @@ Begin Form
     Width =12300
     DatasheetFontHeight =11
     ItemSuffix =96
-    Right =20520
+    Right =21300
     Bottom =12645
     DatasheetGridlinesColor =15132391
     OrderBy ="[ReviewEntryDate] DESC"

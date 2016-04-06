@@ -38,6 +38,11 @@ Begin OutputColumns
     Expression ="tblSites.[Site Validation Returned]"
     Expression ="revtblSite.[Lane Assigned]"
     Expression ="revtblSite.ReviewType"
+    Expression ="tblSites.[% Work Complete]"
+    Expression ="tblSites.DimensionsKnown"
+    Expression ="tblSites.DimensionsFrom"
+    Expression ="tblSites.PartOfVerificationSample"
+    Expression ="tblSites.KnownDimensionsInEMMIE"
 End
 Begin Joins
     LeftTable ="tblSites"
@@ -191,17 +196,37 @@ Begin
         dbText "Name" ="revtblSite.ReviewType"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="tblSites.[% Work Complete]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSites.DimensionsKnown"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSites.DimensionsFrom"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSites.PartOfVerificationSample"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSites.KnownDimensionsInEMMIE"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =767
-    Bottom =834
+    Right =1153
+    Bottom =860
     Left =-1
     Top =-1
-    Right =751
-    Bottom =351
+    Right =1137
+    Bottom =397
     Left =0
     Top =0
     ColumnsShown =539

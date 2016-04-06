@@ -10,18 +10,18 @@ Begin Report
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =21660
+    Width =22380
     DatasheetFontHeight =11
-    ItemSuffix =76
+    ItemSuffix =77
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0x8e596cd791b1e440
+        0x91f0f838b2bbe440
     End
     RecordSource ="qryProjectFormulationReport"
     Caption ="RptProjectFormulation"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
-        0x6801000068010000680100006801000000000000106800009402000001000000 ,
+        0x68010000680100006801000068010000000000009c5400009402000001000000 ,
         0x010000006801000000000000a10700000100000001000000
     End
     FilterOnLoad =0
@@ -914,7 +914,7 @@ Begin Report
                 Begin Label
                     FontUnderline = NotDefault
                     TextAlign =1
-                    Left =14220
+                    Left =11580
                     Top =540
                     Width =1800
                     Height =1020
@@ -928,9 +928,9 @@ Begin Report
                     EventProcPrefix ="Cause_of_Damage___wind__flood__etc__Label"
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =14220
+                    LayoutCachedLeft =11580
                     LayoutCachedTop =540
-                    LayoutCachedWidth =16020
+                    LayoutCachedWidth =13380
                     LayoutCachedHeight =1560
                     BackThemeColorIndex =9
                     BackTint =20.0
@@ -942,7 +942,7 @@ Begin Report
                 Begin Label
                     FontUnderline = NotDefault
                     TextAlign =2
-                    Left =13020
+                    Left =14820
                     Top =540
                     Width =1140
                     Height =1020
@@ -955,9 +955,9 @@ Begin Report
                     EventProcPrefix ="Requires_Site_Inspection_Label"
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =13020
+                    LayoutCachedLeft =14820
                     LayoutCachedTop =540
-                    LayoutCachedWidth =14160
+                    LayoutCachedWidth =15960
                     LayoutCachedHeight =1560
                     ForeThemeColorIndex =8
                     ForeTint =100.0
@@ -1022,9 +1022,9 @@ Begin Report
                     FontUnderline = NotDefault
                     TextAlign =2
                     Left =19440
-                    Top =540
+                    Top =480
                     Width =1740
-                    Height =1020
+                    Height =1140
                     FontWeight =700
                     BackColor =14282978
                     BorderColor =12874308
@@ -1036,9 +1036,9 @@ Begin Report
                     GridlineStyleBottom =1
                     GridlineColor =10921638
                     LayoutCachedLeft =19440
-                    LayoutCachedTop =540
+                    LayoutCachedTop =480
                     LayoutCachedWidth =21180
-                    LayoutCachedHeight =1560
+                    LayoutCachedHeight =1620
                     BackThemeColorIndex =9
                     BackTint =20.0
                     BorderThemeColorIndex =8
@@ -1049,7 +1049,7 @@ Begin Report
                 Begin Label
                     FontUnderline = NotDefault
                     TextAlign =2
-                    Left =11640
+                    Left =13440
                     Top =540
                     Width =1320
                     Height =1020
@@ -1062,9 +1062,9 @@ Begin Report
                     EventProcPrefix ="Subrecipient_priority__Low__Med__High__Label"
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =11640
+                    LayoutCachedLeft =13440
                     LayoutCachedTop =540
-                    LayoutCachedWidth =12960
+                    LayoutCachedWidth =14760
                     LayoutCachedHeight =1560
                     ForeThemeColorIndex =8
                     ForeTint =100.0
@@ -1097,12 +1097,37 @@ Begin Report
                     ForeThemeColorIndex =8
                     ForeTint =100.0
                 End
+                Begin Label
+                    FontUnderline = NotDefault
+                    TextAlign =2
+                    Left =21240
+                    Top =540
+                    Width =1080
+                    Height =315
+                    FontWeight =700
+                    BackColor =14282978
+                    BorderColor =12874308
+                    ForeColor =12874308
+                    Name ="Label76"
+                    Caption ="Labor Type"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =21240
+                    LayoutCachedTop =540
+                    LayoutCachedWidth =22320
+                    LayoutCachedHeight =855
+                    BackThemeColorIndex =9
+                    BackTint =20.0
+                    BorderThemeColorIndex =8
+                    BorderTint =100.0
+                    ForeThemeColorIndex =8
+                    ForeTint =100.0
+                End
             End
         End
         Begin Section
             KeepTogether = NotDefault
             CanGrow = NotDefault
-            Height =660
+            Height =480
             Name ="Detail"
             BackThemeColorIndex =1
             Begin
@@ -1237,7 +1262,7 @@ Begin Report
                     BackStyle =0
                     IMESentenceMode =3
                     ColumnCount =2
-                    Left =13020
+                    Left =14820
                     Width =1140
                     Height =330
                     FontWeight =500
@@ -1255,8 +1280,8 @@ Begin Report
                     GridlineColor =10921638
                     AllowValueListEdits =0
 
-                    LayoutCachedLeft =13020
-                    LayoutCachedWidth =14160
+                    LayoutCachedLeft =14820
+                    LayoutCachedWidth =15960
                     LayoutCachedHeight =330
                 End
                 Begin ComboBox
@@ -1349,7 +1374,7 @@ Begin Report
                     BackStyle =0
                     IMESentenceMode =3
                     ListWidth =1440
-                    Left =11640
+                    Left =13440
                     Width =1260
                     Height =330
                     FontWeight =500
@@ -1366,8 +1391,8 @@ Begin Report
                     EventProcPrefix ="Subrecipient_priority__Low__Med__High_"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =11640
-                    LayoutCachedWidth =12900
+                    LayoutCachedLeft =13440
+                    LayoutCachedWidth =14700
                     LayoutCachedHeight =330
                 End
                 Begin TextBox
@@ -1375,7 +1400,7 @@ Begin Report
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =16140
+                    Left =16020
                     Width =1020
                     Height =330
                     FontWeight =500
@@ -1387,8 +1412,8 @@ Begin Report
                     EventProcPrefix ="Critical_Facility"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =16140
-                    LayoutCachedWidth =17160
+                    LayoutCachedLeft =16020
+                    LayoutCachedWidth =17040
                     LayoutCachedHeight =330
                 End
                 Begin ComboBox
@@ -1396,7 +1421,7 @@ Begin Report
                     BackStyle =0
                     IMESentenceMode =3
                     ListWidth =1440
-                    Left =14340
+                    Left =11700
                     Width =1800
                     Height =330
                     FontWeight =500
@@ -1413,9 +1438,32 @@ Begin Report
                     EventProcPrefix ="Cause_of_Damage___wind__flood__etc_"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =14340
-                    LayoutCachedWidth =16140
+                    LayoutCachedLeft =11700
+                    LayoutCachedWidth =13500
                     LayoutCachedHeight =330
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =21240
+                    Width =1080
+                    Height =315
+                    FontWeight =500
+                    TabIndex =13
+                    BorderColor =10921638
+                    ForeColor =3484194
+                    Name ="Labor Type"
+                    ControlSource ="Labor Type"
+                    EventProcPrefix ="Labor_Type"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =21240
+                    LayoutCachedWidth =22320
+                    LayoutCachedHeight =315
+                    ForeThemeColorIndex =2
+                    ForeTint =100.0
+                    ForeShade =50.0
                 End
             End
         End

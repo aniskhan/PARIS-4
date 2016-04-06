@@ -1,0 +1,11 @@
+﻿ID	FurthestProgression	Lane	FurthestProgressionReviewType	FurthestProgressionReviewItemType	RecommendedReviewType	RecommendedReviewItemType
+1	Hold in Phase 1		PAGS Review	RPA	Ops Initial	RPA
+2	Hold in DVS Review	EX	Assign DVS	EXProject	Assign DVS	EXProject
+3	Hold in Phase 2	EX	PDM Concurrence	EXProject	Assign DVS	EXProject
+4	Hold in Phase 3	EX	Submit in EMMIE	EXProject	Assign DAS	EXProject
+5	Hold in DVS Review	ST	Assign DVS	STProject	Assign DVS	STProject
+6	Hold in Phase 2	ST	DDD Concurrence	STProject	Assign DVS	STProject
+7	Hold in Phase 3	ST	Submit in EMMIE	STProject	Assign DAS	STProject
+8	Hold in DVS Review	SP	Assign Tech Spec	SPProject	Assign Tech Spec	SPProject
+9	Hold in Phase 2	SP	DDD Concurrence	SPProject	Assign DVS	SPProject
+10	Hold in Phase 3	SP	Submit in EMMIE	SPProject	Assign DAS	SPProject
