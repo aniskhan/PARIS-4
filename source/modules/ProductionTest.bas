@@ -304,19 +304,19 @@ Application.Echo False
                 'do nothing, no settings have changed
             Else
             formSettingsAsDeclared = False
-'               With rs
-'                    .Edit
-'                    !frmRecordSource = frm.RecordSource
-'                    !frmFilter = frm.Filter
-'                    !frmFilterOnLoad = frm.FilterOnLoad
-'                    !frmOrderBy = frm.OrderBy
-'                    !frmDataEntry = frm.DataEntry
-'                    !frmAllowAdditions = frm.AllowAdditions
-'                    !frmAllowDeletions = frm.AllowDeletions
-'                    !frmAllowEdits = frm.AllowEdits
-'                    !frmAllowFilters = frm.AllowFilters
-'                    .Update
-'                End With
+' ' '               With rs
+' ' '                    .Edit
+' ' '                    !frmRecordSource = frm.RecordSource
+' ' '                    !frmFilter = frm.Filter
+' ' '                    !frmFilterOnLoad = frm.FilterOnLoad
+' ' '                    !frmOrderBy = frm.OrderBy
+' ' '                    !frmDataEntry = frm.DataEntry
+' ' '                    !frmAllowAdditions = frm.AllowAdditions
+' ' '                    !frmAllowDeletions = frm.AllowDeletions
+' ' '                    !frmAllowEdits = frm.AllowEdits
+' ' '                    !frmAllowFilters = frm.AllowFilters
+' ' '                    .Update
+' ' '                End With
 
        
                 If rs!frmRecordSource <> frm.RecordSource Then
@@ -350,7 +350,7 @@ Application.Echo False
             
             End If
         End If
-        DoCmd.Close acForm, frm.name, acSaveYes
+        DoCmd.Close acForm, frm.name, acSaveNo
     Next obj
     
 ExitFUNC:
