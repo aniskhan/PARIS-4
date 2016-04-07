@@ -7,7 +7,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    OrderByOn = NotDefault
     AllowDesignChanges = NotDefault
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
@@ -16,15 +15,14 @@ Begin Form
     Width =8820
     DatasheetFontHeight =11
     ItemSuffix =28
-    Left =28260
-    Top =-4605
-    Right =-27916
-    Bottom =3420
+    Left =30225
+    Top =2505
+    Right =-21796
+    Bottom =15150
     DatasheetGridlinesColor =15132391
-    Filter ="[County] Like '*col*'"
-    OrderBy ="[County]"
+    OrderBy ="[Subrecipient Name]"
     RecSrcDt = Begin
-        0x752d967915bae440
+        0x77d9eadc73bce440
     End
     RecordSource ="rqryRpaEnterRSM"
     Caption ="Search"

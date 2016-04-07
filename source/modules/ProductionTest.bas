@@ -278,6 +278,7 @@ Dim obj As AccessObject
 Dim frm As Form
 Dim strPrompt As String
 Dim Response As Integer
+Dim Response2 As Integer
 Dim rsFilter As String
 
 formSettingsAsDeclared = True
@@ -285,12 +286,15 @@ strPathFSTool = "C:\PARIS-4\production\formSettings\PARIS_FormSettings.accdb"
 Set wksp = CreateWorkspace("", "admin", "", dbUseJet)
 Set dbFSTool = wksp.OpenDatabase(strPathFSTool)
 
-Application.Echo False
+
     For Each obj In CurrentProject.AllForms
+    Application.Echo False
+        On Error Resume Next
     rsFilter = "frmName = '" & obj.name & "'"
     Set rs = dbFSTool.OpenRecordset("SELECT * FROM tblFormSettings WHERE " & rsFilter)
         If Not (rs.BOF And rs.EOF) = True Then
             DoCmd.OpenForm (obj.name), acDesign
+            
             Set frm = Forms(obj.name)
             If rs!frmRecordSource = frm.RecordSource And _
                 rs!frmFilter = frm.Filter And _
@@ -302,22 +306,10 @@ Application.Echo False
                 rs!frmAllowEdits = frm.AllowEdits And _
                 rs!frmAllowFilters = frm.AllowFilters Then
                 'do nothing, no settings have changed
+                DoCmd.Close acForm, frm.name, acSaveNo
+                Resume Next
             Else
-            formSettingsAsDeclared = False
-' ' '               With rs
-' ' '                    .Edit
-' ' '                    !frmRecordSource = frm.RecordSource
-' ' '                    !frmFilter = frm.Filter
-' ' '                    !frmFilterOnLoad = frm.FilterOnLoad
-' ' '                    !frmOrderBy = frm.OrderBy
-' ' '                    !frmDataEntry = frm.DataEntry
-' ' '                    !frmAllowAdditions = frm.AllowAdditions
-' ' '                    !frmAllowDeletions = frm.AllowDeletions
-' ' '                    !frmAllowEdits = frm.AllowEdits
-' ' '                    !frmAllowFilters = frm.AllowFilters
-' ' '                    .Update
-' ' '                End With
-
+                formSettingsAsDeclared = False
        
                 If rs!frmRecordSource <> frm.RecordSource Then
                     Debug.Print frm.name, "RecordSource has changed.", rs!frmRecordSource, frm.RecordSource
@@ -348,14 +340,59 @@ Application.Echo False
                     Debug.Print frm.name, "AllowFilters has changed.", rs!frmAllowFilters, frm.AllowFilters
                 End If
             
+'''''''''           '''''''''           ''''''''''
+                Application.Echo True
+                strPrompt = "Would you like to reset [" & obj.name & "] to it's declared settings?"
+                
+                Response = MsgBox(strPrompt, vbYesNoCancel)
+                
+                If Response = vbYes Then
+
+                    frm.RecordSource = rs!frmRecordSource
+                    frm.Filter = rs!frmFilter
+                    frm.FilterOnLoad = rs!frmFilterOnLoad
+                    frm.OrderBy = rs!frmOrderBy
+                    frm.DataEntry = rs!frmDataEntry
+                    frm.AllowAdditions = rs!frmAllowAdditions
+                    frm.AllowDeletions = rs!frmAllowDeletions
+                    frm.AllowEdits = rs!frmAllowEdits
+                    frm.AllowFilters = rs!frmAllowFilters
+                    DoCmd.Close acForm, frm.name, acSaveYes
+                 End If
+                 If Response = vbNo Then
+                 
+                    strPrompt = "Would you like to declare [" & obj.name & "] with it's current settings?"
+                    Response2 = MsgBox(strPrompt, vbYesNoCancel)
+                    
+                    If Response2 = vbYes Then
+                        With rs
+                            .Edit
+                            !frmName = frm.name
+                            !frmRecordSource = frm.RecordSource
+                            !frmFilter = frm.Filter
+                            !frmFilterOnLoad = frm.FilterOnLoad
+                            !frmOrderBy = frm.OrderBy
+                            !frmDataEntry = frm.DataEntry
+                            !frmAllowAdditions = frm.AllowAdditions
+                            !frmAllowDeletions = frm.AllowDeletions
+                            !frmAllowEdits = frm.AllowEdits
+                            !frmAllowFilters = frm.AllowFilters
+                            .Update
+                            DoCmd.Close acForm, frm.name, acSaveNo
+                        End With
+                    End If
+                    
+                    If Response2 = vbNo Then
+                    'leave the form open
+                    End If
+                 End If
             End If
         End If
-        DoCmd.Close acForm, frm.name, acSaveNo
     Next obj
     
 ExitFUNC:
 If formSettingsAsDeclared = True Then
-   Debug.Print "PASS: All forms settings are as declared."
+    Debug.Print "PASS: All forms settings are as declared."
 Else
     Debug.Print "FAIL: There forms with changed settings."
 End If

@@ -5,7 +5,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =2
     PictureAlignment =2
@@ -15,13 +14,11 @@ Begin Form
     Width =17040
     DatasheetFontHeight =11
     ItemSuffix =33
-    Right =13590
+    Right =13515
     Bottom =12645
     DatasheetGridlinesColor =15132391
-    Filter ="[DisasterID]='4258' and [ApplicantID]='009-77250-00' and [ProjectID]=81 and [Sit"
-        "eID]=1"
     RecSrcDt = Begin
-        0x76b9d6233cbae440
+        0xbe5ab4db73bce440
     End
     RecordSource ="fqrySiteStInspection"
     Caption ="Site Inspection"

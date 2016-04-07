@@ -16,11 +16,11 @@ Begin Form
     Width =15660
     DatasheetFontHeight =11
     ItemSuffix =30
-    Right =24690
-    Bottom =12615
+    Right =13515
+    Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0x3d95abb0b4b9e440
+        0x15d862d273bce440
     End
     RecordSource ="fqryDisasterInfo"
     Caption ="navReports"

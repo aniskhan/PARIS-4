@@ -259,6 +259,9 @@ Begin
         dbText "Name" ="Ready For SI"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="Marked For SI"
+    End
 End
 Begin
     State =0

@@ -6,7 +6,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     PictureAlignment =2
@@ -16,10 +15,9 @@ Begin Form
     Width =31680
     DatasheetFontHeight =11
     ItemSuffix =42
-    Right =19920
+    Right =13515
     Bottom =12645
     DatasheetGridlinesColor =15132391
-    Filter ="[DisasterID]='4258'"
     RecSrcDt = Begin
         0x03e109b0b4b9e440
     End

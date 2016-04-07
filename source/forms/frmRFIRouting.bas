@@ -5,7 +5,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ViewsAllowed =1
@@ -16,12 +15,11 @@ Begin Form
     Width =18000
     DatasheetFontHeight =11
     ItemSuffix =72
-    Right =19920
-    Bottom =12615
+    Right =13515
+    Bottom =12645
     DatasheetGridlinesColor =15132391
-    Filter ="[RfiID] =5"
     RecSrcDt = Begin
-        0x52203c39b5bbe440
+        0x87064fe674bce440
     End
     RecordSource ="fqryRFI-frmRFIRouting"
     Caption ="RFI Routing"

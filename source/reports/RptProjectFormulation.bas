@@ -122,6 +122,7 @@ Begin Report
             BackTint =20.0
             Begin
                 Begin Label
+                    OverlapFlags =81
                     Left =60
                     Top =60
                     Width =6840
@@ -143,6 +144,7 @@ Begin Report
                 Begin TextBox
                     DecimalPlaces =0
                     OldBorderStyle =0
+                    OverlapFlags =211
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
@@ -167,6 +169,7 @@ Begin Report
                     ForeTint =100.0
                     Begin
                         Begin Label
+                            OverlapFlags =211
                             TextAlign =2
                             Left =4140
                             Top =720
@@ -188,6 +191,7 @@ Begin Report
                 End
                 Begin ComboBox
                     OldBorderStyle =0
+                    OverlapFlags =211
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
@@ -220,6 +224,7 @@ Begin Report
                 End
                 Begin ComboBox
                     OldBorderStyle =0
+                    OverlapFlags =211
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
@@ -254,6 +259,7 @@ Begin Report
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =81
                     IMESentenceMode =3
                     Left =14880
                     Top =360
@@ -280,6 +286,7 @@ Begin Report
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =81
                     IMESentenceMode =3
                     Left =19740
                     Top =360
@@ -306,6 +313,7 @@ Begin Report
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =81
                     IMESentenceMode =3
                     Left =19740
                     Top =780
@@ -331,6 +339,7 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Label
+                    OverlapFlags =81
                     TextAlign =3
                     Left =12360
                     Top =360
@@ -354,6 +363,7 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Label
+                    OverlapFlags =81
                     TextAlign =3
                     Left =16620
                     Top =360
@@ -377,6 +387,7 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Label
+                    OverlapFlags =81
                     TextAlign =3
                     Left =17100
                     Top =840
@@ -400,6 +411,7 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Label
+                    OverlapFlags =211
                     Left =660
                     Top =720
                     Width =1320
@@ -419,6 +431,7 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Label
+                    OverlapFlags =243
                     TextAlign =2
                     Left =1980
                     Top =720
@@ -437,6 +450,7 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Label
+                    OverlapFlags =243
                     TextAlign =2
                     Left =2940
                     Top =720
@@ -470,6 +484,7 @@ Begin Report
             BackThemeColorIndex =1
             Begin
                 Begin Rectangle
+                    OverlapFlags =81
                     Width =21540
                     Height =660
                     BackColor =14282978
@@ -482,6 +497,7 @@ Begin Report
                     BackTint =20.0
                 End
                 Begin Label
+                    OverlapFlags =211
                     TextAlign =1
                     Left =60
                     Top =180
@@ -506,6 +522,7 @@ Begin Report
                 Begin TextBox
                     DecimalPlaces =0
                     OldBorderStyle =0
+                    OverlapFlags =211
                     TextAlign =1
                     BackStyle =0
                     IMESentenceMode =3
@@ -529,6 +546,7 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Label
+                    OverlapFlags =211
                     TextAlign =1
                     Left =5520
                     Top =180
@@ -553,6 +571,7 @@ Begin Report
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =211
                     TextAlign =1
                     BackStyle =0
                     IMESentenceMode =3
@@ -578,6 +597,7 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Label
+                    OverlapFlags =243
                     TextAlign =1
                     Left =15720
                     Top =180
@@ -602,6 +622,7 @@ Begin Report
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =211
                     BackStyle =0
                     IMESentenceMode =3
                     Left =18000
@@ -636,6 +657,7 @@ Begin Report
             BackThemeColorIndex =1
             Begin
                 Begin Label
+                    OverlapFlags =81
                     TextAlign =1
                     Left =420
                     Width =3825
@@ -654,6 +676,7 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Label
+                    OverlapFlags =81
                     TextAlign =1
                     Left =5460
                     Width =1380
@@ -673,6 +696,7 @@ Begin Report
                 End
                 Begin ComboBox
                     OldBorderStyle =0
+                    OverlapFlags =81
                     BackStyle =0
                     IMESentenceMode =3
                     ColumnCount =2
@@ -700,6 +724,7 @@ Begin Report
                 Begin TextBox
                     DecimalPlaces =0
                     OldBorderStyle =0
+                    OverlapFlags =81
                     TextAlign =1
                     IMESentenceMode =3
                     Left =4320
@@ -718,6 +743,7 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Label
+                    OverlapFlags =81
                     TextAlign =1
                     Left =8280
                     Width =2340
@@ -738,6 +764,7 @@ Begin Report
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =81
                     IMESentenceMode =3
                     Left =10680
                     Width =7080
@@ -758,6 +785,7 @@ Begin Report
                     ForeTint =100.0
                 End
                 Begin Line
+                    OverlapFlags =81
                     Left =420
                     Top =480
                     Width =21060
@@ -769,6 +797,7 @@ Begin Report
                     LayoutCachedHeight =480
                 End
                 Begin Line
+                    OverlapFlags =83
                     Left =420
                     Width =21180
                     Name ="Line66"
@@ -778,6 +807,7 @@ Begin Report
                 End
                 Begin Label
                     FontUnderline = NotDefault
+                    OverlapFlags =81
                     TextAlign =2
                     Left =420
                     Top =540
@@ -800,6 +830,7 @@ Begin Report
                 End
                 Begin Label
                     FontUnderline = NotDefault
+                    OverlapFlags =81
                     TextAlign =1
                     Left =1320
                     Top =540
@@ -823,6 +854,7 @@ Begin Report
                 End
                 Begin Label
                     FontUnderline = NotDefault
+                    OverlapFlags =81
                     TextAlign =1
                     Left =3960
                     Top =540
@@ -846,6 +878,7 @@ Begin Report
                 End
                 Begin Label
                     FontUnderline = NotDefault
+                    OverlapFlags =81
                     TextAlign =2
                     Left =6300
                     Top =540
@@ -868,6 +901,7 @@ Begin Report
                 End
                 Begin Label
                     FontUnderline = NotDefault
+                    OverlapFlags =81
                     TextAlign =2
                     Left =7620
                     Top =540
@@ -890,6 +924,7 @@ Begin Report
                 End
                 Begin Label
                     FontUnderline = NotDefault
+                    OverlapFlags =81
                     TextAlign =1
                     Left =8940
                     Top =540
@@ -913,6 +948,7 @@ Begin Report
                 End
                 Begin Label
                     FontUnderline = NotDefault
+                    OverlapFlags =211
                     TextAlign =1
                     Left =11580
                     Top =540
@@ -941,6 +977,7 @@ Begin Report
                 End
                 Begin Label
                     FontUnderline = NotDefault
+                    OverlapFlags =81
                     TextAlign =2
                     Left =14820
                     Top =540
@@ -964,6 +1001,7 @@ Begin Report
                 End
                 Begin Label
                     FontUnderline = NotDefault
+                    OverlapFlags =81
                     TextAlign =2
                     Left =16980
                     Top =540
@@ -992,6 +1030,7 @@ Begin Report
                 End
                 Begin Label
                     FontUnderline = NotDefault
+                    OverlapFlags =83
                     TextAlign =2
                     Left =18120
                     Top =540
@@ -1020,6 +1059,7 @@ Begin Report
                 End
                 Begin Label
                     FontUnderline = NotDefault
+                    OverlapFlags =83
                     TextAlign =2
                     Left =19440
                     Top =480
@@ -1048,6 +1088,7 @@ Begin Report
                 End
                 Begin Label
                     FontUnderline = NotDefault
+                    OverlapFlags =81
                     TextAlign =2
                     Left =13440
                     Top =540
@@ -1071,6 +1112,7 @@ Begin Report
                 End
                 Begin Label
                     FontUnderline = NotDefault
+                    OverlapFlags =83
                     TextAlign =2
                     Left =16020
                     Top =540
@@ -1099,6 +1141,7 @@ Begin Report
                 End
                 Begin Label
                     FontUnderline = NotDefault
+                    OverlapFlags =81
                     TextAlign =2
                     Left =21240
                     Top =540
@@ -1133,6 +1176,7 @@ Begin Report
             Begin
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =81
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
@@ -1153,6 +1197,7 @@ Begin Report
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =81
                     BackStyle =0
                     IMESentenceMode =3
                     Left =1320
@@ -1175,6 +1220,7 @@ Begin Report
                 Begin TextBox
                     CanGrow = NotDefault
                     OldBorderStyle =0
+                    OverlapFlags =81
                     BackStyle =0
                     IMESentenceMode =3
                     Left =3960
@@ -1196,6 +1242,7 @@ Begin Report
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =81
                     BackStyle =0
                     IMESentenceMode =3
                     Left =6300
@@ -1216,6 +1263,7 @@ Begin Report
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =81
                     BackStyle =0
                     IMESentenceMode =3
                     Left =7620
@@ -1237,6 +1285,7 @@ Begin Report
                 Begin TextBox
                     CanGrow = NotDefault
                     OldBorderStyle =0
+                    OverlapFlags =81
                     BackStyle =0
                     IMESentenceMode =3
                     Left =8940
@@ -1258,6 +1307,7 @@ Begin Report
                 End
                 Begin ComboBox
                     OldBorderStyle =0
+                    OverlapFlags =81
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
@@ -1286,6 +1336,7 @@ Begin Report
                 End
                 Begin ComboBox
                     OldBorderStyle =0
+                    OverlapFlags =81
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
@@ -1314,6 +1365,7 @@ Begin Report
                 End
                 Begin ComboBox
                     OldBorderStyle =0
+                    OverlapFlags =83
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
@@ -1342,6 +1394,7 @@ Begin Report
                 End
                 Begin ComboBox
                     OldBorderStyle =0
+                    OverlapFlags =83
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
@@ -1370,6 +1423,7 @@ Begin Report
                 End
                 Begin ComboBox
                     OldBorderStyle =0
+                    OverlapFlags =81
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
@@ -1397,6 +1451,7 @@ Begin Report
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =81
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
@@ -1418,6 +1473,7 @@ Begin Report
                 End
                 Begin ComboBox
                     OldBorderStyle =0
+                    OverlapFlags =243
                     BackStyle =0
                     IMESentenceMode =3
                     ListWidth =1440
@@ -1444,6 +1500,7 @@ Begin Report
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =83
                     BackStyle =0
                     IMESentenceMode =3
                     Left =21240
@@ -1477,6 +1534,7 @@ Begin Report
             Begin
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =81
                     TextAlign =1
                     IMESentenceMode =3
                     Left =60
@@ -1497,6 +1555,7 @@ Begin Report
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =81
                     TextAlign =3
                     IMESentenceMode =3
                     Left =16140

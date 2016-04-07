@@ -7,7 +7,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ViewsAllowed =1
@@ -18,12 +17,11 @@ Begin Form
     Width =17040
     DatasheetFontHeight =11
     ItemSuffix =114
-    Right =19920
-    Bottom =12060
+    Right =13515
+    Bottom =12645
     DatasheetGridlinesColor =15132391
-    Filter ="[ID] = 28"
     RecSrcDt = Begin
-        0x3c5da1684fbce440
+        0x47d1f0d373bce440
     End
     RecordSource ="fqryUpdateRSMProjections"
     Caption ="Update Projections"

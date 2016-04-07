@@ -7,7 +7,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ViewsAllowed =1
@@ -18,10 +17,9 @@ Begin Form
     Width =16740
     DatasheetFontHeight =11
     ItemSuffix =104
-    Right =14385
+    Right =13515
     Bottom =12645
     DatasheetGridlinesColor =15132391
-    Filter ="[Assigned PDC] = 'akhandka'"
     RecSrcDt = Begin
         0x56e847dc56bae440
     End

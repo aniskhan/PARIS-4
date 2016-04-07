@@ -17,12 +17,11 @@ Begin Form
     Width =16620
     DatasheetFontHeight =11
     ItemSuffix =127
-    Right =22080
+    Right =13515
     Bottom =12645
     DatasheetGridlinesColor =15132391
-    Filter ="[Assigned PDC] = 'nlietzk1'"
     RecSrcDt = Begin
-        0xf695692093b8e440
+        0xbf0c01e273bce440
     End
     RecordSource ="fqryRpaScopingMeeting"
     Caption ="Scoping Meeting"

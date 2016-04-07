@@ -17,13 +17,11 @@ Begin Form
     Width =16680
     DatasheetFontHeight =11
     ItemSuffix =46
-    Right =25020
-    Bottom =12765
+    Right =13515
+    Bottom =12645
     DatasheetGridlinesColor =15132391
-    Filter ="[DisasterID]='4258' and [ApplicantID]='000-U0D8R-00'AND[Assigned PDC] = 'nlietzk"
-        "1'"
     RecSrcDt = Begin
-        0x414d06ad50b9e440
+        0x37c743d373bce440
     End
     RecordSource ="fqryRpaProjectEntry"
     Caption ="Enter Projects"

@@ -17,12 +17,11 @@ Begin Form
     ItemSuffix =228
     Left =30225
     Top =2505
-    Right =-21781
+    Right =-21796
     Bottom =15150
     DatasheetGridlinesColor =15132391
-    Filter ="[DisasterID]='4258' and [ApplicantID]='000-UKM82-00' and [RfiID]=7"
     RecSrcDt = Begin
-        0xeaf644ba95bae440
+        0xcbbe04dc74bce440
     End
     RecordSource ="fqryRfiItems"
     Caption ="RFI Response Assessment"
@@ -938,7 +937,7 @@ Private Sub Form_Load()
 
 '///Code
 
-'FormFilter.RecordFilterCheck Me.Form, FormItemType 'do not want the form to open to all RFI items
+'FormFilter.RecordFilterCheck Me.Form, FormItemType
 
 'Adjust Size of modal window, measurement in twips, 1440 per inch
 DoCmd.MoveSize , , 11.5 * 1440, 3 * 1440
@@ -1263,7 +1262,9 @@ Dim WhereCondition As String
             Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & frm.cboResult
     End Select
     
-    Forms!frmRFIRouting!subHistory.Requery
+    With Forms!frmRFIRouting!subHistory
+        .Requery
+    End With
 '///Code
 
 '///ErrorHandling

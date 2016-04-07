@@ -16,12 +16,11 @@ Begin Form
     Width =15483
     DatasheetFontHeight =11
     ItemSuffix =285
-    Right =18210
-    Bottom =12510
+    Right =13515
+    Bottom =12645
     DatasheetGridlinesColor =15132391
-    Filter ="[DisasterID]='4258' and [ApplicantID]='067-73650-00'"
     RecSrcDt = Begin
-        0x399cd2afb4b9e440
+        0xe2ef3fe173bce440
     End
     RecordSource ="fqrySubrecipientExploratoryCallEEIInfo"
     Caption ="frmlSubRecipient ExploratoryCallEEI"

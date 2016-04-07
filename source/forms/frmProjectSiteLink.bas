@@ -17,13 +17,12 @@ Begin Form
     Width =16620
     DatasheetFontHeight =11
     ItemSuffix =71
-    Right =15315
-    Bottom =7830
+    Right =13515
+    Bottom =12645
     DatasheetGridlinesColor =15132391
-    Filter ="[Assigned PDC] = 'nlietzk1'"
     OnApplyFilter ="[Event Procedure]"
     RecSrcDt = Begin
-        0xfb12f06e2ea9e440
+        0xcfee2ddb73bce440
     End
     RecordSource ="fqryProjectFormulation"
     Caption ="Logical Project Grouping"

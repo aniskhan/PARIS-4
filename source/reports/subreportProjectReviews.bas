@@ -14,9 +14,11 @@ Begin Report
     Width =31680
     DatasheetFontHeight =11
     ItemSuffix =46
+    Left =-3750
+    Top =8415
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0xa776723e7ab8e440
+        0x5a12a0be71bce440
     End
     RecordSource ="SELECT revtblProject.ApplicantID, tblProjects.[Project Category], tblProjects.[A"
         "pplication Title], revtblProject.ReviewID, tblReviewTypes.ItemType, tblReviewTyp"
@@ -25,11 +27,11 @@ Begin Report
         "ct.[Lane Assigned], revtblProject.ReviewType, revtblProject.ReviewEntryDate, rev"
         "tblProject.ReviewCheckOutDate, revtblProject.ReviewUserID, revtblProject.ReviewE"
         "xitDate, revtblProject.Disposition, revtblProject.Comments, revtblProject.Comple"
-        "tedUserID FROM (((revtblProject INNER JOIN tblReviewTypes ON revtblProject.Revie"
-        "wType = tblReviewTypes.ReviewType) INNER JOIN lutblProcessSteps ON tblReviewType"
-        "s.Step = lutblProcessSteps.ID) INNER JOIN lutblProcessPhase ON tblReviewTypes.Ph"
-        "ase = lutblProcessPhase.ID) INNER JOIN tblProjects ON revtblProject.ProjectID = "
-        "tblProjects.ProjectID WHERE (((tblReviewTypes.ItemType)<>\"Site\")); "
+        "tedUserID FROM tblProjects LEFT JOIN (((revtblProject LEFT JOIN tblReviewTypes O"
+        "N revtblProject.ReviewType = tblReviewTypes.ReviewType) LEFT JOIN lutblProcessSt"
+        "eps ON tblReviewTypes.Step = lutblProcessSteps.ID) LEFT JOIN lutblProcessPhase O"
+        "N tblReviewTypes.Phase = lutblProcessPhase.ID) ON tblProjects.ProjectID = revtbl"
+        "Project.ProjectID WHERE (((tblReviewTypes.ItemType)<>\"Site\")); "
     Caption ="subreportProjectReviews"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
@@ -292,7 +294,7 @@ Begin Report
                     IMESentenceMode =3
                     Left =7680
                     Top =180
-                    Width =3420
+                    Width =6060
                     Height =375
                     FontSize =14
                     TabIndex =3
@@ -304,7 +306,7 @@ Begin Report
 
                     LayoutCachedLeft =7680
                     LayoutCachedTop =180
-                    LayoutCachedWidth =11100
+                    LayoutCachedWidth =13740
                     LayoutCachedHeight =555
                     ForeThemeColorIndex =1
                     ForeTint =100.0

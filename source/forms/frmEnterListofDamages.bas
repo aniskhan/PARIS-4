@@ -17,12 +17,11 @@ Begin Form
     Width =17520
     DatasheetFontHeight =11
     ItemSuffix =21
-    Right =15045
+    Right =13515
     Bottom =12645
     DatasheetGridlinesColor =15132391
-    Filter ="[DisasterID]='4258'AND[Assigned PDC] = 'nlietzk1'"
     RecSrcDt = Begin
-        0x2dd52d8a50b9e440
+        0x5e3e6cd473bce440
     End
     RecordSource ="fqryRpaProjectEntry"
     Caption ="Enter List of Damages"
