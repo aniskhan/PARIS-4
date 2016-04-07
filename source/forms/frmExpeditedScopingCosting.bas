@@ -17,7 +17,7 @@ Begin Form
     Width =16560
     DatasheetFontHeight =11
     ItemSuffix =35
-    Right =14385
+    Right =13530
     Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -516,6 +516,7 @@ Begin Form
                         "s.EndDate) Is Null Or (tblStaffRoles.EndDate)>=Date()) And ((tblStaffRoles.Posit"
                         "ion)=\"DAS\")); "
                     ColumnWidths ="0;2880"
+                    OnChange ="[Event Procedure]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =180
@@ -1387,6 +1388,27 @@ Option Explicit
 
 Private Const FormItemType As String = "Project" 'used in determining what type of record is handled
 
+Private Sub cboAssignDas_Change()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cboAssignDas_Change"
+'///Error Handling
+
+'///Code
+Me.Dirty = False
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+End Sub
+
 'BUTTONS
 Private Sub cmdAssignDasComplete_Click()
 '///Error Handling
@@ -1406,7 +1428,7 @@ PROC_EXIT:
 PROC_ERR:
     GlobalErrHandler
     Resume PROC_EXIT
-'///ErrorHandline
+'///ErrorHandling
 End Sub
 
 Private Sub cmdEmmieSubmittal_Click()

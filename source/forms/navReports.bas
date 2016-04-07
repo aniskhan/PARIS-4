@@ -16,8 +16,8 @@ Begin Form
     Width =15660
     DatasheetFontHeight =11
     ItemSuffix =30
-    Right =11685
-    Bottom =12645
+    Right =24690
+    Bottom =12615
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0x3d95abb0b4b9e440
@@ -765,7 +765,7 @@ Begin Form
                         Begin
                             Action ="OpenReport"
                             Argument ="rptApplicantReview"
-                            Argument ="2"
+                            Argument ="5"
                             Argument =""
                             Argument =""
                             Argument ="0"
@@ -777,8 +777,8 @@ Begin Form
                                 "s><Action Name=\"OpenReport\"><Ar"
                         End
                         Begin
-                            Comment ="_AXL:gument Name=\"ReportName\">rptApplicantReview</Argument><Argument Name=\"Vi"
-                                "ew\">Print Preview</Argument></Action></Statements></UserInterfaceMacro>"
+                            Comment ="_AXL:gument Name=\"ReportName\">rptApplicantReview</Argument></Action></Statemen"
+                                "ts></UserInterfaceMacro>"
                         End
                     End
 

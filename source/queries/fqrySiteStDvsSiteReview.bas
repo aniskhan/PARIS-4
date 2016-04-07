@@ -1,7 +1,7 @@
 ﻿Operation =1
 Option =0
-Where ="(((revtblSite.ReviewType)=\"Generate Work Order\" Or (revtblSite.ReviewType)=\"D"
-    "raft DDD\") AND ((revtblSite.ReviewExitDate) Is Null))"
+Where ="(((revtblSite.ReviewType)=\"DVS Review\") AND ((revtblSite.ReviewExitDate) Is Nu"
+    "ll))"
 Begin InputTables
     Name ="tblSites"
     Name ="revtblSite"
@@ -221,12 +221,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =1153
+    Right =923
     Bottom =860
     Left =-1
     Top =-1
-    Right =1137
-    Bottom =397
+    Right =907
+    Bottom =380
     Left =0
     Top =0
     ColumnsShown =539

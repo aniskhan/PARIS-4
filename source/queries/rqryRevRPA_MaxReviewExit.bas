@@ -140,9 +140,6 @@ Begin
         dbText "Name" ="PAGS Review"
         dbLong "AggregateType" ="-1"
     End
-	Begin
-        dbText "Name" ="MaxOfreviewexitdate"
-    End
 End
 Begin
     State =0

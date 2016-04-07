@@ -367,13 +367,13 @@ Public Sub LoadByForm(frm As Form, formType As String, Optional ReviewName As St
 End Sub
 
 
-Public Sub ConvertToRfiResponse(RfiItemID As Long)
-    If Dims.pItemType <> "RFIResponse" Then
-        Dims.pRfiItemType = Dims.pItemType
-        Dims.pItemID = "RFIResponse"
-        Dims.pRfiItemID = RfiItemID
-    End If
-End Sub
+'Public Sub ConvertToRfiResponse(RfiItemID As Long)
+'    If Dims.pItemType <> "RFIResponse" Then
+'        Dims.pRfiItemType = Dims.pItemType
+'        Dims.pItemID = "RFIResponse"
+'        Dims.pRfiItemID = RfiItemID
+'    End If
+'End Sub
 Public Sub ConvertToRFI(RfiID As Long)
     If Dims.pItemType <> "RFI" Then
         Dims.pRfiItemType = Dims.pItemType

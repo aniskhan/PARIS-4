@@ -5,6 +5,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =2
     PictureAlignment =2
@@ -14,9 +15,11 @@ Begin Form
     Width =17040
     DatasheetFontHeight =11
     ItemSuffix =33
-    Right =22080
+    Right =13590
     Bottom =12645
     DatasheetGridlinesColor =15132391
+    Filter ="[DisasterID]='4258' and [ApplicantID]='009-77250-00' and [ProjectID]=81 and [Sit"
+        "eID]=1"
     RecSrcDt = Begin
         0x76b9d6233cbae440
     End
@@ -178,18 +181,18 @@ Begin Form
                 Begin Rectangle
                     BackStyle =1
                     OverlapFlags =223
-                    Left =240
+                    Left =180
                     Top =8460
                     Width =2700
-                    Height =2040
+                    Height =1140
                     BackColor =13431551
                     BorderColor =10921638
                     Name ="Box30"
                     GridlineColor =10921638
-                    LayoutCachedLeft =240
+                    LayoutCachedLeft =180
                     LayoutCachedTop =8460
-                    LayoutCachedWidth =2940
-                    LayoutCachedHeight =10500
+                    LayoutCachedWidth =2880
+                    LayoutCachedHeight =9600
                     BackThemeColorIndex =7
                     BackTint =20.0
                 End
@@ -620,8 +623,8 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =215
-                    Left =420
-                    Top =8820
+                    Left =480
+                    Top =8640
                     Width =2160
                     Height =720
                     FontSize =12
@@ -633,10 +636,10 @@ Begin Form
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =420
-                    LayoutCachedTop =8820
-                    LayoutCachedWidth =2580
-                    LayoutCachedHeight =9540
+                    LayoutCachedLeft =480
+                    LayoutCachedTop =8640
+                    LayoutCachedWidth =2640
+                    LayoutCachedHeight =9360
                     ForeThemeColorIndex =1
                     ForeTint =100.0
                     Gradient =0
@@ -665,6 +668,7 @@ Begin Form
                     Overlaps =1
                 End
                 Begin CommandButton
+                    Visible = NotDefault
                     OverlapFlags =215
                     Left =420
                     Top =9660
@@ -1478,8 +1482,6 @@ End Sub
 
 Private Sub EnableFormArea(AreaName As String, Optional Override As String = "")
     Dim CanEnable As Boolean    'used so that CanSee is only called once per run.
-    Dim CanEnableInspection As Boolean    'not sure how else to check for Either
-    Dim CanEnableValidation As Boolean    '
     
 '///Error Handling
     If gcfHandleErrors Then On Error GoTo PROC_ERR
@@ -1487,19 +1489,17 @@ Private Sub EnableFormArea(AreaName As String, Optional Override As String = "")
 '///Error Handling
 
 '///Code
-    CanEnableInspection = Reviews.CanSee(GetItemDims("Inspection"), Environ("UserName"))
-    CanEnableValidation = Reviews.CanSee(GetItemDims("Validation"), Environ("UserName"))
     
     If Override = "Disable" Then
         CanEnable = False
     Else
-        CanEnable = CanEnableInspection Or CanEnableValidation
+        CanEnable = Reviews.CanSee(GetItemDims(AreaName), Environ("UserName"))
     End If
     
     Select Case AreaName
         Case "Inspection"
-            Me.cmdDddComplete.Enabled = CanEnableInspection
-            Me.cmdValidationComplete.Enabled = CanEnableValidation
+            Me.cmdDddComplete.Enabled = CanEnable
+            Me.cmdValidationComplete.Enabled = CanEnable
             Me.Text17.Enabled = CanEnable
             Me.Eligibility_Concerns.Enabled = CanEnable
             Me.Inpection_Notes.Enabled = CanEnable
@@ -1595,15 +1595,6 @@ Private Sub HandleDisposition(ReviewType As String, frm As Form)
 '            Main section of page specific code. Creates new reviews as needed.
             Select Case ReviewType
                 Case "Inspection"
-                    Reviews.EnterReview GetItemDims("Ready for Concurrence")
-                    
-'                    check if parent has a "Check Site Status" Review and add one if needed.
-                    Set ParentDims = GetItemDims("Check Site Status")
-                    ParentDims.ItemType = "Project"
-                    If Not Reviews.CheckReview(ParentDims) Then
-                        Reviews.EnterReview ParentDims
-                    End If
-                Case "Validation"
                     Reviews.EnterReview GetItemDims("Ready for Concurrence")
                     
 '                    check if parent has a "Check Site Status" Review and add one if needed.

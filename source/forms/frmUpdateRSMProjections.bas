@@ -7,6 +7,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ViewsAllowed =1
@@ -16,13 +17,13 @@ Begin Form
     GridY =24
     Width =17040
     DatasheetFontHeight =11
-    ItemSuffix =113
+    ItemSuffix =114
     Right =19920
-    Bottom =12645
+    Bottom =12060
     DatasheetGridlinesColor =15132391
-    Filter ="[ID] = 47"
+    Filter ="[ID] = 28"
     RecSrcDt = Begin
-        0x998eff7ddbb2e440
+        0x3c5da1684fbce440
     End
     RecordSource ="fqryUpdateRSMProjections"
     Caption ="Update Projections"
@@ -2467,6 +2468,43 @@ Begin Form
                         End
                     End
                 End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    Left =14820
+                    Top =6240
+                    Height =315
+                    TabIndex =45
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="ID"
+                    ControlSource ="ID"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =14820
+                    LayoutCachedTop =6240
+                    LayoutCachedWidth =16260
+                    LayoutCachedHeight =6555
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =13020
+                            Top =6240
+                            Width =270
+                            Height =315
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label113"
+                            Caption ="ID"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =13020
+                            LayoutCachedTop =6240
+                            LayoutCachedWidth =13290
+                            LayoutCachedHeight =6555
+                        End
+                    End
+                End
             End
         End
         Begin FormFooter
@@ -3045,7 +3083,7 @@ Private Sub CompleteReview(ReviewType As String)
             MsgBox "Review was cancelled"
         End If
     End If
-    RepaintForm (UserIsPDC)
+    Call RepaintForm(UserIsPDC, UserIsDIU, UserIsADM)
 '///Code
 
 '///ErrorHandling
@@ -3068,7 +3106,7 @@ Private Sub StartReview(ReviewType As String)
 
 '///Code
     Reviews.StartReview GetItemDims(ReviewType), Environ("UserName")
-    RepaintForm (UserIsPDC)
+    Call RepaintForm(UserIsPDC, UserIsDIU, UserIsADM)
 '///Code
 
 '///ErrorHandling

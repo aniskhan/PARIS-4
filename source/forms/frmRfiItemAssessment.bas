@@ -938,7 +938,7 @@ Private Sub Form_Load()
 
 '///Code
 
-FormFilter.RecordFilterCheck Me.Form, FormItemType
+'FormFilter.RecordFilterCheck Me.Form, FormItemType 'do not want the form to open to all RFI items
 
 'Adjust Size of modal window, measurement in twips, 1440 per inch
 DoCmd.MoveSize , , 11.5 * 1440, 3 * 1440

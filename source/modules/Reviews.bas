@@ -667,7 +667,7 @@ Public Sub CompleteReviewStandard(ItemDims As classItemDims, CurrentForm As Form
             CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "Determination Memo", CurrentUserID
         Case "RFI"
             Reviews.CreateRFI ItemDims.Clone
-            CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "RFI", CurrentUserID
+            CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "RFI"
             DoCmd.OpenForm "frmRFIRouting", , , ItemDims.WhereID(False)
         Case "RSN"
             CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), ItemDims.ReviewType, ReviewResultForm.cboAssign
@@ -679,7 +679,24 @@ Public Sub CompleteReviewStandard(ItemDims As classItemDims, CurrentForm As Form
                 Case "DIU Lane Select"
                     Select Case CurrentForm![Lane Assigned]
                         Case "ST"
-                            CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "Assign DVS"
+                            'check all 0 complete and push directly to SI and RFI
+                            WhereCondition = ItemDims.WhereID(False)
+                            If DCount("SiteID", "tblSites", WhereCondition & " and nz([% Work Complete],1) >0") > 0 Then
+                                CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "Assign DVS"
+                            Else
+                                Dim MsgResult As VbMsgBoxResult
+                                MsgResult = MsgBox("It looks like all sites are zero % work complete.  Should this project be sent directly to site inspection and also have an RFI created? No will send it to Assign DVS. Cancel will keep it in your review.", vbYesNoCancel)
+                                If MsgResult = vbYes Then
+                                    CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "Inspection Assignment"
+                                    Reviews.CreateRFI ItemDims.Clone
+                                    EnterReview ItemDims.Clone("RFI")
+                                    DoCmd.OpenForm "frmRFIRouting", , , ItemDims.WhereID(False)
+                                ElseIf MsgResult = vbNo Then
+                                    CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "Assign DVS"
+                                Else
+                                    MsgBox ("Review Canceled")
+                                End If
+                            End If
                         Case "EX"
                             CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "Assign DVS"
                         Case "SP"
@@ -695,21 +712,48 @@ Public Sub CompleteReviewStandard(ItemDims As classItemDims, CurrentForm As Form
                     If CompleteReview(ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, "")) Then
                         WhereCondition = ItemDims.WhereID(False)
      
-                        CheckPhrase = "[Ready For SI]='Yes' and [Marked For SI]='No'"
+                        CheckPhrase = "[Ready For SI]='Yes' and [Marked For SI]='Yes'"
                         If DCount("SiteID", "fqryDVSSiteReviewSelect", WhereCondition & " and " & CheckPhrase) > 0 Then
-                            EnterReview ItemDims.Clone("Inspection Assignment")
-                            PushSomeChildren ItemDims.Clone("Draft DDD"), CurrentUserID, ReviewResultForm.cboResult, "Ready for Concurrence", CheckPhrase, "fqryDVSSiteReviewSelect"
+'                            EnterReview ItemDims.Clone("Inspection Assignment")
+                            PushSomeChildren ItemDims.Clone("DVS Review"), CurrentUserID, ReviewResultForm.cboResult, "", CheckPhrase, "fqryDVSSiteReviewSelect"
                         End If
-                        
+'
 '                        If DCount("ProjectID", ItemDims.ReviewTable, WhereCondition & " and ([ReviewType] = 'Inspection Assignment' or [ReviewType] = 'Validation Assignment')") = 0 Then
-'                            CheckPhrase = "[Ready For SI]='Yes' and [Marked For SI]='Yes'"
-'                            If DCount("SiteID", "tblSites", WhereCondition & " and " & CheckPhrase) > 0 Then
-'                                EnterReview ItemDims.Clone("Inspection Assignment")
-'                                PushSomeChildren ItemDims.Clone("Draft DDD"), CurrentUserID, frm.cboResult, "", CheckPhrase, "fqryDVSSiteReviewSelect"
-'                            End If
+                            CheckPhrase = "[Ready For SI]='Yes' and [Marked For SI]='No'"
+                            If DCount("SiteID", "fqryDVSSiteReviewSelect", WhereCondition & " and " & CheckPhrase) > 0 Then
+                                EnterReview ItemDims.Clone("Check Site Status")
+                                PushSomeChildren ItemDims.Clone("DVS Review"), CurrentUserID, ReviewResultForm.cboResult, "Ready for Concurrence", CheckPhrase, "fqryDVSSiteReviewSelect"
+                            End If
 '                        End If
                     End If
                 
+                Case "Inspection Assignment"
+                    If CompleteReview(ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, "")) Then
+                        WhereCondition = ItemDims.WhereID(False)
+     
+                        CheckPhrase = "[Marked For SI]='Yes'"
+                        If DCount("SiteID", "qdReadyforSi", WhereCondition & " and " & CheckPhrase) > 0 Then
+                            EnterReview ItemDims.Clone("Site Inspections")
+                            PushSomeChildren ItemDims.Clone("Inspection Assignment"), CurrentUserID, ReviewResultForm.cboResult, "Inspection", CheckPhrase, "qdReadyforSi"
+                        End If
+                    End If
+                
+
+'<<<<<<<<<<<<<< When does the overall project task for inspection get completed?
+                Case "Check Site Status"
+                    CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "DDD Concurrence", ItemDims.AssignedPDC
+
+                Case "DDD Concurrence"
+                    CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "Scoping and Costing"
+
+                Case "Scoping and Costing"
+                    CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "Submit in EMMIE"
+                
+                Case "Submit in EMMIE"
+                    CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "Compliance Review"
+
+
+
                 Case Else
                     Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & ItemDims.ReviewType
             End Select

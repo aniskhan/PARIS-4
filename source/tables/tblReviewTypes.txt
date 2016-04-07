@@ -10,9 +10,9 @@
 9	RPA	Enter Projects	70	1	6	navProjectFormulation	PDTFL		
 10	RPA	Ops RPA Eligibility	40	1	2	frmRPAreview	OPSL	ODIU	
 11	RPA	Exit Briefing	80	4	13		PDTFL		
-12	Project	Project Entry	10	1	7	frmProcessProjectRoutingSheet PDC	PDTFL		Site Entry
-13	Project	DIU Lane Select	20	2	6	frmDIUProcessProjectRoutingSheet	DIUL	DIUS	DIU Lane Select
-14	EXProject	Assign DVS	10	2	9	frmExpeditedLaneDI	EXGL		Assign DVS
+12	Project	Project Entry	5	1	7	frmProcessProjectRoutingSheet PDC	PDTFL		Site Entry
+13	Project	DIU Lane Select	10	2	6	frmDIUProcessProjectRoutingSheet	DIUL	DIUS	DIU Lane Select
+14	EXProject	Assign DVS	15	2	9	frmExpeditedLaneDI	EXGL		Assign DVS
 15	EXProject	Validation	20	2	9	frmExpeditedLaneDI	EXGL	EXDVS	
 16	EXProject	DDD Entry	30	2	9	frmExpeditedLaneDI	EXGL	EXDVS	
 17	EXProject	DDD with PDM	40	2	9	frmExpeditedLaneDI	EXGL	EXDVS	
@@ -25,7 +25,7 @@
 24	STProject	Assign DVS	10	2	9	frmStAssignDvs	STGL		Assign DVS
 25	STProject	Generate Work Order	20	2	9	frmStWorkOrderDev	STDVS		Generate Work Order
 26	STProject	Site Inspections	30	2	8	frmSTSiteInspections	SITFL	SI	Inspection
-27	STProject	Scoping and Costing	40	3	10	frmStlaneScopingCosting	STGL		Scoping and Costing
+27	Project	Scoping and Costing	40	3	10	frmStlaneScopingCosting	STGL	COS	Scoping and Costing
 28	Site	Site Entry	10	1	7	navProjectFormulation	PDTFL		
 29	Site	DIU Lane Select	20	2	11	frmDIUProcessProjectRoutingSheet	DIUL	DIUS	
 30	Site	Generate Work Order	30	2	11	frmStDvsSiteReview	STGL	STDVS	
@@ -39,7 +39,7 @@
 39	Site	NA5	110	2	8		SITFL		
 40	Site	Scoping and Costing	120	3	10	frmStlaneScopingCosting	STGL	STPAS	
 41	Site	Enter SOW in EMMIE	130	3	10	subfrmSitesScopeCost	STGL	STPAS	
-42	STProject	Submit in EMMIE	50	3	10	frmStlaneScopingCosting	CFC		Enter SOW in EMMIE
+42	STProject	Submit in EMMIE	50	3	10	frmStlaneScopingCosting	QAS		Enter SOW in EMMIE
 43	Project	Compliance Review	1000	4		frmExpeditedLaneComplianceReviews	CFC		
 44	Site	Assign DVS	25	2	11	frmStAssignDvs	STGL	STDVS	
 45	STProject	DVS Draft DDD	25	2	9	frmStWorkOrderDev	STDVS		Draft DDD
@@ -48,13 +48,15 @@
 48	Site	Ready for Concurrence	60	2	8	frmStSiteConcurrence	SITFL		
 51	Site	Validation Assignment	41	2	11	frmSiteInspectionWorkOrder	SITFL	SI	
 52	Site	Validation	51	2	8	subfrmSiteStInspection	SITFL	SI	
-53	STProject	Check Site Status	34	2	9	frmDDDCompleteforProject	SITFL		
+53	STProject	Check Site Status	34	2	9	frmDDDCompleteforProject	SITFL		Ready for Concurrence
 54	RFI	RFI Creation	10	1	1	frmRFIRouting	DIUS		
 55	RFI	PDM Concurrence	20	1	1	frmRFIRouting	PDTFL		
 56	RFI	Transmittal	30	1	1	frmRFIRouting	PDTFL		
 57	RFIResponse	Pending Receipt	40	1	1	frmRFIItemAssessment	DIUL	DIUS	
 58	RPA	DIU Update EMMIE Projections	75	1	12	frmUpdateRSMProjections	DIUS		
-59	SPProject	Specialized Lane	30	2	2		SPGL		Specialized Lane-Site
-60	Site	Specialized Lane-Site	30	2	2		SPGL		
+59	SPProject	Specialized Lane	10	2	9		SPGL		Specialized Lane-Site
+60	Site	Specialized Lane-Site	10	2	9		SPGL		
 61	RFI	Mark RFI Complete	60	1	1	frmRFIRouting	PDTFL		
-63	RFIResponse	Assess RFI Response	50	1	1	frmRFIItemAssessment	PDTFL		
+62	RFIResponse	Assess RFI Response	50	1	1	frmRFIItemAssessment	PDTFL		
+63	STProject	DVS Review	20	2	9	frmStWorkOrderDev	STDVS		DVS Review
+64	Site	DVS Review	30	2	11	frmStDvsSiteReview	STGL	STDVS	

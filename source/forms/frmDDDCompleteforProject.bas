@@ -5,7 +5,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ViewsAllowed =1
@@ -16,7 +15,7 @@ Begin Form
     Width =20475
     DatasheetFontHeight =11
     ItemSuffix =243
-    Right =22080
+    Right =19920
     Bottom =12645
     DatasheetGridlinesColor =15132391
     Filter ="[DisasterID]='4258' and [ApplicantID]='043-UNE2N-00' and [ProjectID]=3"
@@ -1972,8 +1971,7 @@ Private Function PreDialogCheck(ReviewType As String) As Boolean
     ChildDims.ItemType = "Site"
     WhereCondition = GetItemDims.WhereID(False)
         
-    CountDVS = DCount("SiteID", ChildDims.ReviewTable, WhereCondition & " and [ReviewType]='Generate Work Order' and [ReviewExitDate] is null")
-    CountDVS = CountDVS + DCount("SiteID", ChildDims.ReviewTable, WhereCondition & " and [ReviewType]='Draft DDD' and [ReviewExitDate] is null")
+    CountDVS = DCount("SiteID", ChildDims.ReviewTable, WhereCondition & " and [ReviewType]='DVS Review' and [ReviewExitDate] is null")
     CountInspectionAssign = DCount("SiteID", ChildDims.ReviewTable, WhereCondition & " and [ReviewType]='Inspection Assignment' and [ReviewExitDate] is null")
     CountInspectionAssign = CountInspectionAssign + DCount("SiteID", ChildDims.ReviewTable, WhereCondition & " and [ReviewType]='Validation Assignment' and [ReviewExitDate] is null")
     CountInspection = DCount("SiteID", ChildDims.ReviewTable, WhereCondition & " and [ReviewType]='Inspection' and [ReviewExitDate] is null")
@@ -2142,9 +2140,11 @@ Private Sub CompleteReview(ReviewType As String)
         If Access.CurrentProject.AllForms("frmReviewResult").IsLoaded Then
             Set frm = Forms("frmReviewResult")
             If PostDialogCheck(ReviewType, frm.cboResult) Then
-                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
-                    HandleDisposition ReviewType, frm
-                End If
+'                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
+'                    HandleDisposition ReviewType, frm
+'                End If
+                CompleteReviewStandard GetItemDims(ReviewType), Me.Form, frm
+
             End If
             DoCmd.Close acForm, "frmReviewResult"
         Else

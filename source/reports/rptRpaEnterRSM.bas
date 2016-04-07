@@ -10,7 +10,7 @@ Begin Report
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =15120
+    Width =13620
     DatasheetFontHeight =11
     ItemSuffix =163
     DatasheetGridlinesColor =15132391

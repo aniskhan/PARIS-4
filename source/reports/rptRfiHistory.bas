@@ -15,7 +15,8 @@ Begin Report
     DatasheetFontHeight =11
     ItemSuffix =42
     DatasheetGridlinesColor =15132391
-    Filter ="[DisasterID]='4258' and [ApplicantID]='000-UKM82-00' and [RfiID]=7"
+    Filter ="[DisasterID]='4258' and [ApplicantID]='009-77250-00' and [ProjectID]=81 and [Rfi"
+        "ID]=41"
     RecSrcDt = Begin
         0xf31fd2ef2bbce440
     End

@@ -14,7 +14,7 @@ CREATE TABLE [tblSubRecipientExploratoryCall] (
   [Exploratory Call FEMA Participants] VARCHAR (255),
   [Date Exploratory Call Checklist emailed to Subrecipient] DATETIME ,
   [RSM Agenda sent to Subrecipient] VARCHAR (255),
-  [Exploratory Call Notes] VARCHAR (255),
+  [Exploratory Call Notes] LONGTEXT ,
   [EHP Staff Required at RSM] BIT ,
   [Insurance Staff Required at RSM] BIT ,
   [Mitigation Staff Required at RSM] BIT ,

@@ -15,13 +15,13 @@ Begin Report
     ItemSuffix =77
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0x91f0f838b2bbe440
+        0xf00423d655bce440
     End
     RecordSource ="qryProjectFormulationReport"
     Caption ="RptProjectFormulation"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
-        0x68010000680100006801000068010000000000009c5400009402000001000000 ,
+        0x68010000680100006801000068010000000000006c570000e001000001000000 ,
         0x010000006801000000000000a10700000100000001000000
     End
     FilterOnLoad =0

@@ -14,11 +14,9 @@ Begin Form
     Width =17580
     DatasheetFontHeight =11
     ItemSuffix =100
-    Right =19260
-    Bottom =12615
+    Right =13590
+    Bottom =12645
     DatasheetGridlinesColor =15132391
-    Filter ="[DisasterID]='4258' and [ApplicantID]='009-058BD-00' and [ProjectID]=7 and [Site"
-        "ID]=3"
     RecSrcDt = Begin
         0x0255a2a713b1e440
     End
@@ -2942,8 +2940,7 @@ Private Sub RepaintForm()
 '///Error Handling
 
 '///Code
-    EnableFormArea "Generate Work Order"
-    EnableFormArea "Draft DDD"
+    EnableFormArea "DVS Review"
     Me.subHistory.Requery
     DescribeCurrentResults
 '///Code
@@ -2976,7 +2973,7 @@ Private Sub EnableFormArea(AreaName As String, Optional Override As String = "")
     End If
     
     Select Case AreaName
-        Case "Generate Work Order"
+        Case "DVS Review"
             Me.cboLegalResponsibility.Enabled = CanEnable
             Me.cboDeclaredArea.Enabled = CanEnable
             Me.cboEventDamage.Enabled = CanEnable
@@ -2985,7 +2982,6 @@ Private Sub EnableFormArea(AreaName As String, Optional Override As String = "")
             Me.Documentation_Notes.Enabled = CanEnable
             Me.tbWorkComplete.Enabled = CanEnable
             Me.DVS__Site_Inspection_Required.Enabled = CanEnable
-        Case "Draft DDD"
             Me.Site_Requires_DDD_Validation.Enabled = CanEnable
             Me.tbDraftDDD.Enabled = CanEnable
             Me.tbSiteValidationReturned.Enabled = CanEnable
@@ -3022,7 +3018,7 @@ Private Function PreDialogCheck(ReviewType As String) As Boolean
 '        MsgBox "Please select a PDC before trying to complete this."
 '        PreDialogCheck = False
 '    Else
-'        PreDialogCheck = True
+        PreDialogCheck = True
 '    End If
 '///Code
 

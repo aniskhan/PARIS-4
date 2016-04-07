@@ -5,7 +5,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ViewsAllowed =1
@@ -16,10 +15,9 @@ Begin Form
     Width =17640
     DatasheetFontHeight =11
     ItemSuffix =186
-    Right =13590
-    Bottom =12645
+    Right =20175
+    Bottom =12615
     DatasheetGridlinesColor =15132391
-    Filter ="[DisasterID]='4258' and [ApplicantID]='009-058BD-00' and [ProjectID]=7"
     RecSrcDt = Begin
         0x4fc1e0fd12b1e440
     End
@@ -1104,7 +1102,6 @@ Private Sub cmdConcurrentRFI_Click()
         End
     Else
             
-'''''''' <<<<<<CHECK AFTER RFI REDO
             Reviews.CreateRFI GetItemDims(ReviewType)
             Reviews.EnterReview GetItemDims("RFI")
             DoCmd.OpenForm "frmRFIRouting", , , GetItemDims.WhereID(False)
@@ -1138,7 +1135,7 @@ Private Sub cmdSendToSI_Click()
     ElseIf Not MultiCheck("Ready for SI") Then
         MsgBox ("This project has sites that have not been triaged.  Look in the list for any that say no in Ready for SI.")
         End
-    ElseIf Not MultiCheck("Marked for SI") Then
+    ElseIf Not MultiCheck("Sites Marked for SI") Then
         MsgBox ("This project has no sites that have been marked to have a site inspection. No site inspection is needed.")
         End
     ElseIf MultiCheck("Already Sent to SI") Then
@@ -1146,11 +1143,12 @@ Private Sub cmdSendToSI_Click()
         End
     Else
         CheckPhrase = "[Marked For SI]='Yes'"
-        If DCount("SiteID", "tblSites", GetItemDims.WhereID(False) & " and " & CheckPhrase) > 0 Then
+        If DCount("SiteID", "fqryDVSSiteReviewSelect", GetItemDims.WhereID(False) & " and " & CheckPhrase) > 0 Then
             EnterReview GetItemDims("Inspection Assignment")
             EnterSomeChildren GetItemDims("DVS Review"), "Inspection Assignment", CheckPhrase, "fqryDVSSiteReviewSelect"
         End If
     End If
+    RepaintForm
 '///Code
 
 '///ErrorHandling
@@ -1241,8 +1239,7 @@ Private Sub RepaintForm()
 '///Error Handling
 
 '///Code
-    EnableFormArea "Generate Work Order"
-    EnableFormArea "DVS Draft DDD"
+    EnableFormArea "DVS Review"
     Me.subHistory.Requery
 '///Code
 
@@ -1274,13 +1271,10 @@ Private Sub EnableFormArea(AreaName As String, Optional Override As String = "")
     End If
     
     Select Case AreaName
-        Case "Generate Work Order"
-'            Me.cmdDvsSubmitWorkOrder.Enabled = CanEnable
-            If CanEnable Then Me.subfrmDVSSiteReview.Form.FilterOn = False
-        Case "DVS Draft DDD"
-'            Me.cmdDvsSubmitDraftDDD.Enabled = CanEnable
-            If CanEnable And EnableFormLocking Then Me.subfrmDVSSiteReview.Form.Filter = "[DVS -Site Inspection Required] ='N'"
-            If CanEnable And EnableFormLocking Then Me.subfrmDVSSiteReview.Form.FilterOn = True
+        Case "DVS Review"
+            Me.cmdConcurrentRFI.Enabled = CanEnable
+            Me.cmdDvsSubmit.Enabled = CanEnable
+            Me.cmdSendToSI.Enabled = CanEnable
         Case Else
             Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & AreaName
     End Select
@@ -1311,18 +1305,27 @@ Private Function MultiCheck(CheckType As String) As Boolean
 '///Code
     Select Case CheckType
         Case "Pending RFI"
-'''''''' <<<<<<CHECK AFTER RFI REDO
+            WhereCondition = GetItemDims.WhereID(False)
+            WhereCondition = WhereCondition
+            If DCount("RfiID", "qryRfiOpenwHolds", WhereCondition) > 0 Then
+                MultiCheck = True
+            Else
                 MultiCheck = False
+            End If
             
         Case "Pending RFI Dimensions"
-'''''''' <<<<<<CHECK AFTER RFI REDO
+            WhereCondition = GetItemDims.WhereID(False)
+            WhereCondition = WhereCondition & " and [FurthestProgression]='Hold in DVS Review' and nz([isRequestSatisfied],'N')<>'Y'"
+            If DCount("RfiID", "qryRfiOpenwHolds", WhereCondition) > 0 Then
+                MultiCheck = True
+            Else
                 MultiCheck = False
+            End If
         
         Case "Ready for SI"
             WhereCondition = GetItemDims.WhereID(False)
             WhereCondition = WhereCondition & " and [Ready For SI]='No'"
             If DCount("SiteID", "fqryDVSSiteReviewSelect", WhereCondition) > 0 Then
-'                MsgBox ("There are sites that have not been fully triaged and are marked 'No' for Ready for SI.")
                 MultiCheck = False
             Else
                 MultiCheck = True
@@ -1341,9 +1344,9 @@ Private Function MultiCheck(CheckType As String) As Boolean
             WhereCondition = GetItemDims.WhereID(False)
             WhereCondition = WhereCondition & " and ([ReviewType] = 'Inspection Assignment' or [ReviewType] = 'Validation Assignment')"
             If DCount("ProjectID", GetItemDims.ReviewTable, WhereCondition) = 0 Then
-                MultiCheck = True
-            Else
                 MultiCheck = False
+            Else
+                MultiCheck = True
             End If
 '        Case ""
 '        Case ""
@@ -1406,14 +1409,11 @@ Private Function PostDialogCheck(ReviewType As String, DialogResult As String) A
                 If Not MultiCheck("Ready for SI") Then
                     MsgBox ("This project has sites that have not been triaged.  Look in the list for any that say no in Ready for SI.")
                     PostDialogCheck = False
-                ElseIf (Not MultiCheck("Already Sent to SI")) And MultiCheck("Marked for SI") Then
+                ElseIf (Not MultiCheck("Already Sent to SI")) And MultiCheck("Sites Marked for SI") Then
                     MsgBox ("This project has sites marked for site inspection, but has not been sent yet.  Please use the Send to Site Inspection button.")
                     PostDialogCheck = False
                 ElseIf MultiCheck("Pending RFI Dimensions") Then
                     MsgBox ("This project has an RFI with a Dimensions being requested.  Select RFI in the popup window to mark this review as done, pending an RFI response.")
-                    PostDialogCheck = False
-                ElseIf MultiCheck("Already Sent to SI") Then
-                    MsgBox ("This project has already been sent to site inspection and cannot be sent again.")
                     PostDialogCheck = False
                 Else
                     PostDialogCheck = True

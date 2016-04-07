@@ -15,11 +15,11 @@ Begin Form
     GridY =24
     Width =18000
     DatasheetFontHeight =11
-    ItemSuffix =71
+    ItemSuffix =72
     Right =19920
     Bottom =12615
     DatasheetGridlinesColor =15132391
-    Filter ="[RfiID] =9"
+    Filter ="[RfiID] =5"
     RecSrcDt = Begin
         0x52203c39b5bbe440
     End
@@ -170,19 +170,20 @@ Begin Form
                     SpecialEffect =2
                     BackStyle =1
                     OverlapFlags =93
-                    Top =2160
+                    Top =2100
                     Width =13500
                     Height =5520
                     BackColor =15590879
                     BorderColor =10921638
                     Name ="Box46"
                     GridlineColor =10921638
-                    LayoutCachedTop =2160
+                    LayoutCachedTop =2100
                     LayoutCachedWidth =13500
-                    LayoutCachedHeight =7680
+                    LayoutCachedHeight =7620
                     BackThemeColorIndex =-1
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
                     OverlapFlags =215
@@ -225,6 +226,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =3900
@@ -378,6 +380,7 @@ Begin Form
                     Overlaps =1
                 End
                 Begin CommandButton
+                    Enabled = NotDefault
                     OverlapFlags =93
                     Left =14100
                     Top =2340
@@ -692,11 +695,11 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =215
-                    Left =60
-                    Top =4260
+                    Top =4680
                     Width =13380
-                    Height =3240
+                    Height =2760
                     TabIndex =13
                     BorderColor =10921638
                     Name ="subfrmRfiItems"
@@ -705,15 +708,13 @@ Begin Form
                     LinkMasterFields ="RfiID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =60
-                    LayoutCachedTop =4260
-                    LayoutCachedWidth =13440
-                    LayoutCachedHeight =7500
+                    LayoutCachedTop =4680
+                    LayoutCachedWidth =13380
+                    LayoutCachedHeight =7440
                     Begin
                         Begin Label
                             OverlapFlags =223
-                            Left =60
-                            Top =4380
+                            Top =4800
                             Width =1650
                             Height =315
                             BorderColor =8355711
@@ -722,10 +723,9 @@ Begin Form
                             Caption ="Requested Items"
                             EventProcPrefix ="subfrmRfiItems_Label"
                             GridlineColor =10921638
-                            LayoutCachedLeft =60
-                            LayoutCachedTop =4380
-                            LayoutCachedWidth =1710
-                            LayoutCachedHeight =4695
+                            LayoutCachedTop =4800
+                            LayoutCachedWidth =1650
+                            LayoutCachedHeight =5115
                         End
                     End
                 End
@@ -1157,7 +1157,6 @@ Begin Form
                     Overlaps =1
                 End
                 Begin CommandButton
-                    Enabled = NotDefault
                     OverlapFlags =93
                     Left =14100
                     Top =6840
@@ -1320,6 +1319,206 @@ Begin Form
                     WebImagePaddingBottom =1
                     Overlaps =1
                 End
+                Begin Rectangle
+                    BackStyle =1
+                    OverlapFlags =223
+                    Top =4260
+                    Width =13380
+                    Height =420
+                    BackColor =13285805
+                    BorderColor =10921638
+                    Name ="Box71"
+                    GridlineColor =10921638
+                    LayoutCachedTop =4260
+                    LayoutCachedWidth =13380
+                    LayoutCachedHeight =4680
+                    BackThemeColorIndex =2
+                    BackTint =40.0
+                End
+                Begin CommandButton
+                    OverlapFlags =223
+                    Left =3540
+                    Top =4320
+                    Width =735
+                    Height =300
+                    TabIndex =25
+                    ForeColor =4210752
+                    Name ="cmdHelpItemReq"
+                    OnClick ="[Event Procedure]"
+                    Tag ="11"
+                    GridlineColor =10921638
+                    ImageData = Begin
+                        0x2800000010000000100000000100200000000000000000000000000000000000 ,
+                        0x000000000000000000000000000000000000000000000000b17d4a27b17d4a8d ,
+                        0xb17d4acfb17d4affb17d4affb17d4acfb17d4a8db17d4a270000000000000000 ,
+                        0x0000000000000000000000000000000000000000b17d4a72b17d4af6b17d4aff ,
+                        0xb17d4affb17d4affb17d4affb17d4affb17d4affb17d4af6b17d4a7200000000 ,
+                        0x000000000000000000000000b17d4a06b17d4ab7b17d4affb17d4affb17d4aff ,
+                        0xb17d4affffffffffffffffffb17d4affb17d4affb17d4affb17d4affb17d4ab7 ,
+                        0xb17d4a060000000000000000b17d4a93b17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affffffffffffffffffb17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4a9000000000b17d4a2db17d4afcb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affc1976effc1976effb17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4afcb17d4a2db17d4a93b17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xc1976effffffffffe9daccffb17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affb17d4a90b17d4adbb17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb8895bfffefdfdfff9f4f0ffba8c5fffb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affb17d4ad5b17d4af9b17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affdac2aafffffffffff4ede5ffb98b5dffb17d4affb17d4affb17d4aff ,
+                        0xb17d4affb17d4af3b17d4af9b17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affb17d4affe0cbb7fffffffffff3ebe3ffb8895bffb17d4affb17d4aff ,
+                        0xb17d4affb17d4af0b17d4ad8b17d4affb17d4affb17d4affb17d4affbf946aff ,
+                        0xb17d4affb17d4affb17d4affe3d0bdffffffffffdbc3acffb17d4affb17d4aff ,
+                        0xb17d4affb17d4ad5b17d4a90b17d4affb17d4affb27f4cfff9f6f2ffffffffff ,
+                        0xc1976effb17d4affb17d4affd4b79bffffffffffe0cbb7ffb17d4affb17d4aff ,
+                        0xb17d4affb17d4a8db17d4a2db17d4afcb17d4affb17d4affd9c0a8ffffffffff ,
+                        0xf5eee8ffd2b497ffd8bda3fffbf9f6fffdfcfbffc1976effb17d4affb17d4aff ,
+                        0xb17d4afcb17d4a2a00000000b17d4a90b17d4affb17d4affb27f4cffd9c0a8ff ,
+                        0xfefdfdfffffffffffffffffff7f1ecffc7a27dffb17d4affb17d4affb17d4aff ,
+                        0xb17d4a8d0000000000000000b17d4a06b17d4ab7b17d4affb17d4affb17d4aff ,
+                        0xb78859ffc7a27dffc1976effb17d4affb17d4affb17d4affb17d4affb17d4ab7 ,
+                        0xb17d4a0600000000000000000000000000000000b17d4a72b17d4af6b17d4aff ,
+                        0xb17d4affb17d4affb17d4affb17d4affb17d4affb17d4af6b17d4a7200000000 ,
+                        0x000000000000000000000000000000000000000000000000b17d4a27b17d4a8d ,
+                        0xb17d4accb17d4afcb17d4afcb17d4accb17d4a8db17d4a270000000000000000 ,
+                        0x0000000000000000
+                    End
+                    BackStyle =0
+
+                    LayoutCachedLeft =3540
+                    LayoutCachedTop =4320
+                    LayoutCachedWidth =4275
+                    LayoutCachedHeight =4620
+                    RowStart =1
+                    RowEnd =1
+                    Gradient =0
+                    BackColor =15123357
+                    BorderColor =15123357
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
+                End
+                Begin Label
+                    OverlapFlags =215
+                    TextAlign =1
+                    Left =1155
+                    Top =4320
+                    Width =675
+                    Height =315
+                    BorderColor =8355711
+                    ForeColor =8355711
+                    Name ="SiteID_Label"
+                    Caption ="Site ID"
+                    Tag ="DetachedLabel"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =1155
+                    LayoutCachedTop =4320
+                    LayoutCachedWidth =1830
+                    LayoutCachedHeight =4635
+                    ColumnStart =1
+                    ColumnEnd =1
+                End
+                Begin Label
+                    OverlapFlags =215
+                    TextAlign =1
+                    Left =1950
+                    Top =4320
+                    Width =1800
+                    Height =315
+                    BorderColor =8355711
+                    ForeColor =8355711
+                    Name ="Item Type_Label"
+                    Caption ="Item Requested*"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="Item_Type_Label"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =1950
+                    LayoutCachedTop =4320
+                    LayoutCachedWidth =3750
+                    LayoutCachedHeight =4635
+                    ColumnStart =3
+                    ColumnEnd =3
+                End
+                Begin Label
+                    OverlapFlags =223
+                    TextAlign =1
+                    Left =5160
+                    Top =4320
+                    Width =7770
+                    Height =315
+                    BorderColor =8355711
+                    ForeColor =8355711
+                    Name ="Reason Requested_Label"
+                    Caption ="Reason Requested"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="Reason_Requested_Label"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =5160
+                    LayoutCachedTop =4320
+                    LayoutCachedWidth =12930
+                    LayoutCachedHeight =4635
+                    ColumnStart =4
+                    ColumnEnd =4
+                End
+                Begin Label
+                    OverlapFlags =215
+                    TextAlign =1
+                    Left =360
+                    Top =4320
+                    Width =735
+                    Height =315
+                    BorderColor =8355711
+                    ForeColor =8355711
+                    Name ="Label96"
+                    Caption ="Item ID"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =360
+                    LayoutCachedTop =4320
+                    LayoutCachedWidth =1095
+                    LayoutCachedHeight =4635
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =11760
+                    Top =4320
+                    Height =299
+                    FontSize =9
+                    TabIndex =26
+                    ForeColor =4210752
+                    Name ="cmdFullItemDetail"
+                    Caption ="Show Full Detail"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =11760
+                    LayoutCachedTop =4320
+                    LayoutCachedWidth =13200
+                    LayoutCachedHeight =4619
+                    ColumnStart =8
+                    ColumnEnd =8
+                    UseTheme =1
+                    BackColor =15123357
+                    BorderColor =15123357
+                    HoverColor =15652797
+                    HoverThemeColorIndex =4
+                    HoverTint =40.0
+                    PressedColor =11957550
+                    PressedThemeColorIndex =4
+                    PressedShade =75.0
+                    HoverForeColor =4210752
+                    HoverForeThemeColorIndex =0
+                    HoverForeTint =75.0
+                    PressedForeColor =4210752
+                    PressedForeThemeColorIndex =0
+                    PressedForeTint =75.0
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
+                End
             End
         End
         Begin FormFooter
@@ -1387,6 +1586,8 @@ Option Explicit
 
 Private Const FormItemType As String = "RFI" 'used in determining what type of record is handled
 
+
+
 'HELP BUTTONS
 
 Private Sub cmdHelpViewRFI_Click()
@@ -1410,7 +1611,9 @@ End Sub
 Private Sub cmdHelpRFiComplete_Click()
 Call getHelpText(Me.name, Screen.ActiveControl.name, CInt(Screen.ActiveControl.tag))
 End Sub
-
+Private Sub cmdHelpItemReq_Click()
+Call getHelpText(Me.name, Screen.ActiveControl.name, CInt(Screen.ActiveControl.tag))
+End Sub
 'ACTION BUTTONS
 
 Private Sub cmdCancelRFI_Click()
@@ -1570,14 +1773,32 @@ PROC_ERR:
     Resume PROC_EXIT
 '///ErrorHandling
 End Sub
+
+Private Sub cmdFullItemDetail_Click()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cmdFullItemDetail_Click"
+'///Error Handling
+'///Code
+DoCmd.OpenReport "rptRFIItemDetail", acViewReport, , "[RfiID]=" & [RfiID], acWindowNormal
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+End Sub
 Private Sub cmdRfiComplete_Click()
 '///Error Handling
     If gcfHandleErrors Then On Error GoTo PROC_ERR
     PushCallStack Me.name & "." & "cmdRfiComplete_Click"
 '///Error Handling
 '///Code
-'''TODO: Should the RFI return to original review, or should it just end?
-
     CompleteReview "Mark RFI Complete"
 '///Code
 

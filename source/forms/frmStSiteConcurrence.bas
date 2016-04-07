@@ -15,7 +15,7 @@ Begin Form
     Width =16560
     DatasheetFontHeight =11
     ItemSuffix =66
-    Right =14385
+    Right =19920
     Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -292,13 +292,14 @@ Begin Form
                     BackThemeColorIndex =-1
                 End
                 Begin TextBox
+                    Visible = NotDefault
                     TabStop = NotDefault
                     OverlapFlags =215
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =1650
-                    Top =4980
-                    Width =1410
+                    Left =15240
+                    Top =360
+                    Width =1290
                     Height =330
                     ColumnWidth =3000
                     BorderColor =10921638
@@ -307,39 +308,41 @@ Begin Form
                     ControlSource ="DisasterID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =1650
-                    LayoutCachedTop =4980
-                    LayoutCachedWidth =3060
-                    LayoutCachedHeight =5310
+                    LayoutCachedLeft =15240
+                    LayoutCachedTop =360
+                    LayoutCachedWidth =16530
+                    LayoutCachedHeight =690
                     Begin
                         Begin Label
+                            Visible = NotDefault
                             OverlapFlags =215
-                            Left =180
-                            Top =4980
-                            Width =1380
+                            Left =13920
+                            Top =360
+                            Width =1260
                             Height =330
                             FontSize =12
                             BorderColor =8355711
                             Name ="DisasterID_Label"
                             Caption ="DisasterID"
                             GridlineColor =10921638
-                            LayoutCachedLeft =180
-                            LayoutCachedTop =4980
-                            LayoutCachedWidth =1560
-                            LayoutCachedHeight =5310
+                            LayoutCachedLeft =13920
+                            LayoutCachedTop =360
+                            LayoutCachedWidth =15180
+                            LayoutCachedHeight =690
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
                         End
                     End
                 End
                 Begin TextBox
+                    Visible = NotDefault
                     TabStop = NotDefault
                     OverlapFlags =215
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =1650
-                    Top =5460
-                    Width =1410
+                    Left =15240
+                    Top =840
+                    Width =1290
                     Height =360
                     ColumnWidth =3000
                     TabIndex =1
@@ -349,38 +352,40 @@ Begin Form
                     ControlSource ="ApplicantID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =1650
-                    LayoutCachedTop =5460
-                    LayoutCachedWidth =3060
-                    LayoutCachedHeight =5820
+                    LayoutCachedLeft =15240
+                    LayoutCachedTop =840
+                    LayoutCachedWidth =16530
+                    LayoutCachedHeight =1200
                     Begin
                         Begin Label
+                            Visible = NotDefault
                             OverlapFlags =215
-                            Left =180
-                            Top =5460
-                            Width =1380
+                            Left =13920
+                            Top =840
+                            Width =1260
                             Height =330
                             FontSize =12
                             BorderColor =8355711
                             Name ="ApplicantID_Label"
                             Caption ="ApplicantID"
                             GridlineColor =10921638
-                            LayoutCachedLeft =180
-                            LayoutCachedTop =5460
-                            LayoutCachedWidth =1560
-                            LayoutCachedHeight =5790
+                            LayoutCachedLeft =13920
+                            LayoutCachedTop =840
+                            LayoutCachedWidth =15180
+                            LayoutCachedHeight =1170
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
                         End
                     End
                 End
                 Begin TextBox
+                    Visible = NotDefault
                     TabStop = NotDefault
                     OverlapFlags =215
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =4380
-                    Top =4980
+                    Left =15000
+                    Top =1260
                     Width =1530
                     Height =330
                     ColumnWidth =1530
@@ -391,15 +396,16 @@ Begin Form
                     ControlSource ="ProjectID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =4380
-                    LayoutCachedTop =4980
-                    LayoutCachedWidth =5910
-                    LayoutCachedHeight =5310
+                    LayoutCachedLeft =15000
+                    LayoutCachedTop =1260
+                    LayoutCachedWidth =16530
+                    LayoutCachedHeight =1590
                     Begin
                         Begin Label
+                            Visible = NotDefault
                             OverlapFlags =215
-                            Left =3300
-                            Top =4980
+                            Left =13920
+                            Top =1260
                             Width =1020
                             Height =330
                             FontSize =12
@@ -407,10 +413,10 @@ Begin Form
                             Name ="ProjectID_Label"
                             Caption ="ProjectID"
                             GridlineColor =10921638
-                            LayoutCachedLeft =3300
-                            LayoutCachedTop =4980
-                            LayoutCachedWidth =4320
-                            LayoutCachedHeight =5310
+                            LayoutCachedLeft =13920
+                            LayoutCachedTop =1260
+                            LayoutCachedWidth =14940
+                            LayoutCachedHeight =1590
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
                         End
@@ -662,6 +668,7 @@ Begin Form
                     LayoutCachedHeight =4260
                 End
                 Begin Label
+                    Visible = NotDefault
                     OverlapFlags =215
                     Left =9720
                     Top =7980
@@ -1652,9 +1659,11 @@ Private Sub CompleteReview(ReviewType As String)
         If Access.CurrentProject.AllForms("frmReviewResult").IsLoaded Then
             Set frm = Forms("frmReviewResult")
             If PostDialogCheck(ReviewType, frm.cboResult) Then
-                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
-                    HandleDisposition ReviewType, frm
-                End If
+'                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
+'                    HandleDisposition ReviewType, frm
+'                End If
+                CompleteReviewStandard GetItemDims(ReviewType), Me.Form, frm
+
             End If
             DoCmd.Close acForm, "frmReviewResult"
         Else

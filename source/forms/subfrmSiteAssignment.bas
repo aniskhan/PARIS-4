@@ -15,11 +15,11 @@ Begin Form
     Width =20640
     DatasheetFontHeight =11
     ItemSuffix =24
-    Right =24375
-    Bottom =12480
+    Right =13590
+    Bottom =12645
     DatasheetGridlinesColor =15132391
-    Filter ="[DisasterID]='4258' and [ApplicantID]='039-UAFL2-00' and [ProjectID]=5 and [Site"
-        "ID]=1"
+    Filter ="[DisasterID]='4258' and [ApplicantID]='009-77250-00' and [ProjectID]=81 and [Sit"
+        "eID]=1"
     RecSrcDt = Begin
         0x3dd0319a39bae440
     End
@@ -110,6 +110,23 @@ Begin Form
             GridlineThemeColorIndex =1
             GridlineShade =65.0
         End
+        Begin ComboBox
+            AddColon = NotDefault
+            BorderLineStyle =0
+            LabelX =-1800
+            FontSize =11
+            FontName ="Calibri"
+            AllowValueListEdits =1
+            InheritValueList =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin Subform
             BorderLineStyle =0
             BorderThemeColorIndex =1
@@ -178,7 +195,7 @@ Begin Form
                     Width =1290
                     Height =360
                     ColumnWidth =3000
-                    TabIndex =25
+                    TabIndex =24
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="DisasterID"
@@ -349,7 +366,7 @@ Begin Form
                     Top =8340
                     Width =300
                     Height =300
-                    TabIndex =19
+                    TabIndex =18
                     BorderColor =10921638
                     Name ="Prior PWs"
                     ControlSource ="Has Recieved PA grant in prior Stafford Act Disasters?"
@@ -385,7 +402,7 @@ Begin Form
                     Left =11940
                     Top =8040
                     Width =300
-                    TabIndex =18
+                    TabIndex =17
                     BorderColor =10921638
                     Name ="Facility Insured"
                     ControlSource ="Facility insured?"
@@ -422,7 +439,7 @@ Begin Form
                     Left =6060
                     Top =8010
                     Width =360
-                    TabIndex =14
+                    TabIndex =13
                     BorderColor =10921638
                     Name ="Mitigation Opportunities"
                     ControlSource ="Is there a potential mitigation opportunity?"
@@ -460,7 +477,7 @@ Begin Form
                     Top =7950
                     Width =540
                     Height =360
-                    TabIndex =10
+                    TabIndex =9
                     BorderColor =10921638
                     Name ="EHP Issues"
                     ControlSource ="EHP Issues? (H, E, B)"
@@ -500,7 +517,7 @@ Begin Form
                     Top =5820
                     Width =4440
                     Height =390
-                    TabIndex =7
+                    TabIndex =6
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="Applicant POC"
@@ -543,7 +560,7 @@ Begin Form
                     Top =5820
                     Width =3420
                     Height =390
-                    TabIndex =6
+                    TabIndex =5
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="Recipients POC"
@@ -627,7 +644,7 @@ Begin Form
                     OverlapFlags =215
                     Left =11940
                     Top =9300
-                    TabIndex =21
+                    TabIndex =20
                     BorderColor =10921638
                     Name ="Insurance Inspection Report Required"
                     ControlSource ="Insurance Inspection Report Required"
@@ -668,7 +685,7 @@ Begin Form
                     Width =4800
                     Height =360
                     FontSize =12
-                    TabIndex =22
+                    TabIndex =21
                     BackColor =13431551
                     BorderColor =10921638
                     Name ="Assigned Insurance Specialist"
@@ -710,7 +727,7 @@ Begin Form
                     OverlapFlags =215
                     Left =11940
                     Top =8910
-                    TabIndex =20
+                    TabIndex =19
                     BorderColor =10921638
                     Name ="Insurance Specialist requested for Site Inspection"
                     ControlSource ="Insurance Specialist requested for Site Inspection"
@@ -747,7 +764,7 @@ Begin Form
                     OverlapFlags =215
                     Left =6060
                     Top =8880
-                    TabIndex =16
+                    TabIndex =15
                     BorderColor =10921638
                     Name ="Mitigation Site Inspection Report Requested"
                     ControlSource ="Mitigation Site Inspection Report Requested"
@@ -788,7 +805,7 @@ Begin Form
                     Width =4800
                     Height =360
                     FontSize =12
-                    TabIndex =17
+                    TabIndex =16
                     BackColor =13431551
                     BorderColor =10921638
                     Name ="Assigned Mitigation Specialist"
@@ -830,7 +847,7 @@ Begin Form
                     OverlapFlags =215
                     Left =6060
                     Top =8460
-                    TabIndex =15
+                    TabIndex =14
                     BorderColor =10921638
                     Name ="Mitgation Specialists requested for Staff Meeting"
                     ControlSource ="Mitgation Specialists requested for Staff Meeting"
@@ -867,7 +884,7 @@ Begin Form
                     OverlapFlags =215
                     Left =300
                     Top =8760
-                    TabIndex =12
+                    TabIndex =11
                     BorderColor =10921638
                     Name ="EHP Site Inspection Report Required"
                     ControlSource ="EHP Site Inspection Report Required"
@@ -908,7 +925,7 @@ Begin Form
                     Width =4800
                     Height =360
                     FontSize =12
-                    TabIndex =13
+                    TabIndex =12
                     BackColor =13431551
                     BorderColor =10921638
                     Name ="Assigned EHP Specialists"
@@ -950,7 +967,7 @@ Begin Form
                     OverlapFlags =215
                     Left =300
                     Top =8370
-                    TabIndex =11
+                    TabIndex =10
                     BorderColor =10921638
                     Name ="EHP Specialist  requested for Site Inspection"
                     ControlSource ="EHP Specialist  requested for Site Inspection"
@@ -994,7 +1011,7 @@ Begin Form
                     Width =8760
                     Height =390
                     FontSize =12
-                    TabIndex =8
+                    TabIndex =7
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="Site Inspection Location"
@@ -1038,7 +1055,7 @@ Begin Form
                     Width =1620
                     Height =390
                     FontSize =12
-                    TabIndex =5
+                    TabIndex =4
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="Date Assigned"
@@ -1067,54 +1084,6 @@ Begin Form
                             LayoutCachedLeft =7860
                             LayoutCachedTop =5280
                             LayoutCachedWidth =9540
-                            LayoutCachedHeight =5670
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                        End
-                    End
-                End
-                Begin TextBox
-                    OverlapFlags =215
-                    TextAlign =1
-                    IMESentenceMode =3
-                    Left =3240
-                    Top =5280
-                    Width =4320
-                    Height =390
-                    FontSize =12
-                    TabIndex =4
-                    BackColor =13431551
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="Assigned Site Inspector"
-                    ControlSource ="Assigned Site Inspector"
-                    StatusBarText ="lookup"
-                    EventProcPrefix ="Assigned_Site_Inspector"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =3240
-                    LayoutCachedTop =5280
-                    LayoutCachedWidth =7560
-                    LayoutCachedHeight =5670
-                    BackThemeColorIndex =7
-                    BackTint =20.0
-                    Begin
-                        Begin Label
-                            OverlapFlags =215
-                            Left =540
-                            Top =5280
-                            Width =2685
-                            Height =390
-                            FontSize =12
-                            FontWeight =600
-                            BorderColor =8355711
-                            Name ="Assigned Site Inspector_Label"
-                            Caption ="Assigned Site Inspector"
-                            EventProcPrefix ="Assigned_Site_Inspector_Label"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =540
-                            LayoutCachedTop =5280
-                            LayoutCachedWidth =3225
                             LayoutCachedHeight =5670
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
@@ -1174,7 +1143,7 @@ Begin Form
                     Top =4620
                     Width =1500
                     Height =315
-                    TabIndex =23
+                    TabIndex =22
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="Text2"
@@ -1195,7 +1164,7 @@ Begin Form
                     Top =4980
                     Width =960
                     Height =315
-                    TabIndex =24
+                    TabIndex =23
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="Text4"
@@ -1237,7 +1206,7 @@ Begin Form
                     Height =315
                     FontSize =12
                     FontWeight =700
-                    TabIndex =26
+                    TabIndex =25
                     BorderColor =10921638
                     ForeColor =9917743
                     Name ="Text6"
@@ -1284,7 +1253,7 @@ Begin Form
                     Top =60
                     Width =17220
                     Height =1320
-                    TabIndex =27
+                    TabIndex =26
                     BorderColor =10921638
                     Name ="subfrmDisasterInfoRevised short"
                     SourceObject ="Form.subfrmDisasterInfoRevised short"
@@ -1320,7 +1289,7 @@ Begin Form
                     Top =1440
                     Width =17220
                     Height =1335
-                    TabIndex =28
+                    TabIndex =27
                     BorderColor =10921638
                     Name ="subfrmRpaInfo short"
                     SourceObject ="Form.subfrmRpaInfo short"
@@ -1339,7 +1308,7 @@ Begin Form
                     Top =2820
                     Width =17220
                     Height =1380
-                    TabIndex =29
+                    TabIndex =28
                     BorderColor =10921638
                     Name ="subfrmlProjects banner"
                     SourceObject ="Form.subfrmlProjects banner"
@@ -1381,7 +1350,7 @@ Begin Form
                     Top =6780
                     Width =14100
                     Height =600
-                    TabIndex =9
+                    TabIndex =8
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="Inspection Notes"
@@ -1493,6 +1462,70 @@ Begin Form
                             ForeThemeColorIndex =8
                             ForeTint =100.0
                             ForeShade =75.0
+                        End
+                    End
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    SpecialEffect =4
+                    BorderWidth =3
+                    OverlapFlags =215
+                    TextAlign =1
+                    IMESentenceMode =3
+                    ColumnCount =2
+                    Left =3120
+                    Top =5280
+                    Width =4320
+                    Height =390
+                    FontSize =12
+                    FontWeight =700
+                    TabIndex =29
+                    BackColor =13431551
+                    BorderColor =10921638
+                    ForeColor =12874308
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"0\""
+                    Name ="Assigned Site Inspector"
+                    ControlSource ="Assigned Site Inspector"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT qryNames.UserID, qryNames.[Reverse Full Name] FROM qryNames INNER JOIN tb"
+                        "lStaffRoles ON qryNames.UserID = tblStaffRoles.StaffID WHERE (((tblStaffRoles.Di"
+                        "sasterID)=Forms!navMain!DisasterID) And ((tblStaffRoles.EndDate) Is Null Or (tbl"
+                        "StaffRoles.EndDate)>=Date()) And ((tblStaffRoles.Position)=\"SI\")) ORDER BY qry"
+                        "Names.[Last Name]; "
+                    ColumnWidths ="0;2880"
+                    StatusBarText ="lookup"
+                    EventProcPrefix ="Assigned_Site_Inspector"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =3120
+                    LayoutCachedTop =5280
+                    LayoutCachedWidth =7440
+                    LayoutCachedHeight =5670
+                    BackThemeColorIndex =7
+                    BackTint =20.0
+                    ForeThemeColorIndex =8
+                    ForeShade =100.0
+                    Begin
+                        Begin Label
+                            OverlapFlags =223
+                            Left =540
+                            Top =5280
+                            Width =2580
+                            Height =390
+                            FontSize =13
+                            FontWeight =700
+                            BorderColor =8355711
+                            ForeColor =12874308
+                            Name ="Assigned Site Inspector_Label"
+                            Caption ="Assigned Site Inspector:"
+                            EventProcPrefix ="Assigned_Site_Inspector_Label"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =540
+                            LayoutCachedTop =5280
+                            LayoutCachedWidth =3120
+                            LayoutCachedHeight =5670
+                            ForeThemeColorIndex =8
+                            ForeTint =100.0
                         End
                     End
                 End

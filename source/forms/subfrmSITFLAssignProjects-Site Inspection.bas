@@ -17,8 +17,8 @@ Begin Form
     Width =19440
     DatasheetFontHeight =11
     ItemSuffix =34
-    Right =5625
-    Bottom =7005
+    Right =13590
+    Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0xe7f1f0adb4b9e440
@@ -147,6 +147,7 @@ Begin Form
             AlternateBackShade =95.0
             Begin
                 Begin TextBox
+                    Locked = NotDefault
                     TabStop = NotDefault
                     EnterKeyBehavior = NotDefault
                     OldBorderStyle =0
@@ -199,6 +200,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     TabStop = NotDefault
                     EnterKeyBehavior = NotDefault
                     OldBorderStyle =0
@@ -251,6 +253,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     TabStop = NotDefault
                     EnterKeyBehavior = NotDefault
                     OldBorderStyle =0
@@ -304,6 +307,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     TabStop = NotDefault
                     OldBorderStyle =0
                     OverlapFlags =87
@@ -359,6 +363,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     TabStop = NotDefault
                     OldBorderStyle =0
                     OverlapFlags =85
@@ -408,6 +413,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     TabStop = NotDefault
                     OldBorderStyle =0
                     OverlapFlags =87
@@ -468,6 +474,7 @@ Begin Form
             AlternateBackShade =95.0
             Begin
                 Begin TextBox
+                    Locked = NotDefault
                     SpecialEffect =4
                     BorderWidth =3
                     OverlapFlags =93
@@ -540,6 +547,7 @@ Begin Form
                     Overlaps =1
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     SpecialEffect =4
                     BorderWidth =3
                     OverlapFlags =215
@@ -590,6 +598,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     SpecialEffect =4
                     BorderWidth =3
                     OverlapFlags =87
@@ -637,6 +646,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     SpecialEffect =4
                     BorderWidth =3
                     OverlapFlags =85
@@ -688,6 +698,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
                     SpecialEffect =4
@@ -738,6 +749,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     SpecialEffect =4
                     BorderWidth =3
                     OverlapFlags =87
@@ -788,6 +800,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
                     SpecialEffect =4
@@ -839,6 +852,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     TabStop = NotDefault
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
@@ -879,6 +893,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     TabStop = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3
@@ -917,6 +932,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     TabStop = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3

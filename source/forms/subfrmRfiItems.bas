@@ -13,11 +13,11 @@ Begin Form
     GridY =24
     Width =14805
     DatasheetFontHeight =11
-    ItemSuffix =154
-    Left =405
-    Top =5685
-    Right =13515
-    Bottom =8655
+    ItemSuffix =170
+    Left =345
+    Top =6105
+    Right =13455
+    Bottom =9075
     DatasheetGridlinesColor =15132391
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin
@@ -134,123 +134,13 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =382
+            Height =0
             BackColor =15064278
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             BackThemeColorIndex =2
             BackTint =20.0
-            Begin
-                Begin Label
-                    OverlapFlags =85
-                    TextAlign =1
-                    Left =825
-                    Top =30
-                    Width =675
-                    Height =315
-                    BorderColor =8355711
-                    ForeColor =8355711
-                    Name ="SiteID_Label"
-                    Caption ="Site ID"
-                    Tag ="DetachedLabel"
-                    GroupTable =2
-                    GridlineColor =10921638
-                    LayoutCachedLeft =825
-                    LayoutCachedTop =30
-                    LayoutCachedWidth =1500
-                    LayoutCachedHeight =345
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =1
-                    GroupTable =2
-                End
-                Begin Label
-                    OverlapFlags =85
-                    TextAlign =1
-                    Left =1620
-                    Top =30
-                    Width =3150
-                    Height =315
-                    BorderColor =8355711
-                    ForeColor =8355711
-                    Name ="Item Type_Label"
-                    Caption ="Item Requested*"
-                    Tag ="DetachedLabel"
-                    EventProcPrefix ="Item_Type_Label"
-                    GroupTable =2
-                    GridlineColor =10921638
-                    LayoutCachedLeft =1620
-                    LayoutCachedTop =30
-                    LayoutCachedWidth =4770
-                    LayoutCachedHeight =345
-                    ColumnStart =3
-                    ColumnEnd =3
-                    LayoutGroup =1
-                    GroupTable =2
-                End
-                Begin Label
-                    OverlapFlags =85
-                    TextAlign =1
-                    Left =4830
-                    Top =30
-                    Width =7770
-                    Height =315
-                    BorderColor =8355711
-                    ForeColor =8355711
-                    Name ="Reason Requested_Label"
-                    Caption ="Reason Requested"
-                    Tag ="DetachedLabel"
-                    EventProcPrefix ="Reason_Requested_Label"
-                    GroupTable =2
-                    GridlineColor =10921638
-                    LayoutCachedLeft =4830
-                    LayoutCachedTop =30
-                    LayoutCachedWidth =12600
-                    LayoutCachedHeight =345
-                    ColumnStart =4
-                    ColumnEnd =4
-                    LayoutGroup =1
-                    GroupTable =2
-                End
-                Begin Label
-                    OverlapFlags =85
-                    TextAlign =1
-                    Left =30
-                    Top =30
-                    Width =735
-                    Height =315
-                    BorderColor =8355711
-                    ForeColor =8355711
-                    Name ="Label96"
-                    Caption ="Item ID"
-                    GroupTable =2
-                    GridlineColor =10921638
-                    LayoutCachedLeft =30
-                    LayoutCachedTop =30
-                    LayoutCachedWidth =765
-                    LayoutCachedHeight =345
-                    LayoutGroup =1
-                    GroupTable =2
-                End
-                Begin EmptyCell
-                    Left =1560
-                    Top =30
-                    Width =0
-                    Height =315
-                    Name ="EmptyCell104"
-                    GroupTable =2
-                    GridlineColor =10921638
-                    LayoutCachedLeft =1560
-                    LayoutCachedTop =30
-                    LayoutCachedWidth =1560
-                    LayoutCachedHeight =345
-                    ColumnStart =2
-                    ColumnEnd =2
-                    LayoutGroup =1
-                    GroupTable =2
-                End
-            End
         End
         Begin Section
             CanGrow = NotDefault
@@ -273,19 +163,16 @@ Begin Form
                     ForeColor =4210752
                     Name ="tbSiteID"
                     ControlSource ="SiteID"
-                    GroupTable =2
                     GridlineColor =10921638
 
                     LayoutCachedLeft =825
                     LayoutCachedTop =30
                     LayoutCachedWidth =1500
                     LayoutCachedHeight =345
-                    RowStart =1
-                    RowEnd =1
+                    RowStart =2
+                    RowEnd =2
                     ColumnStart =1
                     ColumnEnd =1
-                    LayoutGroup =1
-                    GroupTable =2
                 End
                 Begin TextBox
                     CanGrow = NotDefault
@@ -305,19 +192,16 @@ Begin Form
                     Name ="tbreasonReq"
                     ControlSource ="Reason Requested"
                     OnDblClick ="[Event Procedure]"
-                    GroupTable =2
                     GridlineColor =10921638
 
                     LayoutCachedLeft =4830
                     LayoutCachedTop =30
                     LayoutCachedWidth =12600
                     LayoutCachedHeight =345
-                    RowStart =1
-                    RowEnd =1
+                    RowStart =2
+                    RowEnd =2
                     ColumnStart =4
                     ColumnEnd =4
-                    LayoutGroup =1
-                    GroupTable =2
                 End
                 Begin TextBox
                     OverlapFlags =85
@@ -331,41 +215,21 @@ Begin Form
                     ForeColor =4210752
                     Name ="tbRfiItemID"
                     ControlSource ="RfiItemID"
-                    GroupTable =2
                     GridlineColor =10921638
 
                     LayoutCachedLeft =30
                     LayoutCachedTop =30
                     LayoutCachedWidth =765
                     LayoutCachedHeight =345
-                    RowStart =1
-                    RowEnd =1
-                    LayoutGroup =1
-                    GroupTable =2
-                End
-                Begin EmptyCell
-                    Left =1560
-                    Top =30
-                    Width =0
-                    Height =315
-                    Name ="EmptyCell103"
-                    GroupTable =2
-                    GridlineColor =10921638
-                    LayoutCachedLeft =1560
-                    LayoutCachedTop =30
-                    LayoutCachedWidth =1560
-                    LayoutCachedHeight =345
-                    RowStart =1
-                    RowEnd =1
-                    ColumnStart =2
-                    ColumnEnd =2
-                    LayoutGroup =1
-                    GroupTable =2
+                    RowStart =2
+                    RowEnd =2
                 End
                 Begin ComboBox
                     OverlapFlags =85
                     TextAlign =1
                     IMESentenceMode =3
+                    ColumnCount =2
+                    ListWidth =8640
                     Left =1620
                     Top =30
                     Width =3150
@@ -374,27 +238,25 @@ Begin Form
                     TabIndex =2
                     BorderColor =10921638
                     ForeColor =4210752
-                    ColumnInfo ="\"\";\"\";\"10\";\"510\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
                     Name ="tbItemReq"
                     ControlSource ="ItemType"
                     RowSourceType ="Table/Query"
-                    RowSource ="lutblRFIItemType"
-                    GroupTable =2
+                    RowSource ="qryRfiItemProgression"
+                    ColumnWidths ="5760;2880"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =1620
                     LayoutCachedTop =30
                     LayoutCachedWidth =4770
                     LayoutCachedHeight =345
-                    RowStart =1
-                    RowEnd =1
+                    RowStart =2
+                    RowEnd =2
                     ColumnStart =3
                     ColumnEnd =3
-                    LayoutGroup =1
                     ForeThemeColorIndex =0
                     ForeTint =75.0
                     ForeShade =100.0
-                    GroupTable =2
                 End
             End
         End
@@ -415,9 +277,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
-Private Sub Reason_Requested_DblClick(Cancel As Integer)
-RunCommand acCmdZoomBox
-End Sub
+
 
 Private Sub Form_AfterInsert()
 '///Error Handling

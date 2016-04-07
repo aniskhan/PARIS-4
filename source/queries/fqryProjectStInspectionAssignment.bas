@@ -33,6 +33,7 @@ Begin OutputColumns
     Expression ="tblProjects.[Recipient POC]"
     Expression ="tblProjects.[Subrecipient POC]"
     Expression ="tblProjects.[Inspection Notes]"
+    Expression ="tblProjects.[Scheduled Time of Site Inspection]"
 End
 Begin Joins
     LeftTable ="tblProjects"
@@ -158,17 +159,21 @@ Begin
         dbText "Name" ="tblProjects.[Assigned Mitigation Specialist]"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="tblProjects.[Scheduled Time of Site Inspection]"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1153
+    Right =923
     Bottom =860
     Left =-1
     Top =-1
-    Right =1137
-    Bottom =533
+    Right =907
+    Bottom =516
     Left =0
     Top =0
     ColumnsShown =539

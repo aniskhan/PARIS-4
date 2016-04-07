@@ -1,8 +1,7 @@
 ﻿Operation =1
 Option =0
-Where ="(((revtblProject.ReviewType)=\"Generate Work Order\" Or (revtblProject.ReviewTyp"
-    "e)=\"DVS Draft DDD\") AND ((revtblProject.ReviewExitDate) Is Null) AND ((tblProj"
-    "ects.[Lane Assigned])=\"ST\"))"
+Where ="(((revtblProject.ReviewType)=\"DVS Review\") AND ((revtblProject.ReviewExitDate)"
+    " Is Null) AND ((tblProjects.[Lane Assigned])=\"ST\"))"
 Begin InputTables
     Name ="tblProjects"
     Name ="revtblProject"
@@ -93,12 +92,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =1153
+    Right =923
     Bottom =860
     Left =-1
     Top =-1
-    Right =1137
-    Bottom =419
+    Right =907
+    Bottom =402
     Left =0
     Top =0
     ColumnsShown =539

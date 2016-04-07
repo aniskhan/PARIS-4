@@ -14,14 +14,14 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =16740
+    Width =16680
     DatasheetFontHeight =11
-    ItemSuffix =93
-    Right =15045
+    ItemSuffix =99
+    Right =19920
     Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0xf2adfb1f35aee440
+        0x70204b3154bce440
     End
     RecordSource ="fqryProjectLaneSelect"
     Caption ="DIU Project Routing"
@@ -200,7 +200,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =14160
+            Height =14220
             Name ="Detail"
             AlternateBackColor =15921906
             AlternateBackThemeColorIndex =1
@@ -974,7 +974,7 @@ Begin Form
                 Begin CommandButton
                     OverlapFlags =215
                     Left =13920
-                    Top =4440
+                    Top =4980
                     Width =2160
                     Height =780
                     FontSize =13
@@ -987,9 +987,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =13920
-                    LayoutCachedTop =4440
+                    LayoutCachedTop =4980
                     LayoutCachedWidth =16080
-                    LayoutCachedHeight =5220
+                    LayoutCachedHeight =5760
                     UseTheme =1
                     BackColor =15123357
                     BorderColor =15123357
@@ -1229,7 +1229,7 @@ Begin Form
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =13860
-                    Top =6060
+                    Top =6240
                     Width =2340
                     Height =315
                     TabIndex =20
@@ -1244,9 +1244,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =13860
-                    LayoutCachedTop =6060
+                    LayoutCachedTop =6240
                     LayoutCachedWidth =16200
-                    LayoutCachedHeight =6375
+                    LayoutCachedHeight =6555
                     ForeThemeColorIndex =0
                     ForeTint =75.0
                     ForeShade =100.0
@@ -1254,7 +1254,7 @@ Begin Form
                         Begin Label
                             OverlapFlags =215
                             Left =13860
-                            Top =5700
+                            Top =5880
                             Width =2370
                             Height =315
                             BorderColor =8355711
@@ -1262,10 +1262,165 @@ Begin Form
                             Caption ="Documentation attached"
                             GridlineColor =10921638
                             LayoutCachedLeft =13860
-                            LayoutCachedTop =5700
+                            LayoutCachedTop =5880
                             LayoutCachedWidth =16230
-                            LayoutCachedHeight =6015
+                            LayoutCachedHeight =6195
                             ForeTint =100.0
+                        End
+                    End
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    Left =15360
+                    Top =4080
+                    Width =1080
+                    Height =315
+                    TabIndex =21
+                    BackColor =15921906
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="tbProjPCTComp"
+                    Format ="Percent"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =15360
+                    LayoutCachedTop =4080
+                    LayoutCachedWidth =16440
+                    LayoutCachedHeight =4395
+                    BackShade =95.0
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =13680
+                            Top =4080
+                            Width =1620
+                            Height =315
+                            FontSize =9
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label94"
+                            Caption ="Project % Complete:"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =13680
+                            LayoutCachedTop =4080
+                            LayoutCachedWidth =15300
+                            LayoutCachedHeight =4395
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    Left =15360
+                    Top =4440
+                    Width =1080
+                    Height =315
+                    TabIndex =22
+                    BackColor =15921906
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="tbProjPCTCompAsOfDate"
+                    Format ="Short Date"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =15360
+                    LayoutCachedTop =4440
+                    LayoutCachedWidth =16440
+                    LayoutCachedHeight =4755
+                    BackShade =95.0
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =13680
+                            Top =4440
+                            Width =1620
+                            Height =315
+                            FontSize =9
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label96"
+                            Caption ="As of Date:"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =13680
+                            LayoutCachedTop =4440
+                            LayoutCachedWidth =15300
+                            LayoutCachedHeight =4755
+                        End
+                    End
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =15120
+                    Top =13800
+                    Height =315
+                    TabIndex =23
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="DisasterID"
+                    ControlSource ="DisasterID"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =15120
+                    LayoutCachedTop =13800
+                    LayoutCachedWidth =16560
+                    LayoutCachedHeight =14115
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =13320
+                            Top =13800
+                            Width =1020
+                            Height =315
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label97"
+                            Caption ="DisasterID"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =13320
+                            LayoutCachedTop =13800
+                            LayoutCachedWidth =14340
+                            LayoutCachedHeight =14115
+                        End
+                    End
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =11700
+                    Top =13800
+                    Height =315
+                    TabIndex =24
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="ProjectID"
+                    ControlSource ="ProjectID"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =11700
+                    LayoutCachedTop =13800
+                    LayoutCachedWidth =13140
+                    LayoutCachedHeight =14115
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =9900
+                            Top =13800
+                            Width =930
+                            Height =315
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label98"
+                            Caption ="ProjectID"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =9900
+                            LayoutCachedTop =13800
+                            LayoutCachedWidth =10830
+                            LayoutCachedHeight =14115
                         End
                     End
                 End
@@ -1832,6 +1987,11 @@ Private Sub Form_Current()
 '    Makes sure lane shows properly when changing records.
     SetLaneOption
     RepaintForm
+    Me.tbProjPCTComp.Value = DLookup("[AdjustedPCTComp]", "qryProject-WeightedPCTCompAsOfDate", _
+    "[DisasterID] ='" & Me.DisasterID & "'" & "AND [ProjectID] =" & Me.ProjectID)
+    Me.tbProjPCTCompAsOfDate = DLookup("[MaxOfReviewExitDate]", "qryProject-WeightedPCTCompAsOfDate", _
+    "[DisasterID] ='" & Me.DisasterID & "'" & "AND [ProjectID] =" & Me.ProjectID)
+    
 '///Code
 
 '///ErrorHandling

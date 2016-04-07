@@ -48,6 +48,20 @@ Begin OutputColumns
     Expression ="tblSites.[Assigned Insurance Specialist]"
     Expression ="tblSites.[Inspection Notes]"
     Expression ="tblSites.[Scheduled Time of Site Inspection]"
+    Alias ="Ready For SI"
+    Expression ="IIf(Nz([% Work Complete])<=0,\"Yes\",IIf(Nz([% Work Complete])<1,IIf(Nz([Dimensi"
+        "onsKnown],\"\")=\"N\",\"Yes\",IIf(Nz([KnownDimensionsInEMMIE],\"\")=\"Y\",\"Yes\""
+        ",\"No\")),IIf(Nz([DimensionsKnown],\"\")=\"N\",IIf(Nz([DimensionsFrom],\"\")=\"S"
+        "ite Inspection\",\"Yes\",IIf(Nz([PartOfVerificationSample],\"\")=\"N\",\"Yes\",\""
+        "No\")),IIf(Nz([PartOfVerificationSample],\"\")=\"N\",\"Yes\",IIf(Nz([KnownDimens"
+        "ionsInEMMIE],\"\")=\"Y\",\"Yes\",\"No\")))))"
+    Alias ="Marked For SI"
+    Expression ="IIf(Nz([% Work Complete])<=0,\"Yes\",IIf(Nz([% Work Complete])<1,IIf(Nz([Dimensi"
+        "onsKnown],\"\")=\"N\",\"Yes\",IIf(Nz([KnownDimensionsInEMMIE],\"\")=\"Y\",\"Yes\""
+        ",\"\")),IIf(Nz([DimensionsKnown],\"\")=\"N\",IIf(Nz([DimensionsFrom],\"\")=\"Sit"
+        "e Inspection\",\"Yes\",IIf(Nz([PartOfVerificationSample],\"\")=\"N\",\"No\",\"\""
+        ")),IIf(Nz([PartOfVerificationSample],\"\")=\"N\",\"No\",IIf(Nz([KnownDimensionsI"
+        "nEMMIE],\"\")=\"Y\",\"Yes\",\"\")))))"
 End
 Begin Joins
     LeftTable ="tblSites"
@@ -241,17 +255,21 @@ Begin
         dbText "Name" ="tblSites.[Scheduled Time of Site Inspection]"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="Ready For SI"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1153
+    Right =923
     Bottom =860
     Left =-1
     Top =-1
-    Right =1137
-    Bottom =332
+    Right =907
+    Bottom =470
     Left =0
     Top =0
     ColumnsShown =539

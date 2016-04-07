@@ -3,6 +3,7 @@ VersionRequired =20
 Begin Report
     LayoutForPrint = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DateGrouping =1
     GrpKeepTogether =1
@@ -12,10 +13,11 @@ Begin Report
     GridY =24
     Width =14520
     DatasheetFontHeight =11
-    ItemSuffix =28
+    ItemSuffix =29
     DatasheetGridlinesColor =15132391
+    Filter ="[ApplicantID] = '007-UQRBV-00'"
     RecSrcDt = Begin
-        0x9e3adf7e91b7e440
+        0x5a271a2456bce440
     End
     RecordSource ="SELECT tblSubRecipient.DisasterID, tblSubRecipient.ApplicantID, tblSubRecipient."
         "[Subrecipient Name], tblSubRecipient.County, tblSubRecipient.Eligible, tblSubRec"
@@ -23,47 +25,48 @@ Begin Report
         "Recipient.[Applicant is a PNP], tblSubRecipient.[Ops Notes], tblSubRecipient.[RP"
         "A Entered into EMMIE], tblSubRecipient.[Determination Entry into EMMIE], tblSubR"
         "ecipient.[OCC Notes], tblSubRecipient.[PAGS Eligibility Determination], tblSubRe"
-        "cipient.[PAGS Notes], tblSubRecipient.[Assigned PDC], tblSubRecipient.[Explorato"
-        "ry Call Date], tblSubRecipient.[Exploratory Call Time], tblSubRecipient.[Explora"
-        "tory Call FEMA Participants], tblSubRecipient.[Exploratory Call Checklist emaile"
-        "d to Subrecipient], tblSubRecipient.[RSM Agenda sent to Subrecipient], tblSubRec"
-        "ipient.[Exploratory Call Notes], tblSubRecipient.[EHP Staff Required at RSM], tb"
-        "lSubRecipient.[Insurance Staff Required at RSM], tblSubRecipient.[Mitigation Sta"
-        "ff Required at RSM], tblSubRecipient.[Are there any known Environmental or Histo"
-        "ric Preservation Issu], tblSubRecipient.[Can Site Inspections be conducted], tbl"
-        "SubRecipient.[Is all disaster-related work completed], tblSubRecipient.[Donated "
-        "Resources], tblSubRecipient.[Critial Infrastructure Damaged], tblSubRecipient.[D"
-        "escribe Damaged Critical Infrastructure], tblSubRecipient.[Specialized Staff Req"
-        "uired?], tblSubRecipient.[Types of Specialized Staff], tblSubRecipient.[Temporar"
-        "y Space needed], tblSubRecipient.[Date Exploratory Call Information uploaded to "
-        "EMMIE], tblSubRecipient.[Recovery Scoping Meeting Date], tblSubRecipient.[Recove"
-        "ry Scoping Meeting Time], tblSubRecipient.[Recovery Scoping Meeting Location], t"
-        "blSubRecipient.[Recovery Scoping Meeting Participants], tblSubRecipient.[Recover"
-        "y Scoping Meeting Notes], tblSubRecipient.[Insurance Policy Received], tblSubRec"
-        "ipient.[Debris Contracts Received], tblSubRecipient.[List of Damages Provided], "
-        "tblSubRecipient.[Recipient POC], tblSubRecipient.[Recipient POC Contact Number],"
-        " tblSubRecipient.[Subrecipient POC], tblSubRecipient.[Subrecipient POC Contact N"
-        "umber], tblSubRecipient.[FEMA Participants], tblSubRecipient.[Recipient Particip"
-        "ants], tblSubRecipient.[Subrecipient Participants], tblSubRecipient.[Subrecipien"
-        "t Emergency Manager], tblSubRecipient.[Subrecipient Insurance Risk Manager], tbl"
-        "SubRecipient.[Subrecipient Environmental/Historic Specialist], tblSubRecipient.["
-        "Subrecipient Public Works Staff], tblSubRecipient.[Subrecipient Finance Represen"
-        "tative], tblSubRecipient.[Subrecipient Engineering Representative], tblSubRecipi"
-        "ent.[Subrecipient Police/Fire Representatives], tblSubRecipient.[Number of Large"
-        " Projects], tblSubRecipient.[Projected Amount of Large Projects], tblSubRecipien"
-        "t.[Number of Small Projects], tblSubRecipient.[Projected Amount of Small Project"
-        "s], tblSubRecipient.[Number of Projects 100% Complete], tblSubRecipient.[Number "
-        "of Complex Projects], tblSubRecipient.[Projected Date 100% PW Submitted], tblSub"
-        "Recipient.[Actual Date 100% PWs Submitted], tblSubRecipient.[Exit Briefing Date]"
-        ", tblSubRecipient.[Exit Briefing Time], tblSubRecipient.[Exit Briefing Location]"
-        ", tblSubRecipient.[Exit Briefing Recipient POC], tblSubRecipient.[Exit Briefing "
-        "Recipient POC Contact Number], tblSubRecipient.[Exit Briefing Subrecipient POC],"
-        " tblSubRecipient.[Exit Briefing Subrecipient POC Contact Number], tblSubRecipien"
-        "t.[Date RSM Information Entered into EMMIE], tblSubRecipient.[EMMIE Entry Assign"
-        "ed To], tblSubRecipient.[Date Exit Meeting Information Entered Into EMMIE], tblS"
-        "ubRecipient.[Exit Meeting Information Entry Assigned To], tblSubRecipient.RPARev"
-        "iewStatus, tblSubRecipient.OccSbaReferral, tblSubRecipient.PagsSbaReferral FROM "
-        "tblSubRecipient WHERE (((tblSubRecipient.ApplicantID)=[Specify Applicant ID])); "
+        "cipient.[PAGS Notes], qryNames.[Full Name] AS PDM, tblSubRecipient.[Exploratory "
+        "Call Date], tblSubRecipient.[Exploratory Call Time], tblSubRecipient.[Explorator"
+        "y Call FEMA Participants], tblSubRecipient.[Exploratory Call Checklist emailed t"
+        "o Subrecipient], tblSubRecipient.[RSM Agenda sent to Subrecipient], tblSubRecipi"
+        "ent.[Exploratory Call Notes], tblSubRecipient.[EHP Staff Required at RSM], tblSu"
+        "bRecipient.[Insurance Staff Required at RSM], tblSubRecipient.[Mitigation Staff "
+        "Required at RSM], tblSubRecipient.[Are there any known Environmental or Historic"
+        " Preservation Issu], tblSubRecipient.[Can Site Inspections be conducted], tblSub"
+        "Recipient.[Is all disaster-related work completed], tblSubRecipient.[Donated Res"
+        "ources], tblSubRecipient.[Critial Infrastructure Damaged], tblSubRecipient.[Desc"
+        "ribe Damaged Critical Infrastructure], tblSubRecipient.[Specialized Staff Requir"
+        "ed?], tblSubRecipient.[Types of Specialized Staff], tblSubRecipient.[Temporary S"
+        "pace needed], tblSubRecipient.[Date Exploratory Call Information uploaded to EMM"
+        "IE], tblSubRecipient.[Recovery Scoping Meeting Date], tblSubRecipient.[Recovery "
+        "Scoping Meeting Time], tblSubRecipient.[Recovery Scoping Meeting Location], tblS"
+        "ubRecipient.[Recovery Scoping Meeting Participants], tblSubRecipient.[Recovery S"
+        "coping Meeting Notes], tblSubRecipient.[Insurance Policy Received], tblSubRecipi"
+        "ent.[Debris Contracts Received], tblSubRecipient.[List of Damages Provided], tbl"
+        "SubRecipient.[Recipient POC], tblSubRecipient.[Recipient POC Contact Number], tb"
+        "lSubRecipient.[Subrecipient POC], tblSubRecipient.[Subrecipient POC Contact Numb"
+        "er], tblSubRecipient.[FEMA Participants], tblSubRecipient.[Recipient Participant"
+        "s], tblSubRecipient.[Subrecipient Participants], tblSubRecipient.[Subrecipient E"
+        "mergency Manager], tblSubRecipient.[Subrecipient Insurance Risk Manager], tblSub"
+        "Recipient.[Subrecipient Environmental/Historic Specialist], tblSubRecipient.[Sub"
+        "recipient Public Works Staff], tblSubRecipient.[Subrecipient Finance Representat"
+        "ive], tblSubRecipient.[Subrecipient Engineering Representative], tblSubRecipient"
+        ".[Subrecipient Police/Fire Representatives], tblSubRecipient.[Number of Large Pr"
+        "ojects], tblSubRecipient.[Projected Amount of Large Projects], tblSubRecipient.["
+        "Number of Small Projects], tblSubRecipient.[Projected Amount of Small Projects],"
+        " tblSubRecipient.[Number of Projects 100% Complete], tblSubRecipient.[Number of "
+        "Complex Projects], tblSubRecipient.[Projected Date 100% PW Submitted], tblSubRec"
+        "ipient.[Actual Date 100% PWs Submitted], tblSubRecipient.[Exit Briefing Date], t"
+        "blSubRecipient.[Exit Briefing Time], tblSubRecipient.[Exit Briefing Location], t"
+        "blSubRecipient.[Exit Briefing Recipient POC], tblSubRecipient.[Exit Briefing Rec"
+        "ipient POC Contact Number], tblSubRecipient.[Exit Briefing Subrecipient POC], tb"
+        "lSubRecipient.[Exit Briefing Subrecipient POC Contact Number], tblSubRecipient.["
+        "Date RSM Information Entered into EMMIE], tblSubRecipient.[EMMIE Entry Assigned "
+        "To], tblSubRecipient.[Date Exit Meeting Information Entered Into EMMIE], tblSubR"
+        "ecipient.[Exit Meeting Information Entry Assigned To], tblSubRecipient.RPAReview"
+        "Status, tblSubRecipient.OccSbaReferral, tblSubRecipient.PagsSbaReferral FROM tbl"
+        "SubRecipient INNER JOIN qryNames ON tblSubRecipient.[Assigned PDC] = qryNames.Us"
+        "erID; "
     Caption ="rptTestApplicantReview"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
@@ -76,47 +79,48 @@ Begin Report
         "Recipient.[Applicant is a PNP], tblSubRecipient.[Ops Notes], tblSubRecipient.[RP"
         "A Entered into EMMIE], tblSubRecipient.[Determination Entry into EMMIE], tblSubR"
         "ecipient.[OCC Notes], tblSubRecipient.[PAGS Eligibility Determination], tblSubRe"
-        "cipient.[PAGS Notes], tblSubRecipient.[Assigned PDC], tblSubRecipient.[Explorato"
-        "ry Call Date], tblSubRecipient.[Exploratory Call Time], tblSubRecipient.[Explora"
-        "tory Call FEMA Participants], tblSubRecipient.[Exploratory Call Checklist emaile"
-        "d to Subrecipient], tblSubRecipient.[RSM Agenda sent to Subrecipient], tblSubRec"
-        "ipient.[Exploratory Call Notes], tblSubRecipient.[EHP Staff Required at RSM], tb"
-        "lSubRecipient.[Insurance Staff Required at RSM], tblSubRecipient.[Mitigation Sta"
-        "ff Required at RSM], tblSubRecipient.[Are there any known Environmental or Histo"
-        "ric Preservation Issu], tblSubRecipient.[Can Site Inspections be conducted], tbl"
-        "SubRecipient.[Is all disaster-related work completed], tblSubRecipient.[Donated "
-        "Resources], tblSubRecipient.[Critial Infrastructure Damaged], tblSubRecipient.[D"
-        "escribe Damaged Critical Infrastructure], tblSubRecipient.[Specialized Staff Req"
-        "uired?], tblSubRecipient.[Types of Specialized Staff], tblSubRecipient.[Temporar"
-        "y Space needed], tblSubRecipient.[Date Exploratory Call Information uploaded to "
-        "EMMIE], tblSubRecipient.[Recovery Scoping Meeting Date], tblSubRecipient.[Recove"
-        "ry Scoping Meeting Time], tblSubRecipient.[Recovery Scoping Meeting Location], t"
-        "blSubRecipient.[Recovery Scoping Meeting Participants], tblSubRecipient.[Recover"
-        "y Scoping Meeting Notes], tblSubRecipient.[Insurance Policy Received], tblSubRec"
-        "ipient.[Debris Contracts Received], tblSubRecipient.[List of Damages Provided], "
-        "tblSubRecipient.[Recipient POC], tblSubRecipient.[Recipient POC Contact Number],"
-        " tblSubRecipient.[Subrecipient POC], tblSubRecipient.[Subrecipient POC Contact N"
-        "umber], tblSubRecipient.[FEMA Participants], tblSubRecipient.[Recipient Particip"
-        "ants], tblSubRecipient.[Subrecipient Participants], tblSubRecipient.[Subrecipien"
-        "t Emergency Manager], tblSubRecipient.[Subrecipient Insurance Risk Manager], tbl"
-        "SubRecipient.[Subrecipient Environmental/Historic Specialist], tblSubRecipient.["
-        "Subrecipient Public Works Staff], tblSubRecipient.[Subrecipient Finance Represen"
-        "tative], tblSubRecipient.[Subrecipient Engineering Representative], tblSubRecipi"
-        "ent.[Subrecipient Police/Fire Representatives], tblSubRecipient.[Number of Large"
-        " Projects], tblSubRecipient.[Projected Amount of Large Projects], tblSubRecipien"
-        "t.[Number of Small Projects], tblSubRecipient.[Projected Amount of Small Project"
-        "s], tblSubRecipient.[Number of Projects 100% Complete], tblSubRecipient.[Number "
-        "of Complex Projects], tblSubRecipient.[Projected Date 100% PW Submitted], tblSub"
-        "Recipient.[Actual Date 100% PWs Submitted], tblSubRecipient.[Exit Briefing Date]"
-        ", tblSubRecipient.[Exit Briefing Time], tblSubRecipient.[Exit Briefing Location]"
-        ", tblSubRecipient.[Exit Briefing Recipient POC], tblSubRecipient.[Exit Briefing "
-        "Recipient POC Contact Number], tblSubRecipient.[Exit Briefing Subrecipient POC],"
-        " tblSubRecipient.[Exit Briefing Subrecipient POC Contact Number], tblSubRecipien"
-        "t.[Date RSM Information Entered into EMMIE], tblSubRecipient.[EMMIE Entry Assign"
-        "ed To], tblSubRecipient.[Date Exit Meeting Information Entered Into EMMIE], tblS"
-        "ubRecipient.[Exit Meeting Information Entry Assigned To], tblSubRecipient.RPARev"
-        "iewStatus, tblSubRecipient.OccSbaReferral, tblSubRecipient.PagsSbaReferral FROM "
-        "tblSubRecipient WHERE (((tblSubRecipient.ApplicantID)=[Specify Applicant ID])); "
+        "cipient.[PAGS Notes], qryNames.[Full Name] AS PDM, tblSubRecipient.[Exploratory "
+        "Call Date], tblSubRecipient.[Exploratory Call Time], tblSubRecipient.[Explorator"
+        "y Call FEMA Participants], tblSubRecipient.[Exploratory Call Checklist emailed t"
+        "o Subrecipient], tblSubRecipient.[RSM Agenda sent to Subrecipient], tblSubRecipi"
+        "ent.[Exploratory Call Notes], tblSubRecipient.[EHP Staff Required at RSM], tblSu"
+        "bRecipient.[Insurance Staff Required at RSM], tblSubRecipient.[Mitigation Staff "
+        "Required at RSM], tblSubRecipient.[Are there any known Environmental or Historic"
+        " Preservation Issu], tblSubRecipient.[Can Site Inspections be conducted], tblSub"
+        "Recipient.[Is all disaster-related work completed], tblSubRecipient.[Donated Res"
+        "ources], tblSubRecipient.[Critial Infrastructure Damaged], tblSubRecipient.[Desc"
+        "ribe Damaged Critical Infrastructure], tblSubRecipient.[Specialized Staff Requir"
+        "ed?], tblSubRecipient.[Types of Specialized Staff], tblSubRecipient.[Temporary S"
+        "pace needed], tblSubRecipient.[Date Exploratory Call Information uploaded to EMM"
+        "IE], tblSubRecipient.[Recovery Scoping Meeting Date], tblSubRecipient.[Recovery "
+        "Scoping Meeting Time], tblSubRecipient.[Recovery Scoping Meeting Location], tblS"
+        "ubRecipient.[Recovery Scoping Meeting Participants], tblSubRecipient.[Recovery S"
+        "coping Meeting Notes], tblSubRecipient.[Insurance Policy Received], tblSubRecipi"
+        "ent.[Debris Contracts Received], tblSubRecipient.[List of Damages Provided], tbl"
+        "SubRecipient.[Recipient POC], tblSubRecipient.[Recipient POC Contact Number], tb"
+        "lSubRecipient.[Subrecipient POC], tblSubRecipient.[Subrecipient POC Contact Numb"
+        "er], tblSubRecipient.[FEMA Participants], tblSubRecipient.[Recipient Participant"
+        "s], tblSubRecipient.[Subrecipient Participants], tblSubRecipient.[Subrecipient E"
+        "mergency Manager], tblSubRecipient.[Subrecipient Insurance Risk Manager], tblSub"
+        "Recipient.[Subrecipient Environmental/Historic Specialist], tblSubRecipient.[Sub"
+        "recipient Public Works Staff], tblSubRecipient.[Subrecipient Finance Representat"
+        "ive], tblSubRecipient.[Subrecipient Engineering Representative], tblSubRecipient"
+        ".[Subrecipient Police/Fire Representatives], tblSubRecipient.[Number of Large Pr"
+        "ojects], tblSubRecipient.[Projected Amount of Large Projects], tblSubRecipient.["
+        "Number of Small Projects], tblSubRecipient.[Projected Amount of Small Projects],"
+        " tblSubRecipient.[Number of Projects 100% Complete], tblSubRecipient.[Number of "
+        "Complex Projects], tblSubRecipient.[Projected Date 100% PW Submitted], tblSubRec"
+        "ipient.[Actual Date 100% PWs Submitted], tblSubRecipient.[Exit Briefing Date], t"
+        "blSubRecipient.[Exit Briefing Time], tblSubRecipient.[Exit Briefing Location], t"
+        "blSubRecipient.[Exit Briefing Recipient POC], tblSubRecipient.[Exit Briefing Rec"
+        "ipient POC Contact Number], tblSubRecipient.[Exit Briefing Subrecipient POC], tb"
+        "lSubRecipient.[Exit Briefing Subrecipient POC Contact Number], tblSubRecipient.["
+        "Date RSM Information Entered into EMMIE], tblSubRecipient.[EMMIE Entry Assigned "
+        "To], tblSubRecipient.[Date Exit Meeting Information Entered Into EMMIE], tblSubR"
+        "ecipient.[Exit Meeting Information Entry Assigned To], tblSubRecipient.RPAReview"
+        "Status, tblSubRecipient.OccSbaReferral, tblSubRecipient.PagsSbaReferral FROM tbl"
+        "SubRecipient INNER JOIN qryNames ON tblSubRecipient.[Assigned PDC] = qryNames.Us"
+        "erID; "
     FilterOnLoad =0
     FitToPage =1
     DisplayOnSharePointSite =1
@@ -150,6 +154,33 @@ Begin Report
             BorderShade =65.0
             GridlineThemeColorIndex =1
             GridlineShade =65.0
+        End
+        Begin CommandButton
+            FontSize =11
+            FontWeight =400
+            FontName ="Calibri"
+            ForeThemeColorIndex =0
+            ForeTint =75.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+            UseTheme =1
+            Shape =1
+            Gradient =12
+            BackThemeColorIndex =4
+            BackTint =60.0
+            BorderLineStyle =0
+            BorderColor =16777215
+            BorderThemeColorIndex =4
+            BorderTint =60.0
+            ThemeFontIndex =1
+            HoverThemeColorIndex =4
+            HoverTint =40.0
+            PressedThemeColorIndex =4
+            PressedShade =75.0
+            HoverForeThemeColorIndex =0
+            HoverForeTint =75.0
+            PressedForeThemeColorIndex =0
+            PressedForeTint =75.0
         End
         Begin CheckBox
             BorderLineStyle =0
@@ -185,13 +216,13 @@ Begin Report
         End
         Begin BreakLevel
             GroupHeader = NotDefault
-            ControlSource ="Assigned PDC"
+            ControlSource ="=[PDM]"
         End
         Begin BreakLevel
             ControlSource ="County"
         End
         Begin FormHeader
-            Height =600
+            Height =1200
             Name ="ReportHeader"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -220,7 +251,7 @@ Begin Report
                 End
                 Begin Label
                     TextAlign =1
-                    Left =8460
+                    Left =6660
                     Top =120
                     Width =1455
                     Height =360
@@ -233,9 +264,9 @@ Begin Report
                     Tag ="DetachedLabel"
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =8460
+                    LayoutCachedLeft =6660
                     LayoutCachedTop =120
-                    LayoutCachedWidth =9915
+                    LayoutCachedWidth =8115
                     LayoutCachedHeight =480
                     ForeThemeColorIndex =1
                     ForeTint =100.0
@@ -244,7 +275,7 @@ Begin Report
                     OldBorderStyle =0
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =9900
+                    Left =8100
                     Top =120
                     Width =1620
                     Height =330
@@ -259,12 +290,93 @@ Begin Report
                     StatusBarText ="Import"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =9900
+                    LayoutCachedLeft =8100
                     LayoutCachedTop =120
-                    LayoutCachedWidth =11520
+                    LayoutCachedWidth =9720
                     LayoutCachedHeight =450
                     ForeThemeColorIndex =1
                     ForeTint =100.0
+                End
+                Begin CommandButton
+                    Left =10740
+                    Top =660
+                    Width =1680
+                    Height =480
+                    TabIndex =1
+                    ForeColor =16777215
+                    Name ="cmdApplicantSearch"
+                    Caption ="Applicant Search"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =10740
+                    LayoutCachedTop =660
+                    LayoutCachedWidth =12420
+                    LayoutCachedHeight =1140
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                    Gradient =0
+                    BackColor =9917743
+                    BackThemeColorIndex =8
+                    BackTint =100.0
+                    BackShade =75.0
+                    BorderColor =15123357
+                    HoverColor =5676533
+                    HoverThemeColorIndex =-1
+                    HoverTint =100.0
+                    PressedColor =5676533
+                    PressedThemeColorIndex =-1
+                    PressedShade =100.0
+                    HoverForeThemeColorIndex =-1
+                    HoverForeTint =100.0
+                    PressedForeThemeColorIndex =-1
+                    PressedForeTint =100.0
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
+                End
+                Begin CommandButton
+                    OverlapFlags =4
+                    Left =12540
+                    Top =660
+                    Width =1680
+                    Height =480
+                    TabIndex =2
+                    ForeColor =16777215
+                    Name ="cmdClearFilter"
+                    Caption ="Clear Filter"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =12540
+                    LayoutCachedTop =660
+                    LayoutCachedWidth =14220
+                    LayoutCachedHeight =1140
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                    Gradient =0
+                    BackColor =9917743
+                    BackThemeColorIndex =8
+                    BackTint =100.0
+                    BackShade =75.0
+                    BorderColor =15123357
+                    HoverColor =5676533
+                    HoverThemeColorIndex =-1
+                    HoverTint =100.0
+                    PressedColor =5676533
+                    PressedThemeColorIndex =-1
+                    PressedShade =100.0
+                    HoverForeThemeColorIndex =-1
+                    HoverForeTint =100.0
+                    PressedForeThemeColorIndex =-1
+                    PressedForeTint =100.0
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
                 End
             End
         End
@@ -305,20 +417,20 @@ Begin Report
                     IMESentenceMode =3
                     Left =5400
                     Top =60
-                    Width =3120
+                    Width =4260
                     Height =330
                     FontSize =12
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="Assigned PDC"
-                    ControlSource ="Assigned PDC"
+                    ControlSource ="PDM"
                     StatusBarText ="Assign PDC"
                     EventProcPrefix ="Assigned_PDC"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =5400
                     LayoutCachedTop =60
-                    LayoutCachedWidth =8520
+                    LayoutCachedWidth =9660
                     LayoutCachedHeight =390
                 End
             End
@@ -384,7 +496,7 @@ Begin Report
                     OldBorderStyle =0
                     IMESentenceMode =3
                     Left =5880
-                    Width =3000
+                    Width =6780
                     Height =360
                     FontSize =12
                     TabIndex =2
@@ -397,7 +509,7 @@ Begin Report
                     GridlineColor =10921638
 
                     LayoutCachedLeft =5880
-                    LayoutCachedWidth =8880
+                    LayoutCachedWidth =12660
                     LayoutCachedHeight =360
                 End
                 Begin TextBox
@@ -662,6 +774,10 @@ Begin Report
                     ForeTint =100.0
                     ForeShade =75.0
                 End
+                Begin PageBreak
+                    Top =9060
+                    Name ="PageBreak28"
+                End
             End
         End
         Begin PageFooter
@@ -725,3 +841,59 @@ Begin Report
         End
     End
 End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+
+
+Private Sub cmdApplicantSearch_Click()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cmdApplicantSearch_Click"
+'///Error Handling
+
+'///Code
+DoCmd.OpenForm ("frmReportApplicantSearch")
+
+            With Forms!frmReportApplicantSearch.Form
+                .RecordSource = Me.RecordSource
+                .tbReportCalling.Value = Me.name
+            End With
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+End Sub
+
+Private Sub cmdClearFilter_Click()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cmdClearFilter_Click"
+'///Error Handling
+
+'///Code
+Me.Filter = ""
+Me.FilterOn = False
+
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+End Sub
