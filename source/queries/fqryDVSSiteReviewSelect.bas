@@ -95,12 +95,6 @@ Begin
         dbText "Name" ="qdReadyforSI.[Marked For SI]"
         dbLong "AggregateType" ="-1"
     End
-    Begin
-        dbText "Name" ="Ready For SI"
-    End
-    Begin
-        dbText "Name" ="Marked For SI"
-    End
 End
 Begin
     State =0

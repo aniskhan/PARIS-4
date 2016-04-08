@@ -11,17 +11,18 @@ Begin Report
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =17498
+    Width =17378
     DatasheetFontHeight =11
     ItemSuffix =66
     DatasheetGridlinesColor =15132391
+    Filter ="[RfiID]=41"
     RecSrcDt = Begin
         0xaa2b9f6d78bce440
     End
     RecordSource ="rqryRfiItemDetail"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
-        0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
+        0xe0010000e0010000480300001c02000000000000201c0000e010000001000000 ,
         0x010000006801000000000000a10700000100000001000000
     End
     FilterOnLoad =0
@@ -431,7 +432,7 @@ Begin Report
                 End
                 Begin Label
                     TextAlign =2
-                    Left =4620
+                    Left =3780
                     Top =2220
                     Width =3435
                     Height =555
@@ -447,9 +448,9 @@ Begin Report
                     GroupTable =1
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =4620
+                    LayoutCachedLeft =3780
                     LayoutCachedTop =2220
-                    LayoutCachedWidth =8055
+                    LayoutCachedWidth =7215
                     LayoutCachedHeight =2775
                     ColumnStart =3
                     ColumnEnd =3
@@ -461,9 +462,9 @@ Begin Report
                 End
                 Begin Label
                     TextAlign =2
-                    Left =10125
+                    Left =9285
                     Top =2220
-                    Width =3435
+                    Width =4095
                     Height =555
                     FontWeight =700
                     LeftMargin =44
@@ -477,9 +478,9 @@ Begin Report
                     GroupTable =1
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =10125
+                    LayoutCachedLeft =9285
                     LayoutCachedTop =2220
-                    LayoutCachedWidth =13560
+                    LayoutCachedWidth =13380
                     LayoutCachedHeight =2775
                     ColumnStart =5
                     ColumnEnd =5
@@ -491,7 +492,7 @@ Begin Report
                 End
                 Begin Label
                     TextAlign =2
-                    Left =8115
+                    Left =7275
                     Top =2220
                     Width =1950
                     Height =555
@@ -507,9 +508,9 @@ Begin Report
                     GroupTable =1
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =8115
+                    LayoutCachedLeft =7275
                     LayoutCachedTop =2220
-                    LayoutCachedWidth =10065
+                    LayoutCachedWidth =9225
                     LayoutCachedHeight =2775
                     ColumnStart =4
                     ColumnEnd =4
@@ -536,7 +537,7 @@ Begin Report
                 End
                 Begin Label
                     TextAlign =2
-                    Left =14880
+                    Left =14700
                     Top =2220
                     Width =1260
                     Height =555
@@ -552,9 +553,9 @@ Begin Report
                     GroupTable =1
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =14880
+                    LayoutCachedLeft =14700
                     LayoutCachedTop =2220
-                    LayoutCachedWidth =16140
+                    LayoutCachedWidth =15960
                     LayoutCachedHeight =2775
                     ColumnStart =7
                     ColumnEnd =7
@@ -566,7 +567,7 @@ Begin Report
                 End
                 Begin Label
                     TextAlign =2
-                    Left =13620
+                    Left =13440
                     Top =2220
                     Width =1200
                     Height =555
@@ -582,9 +583,9 @@ Begin Report
                     GroupTable =1
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =13620
+                    LayoutCachedLeft =13440
                     LayoutCachedTop =2220
-                    LayoutCachedWidth =14820
+                    LayoutCachedWidth =14640
                     LayoutCachedHeight =2775
                     ColumnStart =6
                     ColumnEnd =6
@@ -596,9 +597,9 @@ Begin Report
                 End
                 Begin Label
                     TextAlign =2
-                    Left =16200
+                    Left =16020
                     Top =2220
-                    Width =1260
+                    Width =1305
                     Height =555
                     FontWeight =700
                     LeftMargin =44
@@ -612,9 +613,9 @@ Begin Report
                     GroupTable =1
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =16200
+                    LayoutCachedLeft =16020
                     LayoutCachedTop =2220
-                    LayoutCachedWidth =17460
+                    LayoutCachedWidth =17325
                     LayoutCachedHeight =2775
                     ColumnStart =8
                     ColumnEnd =8
@@ -625,11 +626,10 @@ Begin Report
                     GroupTable =1
                 End
                 Begin Label
-                    OverlapFlags =4
                     TextAlign =2
                     Left =1440
                     Top =2220
-                    Width =3120
+                    Width =2280
                     Height =555
                     FontWeight =700
                     LeftMargin =44
@@ -645,7 +645,7 @@ Begin Report
                     GridlineColor =10921638
                     LayoutCachedLeft =1440
                     LayoutCachedTop =2220
-                    LayoutCachedWidth =4560
+                    LayoutCachedWidth =3720
                     LayoutCachedHeight =2775
                     ColumnStart =2
                     ColumnEnd =2
@@ -732,7 +732,7 @@ Begin Report
                     CanGrow = NotDefault
                     CanShrink = NotDefault
                     IMESentenceMode =3
-                    Left =4620
+                    Left =3780
                     Top =30
                     Width =3435
                     Height =360
@@ -748,9 +748,9 @@ Begin Report
                     GroupTable =1
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =4620
+                    LayoutCachedLeft =3780
                     LayoutCachedTop =30
-                    LayoutCachedWidth =8055
+                    LayoutCachedWidth =7215
                     LayoutCachedHeight =390
                     RowStart =1
                     RowEnd =1
@@ -766,9 +766,9 @@ Begin Report
                     CanShrink = NotDefault
                     EnterKeyBehavior = NotDefault
                     IMESentenceMode =3
-                    Left =10125
+                    Left =9285
                     Top =30
-                    Width =3435
+                    Width =4095
                     Height =360
                     TabIndex =5
                     LeftMargin =44
@@ -783,9 +783,9 @@ Begin Report
                     GroupTable =1
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =10125
+                    LayoutCachedLeft =9285
                     LayoutCachedTop =30
-                    LayoutCachedWidth =13560
+                    LayoutCachedWidth =13380
                     LayoutCachedHeight =390
                     RowStart =1
                     RowEnd =1
@@ -800,7 +800,7 @@ Begin Report
                     CanGrow = NotDefault
                     CanShrink = NotDefault
                     IMESentenceMode =3
-                    Left =8115
+                    Left =7275
                     Top =30
                     Width =1950
                     Height =360
@@ -816,9 +816,9 @@ Begin Report
                     GroupTable =1
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =8115
+                    LayoutCachedLeft =7275
                     LayoutCachedTop =30
-                    LayoutCachedWidth =10065
+                    LayoutCachedWidth =9225
                     LayoutCachedHeight =390
                     RowStart =1
                     RowEnd =1
@@ -831,7 +831,7 @@ Begin Report
                 End
                 Begin TextBox
                     IMESentenceMode =3
-                    Left =14880
+                    Left =14700
                     Top =30
                     Width =1260
                     Height =360
@@ -848,9 +848,9 @@ Begin Report
                     GridlineColor =10921638
                     ShowDatePicker =1
 
-                    LayoutCachedLeft =14880
+                    LayoutCachedLeft =14700
                     LayoutCachedTop =30
-                    LayoutCachedWidth =16140
+                    LayoutCachedWidth =15960
                     LayoutCachedHeight =390
                     RowStart =1
                     RowEnd =1
@@ -863,7 +863,7 @@ Begin Report
                 End
                 Begin TextBox
                     IMESentenceMode =3
-                    Left =13620
+                    Left =13440
                     Top =30
                     Width =1200
                     Height =360
@@ -879,9 +879,9 @@ Begin Report
                     GroupTable =1
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =13620
+                    LayoutCachedLeft =13440
                     LayoutCachedTop =30
-                    LayoutCachedWidth =14820
+                    LayoutCachedWidth =14640
                     LayoutCachedHeight =390
                     RowStart =1
                     RowEnd =1
@@ -894,9 +894,9 @@ Begin Report
                 End
                 Begin TextBox
                     IMESentenceMode =3
-                    Left =16200
+                    Left =16020
                     Top =30
-                    Width =1260
+                    Width =1305
                     Height =360
                     TabIndex =8
                     LeftMargin =44
@@ -910,9 +910,9 @@ Begin Report
                     GroupTable =1
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =16200
+                    LayoutCachedLeft =16020
                     LayoutCachedTop =30
-                    LayoutCachedWidth =17460
+                    LayoutCachedWidth =17325
                     LayoutCachedHeight =390
                     RowStart =1
                     RowEnd =1
@@ -924,11 +924,10 @@ Begin Report
                     GroupTable =1
                 End
                 Begin TextBox
-                    OverlapFlags =4
                     IMESentenceMode =3
                     Left =1440
                     Top =30
-                    Width =3120
+                    Width =2280
                     Height =360
                     TabIndex =2
                     LeftMargin =44
@@ -945,7 +944,7 @@ Begin Report
 
                     LayoutCachedLeft =1440
                     LayoutCachedTop =30
-                    LayoutCachedWidth =4560
+                    LayoutCachedWidth =3720
                     LayoutCachedHeight =390
                     RowStart =1
                     RowEnd =1

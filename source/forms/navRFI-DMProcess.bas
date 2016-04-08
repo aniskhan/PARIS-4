@@ -557,7 +557,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
-Private Sub cmdOpenRFIRouting_Click()
+Private Sub cmdOpenRfiRouting_Click()
 '///Error Handling
     If gcfHandleErrors Then On Error GoTo PROC_ERR
     PushCallStack Me.name & "." & "cmdOpenRFIRouting_Click"

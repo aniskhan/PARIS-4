@@ -1,6 +1,5 @@
 Option Compare Database
 Option Explicit
-Private Const helpForm As String = "frmHelpText"
 
 Public Sub getHelpText(frm As String, ctl As String, varTag As Long)
 '///Error Handling

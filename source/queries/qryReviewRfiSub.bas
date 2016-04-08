@@ -119,9 +119,6 @@ Begin
         dbText "Name" ="revtblRfi.RfiItemID"
         dbLong "AggregateType" ="-1"
     End
-    Begin
-        dbText "Name" ="Disposition"
-    End
 End
 Begin
     State =0

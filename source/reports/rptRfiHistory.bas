@@ -3,7 +3,6 @@ VersionRequired =20
 Begin Report
     LayoutForPrint = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DateGrouping =1
     GrpKeepTogether =1
@@ -24,7 +23,7 @@ Begin Report
     Caption ="RFI History"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
-        0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
+        0xe0010000e0010000680100006801000000000000201c0000e010000001000000 ,
         0x010000006801000000000000a10700000100000001000000
     End
     FilterOnLoad =0

@@ -3,7 +3,6 @@ VersionRequired =20
 Begin Report
     LayoutForPrint = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DateGrouping =1
     GrpKeepTogether =1
@@ -70,7 +69,7 @@ Begin Report
     Caption ="rptTestApplicantReview"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
-        0x6801000068010000680100006801000000000000b83800001724000001000000 ,
+        0xe0010000e0010000680100006801000000000000b83800001724000001000000 ,
         0x010000006801000000000000a10700000100000001000000
     End
     RecordSource ="SELECT tblSubRecipient.DisasterID, tblSubRecipient.ApplicantID, tblSubRecipient."
@@ -338,7 +337,6 @@ Begin Report
                     Overlaps =1
                 End
                 Begin CommandButton
-                    OverlapFlags =4
                     Left =12540
                     Top =660
                     Width =1680

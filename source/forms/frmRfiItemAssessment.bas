@@ -6,7 +6,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     ViewsAllowed =1
     PictureAlignment =2
@@ -15,13 +14,13 @@ Begin Form
     GridY =24
     Width =15480
     DatasheetFontHeight =11
-    ItemSuffix =228
-    Left =29640
-    Top =3630
-    Right =-19876
-    Bottom =7425
+    ItemSuffix =229
+    Left =25680
+    Top =-3540
+    Right =-20101
+    Bottom =9105
     DatasheetGridlinesColor =15132391
-    Filter ="[DisasterID]='4258' and [ApplicantID]='007-U3ZAD-00' and [RfiID]=3"
+    Filter ="[RfiID] =6"
     RecSrcDt = Begin
         0xcbbe04dc74bce440
     End
@@ -795,6 +794,30 @@ Begin Form
                     LayoutCachedWidth =660
                     LayoutCachedHeight =1200
                 End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =14100
+                    Top =60
+                    Width =1320
+                    Height =600
+                    TabIndex =3
+                    ForeColor =4210752
+                    Name ="cmdOpenRfiRouting"
+                    Caption ="Open Main RFI Form"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =14100
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =15420
+                    LayoutCachedHeight =660
+                    BackColor =15123357
+                    BorderColor =15123357
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                End
             End
         End
     End
@@ -821,6 +844,8 @@ End Sub
 Private Sub cmdHelpItemRcvd_Click()
 Call getHelpText(Me.name, Screen.ActiveControl.name, CInt(Screen.ActiveControl.tag))
 End Sub
+
+
 
 'ACTION BUTTONS
 Private Sub cmdRspRcvd_Click()
@@ -872,6 +897,30 @@ Private Sub cmdAssessResp_Click()
     Else
         CompleteReview "Assess RFI Response"
     End If
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+End Sub
+Private Sub cmdOpenRfiRouting_Click()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cmdOpenRfiRouting_Click"
+'///Error Handling
+
+'///Code
+DoCmd.OpenForm ("frmRFIRouting")
+    With Forms("frmRFIRouting")
+        .Filter = "[RfiID] =" & Me.RfiID
+        .FilterOn = True
+    End With
 '///Code
 
 '///ErrorHandling
@@ -938,18 +987,11 @@ Private Sub Form_Load()
 '///Error Handling
 
 '///Code
-
 FormFilter.RecordFilterCheck Me.Form, FormItemType
 
 'Adjust Size of modal window, measurement in twips, 1440 per inch
 DoCmd.MoveSize , , 11.5 * 1440, 3 * 1440
 
-
-DoCmd.OpenForm ("frmRFIRouting")
-    With Forms!frmRFIRouting
-        .Filter = "[RfiID] =" & Me.RfiID 'TODO need to make this grab from itemdims
-        .FilterOn = True
-    End With
 '///Code
 
 '///ErrorHandling

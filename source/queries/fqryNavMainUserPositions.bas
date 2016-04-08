@@ -41,9 +41,6 @@ Begin
         dbText "Name" ="tblStaffRoles.DisasterID"
         dbLong "AggregateType" ="-1"
     End
-    Begin
-        dbText "Name" ="Position Description"
-    End
 End
 Begin
     State =0

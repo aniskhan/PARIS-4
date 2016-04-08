@@ -5,7 +5,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ViewsAllowed =1
@@ -16,10 +15,10 @@ Begin Form
     Width =18000
     DatasheetFontHeight =11
     ItemSuffix =72
-    Right =19920
-    Bottom =12615
+    Right =10590
+    Bottom =12645
     DatasheetGridlinesColor =15132391
-    Filter ="[RfiCanceled] = False AND [RfiSatisfied] = False"
+    Filter ="[RfiID] =5"
     RecSrcDt = Begin
         0x87064fe674bce440
     End
@@ -1700,9 +1699,13 @@ Private Sub cmdOpenRfiAssessment_Click()
 '///Error Handling
 
 '///Code
-        DoCmd.OpenForm FormName:="frmRfiItemAssessment", _
-        WhereCondition:=GetItemDims.WhereID(False)
-'///Code
+Debug.Print Me.RfiID
+        DoCmd.OpenForm ("frmRfiItemAssessment")
+            With Forms("frmRfiItemAssessment")
+                .Filter = "[RfiID] =" & Me.RfiID
+                .FilterOn = True
+            End With
+        
 
 '///ErrorHandling
 PROC_EXIT:
@@ -1929,7 +1932,7 @@ Private Sub EnableFormArea(AreaName As String, Optional Override As String = "")
     
     Select Case AreaName
         Case "RFI Creation"
-            'Me.Response_Time_Requested.Enabled = CanEnable
+'''          Me.Response_Time_Requested.Enabled = CanEnable
             Me.RFI_Reason.Enabled = CanEnable
             Me.cmdSubmitConcur.Enabled = CanEnable
             Me.subfrmRfiItems.Enabled = CanEnable
@@ -1983,14 +1986,14 @@ Dim rsRfiItem As Recordset
             Set Db = CurrentDb()
             Set rsRfiItem = Db.OpenRecordset("SELECT * FROM tblRFIRequestedInformation WHERE [RfiID] =" & Me.RfiID)
             
-'            If IsNull(Me.Response_Time_Requested) Then
-'                PreDialogCheck = False
-'                MsgBox ("Response Time Requested cannot be blank.")
-'                Me.Response_Time_Requested.SetFocus
-'                Exit Function
-'            Else
-'                PreDialogCheck = True
-'            End If
+'''            If IsNull(Me.Response_Time_Requested) Then
+'''                PreDialogCheck = False
+'''                MsgBox ("Response Time Requested cannot be blank.")
+'''                Me.Response_Time_Requested.SetFocus
+'''                Exit Function
+'''            Else
+'''                PreDialogCheck = True
+'''            End If
 
             If rsRfiItem.BOF And rsRfiItem.EOF Then
                 PreDialogCheck = False
