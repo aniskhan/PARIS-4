@@ -8,6 +8,8 @@ Begin InputTables
     Name ="tblSubRecipient"
     Name ="qryNames"
     Name ="tblStaff"
+    Name ="tblProjects"
+    Name ="qdDisaster"
 End
 Begin OutputColumns
     Expression ="rqryRFIRouting.*"
@@ -28,6 +30,10 @@ Begin OutputColumns
     Expression ="qryNames.[Cap Name]"
     Alias ="PDM Contact"
     Expression ="tblStaff.[Cell Number]"
+    Expression ="tblRFIRequestedInformation.RfiItemID"
+    Expression ="tblProjects.[Application Title]"
+    Expression ="qdDisaster.[Disaster Type]"
+    Expression ="qdDisaster.State"
 End
 Begin Joins
     LeftTable ="tblRFIRequestedInformation"
@@ -65,6 +71,22 @@ Begin Joins
     LeftTable ="tblSubRecipient"
     RightTable ="tblStaff"
     Expression ="tblSubRecipient.[Assigned PDC] = tblStaff.UserID"
+    Flag =1
+    LeftTable ="rqryRFIRouting"
+    RightTable ="tblProjects"
+    Expression ="rqryRFIRouting.DisasterID = tblProjects.DisasterID"
+    Flag =1
+    LeftTable ="tblProjects"
+    RightTable ="rqryRFIRouting"
+    Expression ="tblProjects.ProjectID = rqryRFIRouting.ProjectID"
+    Flag =1
+    LeftTable ="tblProjects"
+    RightTable ="rqryRFIRouting"
+    Expression ="tblProjects.ApplicantID = rqryRFIRouting.ApplicantID"
+    Flag =1
+    LeftTable ="qdDisaster"
+    RightTable ="rqryRFIRouting"
+    Expression ="qdDisaster.DisasterID = rqryRFIRouting.DisasterID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -197,81 +219,115 @@ Begin
         dbText "Name" ="Item"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="tblRFIRequestedInformation.RfiItemID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblProjects.[Application Title]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="qdDisaster.[Disaster Type]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="qdDisaster.State"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1098
+    Right =1218
     Bottom =860
     Left =-1
     Top =-1
-    Right =1082
-    Bottom =368
-    Left =541
+    Right =1202
+    Bottom =537
+    Left =0
     Top =0
     ColumnsShown =539
     Begin
-        Left =-498
-        Top =14
-        Right =-276
-        Bottom =448
+        Left =257
+        Top =39
+        Right =479
+        Bottom =473
         Top =0
         Name ="rqryRFIRouting"
         Name =""
     End
     Begin
-        Left =-25
-        Top =31
-        Right =230
-        Bottom =270
+        Left =633
+        Top =76
+        Right =888
+        Bottom =315
         Top =0
         Name ="tblRFIRequestedInformation"
         Name =""
     End
     Begin
-        Left =301
-        Top =32
-        Right =490
-        Bottom =432
+        Left =1032
+        Top =238
+        Right =1221
+        Bottom =638
         Top =0
         Name ="tblSites"
         Name =""
     End
     Begin
-        Left =-174
-        Top =243
-        Right =-30
-        Bottom =387
+        Left =593
+        Top =358
+        Right =764
+        Bottom =545
         Top =0
         Name ="qdProjectRef"
         Name =""
     End
     Begin
-        Left =422
+        Left =963
         Top =11
-        Right =566
+        Right =1107
         Bottom =155
         Top =0
         Name ="tblSubRecipient"
         Name =""
     End
     Begin
-        Left =744
+        Left =1285
         Top =19
-        Right =913
+        Right =1454
         Bottom =166
         Top =0
         Name ="qryNames"
         Name =""
     End
     Begin
-        Left =679
+        Left =1220
         Top =218
-        Right =823
+        Right =1364
         Bottom =362
         Top =0
         Name ="tblStaff"
+        Name =""
+    End
+    Begin
+        Left =-11
+        Top =8
+        Right =208
+        Bottom =271
+        Top =0
+        Name ="tblProjects"
+        Name =""
+    End
+    Begin
+        Left =48
+        Top =276
+        Right =192
+        Bottom =420
+        Top =0
+        Name ="qdDisaster"
         Name =""
     End
 End

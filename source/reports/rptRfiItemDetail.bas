@@ -11,13 +11,12 @@ Begin Report
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =14310
+    Width =17498
     DatasheetFontHeight =11
-    ItemSuffix =59
+    ItemSuffix =66
     DatasheetGridlinesColor =15132391
-    Filter ="[RfiID]=41"
     RecSrcDt = Begin
-        0xa61d4c9f6dbce440
+        0xaa2b9f6d78bce440
     End
     RecordSource ="rqryRfiItemDetail"
     DatasheetFontName ="Calibri"
@@ -432,7 +431,7 @@ Begin Report
                 End
                 Begin Label
                     TextAlign =2
-                    Left =1440
+                    Left =4620
                     Top =2220
                     Width =3435
                     Height =555
@@ -448,12 +447,12 @@ Begin Report
                     GroupTable =1
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =1440
+                    LayoutCachedLeft =4620
                     LayoutCachedTop =2220
-                    LayoutCachedWidth =4875
+                    LayoutCachedWidth =8055
                     LayoutCachedHeight =2775
-                    ColumnStart =2
-                    ColumnEnd =2
+                    ColumnStart =3
+                    ColumnEnd =3
                     LayoutGroup =1
                     ForeTint =100.0
                     GridlineThemeColorIndex =1
@@ -462,7 +461,7 @@ Begin Report
                 End
                 Begin Label
                     TextAlign =2
-                    Left =6945
+                    Left =10125
                     Top =2220
                     Width =3435
                     Height =555
@@ -478,12 +477,12 @@ Begin Report
                     GroupTable =1
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =6945
+                    LayoutCachedLeft =10125
                     LayoutCachedTop =2220
-                    LayoutCachedWidth =10380
+                    LayoutCachedWidth =13560
                     LayoutCachedHeight =2775
-                    ColumnStart =4
-                    ColumnEnd =4
+                    ColumnStart =5
+                    ColumnEnd =5
                     LayoutGroup =1
                     ForeTint =100.0
                     GridlineThemeColorIndex =1
@@ -492,7 +491,7 @@ Begin Report
                 End
                 Begin Label
                     TextAlign =2
-                    Left =4935
+                    Left =8115
                     Top =2220
                     Width =1950
                     Height =555
@@ -508,12 +507,12 @@ Begin Report
                     GroupTable =1
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =4935
+                    LayoutCachedLeft =8115
                     LayoutCachedTop =2220
-                    LayoutCachedWidth =6885
+                    LayoutCachedWidth =10065
                     LayoutCachedHeight =2775
-                    ColumnStart =3
-                    ColumnEnd =3
+                    ColumnStart =4
+                    ColumnEnd =4
                     LayoutGroup =1
                     ForeTint =100.0
                     GridlineThemeColorIndex =1
@@ -522,7 +521,7 @@ Begin Report
                 End
                 Begin Subform
                     Locked = NotDefault
-                    Width =14280
+                    Width =17340
                     Height =2100
                     Name ="subformlRFIbanner"
                     SourceObject ="Form.subformRFIbanner"
@@ -530,14 +529,14 @@ Begin Report
                     LinkMasterFields ="DisasterID;RfiID"
                     GridlineColor =10921638
 
-                    LayoutCachedWidth =14280
+                    LayoutCachedWidth =17340
                     LayoutCachedHeight =2100
                     GridlineThemeColorIndex =1
                     GridlineShade =65.0
                 End
                 Begin Label
                     TextAlign =2
-                    Left =11700
+                    Left =14880
                     Top =2220
                     Width =1260
                     Height =555
@@ -553,12 +552,12 @@ Begin Report
                     GroupTable =1
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =11700
+                    LayoutCachedLeft =14880
                     LayoutCachedTop =2220
-                    LayoutCachedWidth =12960
+                    LayoutCachedWidth =16140
                     LayoutCachedHeight =2775
-                    ColumnStart =6
-                    ColumnEnd =6
+                    ColumnStart =7
+                    ColumnEnd =7
                     LayoutGroup =1
                     ForeTint =100.0
                     GridlineThemeColorIndex =1
@@ -567,7 +566,7 @@ Begin Report
                 End
                 Begin Label
                     TextAlign =2
-                    Left =10440
+                    Left =13620
                     Top =2220
                     Width =1200
                     Height =555
@@ -583,12 +582,12 @@ Begin Report
                     GroupTable =1
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =10440
+                    LayoutCachedLeft =13620
                     LayoutCachedTop =2220
-                    LayoutCachedWidth =11640
+                    LayoutCachedWidth =14820
                     LayoutCachedHeight =2775
-                    ColumnStart =5
-                    ColumnEnd =5
+                    ColumnStart =6
+                    ColumnEnd =6
                     LayoutGroup =1
                     ForeTint =100.0
                     GridlineThemeColorIndex =1
@@ -597,7 +596,7 @@ Begin Report
                 End
                 Begin Label
                     TextAlign =2
-                    Left =13020
+                    Left =16200
                     Top =2220
                     Width =1260
                     Height =555
@@ -613,12 +612,43 @@ Begin Report
                     GroupTable =1
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =13020
+                    LayoutCachedLeft =16200
                     LayoutCachedTop =2220
-                    LayoutCachedWidth =14280
+                    LayoutCachedWidth =17460
                     LayoutCachedHeight =2775
-                    ColumnStart =7
-                    ColumnEnd =7
+                    ColumnStart =8
+                    ColumnEnd =8
+                    LayoutGroup =1
+                    ForeTint =100.0
+                    GridlineThemeColorIndex =1
+                    GridlineShade =65.0
+                    GroupTable =1
+                End
+                Begin Label
+                    OverlapFlags =4
+                    TextAlign =2
+                    Left =1440
+                    Top =2220
+                    Width =3120
+                    Height =555
+                    FontWeight =700
+                    LeftMargin =44
+                    TopMargin =22
+                    RightMargin =44
+                    BottomMargin =22
+                    BorderColor =8355711
+                    ForeColor =0
+                    Name ="Label59"
+                    Caption ="Name of Site/Facility"
+                    GroupTable =1
+                    GridlineStyleBottom =1
+                    GridlineColor =10921638
+                    LayoutCachedLeft =1440
+                    LayoutCachedTop =2220
+                    LayoutCachedWidth =4560
+                    LayoutCachedHeight =2775
+                    ColumnStart =2
+                    ColumnEnd =2
                     LayoutGroup =1
                     ForeTint =100.0
                     GridlineThemeColorIndex =1
@@ -652,7 +682,7 @@ Begin Report
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="RfiItemID"
-                    ControlSource ="RfiItemID"
+                    ControlSource ="tblRFIRequestedInformation.RfiItemID"
                     GroupTable =1
                     GridlineColor =10921638
 
@@ -702,11 +732,11 @@ Begin Report
                     CanGrow = NotDefault
                     CanShrink = NotDefault
                     IMESentenceMode =3
-                    Left =1440
+                    Left =4620
                     Top =30
                     Width =3435
                     Height =360
-                    TabIndex =2
+                    TabIndex =3
                     LeftMargin =44
                     TopMargin =22
                     RightMargin =44
@@ -718,14 +748,14 @@ Begin Report
                     GroupTable =1
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =1440
+                    LayoutCachedLeft =4620
                     LayoutCachedTop =30
-                    LayoutCachedWidth =4875
+                    LayoutCachedWidth =8055
                     LayoutCachedHeight =390
                     RowStart =1
                     RowEnd =1
-                    ColumnStart =2
-                    ColumnEnd =2
+                    ColumnStart =3
+                    ColumnEnd =3
                     LayoutGroup =1
                     GridlineThemeColorIndex =1
                     GridlineShade =65.0
@@ -736,11 +766,11 @@ Begin Report
                     CanShrink = NotDefault
                     EnterKeyBehavior = NotDefault
                     IMESentenceMode =3
-                    Left =6945
+                    Left =10125
                     Top =30
                     Width =3435
                     Height =360
-                    TabIndex =4
+                    TabIndex =5
                     LeftMargin =44
                     TopMargin =22
                     RightMargin =44
@@ -753,14 +783,14 @@ Begin Report
                     GroupTable =1
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =6945
+                    LayoutCachedLeft =10125
                     LayoutCachedTop =30
-                    LayoutCachedWidth =10380
+                    LayoutCachedWidth =13560
                     LayoutCachedHeight =390
                     RowStart =1
                     RowEnd =1
-                    ColumnStart =4
-                    ColumnEnd =4
+                    ColumnStart =5
+                    ColumnEnd =5
                     LayoutGroup =1
                     GridlineThemeColorIndex =1
                     GridlineShade =65.0
@@ -770,11 +800,11 @@ Begin Report
                     CanGrow = NotDefault
                     CanShrink = NotDefault
                     IMESentenceMode =3
-                    Left =4935
+                    Left =8115
                     Top =30
                     Width =1950
                     Height =360
-                    TabIndex =3
+                    TabIndex =4
                     LeftMargin =44
                     TopMargin =22
                     RightMargin =44
@@ -786,14 +816,14 @@ Begin Report
                     GroupTable =1
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =4935
+                    LayoutCachedLeft =8115
                     LayoutCachedTop =30
-                    LayoutCachedWidth =6885
+                    LayoutCachedWidth =10065
                     LayoutCachedHeight =390
                     RowStart =1
                     RowEnd =1
-                    ColumnStart =3
-                    ColumnEnd =3
+                    ColumnStart =4
+                    ColumnEnd =4
                     LayoutGroup =1
                     GridlineThemeColorIndex =1
                     GridlineShade =65.0
@@ -801,11 +831,11 @@ Begin Report
                 End
                 Begin TextBox
                     IMESentenceMode =3
-                    Left =11700
+                    Left =14880
                     Top =30
                     Width =1260
                     Height =360
-                    TabIndex =6
+                    TabIndex =7
                     LeftMargin =44
                     TopMargin =22
                     RightMargin =44
@@ -818,9 +848,40 @@ Begin Report
                     GridlineColor =10921638
                     ShowDatePicker =1
 
-                    LayoutCachedLeft =11700
+                    LayoutCachedLeft =14880
                     LayoutCachedTop =30
-                    LayoutCachedWidth =12960
+                    LayoutCachedWidth =16140
+                    LayoutCachedHeight =390
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =7
+                    ColumnEnd =7
+                    LayoutGroup =1
+                    GridlineThemeColorIndex =1
+                    GridlineShade =65.0
+                    GroupTable =1
+                End
+                Begin TextBox
+                    IMESentenceMode =3
+                    Left =13620
+                    Top =30
+                    Width =1200
+                    Height =360
+                    TabIndex =6
+                    LeftMargin =44
+                    TopMargin =22
+                    RightMargin =44
+                    BottomMargin =22
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="isResponseReceived"
+                    ControlSource ="isResponseReceived"
+                    GroupTable =1
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =13620
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =14820
                     LayoutCachedHeight =390
                     RowStart =1
                     RowEnd =1
@@ -833,42 +894,11 @@ Begin Report
                 End
                 Begin TextBox
                     IMESentenceMode =3
-                    Left =10440
-                    Top =30
-                    Width =1200
-                    Height =360
-                    TabIndex =5
-                    LeftMargin =44
-                    TopMargin =22
-                    RightMargin =44
-                    BottomMargin =22
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="isResponseReceived"
-                    ControlSource ="isResponseReceived"
-                    GroupTable =1
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =10440
-                    LayoutCachedTop =30
-                    LayoutCachedWidth =11640
-                    LayoutCachedHeight =390
-                    RowStart =1
-                    RowEnd =1
-                    ColumnStart =5
-                    ColumnEnd =5
-                    LayoutGroup =1
-                    GridlineThemeColorIndex =1
-                    GridlineShade =65.0
-                    GroupTable =1
-                End
-                Begin TextBox
-                    IMESentenceMode =3
-                    Left =13020
+                    Left =16200
                     Top =30
                     Width =1260
                     Height =360
-                    TabIndex =7
+                    TabIndex =8
                     LeftMargin =44
                     TopMargin =22
                     RightMargin =44
@@ -880,14 +910,47 @@ Begin Report
                     GroupTable =1
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =13020
+                    LayoutCachedLeft =16200
                     LayoutCachedTop =30
-                    LayoutCachedWidth =14280
+                    LayoutCachedWidth =17460
                     LayoutCachedHeight =390
                     RowStart =1
                     RowEnd =1
-                    ColumnStart =7
-                    ColumnEnd =7
+                    ColumnStart =8
+                    ColumnEnd =8
+                    LayoutGroup =1
+                    GridlineThemeColorIndex =1
+                    GridlineShade =65.0
+                    GroupTable =1
+                End
+                Begin TextBox
+                    OverlapFlags =4
+                    IMESentenceMode =3
+                    Left =1440
+                    Top =30
+                    Width =3120
+                    Height =360
+                    TabIndex =2
+                    LeftMargin =44
+                    TopMargin =22
+                    RightMargin =44
+                    BottomMargin =22
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="Name of Site/Facility"
+                    ControlSource ="Name of Site/Facility"
+                    EventProcPrefix ="Name_of_Site_Facility"
+                    GroupTable =1
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =1440
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =4560
+                    LayoutCachedHeight =390
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =2
+                    ColumnEnd =2
                     LayoutGroup =1
                     GridlineThemeColorIndex =1
                     GridlineShade =65.0

@@ -5,6 +5,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ViewsAllowed =1
@@ -15,9 +16,10 @@ Begin Form
     Width =18000
     DatasheetFontHeight =11
     ItemSuffix =72
-    Right =13515
-    Bottom =12645
+    Right =19920
+    Bottom =12615
     DatasheetGridlinesColor =15132391
+    Filter ="[RfiCanceled] = False AND [RfiSatisfied] = False"
     RecSrcDt = Begin
         0x87064fe674bce440
     End
@@ -186,10 +188,10 @@ Begin Form
                     ScrollBars =2
                     OverlapFlags =215
                     IMESentenceMode =3
-                    Left =3900
-                    Top =3180
-                    Width =9420
-                    Height =900
+                    Left =3300
+                    Top =2700
+                    Width =10020
+                    Height =1380
                     ColumnWidth =3000
                     BorderColor =10921638
                     ForeColor =4210752
@@ -198,8 +200,8 @@ Begin Form
                     EventProcPrefix ="RFI_Reason"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =3900
-                    LayoutCachedTop =3180
+                    LayoutCachedLeft =3300
+                    LayoutCachedTop =2700
                     LayoutCachedWidth =13320
                     LayoutCachedHeight =4080
                     BackThemeColorIndex =-1
@@ -207,7 +209,7 @@ Begin Form
                         Begin Label
                             OverlapFlags =215
                             Left =360
-                            Top =3180
+                            Top =2760
                             Width =2820
                             Height =360
                             BorderColor =8355711
@@ -215,20 +217,21 @@ Begin Form
                             Caption ="RFI Reason (Internal Notes)"
                             GridlineColor =10921638
                             LayoutCachedLeft =360
-                            LayoutCachedTop =3180
+                            LayoutCachedTop =2760
                             LayoutCachedWidth =3180
-                            LayoutCachedHeight =3540
+                            LayoutCachedHeight =3120
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
                         End
                     End
                 End
                 Begin TextBox
+                    Visible = NotDefault
                     Enabled = NotDefault
-                    OverlapFlags =215
+                    OverlapFlags =223
                     IMESentenceMode =3
-                    Left =3900
-                    Top =2760
+                    Left =6660
+                    Top =2280
                     Width =2010
                     Height =330
                     ColumnWidth =1530
@@ -240,16 +243,16 @@ Begin Form
                     EventProcPrefix ="Response_Time_Requested"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =3900
-                    LayoutCachedTop =2760
-                    LayoutCachedWidth =5910
-                    LayoutCachedHeight =3090
+                    LayoutCachedLeft =6660
+                    LayoutCachedTop =2280
+                    LayoutCachedWidth =8670
+                    LayoutCachedHeight =2610
                     BackThemeColorIndex =-1
                     Begin
                         Begin Label
-                            OverlapFlags =215
-                            Left =360
-                            Top =2760
+                            OverlapFlags =223
+                            Left =3120
+                            Top =2280
                             Width =3495
                             Height =330
                             BorderColor =8355711
@@ -257,10 +260,10 @@ Begin Form
                             Caption ="Response Time Requested (in Days)*"
                             EventProcPrefix ="Response_Time_Requested_Label"
                             GridlineColor =10921638
-                            LayoutCachedLeft =360
-                            LayoutCachedTop =2760
-                            LayoutCachedWidth =3855
-                            LayoutCachedHeight =3090
+                            LayoutCachedLeft =3120
+                            LayoutCachedTop =2280
+                            LayoutCachedWidth =6615
+                            LayoutCachedHeight =2610
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
                         End
@@ -304,7 +307,7 @@ Begin Form
                     Overlaps =1
                 End
                 Begin Label
-                    OverlapFlags =215
+                    OverlapFlags =247
                     Left =120
                     Top =2220
                     Width =11160
@@ -1665,9 +1668,15 @@ Private Sub cmdOpenRFI_Click()
 
 '///Code
     If [ItemType] = "RPA" Then
-        DoCmd.OpenReport "rptRFIApplicant", acViewReport, , "[RfiID]=" & [RfiID], acWindowNormal
+        DoCmd.OpenReport "rptRFIApplicant", acViewPreview, , "[RfiID]=" & [RfiID], acWindowNormal
+            With Reports("rptRFIApplicant")
+                .OrderBy = "RfiItemID ASC"
+            End With
     Else
-        DoCmd.OpenReport "rptRFIProject", acViewReport, , "[RfiID]=" & [RfiID], acWindowNormal
+        DoCmd.OpenReport "rptRFIProject", acViewPreview, , "[RfiID]=" & [RfiID], acWindowNormal
+            With Reports("rptRFIProject")
+                .OrderBy = "RfiItemID ASC"
+            End With
     End If
 '///Code
 
@@ -1920,7 +1929,7 @@ Private Sub EnableFormArea(AreaName As String, Optional Override As String = "")
     
     Select Case AreaName
         Case "RFI Creation"
-            Me.Response_Time_Requested.Enabled = CanEnable
+            'Me.Response_Time_Requested.Enabled = CanEnable
             Me.RFI_Reason.Enabled = CanEnable
             Me.cmdSubmitConcur.Enabled = CanEnable
             Me.subfrmRfiItems.Enabled = CanEnable
@@ -1974,14 +1983,14 @@ Dim rsRfiItem As Recordset
             Set Db = CurrentDb()
             Set rsRfiItem = Db.OpenRecordset("SELECT * FROM tblRFIRequestedInformation WHERE [RfiID] =" & Me.RfiID)
             
-            If IsNull(Me.Response_Time_Requested) Then
-                PreDialogCheck = False
-                MsgBox ("Response Time Requested cannot be blank.")
-                Me.Response_Time_Requested.SetFocus
-                Exit Function
-            Else
-                PreDialogCheck = True
-            End If
+'            If IsNull(Me.Response_Time_Requested) Then
+'                PreDialogCheck = False
+'                MsgBox ("Response Time Requested cannot be blank.")
+'                Me.Response_Time_Requested.SetFocus
+'                Exit Function
+'            Else
+'                PreDialogCheck = True
+'            End If
 
             If rsRfiItem.BOF And rsRfiItem.EOF Then
                 PreDialogCheck = False

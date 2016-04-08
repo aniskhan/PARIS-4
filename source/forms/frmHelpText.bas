@@ -23,7 +23,7 @@ Begin Form
     ItemSuffix =9
     Left =30225
     Top =2505
-    Right =-21781
+    Right =-21916
     Bottom =15150
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -31,6 +31,11 @@ Begin Form
     End
     Caption ="PARIS Help"
     DatasheetFontName ="Calibri"
+    PrtMip = Begin
+        0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    OnLoad ="[Event Procedure]"
     AllowDatasheetView =0
     FilterOnLoad =0
     ShowPageMargins =0
@@ -244,3 +249,13 @@ Begin Form
         End
     End
 End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+
+Private Sub Form_Load()
+Me.Move 0, 0
+End Sub

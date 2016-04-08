@@ -6,6 +6,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     ViewsAllowed =1
     PictureAlignment =2
@@ -15,11 +16,12 @@ Begin Form
     Width =15480
     DatasheetFontHeight =11
     ItemSuffix =228
-    Left =30225
-    Top =2505
-    Right =-21796
-    Bottom =15150
+    Left =29640
+    Top =3630
+    Right =-19876
+    Bottom =7425
     DatasheetGridlinesColor =15132391
+    Filter ="[DisasterID]='4258' and [ApplicantID]='007-U3ZAD-00' and [RfiID]=3"
     RecSrcDt = Begin
         0xcbbe04dc74bce440
     End
@@ -937,7 +939,7 @@ Private Sub Form_Load()
 
 '///Code
 
-'FormFilter.RecordFilterCheck Me.Form, FormItemType
+FormFilter.RecordFilterCheck Me.Form, FormItemType
 
 'Adjust Size of modal window, measurement in twips, 1440 per inch
 DoCmd.MoveSize , , 11.5 * 1440, 3 * 1440

@@ -13,9 +13,9 @@ Begin Form
     GridY =24
     Width =10980
     DatasheetFontHeight =11
-    ItemSuffix =97
-    Right =5625
-    Bottom =7005
+    ItemSuffix =98
+    Right =18030
+    Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0x00b6a9afb4b9e440
@@ -548,6 +548,28 @@ Begin Form
                             GroupTable =8
                         End
                     End
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =4740
+                    Top =1920
+                    Width =2880
+                    Height =360
+                    FontSize =9
+                    BorderColor =8355711
+                    ForeColor =8355711
+                    Name ="Label97"
+                    Caption ="* Required for PDMs"
+                    GroupTable =9
+                    BottomPadding =150
+                    GridlineColor =10921638
+                    LayoutCachedLeft =4740
+                    LayoutCachedTop =1920
+                    LayoutCachedWidth =7620
+                    LayoutCachedHeight =2280
+                    LayoutGroup =3
+                    GroupTable =9
                 End
             End
         End

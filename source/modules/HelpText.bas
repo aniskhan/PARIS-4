@@ -15,8 +15,8 @@ Dim strHelpText As String
 strTitle = DLookup("[Title]", "lutblHelpText", "[helpTextID] =" & varTag)
 strHelpText = DLookup("[helpText]", "lutblHelpText", "[helpTextID] =" & varTag)
 
-DoCmd.OpenForm (helpForm)
-    With Forms(helpForm)
+DoCmd.OpenForm ("frmHelpText")
+    With Forms("frmHelpText")
         !tbTitle.Value = strTitle
         !tbHelpText.Value = strHelpText
     End With
