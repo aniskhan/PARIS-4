@@ -1,0 +1,16 @@
+User	akhandka
+Time	04/11/2016 09:18:14
+Procedure	frmRFIRouting.cmdOpenRFI_Click
+Line	0
+Error	3464	Data type mismatch in criteria expression.
+Stack
+	frmRFIRouting.cmdOpenRFI_Click
+
+User	akhandka
+Time	04/11/2016 09:18:39
+Procedure	frmRFIRouting.cmdOpenRFI_Click
+Line	0
+Error	3464	Data type mismatch in criteria expression.
+Stack
+	frmRFIRouting.cmdOpenRFI_Click
+
