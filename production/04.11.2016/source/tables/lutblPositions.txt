@@ -1,0 +1,36 @@
+﻿Position	Position Description
+ADM	Database Admin
+CFC	Compliance Facilitation Coordinator
+COS	Costing Specialist
+DAS	Document Assembly Specialist
+DIUL	Document Integrity Unit Lead
+DIUS	Document Integrity Specialist
+DPAGS	Deputy PA Group Supervisor
+EHPR	EHP Reviewer
+EHPS	EHP Specialist
+EXDVS	EX Document Validation Specialist
+EXGL	Expedited Group Lead
+FCO	FCO
+IM	Information Manager
+INSP	Insurance Specialist
+MTR	Mitigation Reviewer
+MTSP	406 Mitigation Specialist
+OCC	OCC Specialist
+ODIU	Ops Document Integrity Specialist
+OPSL	Operations Support Unit Lead
+PAGS	PA Group Supervisor
+PARC Chief	PA Resource Center Chief
+PDM	Program Delivery Manager
+PDTFL	Program Delivery Task Force Lead
+QAS	Quality Assurance Specialist
+SC	Staffing Coordinator
+SI	Site Inspector
+SITFL	Site Inspector Task Force Lead
+SMGR	Staffing Manager
+SPGL	Specialized Processing Group Lead
+SPM	Specialized Project Manager
+SPND	Spend Plan Specialist
+STDVS	ST Document Validation Specialist
+STGL	Standard Group Lead
+STPAS	ST Project Assembly Specialist
+TS	Technical Specialist

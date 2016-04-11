@@ -1,0 +1,8 @@
+﻿Labor Type	Description
+C	Contract
+DR	Donated Resource
+FA	Force Account
+FA/C	Force Account and Contract
+MA	Mission Assigned
+MAA	Mutual Aid
+MOU	Memorandum of Understanding

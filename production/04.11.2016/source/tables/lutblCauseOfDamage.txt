@@ -1,0 +1,6 @@
+﻿Cause of Damage
+Earthquake
+Flood
+Hurricane
+Tornado
+Wind

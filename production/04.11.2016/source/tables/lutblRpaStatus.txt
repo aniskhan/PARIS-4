@@ -1,0 +1,8 @@
+﻿StatusID	RPA Status
+AP	Approved
+DN	Denied
+OCC	OCC Review
+PAGS	PAGS Review
+Rcvd	Received
+RFI	RFI Pending
+WD	Withdrawn

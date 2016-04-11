@@ -1,0 +1,5 @@
+﻿ID	Process Phase	Phase Description
+1	Operational Planning	
+2	Intake Damage and Eligibility Analysis	
+3	Scoping and Costing	
+4	Compliance Reviews	

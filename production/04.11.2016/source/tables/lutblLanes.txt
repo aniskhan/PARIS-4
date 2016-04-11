@@ -1,0 +1,4 @@
+﻿LaneID	LaneName	Order
+EX	Expedited Lane	1
+SP	Specialized Lane	3
+ST	Standard Lane	2

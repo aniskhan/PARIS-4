@@ -1,0 +1,9 @@
+CREATE TABLE [tblSubrecipientBriefing] (
+  [ID] AUTOINCREMENT CONSTRAINT [Index_3125CF64_B06D_4A91] UNIQUE  CONSTRAINT [Index_9D76F18B_11EA_455B] UNIQUE  CONSTRAINT [Index_9D7AD13F_07CE_4221] UNIQUE  CONSTRAINT [PrimaryKey] PRIMARY KEY  UNIQUE  NOT NULL ,
+  [DisasterID] VARCHAR (255),
+  [Briefing Date] DATETIME ,
+  [Briefing Location] VARCHAR (255),
+  [Briefing Time] DATETIME ,
+  [FEMA Participants] VARCHAR (255),
+  [Briefing Notes] LONGTEXT 
+)
