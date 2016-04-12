@@ -1,0 +1,4 @@
+﻿YNU	Description
+N	No
+U	Unknown
+Y	Yes

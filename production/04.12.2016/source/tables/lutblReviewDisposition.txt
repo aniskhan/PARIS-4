@@ -1,0 +1,7 @@
+﻿DispID	Disposition
+DM	Determination Memo
+RFI	RFI
+RSN	Reassign
+RW	Rework
+SUB	Submit
+WD	Withdrawn
