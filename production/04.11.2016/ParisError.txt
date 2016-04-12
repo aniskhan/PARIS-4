@@ -1,0 +1,9 @@
+User	akhandka
+Time	04/11/2016 10:49:30
+Procedure	frmEnterListofDamages.ColumnOrder
+Line	0
+Error	2455	You entered an expression that has an invalid reference to the property Form/Report.
+Stack
+	navProjectFormulation.cmdEnterListofDamages_Click
+	frmEnterListofDamages.ColumnOrder
+

@@ -1,16 +1,16 @@
 User	akhandka
-Time	04/11/2016 09:18:14
-Procedure	frmRFIRouting.cmdOpenRFI_Click
+Time	04/12/2016 12:04:58
+Procedure	frmUpdateRSMProjections.cmdUpdate_Click
 Line	0
-Error	3464	Data type mismatch in criteria expression.
+Error	3075	Syntax error (missing operator) in query expression 'ID ='.
 Stack
-	frmRFIRouting.cmdOpenRFI_Click
+	frmUpdateRSMProjections.cmdUpdate_Click
 
 User	akhandka
-Time	04/11/2016 09:18:39
-Procedure	frmRFIRouting.cmdOpenRFI_Click
+Time	04/12/2016 12:06:04
+Procedure	frmUpdateRSMProjections.cmdUpdate_Click
 Line	0
-Error	3464	Data type mismatch in criteria expression.
+Error	3075	Syntax error (missing operator) in query expression 'ID ='.
 Stack
-	frmRFIRouting.cmdOpenRFI_Click
+	frmUpdateRSMProjections.cmdUpdate_Click
 

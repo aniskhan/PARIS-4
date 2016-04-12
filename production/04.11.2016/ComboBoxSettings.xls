@@ -1,0 +1,81 @@
+form	control name	limit to list
+frmAssignPDC	cboAssignPdc	TRUE
+frmDIUProcessProjectRoutingSheet	Lane Recommendation	TRUE
+frmDIUProcessProjectRoutingSheet	cboDocumentation	TRUE
+frmRfiItemAssessment	tbItemReq	FALSE
+frmRfiItemAssessment	cboIsRequestSatisfied	FALSE
+frmAssignPDC	cboAssignPdc	TRUE
+frmDIUProcessProjectRoutingSheet	Lane Recommendation	TRUE
+frmDIUProcessProjectRoutingSheet	cboDocumentation	TRUE
+frmRfiItemAssessment	tbItemReq	FALSE
+frmRfiItemAssessment	cboIsRequestSatisfied	FALSE
+frmDisasterInformation	State	FALSE
+frmDisasterInformation	Disaster Type	FALSE
+frmSiteInspectionWorkOrder-SITFL	Assigned Site Inspector	TRUE
+frmSiteStInspectionAssign	Damage Level	TRUE
+subfrmRfiItems	tbItemReq	TRUE
+subfrmProjectSites	DVS -Site Inspection Required	TRUE
+subfrmProjectSites	Critical Facility	TRUE
+subfrmProjectSites	Damage Level	TRUE
+subfrmProjectSites	Text41	TRUE
+subfrmProjectSites	EHP Issues? (H	FALSE
+subfrmProjectSites	Facility insured?	FALSE
+subfrmProjectSites	Is there a potential mitigation opportunity?	FALSE
+subfrmProjectSites	cboRequiresSiteInspection	FALSE
+frmDocTransmittal	cboLevel	FALSE
+frmDocTransmittal	Combo95	FALSE
+frmDocTransmittal	Combo97	FALSE
+frmDocTransmittal	Combo99	FALSE
+frmDocTransmittal	Combo101	FALSE
+frmEnterListofDamages	cboSubR	TRUE
+frmEnterListofDamages	DisasterID	TRUE
+subformEnterListofDamages	Cause of Damage  (wind	FALSE
+subformEnterListofDamages	Requires Site Inspection	FALSE
+subformEnterListofDamages	Labor Type	FALSE
+subformEnterListofDamages	EHP Issues? (H	FALSE
+subformEnterListofDamages	Facility insured?	FALSE
+subformEnterListofDamages	Has Recieved PA grant in prior Stafford Act Disasters?	FALSE
+subformEnterListofDamages	Is there a potential mitigation opportunity?	FALSE
+subformEnterListofDamages	Subrecipient priority (Low	FALSE
+subformEnterListofDamages	Category	FALSE
+frmExpeditedLaneDI	cboAssignDvs	TRUE
+frmExpeditedScopingCosting	cboAssignDas	TRUE
+subfrmStaffAssignments	Disaster Number	FALSE
+subfrmStaffAssignments	Position	TRUE
+subformSites	Damage Level	TRUE
+subfrmEnterProjects	Project Category	FALSE
+frmProcessProjectRoutingSheet PDC	Lane Recommendation	TRUE
+frmProcessProjectRoutingSheet PDC	cboDocumentation	TRUE
+frmProjectSiteLink	cboPaID	TRUE
+subformRFIRequestedInformation	Item Type	FALSE
+frmSpecializedSiteInspectionWorkOrder-CFC	Damage Level	TRUE
+frmReviewResult	cboAssign	TRUE
+frmReviewResult	cboRework	TRUE
+frmRpaReview	tbPagsEligibility	FALSE
+frmRpaReview	cboOccSba	TRUE
+frmRpaReview	cboPagsSba	TRUE
+subfrmInspectionAssignSiteSelect	Damage Level	TRUE
+subfrmInspectionSiteSelect	Damage Level	TRUE
+subfrmSiteAssignment	Assigned Site Inspector	TRUE
+frmStAssignDvs	cboAssignDvs	TRUE
+frmStDvsSiteReview	Damage Level	TRUE
+frmStDvsSiteReview	cboLegalResponsibility	FALSE
+frmStDvsSiteReview	cboDeclaredArea	FALSE
+frmStDvsSiteReview	cboEventDamage	FALSE
+frmStDvsSiteReview	DVS -Site Inspection Required	TRUE
+frmStDvsSiteReview	cboDimensionsKnown	TRUE
+frmStDvsSiteReview	cboDimensionsFrom	TRUE
+frmStDvsSiteReview	cboSampleVerify	TRUE
+frmStDvsSiteReview	cboKnownDimensionsInEMMIE	TRUE
+frmStSiteConcurrence	Scope of Work Developed by	TRUE
+frmStSiteConcurrence	Cost Estimate Developed by	TRUE
+frmStSiteConcurrence	Combo61	TRUE
+frmSubrecipientExploratoryCallEEI	DisasterID	TRUE
+frmSubrecipientExploratoryCallEEI	Combo279	TRUE
+subfrmProjectSitesDIU	DVS -Site Inspection Required	TRUE
+subfrmProjectSitesDIU	Critical Facility	TRUE
+subfrmProjectSitesDIU	Damage Level	FALSE
+subfrmProjectSitesDIU	Text41	TRUE
+subfrmProjectSitesDIU	EHP Issues? (H	FALSE
+subfrmProjectSitesDIU	Facility insured?	FALSE
+subfrmProjectSitesDIU	Is there a potential mitigation opportunity?	FALSE
