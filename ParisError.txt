@@ -1,16 +1,84 @@
 User	akhandka
-Time	04/12/2016 12:04:58
-Procedure	frmUpdateRSMProjections.cmdUpdate_Click
+Time	04/20/2016 11:26:20
+Procedure	frmRFIRouting.EnableFormArea
 Line	0
-Error	3075	Syntax error (missing operator) in query expression 'ID ='.
+Error	9	Subscript out of range
 Stack
-	frmUpdateRSMProjections.cmdUpdate_Click
+	frmRFIRouting.cmdTransmit_Click
+	frmRfiItemAssessment.cmdRspRcvd_Click
+	frmRfiItemAssessment.cmdRspRcvd_Click
+	frmRfiItemAssessment.cmdRspRcvd_Click
+	frmRfiItemAssessment.cmdRspRcvd_Click
+	frmRfiItemAssessment.CompleteReview
+	frmRfiItemAssessment.HandleDisposition
+	frmRFIRouting.Form_Current
+	frmRFIRouting.RepaintForm
+	frmRFIRouting.EnableFormArea
 
 User	akhandka
-Time	04/12/2016 12:06:04
-Procedure	frmUpdateRSMProjections.cmdUpdate_Click
+Time	04/20/2016 11:26:20
+Procedure	frmRFIRouting.RepaintForm
 Line	0
-Error	3075	Syntax error (missing operator) in query expression 'ID ='.
+Error	91	Object variable or With block variable not set
 Stack
-	frmUpdateRSMProjections.cmdUpdate_Click
+	frmRFIRouting.cmdTransmit_Click
+	frmRfiItemAssessment.cmdRspRcvd_Click
+	frmRfiItemAssessment.cmdRspRcvd_Click
+	frmRfiItemAssessment.cmdRspRcvd_Click
+	frmRfiItemAssessment.cmdRspRcvd_Click
+	frmRfiItemAssessment.CompleteReview
+	frmRfiItemAssessment.HandleDisposition
+	frmRFIRouting.Form_Current
+	frmRFIRouting.RepaintForm
+
+User	akhandka
+Time	04/21/2016 09:54:16
+Procedure	subfrmRfi-ProjectReviewHistory.GetItemDims
+Line	0
+Error	2465	Microsoft Access can't find the field '|1' referred to in your expression.
+Stack
+	subfrmRfi-ProjectReviewHistory.cmdFullComments_Click
+	subfrmRfi-ProjectReviewHistory.GetItemDims
+
+User	akhandka
+Time	04/21/2016 09:54:17
+Procedure	subfrmRfi-ProjectReviewHistory.cmdFullComments_Click
+Line	0
+Error	91	Object variable or With block variable not set
+Stack
+	subfrmRfi-ProjectReviewHistory.cmdFullComments_Click
+
+User	akhandka
+Time	04/21/2016 10:29:41
+Procedure	subfrmRfiReviewHistory.GetItemDims
+Line	0
+Error	2465	Microsoft Access can't find the field '|1' referred to in your expression.
+Stack
+	subfrmRfiReviewHistory.cmdFullComments_Click
+	subfrmRfiReviewHistory.GetItemDims
+
+User	akhandka
+Time	04/21/2016 10:29:41
+Procedure	subfrmRfiReviewHistory.cmdFullComments_Click
+Line	0
+Error	91	Object variable or With block variable not set
+Stack
+	subfrmRfiReviewHistory.cmdFullComments_Click
+
+User	akhandka
+Time	04/21/2016 10:58:00
+Procedure	subfrmRfiReviewHistory.GetItemDims
+Line	0
+Error	2465	Microsoft Access can't find the field '|1' referred to in your expression.
+Stack
+	subfrmRfiReviewHistory.cmdFullComments_Click
+	subfrmRfiReviewHistory.GetItemDims
+
+User	akhandka
+Time	04/21/2016 10:58:00
+Procedure	subfrmRfiReviewHistory.cmdFullComments_Click
+Line	0
+Error	91	Object variable or With block variable not set
+Stack
+	subfrmRfiReviewHistory.cmdFullComments_Click
 
