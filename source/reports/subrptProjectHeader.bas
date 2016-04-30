@@ -5,14 +5,17 @@ Begin Report
     AutoResize = NotDefault
     DividingLines = NotDefault
     AllowDesignChanges = NotDefault
+    ScrollBars =0
     DateGrouping =1
     GrpKeepTogether =1
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =11460
+    Width =14520
     DatasheetFontHeight =11
+    Left =330
+    Top =4095
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0x5b79b59cd9b9e440
@@ -78,14 +81,17 @@ Begin Report
         Begin Section
             KeepTogether = NotDefault
             Height =1260
+            BackColor =15064278
             Name ="Detail"
             AlternateBackColor =15921906
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
-            BackThemeColorIndex =1
+            BackThemeColorIndex =2
+            BackTint =20.0
             Begin
                 Begin TextBox
                     OldBorderStyle =0
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =1260
                     Top =420
@@ -106,6 +112,7 @@ Begin Report
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =3360
                     Width =1560
@@ -125,8 +132,9 @@ Begin Report
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    BackStyle =0
                     IMESentenceMode =3
-                    Left =6600
+                    Left =9420
                     Width =4800
                     Height =360
                     FontSize =12
@@ -139,8 +147,8 @@ Begin Report
                     EventProcPrefix ="Subrecipient_Name"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =6600
-                    LayoutCachedWidth =11400
+                    LayoutCachedLeft =9420
+                    LayoutCachedWidth =14220
                     LayoutCachedHeight =360
                 End
                 Begin Label
@@ -166,18 +174,18 @@ Begin Report
                 End
                 Begin Label
                     TextAlign =1
-                    Width =3285
+                    Width =3330
                     Height =360
                     FontSize =14
                     FontWeight =700
                     BorderColor =8355711
                     ForeColor =9917743
                     Name ="ApplicantID_Label"
-                    Caption ="Project Referenct Number:"
+                    Caption ="Project Reference Number:"
                     Tag ="DetachedLabel"
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedWidth =3285
+                    LayoutCachedWidth =3330
                     LayoutCachedHeight =360
                     ForeThemeColorIndex =8
                     ForeTint =100.0
@@ -185,7 +193,7 @@ Begin Report
                 End
                 Begin Label
                     TextAlign =1
-                    Left =4980
+                    Left =7800
                     Width =1560
                     Height =360
                     FontSize =14
@@ -198,8 +206,8 @@ Begin Report
                     EventProcPrefix ="Subrecipient_Name_Label"
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =4980
-                    LayoutCachedWidth =6540
+                    LayoutCachedLeft =7800
+                    LayoutCachedWidth =9360
                     LayoutCachedHeight =360
                     ForeThemeColorIndex =8
                     ForeTint =100.0
@@ -230,6 +238,7 @@ Begin Report
                 Begin TextBox
                     DecimalPlaces =0
                     OldBorderStyle =0
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =5280
                     Top =840
