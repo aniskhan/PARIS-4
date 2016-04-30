@@ -6,7 +6,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    OrderByOn = NotDefault
     AllowDesignChanges = NotDefault
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
@@ -15,14 +14,13 @@ Begin Form
     Width =12300
     DatasheetFontHeight =11
     ItemSuffix =96
-    Right =21300
+    Right =13875
     Bottom =12645
     DatasheetGridlinesColor =15132391
-    OrderBy ="[ReviewEntryDate] DESC"
     RecSrcDt = Begin
-        0x267b8502ada6e440
+        0x588a958f32bee440
     End
-    RecordSource ="qryReviewProjectSub"
+    RecordSource ="qryRFIProjectHistoryUnion"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,

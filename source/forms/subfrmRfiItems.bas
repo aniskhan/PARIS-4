@@ -15,13 +15,13 @@ Begin Form
     DatasheetFontHeight =11
     ItemSuffix =170
     Left =345
-    Top =6105
+    Top =5925
     Right =13455
-    Bottom =9075
+    Bottom =9195
     DatasheetGridlinesColor =15132391
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin
-        0xeaf644ba95bae440
+        0xdacc3554f5bde440
     End
     RecordSource ="fqryRfiItems"
     Caption ="RFI Items"
@@ -65,7 +65,6 @@ Begin Form
             ForeTint =75.0
             GridlineThemeColorIndex =1
             GridlineShade =65.0
-            UseTheme =1
             Shape =1
             Gradient =12
             BackThemeColorIndex =4
@@ -75,14 +74,6 @@ Begin Form
             BorderThemeColorIndex =4
             BorderTint =60.0
             ThemeFontIndex =1
-            HoverThemeColorIndex =4
-            HoverTint =40.0
-            PressedThemeColorIndex =4
-            PressedShade =75.0
-            HoverForeThemeColorIndex =0
-            HoverForeTint =75.0
-            PressedForeThemeColorIndex =0
-            PressedForeTint =75.0
         End
         Begin CheckBox
             BorderLineStyle =0
@@ -150,31 +141,6 @@ Begin Form
             BackThemeColorIndex =1
             Begin
                 Begin TextBox
-                    OverlapFlags =85
-                    TextAlign =1
-                    IMESentenceMode =3
-                    Left =825
-                    Top =30
-                    Width =675
-                    Height =315
-                    ColumnWidth =1530
-                    TabIndex =1
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="tbSiteID"
-                    ControlSource ="SiteID"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =825
-                    LayoutCachedTop =30
-                    LayoutCachedWidth =1500
-                    LayoutCachedHeight =345
-                    RowStart =2
-                    RowEnd =2
-                    ColumnStart =1
-                    ColumnEnd =1
-                End
-                Begin TextBox
                     CanGrow = NotDefault
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
@@ -225,6 +191,7 @@ Begin Form
                     RowEnd =2
                 End
                 Begin ComboBox
+                    LimitToList = NotDefault
                     OverlapFlags =85
                     TextAlign =1
                     IMESentenceMode =3
@@ -235,7 +202,7 @@ Begin Form
                     Width =3150
                     Height =315
                     FontSize =10
-                    TabIndex =2
+                    TabIndex =1
                     BorderColor =10921638
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
@@ -254,6 +221,39 @@ Begin Form
                     RowEnd =2
                     ColumnStart =3
                     ColumnEnd =3
+                    ForeThemeColorIndex =0
+                    ForeTint =75.0
+                    ForeShade =100.0
+                End
+                Begin ComboBox
+                    OverlapFlags =85
+                    TextAlign =1
+                    IMESentenceMode =3
+                    ColumnCount =3
+                    ListWidth =3960
+                    Left =825
+                    Top =30
+                    Width =675
+                    Height =315
+                    TabIndex =2
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"4\";\"4\""
+                    Name ="cboSiteID"
+                    ControlSource ="SiteID"
+                    RowSourceType ="Table/Query"
+                    RowSource ="fqryRfiItemsSiteSelect"
+                    ColumnWidths ="360;3600"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =825
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =1500
+                    LayoutCachedHeight =345
+                    RowStart =2
+                    RowEnd =2
+                    ColumnStart =1
+                    ColumnEnd =1
                     ForeThemeColorIndex =0
                     ForeTint =75.0
                     ForeShade =100.0

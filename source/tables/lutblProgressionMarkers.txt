@@ -1,5 +1,5 @@
-﻿furthestProgression
-Hold in DVS Review
-Hold in Phase 1
-Hold in Phase 2
-Hold in Phase 3
+﻿furthestProgression	ProgressionOrder
+Hold in DVS Review	2
+Hold in Phase 1	1
+Hold in Phase 2	3
+Hold in Phase 3	4

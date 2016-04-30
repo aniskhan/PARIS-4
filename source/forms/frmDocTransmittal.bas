@@ -17,8 +17,8 @@ Begin Form
     Width =21615
     DatasheetFontHeight =11
     ItemSuffix =106
-    Right =5625
-    Bottom =7005
+    Right =13860
+    Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0x9159d0aeb4b9e440
@@ -250,6 +250,7 @@ Begin Form
                     ForeTint =100.0
                 End
                 Begin ComboBox
+                    LimitToList = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =1920
@@ -287,6 +288,7 @@ Begin Form
                     End
                 End
                 Begin ComboBox
+                    LimitToList = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =1920
@@ -324,6 +326,7 @@ Begin Form
                     End
                 End
                 Begin ComboBox
+                    LimitToList = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =1920
@@ -361,6 +364,7 @@ Begin Form
                     End
                 End
                 Begin ComboBox
+                    LimitToList = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =1920
@@ -398,6 +402,7 @@ Begin Form
                     End
                 End
                 Begin ComboBox
+                    LimitToList = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =1920

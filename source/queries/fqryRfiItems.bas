@@ -33,12 +33,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =1219
+    Right =1211
     Bottom =860
     Left =-1
     Top =-1
-    Right =1203
-    Bottom =513
+    Right =1195
+    Bottom =428
     Left =0
     Top =0
     ColumnsShown =539
@@ -52,10 +52,10 @@ Begin
         Name =""
     End
     Begin
-        Left =580
-        Top =109
-        Right =724
-        Bottom =253
+        Left =611
+        Top =14
+        Right =755
+        Bottom =158
         Top =0
         Name ="lutblRFIItemType"
         Name =""

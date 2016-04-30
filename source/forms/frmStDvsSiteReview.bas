@@ -14,7 +14,7 @@ Begin Form
     Width =17580
     DatasheetFontHeight =11
     ItemSuffix =100
-    Right =13590
+    Right =13860
     Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -1094,6 +1094,7 @@ Begin Form
                     End
                 End
                 Begin ComboBox
+                    LimitToList = NotDefault
                     RowSourceTypeInt =1
                     SpecialEffect =4
                     BorderWidth =3
@@ -1143,6 +1144,7 @@ Begin Form
                     End
                 End
                 Begin ComboBox
+                    LimitToList = NotDefault
                     RowSourceTypeInt =1
                     SpecialEffect =4
                     BorderWidth =3
@@ -1192,6 +1194,7 @@ Begin Form
                     End
                 End
                 Begin ComboBox
+                    LimitToList = NotDefault
                     RowSourceTypeInt =1
                     SpecialEffect =4
                     BorderWidth =3

@@ -14,13 +14,15 @@ Begin Form
     Width =13080
     DatasheetFontHeight =11
     ItemSuffix =183
-    Right =18300
-    Bottom =12900
+    Left =345
+    Top =9765
+    Right =13575
+    Bottom =12795
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0x214d45692dbce440
+        0xd2fbed2d30bee440
     End
-    RecordSource ="qryReviewRfiSub"
+    RecordSource ="qryRFIProjectHistoryUnion"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
@@ -372,7 +374,7 @@ Begin Form
                     FontSize =9
                     ForeColor =4210752
                     Name ="cmdFullComments"
-                    Caption ="Full Comments"
+                    Caption ="Full Report"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
@@ -405,7 +407,7 @@ Begin Form
                 Begin TextBox
                     Locked = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =85
+                    OverlapFlags =93
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
@@ -537,13 +539,13 @@ Begin Form
                 Begin TextBox
                     Locked = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =85
+                    OverlapFlags =247
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
                     Left =30
                     Top =30
-                    Width =1890
+                    Width =2070
                     Height =299
                     FontSize =9
                     LeftMargin =44
@@ -558,7 +560,7 @@ Begin Form
 
                     LayoutCachedLeft =30
                     LayoutCachedTop =30
-                    LayoutCachedWidth =1920
+                    LayoutCachedWidth =2100
                     LayoutCachedHeight =329
                     RowStart =2
                     RowEnd =2
@@ -723,7 +725,7 @@ Private Sub cmdFullComments_Click()
 '///Error Handling
 
 '///Code
-    DoCmd.OpenReport "rptRfiHistory", acViewReport, , GetItemDims.WhereID(False), acWindowNormal
+    DoCmd.OpenReport "rptRfiProjectHistory", acViewReport, , "[RfiID]=" & [RfiID], acWindowNormal
 '///Code
 
 '///ErrorHandling
@@ -734,7 +736,7 @@ PROC_EXIT:
 PROC_ERR:
     GlobalErrHandler
     Resume PROC_EXIT
-'///ErrorHandline
+'///ErrorHandling
 End Sub
 'INTERNAL STANDARD CODE
 

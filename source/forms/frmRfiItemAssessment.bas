@@ -15,14 +15,13 @@ Begin Form
     Width =15480
     DatasheetFontHeight =11
     ItemSuffix =229
-    Left =25680
-    Top =-3540
-    Right =-20101
-    Bottom =9105
+    Left =29760
+    Top =2505
+    Right =-21916
+    Bottom =15150
     DatasheetGridlinesColor =15132391
-    Filter ="[RfiID] =6"
     RecSrcDt = Begin
-        0xcbbe04dc74bce440
+        0xb93735ecebbce440
     End
     RecordSource ="fqryRfiItems"
     Caption ="RFI Response Assessment"
@@ -520,6 +519,7 @@ Begin Form
                     RowEnd =1
                 End
                 Begin ComboBox
+                    LimitToList = NotDefault
                     Enabled = NotDefault
                     OverlapFlags =85
                     TextAlign =1
@@ -613,6 +613,7 @@ Begin Form
                     ColumnEnd =4
                 End
                 Begin ComboBox
+                    LimitToList = NotDefault
                     Enabled = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3
@@ -794,30 +795,6 @@ Begin Form
                     LayoutCachedWidth =660
                     LayoutCachedHeight =1200
                 End
-                Begin CommandButton
-                    OverlapFlags =85
-                    Left =14100
-                    Top =60
-                    Width =1320
-                    Height =600
-                    TabIndex =3
-                    ForeColor =4210752
-                    Name ="cmdOpenRfiRouting"
-                    Caption ="Open Main RFI Form"
-                    OnClick ="[Event Procedure]"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =14100
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =15420
-                    LayoutCachedHeight =660
-                    BackColor =15123357
-                    BorderColor =15123357
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
-                End
             End
         End
     End
@@ -990,7 +967,17 @@ Private Sub Form_Load()
 FormFilter.RecordFilterCheck Me.Form, FormItemType
 
 'Adjust Size of modal window, measurement in twips, 1440 per inch
-DoCmd.MoveSize , , 11.5 * 1440, 3 * 1440
+DoCmd.MoveSize 0, 0, 11.5 * 1440, 3 * 1440
+
+If CurrentProject.AllForms("frmRFIRouting").IsLoaded Then
+' 'DON'T TRY TO OPEN THE FORM HERE, ANISA ... IT DOESN'T WORK, OKAY?
+Else
+    DoCmd.OpenForm ("frmRFIRouting")
+    With Forms("frmRFIRouting")
+        .Filter = "[RfiID] =" & Me.RfiID
+        .FilterOn = True
+    End With
+End If
 
 '///Code
 
@@ -1004,8 +991,6 @@ PROC_ERR:
     Resume PROC_EXIT
 '///ErrorHandling
 End Sub
-
-
 
 Private Sub Form_Current()
 '///Error Handling
@@ -1052,7 +1037,9 @@ Private Sub RepaintForm()
     EnableFormArea "Assess RFI Response"
     
 ''    Refreshes main RFI form History
+If CurrentProject.AllForms("frmRFIRouting").IsLoaded Then
     Forms!frmRFIRouting!subHistory.Requery
+End If
 '///Code
 
 '///ErrorHandling
@@ -1122,7 +1109,6 @@ Select Case ReviewName
     Case "Mark RFI Complete"
         ItemDims.LoadByForm Forms("frmRfiRouting").Form, "RFI", ReviewName
         Set GetItemDims = ItemDims
-
     Case Else
         ItemDims.LoadByForm Me, FormItemType, ReviewName
         Set GetItemDims = ItemDims

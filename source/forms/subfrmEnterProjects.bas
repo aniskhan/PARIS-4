@@ -14,8 +14,8 @@ Begin Form
     Width =13740
     DatasheetFontHeight =11
     ItemSuffix =34
-    Right =5625
-    Bottom =7005
+    Right =13860
+    Bottom =12645
     DatasheetGridlinesColor =15132391
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin
@@ -826,6 +826,7 @@ Begin Form
                     Overlaps =1
                 End
                 Begin ComboBox
+                    LimitToList = NotDefault
                     OverlapFlags =215
                     TextAlign =1
                     IMESentenceMode =3
@@ -1015,7 +1016,7 @@ End Sub
 Private Sub Form_AfterInsert()
     Dim ID As classItemDims
     Set ID = GetItemDims("Project Entry")
-    Reviews.EnterReview ID, ID.AssignedPDC
+    Reviews.EnterReview ID, Environ("UserName")
 End Sub
 
 Private Function GetItemDims(ReviewName As String) As classItemDims

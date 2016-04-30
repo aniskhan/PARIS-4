@@ -17,7 +17,7 @@ Begin Form
     Width =15480
     DatasheetFontHeight =11
     ItemSuffix =123
-    Right =20010
+    Right =24690
     Bottom =12645
     TimerInterval =30
     DatasheetGridlinesColor =15132391
@@ -144,13 +144,12 @@ Begin Form
         End
         Begin Section
             Height =11820
-            BackColor =14277081
+            BackColor =3243501
             Name ="Detail"
             AlternateBackColor =13431551
             AlternateBackThemeColorIndex =7
             AlternateBackTint =20.0
-            BackThemeColorIndex =1
-            BackShade =85.0
+            BackThemeColorIndex =5
             Begin
                 Begin Image
                     SizeMode =0

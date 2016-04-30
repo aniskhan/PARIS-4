@@ -3,6 +3,7 @@ VersionRequired =20
 Begin Report
     LayoutForPrint = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DateGrouping =1
     GrpKeepTogether =1
@@ -10,18 +11,19 @@ Begin Report
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =11520
+    Width =13500
     DatasheetFontHeight =11
-    ItemSuffix =29
+    ItemSuffix =35
     DatasheetGridlinesColor =15132391
+    Filter ="[DisasterID]='4258' and [ApplicantID]='039-UHDZY-00' and [ProjectID]=18"
     RecSrcDt = Begin
-        0x94b69080d9b9e440
+        0xeae0e97c32bee440
     End
-    RecordSource ="rqryProjectHistory"
+    RecordSource ="rqryRfiProjectHistory"
     Caption ="Project History"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
-        0xe0010000e0010000680100006801000000000000201c0000e010000001000000 ,
+        0x68010000df010000680100006801000000000000333500008304000001000000 ,
         0x010000006801000000000000a10700000100000001000000
     End
     FilterOnLoad =0
@@ -128,15 +130,18 @@ Begin Report
         Begin BreakHeader
             KeepTogether = NotDefault
             Height =540
+            BackColor =15064278
             Name ="GroupHeader0"
             AlternateBackColor =15921906
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
-            BackThemeColorIndex =1
+            BackThemeColorIndex =2
+            BackTint =20.0
             Begin
                 Begin TextBox
                     DecimalPlaces =0
                     OldBorderStyle =0
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =1200
                     Top =60
@@ -179,17 +184,19 @@ Begin Report
             CanGrow = NotDefault
             Height =1260
             BreakLevel =1
+            BackColor =15064278
             Name ="GroupHeader1"
             AlternateBackColor =15921906
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
-            BackThemeColorIndex =1
+            BackThemeColorIndex =2
+            BackTint =20.0
             Begin
                 Begin Subform
                     Locked = NotDefault
                     CanGrow = NotDefault
                     OldBorderStyle =0
-                    Width =11520
+                    Width =13500
                     Height =1260
                     Name ="Child23"
                     SourceObject ="Report.subrptApplicantHeader"
@@ -197,7 +204,7 @@ Begin Report
                     LinkMasterFields ="DisasterID;ApplicantID"
                     GridlineColor =10921638
 
-                    LayoutCachedWidth =11520
+                    LayoutCachedWidth =13500
                     LayoutCachedHeight =1260
                     Begin
                         Begin Label
@@ -223,13 +230,15 @@ Begin Report
             KeepTogether = NotDefault
             CanGrow = NotDefault
             CanShrink = NotDefault
-            Height =1935
+            Height =1980
             BreakLevel =2
+            BackColor =15064278
             Name ="GroupHeader2"
             AlternateBackColor =15921906
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
-            BackThemeColorIndex =1
+            BackThemeColorIndex =2
+            BackTint =20.0
             Begin
                 Begin Label
                     TextAlign =2
@@ -258,7 +267,7 @@ Begin Report
                     BorderColor =8355711
                     ForeColor =8355711
                     Name ="ReviewType_Label"
-                    Caption ="Review Name"
+                    Caption ="Review \015\012Name"
                     Tag ="DetachedLabel"
                     GridlineStyleBottom =1
                     GridlineColor =10921638
@@ -312,7 +321,7 @@ Begin Report
                     BorderColor =8355711
                     ForeColor =8355711
                     Name ="Disposition_Label"
-                    Caption ="Review Result"
+                    Caption ="Review \015\012Result"
                     Tag ="DetachedLabel"
                     GridlineStyleBottom =1
                     GridlineColor =10921638
@@ -362,7 +371,7 @@ Begin Report
                     CanGrow = NotDefault
                     OldBorderStyle =0
                     Top =60
-                    Width =11520
+                    Width =13500
                     Height =1260
                     Name ="Child27"
                     SourceObject ="Report.subrptProjectHeader"
@@ -371,7 +380,7 @@ Begin Report
                     GridlineColor =10921638
 
                     LayoutCachedTop =60
-                    LayoutCachedWidth =11520
+                    LayoutCachedWidth =13500
                     LayoutCachedHeight =1320
                     Begin
                         Begin Label
@@ -391,12 +400,30 @@ Begin Report
                         End
                     End
                 End
+                Begin Label
+                    TextAlign =2
+                    Left =12000
+                    Top =1380
+                    Width =1395
+                    Height =555
+                    BorderColor =8355711
+                    ForeColor =8355711
+                    Name ="Label29"
+                    Caption ="Review \015\012Type"
+                    Tag ="DetachedLabel"
+                    GridlineStyleBottom =1
+                    GridlineColor =10921638
+                    LayoutCachedLeft =12000
+                    LayoutCachedTop =1380
+                    LayoutCachedWidth =13395
+                    LayoutCachedHeight =1935
+                End
             End
         End
         Begin Section
             KeepTogether = NotDefault
             CanGrow = NotDefault
-            Height =1080
+            Height =1155
             Name ="Detail"
             AlternateBackColor =15921906
             AlternateBackThemeColorIndex =1
@@ -416,6 +443,13 @@ Begin Report
                     ForeColor =4210752
                     Name ="ReviewEntryDate"
                     ControlSource ="ReviewEntryDate"
+                    ConditionalFormat = Begin
+                        0x0100000084000000010000000100000000000000000000001100000001010000 ,
+                        0x56769d00ffffff00000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x5b004900740065006d0054007900700065005d003d0022005200460049002200 ,
+                        0x00000000
+                    End
                     GridlineColor =10921638
                     ShowDatePicker =1
 
@@ -423,6 +457,11 @@ Begin Report
                     LayoutCachedTop =60
                     LayoutCachedWidth =3420
                     LayoutCachedHeight =600
+                    ConditionalFormat14 = Begin
+                        0x01000100000001000000000000000101000056769d00ffffff00100000005b00 ,
+                        0x4900740065006d0054007900700065005d003d00220052004600490022000000 ,
+                        0x00000000000000000000000000000000000000
+                    End
                 End
                 Begin TextBox
                     CanGrow = NotDefault
@@ -438,12 +477,24 @@ Begin Report
                     ForeColor =4210752
                     Name ="ReviewType"
                     ControlSource ="ReviewType"
+                    ConditionalFormat = Begin
+                        0x0100000084000000010000000100000000000000000000001100000001010000 ,
+                        0x56769d00ffffff00000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x5b004900740065006d0054007900700065005d003d0022005200460049002200 ,
+                        0x00000000
+                    End
                     GridlineColor =10921638
 
                     LayoutCachedLeft =60
                     LayoutCachedTop =60
                     LayoutCachedWidth =1800
                     LayoutCachedHeight =600
+                    ConditionalFormat14 = Begin
+                        0x01000100000001000000000000000101000056769d00ffffff00100000005b00 ,
+                        0x4900740065006d0054007900700065005d003d00220052004600490022000000 ,
+                        0x00000000000000000000000000000000000000
+                    End
                 End
                 Begin TextBox
                     CanGrow = NotDefault
@@ -459,6 +510,13 @@ Begin Report
                     ForeColor =4210752
                     Name ="ReviewCheckOutDate"
                     ControlSource ="ReviewCheckOutDate"
+                    ConditionalFormat = Begin
+                        0x0100000084000000010000000100000000000000000000001100000001010000 ,
+                        0x56769d00ffffff00000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x5b004900740065006d0054007900700065005d003d0022005200460049002200 ,
+                        0x00000000
+                    End
                     GridlineColor =10921638
                     ShowDatePicker =1
 
@@ -466,6 +524,11 @@ Begin Report
                     LayoutCachedTop =60
                     LayoutCachedWidth =6720
                     LayoutCachedHeight =600
+                    ConditionalFormat14 = Begin
+                        0x01000100000001000000000000000101000056769d00ffffff00100000005b00 ,
+                        0x4900740065006d0054007900700065005d003d00220052004600490022000000 ,
+                        0x00000000000000000000000000000000000000
+                    End
                 End
                 Begin TextBox
                     CanGrow = NotDefault
@@ -481,6 +544,13 @@ Begin Report
                     ForeColor =4210752
                     Name ="ReviewExitDate"
                     ControlSource ="ReviewExitDate"
+                    ConditionalFormat = Begin
+                        0x0100000084000000010000000100000000000000000000001100000001010000 ,
+                        0x56769d00ffffff00000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x5b004900740065006d0054007900700065005d003d0022005200460049002200 ,
+                        0x00000000
+                    End
                     GridlineColor =10921638
                     ShowDatePicker =1
 
@@ -488,6 +558,11 @@ Begin Report
                     LayoutCachedTop =60
                     LayoutCachedWidth =8340
                     LayoutCachedHeight =600
+                    ConditionalFormat14 = Begin
+                        0x01000100000001000000000000000101000056769d00ffffff00100000005b00 ,
+                        0x4900740065006d0054007900700065005d003d00220052004600490022000000 ,
+                        0x00000000000000000000000000000000000000
+                    End
                 End
                 Begin TextBox
                     CanGrow = NotDefault
@@ -502,12 +577,24 @@ Begin Report
                     ForeColor =4210752
                     Name ="Disposition"
                     ControlSource ="Disposition"
+                    ConditionalFormat = Begin
+                        0x0100000084000000010000000100000000000000000000001100000001010000 ,
+                        0x56769d00ffffff00000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x5b004900740065006d0054007900700065005d003d0022005200460049002200 ,
+                        0x00000000
+                    End
                     GridlineColor =10921638
 
                     LayoutCachedLeft =10080
                     LayoutCachedTop =60
                     LayoutCachedWidth =11460
                     LayoutCachedHeight =600
+                    ConditionalFormat14 = Begin
+                        0x01000100000001000000000000000101000056769d00ffffff00100000005b00 ,
+                        0x4900740065006d0054007900700065005d003d00220052004600490022000000 ,
+                        0x00000000000000000000000000000000000000
+                    End
                 End
                 Begin TextBox
                     CanGrow = NotDefault
@@ -522,12 +609,24 @@ Begin Report
                     ForeColor =4210752
                     Name ="AssignedTo"
                     ControlSource ="AssignedTo"
+                    ConditionalFormat = Begin
+                        0x0100000084000000010000000100000000000000000000001100000001010000 ,
+                        0x56769d00ffffff00000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x5b004900740065006d0054007900700065005d003d0022005200460049002200 ,
+                        0x00000000
+                    End
                     GridlineColor =10921638
 
                     LayoutCachedLeft =3480
                     LayoutCachedTop =60
                     LayoutCachedWidth =5100
                     LayoutCachedHeight =600
+                    ConditionalFormat14 = Begin
+                        0x01000100000001000000000000000101000056769d00ffffff00100000005b00 ,
+                        0x4900740065006d0054007900700065005d003d00220052004600490022000000 ,
+                        0x00000000000000000000000000000000000000
+                    End
                 End
                 Begin TextBox
                     CanGrow = NotDefault
@@ -542,12 +641,43 @@ Begin Report
                     ForeColor =4210752
                     Name ="CompletedBy"
                     ControlSource ="CompletedBy"
+                    ConditionalFormat = Begin
+                        0x0100000084000000010000000100000000000000000000001100000001010000 ,
+                        0x56769d00ffffff00000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x5b004900740065006d0054007900700065005d003d0022005200460049002200 ,
+                        0x00000000
+                    End
                     GridlineColor =10921638
 
                     LayoutCachedLeft =8400
                     LayoutCachedTop =60
                     LayoutCachedWidth =10020
                     LayoutCachedHeight =600
+                    ConditionalFormat14 = Begin
+                        0x01000100000001000000000000000101000056769d00ffffff00100000005b00 ,
+                        0x4900740065006d0054007900700065005d003d00220052004600490022000000 ,
+                        0x00000000000000000000000000000000000000
+                    End
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    IMESentenceMode =3
+                    Left =11820
+                    Top =60
+                    Height =315
+                    TabIndex =7
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="RfiCanceled"
+                    ControlSource ="RfiCanceled"
+                    Format ="True/False"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =11820
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =13260
+                    LayoutCachedHeight =375
                 End
                 Begin TextBox
                     CanGrow = NotDefault
@@ -557,17 +687,29 @@ Begin Report
                     Top =660
                     Width =8040
                     Height =360
-                    TabIndex =7
+                    TabIndex =8
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="Comments"
                     ControlSource ="Comments"
+                    ConditionalFormat = Begin
+                        0x0100000088000000010000000100000000000000000000001300000001000100 ,
+                        0x7f7f7f00ffffff00000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x5b00720066006900430061006e00630065006c00650064005d003d0054007200 ,
+                        0x7500650000000000
+                    End
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2220
                     LayoutCachedTop =660
                     LayoutCachedWidth =10260
                     LayoutCachedHeight =1020
+                    ConditionalFormat14 = Begin
+                        0x0100010000000100000000000000010001007f7f7f00ffffff00120000005b00 ,
+                        0x720066006900430061006e00630065006c00650064005d003d00540072007500 ,
+                        0x6500000000000000000000000000000000000000000000
+                    End
                     Begin
                         Begin Label
                             TextAlign =1
@@ -589,10 +731,79 @@ Begin Report
                         End
                     End
                 End
+                Begin TextBox
+                    OldBorderStyle =2
+                    TextAlign =2
+                    BorderLineStyle =1
+                    IMESentenceMode =3
+                    Left =11760
+                    Top =420
+                    Width =1740
+                    Height =315
+                    TabIndex =9
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="ItemType"
+                    ControlSource ="ItemType"
+                    ConditionalFormat = Begin
+                        0x010000006e000000010000000000000002000000000000000600000001010000 ,
+                        0x56769d00ffffff00000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x2200520046004900220000000000
+                    End
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =11760
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =13500
+                    LayoutCachedHeight =735
+                    ConditionalFormat14 = Begin
+                        0x01000100000000000000020000000101000056769d00ffffff00050000002200 ,
+                        0x5200460049002200000000000000000000000000000000000000000000
+                    End
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    TextAlign =3
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =12780
+                    Top =780
+                    Width =720
+                    Height =315
+                    TabIndex =10
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="RfiID"
+                    ControlSource ="RfiIDFilter"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =12780
+                    LayoutCachedTop =780
+                    LayoutCachedWidth =13500
+                    LayoutCachedHeight =1095
+                    Begin
+                        Begin Label
+                            Left =11760
+                            Top =780
+                            Width =660
+                            Height =315
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label34"
+                            Caption ="RFI ID:"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =11760
+                            LayoutCachedTop =780
+                            LayoutCachedWidth =12420
+                            LayoutCachedHeight =1095
+                        End
+                    End
+                End
             End
         End
         Begin PageFooter
-            Height =600
+            Height =630
             Name ="PageFooterSection"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -622,8 +833,8 @@ Begin Report
                     OldBorderStyle =0
                     TextAlign =3
                     IMESentenceMode =3
-                    Left =6420
-                    Top =240
+                    Left =8340
+                    Top =300
                     Width =5040
                     Height =330
                     TabIndex =1
@@ -633,10 +844,10 @@ Begin Report
                     ControlSource ="=\"Page \" & [Page] & \" of \" & [Pages]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =6420
-                    LayoutCachedTop =240
-                    LayoutCachedWidth =11460
-                    LayoutCachedHeight =570
+                    LayoutCachedLeft =8340
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =13380
+                    LayoutCachedHeight =630
                 End
             End
         End

@@ -7,11 +7,11 @@ Private Sub WriteChangeToFile(strForm As String)
     
     On Error Resume Next
     
-    logfile = Application.CurrentProject.Path & "\ChangeLog.txt"
+    logfile = Application.CurrentProject.Path & "\ComboBoxSettings.txt"
     
     Open logfile For Append As #1
         Print #1, strForm & vbTab
-        Print #1, "------------"
+'        Print #1, "------------"
     
     Close #1
     
@@ -153,7 +153,7 @@ Set colCtls = New Collection
 DoCmd.OpenForm (strFormName)
 Set frm = Forms(strFormName)
 
-' Build collection containg controls that meet criteria for update
+' Build collection containing controls that meet criteria for update
 For Each ctl In frm.Controls
     If ctl.ControlType = acTextBox Then
         If FieldTypeName(frm.RecordsetClone.Fields(ctl.ControlSource).Type) <> "Memo" Then
@@ -424,3 +424,42 @@ Next obj
 
 Application.Echo True
 End Function
+
+Public Sub findComboboxNotLimited()
+Dim obj As AccessObject
+Dim frm As Form
+Dim ctl As Control
+Application.Echo False
+    For Each obj In CurrentProject.AllForms
+        DoCmd.OpenForm (obj.name), acDesign
+        Set frm = Forms(obj.name)
+            For Each ctl In frm.Controls
+                If ctl.ControlType = acComboBox Then
+                   WriteChangeToFile (frm.name & "," & ctl.name & "," & ctl.LimitToList)
+                End If
+            Next ctl
+        DoCmd.Close acForm, frm.name, acSaveNo
+    Next obj
+Application.Echo True
+End Sub
+Public Sub fixComboboxNotLimited()
+Dim obj As AccessObject
+Dim frm As Form
+Dim ctl As Control
+Application.Echo False
+    For Each obj In CurrentProject.AllForms
+        DoCmd.OpenForm (obj.name), acDesign
+        Set frm = Forms(obj.name)
+            For Each ctl In frm.Controls
+                If ctl.ControlType = acComboBox Then
+                    If ctl.LimitToList = False Then
+                        Debug.Print frm.name & "," & ctl.name & "," & ctl.LimitToList
+                        'ctl.LimitToList = True
+                    End If
+                   'WriteChangeToFile (frm.name & "," & ctl.name & "," & ctl.LimitToList)
+                End If
+            Next ctl
+        DoCmd.Close acForm, frm.name, acSaveYes
+    Next obj
+Application.Echo True
+End Sub

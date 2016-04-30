@@ -12,8 +12,8 @@ Begin Form
     Width =9660
     DatasheetFontHeight =11
     ItemSuffix =39
-    Right =5625
-    Bottom =7005
+    Right =13860
+    Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0xfdb545b0b4b9e440
@@ -232,6 +232,7 @@ Begin Form
             BackThemeColorIndex =1
             Begin
                 Begin ComboBox
+                    LimitToList = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3
                     ListWidth =1440

@@ -4,6 +4,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowEdits = NotDefault
     DefaultView =2
     ViewsAllowed =2

@@ -404,7 +404,3 @@ Set Db = Nothing
 
 Application.Echo True
 End Function
-
-Public Sub updateFormDeclarations()
-
-End Sub

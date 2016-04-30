@@ -4,15 +4,19 @@ Begin Report
     LayoutForPrint = NotDefault
     AutoResize = NotDefault
     DividingLines = NotDefault
+    AllowAdditions = NotDefault
     AllowDesignChanges = NotDefault
+    ScrollBars =0
     DateGrouping =1
     GrpKeepTogether =1
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =11460
+    Width =15060
     DatasheetFontHeight =11
+    Left =345
+    Top =1605
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0x404e0e73d7b9e440
@@ -78,16 +82,20 @@ Begin Report
         Begin Section
             KeepTogether = NotDefault
             Height =1260
+            BackColor =15064278
             Name ="Detail"
             AlternateBackColor =15921906
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
-            BackThemeColorIndex =1
+            BackThemeColorIndex =2
+            BackTint =20.0
             Begin
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =81
+                    BackStyle =0
                     IMESentenceMode =3
-                    Left =1080
+                    Left =8820
                     Top =420
                     Width =1680
                     Height =360
@@ -99,15 +107,17 @@ Begin Report
                     StatusBarText ="Import"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =1080
+                    LayoutCachedLeft =8820
                     LayoutCachedTop =420
-                    LayoutCachedWidth =2760
+                    LayoutCachedWidth =10500
                     LayoutCachedHeight =780
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =81
+                    BackStyle =0
                     IMESentenceMode =3
-                    Left =9840
+                    Left =9420
                     Width =1560
                     Height =360
                     FontSize =12
@@ -119,15 +129,17 @@ Begin Report
                     StatusBarText ="Import"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =9840
-                    LayoutCachedWidth =11400
+                    LayoutCachedLeft =9420
+                    LayoutCachedWidth =10980
                     LayoutCachedHeight =360
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =81
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =2160
-                    Width =6000
+                    Width =6240
                     Height =360
                     FontSize =12
                     TabIndex =2
@@ -140,13 +152,15 @@ Begin Report
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2160
-                    LayoutCachedWidth =8160
+                    LayoutCachedWidth =8400
                     LayoutCachedHeight =360
                 End
                 Begin TextBox
                     OldBorderStyle =0
+                    OverlapFlags =81
+                    BackStyle =0
                     IMESentenceMode =3
-                    Left =6180
+                    Left =840
                     Top =420
                     Width =5220
                     Height =360
@@ -159,34 +173,15 @@ Begin Report
                     StatusBarText ="Import"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =6180
+                    LayoutCachedLeft =840
                     LayoutCachedTop =420
-                    LayoutCachedWidth =11400
-                    LayoutCachedHeight =780
-                End
-                Begin TextBox
-                    OldBorderStyle =0
-                    IMESentenceMode =3
-                    Left =3960
-                    Top =420
-                    Width =1260
-                    Height =360
-                    FontSize =12
-                    TabIndex =4
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="Status"
-                    ControlSource ="Status"
-                    StatusBarText ="Import"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =3960
-                    LayoutCachedTop =420
-                    LayoutCachedWidth =5220
+                    LayoutCachedWidth =6060
                     LayoutCachedHeight =780
                 End
                 Begin Label
+                    OverlapFlags =83
                     TextAlign =1
+                    Left =7800
                     Top =420
                     Width =1020
                     Height =360
@@ -199,16 +194,18 @@ Begin Report
                     Tag ="DetachedLabel"
                     GridlineStyleBottom =1
                     GridlineColor =10921638
+                    LayoutCachedLeft =7800
                     LayoutCachedTop =420
-                    LayoutCachedWidth =1020
+                    LayoutCachedWidth =8820
                     LayoutCachedHeight =780
                     ForeThemeColorIndex =8
                     ForeTint =100.0
                     ForeShade =75.0
                 End
                 Begin Label
+                    OverlapFlags =243
                     TextAlign =1
-                    Left =8220
+                    Left =7800
                     Width =1620
                     Height =360
                     FontSize =14
@@ -220,14 +217,15 @@ Begin Report
                     Tag ="DetachedLabel"
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =8220
-                    LayoutCachedWidth =9840
+                    LayoutCachedLeft =7800
+                    LayoutCachedWidth =9420
                     LayoutCachedHeight =360
                     ForeThemeColorIndex =8
                     ForeTint =100.0
                     ForeShade =75.0
                 End
                 Begin Label
+                    OverlapFlags =81
                     TextAlign =1
                     Width =2100
                     Height =360
@@ -248,8 +246,8 @@ Begin Report
                     ForeShade =75.0
                 End
                 Begin Label
+                    OverlapFlags =81
                     TextAlign =1
-                    Left =5340
                     Top =420
                     Width =780
                     Height =360
@@ -262,38 +260,15 @@ Begin Report
                     Tag ="DetachedLabel"
                     GridlineStyleBottom =1
                     GridlineColor =10921638
-                    LayoutCachedLeft =5340
                     LayoutCachedTop =420
-                    LayoutCachedWidth =6120
+                    LayoutCachedWidth =780
                     LayoutCachedHeight =780
                     ForeThemeColorIndex =8
                     ForeTint =100.0
                     ForeShade =75.0
                 End
                 Begin Label
-                    TextAlign =1
-                    Left =2940
-                    Top =420
-                    Width =960
-                    Height =360
-                    FontSize =14
-                    FontWeight =700
-                    BorderColor =8355711
-                    ForeColor =9917743
-                    Name ="Status_Label"
-                    Caption ="Status:"
-                    Tag ="DetachedLabel"
-                    GridlineStyleBottom =1
-                    GridlineColor =10921638
-                    LayoutCachedLeft =2940
-                    LayoutCachedTop =420
-                    LayoutCachedWidth =3900
-                    LayoutCachedHeight =780
-                    ForeThemeColorIndex =8
-                    ForeTint =100.0
-                    ForeShade =75.0
-                End
-                Begin Label
+                    OverlapFlags =81
                     TextAlign =1
                     Top =840
                     Width =5235
@@ -318,13 +293,15 @@ Begin Report
                 Begin TextBox
                     DecimalPlaces =0
                     OldBorderStyle =0
+                    OverlapFlags =81
+                    BackStyle =0
                     IMESentenceMode =3
                     Left =5280
                     Top =840
                     Width =3120
                     Height =330
                     FontSize =12
-                    TabIndex =5
+                    TabIndex =4
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="Assigned PDC"

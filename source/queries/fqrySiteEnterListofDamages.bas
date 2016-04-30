@@ -23,6 +23,7 @@ Begin OutputColumns
     Expression ="tblSites.[Requires Site Inspection]"
     Expression ="tblSites.DisasterID"
     Expression ="tblSites.ApplicantID"
+    Expression ="tblSites.ProjectID"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -66,17 +67,65 @@ Begin
         dbText "Name" ="tblSites.ApplicantID"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="tblSites.Latitude"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSites.[EHP Issues? (H, E, B)]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSites.ProjectID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSites.[E911 Street Address or Closest Intersection]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSites.[Approximate Cost]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSites.[Labor Type]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSites.[Facility insured?]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSites.[Describe Damage]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSites.[% Work Complete]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSites.[Has Recieved PA grant in prior Stafford Act Disasters?]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSites.Longitude"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSites.[Is there a potential mitigation opportunity?]"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1020
+    Right =912
     Bottom =860
     Left =-1
     Top =-1
-    Right =1004
-    Bottom =615
+    Right =896
+    Bottom =598
     Left =0
     Top =0
     ColumnsShown =539

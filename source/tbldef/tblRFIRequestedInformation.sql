@@ -8,6 +8,7 @@ CREATE TABLE [tblRFIRequestedInformation] (
   [ItemType] VARCHAR (255),
   [Reason Requested] LONGTEXT ,
   [DateResponseReceived] DATETIME ,
-  [isResponseReceived] VARCHAR (255) DEFAULT "",
-  [isRequestSatisfied] VARCHAR (255) DEFAULT ""
+  [isResponseReceived] VARCHAR (255) DEFAULT "--",
+  [isRequestSatisfied] VARCHAR (255) DEFAULT "--",
+  [isRequestCanceled] BIT DEFAULT No
 )

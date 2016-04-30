@@ -15,8 +15,8 @@ Begin Form
     Width =20475
     DatasheetFontHeight =11
     ItemSuffix =243
-    Right =13515
-    Bottom =12645
+    Right =20385
+    Bottom =13905
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0xb8f3af4051b5e440

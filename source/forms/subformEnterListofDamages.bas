@@ -15,10 +15,8 @@ Begin Form
     Width =16500
     DatasheetFontHeight =11
     ItemSuffix =70
-    Left =405
-    Top =6045
-    Right =16515
-    Bottom =12675
+    Right =13860
+    Bottom =12645
     DatasheetGridlinesColor =15132391
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin
@@ -489,6 +487,7 @@ Begin Form
                     End
                 End
                 Begin ComboBox
+                    LimitToList = NotDefault
                     OverlapFlags =215
                     TextAlign =1
                     IMESentenceMode =3
@@ -538,6 +537,7 @@ Begin Form
                     End
                 End
                 Begin ComboBox
+                    LimitToList = NotDefault
                     OverlapFlags =215
                     IMESentenceMode =3
                     ColumnCount =2
@@ -679,6 +679,7 @@ Begin Form
                     End
                 End
                 Begin ComboBox
+                    LimitToList = NotDefault
                     OverlapFlags =215
                     IMESentenceMode =3
                     ColumnCount =2
@@ -728,6 +729,7 @@ Begin Form
                     End
                 End
                 Begin ComboBox
+                    LimitToList = NotDefault
                     OverlapFlags =215
                     TextAlign =1
                     IMESentenceMode =3
@@ -778,6 +780,7 @@ Begin Form
                     End
                 End
                 Begin ComboBox
+                    LimitToList = NotDefault
                     OverlapFlags =215
                     TextAlign =1
                     IMESentenceMode =3
@@ -828,6 +831,7 @@ Begin Form
                     End
                 End
                 Begin ComboBox
+                    LimitToList = NotDefault
                     OverlapFlags =215
                     TextAlign =1
                     IMESentenceMode =3
@@ -878,6 +882,7 @@ Begin Form
                     End
                 End
                 Begin ComboBox
+                    LimitToList = NotDefault
                     OverlapFlags =215
                     TextAlign =1
                     IMESentenceMode =3
@@ -928,6 +933,7 @@ Begin Form
                     End
                 End
                 Begin ComboBox
+                    LimitToList = NotDefault
                     OverlapFlags =215
                     TextAlign =1
                     IMESentenceMode =3
@@ -978,6 +984,7 @@ Begin Form
                     End
                 End
                 Begin ComboBox
+                    LimitToList = NotDefault
                     OverlapFlags =215
                     TextAlign =1
                     IMESentenceMode =3
@@ -1630,7 +1637,7 @@ Private Sub Form_AfterInsert()
 '    Debug.Print "After Insert  ", Me.DisasterID, Me.ApplicantID, Me.ProjectID, Me.SiteID
     Dim ID As classItemDims
     Set ID = GetItemDims("Site Entry")
-    Reviews.EnterReview ID, ID.AssignedPDC
+    Reviews.EnterReview ID, Environ("UserName")
 End Sub
 
 Private Function GetItemDims(ReviewName As String) As classItemDims

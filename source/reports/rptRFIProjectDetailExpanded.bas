@@ -363,7 +363,7 @@ Begin Report
                     IMESentenceMode =3
                     Left =720
                     Top =30
-                    Width =5040
+                    Width =10380
                     Height =360
                     FontSize =12
                     FontWeight =700
@@ -381,7 +381,7 @@ Begin Report
 
                     LayoutCachedLeft =720
                     LayoutCachedTop =30
-                    LayoutCachedWidth =5760
+                    LayoutCachedWidth =11100
                     LayoutCachedHeight =390
                     RowStart =1
                     RowEnd =1

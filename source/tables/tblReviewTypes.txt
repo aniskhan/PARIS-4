@@ -11,7 +11,7 @@
 10	RPA	Ops RPA Eligibility	40	1	2	frmRPAreview	OPSL	ODIU	
 11	RPA	Exit Briefing	80	4	13		PDTFL		
 12	Project	Project Entry	5	1	7	frmProcessProjectRoutingSheet PDC	PDTFL		Site Entry
-13	Project	DIU Lane Select	10	2	6	frmDIUProcessProjectRoutingSheet	DIUL	DIUS	DIU Lane Select
+13	Project	DIU Lane Select	10	1	6	frmDIUProcessProjectRoutingSheet	DIUL	DIUS	DIU Lane Select
 14	EXProject	Assign DVS	15	2	9	frmExpeditedLaneDI	EXGL		Assign DVS
 15	EXProject	Validation	20	2	9	frmExpeditedLaneDI	EXGL	EXDVS	
 16	EXProject	DDD Entry	30	2	9	frmExpeditedLaneDI	EXGL	EXDVS	
@@ -60,3 +60,4 @@
 62	RFIResponse	Assess RFI Response	50	1	1	frmRFIItemAssessment	PDTFL		
 63	STProject	DVS Review	20	2	9	frmStWorkOrderDev	STDVS		DVS Review
 64	Site	DVS Review	30	2	11	frmStDvsSiteReview	STGL	STDVS	
+65	RFI	DIU Update EMMIE - RFI	40	1	1	frmRFIRouting	DIUS		

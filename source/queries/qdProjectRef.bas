@@ -8,6 +8,7 @@ Begin OutputColumns
     Expression ="tblProjects.ApplicantID"
     Expression ="tblProjects.ProjectID"
     Expression ="tblProjects.[Lane Assigned]"
+    Expression ="tblProjects.[Application Title]"
     Alias ="Full Reference"
     Expression ="Nz([Lane Assigned],\"-\") & Format([projectid],\"0000\")"
 End
@@ -41,17 +42,21 @@ Begin
         dbText "Name" ="Full Reference"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="tblProjects.[Application Title]"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1153
+    Right =941
     Bottom =860
     Left =-1
     Top =-1
-    Right =1137
-    Bottom =589
+    Right =925
+    Bottom =572
     Left =0
     Top =0
     ColumnsShown =539
@@ -59,7 +64,7 @@ Begin
         Left =48
         Top =12
         Right =418
-        Bottom =138
+        Bottom =508
         Top =0
         Name ="tblProjects"
         Name =""

@@ -17,7 +17,7 @@ Begin Form
     Width =17040
     DatasheetFontHeight =11
     ItemSuffix =114
-    Right =13515
+    Right =19755
     Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -2711,7 +2711,7 @@ strSQL = strSQL & "SELECT " & _
 "[Number of Complex Projects], [60 Day Submittal Date], [Projected Date 100% PW Submitted], " & _
 "[Actual Date 100% PWs Submitted], [Insurance Policy Received], [Debris Contracts Received], " & _
 "[List of Damages Provided], [Date List of Damages Provided], [Partial List of Damages], [Complete list of Damages] " & _
-"FROM tblProjectionUpdates WHERE ID = " ' & Me.ID
+"FROM tblProjectionUpdates WHERE ID = " & Me.ID
 
 
 CurrentDb.Execute strSQL
@@ -2730,6 +2730,7 @@ While Not subfrmRS.EOF
     'Debug.Print inFocusApplicantID
     If inFocusApplicantID = targetApplicantID Then
         Me![Date of Update] = Now()
+        Exit Sub
     Else
     End If
     subfrmRS.MoveNext

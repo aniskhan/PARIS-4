@@ -6,13 +6,16 @@ Begin InputTables
     Name ="lutblProcessPhase"
     Name ="lutblProcessSteps"
     Name ="tblSubRecipient"
+    Name ="qdProjectRef"
+    Name ="fqryRfiStatus"
 End
 Begin OutputColumns
     Expression ="tblRFI.RfiID"
     Expression ="tblRFI.ItemType"
     Expression ="tblRFI.DisasterID"
     Expression ="tblRFI.ApplicantID"
-    Expression ="tblRFI.ProjectID"
+    Alias ="Project"
+    Expression ="qdProjectRef.[Full Reference]"
     Expression ="tblRFI.[Lane Assigned]"
     Expression ="tblRFI.SiteID"
     Expression ="tblRFI.ReviewFromStep"
@@ -24,6 +27,8 @@ Begin OutputColumns
     Expression ="lutblProcessSteps.Description"
     Expression ="tblRFI.ReviewFrom"
     Expression ="tblSubRecipient.[Subrecipient Name]"
+    Expression ="fqryRfiStatus.RfiStatus"
+    Expression ="qdProjectRef.[Application Title]"
 End
 Begin Joins
     LeftTable ="tblRFI"
@@ -45,6 +50,22 @@ Begin Joins
     LeftTable ="tblRFI"
     RightTable ="tblSubRecipient"
     Expression ="tblRFI.ApplicantID = tblSubRecipient.ApplicantID"
+    Flag =1
+    LeftTable ="tblRFI"
+    RightTable ="qdProjectRef"
+    Expression ="tblRFI.DisasterID = qdProjectRef.DisasterID"
+    Flag =2
+    LeftTable ="tblRFI"
+    RightTable ="qdProjectRef"
+    Expression ="tblRFI.ApplicantID = qdProjectRef.ApplicantID"
+    Flag =2
+    LeftTable ="tblRFI"
+    RightTable ="qdProjectRef"
+    Expression ="tblRFI.ProjectID = qdProjectRef.ProjectID"
+    Flag =2
+    LeftTable ="tblRFI"
+    RightTable ="fqryRfiStatus"
+    Expression ="tblRFI.RfiID = fqryRfiStatus.RfiID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -86,10 +107,6 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="tblRFI.ProjectID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="tblRFI.SiteID"
         dbLong "AggregateType" ="-1"
     End
@@ -105,17 +122,29 @@ Begin
         dbText "Name" ="tblSubRecipient.[Subrecipient Name]"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="fqryRfiStatus.RfiStatus"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Project"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="qdProjectRef.[Application Title]"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1153
+    Right =941
     Bottom =860
     Left =-1
     Top =-1
-    Right =1137
-    Bottom =487
+    Right =925
+    Bottom =436
     Left =0
     Top =0
     ColumnsShown =539
@@ -129,28 +158,28 @@ Begin
         Name =""
     End
     Begin
-        Left =387
-        Top =350
-        Right =531
-        Bottom =494
+        Left =311
+        Top =386
+        Right =455
+        Bottom =530
         Top =0
         Name ="qryNames"
         Name =""
     End
     Begin
-        Left =380
-        Top =39
-        Right =524
-        Bottom =183
+        Left =468
+        Top =310
+        Right =612
+        Bottom =454
         Top =0
         Name ="lutblProcessPhase"
         Name =""
     End
     Begin
-        Left =373
-        Top =197
-        Right =517
-        Bottom =341
+        Left =482
+        Top =375
+        Right =626
+        Bottom =519
         Top =0
         Name ="lutblProcessSteps"
         Name =""
@@ -162,6 +191,24 @@ Begin
         Bottom =167
         Top =0
         Name ="tblSubRecipient"
+        Name =""
+    End
+    Begin
+        Left =394
+        Top =134
+        Right =544
+        Bottom =299
+        Top =0
+        Name ="qdProjectRef"
+        Name =""
+    End
+    Begin
+        Left =357
+        Top =9
+        Right =501
+        Bottom =153
+        Top =0
+        Name ="fqryRfiStatus"
         Name =""
     End
 End
