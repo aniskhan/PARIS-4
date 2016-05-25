@@ -123,12 +123,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =1028
-    Bottom =821
+    Right =1026
+    Bottom =860
     Left =-1
     Top =-1
-    Right =1012
-    Bottom =453
+    Right =1010
+    Bottom =436
     Left =0
     Top =0
     ColumnsShown =539

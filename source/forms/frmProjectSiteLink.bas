@@ -17,12 +17,12 @@ Begin Form
     Width =16620
     DatasheetFontHeight =11
     ItemSuffix =71
-    Right =19560
-    Bottom =12060
+    Right =8385
+    Bottom =9705
     DatasheetGridlinesColor =15132391
     OnApplyFilter ="[Event Procedure]"
     RecSrcDt = Begin
-        0x5df1e716d6c0e440
+        0x9a35b2786ec2e440
     End
     RecordSource ="fqryProjectFormulation"
     Caption ="Logical Project Grouping"

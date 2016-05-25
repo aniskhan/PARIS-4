@@ -17,14 +17,15 @@ Begin Form
     Width =15915
     DatasheetFontHeight =11
     ItemSuffix =54
-    Right =19560
-    Bottom =12060
+    Right =20310
+    Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0x2f541299cea3e440
     End
     Caption ="Tasks"
     OnCurrent ="[Event Procedure]"
+    OnOpen ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
@@ -477,6 +478,8 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 Option Explicit
+
+Private FormView As String
 '///Err.Raise 9999, "fake error", "fake error source"
 
 
@@ -540,16 +543,19 @@ Private Sub cmdtglTasks_Click()
 
 '///Code
 DoEvents
-    If Me.cmdtglTasks.Caption = "My Tasks" Then
-        Call Form_navMain.cmdOpenMyTasks_Click
-
-        ElseIf Me.cmdtglTasks.Caption = "All Tasks" Then
-            Call Form_navMain.cmdOpenAllTasks_Click
-        
-        ElseIf Me.cmdtglTasks.Caption = "Unassigned" Then
-            Call Form_navMain.cmdOpenUnassignedTasks_Click
-    Else: GoTo PROC_ERR
-    End If
+    Select Case FormView
+        Case "All"
+            FormView = "Unassigned"
+            ViewUnassigned
+        Case "My"
+            FormView = "All"
+            ViewAll
+        Case "Unassigned"
+            FormView = "My"
+            ViewMy
+        Case Else
+            Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & FormView
+    End Select
 
 '///Code
 
@@ -593,7 +599,181 @@ Private Sub Form_Load()
 '///Error Handling
 
 '///Code
-'/// Intentionally left blank
+    Select Case FormView
+        Case "All"
+            ViewAll
+        Case "My"
+            ViewMy
+        Case "Unassigned"
+            ViewUnassigned
+        Case Else
+            Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & FormView
+    End Select
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+End Sub
+
+Private Sub Form_Open(Cancel As Integer)
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "Form_Open"
+'///Error Handling
+
+'///Code
+    FormView = Me.OpenArgs
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+End Sub
+Private Sub ViewAll()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "ViewAll"
+'///Error Handling
+
+'///Code
+    Me.txtHeader = "All Tasks"
+    Me.cmdtglTasks.Caption = "Unassigned"
+    
+
+'FullView
+        With Me.subTasksFull.Form
+            .Visible = True
+            .RecordSource = "qryTaskAll"
+            .FilterOn = False
+        End With
+    Forms!frmTasks!subTasksFull.SetFocus
+    
+'Top View
+   
+        With Me.subTasksTop.Form
+            .Visible = False
+            .RecordSource = ""
+        End With
+
+    Forms!frmTasks!txtTopInfo = "This list shows all tasks for all users.  (You may not be able to perform the task if you do not have the proper role.)"
+        
+'Bottom View
+        With Me.subTasksBottom.Form
+            .Visible = False
+            .RecordSource = ""
+        End With
+    
+    Me.txtBottomInfo = ""
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+End Sub
+Private Sub ViewMy()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "ViewAll"
+'///Error Handling
+
+'///Code
+    Me.txtHeader = "My Tasks"
+    Me.cmdtglTasks.Caption = "All Tasks"
+
+'FullView
+        With Me.subTasksFull.Form
+            .Visible = False
+            .RecordSource = ""
+        End With
+'Top View
+    
+        With Me.subTasksTop.Form
+            .Visible = True
+            .RecordSource = "qryTaskMy"
+        End With
+        
+    Me.subTasksTop.SetFocus
+    Me.txtTopInfo = "This list shows all tasks assigned to your username."
+    
+'Bottom View
+        With Me.subTasksBottom.Form
+            .Visible = True
+            .RecordSource = "qryTaskUnassigned"
+            .Filter = "[positionTier] = 0"
+            .FilterOn = True
+        End With
+
+    Me.txtBottomInfo = "This list shows unassigned tasks that can be completed by someone in your position."
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+End Sub
+Private Sub ViewUnassigned()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "ViewAll"
+'///Error Handling
+
+'///Code
+    Me.txtHeader = "Unassigned Tasks"
+    Me.cmdtglTasks.Caption = "My Tasks"
+   
+    
+ 'FullView
+        With Me.subTasksFull.Form
+            .Visible = False
+            .RecordSource = ""
+        End With
+        
+ 'Top View
+        With Me.subTasksTop.Form
+            .Visible = True
+            .RecordSource = "qryTaskUnassigned"
+            .Filter = "[positionTier] = 0"
+            .FilterOn = True
+        End With
+    Me.subTasksTop.SetFocus
+    Me.txtTopInfo = "This list shows unassigned tasks that can be completed by someone in your position."
+    
+
+    
+'Bottom View
+
+        With Me.subTasksBottom.Form
+            .Visible = True
+            .RecordSource = "qryTaskUnassigned"
+            .Filter = "[positionTier] = 1"
+            .FilterOn = True
+        End With
+
+    Me.txtBottomInfo = "This list shows unassigned tasks that can be completed by a position which reports directly to you."
 '///Code
 
 '///ErrorHandling

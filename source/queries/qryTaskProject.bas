@@ -1,8 +1,8 @@
 ﻿Operation =1
 Option =0
-Where ="(((revtblProject.DisasterID)=Forms!navMain!DisasterID) And ((tblReviewTypes.Item"
-    "Type)=\"Project\" Or (tblReviewTypes.ItemType)=(revtblProject.[Lane Assigned] & "
-    "\"Project\")) And ((revtblProject.ReviewExitDate) Is Null))"
+Where ="(((revtblProject.DisasterID)=[Forms]![navMain]![DisasterID]) AND ((tblReviewType"
+    "s.ItemType)=\"Project\" Or (tblReviewTypes.ItemType)=([revtblProject].[Lane Assi"
+    "gned] & \"Project\")) AND ((revtblProject.ReviewExitDate) Is Null))"
 Begin InputTables
     Name ="revtblProject"
     Name ="tblProjects"
@@ -129,10 +129,6 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="RfiItemID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="revtblProject.[Lane Assigned]"
         dbLong "AggregateType" ="-1"
     End
@@ -141,12 +137,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =1029
-    Bottom =821
+    Right =1354
+    Bottom =860
     Left =-1
     Top =-1
-    Right =1013
-    Bottom =292
+    Right =1338
+    Bottom =275
     Left =0
     Top =0
     ColumnsShown =539

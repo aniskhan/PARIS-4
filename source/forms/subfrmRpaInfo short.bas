@@ -16,15 +16,13 @@ Begin Form
     Width =14100
     DatasheetFontHeight =11
     ItemSuffix =117
-    Left =345
-    Top =2145
-    Right =17280
-    Bottom =3195
+    Right =15135
+    Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0x6d3a787aada8e440
+        0xe090bd37d6c1e440
     End
-    RecordSource ="fqryRpaInfo"
+    RecordSource ="fqryRpaBannerShort"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,

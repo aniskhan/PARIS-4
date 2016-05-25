@@ -17,7 +17,7 @@
 16	EXProject	DDD Entry	30	2	9	frmExpeditedLaneDI	EXGL	EXDVS	
 17	EXProject	DDD with PDM	40	2	9	frmExpeditedLaneDI	EXGL	EXDVS	
 18	EXProject	Costing - EX Lane	75	3	10	frmExpeditedScopingCosting	EXGL	EXDVS	
-19	EXProject	PDM Concurrence	60	2	9	frmExpeditedLaneDI	PDTFL		
+19	EXProject	DDD Concurrence	60	2	9	frmExpeditedLaneDI	PDTFL		
 20	EXProject	Applicant Concurrence	70	2	9	frmExpeditedLaneDI	PDTFL		
 21	Project	Assign DAS	80	3	10	frmTransitionReview	DIUL	DAS	
 22	Project	DAS Review	90	3	10	frmTransitionReview	DIUL	DAS	

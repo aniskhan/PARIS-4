@@ -5,63 +5,21 @@ Where ="(((revtblSite.ReviewType)=\"Inspection Assignment\" Or (revtblSite.Revie
 Begin InputTables
     Name ="tblSites"
     Name ="revtblSite"
+    Name ="qdReadyforSI"
 End
 Begin OutputColumns
     Expression ="tblSites.DisasterID"
     Expression ="tblSites.ApplicantID"
     Expression ="tblSites.ProjectID"
     Expression ="tblSites.SiteID"
-    Expression ="revtblSite.[Lane Assigned]"
     Expression ="tblSites.Category"
     Expression ="tblSites.[Name of Site/Facility]"
     Expression ="tblSites.[E911 Street Address or Closest Intersection]"
-    Expression ="tblSites.Longitude"
-    Expression ="tblSites.[Critical Facility]"
-    Expression ="tblSites.Function"
-    Expression ="tblSites.[Cause of Damage  (wind, flood, etc)]"
     Expression ="tblSites.[Subrecipient priority (Low, Med, High)]"
-    Expression ="tblSites.[Damage Level]"
-    Expression ="tblSites.[Approximate Cost]"
     Expression ="tblSites.[Describe Damage]"
-    Expression ="tblSites.[Potential OFA Responsibility]"
-    Expression ="tblSites.[Labor Type]"
-    Expression ="tblSites.[Requires Site Inspection]"
-    Expression ="tblSites.[Legal Responsiblity]"
-    Expression ="tblSites.[In Declared Area]"
-    Expression ="tblSites.[Caused by the Event]"
-    Expression ="tblSites.[Documentation Reviewed]"
-    Expression ="tblSites.[Documentation Complete]"
-    Expression ="tblSites.[Documentation Notes]"
-    Expression ="tblSites.[Work Complete]"
-    Expression ="tblSites.[DVS -Site Inspection Required]"
-    Expression ="tblSites.[Site Requires DDD Validation]"
-    Expression ="tblSites.[Draft DDD]"
-    Expression ="tblSites.[Site Validation Returned]"
     Expression ="tblSites.[Assigned Site Inspector]"
-    Expression ="tblSites.[SITFL Contacts PDC to schedule]"
-    Expression ="tblSites.[Scheduled Date of Site Inspection]"
-    Expression ="tblSites.[Recipient POC]"
-    Expression ="tblSites.[Subrecipient POC]"
-    Expression ="tblSites.[Site Inspection Location]"
-    Expression ="tblSites.[Assigned EHP Specialists]"
-    Expression ="tblSites.[Assigned Mitigation Specialist]"
-    Expression ="tblSites.[Assigned Insurance Specialist]"
-    Expression ="tblSites.[Inspection Notes]"
-    Expression ="tblSites.[Scheduled Time of Site Inspection]"
-    Alias ="Ready For SI"
-    Expression ="IIf(Nz([% Work Complete])<=0,\"Yes\",IIf(Nz([% Work Complete])<1,IIf(Nz([Dimensi"
-        "onsKnown],\"\")=\"N\",\"Yes\",IIf(Nz([KnownDimensionsInEMMIE],\"\")=\"Y\",\"Yes\""
-        ",\"No\")),IIf(Nz([DimensionsKnown],\"\")=\"N\",IIf(Nz([DimensionsFrom],\"\")=\"S"
-        "ite Inspection\",\"Yes\",IIf(Nz([PartOfVerificationSample],\"\")=\"N\",\"Yes\",\""
-        "No\")),IIf(Nz([PartOfVerificationSample],\"\")=\"N\",\"Yes\",IIf(Nz([KnownDimens"
-        "ionsInEMMIE],\"\")=\"Y\",\"Yes\",\"No\")))))"
-    Alias ="Marked For SI"
-    Expression ="IIf(Nz([% Work Complete])<=0,\"Yes\",IIf(Nz([% Work Complete])<1,IIf(Nz([Dimensi"
-        "onsKnown],\"\")=\"N\",\"Yes\",IIf(Nz([KnownDimensionsInEMMIE],\"\")=\"Y\",\"Yes\""
-        ",\"\")),IIf(Nz([DimensionsKnown],\"\")=\"N\",IIf(Nz([DimensionsFrom],\"\")=\"Sit"
-        "e Inspection\",\"Yes\",IIf(Nz([PartOfVerificationSample],\"\")=\"N\",\"No\",\"\""
-        ")),IIf(Nz([PartOfVerificationSample],\"\")=\"N\",\"No\",IIf(Nz([KnownDimensionsI"
-        "nEMMIE],\"\")=\"Y\",\"Yes\",\"\")))))"
+    Expression ="qdReadyforSI.[Ready For SI]"
+    Expression ="qdReadyforSI.[Marked For SI]"
 End
 Begin Joins
     LeftTable ="tblSites"
@@ -79,6 +37,22 @@ Begin Joins
     LeftTable ="tblSites"
     RightTable ="revtblSite"
     Expression ="tblSites.SiteID = revtblSite.SiteID"
+    Flag =1
+    LeftTable ="tblSites"
+    RightTable ="qdReadyforSI"
+    Expression ="tblSites.DisasterID = qdReadyforSI.DisasterID"
+    Flag =1
+    LeftTable ="tblSites"
+    RightTable ="qdReadyforSI"
+    Expression ="tblSites.ApplicantID = qdReadyforSI.ApplicantID"
+    Flag =1
+    LeftTable ="tblSites"
+    RightTable ="qdReadyforSI"
+    Expression ="tblSites.ProjectID = qdReadyforSI.ProjectID"
+    Flag =1
+    LeftTable ="tblSites"
+    RightTable ="qdReadyforSI"
+    Expression ="tblSites.SiteID = qdReadyforSI.SiteID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -120,19 +94,7 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="tblSites.[Labor Type]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[Critical Facility]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="tblSites.[E911 Street Address or Closest Intersection]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[Approximate Cost]"
         dbLong "AggregateType" ="-1"
     End
     Begin
@@ -140,127 +102,15 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="tblSites.Longitude"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[Documentation Notes]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[Cause of Damage  (wind, flood, etc)]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.Function"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[Damage Level]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[Requires Site Inspection]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[Potential OFA Responsibility]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[DVS -Site Inspection Required]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[Legal Responsiblity]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[Documentation Complete]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[In Declared Area]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[Caused by the Event]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[Site Requires DDD Validation]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[Work Complete]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[Site Validation Returned]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[Documentation Reviewed]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="revtblSite.[Lane Assigned]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[Draft DDD]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="tblSites.[Assigned Site Inspector]"
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="tblSites.[Recipient POC]"
+        dbText "Name" ="qdReadyforSI.[Ready For SI]"
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="tblSites.[Assigned Mitigation Specialist]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[Subrecipient POC]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[Assigned Insurance Specialist]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[SITFL Contacts PDC to schedule]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[Site Inspection Location]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[Scheduled Date of Site Inspection]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[Assigned EHP Specialists]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[Inspection Notes]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSites.[Scheduled Time of Site Inspection]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Ready For SI"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Marked For SI"
+        dbText "Name" ="qdReadyforSI.[Marked For SI]"
         dbLong "AggregateType" ="-1"
     End
 End
@@ -268,12 +118,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =1345
+    Right =1354
     Bottom =860
     Left =-1
     Top =-1
-    Right =1329
-    Bottom =453
+    Right =1010
+    Bottom =436
     Left =0
     Top =0
     ColumnsShown =539
@@ -293,6 +143,15 @@ Begin
         Bottom =338
         Top =0
         Name ="revtblSite"
+        Name =""
+    End
+    Begin
+        Left =637
+        Top =25
+        Right =802
+        Bottom =222
+        Top =0
+        Name ="qdReadyforSI"
         Name =""
     End
 End

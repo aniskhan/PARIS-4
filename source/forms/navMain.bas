@@ -17,8 +17,8 @@ Begin Form
     Width =15480
     DatasheetFontHeight =11
     ItemSuffix =124
-    Right =10125
-    Bottom =8415
+    Right =20310
+    Bottom =12645
     TimerInterval =30
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -3981,35 +3981,7 @@ Public Sub cmdOpenMyTasks_Click()
 '///Error Handling
 
 '///Code
-    DoCmd.OpenForm "frmTasks", acNormal, , , , acWindowNormal
-    Forms!frmTasks!txtHeader = "My Tasks"
-    Forms!frmTasks!cmdtglTasks.Caption = "All Tasks"
-
-'FullView
-        With Forms("frmTasks")!subTasksFull.Form
-            .Visible = False
-        End With
-'Top View
-    
-        With Forms("frmTasks")!subTasksTop.Form
-            .Visible = True
-            .RecordSource = "qryTaskUnion"
-            .Filter = "[ReviewUserID] = '" & Environ("UserName") & "'"
-            .FilterOn = True
-        End With
-        
-    Forms!frmTasks!subTasksTop.SetFocus
-    Forms!frmTasks!txtTopInfo = "This list shows all tasks assigned to your username."
-    
-'Bottom View
-        With Forms("frmTasks")!subTasksBottom.Form
-            .Visible = True
-            .RecordSource = "qryTaskUnionByUserOversight"
-            .Filter = "[positionTier] = 0 and [ReviewUserID] is Null"
-            .FilterOn = True
-        End With
-
-    Forms!frmTasks!txtBottomInfo = "This list shows unassigned tasks that can be completed by someone in your position."
+    DoCmd.OpenForm "frmTasks", acNormal, , , , acWindowNormal, "My"
 '///Code
 
 '///ErrorHandling
@@ -4030,34 +4002,7 @@ Public Sub cmdOpenAllTasks_Click()
 '///Error Handling
 
 '///Code
-
-    DoCmd.OpenForm "frmTasks", acNormal, , , , acWindowNormal
-    Forms!frmTasks!txtHeader = "All Tasks"
-    Forms!frmTasks!cmdtglTasks.Caption = "Unassigned"
-    
-
-'FullView
-        With Forms("frmTasks")!subTasksFull.Form
-            .Visible = True
-            .RecordSource = "qryTaskUnion"
-            .FilterOn = False
-        End With
-    Forms!frmTasks!subTasksFull.SetFocus
-    
-'Top View
-   
-        With Forms("frmTasks")!subTasksTop.Form
-            .Visible = False
-        End With
-
-    Forms!frmTasks!txtTopInfo = "This list shows all tasks for all users.  (You may not be able to perform the task if you do not have the proper role.)"
-        
-'Bottom View
-        With Forms("frmTasks")!subTasksBottom.Form
-            .Visible = False
-        End With
-    
-    Forms!frmTasks!txtBottomInfo = ""
+    DoCmd.OpenForm "frmTasks", acNormal, , , , acWindowNormal, "All"
 '///Code
 
 '///ErrorHandling
@@ -4081,38 +4026,7 @@ Public Sub cmdOpenUnassignedTasks_Click()
 
 '///Code
 
-    DoCmd.OpenForm "frmTasks", acNormal, , , , acWindowNormal
-    Forms!frmTasks!txtHeader = "Unassigned Tasks"
-    Forms!frmTasks!cmdtglTasks.Caption = "My Tasks"
-   
-    
- 'FullView
-        With Forms("frmTasks")!subTasksFull.Form
-            .Visible = False
-        End With
-        
- 'Top View
-        With Forms("frmTasks")!subTasksTop.Form
-            .Visible = True
-            .RecordSource = "qryTaskUnionByUserOversight"
-            .Filter = "[positionTier] = 0 and [ReviewUserID] is Null"
-            .FilterOn = True
-        End With
-    Forms!frmTasks!subTasksTop.SetFocus
-    Forms!frmTasks!txtTopInfo = "This list shows unassigned tasks that can be completed by someone in your position."
-    
-
-    
-'Bottom View
-
-        With Forms("frmTasks")!subTasksBottom.Form
-            .Visible = True
-            .RecordSource = "qryTaskUnionByUserOversight"
-            .Filter = "[positionTier] = 1 and [ReviewUserID] is Null"
-            .FilterOn = True
-        End With
-
-    Forms!frmTasks!txtBottomInfo = "This list shows unassigned tasks that can be completed by a position which reports directly to you."
+    DoCmd.OpenForm "frmTasks", acNormal, , , , acWindowNormal, "Unassigned"
 '///Code
 
 '///ErrorHandling

@@ -18,13 +18,13 @@ Begin Form
     Width =13380
     DatasheetFontHeight =11
     ItemSuffix =16
-    Right =5625
-    Bottom =7005
+    Right =20310
+    Bottom =12900
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0xcef425aeb4b9e440
+        0x82ed887ad6c1e440
     End
-    RecordSource ="fqryBannerProjects"
+    RecordSource ="fqryProjectBannerShort"
     Caption ="tblProjects subform"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
@@ -281,57 +281,6 @@ Begin Form
                 Begin TextBox
                     TabStop = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =87
-                    TextAlign =1
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =6180
-                    Top =1020
-                    Width =1620
-                    Height =360
-                    TabIndex =3
-                    BackColor =15590879
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="Date Assigned to Lane"
-                    ControlSource ="Lane Assigned Date"
-                    Format ="Short Date"
-                    StatusBarText ="Project Routing Sheet"
-                    EventProcPrefix ="Date_Assigned_to_Lane"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =6180
-                    LayoutCachedTop =1020
-                    LayoutCachedWidth =7800
-                    LayoutCachedHeight =1380
-                    BackThemeColorIndex =-1
-                    Begin
-                        Begin Label
-                            OverlapFlags =93
-                            Left =3540
-                            Top =1020
-                            Width =2640
-                            Height =360
-                            FontSize =12
-                            FontWeight =600
-                            BackColor =15590879
-                            BorderColor =8355711
-                            Name ="Date Assigned to Lane_Label"
-                            Caption ="Date Assigned to Lane:"
-                            EventProcPrefix ="Date_Assigned_to_Lane_Label"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =3540
-                            LayoutCachedTop =1020
-                            LayoutCachedWidth =6180
-                            LayoutCachedHeight =1380
-                            BackThemeColorIndex =-1
-                            ForeTint =100.0
-                        End
-                    End
-                End
-                Begin TextBox
-                    TabStop = NotDefault
-                    OldBorderStyle =0
                     OverlapFlags =85
                     BackStyle =0
                     IMESentenceMode =3
@@ -339,7 +288,7 @@ Begin Form
                     Top =1020
                     Width =1740
                     Height =360
-                    TabIndex =4
+                    TabIndex =3
                     BackColor =15590879
                     BorderColor =10921638
                     ForeColor =4210752
@@ -386,7 +335,7 @@ Begin Form
                     Height =330
                     FontSize =14
                     FontWeight =700
-                    TabIndex =5
+                    TabIndex =4
                     BackColor =15921906
                     BorderColor =10921638
                     ForeColor =4210752
@@ -436,7 +385,7 @@ Begin Form
                     Height =360
                     FontSize =14
                     FontWeight =700
-                    TabIndex =6
+                    TabIndex =5
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="Text12"

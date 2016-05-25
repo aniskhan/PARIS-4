@@ -1,11 +1,9 @@
 ﻿Operation =1
 Option =0
-Where ="(((revtblRpa.DisasterID)=[Forms]![navMain]![DisasterID]) AND ((tblReviewTypes.It"
-    "emType)=\"RPA\") AND ((revtblRpa.ReviewExitDate) Is Null))"
+Where ="(((revtblRpa.DisasterID)=Forms!navMain!DisasterID) And ((revtblRpa.ReviewUserID)"
+    " Is Null) And ((revtblRpa.ReviewExitDate) Is Null))"
 Begin InputTables
     Name ="revtblRpa"
-    Name ="tblSubRecipient"
-    Name ="tblReviewTypes"
 End
 Begin OutputColumns
     Alias ="Item"
@@ -25,27 +23,8 @@ Begin OutputColumns
     Expression ="\"\""
     Alias ="DmID"
     Expression ="\"\""
-    Expression ="tblSubRecipient.[Subrecipient Name]"
-    Alias ="Application Title"
-    Expression ="\"\""
     Expression ="revtblRpa.ReviewUserID"
-    Expression ="tblReviewTypes.Position"
-    Expression ="tblReviewTypes.FormName"
     Expression ="revtblRpa.ReviewEntryDate"
-End
-Begin Joins
-    LeftTable ="revtblRpa"
-    RightTable ="tblSubRecipient"
-    Expression ="revtblRpa.ApplicantID = tblSubRecipient.ApplicantID"
-    Flag =1
-    LeftTable ="revtblRpa"
-    RightTable ="tblSubRecipient"
-    Expression ="revtblRpa.DisasterID = tblSubRecipient.DisasterID"
-    Flag =1
-    LeftTable ="revtblRpa"
-    RightTable ="tblReviewTypes"
-    Expression ="revtblRpa.ReviewType = tblReviewTypes.ReviewType"
-    Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -62,11 +41,35 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
+        dbText "Name" ="DocID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Item"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblReviewTypes.FormName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="DmID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
         dbText "Name" ="SiteID"
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="DocID"
+        dbText "Name" ="revtblRpa.ApplicantID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Application Title"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="revtblRpa.ReviewEntryDate"
         dbLong "AggregateType" ="-1"
     End
     Begin
@@ -74,7 +77,24 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="Item"
+        dbText "Name" ="revtblRpa.ReviewType"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="RfiID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ProjectID"
+        dbText "Format" ="General Number"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="MinOfReviewEntryDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Lane Assigned"
         dbLong "AggregateType" ="-1"
     End
     Begin
@@ -85,82 +105,27 @@ Begin
         dbText "Name" ="revtblRpa.ReviewUserID"
         dbLong "AggregateType" ="-1"
     End
-    Begin
-        dbText "Name" ="revtblRpa.ApplicantID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="ProjectID"
-        dbLong "AggregateType" ="-1"
-        dbText "Format" ="General Number"
-    End
-    Begin
-        dbText "Name" ="revtblRpa.ReviewType"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblReviewTypes.FormName"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Application Title"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="DmID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="RfiID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="revtblRpa.ReviewEntryDate"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Lane Assigned"
-        dbLong "AggregateType" ="-1"
-    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1354
+    Right =1026
     Bottom =860
     Left =-1
     Top =-1
-    Right =1338
-    Bottom =251
+    Right =1010
+    Bottom =506
     Left =0
     Top =0
     ColumnsShown =539
     Begin
         Left =376
         Top =9
-        Right =520
-        Bottom =265
+        Right =584
+        Bottom =291
         Top =0
         Name ="revtblRpa"
-        Name =""
-    End
-    Begin
-        Left =735
-        Top =10
-        Right =934
-        Bottom =225
-        Top =0
-        Name ="tblSubRecipient"
-        Name =""
-    End
-    Begin
-        Left =756
-        Top =262
-        Right =964
-        Bottom =482
-        Top =0
-        Name ="tblReviewTypes"
         Name =""
     End
 End

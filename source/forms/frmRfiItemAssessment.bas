@@ -22,7 +22,7 @@ Begin Form
     DatasheetGridlinesColor =15132391
     OnApplyFilter ="[Event Procedure]"
     RecSrcDt = Begin
-        0x1e3c76a96dc2e440
+        0x72517c666ec2e440
     End
     RecordSource ="fqryRfiItem-Assessment"
     Caption ="RFI Response Assessment"

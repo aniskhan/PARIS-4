@@ -19,7 +19,7 @@ Begin Form
     Bottom =9705
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0x3f3f65aa6dc2e440
+        0x7de6e7706ec2e440
     End
     RecordSource ="fqryProjectStWorkOrderDev"
     Caption ="ST Work Orders"
@@ -1130,9 +1130,10 @@ Private Sub cmdSendToSI_Click()
 
 '///Code
     If MultiCheck("Pending RFI Dimensions") Then
-        MsgBox ("This project has an RFI with a Dimensions being requested.  Cannot be sent to Site Inspection until those items are resolved.")
-        End
-    ElseIf Not MultiCheck("Ready for SI") Then
+        MsgBox ("Note: This project has an RFI with a Dimensions being requested.")
+    End If
+    
+    If Not MultiCheck("Ready for SI") Then
         MsgBox ("This project has sites that have not been triaged.  Look in the list for any that say no in Ready for SI.")
         End
     ElseIf Not MultiCheck("Sites Marked for SI") Then
@@ -1412,9 +1413,9 @@ Private Function PostDialogCheck(ReviewType As String, DialogResult As String) A
                 ElseIf (Not MultiCheck("Already Sent to SI")) And MultiCheck("Sites Marked for SI") Then
                     MsgBox ("This project has sites marked for site inspection, but has not been sent yet.  Please use the Send to Site Inspection button.")
                     PostDialogCheck = False
-                ElseIf MultiCheck("Pending RFI Dimensions") Then
-                    MsgBox ("This project has an RFI with a Dimensions being requested.  Select RFI in the popup window to mark this review as done, pending an RFI response.")
-                    PostDialogCheck = False
+'                ElseIf MultiCheck("Pending RFI Dimensions") Then
+'                    MsgBox ("This project has an RFI with a Dimensions being requested.  Select RFI in the popup window to mark this review as done, pending an RFI response.")
+'                    PostDialogCheck = False
                 Else
                     PostDialogCheck = True
                 End If

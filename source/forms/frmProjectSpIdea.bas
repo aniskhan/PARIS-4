@@ -16,7 +16,7 @@ Begin Form
     GridY =24
     Width =21615
     DatasheetFontHeight =11
-    ItemSuffix =93
+    ItemSuffix =96
     Right =15135
     Bottom =12645
     DatasheetGridlinesColor =15132391
@@ -160,10 +160,10 @@ Begin Form
                     Height =660
                     FontSize =20
                     FontWeight =700
-                    BackColor =15788753
+                    BackColor =13611711
                     BorderColor =8355711
                     Name ="lbHeader"
-                    Caption ="Expedited Lane - Intake Damage and Eligibility Analysis"
+                    Caption ="Specialized Lane - Intake Damage and Eligibility Analysis"
                     GridlineColor =10921638
                     LayoutCachedWidth =16560
                     LayoutCachedHeight =660
@@ -189,7 +189,7 @@ Begin Form
                     Top =4620
                     Width =13620
                     Height =4800
-                    BackColor =15590879
+                    BackColor =13611711
                     BorderColor =10921638
                     Name ="Box85"
                     GridlineColor =10921638
@@ -224,7 +224,7 @@ Begin Form
                     Top =6540
                     Width =2760
                     Height =6480
-                    BackColor =15788753
+                    BackColor =13611711
                     BorderColor =10921638
                     Name ="Box19"
                     GridlineColor =10921638
@@ -240,7 +240,7 @@ Begin Form
                     Top =9480
                     Width =13620
                     Height =3720
-                    TabIndex =19
+                    TabIndex =18
                     BorderColor =10921638
                     Name ="subHistory"
                     SourceObject ="Form.subfrmProjectReviewHistory"
@@ -278,7 +278,7 @@ Begin Form
                     Top =60
                     Width =2760
                     Height =6360
-                    BackColor =15788753
+                    BackColor =13611711
                     BorderColor =10921638
                     Name ="Box20"
                     GridlineColor =10921638
@@ -592,7 +592,7 @@ Begin Form
                     BorderColor =8355711
                     ForeColor =16777215
                     Name ="Label71"
-                    Caption ="Expedited Lane "
+                    Caption ="Specialized Lane "
                     GridlineColor =10921638
                     LayoutCachedLeft =60
                     LayoutCachedTop =4200
@@ -648,7 +648,7 @@ Begin Form
                     BorderColor =8355711
                     ForeColor =12349952
                     Name ="Label80"
-                    Caption ="Assign Data Validation Specialist"
+                    Caption ="Site Inspections"
                     GridlineColor =10921638
                     LayoutCachedLeft =120
                     LayoutCachedTop =4680
@@ -669,7 +669,7 @@ Begin Form
                     BorderColor =8355711
                     ForeColor =12349952
                     Name ="Label59"
-                    Caption ="Data Validation Specialist (DVS) Review"
+                    Caption ="DDD Formulation"
                     GridlineColor =10921638
                     LayoutCachedLeft =4260
                     LayoutCachedTop =4680
@@ -685,7 +685,7 @@ Begin Form
                     Top =8880
                     Width =1740
                     Height =360
-                    TabIndex =18
+                    TabIndex =17
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="tbMeetingDate"
@@ -725,7 +725,7 @@ Begin Form
                     Top =8040
                     Width =3765
                     Height =480
-                    TabIndex =16
+                    TabIndex =15
                     ForeColor =4210752
                     Name ="cmdApplicantReturned"
                     Caption ="Applicant Concurrence Returned"
@@ -750,7 +750,7 @@ Begin Form
                     Top =7500
                     Width =3765
                     Height =480
-                    TabIndex =15
+                    TabIndex =14
                     ForeColor =4210752
                     Name ="cmdApplicantSent"
                     Caption ="Applicant Concurrence Sent"
@@ -814,8 +814,8 @@ Begin Form
                     OverlapFlags =215
                     IMESentenceMode =3
                     ColumnCount =2
-                    Left =180
-                    Top =5580
+                    Left =120
+                    Top =5520
                     Width =3900
                     Height =480
                     TabIndex =8
@@ -823,7 +823,7 @@ Begin Form
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"0\""
                     Name ="cboAssignDvs"
-                    ControlSource ="Assigned Data Validation Specialist"
+                    ControlSource ="Assigned Site Inspector"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT qryNames.UserID, qryNames.[Reverse Full Name] FROM qryNames INNER JOIN tb"
                         "lStaffRoles ON qryNames.UserID = tblStaffRoles.StaffID WHERE (((tblStaffRoles.[D"
@@ -833,58 +833,33 @@ Begin Form
                     ColumnWidths ="0;2880"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =180
-                    LayoutCachedTop =5580
-                    LayoutCachedWidth =4080
-                    LayoutCachedHeight =6060
+                    LayoutCachedLeft =120
+                    LayoutCachedTop =5520
+                    LayoutCachedWidth =4020
+                    LayoutCachedHeight =6000
                     ForeThemeColorIndex =0
                     ForeTint =75.0
                     ForeShade =100.0
                     Begin
                         Begin Label
                             OverlapFlags =215
-                            Left =180
-                            Top =5220
+                            Left =120
+                            Top =5160
                             Width =3900
                             Height =315
                             FontSize =12
                             FontWeight =500
                             BorderColor =8355711
                             Name ="Label44"
-                            Caption ="Assigned Data Validation Specialists"
+                            Caption ="Assign Technical Site Inspector"
                             GridlineColor =10921638
-                            LayoutCachedLeft =180
-                            LayoutCachedTop =5220
-                            LayoutCachedWidth =4080
-                            LayoutCachedHeight =5535
+                            LayoutCachedLeft =120
+                            LayoutCachedTop =5160
+                            LayoutCachedWidth =4020
+                            LayoutCachedHeight =5475
                             ForeTint =100.0
                         End
                     End
-                End
-                Begin CommandButton
-                    OverlapFlags =215
-                    Left =180
-                    Top =6180
-                    Width =1800
-                    Height =660
-                    TabIndex =12
-                    ForeColor =4210752
-                    Name ="cmdAssignDvsComplete"
-                    Caption ="Assign DVS Complete"
-                    OnClick ="[Event Procedure]"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =180
-                    LayoutCachedTop =6180
-                    LayoutCachedWidth =1980
-                    LayoutCachedHeight =6840
-                    BackColor =15123357
-                    BorderColor =15123357
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
-                    Overlaps =1
                 End
                 Begin CommandButton
                     OverlapFlags =223
@@ -892,7 +867,7 @@ Begin Form
                     Top =8580
                     Width =1800
                     Height =660
-                    TabIndex =17
+                    TabIndex =16
                     ForeColor =4210752
                     Name ="cmdMeetWithPdmComplete"
                     Caption ="Meet With PDM Complete"
@@ -917,7 +892,7 @@ Begin Form
                     Top =7320
                     Width =1800
                     Height =660
-                    TabIndex =14
+                    TabIndex =13
                     ForeColor =4210752
                     Name ="cmdInputDddComplete"
                     Caption ="Input DDD/SOW Complete"
@@ -942,7 +917,7 @@ Begin Form
                     Top =7320
                     Width =1800
                     Height =660
-                    TabIndex =13
+                    TabIndex =12
                     ForeColor =4210752
                     Name ="cmdValidationComplete"
                     Caption ="Validation Complete"
@@ -1086,6 +1061,155 @@ Begin Form
                     LayoutCachedTop =5700
                     LayoutCachedWidth =11040
                     LayoutCachedHeight =6360
+                    BackColor =15123357
+                    BorderColor =15123357
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
+                End
+                Begin TextBox
+                    SpecialEffect =4
+                    BorderWidth =3
+                    OverlapFlags =223
+                    TextAlign =1
+                    IMESentenceMode =3
+                    Left =2100
+                    Top =6060
+                    Width =1620
+                    Height =390
+                    FontSize =12
+                    TabIndex =19
+                    BackColor =13431551
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="Date of Site Inspection"
+                    ControlSource ="Scheduled Date of Site Inspection"
+                    EventProcPrefix ="Date_of_Site_Inspection"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =2100
+                    LayoutCachedTop =6060
+                    LayoutCachedWidth =3720
+                    LayoutCachedHeight =6450
+                    BackThemeColorIndex =7
+                    BackTint =20.0
+                    Begin
+                        Begin Label
+                            OverlapFlags =223
+                            TextAlign =3
+                            Left =300
+                            Top =6060
+                            Width =1800
+                            Height =330
+                            FontSize =13
+                            FontWeight =700
+                            BorderColor =8355711
+                            ForeColor =12874308
+                            Name ="Date of Site Inspection_Label"
+                            Caption ="Scheduled Date:"
+                            EventProcPrefix ="Date_of_Site_Inspection_Label"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =300
+                            LayoutCachedTop =6060
+                            LayoutCachedWidth =2100
+                            LayoutCachedHeight =6390
+                            ForeThemeColorIndex =8
+                            ForeTint =100.0
+                        End
+                    End
+                End
+                Begin TextBox
+                    SpecialEffect =4
+                    BorderWidth =3
+                    OverlapFlags =247
+                    TextAlign =1
+                    IMESentenceMode =3
+                    Left =2100
+                    Top =6420
+                    Width =1620
+                    Height =390
+                    FontSize =12
+                    TabIndex =20
+                    BackColor =13431551
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="tbTime"
+                    ControlSource ="Scheduled Time of Site Inspection"
+                    GridlineColor =10921638
+                    ShowDatePicker =0
+
+                    LayoutCachedLeft =2100
+                    LayoutCachedTop =6420
+                    LayoutCachedWidth =3720
+                    LayoutCachedHeight =6810
+                    BackThemeColorIndex =7
+                    BackTint =20.0
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            TextAlign =3
+                            Left =300
+                            Top =6420
+                            Width =720
+                            Height =330
+                            FontSize =13
+                            FontWeight =700
+                            BorderColor =8355711
+                            ForeColor =12874308
+                            Name ="Label179"
+                            Caption ="Time:"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =300
+                            LayoutCachedTop =6420
+                            LayoutCachedWidth =1020
+                            LayoutCachedHeight =6750
+                            ForeThemeColorIndex =8
+                            ForeTint =100.0
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =240
+                    Top =6900
+                    Width =3420
+                    Height =420
+                    TabIndex =21
+                    ForeColor =4210752
+                    Name ="Command93"
+                    Caption ="Site Inspection Scheduled"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =240
+                    LayoutCachedTop =6900
+                    LayoutCachedWidth =3660
+                    LayoutCachedHeight =7320
+                    BackColor =15123357
+                    BorderColor =15123357
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =780
+                    Top =7680
+                    Width =2160
+                    Height =900
+                    TabIndex =22
+                    ForeColor =4210752
+                    Name ="Command94"
+                    Caption ="Site Inspection Complete"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =780
+                    LayoutCachedTop =7680
+                    LayoutCachedWidth =2940
+                    LayoutCachedHeight =8580
                     BackColor =15123357
                     BorderColor =15123357
                     WebImagePaddingLeft =2
