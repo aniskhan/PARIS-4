@@ -1,6 +1,6 @@
 ﻿Operation =1
 Option =0
-Where ="(((tblReviewTypes.ItemType)=\"RFI\" Or (tblReviewTypes.ItemType)=\"RFIResponse\""
+Having ="(((tblReviewTypes.ItemType)=\"RFI\" Or (tblReviewTypes.ItemType)=\"RFIResponse\""
     ") AND ((revtblRfi.ReviewExitDate) Is Null))"
 Begin InputTables
     Name ="revtblRfi"
@@ -15,6 +15,7 @@ Begin OutputColumns
     Expression ="revtblRfi.DisasterID"
     Expression ="revtblRfi.ApplicantID"
     Expression ="revtblRfi.ProjectID"
+    Expression ="revtblRfi.[Lane Assigned]"
     Expression ="revtblRfi.SiteID"
     Alias ="DocID"
     Expression ="\"\""
@@ -26,6 +27,8 @@ Begin OutputColumns
     Expression ="revtblRfi.ReviewUserID"
     Expression ="tblReviewTypes.Position"
     Expression ="tblReviewTypes.FormName"
+    Alias ="MinOfReviewEntryDate"
+    Expression ="Min(revtblRfi.ReviewEntryDate)"
 End
 Begin Joins
     LeftTable ="revtblRfi"
@@ -53,15 +56,52 @@ Begin Joins
     Expression ="revtblRfi.ReviewType = tblReviewTypes.ReviewType"
     Flag =1
 End
+Begin Groups
+    Expression ="\"RFI\""
+    GroupLevel =0
+    Expression ="revtblRfi.ReviewType"
+    GroupLevel =0
+    Expression ="revtblRfi.DisasterID"
+    GroupLevel =0
+    Expression ="revtblRfi.ApplicantID"
+    GroupLevel =0
+    Expression ="revtblRfi.ProjectID"
+    GroupLevel =0
+    Expression ="revtblRfi.[Lane Assigned]"
+    GroupLevel =0
+    Expression ="revtblRfi.SiteID"
+    GroupLevel =0
+    Expression ="revtblRfi.RfiID"
+    GroupLevel =0
+    Expression ="\"\""
+    GroupLevel =0
+    Expression ="tblSubRecipient.[Subrecipient Name]"
+    GroupLevel =0
+    Expression ="tblProjects.[Application Title]"
+    GroupLevel =0
+    Expression ="revtblRfi.ReviewUserID"
+    GroupLevel =0
+    Expression ="tblReviewTypes.Position"
+    GroupLevel =0
+    Expression ="tblReviewTypes.FormName"
+    GroupLevel =0
+    Expression ="\"\""
+    GroupLevel =0
+    Expression ="tblReviewTypes.ItemType"
+    GroupLevel =0
+    Expression ="revtblRfi.ReviewExitDate"
+    GroupLevel =0
+End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
-dbBoolean "OrderByOn" ="0"
+dbBoolean "OrderByOn" ="-1"
 dbByte "Orientation" ="0"
 dbByte "DefaultView" ="2"
 dbBoolean "FilterOnLoad" ="0"
 dbBoolean "OrderByOnLoad" ="-1"
 dbBoolean "TotalsRow" ="0"
+dbMemo "OrderBy" ="[qryTaskRfi].[ProjectID]"
 Begin
     Begin
         dbText "Name" ="Item"
@@ -120,7 +160,19 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
+        dbText "Name" ="MinOfReviewEntryDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
         dbText "Name" ="revtblRfi.RfiItemID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="revtblRfi.ReviewEntryDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="revtblRfi.[Lane Assigned]"
         dbLong "AggregateType" ="-1"
     End
 End
@@ -128,15 +180,15 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =1153
-    Bottom =860
+    Right =1029
+    Bottom =821
     Left =-1
     Top =-1
-    Right =1137
-    Bottom =169
+    Right =1013
+    Bottom =230
     Left =0
     Top =0
-    ColumnsShown =539
+    ColumnsShown =543
     Begin
         Left =233
         Top =8
@@ -147,10 +199,10 @@ Begin
         Name =""
     End
     Begin
-        Left =38
-        Top =104
-        Right =182
-        Bottom =248
+        Left =10
+        Top =15
+        Right =154
+        Bottom =159
         Top =0
         Name ="tblSubRecipient"
         Name =""

@@ -17,6 +17,7 @@ Begin OutputColumns
     Expression ="revtblSite.DisasterID"
     Expression ="revtblSite.ApplicantID"
     Expression ="revtblSite.ProjectID"
+    Expression ="revtblSite.[Lane Assigned]"
     Expression ="revtblSite.SiteID"
     Alias ="DocID"
     Expression ="\"\""
@@ -29,15 +30,12 @@ Begin OutputColumns
     Expression ="revtblSite.ReviewUserID"
     Expression ="tblReviewTypes.Position"
     Expression ="tblReviewTypes.FormName"
+    Expression ="revtblSite.ReviewEntryDate"
 End
 Begin Joins
     LeftTable ="revtblSite"
     RightTable ="tblSites"
-    Expression ="revtblSite.DisasterID = tblSites.DisasterID"
-    Flag =1
-    LeftTable ="revtblSite"
-    RightTable ="tblSites"
-    Expression ="revtblSite.ProjectID = tblSites.ProjectID"
+    Expression ="revtblSite.ApplicantID = tblSites.ApplicantID"
     Flag =1
     LeftTable ="revtblSite"
     RightTable ="tblSites"
@@ -45,7 +43,11 @@ Begin Joins
     Flag =1
     LeftTable ="revtblSite"
     RightTable ="tblSites"
-    Expression ="revtblSite.ApplicantID = tblSites.ApplicantID"
+    Expression ="revtblSite.ProjectID = tblSites.ProjectID"
+    Flag =1
+    LeftTable ="revtblSite"
+    RightTable ="tblSites"
+    Expression ="revtblSite.DisasterID = tblSites.DisasterID"
     Flag =1
     LeftTable ="revtblSite"
     RightTable ="tblReviewTypes"
@@ -53,7 +55,7 @@ Begin Joins
     Flag =1
     LeftTable ="tblProjects"
     RightTable ="tblSites"
-    Expression ="tblProjects.DisasterID = tblSites.DisasterID"
+    Expression ="tblProjects.ProjectID = tblSites.ProjectID"
     Flag =1
     LeftTable ="tblProjects"
     RightTable ="tblSites"
@@ -61,15 +63,15 @@ Begin Joins
     Flag =1
     LeftTable ="tblProjects"
     RightTable ="tblSites"
-    Expression ="tblProjects.ProjectID = tblSites.ProjectID"
-    Flag =1
-    LeftTable ="tblProjects"
-    RightTable ="tblSubRecipient"
-    Expression ="tblProjects.DisasterID = tblSubRecipient.DisasterID"
+    Expression ="tblProjects.DisasterID = tblSites.DisasterID"
     Flag =1
     LeftTable ="tblProjects"
     RightTable ="tblSubRecipient"
     Expression ="tblProjects.ApplicantID = tblSubRecipient.ApplicantID"
+    Flag =1
+    LeftTable ="tblProjects"
+    RightTable ="tblSubRecipient"
+    Expression ="tblProjects.DisasterID = tblSubRecipient.DisasterID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -141,7 +143,15 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
+        dbText "Name" ="revtblSite.ReviewEntryDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
         dbText "Name" ="RfiItemID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="revtblSite.[Lane Assigned]"
         dbLong "AggregateType" ="-1"
     End
 End
@@ -149,12 +159,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =1153
-    Bottom =860
+    Right =1029
+    Bottom =821
     Left =-1
     Top =-1
-    Right =1137
-    Bottom =184
+    Right =1013
+    Bottom =248
     Left =0
     Top =0
     ColumnsShown =539
@@ -170,8 +180,8 @@ Begin
     Begin
         Left =240
         Top =12
-        Right =384
-        Bottom =156
+        Right =397
+        Bottom =248
         Top =0
         Name ="revtblSite"
         Name =""

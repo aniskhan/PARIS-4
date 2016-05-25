@@ -1,5 +1,5 @@
-﻿dbMemo "SQL" ="Select * From qryReviewRfiSubForUnion\015\012UNION Select * From qryReviewProjec"
-    "tSubForUnion\015\012ORDER BY ReviewEntryDate DESC;\015\012"
+﻿dbMemo "SQL" ="Select * From qryReviewRfiSubForUnion\015\012UNION ALL Select * From qryReviewPr"
+    "ojectSubForUnion_ProjectView\015\012ORDER BY ReviewEntryDate DESC;\015\012"
 dbMemo "Connect" =""
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -62,5 +62,51 @@ Begin
     Begin
         dbText "Name" ="qryReviewRfiSubForUnion.revtblRfi.RfiItemID"
         dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="qryReviewRfiSubForUnion.ItemType"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="DisasterID"
+    End
+    Begin
+        dbText "Name" ="ApplicantID"
+    End
+    Begin
+        dbText "Name" ="ProjectID"
+    End
+    Begin
+        dbText "Name" ="RfiID"
+    End
+    Begin
+        dbText "Name" ="RfiItemID"
+    End
+    Begin
+        dbText "Name" ="ReviewType"
+    End
+    Begin
+        dbText "Name" ="ReviewEntryDate"
+    End
+    Begin
+        dbText "Name" ="ReviewCheckOutDate"
+    End
+    Begin
+        dbText "Name" ="ReviewExitDate"
+    End
+    Begin
+        dbText "Name" ="Disposition"
+    End
+    Begin
+        dbText "Name" ="AssignedTo"
+    End
+    Begin
+        dbText "Name" ="CompletedBy"
+    End
+    Begin
+        dbText "Name" ="Comments"
+    End
+    Begin
+        dbText "Name" ="ItemType"
     End
 End

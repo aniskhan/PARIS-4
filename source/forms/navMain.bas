@@ -16,15 +16,15 @@ Begin Form
     GridY =24
     Width =15480
     DatasheetFontHeight =11
-    ItemSuffix =123
-    Right =24690
-    Bottom =12645
+    ItemSuffix =124
+    Right =10125
+    Bottom =8415
     TimerInterval =30
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0x82cad19916a5e440
+        0x449bf637eebee440
     End
-    RecordSource ="tblDisaster"
+    RecordSource ="fqryDisasterNavMain"
     Caption ="Main Menu"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
@@ -770,7 +770,7 @@ Begin Form
                     LayoutCachedTop =2400
                     LayoutCachedWidth =13380
                     LayoutCachedHeight =4620
-                    TabIndex =32
+                    TabIndex =33
                 End
                 Begin Image
                     SizeMode =0
@@ -1391,7 +1391,7 @@ Begin Form
                     LayoutCachedTop =1560
                     LayoutCachedWidth =10140
                     LayoutCachedHeight =3780
-                    TabIndex =31
+                    TabIndex =32
                 End
                 Begin Image
                     SizeMode =0
@@ -2012,7 +2012,7 @@ Begin Form
                     LayoutCachedTop =960
                     LayoutCachedWidth =7080
                     LayoutCachedHeight =3300
-                    TabIndex =30
+                    TabIndex =31
                 End
                 Begin Rectangle
                     SpecialEffect =0
@@ -2060,14 +2060,14 @@ Begin Form
                     Left =9000
                     Top =4260
                     Width =2880
-                    Height =2880
+                    Height =2940
                     BorderColor =6968388
                     Name ="Box55"
                     GridlineColor =10921638
                     LayoutCachedLeft =9000
                     LayoutCachedTop =4260
                     LayoutCachedWidth =11880
-                    LayoutCachedHeight =7140
+                    LayoutCachedHeight =7200
                     BorderThemeColorIndex =2
                     BorderShade =100.0
                 End
@@ -3071,21 +3071,20 @@ Begin Form
                 Begin CommandButton
                     OverlapFlags =247
                     Left =9120
-                    Top =4440
+                    Top =6540
                     Width =2640
-                    Height =780
+                    Height =540
                     TabIndex =16
                     ForeColor =4210752
-                    Name ="cmdOpen ExpeditedScopingCosting"
-                    Caption ="Expedited Lane"
-                    EventProcPrefix ="cmdOpen_ExpeditedScopingCosting"
+                    Name ="cmdOpenTransitionReview"
+                    Caption ="Transition Review"
                     GridlineColor =10921638
                     OnClickEmMacro = Begin
                         Version =196611
-                        ColumnsShown =8
+                        ColumnsShown =0
                         Begin
                             Action ="OpenForm"
-                            Argument ="frmExpeditedScopingCosting"
+                            Argument ="frmTransitionReview"
                             Argument ="0"
                             Argument =""
                             Argument =""
@@ -3094,20 +3093,20 @@ Begin Form
                         End
                         Begin
                             Comment ="_AXL:<?xml version=\"1.0\" encoding=\"UTF-16\" standalone=\"no\"?>\015\012<UserI"
-                                "nterfaceMacro For=\"cmdOpen ExpeditedScopingCosting\" xmlns=\"http://schemas.mic"
-                                "rosoft.com/office/accessservices/2009/11/application\"><Statements><Action Name="
-                                "\"OpenForm\"><Argument Name=\"Fo"
+                                "nterfaceMacro For=\"cmdOpenTransitionReview\" Event=\"OnClick\" xmlns=\"http://s"
+                                "chemas.microsoft.com/office/accessservices/2009/11/application\"><Statements><Ac"
+                                "tion Name=\"OpenForm\"><Argument "
                         End
                         Begin
-                            Comment ="_AXL:rmName\">frmExpeditedScopingCosting</Argument></Action></Statements></UserI"
-                                "nterfaceMacro>"
+                            Comment ="_AXL:Name=\"FormName\">frmTransitionReview</Argument></Action></Statements></Use"
+                                "rInterfaceMacro>"
                         End
                     End
 
                     LayoutCachedLeft =9120
-                    LayoutCachedTop =4440
+                    LayoutCachedTop =6540
                     LayoutCachedWidth =11760
-                    LayoutCachedHeight =5220
+                    LayoutCachedHeight =7080
                     UseTheme =1
                     Gradient =0
                     BackColor =13431551
@@ -3137,7 +3136,7 @@ Begin Form
                     TabIndex =17
                     ForeColor =4210752
                     Name ="cmdOpenExpeditedComplianceReviews"
-                    Caption ="Compliance Reviews          All PWs"
+                    Caption ="Compliance Reviews \015\012All PWs"
                     GridlineColor =10921638
                     OnClickEmMacro = Begin
                         Version =196611
@@ -3332,9 +3331,9 @@ Begin Form
                     Enabled = NotDefault
                     OverlapFlags =247
                     Left =9120
-                    Top =6240
+                    Top =5860
                     Width =2640
-                    Height =780
+                    Height =540
                     TabIndex =20
                     ForeColor =4210752
                     Name ="Command99"
@@ -3342,9 +3341,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =9120
-                    LayoutCachedTop =6240
+                    LayoutCachedTop =5860
                     LayoutCachedWidth =11760
-                    LayoutCachedHeight =7020
+                    LayoutCachedHeight =6400
                     UseTheme =1
                     Gradient =0
                     BackColor =13431551
@@ -3469,9 +3468,9 @@ Begin Form
                 Begin CommandButton
                     OverlapFlags =247
                     Left =9120
-                    Top =5340
+                    Top =5180
                     Width =2640
-                    Height =780
+                    Height =540
                     TabIndex =23
                     ForeColor =4210752
                     Name ="cmdOpenStScopeCost"
@@ -3501,9 +3500,9 @@ Begin Form
                     End
 
                     LayoutCachedLeft =9120
-                    LayoutCachedTop =5340
+                    LayoutCachedTop =5180
                     LayoutCachedWidth =11760
-                    LayoutCachedHeight =6120
+                    LayoutCachedHeight =5720
                     UseTheme =1
                     Gradient =0
                     BackColor =13431551
@@ -3828,6 +3827,65 @@ Begin Form
                     WebImagePaddingBottom =1
                     Overlaps =1
                 End
+                Begin CommandButton
+                    OverlapFlags =247
+                    Left =9120
+                    Top =4500
+                    Width =2640
+                    Height =540
+                    TabIndex =30
+                    ForeColor =4210752
+                    Name ="cmdOpenExpeditedScopingCosting"
+                    Caption ="Expedited Review"
+                    GridlineColor =10921638
+                    OnClickEmMacro = Begin
+                        Version =196611
+                        ColumnsShown =0
+                        Begin
+                            Action ="OpenForm"
+                            Argument ="frmExpeditedScopingCosting"
+                            Argument ="0"
+                            Argument =""
+                            Argument =""
+                            Argument ="-1"
+                            Argument ="0"
+                        End
+                        Begin
+                            Comment ="_AXL:<?xml version=\"1.0\" encoding=\"UTF-16\" standalone=\"no\"?>\015\012<UserI"
+                                "nterfaceMacro For=\"cmdOpenExpeditedScopingCosting\" Event=\"OnClick\" xmlns=\"h"
+                                "ttp://schemas.microsoft.com/office/accessservices/2009/11/application\"><Stateme"
+                                "nts><Action Name=\"OpenForm\"><Ar"
+                        End
+                        Begin
+                            Comment ="_AXL:gument Name=\"FormName\">frmExpeditedScopingCosting</Argument></Action></St"
+                                "atements></UserInterfaceMacro>"
+                        End
+                    End
+
+                    LayoutCachedLeft =9120
+                    LayoutCachedTop =4500
+                    LayoutCachedWidth =11760
+                    LayoutCachedHeight =5040
+                    UseTheme =1
+                    Gradient =0
+                    BackColor =13431551
+                    BackThemeColorIndex =7
+                    BackTint =20.0
+                    BorderColor =15123357
+                    HoverColor =13952764
+                    PressedColor =13952764
+                    HoverForeColor =4210752
+                    HoverForeThemeColorIndex =0
+                    HoverForeTint =75.0
+                    PressedForeColor =4210752
+                    PressedForeThemeColorIndex =0
+                    PressedForeTint =75.0
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
+                End
             End
         End
     End
@@ -4096,8 +4154,6 @@ Dim isCurrVerEnabled As Boolean
 Dim lngRed As Long
 Dim lngGray As Long
 
-
-
 '///Error Handling
     If gcfHandleErrors Then On Error GoTo PROC_ERR
     PushCallStack Me.name & "." & "Form_Load"
@@ -4106,6 +4162,7 @@ Dim lngGray As Long
 '///Code
 lngRed = RGB(255, 0, 0)
 lngGray = RGB(166, 166, 166)
+
 thisFEVersion = DLookup("thisFEVersionNumber", "lutblFrontEnd_Version")
 masterVerID = DMax("VerID", "tblFrontEnd_Version_History", "isEnabled = True")
 masterFEVersion = DLookup("FEVersionNumber", "tblFrontEnd_Version_History", "VerID =" & masterVerID)
@@ -4148,6 +4205,7 @@ PROC_EXIT:
     Exit Sub
 
 PROC_ERR:
+Debug.Print "Calling Error"
     GlobalErrHandler
     Resume PROC_EXIT
 '///ErrorHandling

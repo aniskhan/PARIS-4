@@ -17,11 +17,11 @@ Begin Form
     Width =16680
     DatasheetFontHeight =11
     ItemSuffix =46
-    Right =13515
-    Bottom =12645
+    Right =8385
+    Bottom =9705
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0x37c743d373bce440
+        0xfeab17aa6dc2e440
     End
     RecordSource ="fqryRpaProjectEntry"
     Caption ="Enter Projects"
@@ -898,9 +898,9 @@ PROC_ERR:
 End Sub
 
 Private Sub Form_Current()
-    'Me.subfrmProjects.Form.ClearCount
-    'Me.subfrmProjects.SetFocus
-    'Application.DoCmd.GoToRecord , , acNewRec
+    Me.subfrmProjects.Form.ClearCount
+    Me.subfrmProjects.SetFocus
+    Application.DoCmd.GoToRecord , , acNewRec
 End Sub
 
 Private Sub Form_Load()

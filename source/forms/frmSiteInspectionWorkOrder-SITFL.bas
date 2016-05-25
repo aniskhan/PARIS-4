@@ -15,11 +15,11 @@ Begin Form
     Width =20460
     DatasheetFontHeight =11
     ItemSuffix =183
-    Right =19920
-    Bottom =12615
+    Right =10650
+    Bottom =8415
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0x63a188a856bae440
+        0xf604eb1c74c0e440
     End
     RecordSource ="fqryProjectStInspectionAssignment"
     Caption ="Site Inspection Assignment"
@@ -1769,14 +1769,14 @@ Private Sub cmdApplyToAll_Click()
     'take all sites shown on the subform and put the information from the form on the site record.
     Dim rec As Recordset
     Dim recfiltered As Recordset
-    Dim Db As Database
+    Dim db As Database
     Dim SiteCount As Integer
     
     'make sure that information on form is stored
     Me.Dirty = False
     
-    Set Db = CurrentDb()
-    Set rec = Db.OpenRecordset("fqrySiteStInspectionAssignment")
+    Set db = CurrentDb()
+    Set rec = db.OpenRecordset("fqrySiteStInspectionAssignment")
     
     rec.Filter = GetItemDims().WhereID(False)
     Set recfiltered = rec.OpenRecordset
@@ -1808,7 +1808,7 @@ Private Sub cmdApplyToAll_Click()
 
 '///ErrorHandling
 PROC_EXIT:
-    Set Db = Nothing
+    Set db = Nothing
     Set rec = Nothing
     
     PopCallStack

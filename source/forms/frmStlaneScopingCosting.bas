@@ -12,16 +12,16 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =17085
+    Width =16620
     DatasheetFontHeight =11
-    ItemSuffix =23
-    Right =19920
-    Bottom =12645
+    ItemSuffix =34
+    Right =24435
+    Bottom =12030
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0xb1984d0f15b9e440
+        0x88be453bafc0e440
     End
-    RecordSource ="fqrySiteStScopingCosting"
+    RecordSource ="fqryProjectStScopingCosting"
     Caption ="Standard Scoping and Costing"
     OnCurrent ="[Event Procedure]"
     DatasheetFontName ="Calibri"
@@ -165,7 +165,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =10920
+            Height =14400
             Name ="Detail"
             AlternateBackColor =15921906
             AlternateBackThemeColorIndex =1
@@ -198,6 +198,8 @@ Begin Form
                     BorderColor =10921638
                     Name ="subfrmDisasterInfoRevised short"
                     SourceObject ="Form.subfrmDisasterInfoRevised short"
+                    LinkChildFields ="DisasterID"
+                    LinkMasterFields ="DisasterID"
                     EventProcPrefix ="subfrmDisasterInfoRevised_short"
                     GridlineColor =10921638
 
@@ -248,7 +250,7 @@ Begin Form
                     Left =13860
                     Top =60
                     Width =2760
-                    Height =10620
+                    Height =14220
                     BackColor =13431551
                     BorderColor =10921638
                     Name ="Box20"
@@ -256,7 +258,7 @@ Begin Form
                     LayoutCachedLeft =13860
                     LayoutCachedTop =60
                     LayoutCachedWidth =16620
-                    LayoutCachedHeight =10680
+                    LayoutCachedHeight =14280
                     BackThemeColorIndex =7
                     BackTint =20.0
                 End
@@ -416,21 +418,22 @@ Begin Form
                     LayoutCachedHeight =9420
                 End
                 Begin CommandButton
+                    Enabled = NotDefault
                     OverlapFlags =215
-                    Left =7920
+                    Left =8940
                     Top =9840
                     Width =2640
                     Height =780
                     TabIndex =7
                     ForeColor =4210752
                     Name ="cmdSubmitToCFC"
-                    Caption ="Submit Project to CFC"
+                    Caption ="Submit Project to Transition Review"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =7920
+                    LayoutCachedLeft =8940
                     LayoutCachedTop =9840
-                    LayoutCachedWidth =10560
+                    LayoutCachedWidth =11580
                     LayoutCachedHeight =10620
                     BackColor =15123357
                     BorderColor =15123357
@@ -447,7 +450,7 @@ Begin Form
                 Begin Label
                     Visible = NotDefault
                     OverlapFlags =215
-                    Left =1920
+                    Left =120
                     Top =9780
                     Width =5460
                     Height =960
@@ -456,9 +459,9 @@ Begin Form
                     Caption ="When all sites are comleted, COS notifies CFC that project is ready for review. "
                         " (what if more than one COS is working on it.  Should it be the Group Lead?)"
                     GridlineColor =10921638
-                    LayoutCachedLeft =1920
+                    LayoutCachedLeft =120
                     LayoutCachedTop =9780
-                    LayoutCachedWidth =7380
+                    LayoutCachedWidth =5580
                     LayoutCachedHeight =10740
                     ForeTint =100.0
                 End
@@ -513,6 +516,153 @@ Begin Form
                     BackShade =50.0
                     ForeThemeColorIndex =1
                     ForeTint =100.0
+                End
+                Begin Subform
+                    OverlapFlags =85
+                    Left =120
+                    Top =10980
+                    Width =13680
+                    Height =3300
+                    TabIndex =9
+                    BorderColor =10921638
+                    Name ="subHistory"
+                    SourceObject ="Form.subfrmProjectReviewHistory"
+                    LinkChildFields ="DisasterID;ApplicantID;ProjectID"
+                    LinkMasterFields ="DisasterID;ApplicantID;ProjectID"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =120
+                    LayoutCachedTop =10980
+                    LayoutCachedWidth =13800
+                    LayoutCachedHeight =14280
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =6120
+                    Top =9840
+                    Width =2640
+                    Height =780
+                    TabIndex =10
+                    ForeColor =4210752
+                    Name ="cmdScopingCostingComplete"
+                    Caption ="Costing Complete"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =6120
+                    LayoutCachedTop =9840
+                    LayoutCachedWidth =8760
+                    LayoutCachedHeight =10620
+                    BackColor =15123357
+                    BorderColor =15123357
+                    HoverColor =15652797
+                    PressedColor =11957550
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
+                End
+                Begin Rectangle
+                    BackStyle =1
+                    OverlapFlags =223
+                    Left =13890
+                    Top =2925
+                    Width =2730
+                    Height =1380
+                    BackColor =15921906
+                    BorderColor =10921638
+                    Name ="Box33"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =13890
+                    LayoutCachedTop =2925
+                    LayoutCachedWidth =16620
+                    LayoutCachedHeight =4305
+                    BackShade =95.0
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OverlapFlags =215
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =15120
+                    Top =3840
+                    Height =315
+                    FontWeight =700
+                    TabIndex =12
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="CostPrepBy"
+                    ControlSource ="CostPrepBy"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =15120
+                    LayoutCachedTop =3840
+                    LayoutCachedWidth =16560
+                    LayoutCachedHeight =4155
+                    Begin
+                        Begin Label
+                            OverlapFlags =223
+                            Left =13920
+                            Top =3600
+                            Width =2085
+                            Height =285
+                            FontSize =10
+                            FontWeight =700
+                            BorderColor =8355711
+                            Name ="Label32"
+                            Caption ="Cost  to be prepared by:"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =13920
+                            LayoutCachedTop =3600
+                            LayoutCachedWidth =16005
+                            LayoutCachedHeight =3885
+                            ForeTint =100.0
+                        End
+                    End
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OverlapFlags =215
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =15120
+                    Top =3240
+                    Height =315
+                    FontWeight =700
+                    TabIndex =11
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="SOWPrepBy"
+                    ControlSource ="SOWPrepBy"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =15120
+                    LayoutCachedTop =3240
+                    LayoutCachedWidth =16560
+                    LayoutCachedHeight =3555
+                    Begin
+                        Begin Label
+                            OverlapFlags =223
+                            Left =13920
+                            Top =3000
+                            Width =2085
+                            Height =285
+                            FontSize =10
+                            FontWeight =700
+                            BorderColor =8355711
+                            Name ="Label31"
+                            Caption ="SOW to be prepared by:"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =13920
+                            LayoutCachedTop =3000
+                            LayoutCachedWidth =16005
+                            LayoutCachedHeight =3285
+                            ForeTint =100.0
+                        End
+                    End
                 End
             End
         End
@@ -990,6 +1140,28 @@ Option Explicit
 Private Const FormItemType As String = "Project" 'used in determining what type of record is handled
 
 
+Private Sub cmdScopingCostingComplete_Click()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cmdSubmitToCFC_Click"
+'///Error Handling
+
+'///Code
+    CompleteReview "Scoping and Costing"
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+
+End Sub
+
 'BUTTONS
 Private Sub cmdSubmitToCFC_Click()
 '///Error Handling
@@ -998,7 +1170,7 @@ Private Sub cmdSubmitToCFC_Click()
 '///Error Handling
 
 '///Code
-    CompleteReview "Scoping and Costing"
+    CompleteReview "Final Lane Review - ST"
 '///Code
 
 '///ErrorHandling
@@ -1069,8 +1241,8 @@ Private Sub RepaintForm()
 '///Error Handling
 
 '///Code
-    EnableFormArea "Scoping and Costing"
-'    Me.subHistory.Requery
+    EnableFormArea "Both"
+    Me.subHistory.Requery
 '///Code
 
 '///ErrorHandling
@@ -1086,7 +1258,9 @@ End Sub
 
 
 Private Sub EnableFormArea(AreaName As String, Optional Override As String = "")
-    Dim CanEnable As Boolean    'used so that CanSee is only called once per run.
+    'subfrm must be available to either review.
+    Dim CanEnableSC As Boolean    'Scoping Costing
+    Dim CanEnableLR As Boolean    'Lead Review
     
 '///Error Handling
     If gcfHandleErrors Then On Error GoTo PROC_ERR
@@ -1095,15 +1269,17 @@ Private Sub EnableFormArea(AreaName As String, Optional Override As String = "")
 
 '///Code
     If Override = "Disable" Then
-        CanEnable = False
+        'CanEnable = False
     Else
-        CanEnable = Reviews.CanSee(GetItemDims(AreaName), Environ("UserName"))
+        CanEnableSC = Reviews.CanSee(GetItemDims("Scoping and Costing"), Environ("UserName"))
+        CanEnableLR = Reviews.CanSee(GetItemDims("Final Lane Review - ST"), Environ("UserName"))
     End If
     
     Select Case AreaName
-        Case "Scoping and Costing"
-             Me.cmdSubmitToCFC.Enabled = CanEnable
-             Me.subfrmSitesScopeCost.Enabled = CanEnable
+        Case "Both"
+             Me.cmdScopingCostingComplete.Enabled = CanEnableSC
+             Me.cmdSubmitToCFC.Enabled = CanEnableLR
+             Me.subfrmSitesScopeCost.Enabled = CanEnableSC Or CanEnableLR
         Case Else
             Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & AreaName
     End Select

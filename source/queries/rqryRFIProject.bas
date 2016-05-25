@@ -238,6 +238,63 @@ Begin
     Begin
         dbText "Name" ="Full Reference"
     End
+    Begin
+        dbText "Name" ="rqryRFIRouting.Application Title"
+    End
+    Begin
+        dbText "Name" ="Date Sent to Recipient"
+    End
+    Begin
+        dbText "Name" ="Response Time Requested"
+    End
+    Begin
+        dbText "Name" ="RFI Reason"
+    End
+    Begin
+        dbText "Name" ="Transmittal Method"
+    End
+    Begin
+        dbText "Name" ="JFO Street Address"
+    End
+    Begin
+        dbText "Name" ="JFO City, State, Zip"
+    End
+    Begin
+        dbText "Name" ="HSIN Address"
+    End
+    Begin
+        dbText "Name" ="RFI Response Email Address"
+    End
+    Begin
+        dbText "Name" ="RfiSatisfied"
+    End
+    Begin
+        dbText "Name" ="RfiCanceled"
+    End
+    Begin
+        dbText "Name" ="Reason Requested"
+    End
+    Begin
+        dbText "Name" ="Name of Site/Facility"
+    End
+    Begin
+        dbText "Name" ="RfiItemID"
+    End
+    Begin
+        dbText "Name" ="tblProjects.Application Title"
+    End
+    Begin
+        dbText "Name" ="Disaster Type"
+    End
+    Begin
+        dbText "Name" ="State"
+    End
+    Begin
+        dbText "Name" ="ProjectID"
+    End
+    Begin
+        dbText "Name" ="Application Title"
+    End
 End
 Begin
     State =0

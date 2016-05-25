@@ -1,4 +1,4 @@
 CREATE TABLE [lutblProgressionMarkers] (
   [furthestProgression] VARCHAR (255) CONSTRAINT [Index_C04E43BE_7EDE_4D30] UNIQUE  CONSTRAINT [Index_C5083557_E6ED_4437] UNIQUE  CONSTRAINT [PrimaryKey] PRIMARY KEY  UNIQUE  NOT NULL ,
-  [ProgressionOrder] LONG DEFAULT 0 CONSTRAINT [ProgressionID] UNIQUE 
+  [ProgressionOrder] AUTOINCREMENT
 )

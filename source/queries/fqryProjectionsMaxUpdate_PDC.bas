@@ -1,6 +1,7 @@
 ﻿Operation =1
 Option =0
-Having ="(((tblSubRecipient.[Assigned PDC])=CurrentUserID()))"
+Having ="(((tblSubRecipient.[Assigned PDC])=CurrentUserID()) AND ((tblSubRecipient.Status"
+    ")=\"Eligible\"))"
 Begin InputTables
     Name ="tblProjectionUpdates"
     Name ="tblSubRecipient"
@@ -29,6 +30,8 @@ Begin Groups
     Expression ="tblSubRecipient.[Subrecipient Name]"
     GroupLevel =0
     Expression ="tblSubRecipient.[Assigned PDC]"
+    GroupLevel =0
+    Expression ="tblSubRecipient.Status"
     GroupLevel =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -69,17 +72,21 @@ Begin
         dbText "Name" ="tblSubRecipient.[Subrecipient Name]"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="tblSubRecipient.Status"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1153
-    Bottom =860
+    Right =1041
+    Bottom =821
     Left =-1
     Top =-1
-    Right =1137
-    Bottom =181
+    Right =1025
+    Bottom =308
     Left =0
     Top =0
     ColumnsShown =543

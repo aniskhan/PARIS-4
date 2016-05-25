@@ -14,13 +14,15 @@ Begin Form
     Width =12300
     DatasheetFontHeight =11
     ItemSuffix =96
-    Right =13875
-    Bottom =12645
+    Left =345
+    Top =3885
+    Right =13635
+    Bottom =6255
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0x588a958f32bee440
+        0x39b66340b5bfe440
     End
-    RecordSource ="qryRFIProjectHistoryUnion"
+    RecordSource ="qryRFIProjectHistoryUnion-ProjectView"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
@@ -289,7 +291,7 @@ Begin Form
                     Height =299
                     ForeColor =4210752
                     Name ="cmdFullComments"
-                    Caption ="Full Comments"
+                    Caption ="Full History"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 

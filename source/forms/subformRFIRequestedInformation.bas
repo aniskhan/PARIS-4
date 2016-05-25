@@ -161,7 +161,7 @@ Begin Form
                     Name ="Item Type"
                     ControlSource ="ItemType"
                     RowSourceType ="Table/Query"
-                    RowSource ="lutblRFIItemType"
+                    RowSource ="tblRFIItemType"
                     ColumnWidths ="1440"
                     EventProcPrefix ="Item_Type"
                     GridlineColor =10921638

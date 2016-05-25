@@ -1,51 +1,16 @@
-﻿Operation =1
-Option =0
-Begin InputTables
-    Name ="tblSites"
-    Name ="qryProject-SumOfSites"
-    Name ="tblProjects"
-End
-Begin OutputColumns
-    Expression ="tblProjects.DisasterID"
-    Expression ="tblProjects.ProjectID"
-    Expression ="tblSites.SiteID"
-    Alias ="SiteApproxCost"
-    Expression ="tblSites.[Approximate Cost]"
-    Expression ="tblSites.[% Work Complete]"
-    Expression ="[qryProject-SumOfSites].[SumOfApproximate Cost]"
-    Alias ="SiteWeightedPCT"
-    Expression ="(Nz([tblsites].[Approximate Cost],0)*[tblsites].[% Work Complete])/[SumOfApproxi"
-        "mate Cost]"
-    Alias ="Rounded"
-    Expression ="IIf([SiteWeightedPCT]>0.925 Or [SiteWeightedPCT]<0.025,[SiteWeightedPCT],Round(["
-        "SiteWeightedPCT]/0.05)*0.05)"
-End
-Begin Joins
-    LeftTable ="tblSites"
-    RightTable ="qryProject-SumOfSites"
-    Expression ="tblSites.ProjectID = [qryProject-SumOfSites].ProjectID"
-    Flag =2
-    LeftTable ="tblSites"
-    RightTable ="qryProject-SumOfSites"
-    Expression ="tblSites.ApplicantID = [qryProject-SumOfSites].ApplicantID"
-    Flag =2
-    LeftTable ="tblSites"
-    RightTable ="qryProject-SumOfSites"
-    Expression ="tblSites.DisasterID = [qryProject-SumOfSites].DisasterID"
-    Flag =2
-    LeftTable ="tblProjects"
-    RightTable ="tblSites"
-    Expression ="tblProjects.DisasterID = tblSites.DisasterID"
-    Flag =2
-    LeftTable ="tblProjects"
-    RightTable ="tblSites"
-    Expression ="tblProjects.ApplicantID = tblSites.ApplicantID"
-    Flag =2
-    LeftTable ="tblProjects"
-    RightTable ="tblSites"
-    Expression ="tblProjects.ProjectID = tblSites.ProjectID"
-    Flag =2
-End
+﻿dbMemo "SQL" ="SELECT tblProjects.DisasterID, tblProjects.ProjectID, tblSites.SiteID, tblSites."
+    "[Approximate Cost] AS SiteApproxCost, tblSites.[% Work Complete], [qryProject-Su"
+    "mOfSites].[SumOfApproximate Cost], IIf([SumOfApproximate Cost]=0,0,Nz([tblsites]"
+    ".[Approximate Cost],0)*[tblsites].[% Work Complete]/[SumOfApproximate Cost]) AS "
+    "SiteWeightedPCT, IIf([SiteWeightedPCT]>0.925 Or [SiteWeightedPCT]<0.025,[SiteWei"
+    "ghtedPCT],Round([SiteWeightedPCT]/0.05)*0.05) AS Rounded\015\012FROM tblProjects"
+    " LEFT JOIN (tblSites LEFT JOIN [qryProject-SumOfSites] ON (tblSites.DisasterID ="
+    " [qryProject-SumOfSites].DisasterID) AND (tblSites.ApplicantID = [qryProject-Sum"
+    "OfSites].ApplicantID) AND (tblSites.ProjectID = [qryProject-SumOfSites].ProjectI"
+    "D)) ON (tblProjects.ProjectID = tblSites.ProjectID) AND (tblProjects.ApplicantID"
+    " = tblSites.ApplicantID) AND (tblProjects.DisasterID = tblSites.DisasterID);\015"
+    "\012"
+dbMemo "Connect" =""
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
@@ -92,46 +57,5 @@ Begin
     Begin
         dbText "Name" ="tblProjects.DisasterID"
         dbLong "AggregateType" ="-1"
-    End
-End
-Begin
-    State =0
-    Left =0
-    Top =0
-    Right =919
-    Bottom =860
-    Left =-1
-    Top =-1
-    Right =903
-    Bottom =547
-    Left =0
-    Top =0
-    ColumnsShown =539
-    Begin
-        Left =229
-        Top =55
-        Right =468
-        Bottom =437
-        Top =0
-        Name ="tblSites"
-        Name =""
-    End
-    Begin
-        Left =596
-        Top =51
-        Right =740
-        Bottom =195
-        Top =0
-        Name ="qryProject-SumOfSites"
-        Name =""
-    End
-    Begin
-        Left =20
-        Top =42
-        Right =164
-        Bottom =256
-        Top =0
-        Name ="tblProjects"
-        Name =""
     End
 End

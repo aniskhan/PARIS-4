@@ -13,9 +13,11 @@ Begin Form
     GridY =24
     Width =23580
     DatasheetFontHeight =11
-    ItemSuffix =46
-    Right =5625
-    Bottom =7005
+    ItemSuffix =48
+    Left =345
+    Top =5640
+    Right =14010
+    Bottom =10200
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0xa9623db0b4b9e440
@@ -183,6 +185,7 @@ Begin Form
                     BackThemeColorIndex =-1
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =1320
@@ -222,6 +225,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =1440
@@ -262,6 +266,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =215
                     TextAlign =2
                     IMESentenceMode =3
@@ -303,6 +308,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =215
                     TextAlign =2
                     IMESentenceMode =3
@@ -345,6 +351,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     TabStop = NotDefault
                     OverlapFlags =215
                     IMESentenceMode =3
@@ -389,6 +396,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     TabStop = NotDefault
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
@@ -655,6 +663,7 @@ Begin Form
                     Top =9240
                     Width =840
                     Height =315
+                    ColumnWidth =1905
                     ColumnOrder =4
                     TabIndex =4
                     BorderColor =10921638
@@ -894,6 +903,83 @@ Begin Form
                             LayoutCachedLeft =60
                             LayoutCachedWidth =2310
                             LayoutCachedHeight =315
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    Left =9120
+                    Top =9660
+                    Height =315
+                    TabIndex =15
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="UpdatedCost"
+                    ControlSource ="UpdatedCost"
+                    Format ="$#,##0.00;($#,##0.00)"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =9120
+                    LayoutCachedTop =9660
+                    LayoutCachedWidth =10560
+                    LayoutCachedHeight =9975
+                    CurrencySymbol ="$"
+                    ColLCID =1033
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =7680
+                            Top =9660
+                            Width =1320
+                            Height =315
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label46"
+                            Caption ="Updated Cost"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =7680
+                            LayoutCachedTop =9660
+                            LayoutCachedWidth =9000
+                            LayoutCachedHeight =9975
+                        End
+                    End
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    Left =5640
+                    Top =9660
+                    Height =315
+                    TabIndex =16
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="Approximate Cost"
+                    ControlSource ="Approximate Cost"
+                    EventProcPrefix ="Approximate_Cost"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =5640
+                    LayoutCachedTop =9660
+                    LayoutCachedWidth =7080
+                    LayoutCachedHeight =9975
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =3840
+                            Top =9660
+                            Width =1740
+                            Height =315
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label47"
+                            Caption ="Approximate Cost"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =3840
+                            LayoutCachedTop =9660
+                            LayoutCachedWidth =5580
+                            LayoutCachedHeight =9975
                         End
                     End
                 End

@@ -1,5 +1,6 @@
 ﻿Operation =1
 Option =0
+Where ="(((tblSubRecipient.Status)=\"Eligible\"))"
 Begin InputTables
     Name ="tblProjectionUpdates"
     Name ="tblSubRecipient"
@@ -37,12 +38,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =1153
-    Bottom =860
+    Right =1041
+    Bottom =821
     Left =-1
     Top =-1
-    Right =1137
-    Bottom =371
+    Right =1025
+    Bottom =354
     Left =0
     Top =0
     ColumnsShown =539

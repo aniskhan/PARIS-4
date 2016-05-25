@@ -14,6 +14,8 @@ Begin OutputColumns
     Expression ="revtblRpa.DisasterID"
     Expression ="revtblRpa.ApplicantID"
     Alias ="ProjectID"
+    Expression ="0"
+    Alias ="Lane Assigned"
     Expression ="\"\""
     Alias ="SiteID"
     Expression ="\"\""
@@ -29,6 +31,7 @@ Begin OutputColumns
     Expression ="revtblRpa.ReviewUserID"
     Expression ="tblReviewTypes.Position"
     Expression ="tblReviewTypes.FormName"
+    Expression ="revtblRpa.ReviewEntryDate"
 End
 Begin Joins
     LeftTable ="revtblRpa"
@@ -89,6 +92,7 @@ Begin
     Begin
         dbText "Name" ="ProjectID"
         dbLong "AggregateType" ="-1"
+        dbText "Format" ="General Number"
     End
     Begin
         dbText "Name" ="revtblRpa.ReviewType"
@@ -111,7 +115,15 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="RfiItemID"
+        dbText "Name" ="MinOfReviewEntryDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="revtblRpa.ReviewEntryDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Lane Assigned"
         dbLong "AggregateType" ="-1"
     End
 End
@@ -119,12 +131,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =1153
-    Bottom =860
+    Right =1029
+    Bottom =821
     Left =-1
     Top =-1
-    Right =1137
-    Bottom =334
+    Right =1013
+    Bottom =268
     Left =0
     Top =0
     ColumnsShown =539

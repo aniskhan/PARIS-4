@@ -15,8 +15,8 @@ Begin Form
     Width =26355
     DatasheetFontHeight =11
     ItemSuffix =102
-    Right =13515
-    Bottom =12645
+    Right =20850
+    Bottom =12615
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0x21b072e073bce440
@@ -179,16 +179,16 @@ Begin Form
                 Begin Rectangle
                     BackStyle =1
                     OverlapFlags =93
-                    Top =3000
+                    Top =2940
                     Width =16380
-                    Height =6540
+                    Height =8460
                     BackColor =15788753
                     BorderColor =10921638
                     Name ="Box98"
                     GridlineColor =10921638
-                    LayoutCachedTop =3000
+                    LayoutCachedTop =2940
                     LayoutCachedWidth =16380
-                    LayoutCachedHeight =9540
+                    LayoutCachedHeight =11400
                     BackThemeColorIndex =-1
                 End
                 Begin TextBox
@@ -239,7 +239,7 @@ Begin Form
                 Begin Subform
                     OverlapFlags =215
                     Left =480
-                    Top =6840
+                    Top =7500
                     Width =15900
                     Height =2580
                     TabIndex =1
@@ -252,9 +252,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =480
-                    LayoutCachedTop =6840
+                    LayoutCachedTop =7500
                     LayoutCachedWidth =16380
-                    LayoutCachedHeight =9420
+                    LayoutCachedHeight =10080
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -378,12 +378,11 @@ Begin Form
                     End
                 End
                 Begin Subform
-                    OverlapFlags =223
-                    OldBorderStyle =0
+                    OverlapFlags =215
                     Left =60
-                    Top =3480
+                    Top =4980
                     Width =16380
-                    Height =2880
+                    Height =1920
                     TabIndex =6
                     BorderColor =10921638
                     Name ="subfrmSITFLAssignProjects"
@@ -393,18 +392,18 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =60
-                    LayoutCachedTop =3480
+                    LayoutCachedTop =4980
                     LayoutCachedWidth =16440
-                    LayoutCachedHeight =6360
+                    LayoutCachedHeight =6900
                 End
                 Begin Label
                     SpecialEffect =2
                     BackStyle =1
                     OldBorderStyle =1
                     BorderWidth =1
-                    OverlapFlags =223
+                    OverlapFlags =215
                     Left =480
-                    Top =6420
+                    Top =6960
                     Width =15960
                     Height =480
                     FontSize =16
@@ -416,9 +415,9 @@ Begin Form
                     Caption ="Site Information  (Double Click on site to Edit Information)"
                     GridlineColor =10921638
                     LayoutCachedLeft =480
-                    LayoutCachedTop =6420
+                    LayoutCachedTop =6960
                     LayoutCachedWidth =16440
-                    LayoutCachedHeight =6900
+                    LayoutCachedHeight =7440
                     BackThemeColorIndex =-1
                     ForeThemeColorIndex =7
                     ForeTint =20.0
@@ -467,7 +466,7 @@ Begin Form
                     LayoutCachedHeight =7560
                 End
                 Begin Subform
-                    OverlapFlags =247
+                    OverlapFlags =215
                     SpecialEffect =2
                     Left =60
                     Top =3480

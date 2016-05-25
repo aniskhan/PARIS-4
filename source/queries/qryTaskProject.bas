@@ -16,6 +16,7 @@ Begin OutputColumns
     Expression ="revtblProject.DisasterID"
     Expression ="revtblProject.ApplicantID"
     Expression ="revtblProject.ProjectID"
+    Expression ="revtblProject.[Lane Assigned]"
     Alias ="SiteID"
     Expression ="\"\""
     Alias ="DocID"
@@ -29,19 +30,20 @@ Begin OutputColumns
     Expression ="revtblProject.ReviewUserID"
     Expression ="tblReviewTypes.Position"
     Expression ="tblReviewTypes.FormName"
+    Expression ="revtblProject.ReviewEntryDate"
 End
 Begin Joins
     LeftTable ="tblProjects"
     RightTable ="tblSubRecipient"
-    Expression ="tblProjects.[ApplicantID] = tblSubRecipient.[ApplicantID]"
+    Expression ="tblProjects.[DisasterID] = tblSubRecipient.[DisasterID]"
     Flag =1
     LeftTable ="tblProjects"
     RightTable ="tblSubRecipient"
-    Expression ="tblProjects.[DisasterID] = tblSubRecipient.[DisasterID]"
+    Expression ="tblProjects.[ApplicantID] = tblSubRecipient.[ApplicantID]"
     Flag =1
     LeftTable ="revtblProject"
     RightTable ="tblProjects"
-    Expression ="revtblProject.DisasterID = tblProjects.DisasterID"
+    Expression ="revtblProject.ProjectID = tblProjects.ProjectID"
     Flag =1
     LeftTable ="revtblProject"
     RightTable ="tblProjects"
@@ -49,7 +51,7 @@ Begin Joins
     Flag =1
     LeftTable ="revtblProject"
     RightTable ="tblProjects"
-    Expression ="revtblProject.ProjectID = tblProjects.ProjectID"
+    Expression ="revtblProject.DisasterID = tblProjects.DisasterID"
     Flag =1
     LeftTable ="revtblProject"
     RightTable ="tblReviewTypes"
@@ -123,7 +125,15 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
+        dbText "Name" ="revtblProject.ReviewEntryDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
         dbText "Name" ="RfiItemID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="revtblProject.[Lane Assigned]"
         dbLong "AggregateType" ="-1"
     End
 End
@@ -131,12 +141,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =1153
-    Bottom =860
+    Right =1029
+    Bottom =821
     Left =-1
     Top =-1
-    Right =1137
-    Bottom =211
+    Right =1013
+    Bottom =292
     Left =0
     Top =0
     ColumnsShown =539

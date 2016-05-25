@@ -17,12 +17,12 @@ Begin Form
     Width =16620
     DatasheetFontHeight =11
     ItemSuffix =71
-    Right =13515
-    Bottom =12645
+    Right =19560
+    Bottom =12060
     DatasheetGridlinesColor =15132391
     OnApplyFilter ="[Event Procedure]"
     RecSrcDt = Begin
-        0xcfee2ddb73bce440
+        0x5df1e716d6c0e440
     End
     RecordSource ="fqryProjectFormulation"
     Caption ="Logical Project Grouping"
@@ -1882,7 +1882,7 @@ Private Sub listProjects_AfterUpdate()
 End Sub
 Private Sub UpdateSite(DR As String, ApplicantID As String, ref As Long, Site As Long)
 '    Debug.Print "UpdateSite"
-    Dim Db As Database
+    Dim db As Database
     Dim recEditStatus As Recordset
     Dim WhereCondition As String
     Dim recEditReview As Recordset
@@ -1891,9 +1891,9 @@ Private Sub UpdateSite(DR As String, ApplicantID As String, ref As Long, Site As
     WhereCondition = WhereCondition & " and [ApplicantID]='" & ApplicantID & "'"
     WhereCondition = WhereCondition & " and [SiteID]=" & Site
         
-    Set Db = CurrentDb()
+    Set db = CurrentDb()
     
-    Set recEditStatus = Db.OpenRecordset("tblSites", dbOpenDynaset)
+    Set recEditStatus = db.OpenRecordset("tblSites", dbOpenDynaset)
     
     recEditStatus.FindFirst WhereCondition
     
@@ -1907,7 +1907,7 @@ Private Sub UpdateSite(DR As String, ApplicantID As String, ref As Long, Site As
         recEditStatus.Update
     End If
     
-    Set recEditReview = Db.OpenRecordset("revtblSite", dbOpenDynaset)
+    Set recEditReview = db.OpenRecordset("revtblSite", dbOpenDynaset)
     WhereCondition = WhereCondition & " and [ReviewType]='Site Entry'"
 '    WhereCondition = WhereCondition & " and [ReviewCheckOutDate] is not null"
     WhereCondition = WhereCondition & " and [ReviewExitDate] is null"
@@ -1930,7 +1930,7 @@ Private Sub UpdateSite(DR As String, ApplicantID As String, ref As Long, Site As
     
     recEditStatus.Close
     Set recEditStatus = Nothing
-    Set Db = Nothing
+    Set db = Nothing
 
 End Sub
 Private Sub UpdateCboApplicantRows(AddFilter As Boolean)

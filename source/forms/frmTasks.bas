@@ -14,11 +14,11 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =14955
+    Width =15915
     DatasheetFontHeight =11
     ItemSuffix =54
-    Right =15045
-    Bottom =7830
+    Right =19560
+    Bottom =12060
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0x2f541299cea3e440
@@ -206,58 +206,18 @@ Begin Form
         Begin Section
             CanGrow = NotDefault
             SpecialEffect =1
-            Height =7980
+            Height =9060
             BackColor =13620930
             Name ="Detail"
             AlternateBackColor =15921906
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             Begin
-                Begin Line
-                    BorderWidth =6
-                    OverlapFlags =93
-                    Top =4005
-                    Width =14940
-                    Height =15
-                    Name ="Line50"
-                    GridlineColor =10921638
-                    LayoutCachedTop =4005
-                    LayoutCachedWidth =14940
-                    LayoutCachedHeight =4020
-                End
-                Begin Rectangle
-                    BackStyle =1
-                    OverlapFlags =95
-                    Top =4080
-                    Width =14940
-                    Height =3900
-                    BackColor =14282978
-                    BorderColor =10921638
-                    Name ="Box49"
-                    GridlineColor =10921638
-                    LayoutCachedTop =4080
-                    LayoutCachedWidth =14940
-                    LayoutCachedHeight =7980
-                    BackThemeColorIndex =-1
-                End
-                Begin Rectangle
-                    BackStyle =1
-                    OverlapFlags =95
-                    Width =14955
-                    Height =3960
-                    BackColor =11188115
-                    BorderColor =10921638
-                    Name ="Box48"
-                    GridlineColor =10921638
-                    LayoutCachedWidth =14955
-                    LayoutCachedHeight =3960
-                    BackThemeColorIndex =-1
-                End
                 Begin Subform
                     OverlapFlags =223
-                    Left =240
+                    Left =60
                     Top =4260
-                    Width =12750
+                    Width =14280
                     Height =3600
                     TabIndex =3
                     BorderColor =10921638
@@ -265,28 +225,68 @@ Begin Form
                     SourceObject ="Form.subfrmTasks"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =240
+                    LayoutCachedLeft =60
                     LayoutCachedTop =4260
-                    LayoutCachedWidth =12990
+                    LayoutCachedWidth =14340
                     LayoutCachedHeight =7860
+                End
+                Begin Line
+                    BorderWidth =6
+                    OverlapFlags =93
+                    Top =4005
+                    Width =15900
+                    Height =15
+                    Name ="Line50"
+                    GridlineColor =10921638
+                    LayoutCachedTop =4005
+                    LayoutCachedWidth =15900
+                    LayoutCachedHeight =4020
+                End
+                Begin Rectangle
+                    BackStyle =1
+                    OverlapFlags =95
+                    Top =4080
+                    Width =15900
+                    Height =3900
+                    BackColor =14282978
+                    BorderColor =10921638
+                    Name ="Box49"
+                    GridlineColor =10921638
+                    LayoutCachedTop =4080
+                    LayoutCachedWidth =15900
+                    LayoutCachedHeight =7980
+                    BackThemeColorIndex =-1
+                End
+                Begin Rectangle
+                    BackStyle =1
+                    OverlapFlags =95
+                    Width =15915
+                    Height =3960
+                    BackColor =11188115
+                    BorderColor =10921638
+                    Name ="Box48"
+                    GridlineColor =10921638
+                    LayoutCachedWidth =15915
+                    LayoutCachedHeight =3960
+                    BackThemeColorIndex =-1
                 End
                 Begin Subform
                     Locked = NotDefault
                     OverlapFlags =223
                     SpecialEffect =2
                     BorderWidth =2
-                    Left =240
+                    Left =60
                     Top =120
-                    Width =12750
+                    Width =14280
                     Height =3600
                     BorderColor =10921638
                     Name ="subTasksTop"
                     SourceObject ="Form.subfrmTasks"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =240
+                    LayoutCachedLeft =60
                     LayoutCachedTop =120
-                    LayoutCachedWidth =12990
+                    LayoutCachedWidth =14340
                     LayoutCachedHeight =3720
                 End
                 Begin TextBox
@@ -295,9 +295,8 @@ Begin Form
                     TextAlign =1
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =13140
+                    Left =14400
                     Top =120
-                    Width =1695
                     Height =3600
                     TabIndex =1
                     BorderColor =10921638
@@ -305,14 +304,14 @@ Begin Form
                     Name ="txtTopInfo"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =13140
+                    LayoutCachedLeft =14400
                     LayoutCachedTop =120
-                    LayoutCachedWidth =14835
+                    LayoutCachedWidth =15840
                     LayoutCachedHeight =3720
                     Begin
                         Begin Label
                             OverlapFlags =223
-                            Left =11160
+                            Left =12300
                             Top =300
                             Width =690
                             Height =315
@@ -321,9 +320,9 @@ Begin Form
                             Name ="Label45"
                             Caption ="Text44"
                             GridlineColor =10921638
-                            LayoutCachedLeft =11160
+                            LayoutCachedLeft =12300
                             LayoutCachedTop =300
-                            LayoutCachedWidth =11850
+                            LayoutCachedWidth =12990
                             LayoutCachedHeight =615
                         End
                     End
@@ -334,9 +333,8 @@ Begin Form
                     TextAlign =1
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =13140
+                    Left =14400
                     Top =4140
-                    Width =1755
                     Height =3660
                     TabIndex =2
                     BorderColor =10921638
@@ -344,27 +342,28 @@ Begin Form
                     Name ="txtBottomInfo"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =13140
+                    LayoutCachedLeft =14400
                     LayoutCachedTop =4140
-                    LayoutCachedWidth =14895
+                    LayoutCachedWidth =15840
                     LayoutCachedHeight =7800
                 End
                 Begin Subform
+                    Visible = NotDefault
                     OverlapFlags =247
-                    Left =240
+                    Left =60
                     Top =120
-                    Width =12735
-                    Height =7800
+                    Width =14220
+                    Height =7740
                     TabIndex =4
                     BorderColor =10921638
                     Name ="subTasksFull"
                     SourceObject ="Form.subfrmTasks"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =240
+                    LayoutCachedLeft =60
                     LayoutCachedTop =120
-                    LayoutCachedWidth =12975
-                    LayoutCachedHeight =7920
+                    LayoutCachedWidth =14280
+                    LayoutCachedHeight =7860
                 End
             End
         End
@@ -398,10 +397,11 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
+                    Overlaps =1
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =13620
+                    Left =14400
                     Top =120
                     Width =1290
                     Height =405
@@ -412,9 +412,9 @@ Begin Form
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =13620
+                    LayoutCachedLeft =14400
                     LayoutCachedTop =120
-                    LayoutCachedWidth =14910
+                    LayoutCachedWidth =15690
                     LayoutCachedHeight =525
                     BackColor =15123357
                     BorderColor =15123357
@@ -422,6 +422,7 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
+                    Overlaps =1
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -431,7 +432,7 @@ Begin Form
                     Height =404
                     ForeColor =4210752
                     Name ="cmdtglTasks"
-                    Caption ="My Tasks"
+                    Caption ="All Tasks"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
@@ -445,6 +446,7 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
+                    Overlaps =1
                     Begin
                         Begin Label
                             OverlapFlags =85

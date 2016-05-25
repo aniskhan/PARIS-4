@@ -6,7 +6,7 @@ Begin Form
     DividingLines = NotDefault
     AllowAdditions = NotDefault
     AllowDesignChanges = NotDefault
-    DefaultView =2
+    DefaultView =0
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridX =24
@@ -14,7 +14,7 @@ Begin Form
     Width =17040
     DatasheetFontHeight =11
     ItemSuffix =33
-    Right =13515
+    Right =15465
     Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -365,7 +365,7 @@ Begin Form
                     Visible = NotDefault
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
-                    OverlapFlags =215
+                    OverlapFlags =223
                     IMESentenceMode =3
                     Left =10140
                     Top =9660
@@ -388,7 +388,7 @@ Begin Form
                     Begin
                         Begin Label
                             Visible = NotDefault
-                            OverlapFlags =215
+                            OverlapFlags =223
                             Left =8220
                             Top =9660
                             Width =1860
@@ -449,7 +449,7 @@ Begin Form
                     Visible = NotDefault
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
-                    OverlapFlags =215
+                    OverlapFlags =223
                     IMESentenceMode =3
                     Left =10080
                     Top =9240
@@ -471,7 +471,7 @@ Begin Form
                     Begin
                         Begin Label
                             Visible = NotDefault
-                            OverlapFlags =215
+                            OverlapFlags =223
                             Left =8220
                             Top =9240
                             Width =1845
@@ -578,13 +578,12 @@ Begin Form
                     End
                 End
                 Begin TextBox
-                    Visible = NotDefault
-                    OverlapFlags =215
+                    OverlapFlags =247
                     IMESentenceMode =3
                     Left =8160
                     Top =8700
                     Width =5340
-                    Height =480
+                    Height =1020
                     TabIndex =7
                     BorderColor =10921638
                     ForeColor =4210752
@@ -595,10 +594,9 @@ Begin Form
                     LayoutCachedLeft =8160
                     LayoutCachedTop =8700
                     LayoutCachedWidth =13500
-                    LayoutCachedHeight =9180
+                    LayoutCachedHeight =9720
                     Begin
                         Begin Label
-                            Visible = NotDefault
                             OverlapFlags =223
                             TextAlign =1
                             Left =8160
@@ -608,7 +606,7 @@ Begin Form
                             FontWeight =700
                             BorderColor =8355711
                             Name ="Label18"
-                            Caption ="Draft Damage Dimensions and Description (DDD)"
+                            Caption ="Notes from the DVS"
                             GridlineColor =10921638
                             LayoutCachedLeft =8160
                             LayoutCachedTop =8400
@@ -1597,6 +1595,9 @@ Private Sub HandleDisposition(ReviewType As String, frm As Form)
 '                    check if parent has a "Check Site Status" Review and add one if needed.
                     Set ParentDims = GetItemDims("Check Site Status")
                     ParentDims.ItemType = "Project"
+                    If DCount("ReviewID", "revtblSite", ParentDims.WhereID(False) & " and [ReviewType]='Inspection' And [ReviewExitDate] Is Null") = 0 Then
+                        Reviews.CompleteReview ParentDims.Clone("Site Inspections"), Environ("UserName"), "SUB", "Last Site Inspection Completed"
+                    End If
                     If Not Reviews.CheckReview(ParentDims) Then
                         Reviews.EnterReview ParentDims
                     End If

@@ -2,17 +2,17 @@
 Option =0
 Begin InputTables
     Name ="tblRFIRequestedInformation"
-    Name ="lutblRFIItemType"
+    Name ="tblRFIItemType"
 End
 Begin OutputColumns
     Expression ="tblRFIRequestedInformation.*"
-    Expression ="lutblRFIItemType.FurthestProgression"
+    Expression ="tblRFIItemType.FurthestProgression"
 End
 Begin Joins
     LeftTable ="tblRFIRequestedInformation"
-    RightTable ="lutblRFIItemType"
-    Expression ="tblRFIRequestedInformation.ItemType = lutblRFIItemType.Item"
-    Flag =1
+    RightTable ="tblRFIItemType"
+    Expression ="tblRFIRequestedInformation.ItemType = tblRFIItemType.Item"
+    Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -25,7 +25,59 @@ dbBoolean "OrderByOnLoad" ="-1"
 dbBoolean "TotalsRow" ="0"
 Begin
     Begin
-        dbText "Name" ="lutblRFIItemType.FurthestProgression"
+        dbText "Name" ="tblRFIRequestedInformation.isResponseReceived"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblRFIRequestedInformation.RfiItemAlias"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblRFIRequestedInformation.isRequestCanceled"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblRFIRequestedInformation.DateResponseReceived"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblRFIRequestedInformation.isRequestSatisfied"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblRFIRequestedInformation.RfiItemID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblRFIRequestedInformation.ProjectID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblRFIRequestedInformation.DisasterID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblRFIRequestedInformation.ApplicantID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblRFIRequestedInformation.RfiID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblRFIRequestedInformation.ItemType"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblRFIRequestedInformation.SiteID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblRFIRequestedInformation.Reason Requested"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblRFIItemType.FurthestProgression"
         dbLong "AggregateType" ="-1"
     End
 End
@@ -33,31 +85,31 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =1211
-    Bottom =860
+    Right =931
+    Bottom =821
     Left =-1
     Top =-1
-    Right =1195
-    Bottom =428
+    Right =915
+    Bottom =275
     Left =0
     Top =0
     ColumnsShown =539
     Begin
-        Left =380
-        Top =62
-        Right =524
-        Bottom =342
+        Left =118
+        Top =8
+        Right =262
+        Bottom =288
         Top =0
         Name ="tblRFIRequestedInformation"
         Name =""
     End
     Begin
-        Left =611
-        Top =14
-        Right =755
-        Bottom =158
+        Left =596
+        Top =62
+        Right =740
+        Bottom =206
         Top =0
-        Name ="lutblRFIItemType"
+        Name ="tblRFIItemType"
         Name =""
     End
 End

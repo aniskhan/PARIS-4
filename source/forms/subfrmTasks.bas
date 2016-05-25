@@ -14,15 +14,15 @@ Begin Form
     GridY =24
     Width =12218
     DatasheetFontHeight =11
-    ItemSuffix =61
-    Left =240
-    Top =660
-    Right =12960
-    Bottom =8160
+    ItemSuffix =69
+    Left =60
+    Top =525
+    Right =14265
+    Bottom =7965
     DatasheetGridlinesColor =15132391
     Filter ="[positionTier] = 0 and [ReviewUserID] is Null"
     RecSrcDt = Begin
-        0xf3e85a4376b4e440
+        0xb5c6b4eed5c0e440
     End
     RecordSource ="qryTaskUnionByUserOversight"
     OnCurrent ="[Event Procedure]"
@@ -131,7 +131,7 @@ Begin Form
             BackTint =20.0
         End
         Begin Section
-            Height =5280
+            Height =5490
             Name ="Detail"
             AlternateBackColor =15921906
             AlternateBackThemeColorIndex =1
@@ -207,7 +207,7 @@ Begin Form
                     Top =1380
                     Width =2850
                     Height =585
-                    ColumnWidth =3660
+                    ColumnWidth =3400
                     TabIndex =2
                     LeftMargin =44
                     TopMargin =22
@@ -270,7 +270,7 @@ Begin Form
                     Top =2145
                     Width =2850
                     Height =360
-                    ColumnWidth =1170
+                    ColumnWidth =700
                     TabIndex =3
                     LeftMargin =44
                     TopMargin =22
@@ -330,11 +330,11 @@ Begin Form
                     TextAlign =1
                     IMESentenceMode =3
                     Left =2370
-                    Top =2685
+                    Top =3180
                     Width =2850
                     Height =585
                     ColumnWidth =2430
-                    TabIndex =4
+                    TabIndex =5
                     LeftMargin =44
                     TopMargin =22
                     RightMargin =44
@@ -349,11 +349,11 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2370
-                    LayoutCachedTop =2685
+                    LayoutCachedTop =3180
                     LayoutCachedWidth =5220
-                    LayoutCachedHeight =3270
-                    RowStart =4
-                    RowEnd =4
+                    LayoutCachedHeight =3765
+                    RowStart =5
+                    RowEnd =5
                     ColumnStart =1
                     ColumnEnd =1
                     LayoutGroup =1
@@ -363,7 +363,7 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             Left =360
-                            Top =2685
+                            Top =3180
                             Width =1948
                             Height =585
                             LeftMargin =44
@@ -378,11 +378,11 @@ Begin Form
                             BottomPadding =150
                             GridlineColor =10921638
                             LayoutCachedLeft =360
-                            LayoutCachedTop =2685
+                            LayoutCachedTop =3180
                             LayoutCachedWidth =2308
-                            LayoutCachedHeight =3270
-                            RowStart =4
-                            RowEnd =4
+                            LayoutCachedHeight =3765
+                            RowStart =5
+                            RowEnd =5
                             LayoutGroup =1
                             GroupTable =1
                         End
@@ -393,11 +393,11 @@ Begin Form
                     TextAlign =1
                     IMESentenceMode =3
                     Left =2370
-                    Top =3450
+                    Top =3945
                     Width =2850
                     Height =360
-                    ColumnWidth =870
-                    TabIndex =5
+                    ColumnWidth =700
+                    TabIndex =6
                     LeftMargin =44
                     TopMargin =22
                     RightMargin =44
@@ -411,11 +411,11 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2370
-                    LayoutCachedTop =3450
+                    LayoutCachedTop =3945
                     LayoutCachedWidth =5220
-                    LayoutCachedHeight =3810
-                    RowStart =5
-                    RowEnd =5
+                    LayoutCachedHeight =4305
+                    RowStart =6
+                    RowEnd =6
                     ColumnStart =1
                     ColumnEnd =1
                     LayoutGroup =1
@@ -425,7 +425,7 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             Left =360
-                            Top =3450
+                            Top =3945
                             Width =1948
                             Height =360
                             LeftMargin =44
@@ -440,11 +440,11 @@ Begin Form
                             BottomPadding =150
                             GridlineColor =10921638
                             LayoutCachedLeft =360
-                            LayoutCachedTop =3450
+                            LayoutCachedTop =3945
                             LayoutCachedWidth =2308
-                            LayoutCachedHeight =3810
-                            RowStart =5
-                            RowEnd =5
+                            LayoutCachedHeight =4305
+                            RowStart =6
+                            RowEnd =6
                             LayoutGroup =1
                             GroupTable =1
                         End
@@ -457,10 +457,10 @@ Begin Form
                     TextAlign =1
                     IMESentenceMode =3
                     Left =2370
-                    Top =3990
+                    Top =4485
                     Width =2850
                     Height =360
-                    TabIndex =6
+                    TabIndex =7
                     LeftMargin =44
                     TopMargin =22
                     RightMargin =44
@@ -474,11 +474,11 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2370
-                    LayoutCachedTop =3990
+                    LayoutCachedTop =4485
                     LayoutCachedWidth =5220
-                    LayoutCachedHeight =4350
-                    RowStart =6
-                    RowEnd =6
+                    LayoutCachedHeight =4845
+                    RowStart =7
+                    RowEnd =7
                     ColumnStart =1
                     ColumnEnd =1
                     LayoutGroup =1
@@ -489,7 +489,7 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             Left =360
-                            Top =3990
+                            Top =4485
                             Width =1948
                             Height =360
                             LeftMargin =44
@@ -504,11 +504,11 @@ Begin Form
                             BottomPadding =150
                             GridlineColor =10921638
                             LayoutCachedLeft =360
-                            LayoutCachedTop =3990
+                            LayoutCachedTop =4485
                             LayoutCachedWidth =2308
-                            LayoutCachedHeight =4350
-                            RowStart =6
-                            RowEnd =6
+                            LayoutCachedHeight =4845
+                            RowStart =7
+                            RowEnd =7
                             LayoutGroup =1
                             GroupTable =1
                         End
@@ -576,11 +576,11 @@ Begin Form
                     TextAlign =1
                     IMESentenceMode =3
                     Left =2370
-                    Top =4530
+                    Top =5025
                     Width =2850
                     Height =315
-                    ColumnWidth =1440
-                    TabIndex =7
+                    ColumnWidth =1050
+                    TabIndex =8
                     LeftMargin =44
                     TopMargin =22
                     RightMargin =44
@@ -594,11 +594,11 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2370
-                    LayoutCachedTop =4530
+                    LayoutCachedTop =5025
                     LayoutCachedWidth =5220
-                    LayoutCachedHeight =4845
-                    RowStart =7
-                    RowEnd =7
+                    LayoutCachedHeight =5340
+                    RowStart =8
+                    RowEnd =8
                     ColumnStart =1
                     ColumnEnd =1
                     LayoutGroup =1
@@ -608,7 +608,7 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             Left =360
-                            Top =4530
+                            Top =5025
                             Width =1948
                             Height =315
                             LeftMargin =44
@@ -618,16 +618,16 @@ Begin Form
                             BorderColor =8355711
                             ForeColor =8355711
                             Name ="Label53"
-                            Caption ="ReviewUserID"
+                            Caption ="UserID"
                             GroupTable =1
                             BottomPadding =150
                             GridlineColor =10921638
                             LayoutCachedLeft =360
-                            LayoutCachedTop =4530
+                            LayoutCachedTop =5025
                             LayoutCachedWidth =2308
-                            LayoutCachedHeight =4845
-                            RowStart =7
-                            RowEnd =7
+                            LayoutCachedHeight =5340
+                            RowStart =8
+                            RowEnd =8
                             LayoutGroup =1
                             GroupTable =1
                         End
@@ -637,25 +637,25 @@ Begin Form
                     ColumnHidden = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =8160
-                    Top =4380
+                    Left =7920
+                    Top =1800
                     Height =315
-                    TabIndex =8
+                    TabIndex =9
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="ApplicantID"
                     ControlSource ="ApplicantID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =8160
-                    LayoutCachedTop =4380
-                    LayoutCachedWidth =9600
-                    LayoutCachedHeight =4695
+                    LayoutCachedLeft =7920
+                    LayoutCachedTop =1800
+                    LayoutCachedWidth =9360
+                    LayoutCachedHeight =2115
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =6360
-                            Top =4380
+                            Left =6120
+                            Top =1800
                             Width =1155
                             Height =315
                             BorderColor =8355711
@@ -663,10 +663,110 @@ Begin Form
                             Name ="Label60"
                             Caption ="ApplicantID"
                             GridlineColor =10921638
-                            LayoutCachedLeft =6360
-                            LayoutCachedTop =4380
-                            LayoutCachedWidth =7515
-                            LayoutCachedHeight =4695
+                            LayoutCachedLeft =6120
+                            LayoutCachedTop =1800
+                            LayoutCachedWidth =7275
+                            LayoutCachedHeight =2115
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =7980
+                    Top =2280
+                    Height =315
+                    ColumnWidth =-2
+                    TabIndex =10
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="ReviewEntryDate"
+                    ControlSource ="ReviewEntryDate"
+                    Format ="Short Date"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =7980
+                    LayoutCachedTop =2280
+                    LayoutCachedWidth =9420
+                    LayoutCachedHeight =2595
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =6180
+                            Top =2280
+                            Width =1680
+                            Height =315
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label61"
+                            Caption ="Task Date"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =6180
+                            LayoutCachedTop =2280
+                            LayoutCachedWidth =7860
+                            LayoutCachedHeight =2595
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    TextAlign =1
+                    IMESentenceMode =3
+                    Left =2370
+                    Top =2685
+                    Width =2850
+                    Height =315
+                    TabIndex =4
+                    LeftMargin =44
+                    TopMargin =22
+                    RightMargin =44
+                    BottomMargin =22
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="Lane Assigned"
+                    ControlSource ="Lane Assigned"
+                    EventProcPrefix ="Lane_Assigned"
+                    GroupTable =1
+                    BottomPadding =150
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =2370
+                    LayoutCachedTop =2685
+                    LayoutCachedWidth =5220
+                    LayoutCachedHeight =3000
+                    RowStart =4
+                    RowEnd =4
+                    ColumnStart =1
+                    ColumnEnd =1
+                    LayoutGroup =1
+                    GroupTable =1
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =1
+                            Left =360
+                            Top =2685
+                            Width =1948
+                            Height =315
+                            LeftMargin =44
+                            TopMargin =22
+                            RightMargin =44
+                            BottomMargin =22
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label62"
+                            Caption ="Lane Assigned"
+                            GroupTable =1
+                            BottomPadding =150
+                            GridlineColor =10921638
+                            LayoutCachedLeft =360
+                            LayoutCachedTop =2685
+                            LayoutCachedWidth =2308
+                            LayoutCachedHeight =3000
+                            RowStart =4
+                            RowEnd =4
+                            LayoutGroup =1
+                            GroupTable =1
                         End
                     End
                 End

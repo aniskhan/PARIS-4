@@ -1,5 +1,6 @@
 ﻿Operation =1
 Option =0
+Having ="(((tblSubRecipient.Status)=\"Eligible\"))"
 Begin InputTables
     Name ="tblProjectionUpdates"
     Name ="tblSubRecipient"
@@ -25,6 +26,8 @@ Begin Groups
     Expression ="tblProjectionUpdates.ApplicantID"
     GroupLevel =0
     Expression ="tblSubRecipient.[Subrecipient Name]"
+    GroupLevel =0
+    Expression ="tblSubRecipient.Status"
     GroupLevel =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -64,12 +67,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =1153
-    Bottom =860
+    Right =1041
+    Bottom =821
     Left =-1
     Top =-1
-    Right =1137
-    Bottom =147
+    Right =1025
+    Bottom =323
     Left =0
     Top =0
     ColumnsShown =543
@@ -85,8 +88,8 @@ Begin
     Begin
         Left =429
         Top =50
-        Right =672
-        Bottom =250
+        Right =702
+        Bottom =303
         Top =0
         Name ="tblSubRecipient"
         Name =""

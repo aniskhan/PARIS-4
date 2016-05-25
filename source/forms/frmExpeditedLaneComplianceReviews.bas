@@ -15,14 +15,14 @@ Begin Form
     Width =16560
     DatasheetFontHeight =11
     ItemSuffix =47
-    Right =14385
-    Bottom =12645
+    Right =14775
+    Bottom =12060
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0x52c499b0b4b9e440
     End
     RecordSource ="fqryProjectInfo"
-    Caption ="EX- Compliance Reviews"
+    Caption ="Compliance Reviews"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
@@ -149,7 +149,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =10380
+            Height =13920
             Name ="Detail"
             AlternateBackColor =15921906
             AlternateBackThemeColorIndex =1
@@ -162,7 +162,7 @@ Begin Form
                     Left =13500
                     Top =60
                     Width =3000
-                    Height =10200
+                    Height =13680
                     BackColor =15064278
                     BorderColor =10921638
                     Name ="Box46"
@@ -170,7 +170,7 @@ Begin Form
                     LayoutCachedLeft =13500
                     LayoutCachedTop =60
                     LayoutCachedWidth =16500
-                    LayoutCachedHeight =10260
+                    LayoutCachedHeight =13740
                     BackThemeColorIndex =2
                     BackTint =20.0
                 End
@@ -413,6 +413,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =4290
@@ -454,6 +455,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =4290
@@ -495,6 +497,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =4290
@@ -536,6 +539,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =4290
@@ -577,6 +581,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =4290
@@ -618,6 +623,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =4290
@@ -659,6 +665,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =4290
@@ -700,6 +707,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =4290
@@ -741,6 +749,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =4290
@@ -782,6 +791,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =4290
@@ -823,6 +833,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =4290
@@ -864,6 +875,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =11070
@@ -909,6 +921,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =11070
@@ -1078,6 +1091,25 @@ Begin Form
                     BackThemeColorIndex =-1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
+                End
+                Begin Subform
+                    OverlapFlags =85
+                    Left =60
+                    Top =10440
+                    Width =13320
+                    Height =3300
+                    TabIndex =21
+                    BorderColor =10921638
+                    Name ="subHistory"
+                    SourceObject ="Form.subfrmProjectReviewHistory"
+                    LinkChildFields ="DisasterID;ApplicantID;ProjectID"
+                    LinkMasterFields ="DisasterID;ApplicantID;ProjectID"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =10440
+                    LayoutCachedWidth =13380
+                    LayoutCachedHeight =13740
                 End
             End
         End

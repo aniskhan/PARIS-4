@@ -1,12 +1,15 @@
 ﻿Operation =1
 Option =0
 Begin InputTables
-    Name ="fqryRfiBanner"
     Name ="tblDisaster"
     Name ="tblRFI"
+    Name ="fqryRfiBanner"
 End
 Begin OutputColumns
-    Expression ="fqryRfiBanner.*"
+    Expression ="tblRFI.RfiID"
+    Expression ="tblRFI.DisasterID"
+    Expression ="tblRFI.ProjectID"
+    Expression ="tblRFI.ApplicantID"
     Expression ="tblRFI.[Date Sent to Recipient]"
     Expression ="tblRFI.[Response Time Requested]"
     Expression ="tblRFI.[RFI Reason]"
@@ -19,15 +22,18 @@ Begin OutputColumns
     Expression ="tblDisaster.[RFI Response Email Address]"
     Expression ="tblRFI.RfiSatisfied"
     Expression ="tblRFI.RfiCanceled"
+    Expression ="fqryRfiBanner.PhaseName"
+    Expression ="fqryRfiBanner.StepName"
+    Expression ="fqryRfiBanner.[Subrecipient Name]"
 End
 Begin Joins
-    LeftTable ="fqryRfiBanner"
-    RightTable ="tblRFI"
-    Expression ="fqryRfiBanner.RfiID = tblRFI.RfiID"
-    Flag =1
     LeftTable ="tblDisaster"
     RightTable ="tblRFI"
     Expression ="tblDisaster.DisasterID = tblRFI.DisasterID"
+    Flag =1
+    LeftTable ="tblRFI"
+    RightTable ="fqryRfiBanner"
+    Expression ="tblRFI.RfiID = fqryRfiBanner.RfiID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -45,63 +51,11 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="fqryRfiBanner.tblRFI.RfiID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="fqryRfiBanner.tblRFI.DisasterID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="fqryRfiBanner.tblRFI.SiteID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="fqryRfiBanner.CreatedByName"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="fqryRfiBanner.tblSubRecipient.[Subrecipient Name]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="fqryRfiBanner.tblRFI.ItemType"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="fqryRfiBanner.tblRFI.[Lane Assigned]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="fqryRfiBanner.tblRFI.ReviewFromStep"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="fqryRfiBanner.tblRFI.ReviewFrom"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="tblRFI.[Date Sent to Recipient]"
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="fqryRfiBanner.tblRFI.ProjectID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="fqryRfiBanner.StepName"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="tblRFI.[Response Time Requested]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="fqryRfiBanner.tblRFI.ApplicantID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="fqryRfiBanner.PhaseName"
         dbLong "AggregateType" ="-1"
     End
     Begin
@@ -136,29 +90,48 @@ Begin
         dbText "Name" ="tblRFI.[Transmittal Method]"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="tblRFI.ProjectID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblRFI.RfiID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblRFI.DisasterID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblRFI.ApplicantID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="fqryRfiBanner.PhaseName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="fqryRfiBanner.StepName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="fqryRfiBanner.[Subrecipient Name]"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1065
-    Bottom =860
+    Right =1028
+    Bottom =821
     Left =-1
     Top =-1
-    Right =1049
-    Bottom =521
+    Right =1012
+    Bottom =453
     Left =0
     Top =0
     ColumnsShown =539
-    Begin
-        Left =316
-        Top =18
-        Right =527
-        Bottom =363
-        Top =0
-        Name ="fqryRfiBanner"
-        Name =""
-    End
     Begin
         Left =611
         Top =95
@@ -175,6 +148,15 @@ Begin
         Bottom =453
         Top =0
         Name ="tblRFI"
+        Name =""
+    End
+    Begin
+        Left =313
+        Top =81
+        Right =457
+        Bottom =225
+        Top =0
+        Name ="fqryRfiBanner"
         Name =""
     End
 End

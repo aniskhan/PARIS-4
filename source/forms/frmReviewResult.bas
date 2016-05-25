@@ -18,11 +18,11 @@ Begin Form
     GridY =24
     Width =6480
     DatasheetFontHeight =11
-    ItemSuffix =11
-    Left =30225
+    ItemSuffix =15
+    Left =4890
     Top =2505
-    Right =-21781
-    Bottom =15150
+    Right =18630
+    Bottom =14565
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0xfa536e9313a4e440
@@ -204,7 +204,7 @@ Begin Form
                     Begin
                         Begin Label
                             Visible = NotDefault
-                            OverlapFlags =85
+                            OverlapFlags =93
                             Top =3960
                             Width =1395
                             Height =315
@@ -236,7 +236,7 @@ Begin Form
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblReviewTypes.ReviewType, tblReviewTypes.Position FROM tblReviewTypes OR"
                         "DER BY tblReviewTypes.ReviewType; "
-                    ColumnWidths ="1440;1440"
+                    ColumnWidths ="2160;720"
                     AfterUpdate ="[Event Procedure]"
                     GridlineColor =10921638
 
@@ -249,7 +249,7 @@ Begin Form
                     Begin
                         Begin Label
                             Visible = NotDefault
-                            OverlapFlags =85
+                            OverlapFlags =93
                             Top =4395
                             Width =1395
                             Height =315
@@ -324,7 +324,7 @@ Begin Form
                     ForeTint =100.0
                     Begin
                         Begin Label
-                            OverlapFlags =85
+                            OverlapFlags =93
                             Top =2280
                             Width =1395
                             Height =315
@@ -338,6 +338,92 @@ Begin Form
                             LayoutCachedHeight =2595
                         End
                     End
+                End
+                Begin CommandButton
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    Left =5280
+                    Top =3960
+                    Width =1020
+                    Height =300
+                    TabIndex =5
+                    ForeColor =4210752
+                    Name ="cmdShowAll"
+                    Caption ="All Names"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =5280
+                    LayoutCachedTop =3960
+                    LayoutCachedWidth =6300
+                    LayoutCachedHeight =4260
+                    BackColor =15123357
+                    BorderColor =15123357
+                    HoverColor =15652797
+                    PressedColor =11957550
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                End
+                Begin Label
+                    Visible = NotDefault
+                    OverlapFlags =215
+                    Left =1080
+                    Top =2280
+                    Width =300
+                    Height =180
+                    BorderColor =8355711
+                    ForeColor =255
+                    Name ="lbCommentsReq"
+                    Caption ="*"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =1080
+                    LayoutCachedTop =2280
+                    LayoutCachedWidth =1380
+                    LayoutCachedHeight =2460
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Label
+                    Visible = NotDefault
+                    OverlapFlags =215
+                    Left =1080
+                    Top =3960
+                    Width =300
+                    Height =180
+                    BorderColor =8355711
+                    ForeColor =255
+                    Name ="lbAssignToReq"
+                    Caption ="*"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =1080
+                    LayoutCachedTop =3960
+                    LayoutCachedWidth =1380
+                    LayoutCachedHeight =4140
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Label
+                    Visible = NotDefault
+                    OverlapFlags =215
+                    Left =1080
+                    Top =4440
+                    Width =300
+                    Height =180
+                    BorderColor =8355711
+                    ForeColor =255
+                    Name ="lbReworkToReq"
+                    Caption ="*"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =1080
+                    LayoutCachedTop =4440
+                    LayoutCachedWidth =1380
+                    LayoutCachedHeight =4620
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
             End
         End
@@ -357,17 +443,26 @@ Private ItemDims As New classItemDims
 Private Sub cboResult_AfterUpdate()
     If Me.cboResult = "RSN" Then
         Me.cboAssign.Visible = True
+        Me.cmdShowAll.Visible = True
         Me.lbAssignTo.Visible = True
+        Me.lbAssignToReq.Visible = True
     Else
         Me.cboAssign.Visible = False
+        Me.cmdShowAll.Visible = False
         Me.lbAssignTo.Visible = False
+        Me.lbAssignToReq.Visible = False
+        Me.lbCommentsReq.Visible = False
     End If
     If Me.cboResult = "RW" Then
         Me.cboRework.Visible = True
         Me.lbRework.Visible = True
+        Me.lbReworkToReq.Visible = True
+        Me.lbCommentsReq.Visible = True
     Else
         Me.cboRework.Visible = False
         Me.lbRework.Visible = False
+        Me.lbReworkToReq.Visible = False
+        Me.lbCommentsReq.Visible = False
     End If
 End Sub
 
@@ -375,14 +470,43 @@ Private Sub cboRework_AfterUpdate()
     Me.cboAssign = Me.cboRework.Column(1)
 End Sub
 
+Private Sub cmdShowAll_Click()
+    Dim AssignToRows As String
+    AssignToRows = "SELECT DISTINCT tblStaffRoles.StaffID, qryNames.[Reverse Full Name] FROM tblStaffRoles INNER JOIN qryNames ON tblStaffRoles.StaffID = qryNames.UserID"
+    AssignToRows = AssignToRows & " WHERE tblStaffRoles.[DisasterID] = '" & ItemDims.DisasterID & "' and tblStaffRoles.StartDate <= Date() And (tblStaffRoles.EndDate Is Null Or tblStaffRoles.EndDate >= Date())"
+    AssignToRows = AssignToRows & " ORDER BY qryNames.[Reverse Full Name];"
+    
+    Me.cboAssign.RowSource = AssignToRows
+
+End Sub
+
 Private Sub cmdSign_Click()
+    Select Case Me.cboResult
+        Case "RW"
+            If Nz(Me.cboRework, "") = "" Then
+                MsgBox "You must select a task to rework it to."
+                Exit Sub
+            End If
+            If Nz(Me.tbComments, "") = "" Then
+                MsgBox "Please add a comment regarding why you are reworking to another task."
+                Exit Sub
+            End If
+        Case "RSN"
+            If Nz(Me.cboAssign, "") = "" Then
+                MsgBox "You must select a person to reassign this task to."
+                Exit Sub
+            End If
+    End Select
     Me.Visible = False
+
 End Sub
 
 Private Sub Form_Load()
     Dim ReworkRows As String
     Dim AssignToRows As String
     Dim AssignToPosition As String
+    
+        Call cboResult_AfterUpdate ' To ensure proper rendering if RW / RSN are the initial selection
     
         ReworkRows = "SELECT ReviewType, CompletedUserID FROM " & ItemDims.ReviewTable
         ReworkRows = ReworkRows & " WHERE " & ItemDims.WhereID(False) & " and ReviewExitDate is not null"

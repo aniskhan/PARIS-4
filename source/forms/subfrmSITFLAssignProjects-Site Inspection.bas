@@ -140,329 +140,11 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =1020
+            Height =0
             BackColor =15788753
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
-            Begin
-                Begin TextBox
-                    Locked = NotDefault
-                    TabStop = NotDefault
-                    EnterKeyBehavior = NotDefault
-                    OldBorderStyle =0
-                    OverlapFlags =85
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =5040
-                    Top =540
-                    Width =8040
-                    Height =360
-                    ColumnOrder =0
-                    FontSize =16
-                    FontWeight =700
-                    BackColor =15590879
-                    BorderColor =10921638
-                    Name ="Application Title"
-                    ControlSource ="Application Title"
-                    StatusBarText ="Project"
-                    EventProcPrefix ="Application_Title"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =5040
-                    LayoutCachedTop =540
-                    LayoutCachedWidth =13080
-                    LayoutCachedHeight =900
-                    BackThemeColorIndex =-1
-                    ForeTint =100.0
-                    Begin
-                        Begin Label
-                            OverlapFlags =85
-                            Left =3000
-                            Top =540
-                            Width =1995
-                            Height =360
-                            FontSize =13
-                            FontWeight =700
-                            BorderColor =8355711
-                            ForeColor =12874308
-                            Name ="Application Title_Label"
-                            Caption ="Application Title:"
-                            EventProcPrefix ="Application_Title_Label"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =3000
-                            LayoutCachedTop =540
-                            LayoutCachedWidth =4995
-                            LayoutCachedHeight =900
-                            ForeThemeColorIndex =8
-                            ForeTint =100.0
-                        End
-                    End
-                End
-                Begin TextBox
-                    Locked = NotDefault
-                    TabStop = NotDefault
-                    EnterKeyBehavior = NotDefault
-                    OldBorderStyle =0
-                    OverlapFlags =85
-                    TextAlign =1
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =7320
-                    Top =60
-                    Width =840
-                    Height =360
-                    ColumnOrder =1
-                    FontSize =16
-                    FontWeight =700
-                    TabIndex =1
-                    BackColor =15590879
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="Lane"
-                    ControlSource ="Lane Assigned"
-                    StatusBarText ="LOP"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =7320
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =8160
-                    LayoutCachedHeight =420
-                    BackThemeColorIndex =-1
-                    Begin
-                        Begin Label
-                            OverlapFlags =85
-                            Left =5520
-                            Top =60
-                            Width =1755
-                            Height =360
-                            FontSize =13
-                            FontWeight =700
-                            BorderColor =8355711
-                            ForeColor =12874308
-                            Name ="Lane_Label"
-                            Caption ="Lane Assigned:"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =5520
-                            LayoutCachedTop =60
-                            LayoutCachedWidth =7275
-                            LayoutCachedHeight =420
-                            ForeThemeColorIndex =8
-                            ForeTint =100.0
-                        End
-                    End
-                End
-                Begin TextBox
-                    Locked = NotDefault
-                    TabStop = NotDefault
-                    EnterKeyBehavior = NotDefault
-                    OldBorderStyle =0
-                    OverlapFlags =85
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =2100
-                    Top =540
-                    Width =690
-                    Height =360
-                    ColumnOrder =2
-                    FontSize =16
-                    FontWeight =700
-                    TabIndex =2
-                    BackColor =15590879
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="Project Category"
-                    ControlSource ="Project Category"
-                    StatusBarText ="Project"
-                    EventProcPrefix ="Project_Category"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =2100
-                    LayoutCachedTop =540
-                    LayoutCachedWidth =2790
-                    LayoutCachedHeight =900
-                    BackThemeColorIndex =-1
-                    Begin
-                        Begin Label
-                            OverlapFlags =85
-                            Left =60
-                            Top =540
-                            Width =1995
-                            Height =360
-                            FontSize =13
-                            FontWeight =700
-                            BorderColor =8355711
-                            ForeColor =12874308
-                            Name ="Project Category_Label"
-                            Caption ="Project Category:"
-                            EventProcPrefix ="Project_Category_Label"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =60
-                            LayoutCachedTop =540
-                            LayoutCachedWidth =2055
-                            LayoutCachedHeight =900
-                            ForeThemeColorIndex =8
-                            ForeTint =100.0
-                        End
-                    End
-                End
-                Begin TextBox
-                    Locked = NotDefault
-                    TabStop = NotDefault
-                    OldBorderStyle =0
-                    OverlapFlags =87
-                    TextAlign =1
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =10860
-                    Top =60
-                    Height =360
-                    ColumnOrder =3
-                    FontSize =16
-                    FontWeight =700
-                    TabIndex =3
-                    BackColor =15590879
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="Date Assigned to Lane"
-                    ControlSource ="Lane Assigned Date"
-                    Format ="Short Date"
-                    StatusBarText ="Project Routing Sheet"
-                    EventProcPrefix ="Date_Assigned_to_Lane"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =10860
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =12300
-                    LayoutCachedHeight =420
-                    BackThemeColorIndex =-1
-                    Begin
-                        Begin Label
-                            OverlapFlags =93
-                            Left =8220
-                            Top =60
-                            Width =2640
-                            Height =360
-                            FontSize =13
-                            FontWeight =700
-                            BackColor =15590879
-                            BorderColor =8355711
-                            ForeColor =12874308
-                            Name ="Date Assigned to Lane_Label"
-                            Caption ="Date Assigned to Lane:"
-                            EventProcPrefix ="Date_Assigned_to_Lane_Label"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =8220
-                            LayoutCachedTop =60
-                            LayoutCachedWidth =10860
-                            LayoutCachedHeight =420
-                            BackThemeColorIndex =-1
-                            ForeThemeColorIndex =8
-                            ForeTint =100.0
-                        End
-                    End
-                End
-                Begin TextBox
-                    Locked = NotDefault
-                    TabStop = NotDefault
-                    OldBorderStyle =0
-                    OverlapFlags =85
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =15840
-                    Top =60
-                    Width =1740
-                    Height =360
-                    ColumnOrder =4
-                    FontSize =16
-                    FontWeight =700
-                    TabIndex =4
-                    BackColor =15590879
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="Text10"
-                    ControlSource ="EMMIE Update Application  Number"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =15840
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =17580
-                    LayoutCachedHeight =420
-                    BackThemeColorIndex =-1
-                    Begin
-                        Begin Label
-                            OverlapFlags =85
-                            Left =12540
-                            Top =60
-                            Width =3240
-                            Height =360
-                            FontSize =13
-                            FontWeight =700
-                            BorderColor =8355711
-                            ForeColor =12874308
-                            Name ="Label11"
-                            Caption ="EMMIE Update Application #"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =12540
-                            LayoutCachedTop =60
-                            LayoutCachedWidth =15780
-                            LayoutCachedHeight =420
-                            ForeThemeColorIndex =8
-                            ForeTint =100.0
-                        End
-                    End
-                End
-                Begin TextBox
-                    Locked = NotDefault
-                    TabStop = NotDefault
-                    OldBorderStyle =0
-                    OverlapFlags =87
-                    TextAlign =1
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =3840
-                    Top =60
-                    Width =1590
-                    Height =360
-                    ColumnOrder =5
-                    FontSize =16
-                    FontWeight =700
-                    TabIndex =5
-                    BackColor =15921906
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="ProjectID"
-                    ControlSource ="Full Reference"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =3840
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =5430
-                    LayoutCachedHeight =420
-                    BackShade =95.0
-                    Begin
-                        Begin Label
-                            FontUnderline = NotDefault
-                            OverlapFlags =93
-                            Top =60
-                            Width =3840
-                            Height =360
-                            FontSize =16
-                            FontWeight =700
-                            BorderColor =8355711
-                            ForeColor =12874308
-                            Name ="ProjectID_Label"
-                            Caption ="Project Reference Number:"
-                            GridlineColor =10921638
-                            LayoutCachedTop =60
-                            LayoutCachedWidth =3840
-                            LayoutCachedHeight =420
-                            ForeThemeColorIndex =8
-                            ForeTint =100.0
-                        End
-                    End
-                End
-            End
         End
         Begin Section
             Height =8160
@@ -649,7 +331,7 @@ Begin Form
                     Locked = NotDefault
                     SpecialEffect =4
                     BorderWidth =3
-                    OverlapFlags =85
+                    OverlapFlags =93
                     TextAlign =1
                     IMESentenceMode =3
                     Left =11520
@@ -966,6 +648,56 @@ Begin Form
                             LayoutCachedTop =60
                             LayoutCachedWidth =17655
                             LayoutCachedHeight =375
+                        End
+                    End
+                End
+                Begin TextBox
+                    SpecialEffect =4
+                    BorderWidth =3
+                    OverlapFlags =85
+                    TextAlign =1
+                    IMESentenceMode =3
+                    Left =14160
+                    Top =60
+                    Width =1620
+                    Height =390
+                    FontSize =12
+                    FontWeight =700
+                    TabIndex =11
+                    BackColor =15788753
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="tbTime"
+                    ControlSource ="Scheduled Time of Site Inspection"
+                    GridlineColor =10921638
+                    ShowDatePicker =0
+
+                    LayoutCachedLeft =14160
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =15780
+                    LayoutCachedHeight =450
+                    BackThemeColorIndex =-1
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            TextAlign =3
+                            Left =13380
+                            Top =60
+                            Width =720
+                            Height =330
+                            FontSize =13
+                            FontWeight =700
+                            BorderColor =8355711
+                            ForeColor =12874308
+                            Name ="Label179"
+                            Caption ="Time:"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =13380
+                            LayoutCachedTop =60
+                            LayoutCachedWidth =14100
+                            LayoutCachedHeight =390
+                            ForeThemeColorIndex =8
+                            ForeTint =100.0
                         End
                     End
                 End

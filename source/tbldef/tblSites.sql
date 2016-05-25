@@ -91,5 +91,6 @@ CREATE TABLE [tblSites] (
   [DimensionsFrom] VARCHAR (255),
   [PartOfVerificationSample] VARCHAR (255),
   [KnownDimensionsInEMMIE] VARCHAR (255),
+  [UpdatedCost] CURRENCY DEFAULT 0,
    CONSTRAINT [PrimaryKey] PRIMARY KEY ([DisasterID], [ApplicantID], [ProjectID], [SiteID])
 )

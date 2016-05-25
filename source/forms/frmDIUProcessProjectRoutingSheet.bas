@@ -17,8 +17,8 @@ Begin Form
     Width =16680
     DatasheetFontHeight =11
     ItemSuffix =99
-    Right =19920
-    Bottom =12645
+    Right =14775
+    Bottom =12060
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0x70204b3154bce440
@@ -231,7 +231,7 @@ Begin Form
                     Left =13620
                     Top =3960
                     Width =3000
-                    Height =7080
+                    Height =9780
                     BackColor =13431551
                     BorderColor =10921638
                     Name ="Box90"
@@ -239,7 +239,7 @@ Begin Form
                     LayoutCachedLeft =13620
                     LayoutCachedTop =3960
                     LayoutCachedWidth =16620
-                    LayoutCachedHeight =11040
+                    LayoutCachedHeight =13740
                     BackThemeColorIndex =7
                     BackTint =20.0
                 End
@@ -261,7 +261,7 @@ Begin Form
                 Begin TextBox
                     Visible = NotDefault
                     TabStop = NotDefault
-                    OverlapFlags =93
+                    OverlapFlags =215
                     IMESentenceMode =3
                     Left =14880
                     Top =11460
@@ -283,7 +283,7 @@ Begin Form
                     Begin
                         Begin Label
                             Visible = NotDefault
-                            OverlapFlags =93
+                            OverlapFlags =215
                             Left =13800
                             Top =11460
                             Width =1020
@@ -309,7 +309,7 @@ Begin Form
                     TabStop = NotDefault
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
-                    OverlapFlags =93
+                    OverlapFlags =215
                     IMESentenceMode =3
                     Left =15000
                     Top =11820
@@ -331,7 +331,7 @@ Begin Form
                     Begin
                         Begin Label
                             Visible = NotDefault
-                            OverlapFlags =93
+                            OverlapFlags =215
                             Left =13740
                             Top =11820
                             Width =1200
@@ -405,7 +405,7 @@ Begin Form
                     TabStop = NotDefault
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
-                    OverlapFlags =93
+                    OverlapFlags =215
                     IMESentenceMode =3
                     Left =15630
                     Top =12600
@@ -427,7 +427,7 @@ Begin Form
                     Begin
                         Begin Label
                             Visible = NotDefault
-                            OverlapFlags =93
+                            OverlapFlags =215
                             Left =13680
                             Top =12600
                             Width =1860
@@ -453,7 +453,7 @@ Begin Form
                     TabStop = NotDefault
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
-                    OverlapFlags =93
+                    OverlapFlags =215
                     IMESentenceMode =3
                     Left =15510
                     Top =12180
@@ -475,7 +475,7 @@ Begin Form
                     Begin
                         Begin Label
                             Visible = NotDefault
-                            OverlapFlags =93
+                            OverlapFlags =223
                             Left =13560
                             Top =12180
                             Width =1860
@@ -617,7 +617,7 @@ Begin Form
                 Begin TextBox
                     Visible = NotDefault
                     TabStop = NotDefault
-                    OverlapFlags =95
+                    OverlapFlags =215
                     IMESentenceMode =3
                     Left =14820
                     Top =11100
@@ -637,7 +637,7 @@ Begin Form
                     Begin
                         Begin Label
                             Visible = NotDefault
-                            OverlapFlags =93
+                            OverlapFlags =223
                             Left =13680
                             Top =11100
                             Width =1140
@@ -955,9 +955,9 @@ Begin Form
                     End
                 End
                 Begin Subform
-                    OverlapFlags =247
+                    OverlapFlags =87
                     Top =11100
-                    Width =16620
+                    Width =13560
                     Height =2640
                     TabIndex =13
                     BorderColor =10921638
@@ -968,7 +968,7 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedTop =11100
-                    LayoutCachedWidth =16620
+                    LayoutCachedWidth =13560
                     LayoutCachedHeight =13740
                 End
                 Begin CommandButton

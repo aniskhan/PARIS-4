@@ -1,28 +1,32 @@
 ﻿Operation =1
 Option =0
 Begin InputTables
+    Name ="tblRFIRequestedInformation"
+    Name ="tblRFI"
     Name ="lutblProgressionMarkers"
-    Name ="lutblRFIItemType"
-    Name ="rqryRFIOpenItems"
+    Name ="tblRFIItemType"
 End
 Begin OutputColumns
-    Expression ="rqryRFIOpenItems.RfiID"
+    Expression ="tblRFI.RfiID"
     Alias ="MinOfProgressionOrder"
     Expression ="Min(lutblProgressionMarkers.ProgressionOrder)"
 End
 Begin Joins
-    LeftTable ="lutblProgressionMarkers"
-    RightTable ="lutblRFIItemType"
-    Expression ="lutblProgressionMarkers.furthestProgression = lutblRFIItemType.FurthestProgressi"
-        "on"
+    LeftTable ="tblRFIRequestedInformation"
+    RightTable ="tblRFI"
+    Expression ="tblRFIRequestedInformation.RfiID = tblRFI.RfiID"
     Flag =1
-    LeftTable ="rqryRFIOpenItems"
-    RightTable ="lutblRFIItemType"
-    Expression ="rqryRFIOpenItems.ItemType = lutblRFIItemType.Item"
+    LeftTable ="lutblProgressionMarkers"
+    RightTable ="tblRFIItemType"
+    Expression ="lutblProgressionMarkers.furthestProgression = tblRFIItemType.FurthestProgression"
+    Flag =1
+    LeftTable ="tblRFIRequestedInformation"
+    RightTable ="tblRFIItemType"
+    Expression ="tblRFIRequestedInformation.ItemType = tblRFIItemType.Item"
     Flag =1
 End
 Begin Groups
-    Expression ="rqryRFIOpenItems.RfiID"
+    Expression ="tblRFI.RfiID"
     GroupLevel =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -47,36 +51,38 @@ Begin
         dbText "Name" ="tblRFIRequestedInformation.isRequestSatisfied"
         dbLong "AggregateType" ="-1"
     End
-    Begin
-        dbText "Name" ="tblRFIRequestedInformation.RfiItemID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="lutblProgressionMarkers.ProgressionOrder"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="lutblProgressionMarkers.furthestProgression"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="rqryRFIOpenItems.RfiID"
-        dbLong "AggregateType" ="-1"
-    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1062
-    Bottom =539
+    Right =933
+    Bottom =821
     Left =-1
     Top =-1
-    Right =1046
-    Bottom =380
+    Right =917
+    Bottom =420
     Left =0
     Top =0
     ColumnsShown =543
+    Begin
+        Left =394
+        Top =52
+        Right =592
+        Bottom =343
+        Top =0
+        Name ="tblRFIRequestedInformation"
+        Name =""
+    End
+    Begin
+        Left =130
+        Top =7
+        Right =335
+        Bottom =282
+        Top =0
+        Name ="tblRFI"
+        Name =""
+    End
     Begin
         Left =792
         Top =211
@@ -87,21 +93,12 @@ Begin
         Name =""
     End
     Begin
-        Left =383
-        Top =93
-        Right =527
-        Bottom =237
+        Left =640
+        Top =12
+        Right =784
+        Bottom =156
         Top =0
-        Name ="lutblRFIItemType"
-        Name =""
-    End
-    Begin
-        Left =142
-        Top =92
-        Right =286
-        Bottom =236
-        Top =0
-        Name ="rqryRFIOpenItems"
+        Name ="tblRFIItemType"
         Name =""
     End
 End

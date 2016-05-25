@@ -1,11 +1,11 @@
 ﻿Operation =1
 Option =0
 Begin InputTables
-    Name ="lutblRFIItemType"
+    Name ="tblRFIItemType"
 End
 Begin OutputColumns
-    Expression ="lutblRFIItemType.Item"
-    Expression ="lutblRFIItemType.FurthestProgression"
+    Expression ="tblRFIItemType.Item"
+    Expression ="tblRFIItemType.FurthestProgression"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -18,38 +18,34 @@ dbBoolean "OrderByOnLoad" ="-1"
 dbBoolean "TotalsRow" ="0"
 Begin
     Begin
-        dbText "Name" ="lutblRFIItemType.Item"
+        dbText "Name" ="tblRFIItemType.Item"
         dbLong "AggregateType" ="-1"
-        dbInteger "ColumnWidth" ="5115"
-        dbBoolean "ColumnHidden" ="0"
     End
     Begin
-        dbText "Name" ="lutblRFIItemType.FurthestProgression"
+        dbText "Name" ="tblRFIItemType.FurthestProgression"
         dbLong "AggregateType" ="-1"
-        dbInteger "ColumnWidth" ="2295"
-        dbBoolean "ColumnHidden" ="0"
     End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1646
-    Bottom =860
+    Right =931
+    Bottom =821
     Left =-1
     Top =-1
-    Right =1203
-    Bottom =598
+    Right =915
+    Bottom =581
     Left =0
     Top =0
     ColumnsShown =539
     Begin
-        Left =48
+        Left =252
         Top =12
-        Right =192
+        Right =396
         Bottom =156
         Top =0
-        Name ="lutblRFIItemType"
+        Name ="tblRFIItemType"
         Name =""
     End
 End

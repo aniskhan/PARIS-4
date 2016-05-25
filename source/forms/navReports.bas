@@ -15,9 +15,9 @@ Begin Form
     GridY =24
     Width =15660
     DatasheetFontHeight =11
-    ItemSuffix =30
-    Right =13515
-    Bottom =12645
+    ItemSuffix =31
+    Right =20055
+    Bottom =12060
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0x15d862d273bce440
@@ -670,7 +670,7 @@ Begin Form
                     Top =2940
                     Width =3480
                     Height =540
-                    TabIndex =11
+                    TabIndex =12
                     ForeColor =4210752
                     Name ="Command25"
                     Caption ="RFI Report"
@@ -696,7 +696,7 @@ Begin Form
                     Top =1500
                     Width =3480
                     Height =540
-                    TabIndex =12
+                    TabIndex =11
                     ForeColor =4210752
                     Name ="Command27"
                     Caption ="Phase I: EC / RSM / RFI Overview"

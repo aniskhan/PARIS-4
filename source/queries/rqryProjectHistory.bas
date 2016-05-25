@@ -71,26 +71,6 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="Full Name"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="ProjectID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="ReviewExitDate"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="ReviewType"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Disposition"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="revtblProject.ApplicantID"
         dbLong "AggregateType" ="-1"
     End
@@ -103,27 +83,11 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="DisasterID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="ReviewEntryDate"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="revtblProject.ReviewType"
         dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="revtblProject.ReviewEntryDate"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="ApplicantID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="ReviewCheckOutDate"
         dbLong "AggregateType" ="-1"
     End
     Begin

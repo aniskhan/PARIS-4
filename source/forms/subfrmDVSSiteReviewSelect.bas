@@ -17,7 +17,7 @@ Begin Form
     ItemSuffix =68
     Left =645
     Top =6660
-    Right =14640
+    Right =14895
     Bottom =8460
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -656,6 +656,7 @@ Begin Form
                     Left =6480
                     Top =2760
                     Height =315
+                    ColumnWidth =2280
                     TabIndex =11
                     BorderColor =10921638
                     ForeColor =4210752

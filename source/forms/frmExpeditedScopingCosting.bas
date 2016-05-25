@@ -17,8 +17,8 @@ Begin Form
     Width =16560
     DatasheetFontHeight =11
     ItemSuffix =35
-    Right =13530
-    Bottom =12645
+    Right =15465
+    Bottom =8415
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0x873e80fc3baee440
@@ -208,18 +208,18 @@ Begin Form
                     SpecialEffect =1
                     BackStyle =1
                     OverlapFlags =223
-                    Left =9300
-                    Top =6540
+                    Left =8220
+                    Top =6360
                     Width =3780
                     Height =2220
                     BackColor =15921906
                     BorderColor =10921638
                     Name ="Box34"
                     GridlineColor =10921638
-                    LayoutCachedLeft =9300
-                    LayoutCachedTop =6540
-                    LayoutCachedWidth =13080
-                    LayoutCachedHeight =8760
+                    LayoutCachedLeft =8220
+                    LayoutCachedTop =6360
+                    LayoutCachedWidth =12000
+                    LayoutCachedHeight =8580
                     BackShade =95.0
                 End
                 Begin Rectangle
@@ -396,195 +396,43 @@ Begin Form
                         End
                     End
                 End
-                Begin TextBox
-                    OverlapFlags =215
-                    IMESentenceMode =3
-                    Left =10080
-                    Top =5820
-                    Width =2520
-                    Height =480
-                    FontSize =14
-                    FontWeight =700
-                    TabIndex =12
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="tbPwNumber"
-                    ControlSource ="PW Number"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =10080
-                    LayoutCachedTop =5820
-                    LayoutCachedWidth =12600
-                    LayoutCachedHeight =6300
-                    Begin
-                        Begin Label
-                            OverlapFlags =223
-                            Left =10080
-                            Top =5340
-                            Width =2520
-                            Height =480
-                            FontSize =14
-                            FontWeight =700
-                            BorderColor =8355711
-                            Name ="Label19"
-                            Caption ="Project Worksheet #"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =10080
-                            LayoutCachedTop =5340
-                            LayoutCachedWidth =12600
-                            LayoutCachedHeight =5820
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                        End
-                    End
-                End
                 Begin Label
                     FontUnderline = NotDefault
                     OverlapFlags =215
                     Left =180
                     Top =4860
-                    Width =4260
-                    Height =420
-                    FontSize =14
-                    FontWeight =700
-                    BorderColor =8355711
-                    ForeColor =12874308
-                    Name ="Label23"
-                    Caption ="Assign Doc Assembly Specialist"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =180
-                    LayoutCachedTop =4860
-                    LayoutCachedWidth =4440
-                    LayoutCachedHeight =5280
-                    ForeThemeColorIndex =8
-                    ForeTint =100.0
-                End
-                Begin CommandButton
-                    OverlapFlags =215
-                    Left =180
-                    Top =6480
-                    Width =1800
-                    Height =660
-                    TabIndex =9
-                    ForeColor =4210752
-                    Name ="cmdAssignDasComplete"
-                    Caption ="Assign DAS Complete"
-                    OnClick ="[Event Procedure]"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =180
-                    LayoutCachedTop =6480
-                    LayoutCachedWidth =1980
-                    LayoutCachedHeight =7140
-                    UseTheme =0
-                    BackColor =15123357
-                    BorderColor =15123357
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeThemeColorIndex =-1
-                    HoverForeTint =100.0
-                    PressedForeThemeColorIndex =-1
-                    PressedForeTint =100.0
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
-                    Overlaps =1
-                End
-                Begin ComboBox
-                    LimitToList = NotDefault
-                    OverlapFlags =215
-                    IMESentenceMode =3
-                    ColumnCount =2
-                    Left =180
-                    Top =5820
-                    Width =4140
-                    Height =480
-                    FontSize =12
-                    TabIndex =8
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"0\""
-                    Name ="cboAssignDas"
-                    ControlSource ="Assigned Project Assembly Specialist"
-                    RowSourceType ="Table/Query"
-                    RowSource ="SELECT qryNames.UserID, qryNames.[Reverse Full Name] FROM qryNames INNER JOIN tb"
-                        "lStaffRoles ON qryNames.UserID = tblStaffRoles.StaffID WHERE (((tblStaffRoles.Di"
-                        "sasterID)=Forms!frmExpeditedScopingCosting![Disaster Number]) And ((tblStaffRole"
-                        "s.EndDate) Is Null Or (tblStaffRoles.EndDate)>=Date()) And ((tblStaffRoles.Posit"
-                        "ion)=\"DAS\")); "
-                    ColumnWidths ="0;2880"
-                    OnChange ="[Event Procedure]"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =180
-                    LayoutCachedTop =5820
-                    LayoutCachedWidth =4320
-                    LayoutCachedHeight =6300
-                    ForeThemeColorIndex =0
-                    ForeTint =75.0
-                    ForeShade =100.0
-                    Begin
-                        Begin Label
-                            OverlapFlags =215
-                            Left =180
-                            Top =5460
-                            Width =4275
-                            Height =315
-                            FontSize =12
-                            FontWeight =600
-                            BorderColor =8355711
-                            Name ="Label44"
-                            Caption ="Assign Document Assembly Specialist"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =180
-                            LayoutCachedTop =5460
-                            LayoutCachedWidth =4455
-                            LayoutCachedHeight =5775
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                        End
-                    End
-                End
-                Begin Label
-                    FontUnderline = NotDefault
-                    OverlapFlags =215
-                    Left =4680
-                    Top =4860
-                    Width =4200
+                    Width =5220
                     Height =420
                     FontSize =14
                     FontWeight =700
                     BorderColor =8355711
                     ForeColor =12349952
                     Name ="Label59"
-                    Caption ="Completeness Review"
+                    Caption ="Costing Review"
                     GridlineColor =10921638
-                    LayoutCachedLeft =4680
+                    LayoutCachedLeft =180
                     LayoutCachedTop =4860
-                    LayoutCachedWidth =8880
+                    LayoutCachedWidth =5400
                     LayoutCachedHeight =5280
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
                 Begin CommandButton
                     OverlapFlags =215
-                    Left =4740
+                    Left =240
                     Top =5460
                     Width =1800
                     Height =540
                     TabIndex =5
                     ForeColor =4210752
-                    Name ="cmdEnterCostStart"
-                    Caption ="Assembly Started"
+                    Name ="cmdCostingStart"
+                    Caption ="Costing Started"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =4740
+                    LayoutCachedLeft =240
                     LayoutCachedTop =5460
-                    LayoutCachedWidth =6540
+                    LayoutCachedWidth =2040
                     LayoutCachedHeight =6000
                     UseTheme =0
                     BackColor =15123357
@@ -605,20 +453,20 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =215
-                    Left =4800
+                    Left =300
                     Top =8160
                     Width =1800
                     Height =660
-                    TabIndex =11
+                    TabIndex =9
                     ForeColor =4210752
-                    Name ="cmdEnterCostComplete"
-                    Caption ="Assembly Complete"
+                    Name ="cmdCostingComplete"
+                    Caption ="Costing Complete"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =4800
+                    LayoutCachedLeft =300
                     LayoutCachedTop =8160
-                    LayoutCachedWidth =6600
+                    LayoutCachedWidth =2100
                     LayoutCachedHeight =8820
                     UseTheme =0
                     BackColor =15123357
@@ -642,36 +490,36 @@ Begin Form
                     ScrollBars =2
                     OverlapFlags =215
                     IMESentenceMode =3
-                    Left =4800
+                    Left =300
                     Top =6420
-                    Width =3960
+                    Width =5100
                     Height =1563
-                    TabIndex =10
+                    TabIndex =8
                     BorderColor =10921638
                     ForeColor =4210752
-                    Name ="tbDasComments"
+                    Name ="tbCostingComments"
                     ControlSource ="PAS Comments"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =4800
+                    LayoutCachedLeft =300
                     LayoutCachedTop =6420
-                    LayoutCachedWidth =8760
+                    LayoutCachedWidth =5400
                     LayoutCachedHeight =7983
                     Begin
                         Begin Label
                             OverlapFlags =223
-                            Left =4800
+                            Left =300
                             Top =6120
-                            Width =3960
+                            Width =5100
                             Height =315
                             BorderColor =8355711
                             ForeColor =8355711
                             Name ="Label68"
-                            Caption ="Document Assembly Specialist Comments"
+                            Caption ="Costing Specialist Comments"
                             GridlineColor =10921638
-                            LayoutCachedLeft =4800
+                            LayoutCachedLeft =300
                             LayoutCachedTop =6120
-                            LayoutCachedWidth =8760
+                            LayoutCachedWidth =5400
                             LayoutCachedHeight =6435
                         End
                     End
@@ -680,41 +528,41 @@ Begin Form
                     FontUnderline = NotDefault
                     OverlapFlags =215
                     TextAlign =2
-                    Left =9240
+                    Left =8220
                     Top =4860
-                    Width =4200
+                    Width =3780
                     Height =420
                     FontSize =14
                     FontWeight =700
                     BorderColor =8355711
                     ForeColor =12349952
                     Name ="Label24"
-                    Caption ="Submit Application in EMMIE"
+                    Caption ="Expedited Lane Lead Review"
                     GridlineColor =10921638
-                    LayoutCachedLeft =9240
+                    LayoutCachedLeft =8220
                     LayoutCachedTop =4860
-                    LayoutCachedWidth =13440
+                    LayoutCachedWidth =12000
                     LayoutCachedHeight =5280
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
                 Begin CommandButton
                     OverlapFlags =215
-                    Left =10380
-                    Top =6720
+                    Left =9300
+                    Top =6540
                     Width =1800
                     Height =660
                     TabIndex =6
                     ForeColor =4210752
-                    Name ="cmdEmmieSubmittal"
-                    Caption ="EMMIE Submittal Complete"
+                    Name ="cmdLaneLeadReview"
+                    Caption ="Lane Lead Review Complete"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =10380
-                    LayoutCachedTop =6720
-                    LayoutCachedWidth =12180
-                    LayoutCachedHeight =7380
+                    LayoutCachedLeft =9300
+                    LayoutCachedTop =6540
+                    LayoutCachedWidth =11100
+                    LayoutCachedHeight =7200
                     UseTheme =0
                     BackColor =15123357
                     BorderColor =15123357
@@ -738,7 +586,7 @@ Begin Form
                     Top =9060
                     Width =13560
                     Height =3300
-                    TabIndex =13
+                    TabIndex =10
                     BorderColor =10921638
                     Name ="subHistory"
                     SourceObject ="Form.subfrmProjectReviewHistory"
@@ -755,19 +603,19 @@ Begin Form
                     BorderWidth =2
                     OverlapFlags =215
                     TextAlign =2
-                    Left =9540
-                    Top =7440
+                    Left =8460
+                    Top =7260
                     Width =3360
                     Height =1020
                     BorderColor =8355711
                     ForeColor =8355711
                     Name ="Label48"
-                    Caption ="Clicking \"EMMIE Submittal Complete\" will submit this to Phase 4."
+                    Caption ="Clicking \"Lane Lead Review Complete\" will submit this to Transition Review."
                     GridlineColor =10921638
-                    LayoutCachedLeft =9540
-                    LayoutCachedTop =7440
-                    LayoutCachedWidth =12900
-                    LayoutCachedHeight =8460
+                    LayoutCachedLeft =8460
+                    LayoutCachedTop =7260
+                    LayoutCachedWidth =11820
+                    LayoutCachedHeight =8280
                 End
                 Begin Subform
                     OverlapFlags =85
@@ -880,33 +728,16 @@ Begin Form
                 Begin Line
                     BorderWidth =3
                     OverlapFlags =87
-                    Left =4500
-                    Top =4800
-                    Width =0
-                    Height =4080
-                    BorderColor =7949855
-                    Name ="Line32"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =4500
-                    LayoutCachedTop =4800
-                    LayoutCachedWidth =4500
-                    LayoutCachedHeight =8880
-                    BorderThemeColorIndex =4
-                    BorderShade =50.0
-                End
-                Begin Line
-                    BorderWidth =3
-                    OverlapFlags =87
-                    Left =9060
+                    Left =6660
                     Top =4800
                     Width =0
                     Height =4080
                     BorderColor =7949855
                     Name ="Line33"
                     GridlineColor =10921638
-                    LayoutCachedLeft =9060
+                    LayoutCachedLeft =6660
                     LayoutCachedTop =4800
-                    LayoutCachedWidth =9060
+                    LayoutCachedWidth =6660
                     LayoutCachedHeight =8880
                     BorderThemeColorIndex =4
                     BorderShade =50.0
@@ -1388,57 +1219,16 @@ Option Explicit
 
 Private Const FormItemType As String = "Project" 'used in determining what type of record is handled
 
-Private Sub cboAssignDas_Change()
-'///Error Handling
-    If gcfHandleErrors Then On Error GoTo PROC_ERR
-    PushCallStack Me.name & "." & "cboAssignDas_Change"
-'///Error Handling
-
-'///Code
-Me.Dirty = False
-'///Code
-
-'///ErrorHandling
-PROC_EXIT:
-    PopCallStack
-    Exit Sub
-    
-PROC_ERR:
-    GlobalErrHandler
-    Resume PROC_EXIT
-'///ErrorHandling
-End Sub
 
 'BUTTONS
-Private Sub cmdAssignDasComplete_Click()
+Private Sub cmdLaneLeadReview_Click()
 '///Error Handling
     If gcfHandleErrors Then On Error GoTo PROC_ERR
-    PushCallStack Me.name & "." & "cmdAssignDasComplete_Click"
+    PushCallStack Me.name & "." & "cmdLaneLeadReview_Click"
 '///Error Handling
 
 '///Code
-    CompleteReview "Assign DAS"
-'///Code
-
-'///ErrorHandling
-PROC_EXIT:
-    PopCallStack
-    Exit Sub
-    
-PROC_ERR:
-    GlobalErrHandler
-    Resume PROC_EXIT
-'///ErrorHandling
-End Sub
-
-Private Sub cmdEmmieSubmittal_Click()
-'///Error Handling
-    If gcfHandleErrors Then On Error GoTo PROC_ERR
-    PushCallStack Me.name & "." & "cmdEmmieSubmittal_Click"
-'///Error Handling
-
-'///Code
-    CompleteReview "Submit in EMMIE"
+    CompleteReview "Final Lane Review - EX"
 '///Code
 
 '///ErrorHandling
@@ -1452,14 +1242,14 @@ PROC_ERR:
 '///ErrorHandline
 End Sub
 
-Private Sub cmdEnterCostComplete_Click()
+Private Sub cmdCostingComplete_Click()
 '///Error Handling
     If gcfHandleErrors Then On Error GoTo PROC_ERR
-    PushCallStack Me.name & "." & "cmdEnterCostComplete_Click"
+    PushCallStack Me.name & "." & "cmdCostingComplete_Click"
 '///Error Handling
 
 '///Code
-    CompleteReview "Enter Cost"
+    CompleteReview "Costing - EX Lane"
 '///Code
 
 '///ErrorHandling
@@ -1473,14 +1263,14 @@ PROC_ERR:
 '///ErrorHandline
 End Sub
 
-Private Sub cmdEnterCostStart_Click()
+Private Sub cmdCostingStart_Click()
 '///Error Handling
     If gcfHandleErrors Then On Error GoTo PROC_ERR
-    PushCallStack Me.name & "." & "cmdEnterCostStart_Click"
+    PushCallStack Me.name & "." & "cmdCostingStart_Click"
 '///Error Handling
 
 '///Code
-    StartReview "Enter Cost"
+    StartReview "Costing - EX Lane"
 '///Code
 
 '///ErrorHandling
@@ -1548,9 +1338,8 @@ Private Sub RepaintForm()
 '///Error Handling
 
 '///Code
-    EnableFormArea "Assign DAS"
-    EnableFormArea "Enter Cost"
-    EnableFormArea "Submit in EMMIE"
+    EnableFormArea "Costing - EX Lane"
+    EnableFormArea "Final Lane Review - EX"
     Me.subHistory.Requery
 '///Code
 
@@ -1582,16 +1371,12 @@ Private Sub EnableFormArea(AreaName As String, Optional Override As String = "")
     End If
     
     Select Case AreaName
-        Case "Assign DAS"
-            Me.cboAssignDas.Enabled = CanEnable
-            Me.cmdAssignDasComplete.Enabled = CanEnable
-        Case "Enter Cost"
-            Me.cmdEnterCostStart.Enabled = CanEnable
-            Me.cmdEnterCostComplete.Enabled = CanEnable
-            Me.tbDasComments.Enabled = CanEnable
-        Case "Submit in EMMIE"
-            Me.tbPwNumber.Enabled = CanEnable
-            Me.cmdEmmieSubmittal.Enabled = CanEnable
+        Case "Costing - EX Lane"
+            Me.cmdCostingStart.Enabled = CanEnable
+            Me.cmdCostingComplete.Enabled = CanEnable
+            Me.tbCostingComments.Enabled = CanEnable
+        Case "Final Lane Review - EX"
+            Me.cmdLaneLeadReview.Enabled = CanEnable
 
         Case Else
             Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & AreaName
@@ -1621,12 +1406,7 @@ Private Function PreDialogCheck(ReviewType As String) As Boolean
 
 '///Code
 '    No checks on this page.
-    If Nz(Me.cboAssignDas, "") = "" And ReviewType = "Assign DAS" Then
-        MsgBox "Please select a DAS before trying to complete this."
-        PreDialogCheck = False
-    Else
         PreDialogCheck = True
-    End If
 '///Code
 
 '///ErrorHandling
@@ -1680,12 +1460,10 @@ Private Sub HandleDisposition(ReviewType As String, frm As Form)
         Case "SUB"
 '            Main section of page specific code. Creates new reviews as needed.
             Select Case ReviewType
-                Case "Assign DAS"
-                    Reviews.EnterReview GetItemDims("Enter Cost"), Me.[Assigned Project Assembly Specialist]
-                Case "Enter Cost"
-                    Reviews.EnterReview GetItemDims("Submit in EMMIE")
-                Case "Submit in EMMIE"
-                    Reviews.EnterReview GetItemDims("Compliance Reviews")
+                Case "Costing - EX Lane"
+                    Reviews.EnterReview GetItemDims("Final Lane Review - EX")
+                Case "Final Lane Review - EX"
+                    Reviews.EnterReview GetItemDims("Assign DAS")
                 Case Else
                     Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & ReviewType
             End Select

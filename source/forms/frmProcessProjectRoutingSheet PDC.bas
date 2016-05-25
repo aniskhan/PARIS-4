@@ -17,11 +17,11 @@ Begin Form
     Width =16740
     DatasheetFontHeight =11
     ItemSuffix =104
-    Right =13515
-    Bottom =12645
+    Right =19560
+    Bottom =12060
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0x56e847dc56bae440
+        0x64097f16d6c0e440
     End
     RecordSource ="fqryProjectFormulation"
     Caption ="PRS Review and Submittal"

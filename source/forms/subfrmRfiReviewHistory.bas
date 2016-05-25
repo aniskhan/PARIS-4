@@ -20,9 +20,9 @@ Begin Form
     Bottom =12795
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0xd2fbed2d30bee440
+        0xf2509f55b5bfe440
     End
-    RecordSource ="qryRFIProjectHistoryUnion"
+    RecordSource ="qryRFIProjectHistoryUnion-RfiView"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
@@ -374,7 +374,7 @@ Begin Form
                     FontSize =9
                     ForeColor =4210752
                     Name ="cmdFullComments"
-                    Caption ="Full Report"
+                    Caption ="Full History"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
@@ -480,7 +480,7 @@ Begin Form
                     IMESentenceMode =3
                     Left =5715
                     Top =30
-                    Width =1680
+                    Width =1905
                     Height =299
                     FontSize =9
                     TabIndex =4
@@ -496,7 +496,7 @@ Begin Form
 
                     LayoutCachedLeft =5715
                     LayoutCachedTop =30
-                    LayoutCachedWidth =7395
+                    LayoutCachedWidth =7620
                     LayoutCachedHeight =329
                     RowStart =2
                     RowEnd =2
@@ -506,7 +506,7 @@ Begin Form
                 Begin TextBox
                     Locked = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =85
+                    OverlapFlags =93
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
@@ -568,7 +568,7 @@ Begin Form
                 Begin TextBox
                     Locked = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =85
+                    OverlapFlags =93
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
@@ -602,13 +602,13 @@ Begin Form
                 End
                 Begin TextBox
                     OldBorderStyle =0
-                    OverlapFlags =85
+                    OverlapFlags =247
                     TextAlign =2
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =8955
+                    Left =8820
                     Top =30
-                    Width =1500
+                    Width =1814
                     Height =299
                     FontSize =9
                     TabIndex =6
@@ -622,9 +622,9 @@ Begin Form
                     ControlSource ="CompletedBy"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =8955
+                    LayoutCachedLeft =8820
                     LayoutCachedTop =30
-                    LayoutCachedWidth =10455
+                    LayoutCachedWidth =10634
                     LayoutCachedHeight =329
                     RowStart =2
                     RowEnd =2

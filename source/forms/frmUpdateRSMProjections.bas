@@ -17,11 +17,11 @@ Begin Form
     Width =17040
     DatasheetFontHeight =11
     ItemSuffix =114
-    Right =19755
-    Bottom =12645
+    Right =19560
+    Bottom =12060
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0x47d1f0d373bce440
+        0x315b2815d6c0e440
     End
     RecordSource ="fqryUpdateRSMProjections"
     Caption ="Update Projections"
@@ -2611,12 +2611,13 @@ Private Const FormItemType As String = "RPA" 'used in determining what type of r
 Private ItemDims As New classItemDims 'used by form open and load to help with filters.
 Dim UserIsPDC As Boolean ' Tracks if the current user is an assigned PDC
 Dim UserIsDIU As Boolean ' Tracks if the current user is a DIU or DIUL
+Dim UserIsODIU As Boolean ' Tracks if the current user is a ODIU ... to allow for entry in lieu of PDM by ODIU
 Dim UserIsADM As Boolean ' Tracks if the current user is an ADM
 
 
 'BUTTONS
 Private Sub cmdFinalize_Click()
-Dim Db As Database
+Dim db As Database
 Dim rsRev As Recordset
 Dim rsLastCompRev As Recordset ' last completed DIU EMMIE update
 Dim rsLastChange As Recordset ' last logged change to audit log
@@ -2631,14 +2632,15 @@ Dim DateLastChange As Date
 
     Me![FinalizeDate] = Now()
     Me![FinalizeUserID] = Environ("UserName")
-    Call RepaintForm(UserIsPDC, UserIsDIU, UserIsADM)
+    Me.Dirty = False
+    Call RepaintForm(UserIsPDC, UserIsDIU, UserIsADM, UserIsODIU)
 
-Set Db = CurrentDb
+Set db = CurrentDb
 ' Check if an unfinished review exists before adding another
-Set rsRev = Db.OpenRecordset("SELECT * FROM [revtblRpa] WHERE ((([revtblRpa].[ReviewType]) = 'DIU Update EMMIE Projections') AND (([revtblRpa].[ReviewExitDate]) Is Null) AND (([revtblRpa].[ApplicantID]) = '" & Me.ApplicantID & "'))")
+Set rsRev = db.OpenRecordset("SELECT * FROM [revtblRpa] WHERE ((([revtblRpa].[ReviewType]) = 'DIU Update EMMIE Projections') AND (([revtblRpa].[ReviewExitDate]) Is Null) AND (([revtblRpa].[ApplicantID]) = '" & Me.ApplicantID & "'))")
 
-Set rsLastCompRev = Db.OpenRecordset("SELECT MAX (ReviewExitDate) As lastCompReview FROM [revtblRpa] WHERE ((([revtblRpa].[ReviewType]) = 'DIU Update EMMIE Projections') AND (([revtblRpa].[ReviewExitDate]) Is Not Null) AND (([revtblRpa].[ApplicantID]) = '" & Me.ApplicantID & "'))")
-Set rsLastChange = Db.OpenRecordset("SELECT MAX (EditDate) As lastChange FROM [tblAuditTrail] WHERE ((([tblAuditTrail].[SourceTable]) = 'fqryUpdateRSMProjections') AND  (([tblAuditTrail].[ApplicantID]) = '" & Me.ApplicantID & "'))")
+Set rsLastCompRev = db.OpenRecordset("SELECT MAX (ReviewExitDate) As lastCompReview FROM [revtblRpa] WHERE ((([revtblRpa].[ReviewType]) = 'DIU Update EMMIE Projections') AND (([revtblRpa].[ReviewExitDate]) Is Not Null) AND (([revtblRpa].[ApplicantID]) = '" & Me.ApplicantID & "'))")
+Set rsLastChange = db.OpenRecordset("SELECT MAX (EditDate) As lastChange FROM [tblAuditTrail] WHERE ((([tblAuditTrail].[SourceTable]) = 'fqryUpdateRSMProjections') AND  (([tblAuditTrail].[ApplicantID]) = '" & Me.ApplicantID & "'))")
 
 
 DateLastReview = CDate(Nz(rsLastCompRev![lastCompReview], 0))
@@ -2649,6 +2651,7 @@ DateLastChange = CDate(Nz(rsLastChange![lastChange], 0))
         ElseIf DateLastChange > DateLastReview Then
             'Additonal check to see if there are entries in the audit log after the last completed DIU review
             Reviews.EnterReview GetItemDims("DIU Update EMMIE Projections")
+       
     End If
 
 Debug.Print DateLastChange
@@ -2721,7 +2724,7 @@ Me.subfrm_fqryProjectionsMaxUpdate.Requery
 
 
 Set subfrmRS = subfrm_fqryProjectionsMaxUpdate.Form.Recordset
-
+Application.Echo False ' to eliminate screen flicker during scroll to targetapplicant
 subfrmRS.MoveFirst
 
 'Iterate throughout the subform to bring the appropriate Applicant record back into focus for UpdateDTS
@@ -2729,6 +2732,7 @@ While Not subfrmRS.EOF
     inFocusApplicantID = subfrm_fqryProjectionsMaxUpdate![ApplicantID]
     'Debug.Print inFocusApplicantID
     If inFocusApplicantID = targetApplicantID Then
+        Application.Echo True
         Me![Date of Update] = Now()
         Exit Sub
     Else
@@ -2736,7 +2740,7 @@ While Not subfrmRS.EOF
     subfrmRS.MoveNext
 Wend
 
-
+Application.Echo True
 Me![Date of Update] = Now()
 
 '///Code
@@ -2809,10 +2813,10 @@ End Sub
 
 Private Sub Form_Open(Cancel As Integer)
 Dim rs As Recordset
-Dim Db As Database
+Dim db As Database
 Dim countUnfiltered As Integer
 Dim frm As Form
-Set Db = CurrentDb
+Set db = CurrentDb
 Set frm = Me.Form
 
     'Form Open is typically used on forms that have incoming openArg strings
@@ -2834,8 +2838,9 @@ Else
     UserIsPDC = False
     UserIsDIU = False
     UserIsADM = False
+    UserIsODIU = False
               
-        Set rs = Db.OpenRecordset("qryUserPositions")
+        Set rs = db.OpenRecordset("qryUserPositions")
             rs.MoveFirst
             While Not rs.EOF
                 If rs!Position = "ADM" Then
@@ -2846,11 +2851,22 @@ Else
             Wend
             Set rs = Nothing
         
-        Set rs = Db.OpenRecordset("qryUserPositions")
+        Set rs = db.OpenRecordset("qryUserPositions")
             rs.MoveFirst
             While Not rs.EOF
                 If rs!Position = "DIUL" Or rs!Position = "DIUS" Then
                     UserIsDIU = True
+                Else
+                End If
+                rs.MoveNext
+            Wend
+            Set rs = Nothing
+        
+        Set rs = db.OpenRecordset("qryUserPositions")
+            rs.MoveFirst
+            While Not rs.EOF
+                If rs!Position = "ODIU" Then
+                    UserIsODIU = True
                 Else
                 End If
                 rs.MoveNext
@@ -2890,7 +2906,7 @@ Private Sub Form_Current()
 '///Error Handling
 
 '///Code
-    Call RepaintForm(UserIsPDC, UserIsDIU, UserIsADM)
+    Call RepaintForm(UserIsPDC, UserIsDIU, UserIsADM, UserIsODIU)
     
 '///Code
 
@@ -2934,7 +2950,7 @@ PROC_ERR:
 End Sub
 
 'INTERNAL PAGE SPECIFIC CODE
-Private Sub RepaintForm(IsPDC As Boolean, IsDIU As Boolean, IsADM As Boolean)
+Private Sub RepaintForm(IsPDC As Boolean, IsDIU As Boolean, IsADM As Boolean, isODIU As Boolean)
 
 '///Error Handling
     If gcfHandleErrors Then On Error GoTo PROC_ERR
@@ -2943,7 +2959,11 @@ Private Sub RepaintForm(IsPDC As Boolean, IsDIU As Boolean, IsADM As Boolean)
 
 '///Code
 
-Select Case IsPDC Or IsADM
+Select Case IsPDC Or IsADM Or isODIU
+    
+    Case False
+        EnableFormArea "Projections", "Disable"
+        
     Case True
         If IsNull(Me.[FinalizeDate]) Then
             EnableFormArea "Projections"
@@ -2951,9 +2971,6 @@ Select Case IsPDC Or IsADM
             EnableFormArea "Projections", "Disable"
             EnableFormArea "Update"
         End If
-    
-    Case False
-        EnableFormArea "Projections", "Disable"
     
     Case Else
          MsgBox "There was an permissions exception when opening " & Me.Caption & ". Page will not show."
@@ -3082,7 +3099,7 @@ Private Sub CompleteReview(ReviewType As String)
             MsgBox "Review was cancelled"
         End If
     End If
-    Call RepaintForm(UserIsPDC, UserIsDIU, UserIsADM)
+    Call RepaintForm(UserIsPDC, UserIsDIU, UserIsADM, UserIsODIU)
 '///Code
 
 '///ErrorHandling
@@ -3105,7 +3122,7 @@ Private Sub StartReview(ReviewType As String)
 
 '///Code
     Reviews.StartReview GetItemDims(ReviewType), Environ("UserName")
-    Call RepaintForm(UserIsPDC, UserIsDIU, UserIsADM)
+    Call RepaintForm(UserIsPDC, UserIsDIU, UserIsADM, UserIsODIU)
 '///Code
 
 '///ErrorHandling

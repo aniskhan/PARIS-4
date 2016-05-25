@@ -28,6 +28,7 @@ Begin OutputColumns
     Expression ="tblRFI.ReviewFrom"
     Expression ="tblSubRecipient.[Subrecipient Name]"
     Expression ="fqryRfiStatus.RfiStatus"
+    Alias ="AppTitle"
     Expression ="qdProjectRef.[Application Title]"
 End
 Begin Joins
@@ -131,7 +132,11 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="qdProjectRef.[Application Title]"
+        dbText "Name" ="tblRFI.[Lane Assigned]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="AppTitle"
         dbLong "AggregateType" ="-1"
     End
 End
@@ -139,12 +144,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =941
-    Bottom =860
+    Right =833
+    Bottom =821
     Left =-1
     Top =-1
-    Right =925
-    Bottom =436
+    Right =817
+    Bottom =513
     Left =0
     Top =0
     ColumnsShown =539
@@ -195,8 +200,8 @@ Begin
     End
     Begin
         Left =394
-        Top =134
-        Right =544
+        Top =138
+        Right =545
         Bottom =299
         Top =0
         Name ="qdProjectRef"

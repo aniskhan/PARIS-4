@@ -114,8 +114,8 @@ CREATE TABLE [tblProjects] (
   [Inspection Notes] LONGTEXT ,
   [PDM Briefs Recipient-Subrecipient] DATETIME ,
   [Subrecipient and Recipient Concur] VARCHAR (255),
-  [Scope of Work Developed by] VARCHAR (255),
-  [Cost Estimate Developed by] VARCHAR (255),
+  [Scope of Work Developed by] LONG DEFAULT 0,
+  [Cost Estimate Developed by] LONG DEFAULT 0,
   [Scheduled Time of Site Inspection] DATETIME ,
   [DocumentationAttached] VARCHAR (255),
    CONSTRAINT [PrimaryKey] PRIMARY KEY ([DisasterID], [ApplicantID], [ProjectID])

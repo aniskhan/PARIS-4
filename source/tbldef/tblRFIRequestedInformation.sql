@@ -10,5 +10,6 @@ CREATE TABLE [tblRFIRequestedInformation] (
   [DateResponseReceived] DATETIME ,
   [isResponseReceived] VARCHAR (255) DEFAULT "--",
   [isRequestSatisfied] VARCHAR (255) DEFAULT "--",
+  [RfiItemAlias] LONG DEFAULT 0,
   [isRequestCanceled] BIT DEFAULT No
 )

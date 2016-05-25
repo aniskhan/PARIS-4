@@ -143,15 +143,21 @@ Public Property Get WhereID(Optional IncludeReview As Boolean = True) As String
 End Property
 Public Property Get AssignedSI() As String
     Dim WhereCondition As String
-    If Dims.pItemType <> "Site" Then
-        AssignedSI = ""
-    Else
+    If Dims.pItemType = "Site" Then
         WhereCondition = "[DisasterID]='" & Dims.pDisasterID & "'"
         WhereCondition = WhereCondition & " and [ApplicantID]='" & Dims.pApplicantID & "'"
         WhereCondition = WhereCondition & " and [ProjectID]=" & Dims.pProjectID
         WhereCondition = WhereCondition & " and [SiteID]=" & Dims.pSiteID
     
         AssignedSI = Nz(DLookup("[Assigned Site Inspector]", "tblSites", WhereCondition), "")
+    ElseIf Dims.pItemType = "Project" Then
+        WhereCondition = "[DisasterID]='" & Dims.pDisasterID & "'"
+        WhereCondition = WhereCondition & " and [ApplicantID]='" & Dims.pApplicantID & "'"
+        WhereCondition = WhereCondition & " and [ProjectID]=" & Dims.pProjectID
+    
+        AssignedSI = Nz(DLookup("[Assigned Site Inspector]", "tblProjects", WhereCondition), "")
+    Else
+        AssignedSI = ""
     End If
     
 End Property
@@ -163,6 +169,17 @@ Public Property Get AssignedPDC() As String
 
     AssignedPDC = Nz(DLookup("[Assigned PDC]", "tblSubrecipient", WhereCondition), "")
     
+End Property
+
+Public Property Get AssignedDVS() As String
+    Dim WhereCondition As String
+
+    WhereCondition = "[DisasterID]='" & Dims.pDisasterID & "'"
+    WhereCondition = WhereCondition & " and [ApplicantID]='" & Dims.pApplicantID & "'"
+    WhereCondition = WhereCondition & " and [ProjectID]=" & Dims.pProjectID
+
+    AssignedDVS = Nz(DLookup("[Assigned Data Validation Specialist]", "tblProjects", WhereCondition), "")
+
 End Property
 Public Property Get ReviewChild() As String
     Dim WhereCondition As String
@@ -360,7 +377,7 @@ Public Sub LoadByForm(frm As Form, formType As String, Optional ReviewName As St
     If NeedsApplicantID Then Dims.pApplicantID = Nz(frm.[ApplicantID], "")
     If NeedsProjectID Then Dims.pProjectID = Nz(frm.[ProjectID], 0)
     If NeedsSiteID Then Dims.pSiteID = Nz(frm.[SiteID], 0)
-    If NeedsLaneID Then Dims.pLaneID = FetchLane
+    If NeedsLaneID Then Dims.pLaneID = fetchLane
     If NeedsRfiID Then Dims.pRfiID = Nz(frm.[RfiID], 0)
     If NeedsRfiItemID Then Dims.pRfiItemID = Nz(frm.[RfiItemID], 0)
     If NeedsDmID Then Dims.pDmID = Nz(frm.[DmID], 0)
@@ -382,12 +399,12 @@ Public Sub ConvertToDM(DmID As Long)
     End If
 End Sub
 
-Private Function FetchLane() As String
+Private Function fetchLane() As String
     Dim WhereCondition As String
     WhereCondition = "[DisasterID]='" & Dims.pDisasterID & "'"
     WhereCondition = WhereCondition & " and [ApplicantID]='" & Dims.pApplicantID & "'"
     WhereCondition = WhereCondition & " and [ProjectID]=" & Dims.pProjectID
-    FetchLane = Nz(DLookup("[Lane Assigned]", "tblProjects", WhereCondition), "")
+    fetchLane = Nz(DLookup("[Lane Assigned]", "tblProjects", WhereCondition), "")
 End Function
 
 Public Function Clone(Optional NewReviewType As String = "") As classItemDims

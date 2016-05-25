@@ -15,13 +15,13 @@ Begin Form
     GridY =24
     Width =17580
     DatasheetFontHeight =11
-    ItemSuffix =73
-    Right =20385
-    Bottom =12615
+    ItemSuffix =75
+    Right =20055
+    Bottom =12030
     DatasheetGridlinesColor =15132391
     Filter ="[RfiCanceled] = False AND [RfiSatisfied] = False"
     RecSrcDt = Begin
-        0x658bdfeeebbce440
+        0xcf5e9037cec0e440
     End
     RecordSource ="fqryRFI-frmRFIRouting"
     Caption ="RFI Routing"
@@ -159,7 +159,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =11760
+            Height =12540
             Name ="Detail"
             AlternateBackColor =15921906
             AlternateBackThemeColorIndex =1
@@ -170,26 +170,25 @@ Begin Form
                     SpecialEffect =2
                     BackStyle =1
                     OverlapFlags =93
-                    Top =2400
+                    Top =2880
                     Width =13500
                     Height =5760
                     BackColor =15590879
                     BorderColor =10921638
                     Name ="Box46"
                     GridlineColor =10921638
-                    LayoutCachedTop =2400
+                    LayoutCachedTop =2880
                     LayoutCachedWidth =13500
-                    LayoutCachedHeight =8160
+                    LayoutCachedHeight =8640
                     BackThemeColorIndex =-1
                 End
                 Begin TextBox
-                    Enabled = NotDefault
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
                     OverlapFlags =215
                     IMESentenceMode =3
                     Left =3300
-                    Top =3000
+                    Top =3480
                     Width =10020
                     Height =840
                     ColumnWidth =3000
@@ -201,15 +200,15 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =3300
-                    LayoutCachedTop =3000
+                    LayoutCachedTop =3480
                     LayoutCachedWidth =13320
-                    LayoutCachedHeight =3840
+                    LayoutCachedHeight =4320
                     BackThemeColorIndex =-1
                     Begin
                         Begin Label
                             OverlapFlags =215
                             Left =360
-                            Top =3060
+                            Top =3540
                             Width =2820
                             Height =360
                             BorderColor =8355711
@@ -217,9 +216,9 @@ Begin Form
                             Caption ="RFI Reason (Internal Notes)"
                             GridlineColor =10921638
                             LayoutCachedLeft =360
-                            LayoutCachedTop =3060
+                            LayoutCachedTop =3540
                             LayoutCachedWidth =3180
-                            LayoutCachedHeight =3420
+                            LayoutCachedHeight =3900
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
                         End
@@ -231,7 +230,7 @@ Begin Form
                     OverlapFlags =223
                     IMESentenceMode =3
                     Left =6660
-                    Top =2580
+                    Top =3060
                     Width =2010
                     Height =330
                     ColumnWidth =1530
@@ -244,15 +243,15 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =6660
-                    LayoutCachedTop =2580
+                    LayoutCachedTop =3060
                     LayoutCachedWidth =8670
-                    LayoutCachedHeight =2910
+                    LayoutCachedHeight =3390
                     BackThemeColorIndex =-1
                     Begin
                         Begin Label
                             OverlapFlags =223
                             Left =3120
-                            Top =2580
+                            Top =3060
                             Width =3495
                             Height =330
                             BorderColor =8355711
@@ -261,9 +260,9 @@ Begin Form
                             EventProcPrefix ="Response_Time_Requested_Label"
                             GridlineColor =10921638
                             LayoutCachedLeft =3120
-                            LayoutCachedTop =2580
+                            LayoutCachedTop =3060
                             LayoutCachedWidth =6615
-                            LayoutCachedHeight =2910
+                            LayoutCachedHeight =3390
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
                         End
@@ -309,7 +308,7 @@ Begin Form
                 Begin Label
                     OverlapFlags =247
                     Left =120
-                    Top =2520
+                    Top =3000
                     Width =11160
                     Height =420
                     FontSize =18
@@ -321,16 +320,16 @@ Begin Form
                     Caption ="RFI Preparation"
                     GridlineColor =10921638
                     LayoutCachedLeft =120
-                    LayoutCachedTop =2520
+                    LayoutCachedTop =3000
                     LayoutCachedWidth =11280
-                    LayoutCachedHeight =2940
+                    LayoutCachedHeight =3420
                     BackThemeColorIndex =-1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
                 Begin Subform
                     OverlapFlags =85
-                    Top =8340
+                    Top =8820
                     Width =13500
                     Height =3300
                     TabIndex =3
@@ -341,9 +340,9 @@ Begin Form
                     LinkMasterFields ="RfiID"
                     GridlineColor =10921638
 
-                    LayoutCachedTop =8340
+                    LayoutCachedTop =8820
                     LayoutCachedWidth =13500
-                    LayoutCachedHeight =11640
+                    LayoutCachedHeight =12120
                 End
                 Begin CommandButton
                     OverlapFlags =93
@@ -421,7 +420,7 @@ Begin Form
                 Begin Subform
                     OverlapFlags =215
                     Width =13500
-                    Height =2339
+                    Height =2684
                     TabIndex =6
                     BorderColor =10921638
                     Name ="subformlRFIbanner"
@@ -431,7 +430,7 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedWidth =13500
-                    LayoutCachedHeight =2339
+                    LayoutCachedHeight =2684
                     Begin
                         Begin Label
                             OverlapFlags =93
@@ -449,6 +448,7 @@ Begin Form
                     End
                 End
                 Begin CommandButton
+                    Enabled = NotDefault
                     OverlapFlags =93
                     Left =14100
                     Top =3330
@@ -697,7 +697,7 @@ Begin Form
                 Begin Subform
                     Enabled = NotDefault
                     OverlapFlags =215
-                    Top =4500
+                    Top =4980
                     Width =13380
                     Height =3540
                     TabIndex =13
@@ -708,13 +708,13 @@ Begin Form
                     LinkMasterFields ="RfiID"
                     GridlineColor =10921638
 
-                    LayoutCachedTop =4500
+                    LayoutCachedTop =4980
                     LayoutCachedWidth =13380
-                    LayoutCachedHeight =8040
+                    LayoutCachedHeight =8520
                     Begin
                         Begin Label
                             OverlapFlags =223
-                            Top =4620
+                            Top =5100
                             Width =1650
                             Height =315
                             BorderColor =8355711
@@ -723,9 +723,9 @@ Begin Form
                             Caption ="Requested Items"
                             EventProcPrefix ="subfrmRfiItems_Label"
                             GridlineColor =10921638
-                            LayoutCachedTop =4620
+                            LayoutCachedTop =5100
                             LayoutCachedWidth =1650
-                            LayoutCachedHeight =4935
+                            LayoutCachedHeight =5415
                         End
                     End
                 End
@@ -1323,23 +1323,23 @@ Begin Form
                 Begin Rectangle
                     BackStyle =1
                     OverlapFlags =223
-                    Top =4080
+                    Top =4560
                     Width =13380
                     Height =420
                     BackColor =13285805
                     BorderColor =10921638
                     Name ="Box71"
                     GridlineColor =10921638
-                    LayoutCachedTop =4080
+                    LayoutCachedTop =4560
                     LayoutCachedWidth =13380
-                    LayoutCachedHeight =4500
+                    LayoutCachedHeight =4980
                     BackThemeColorIndex =2
                     BackTint =40.0
                 End
                 Begin CommandButton
                     OverlapFlags =223
                     Left =3540
-                    Top =4140
+                    Top =4620
                     Width =735
                     Height =300
                     TabIndex =25
@@ -1387,9 +1387,9 @@ Begin Form
                     BackStyle =0
 
                     LayoutCachedLeft =3540
-                    LayoutCachedTop =4140
+                    LayoutCachedTop =4620
                     LayoutCachedWidth =4275
-                    LayoutCachedHeight =4440
+                    LayoutCachedHeight =4920
                     RowStart =1
                     RowEnd =1
                     Gradient =0
@@ -1405,7 +1405,7 @@ Begin Form
                     OverlapFlags =215
                     TextAlign =1
                     Left =1155
-                    Top =4140
+                    Top =4620
                     Width =675
                     Height =315
                     BorderColor =8355711
@@ -1415,9 +1415,9 @@ Begin Form
                     Tag ="DetachedLabel"
                     GridlineColor =10921638
                     LayoutCachedLeft =1155
-                    LayoutCachedTop =4140
+                    LayoutCachedTop =4620
                     LayoutCachedWidth =1830
-                    LayoutCachedHeight =4455
+                    LayoutCachedHeight =4935
                     ColumnStart =1
                     ColumnEnd =1
                 End
@@ -1425,7 +1425,7 @@ Begin Form
                     OverlapFlags =215
                     TextAlign =1
                     Left =1950
-                    Top =4140
+                    Top =4620
                     Width =1800
                     Height =315
                     BorderColor =8355711
@@ -1436,9 +1436,9 @@ Begin Form
                     EventProcPrefix ="Item_Type_Label"
                     GridlineColor =10921638
                     LayoutCachedLeft =1950
-                    LayoutCachedTop =4140
+                    LayoutCachedTop =4620
                     LayoutCachedWidth =3750
-                    LayoutCachedHeight =4455
+                    LayoutCachedHeight =4935
                     ColumnStart =3
                     ColumnEnd =3
                 End
@@ -1446,7 +1446,7 @@ Begin Form
                     OverlapFlags =223
                     TextAlign =1
                     Left =5160
-                    Top =4140
+                    Top =4620
                     Width =7770
                     Height =315
                     BorderColor =8355711
@@ -1457,17 +1457,17 @@ Begin Form
                     EventProcPrefix ="Reason_Requested_Label"
                     GridlineColor =10921638
                     LayoutCachedLeft =5160
-                    LayoutCachedTop =4140
+                    LayoutCachedTop =4620
                     LayoutCachedWidth =12930
-                    LayoutCachedHeight =4455
+                    LayoutCachedHeight =4935
                     ColumnStart =4
                     ColumnEnd =4
                 End
                 Begin Label
-                    OverlapFlags =215
+                    OverlapFlags =223
                     TextAlign =1
                     Left =360
-                    Top =4140
+                    Top =4620
                     Width =735
                     Height =315
                     BorderColor =8355711
@@ -1476,14 +1476,14 @@ Begin Form
                     Caption ="Item ID"
                     GridlineColor =10921638
                     LayoutCachedLeft =360
-                    LayoutCachedTop =4140
+                    LayoutCachedTop =4620
                     LayoutCachedWidth =1095
-                    LayoutCachedHeight =4455
+                    LayoutCachedHeight =4935
                 End
                 Begin CommandButton
                     OverlapFlags =215
                     Left =11760
-                    Top =4140
+                    Top =4620
                     Height =299
                     FontSize =9
                     TabIndex =26
@@ -1494,9 +1494,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =11760
-                    LayoutCachedTop =4140
+                    LayoutCachedTop =4620
                     LayoutCachedWidth =13200
-                    LayoutCachedHeight =4439
+                    LayoutCachedHeight =4919
                     ColumnStart =8
                     ColumnEnd =8
                     UseTheme =1
@@ -1522,7 +1522,7 @@ Begin Form
                 End
                 Begin CommandButton
                     Enabled = NotDefault
-                    OverlapFlags =85
+                    OverlapFlags =93
                     Left =14100
                     Top =6780
                     Width =3480
@@ -1556,6 +1556,133 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
+                    Overlaps =1
+                End
+                Begin CommandButton
+                    OverlapFlags =87
+                    Left =13620
+                    Top =7080
+                    Width =480
+                    Height =300
+                    TabIndex =28
+                    ForeColor =4210752
+                    Name ="cmdHelpRFiUploadtoEMMIE"
+                    OnClick ="[Event Procedure]"
+                    Tag ="12"
+                    GridlineColor =10921638
+                    ImageData = Begin
+                        0x2800000010000000100000000100200000000000000000000000000000000000 ,
+                        0x000000000000000000000000000000000000000000000000b17d4a27b17d4a8d ,
+                        0xb17d4acfb17d4affb17d4affb17d4acfb17d4a8db17d4a270000000000000000 ,
+                        0x0000000000000000000000000000000000000000b17d4a72b17d4af6b17d4aff ,
+                        0xb17d4affb17d4affb17d4affb17d4affb17d4affb17d4af6b17d4a7200000000 ,
+                        0x000000000000000000000000b17d4a06b17d4ab7b17d4affb17d4affb17d4aff ,
+                        0xb17d4affffffffffffffffffb17d4affb17d4affb17d4affb17d4affb17d4ab7 ,
+                        0xb17d4a060000000000000000b17d4a93b17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affffffffffffffffffb17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4a9000000000b17d4a2db17d4afcb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affc1976effc1976effb17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4afcb17d4a2db17d4a93b17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xc1976effffffffffe9daccffb17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affb17d4a90b17d4adbb17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb8895bfffefdfdfff9f4f0ffba8c5fffb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affb17d4ad5b17d4af9b17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affdac2aafffffffffff4ede5ffb98b5dffb17d4affb17d4affb17d4aff ,
+                        0xb17d4affb17d4af3b17d4af9b17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affb17d4affe0cbb7fffffffffff3ebe3ffb8895bffb17d4affb17d4aff ,
+                        0xb17d4affb17d4af0b17d4ad8b17d4affb17d4affb17d4affb17d4affbf946aff ,
+                        0xb17d4affb17d4affb17d4affe3d0bdffffffffffdbc3acffb17d4affb17d4aff ,
+                        0xb17d4affb17d4ad5b17d4a90b17d4affb17d4affb27f4cfff9f6f2ffffffffff ,
+                        0xc1976effb17d4affb17d4affd4b79bffffffffffe0cbb7ffb17d4affb17d4aff ,
+                        0xb17d4affb17d4a8db17d4a2db17d4afcb17d4affb17d4affd9c0a8ffffffffff ,
+                        0xf5eee8ffd2b497ffd8bda3fffbf9f6fffdfcfbffc1976effb17d4affb17d4aff ,
+                        0xb17d4afcb17d4a2a00000000b17d4a90b17d4affb17d4affb27f4cffd9c0a8ff ,
+                        0xfefdfdfffffffffffffffffff7f1ecffc7a27dffb17d4affb17d4affb17d4aff ,
+                        0xb17d4a8d0000000000000000b17d4a06b17d4ab7b17d4affb17d4affb17d4aff ,
+                        0xb78859ffc7a27dffc1976effb17d4affb17d4affb17d4affb17d4affb17d4ab7 ,
+                        0xb17d4a0600000000000000000000000000000000b17d4a72b17d4af6b17d4aff ,
+                        0xb17d4affb17d4affb17d4affb17d4affb17d4affb17d4af6b17d4a7200000000 ,
+                        0x000000000000000000000000000000000000000000000000b17d4a27b17d4a8d ,
+                        0xb17d4accb17d4afcb17d4afcb17d4accb17d4a8db17d4a270000000000000000 ,
+                        0x0000000000000000
+                    End
+                    BackStyle =0
+
+                    LayoutCachedLeft =13620
+                    LayoutCachedTop =7080
+                    LayoutCachedWidth =14100
+                    LayoutCachedHeight =7380
+                    Gradient =0
+                    BackColor =15123357
+                    BorderColor =15123357
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Top =4620
+                    Width =360
+                    Height =300
+                    TabIndex =29
+                    ForeColor =4210752
+                    Name ="cmdHelpItemDeletion"
+                    OnClick ="[Event Procedure]"
+                    Tag ="14"
+                    GridlineColor =10921638
+                    ImageData = Begin
+                        0x2800000010000000100000000100200000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x00000000000000003255d6943255d68300000000000000000000000000000000 ,
+                        0x3255d6043255d681000000000000000000000000000000000000000000000000 ,
+                        0x000000003255d60e3255d6f43255d6f63255d66a000000000000000000000000 ,
+                        0x3255d6c13255d6b7000000000000000000000000000000000000000000000000 ,
+                        0x00000000000000003255d68d3255d6f83255d6f43255d652000000003255d6ba ,
+                        0x3255d6ec3255d618000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000003255d6943255d6f63255d6f43255d6d23255d6f6 ,
+                        0x3255d65900000000000000000000000000000000000000000000000000000000 ,
+                        0x000000000000000000000000000000003255d68d3255d6f83255d6f83255d6cd ,
+                        0x0000000000000000727272ff727272ff727272ff727272ff727272ff727272ff ,
+                        0x727272ff00000000000000003255d6753255d6f13255d6f83255d6eb3255d6f8 ,
+                        0x3255d6c63255d614727272ffffffffffffffffffffffffffffffffffffffffff ,
+                        0xffffffffffffff423255d69b3255d6f83255d6f63255d6a1ffffff033255d65e ,
+                        0x3255d6d93255d6ad727272ffffffffffb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affcead8da33255d6623255d6bf546acb52c9a582ccb48250ffc9a581cf ,
+                        0xffffff3300000000727272ffffffffffb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affb58454fecca988bbcdab8bb1ba8c5ffbb17d4affb17d4affb17d4aff ,
+                        0xffffffff727272ff727272ffffffffffb17d4affb17d4affb17d4affb17d4aff ,
+                        0xb17d4affb17d4affb17d4affb17d4affb17d4affb17d4affb17d4affb17d4aff ,
+                        0xffffffff727272ff727272ffffffffffffffffffffffffffffffffffffffffff ,
+                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
+                        0xffffffff727272ff727272ff727272ff727272ff727272ff727272ff727272ff ,
+                        0x727272ff727272ff727272ff727272ff727272ff727272ff727272ff727272ff ,
+                        0x727272ff727272ff000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000
+                    End
+                    BackStyle =0
+
+                    LayoutCachedTop =4620
+                    LayoutCachedWidth =360
+                    LayoutCachedHeight =4920
+                    RowStart =1
+                    RowEnd =1
+                    Gradient =0
+                    BackColor =15123357
+                    BorderColor =15123357
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
                 End
             End
         End
@@ -1627,7 +1754,9 @@ Dim UserIsDIU As Boolean ' Tracks if the current user is a DIU or DIUL
 Dim UserIsADM As Boolean ' Tracks if the current user is an ADM
 
 
-
+Private Sub cmdHelpItemDeletion_Click()
+Call getHelpText(Me.name, Screen.ActiveControl.name, CInt(Screen.ActiveControl.tag))
+End Sub
 
 'HELP BUTTONS
 
@@ -1637,6 +1766,7 @@ End Sub
 Private Sub cmdHelpCanxRFI_Click()
 Call getHelpText(Me.name, Screen.ActiveControl.name, CInt(Screen.ActiveControl.tag))
 End Sub
+
 Private Sub cmdHelpSubmitConcur_Click()
 Call getHelpText(Me.name, Screen.ActiveControl.name, CInt(Screen.ActiveControl.tag))
 End Sub
@@ -1644,6 +1774,9 @@ Private Sub cmdHelpConcurComplete_Click()
 Call getHelpText(Me.name, Screen.ActiveControl.name, CInt(Screen.ActiveControl.tag))
 End Sub
 Private Sub cmdHelpTransmitRFI_Click()
+Call getHelpText(Me.name, Screen.ActiveControl.name, CInt(Screen.ActiveControl.tag))
+End Sub
+Private Sub cmdHelpRFiUploadtoEMMIE_Click()
 Call getHelpText(Me.name, Screen.ActiveControl.name, CInt(Screen.ActiveControl.tag))
 End Sub
 Private Sub cmdHelpOpenAssess_Click()
@@ -1658,6 +1791,9 @@ End Sub
 'ACTION BUTTONS
 
 Private Sub cmdCancelRFI_Click()
+    Dim db As Database
+    Dim rs As Recordset
+    Dim WhereCondition As String
     Dim MsgResult As VbMsgBoxResult
     Dim ParentItem As classItemDims
 '///Error Handling
@@ -1666,28 +1802,59 @@ Private Sub cmdCancelRFI_Click()
 '///Error Handling
 
 '///Code
-If Me.RfiSatisfied = True Then
-    MsgBox ("This RFI has already been marked complete. It can no longer be cancelled.")
+If Me.RfiSatisfied = True Or Me.RfiCanceled = True Then
+    MsgBox ("Invalid Selection: This RFI has already been marked complete or canceled.")
     Exit Sub
+   
 Else
-    MsgResult = MsgBox("Are you sure you want to do this?  This will end the RFI and return to the original review.", vbYesNo)
+    MsgResult = MsgBox("Are you sure you want to do this?  This will end the RFI and return it to the original review.", vbYesNo)
     If MsgResult = vbYes Then
-        If Reviews.CompleteReview(GetItemDims("RFI Creation"), Environ("UserName"), "WD") Then
-            Me.[RfiCanceled] = True
+        Set db = CurrentDb()
+        Set rs = db.OpenRecordset("SELECT * FROM revtblRfi WHERE [RfiID] =" & Me.RfiID & " and [ReviewExitDate] is null")
+        
+        If rs.BOF And rs.EOF Then
+        Else
+            rs.MoveFirst
+            While Not rs.EOF
+                'Close all open tasks on revtblRFI for the given RfiID
+                rs.Edit
+                    rs![CompletedUserID] = Environ("UserName")
+                    rs![ReviewCheckOutDate] = Now()
+                    rs![ReviewExitDate] = Now()
+                    rs![Disposition] = "WD"
+                rs.Update
+        
+                rs.MoveNext
+            Wend
+            
             Set ParentItem = GetItemDims
-            ParentItem.ItemType = [ItemType]
-            ParentItem.ReviewType = "RFI"
-            Reviews.StartReview ParentItem, Environ("UserName"), True
-            If Reviews.CompleteReview(ParentItem, Environ("UserName"), "WD") Then
+            ParentItem.ItemType = [ItemType] 'Replaces formItemType(RFI) with RFI's Itemtype (Project or RPA from tblRFI)
+            ParentItem.ReviewType = "RFI" 'Find RFI review stub on appropriate revtbl
+            Reviews.StartReview ParentItem, Environ("UserName"), True 'Siliently checkout/start RFI review stub on appropriate table
+            If Reviews.CompleteReview(ParentItem, Environ("UserName"), "WD") Then 'if there is an open RFI review stub, complete it as withdrawn, if  not, do nothing
             End If
+            'Send back RFI from the review it came from
             ParentItem.ReviewType = [ReviewFrom]
             Reviews.EnterReview ParentItem, [CreatedBy]
+            If [ItemType] = "Project" Then
+                Reviews.EnterAllChildren ParentItem, ParentItem.ReviewChild, [CreatedBy]
+            End If
         End If
+        Me.[RfiCanceled] = True
     Else
         'do nothing
+               
     End If
 End If
-    RepaintForm
+
+'''    Refreshes the subforms for review history / status.  Not needed on form current, but is needed on
+'''    Review Start / Complete
+    Me.Dirty = False
+    Me.subHistory.Requery
+    Me.subformlRFIbanner.Requery
+
+
+RepaintForm
 '///Code
 
 '///ErrorHandling
@@ -1782,7 +1949,7 @@ Private Sub cmdConcurComplete_Click()
 '///Error Handling
 
 '///Code
-    CompleteReview "PDM Concurrence"
+    CompleteReview "RFI Concurrence"
 '///Code
 
 '///ErrorHandling
@@ -1806,7 +1973,7 @@ Private Sub cmdTransmit_Click()
         MsgBox ("Please enter the date RFI was Transmitted to Applicant")
         Exit Sub
     Else
-        CompleteReview "Transmittal"
+        CompleteReview "RFI Transmittal"
     End If
 '///Code
 
@@ -1940,8 +2107,8 @@ Private Sub RepaintForm()
 '    Calls EnableFormArea for each review type present on form. Review Types need to match
 '    tblReviewTypes
     EnableFormArea "RFI Creation"
-    EnableFormArea "PDM Concurrence"
-    EnableFormArea "Transmittal"
+    EnableFormArea "RFI Concurrence"
+    EnableFormArea "RFI Transmittal"
     EnableFormArea "DIU Update EMMIE - RFI"
     EnableFormArea "Mark RFI Complete"
     
@@ -1993,14 +2160,14 @@ Private Sub EnableFormArea(AreaName As String, Optional Override As String = "")
     Select Case AreaName
         Case "RFI Creation"
 '''          Me.Response_Time_Requested.Enabled = CanEnable
-            Me.RFI_Reason.Enabled = CanEnable
+'''          Me.RFI_Reason.Enabled = CanEnable
             Me.cmdSubmitConcur.Enabled = CanEnable
             Me.subfrmRfiItems.Enabled = CanEnable
         
-        Case "PDM Concurrence"
+        Case "RFI Concurrence"
             Me.cmdConcurComplete.Enabled = CanEnable
         
-        Case "Transmittal"
+        Case "RFI Transmittal"
             Me.cmdTransmit.Enabled = CanEnable
             Me.tbTransmittalMethod.Enabled = CanEnable
             Me.tbDateSentToRecipient.Enabled = CanEnable
@@ -2031,7 +2198,7 @@ End Sub
 
 Private Function PreDialogCheck(ReviewType As String) As Boolean
 '    This page specific code checks the form for any issues before opening the dialog.  True = pass
-Dim Db As Database
+Dim db As Database
 Dim rsRfiItem As Recordset
 Dim rs As Recordset
 
@@ -2044,8 +2211,8 @@ Dim rs As Recordset
 
     Select Case ReviewType
         Case "RFI Creation"
-            Set Db = CurrentDb()
-            Set rsRfiItem = Db.OpenRecordset("SELECT * FROM tblRFIRequestedInformation WHERE [RfiID] =" & Me.RfiID)
+            Set db = CurrentDb()
+            Set rsRfiItem = db.OpenRecordset("SELECT * FROM tblRFIRequestedInformation WHERE [RfiID] =" & Me.RfiID)
 
             If rsRfiItem.BOF And rsRfiItem.EOF Then
                 PreDialogCheck = False
@@ -2059,8 +2226,8 @@ Dim rs As Recordset
         
             UserIsDIU = False
             UserIsADM = False
-            Set Db = CurrentDb()
-            Set rs = Db.OpenRecordset("qryUserPositions")
+            Set db = CurrentDb()
+            Set rs = db.OpenRecordset("qryUserPositions")
             rs.MoveFirst
             While Not rs.EOF
                 If rs!Position = "ADM" Then
@@ -2137,7 +2304,7 @@ Private Sub HandleDisposition(ReviewType As String, frm As Form)
 '''NON-STANDARD CODE ... DO NOT COPY!!
 Dim AssignRfiTo As String
 Dim WhereCondition As String
-Dim Db As Database
+Dim db As Database
 Dim rsRfiItem As Recordset
 Dim rsRevTblRfi As Recordset
 Dim ParentItem As classItemDims
@@ -2160,16 +2327,16 @@ Dim ParentItem As classItemDims
                         WhereCondition = "[DisasterID]='" & [DisasterID] & "' and [Position]='PAGS' and ([EndDate] is null or [EndDate]<= Date())"
                         AssignRfiTo = Nz(DFirst("StaffID", "tblStaffRoles", WhereCondition), "")
                     End If
-                    Reviews.EnterReview GetItemDims("PDM Concurrence"), AssignRfiTo
+                    Reviews.EnterReview GetItemDims("RFI Concurrence"), AssignRfiTo
                 
-                Case "PDM Concurrence"
+                Case "RFI Concurrence"
                     AssignRfiTo = GetItemDims.AssignedPDC
                     If AssignRfiTo = "" Then
                         WhereCondition = "[DisasterID]='" & [DisasterID] & "' and [Position]='PAGS' and ([EndDate] is null or [EndDate]<= Date())"
                         AssignRfiTo = Nz(DFirst("StaffID", "tblStaffRoles", WhereCondition), "")
                     End If
-                     Reviews.EnterReview GetItemDims("Transmittal"), AssignRfiTo
-               Case "Transmittal"
+                     Reviews.EnterReview GetItemDims("RFI Transmittal"), AssignRfiTo
+               Case "RFI Transmittal"
                     AssignRfiTo = GetItemDims.AssignedPDC
                     If AssignRfiTo = "" Then
                         WhereCondition = "[DisasterID]='" & [DisasterID] & "' and [Position]='PAGS' and ([EndDate] is null or [EndDate]<= Date())"
@@ -2179,10 +2346,15 @@ Dim ParentItem As classItemDims
                     '''Enter a Update EMMIE task for DIU
                     Reviews.EnterReview GetItemDims("DIU Update EMMIE - RFI")
                     
+                    '''Make a concurrent RFI for a ST proj, even if created by DIU. DVS Assignment will be used for RFI Item Assessment
+                    If Me.[Lane Assigned] = "ST" And GetItemDims.AssignedDVS = "" Then
+                        Reviews.EnterReview GetItemDims("Assign DVS")
+                    End If
+                    
                     '''Enter a Pending Receipt review for every item requested
-                    Set Db = CurrentDb()
-                    Set rsRfiItem = Db.OpenRecordset("SELECT * FROM tblRFIRequestedInformation WHERE [RfiID] =" & Me.RfiID)
-                    Set rsRevTblRfi = Db.OpenRecordset("revtblRfi", , dbAppendOnly)
+                    Set db = CurrentDb()
+                    Set rsRfiItem = db.OpenRecordset("SELECT * FROM tblRFIRequestedInformation WHERE [RfiID] =" & Me.RfiID)
+                    Set rsRevTblRfi = db.OpenRecordset("revtblRfi", , dbAppendOnly)
                      
                     If rsRfiItem.BOF And rsRfiItem.EOF Then
 
@@ -2220,6 +2392,9 @@ Dim ParentItem As classItemDims
                     End If
                     ParentItem.ReviewType = [ReviewFrom]
                     Reviews.EnterReview ParentItem, [CreatedBy]
+                    If [ItemType] = "Project" Then
+                        Reviews.EnterAllChildren ParentItem, ParentItem.ReviewChild, [CreatedBy]
+                    End If
             
                 Case Else
                     Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & ReviewType
@@ -2227,6 +2402,9 @@ Dim ParentItem As classItemDims
         Case Else
             Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & frm.cboResult
     End Select
+    Me.Dirty = False
+    Me.subHistory.Requery
+    Me.subformlRFIbanner.Requery
 '///Code
 
 '///ErrorHandling
@@ -2240,9 +2418,6 @@ PROC_ERR:
 '///ErrorHandling
 
 End Sub
-
-'INTERNAL STANDARD CODE
-
 Private Function GetItemDims(Optional ReviewName As String = "") As classItemDims
     Dim ItemDims As New classItemDims   ' eventually what is passed out.  Creates new object
 '    each time it is called
@@ -2253,8 +2428,15 @@ Private Function GetItemDims(Optional ReviewName As String = "") As classItemDim
 '///Error Handling
 
 '///Code
-    ItemDims.LoadByForm Me, FormItemType, ReviewName
-    Set GetItemDims = ItemDims
+Select Case ReviewName
+    Case "Assign DVS"
+        ItemDims.LoadByForm Me, "Project", ReviewName
+        Set GetItemDims = ItemDims
+        
+    Case Else
+        ItemDims.LoadByForm Me, FormItemType, ReviewName
+        Set GetItemDims = ItemDims
+End Select
 '///Code
 
 '///ErrorHandling
@@ -2268,7 +2450,7 @@ PROC_ERR:
 '///ErrorHandling
 End Function
 
-
+'INTERNAL STANDARD CODE
 Private Sub StartReview(ReviewType As String)
 
 '///Error Handling

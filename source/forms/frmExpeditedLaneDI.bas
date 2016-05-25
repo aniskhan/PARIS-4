@@ -17,7 +17,7 @@ Begin Form
     Width =21615
     DatasheetFontHeight =11
     ItemSuffix =93
-    Right =22080
+    Right =20925
     Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -1927,7 +1927,7 @@ Private Sub HandleDisposition(ReviewType As String, frm As Form)
                 Case "PDM Concurrence"
                     Reviews.EnterReview GetItemDims("Applicant Concurrence"), GetItemDims(ReviewType).AssignedPDC
                 Case "Applicant Concurrence"
-                    Reviews.EnterReview GetItemDims("Assign DAS")
+                    Reviews.EnterReview GetItemDims("Costing - EX Lane"), Me.[Assigned Data Validation Specialist]
                 Case Else
                     Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & ReviewType
             End Select

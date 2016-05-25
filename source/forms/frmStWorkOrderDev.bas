@@ -15,11 +15,11 @@ Begin Form
     Width =17640
     DatasheetFontHeight =11
     ItemSuffix =186
-    Right =20175
-    Bottom =12615
+    Right =8385
+    Bottom =9705
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0x4fc1e0fd12b1e440
+        0x3f3f65aa6dc2e440
     End
     RecordSource ="fqryProjectStWorkOrderDev"
     Caption ="ST Work Orders"
@@ -1342,7 +1342,7 @@ Private Function MultiCheck(CheckType As String) As Boolean
         
         Case "Already Sent to SI"
             WhereCondition = GetItemDims.WhereID(False)
-            WhereCondition = WhereCondition & " and ([ReviewType] = 'Inspection Assignment' or [ReviewType] = 'Validation Assignment')"
+            WhereCondition = WhereCondition & " and [ReviewType] = 'Inspection Assignment' and [Disposition] <> 'RW'"
             If DCount("ProjectID", GetItemDims.ReviewTable, WhereCondition) = 0 Then
                 MultiCheck = False
             Else

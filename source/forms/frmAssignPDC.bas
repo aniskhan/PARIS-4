@@ -17,8 +17,8 @@ Begin Form
     Width =16500
     DatasheetFontHeight =11
     ItemSuffix =111
-    Right =13530
-    Bottom =12645
+    Right =15345
+    Bottom =8415
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0x6fcc3bcd72a5e440
@@ -1200,7 +1200,7 @@ PROC_EXIT:
 PROC_ERR:
     GlobalErrHandler
     Resume PROC_EXIT
-'///ErrorHandline
+'///ErrorHandling
 
 End Function
 
@@ -1225,7 +1225,7 @@ PROC_EXIT:
 PROC_ERR:
     GlobalErrHandler
     Resume PROC_EXIT
-'///ErrorHandline
+'///ErrorHandling
 
 End Function
 
@@ -1261,7 +1261,7 @@ PROC_EXIT:
 PROC_ERR:
     GlobalErrHandler
     Resume PROC_EXIT
-'///ErrorHandline
+'///ErrorHandling
 
 End Sub
 

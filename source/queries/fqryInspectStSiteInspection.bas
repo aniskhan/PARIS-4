@@ -2,7 +2,6 @@
 Option =0
 Begin InputTables
     Name ="tblSiteInspections"
-    Name ="tblProjects"
 End
 Begin OutputColumns
     Expression ="tblSiteInspections.ID"
@@ -22,12 +21,6 @@ Begin OutputColumns
     Expression ="tblSiteInspections.[Additional Inspection needed]"
     Expression ="tblSiteInspections.[Subrecipient acknowledges recipeipt of SIR]"
     Expression ="tblSiteInspections.[Lane Assigned]"
-End
-Begin Joins
-    LeftTable ="tblSiteInspections"
-    RightTable ="tblProjects"
-    Expression ="tblSiteInspections.ID = tblProjects.ID"
-    Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -87,17 +80,37 @@ Begin
         dbText "Name" ="tblSiteInspections.[Lane Assigned]"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="tblSiteInspections.ProjectID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSiteInspections.[Recipient Participant]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSiteInspections.ApplicantID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSiteInspections.[PDC Participated]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSiteInspections.DisasterID"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1153
+    Right =1048
     Bottom =860
     Left =-1
     Top =-1
-    Right =1137
-    Bottom =504
+    Right =1032
+    Bottom =487
     Left =0
     Top =0
     ColumnsShown =539
@@ -108,15 +121,6 @@ Begin
         Bottom =450
         Top =0
         Name ="tblSiteInspections"
-        Name =""
-    End
-    Begin
-        Left =382
-        Top =12
-        Right =526
-        Bottom =156
-        Top =0
-        Name ="tblProjects"
         Name =""
     End
 End

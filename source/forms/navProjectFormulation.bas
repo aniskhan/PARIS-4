@@ -15,14 +15,15 @@ Begin Form
     Width =31680
     DatasheetFontHeight =11
     ItemSuffix =42
-    Right =13515
-    Bottom =12645
+    Right =8385
+    Bottom =9705
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0x03e109b0b4b9e440
+        0x9f18bba96dc2e440
     End
     RecordSource ="fqryDisasterSubrecipient"
     Caption ="Project Formulation Menu"
+    OnCurrent ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
@@ -869,7 +870,6 @@ Begin Form
                     ForeTint =100.0
                 End
                 Begin CommandButton
-                    Enabled = NotDefault
                     OverlapFlags =215
                     Left =13980
                     Top =9720
@@ -881,6 +881,7 @@ Begin Form
                     ForeColor =16777215
                     Name ="cmdSendToExitBriefing"
                     Caption ="Send Applicant to Exit Briefing"
+                    OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =13980
@@ -1013,7 +1014,8 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 Option Explicit
-
+Private Const FormItemType As String = "RPA" 'used in determining what type of record is handled
+'''BUTTONS
 Public Sub cmdDamInvTemplate_Click()
     Dim wb As Object
     Dim fileName As String
@@ -1112,10 +1114,104 @@ End Sub
 Private Sub cmdProjectFormulation_Click()
     DoCmd.OpenForm "frmProjectSiteLink", , , "[Assigned PDC] = '" & Environ("UserName") & "'"
 End Sub
+Private Sub cmdSendToExitBriefing_Click()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cmdSendToExitBriefing_Click"
+'///Error Handling
 
+'///Code
+CompleteReview "Enter Projects"
+'///Code
 
+ '///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+End Sub
 
-Private Function GetItemDims() As classItemDims
+Private Sub Form_Current()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "Form_Current"
+'///Error Handling
+
+'///Code
+    RepaintForm
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+End Sub
+Private Sub RepaintForm()
+
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "RepaintForm"
+'///Error Handling
+
+'///Code
+    EnableFormArea "Enter Projects"
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+End Sub
+
+Private Sub EnableFormArea(AreaName As String, Optional Override As String = "")
+    Dim CanEnable As Boolean    'used so that CanSee is only called once per run.
+    
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "EnableFormArea"
+'///Error Handling
+
+'///Code
+    If Override = "Disable" Then
+        CanEnable = False
+    Else
+        CanEnable = Reviews.CanSee(GetItemDims(AreaName), Environ("UserName"))
+    End If
+    
+    Select Case AreaName
+        Case "Enter Projects"
+            Me.cmdSendToExitBriefing.Enabled = CanEnable
+        Case Else
+            Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & AreaName
+    End Select
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+End Sub
+
+Private Function GetItemDims(Optional ReviewName As String = "") As classItemDims
     Dim ItemDims As New classItemDims
 
 '///Error Handling
@@ -1123,11 +1219,14 @@ Private Function GetItemDims() As classItemDims
     PushCallStack Me.name & "." & "GetItemDims"
 '///Error Handling
     
-    ItemDims.ItemType = Nz(Me![Item], "")
-    ItemDims.DisasterID = Nz(Me![DisasterID], "")
-    ItemDims.ApplicantID = Nz(Me![ApplicantID], "")
+ '>>>>> Why was this done this way?
+'''    ItemDims.ItemType = Nz(Me![Item], "")
+'''    ItemDims.DisasterID = Nz(Me![DisasterID], "")
+'''    ItemDims.ApplicantID = Nz(Me![ApplicantID], "")
+'''    Set GetItemDims = ItemDims
+    
+    ItemDims.LoadByForm Me, FormItemType, ReviewName
     Set GetItemDims = ItemDims
-
 
  '///ErrorHandling
 PROC_EXIT:
@@ -1146,3 +1245,188 @@ but the recordsource (filtered or unfiltered) contains zero tasks.
     Resume PROC_EXIT
 '///ErrorHandling
 End Function
+Private Function PreDialogCheck(ReviewType As String) As Boolean
+'    This page specific code checks the form for any issues before opening the dialog.  True = pass
+
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "PreDialogCheck"
+'///Error Handling
+
+'///Code
+'    No checks on this page.
+        PreDialogCheck = True
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Function
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+
+End Function
+Private Function PostDialogCheck(ReviewType As String, DialogResult As String) As Boolean
+'    This page specific code checks the form for any issues before completing the review. True = pass
+
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "PostDialogCheck"
+'///Error Handling
+
+'///Code
+
+'''>>> TODO: Add post check on SUB to see if there are any open projects (not in phase 4)
+
+    PostDialogCheck = True
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Function
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+
+End Function
+
+
+'INTERNAL STANDARD CODE
+Private Sub StartReview(ReviewType As String)
+
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "StartReview"
+'///Error Handling
+
+'///Code
+    Reviews.StartReview GetItemDims(ReviewType), Environ("UserName")
+    RepaintForm
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+End Sub
+
+Private Sub CompleteReview(ReviewType As String)
+    Dim frm As Form 'used for getting information from frmReviewResult dialog
+    
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "CompleteReview"
+'///Error Handling
+
+'///Code
+    Reviews.StartReview GetItemDims(ReviewType), Environ("UserName"), True
+    If PreDialogCheck(ReviewType) Then
+        DoCmd.OpenForm "frmReviewResult", , , , , acDialog, GetItemDims(ReviewType).OpenString
+        If Access.CurrentProject.AllForms("frmReviewResult").IsLoaded Then
+            Set frm = Forms("frmReviewResult")
+            If PostDialogCheck(ReviewType, frm.cboResult) Then
+                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
+                    HandleDisposition ReviewType, frm
+                End If
+            End If
+            DoCmd.Close acForm, "frmReviewResult"
+        Else
+            MsgBox "Review was cancelled"
+        End If
+    End If
+    RepaintForm
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+
+End Sub
+Private Sub HandleDisposition(ReviewType As String, frm As Form)
+
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "HandleDisposition"
+'///Error Handling
+
+'///Code
+    Select Case frm.cboResult
+        Case "DM", "RFI", "RSN", "RW"
+            HandleStandardDisposition ReviewType, frm
+        Case "SUB"
+'            Main section of page specific code. Creates new reviews as needed.
+            Select Case ReviewType
+                Case "Enter Projects"
+                    Reviews.EnterReview GetItemDims("Exit Briefing")
+                Case Else
+                    Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & ReviewType
+            End Select
+        Case Else
+            Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & frm.cboResult
+    End Select
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+
+End Sub
+Private Sub HandleStandardDisposition(ReviewType As String, frm As Form)
+
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "HandleStandardDisposition"
+'///Error Handling
+
+'///Code
+    Select Case frm.cboResult
+'        Most review dispositions have fairly standard code.
+        Case "DM"
+            Reviews.EnterReview GetItemDims("Determination Memo")
+        Case "RFI"
+            Reviews.CreateRFI GetItemDims(ReviewType)
+            Reviews.EnterReview GetItemDims("RFI")
+            DoCmd.OpenForm "frmRFIRouting", , , GetItemDims.WhereID(False)
+        Case "RSN"
+            Reviews.EnterReview GetItemDims(ReviewType), frm.cboAssign, "Reassigned to " & frm.cboAssign
+        Case "RW"
+            Reviews.EnterReview GetItemDims(frm.cboRework), frm.cboAssign
+        Case Else
+            Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & frm.cboResult
+    End Select
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+
+End Sub
