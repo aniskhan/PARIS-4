@@ -140,17 +140,36 @@ Begin
         dbText "Name" ="PAGS Review"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="DIU Enter Exit Briefing Date"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="DIU Update EMMIE Projections"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Enter Projects"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Exit Briefing"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="MaxOfreviewexitdate"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1153
-    Bottom =860
+    Right =920
+    Bottom =664
     Left =-1
     Top =-1
-    Right =1137
-    Bottom =301
+    Right =904
+    Bottom =284
     Left =0
     Top =0
     ColumnsShown =559

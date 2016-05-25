@@ -17,11 +17,11 @@ Begin Form
     Width =17520
     DatasheetFontHeight =11
     ItemSuffix =21
-    Right =13515
-    Bottom =12645
+    Right =5265
+    Bottom =9705
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0x5e3e6cd473bce440
+        0x5a8476566dc2e440
     End
     RecordSource ="fqryRpaProjectEntry"
     Caption ="Enter List of Damages"
@@ -31,7 +31,6 @@ Begin Form
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
         0x010000006801000000000000a10700000100000001000000
     End
-    OnLoad ="[Event Procedure]"
     AllowDatasheetView =0
     FilterOnLoad =0
     ShowPageMargins =0
@@ -534,7 +533,7 @@ Begin Form
                     TabIndex =6
                     ForeColor =16777215
                     Name ="cmdSwitch"
-                    Caption ="Switch to Manual Entry"
+                    Caption ="Switch to Manual"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
@@ -725,12 +724,6 @@ Private Sub cmdSearch_Click()
             Me.FilterOn = False
             MsgBox "Can not show that Applicant. It is either ineligible or not in Project Entry at this time."
         End If
-'        Set rs = Me.Recordset.Clone
-'        rs.FindFirst "[ApplicantID] = '" & ID & "'"
-'        If Not rs.NoMatch Then
-'            If Not rs.EOF Then Me.Bookmark = rs.Bookmark
-'        End If
-        
         DoCmd.Close acForm, "frmRpaSearch"
         Set frm = Nothing
     Else
@@ -741,46 +734,7 @@ Private Sub cmdSearch_Click()
     Me.subRpaInfo.Requery
 
 End Sub
-Private Sub ColumnOrder()
-'///Error Handling
-    If gcfHandleErrors Then On Error GoTo PROC_ERR
-    PushCallStack Me.name & "." & "ColumnOrder"
-'///Error Handling
 
-'///Code
-        ' Ensure Column order matches List of Damages Excel Spreadsheet
-        Me.subformEnterListofDamages![SiteID].ColumnOrder = 1
-        Me.subformEnterListofDamages!Category.ColumnOrder = 2
-        Me.subformEnterListofDamages![Name of Site/Facility].ColumnOrder = 3
-        Me.subformEnterListofDamages![E911 Street Address or Closest Intersection].ColumnOrder = 4
-        Me.subformEnterListofDamages![Latitude].ColumnOrder = 5
-        Me.subformEnterListofDamages![Longitude].ColumnOrder = 6
-        Me.subformEnterListofDamages![Describe Damage].ColumnOrder = 7
-        Me.subformEnterListofDamages![Cause of Damage  (wind, flood, etc)].ColumnOrder = 8
-        Me.subformEnterListofDamages![Approximate Cost].ColumnOrder = 9
-        Me.subformEnterListofDamages![% Work Complete].ColumnOrder = 10
-        Me.subformEnterListofDamages![Labor Type].ColumnOrder = 11
-        Me.subformEnterListofDamages![EHP Issues? (H, E, B)].ColumnOrder = 12
-        Me.subformEnterListofDamages![Facility insured?].ColumnOrder = 13
-        Me.subformEnterListofDamages![Has Recieved PA grant in prior Stafford Act Disasters?].ColumnOrder = 14
-        Me.subformEnterListofDamages![Is there a potential mitigation opportunity?].ColumnOrder = 15
-        Me.subformEnterListofDamages![Subrecipient priority (Low, Med, High)].ColumnOrder = 16
-        Me.subformEnterListofDamages![Requires Site Inspection].ColumnOrder = 17
-        Me.subformEnterListofDamages![DisasterID].ColumnOrder = 18
-        Me.subformEnterListofDamages![ApplicantID].ColumnOrder = 19
-'///Code
-
-'///ErrorHandling
-PROC_EXIT:
-    PopCallStack
-    Exit Sub
-
-PROC_ERR:
-    GlobalErrHandler
-    Resume PROC_EXIT
-'///ErrorHandling
-
-End Sub
 Public Sub cmdSwitch_Click()
 '///Error Handling
     If gcfHandleErrors Then On Error GoTo PROC_ERR
@@ -793,8 +747,7 @@ Public Sub cmdSwitch_Click()
         Me.cmdSwitch.Caption = "Switch to Manual"
         Me.subformEnterListofDamages.SetFocus
         DoCmd.RunCommand acCmdSubformDatasheet
-        Call ColumnOrder
-        
+        Call Form_subformEnterListofDamages.LODColumnOrder
         bManual = False
     Else
         Me.lbInputMode.Caption = "In Manual Mode"
@@ -817,11 +770,5 @@ PROC_ERR:
 End Sub
 
 Private Sub Form_Current()
-    Me.subformEnterListofDamages.Form.ClearCount
-    
-End Sub
-
-Private Sub Form_Load()
-    bManual = False
-    Call ColumnOrder
+    Me.subformEnterListofDamages.Form.ClearCount ' This is to ensure the site counter increments on large copy-paste functions from LOD
 End Sub

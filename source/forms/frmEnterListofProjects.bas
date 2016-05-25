@@ -17,11 +17,11 @@ Begin Form
     Width =16680
     DatasheetFontHeight =11
     ItemSuffix =46
-    Right =8385
+    Right =5265
     Bottom =9705
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0xfeab17aa6dc2e440
+        0x105ad4556dc2e440
     End
     RecordSource ="fqryRpaProjectEntry"
     Caption ="Enter Projects"

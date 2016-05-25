@@ -574,7 +574,7 @@ Public Sub CreateRFI(ItemDims As classItemDims)
     Dim db As Database
     Dim recAddRFI As Recordset
     Dim RfiID As Long
-        
+     Debug.Print ItemDims.WhereID(False)
     If DCount("RfiID", "tblRFI", ItemDims.WhereID(False) & " and not [RFICanceled] and not [RFISatisfied]") = 0 Then
         Set db = CurrentDb()
         Set recAddRFI = db.OpenRecordset("tblRFI", dbOpenDynaset)

@@ -92,5 +92,6 @@ CREATE TABLE [tblSites] (
   [PartOfVerificationSample] VARCHAR (255),
   [KnownDimensionsInEMMIE] VARCHAR (255),
   [UpdatedCost] CURRENCY DEFAULT 0,
+  [isWithdrawn] BIT DEFAULT No,
    CONSTRAINT [PrimaryKey] PRIMARY KEY ([DisasterID], [ApplicantID], [ProjectID], [SiteID])
 )

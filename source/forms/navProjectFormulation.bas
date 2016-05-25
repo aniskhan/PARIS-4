@@ -15,11 +15,11 @@ Begin Form
     Width =31680
     DatasheetFontHeight =11
     ItemSuffix =42
-    Right =8385
+    Right =5265
     Bottom =9705
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0x9f18bba96dc2e440
+        0xaed5e3546dc2e440
     End
     RecordSource ="fqryDisasterSubrecipient"
     Caption ="Project Formulation Menu"
@@ -1059,7 +1059,7 @@ Private Sub cmdEnterListofDamages_Click()
 
         DoCmd.OpenForm "frmEnterListofDamages", _
         WhereCondition:=GetItemDims.WhereID(False) & "AND" & "[Assigned PDC] = '" & Environ("UserName") & "'"
-        Debug.Print GetItemDims.WhereID(False)
+        '''Debug.Print GetItemDims.WhereID(False)
             With Forms("frmEnterListofDamages")
                 !lbInputMode.Caption = "In Copy-Paste Mode"
                 !cmdSwitch.Caption = "Switch to Manual"
@@ -1092,7 +1092,6 @@ Private Sub cmdOpenEnterListof_Projects_Click()
                 !lbInputMode.Caption = "In Manual Mode"
                 !cmdSwitch.Caption = "Switch to Datasheet"
             End With
-        
 '///Code
 
  '///ErrorHandling
@@ -1219,7 +1218,7 @@ Private Function GetItemDims(Optional ReviewName As String = "") As classItemDim
     PushCallStack Me.name & "." & "GetItemDims"
 '///Error Handling
     
- '>>>>> Why was this done this way?
+ '>>>>> Udpating the following to load by form
 '''    ItemDims.ItemType = Nz(Me![Item], "")
 '''    ItemDims.DisasterID = Nz(Me![DisasterID], "")
 '''    ItemDims.ApplicantID = Nz(Me![ApplicantID], "")
@@ -1236,12 +1235,12 @@ PROC_EXIT:
 PROC_ERR:
 'Catch error where the user attempts to navigate to a task _
 but the recordsource (filtered or unfiltered) contains zero tasks.
-    If Err.Number = -2147352567 Or 91 Then
-         ' Do Nothing: Error Message handled in Form_DblClick()
-    Else
-        GlobalErrHandler
-    End If
-    
+''    If Err.Number = -2147352567 Or 91 Then
+''         ' Do Nothing: Error Message handled in Form_DblClick()
+''    Else
+''        GlobalErrHandler
+''    End If
+
     Resume PROC_EXIT
 '///ErrorHandling
 End Function
@@ -1279,7 +1278,7 @@ Private Function PostDialogCheck(ReviewType As String, DialogResult As String) A
 
 '///Code
 
-'''>>> TODO: Add post check on SUB to see if there are any open projects (not in phase 4)
+'''No Post Check
 
     PostDialogCheck = True
 '///Code
@@ -1360,7 +1359,7 @@ PROC_ERR:
 
 End Sub
 Private Sub HandleDisposition(ReviewType As String, frm As Form)
-
+Dim AssignExitBriefingTo As String
 '///Error Handling
     If gcfHandleErrors Then On Error GoTo PROC_ERR
     PushCallStack Me.name & "." & "HandleDisposition"
@@ -1374,7 +1373,8 @@ Private Sub HandleDisposition(ReviewType As String, frm As Form)
 '            Main section of page specific code. Creates new reviews as needed.
             Select Case ReviewType
                 Case "Enter Projects"
-                    Reviews.EnterReview GetItemDims("Exit Briefing")
+                    AssignExitBriefingTo = GetItemDims.AssignedPDC
+                    Reviews.EnterReview GetItemDims("Exit Briefing"), AssignExitBriefingTo
                 Case Else
                     Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & ReviewType
             End Select

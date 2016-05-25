@@ -15,11 +15,11 @@ Begin Form
     Width =17640
     DatasheetFontHeight =11
     ItemSuffix =186
-    Right =8385
+    Right =5265
     Bottom =9705
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0x3f3f65aa6dc2e440
+        0x5c1b2a566dc2e440
     End
     RecordSource ="fqryProjectStWorkOrderDev"
     Caption ="ST Work Orders"

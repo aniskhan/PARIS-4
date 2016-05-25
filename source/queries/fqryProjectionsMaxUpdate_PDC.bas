@@ -72,10 +72,6 @@ Begin
         dbText "Name" ="tblSubRecipient.[Subrecipient Name]"
         dbLong "AggregateType" ="-1"
     End
-    Begin
-        dbText "Name" ="tblSubRecipient.Status"
-        dbLong "AggregateType" ="-1"
-    End
 End
 Begin
     State =0

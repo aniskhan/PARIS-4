@@ -15,8 +15,10 @@ Begin Form
     Width =16500
     DatasheetFontHeight =11
     ItemSuffix =70
-    Right =13860
-    Bottom =12645
+    Left =-15
+    Top =2100
+    Right =16350
+    Bottom =8700
     DatasheetGridlinesColor =15132391
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin
@@ -31,6 +33,7 @@ Begin Form
         0x010000006801000000000000a10700000100000001000000
     End
     OnDblClick ="[Event Procedure]"
+    OnLoad ="[Event Procedure]"
     FilterOnLoad =0
     ShowPageMargins =0
     DisplayOnSharePointSite =1
@@ -269,7 +272,7 @@ Begin Form
                     Top =480
                     Width =4620
                     Height =363
-                    ColumnOrder =3
+                    ColumnOrder =2
                     TabIndex =1
                     BackColor =13431551
                     BorderColor =10921638
@@ -316,7 +319,7 @@ Begin Form
                     Top =900
                     Width =6540
                     Height =363
-                    ColumnOrder =4
+                    ColumnOrder =3
                     TabIndex =2
                     BackColor =13431551
                     BorderColor =10921638
@@ -360,7 +363,7 @@ Begin Form
                     Left =1560
                     Top =1380
                     Height =363
-                    ColumnOrder =1
+                    ColumnOrder =4
                     TabIndex =3
                     BackColor =13431551
                     BorderColor =10921638
@@ -992,7 +995,7 @@ Begin Form
                     Left =1620
                     Top =2220
                     Height =363
-                    ColumnOrder =2
+                    ColumnOrder =1
                     TabIndex =5
                     BackColor =13431551
                     BorderColor =10921638
@@ -1653,4 +1656,44 @@ End Function
 
 Private Sub Form_DblClick(Cancel As Integer)
 Call Form_frmEnterListofDamages.cmdSwitch_Click
+End Sub
+Public Sub LODColumnOrder()
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "ColumnOrder"
+'///Error Handling
+
+'///Code
+        Me.[SiteID].ColumnOrder = 1
+        Me.[Category].ColumnOrder = 2
+        Me.[Name of Site/Facility].ColumnOrder = 3
+        Me.[E911 Street Address or Closest Intersection].ColumnOrder = 4
+        Me.[Latitude].ColumnOrder = 5
+        Me.[Longitude].ColumnOrder = 6
+        Me.[Describe Damage].ColumnOrder = 7
+        Me.[Cause of Damage  (wind, flood, etc)].ColumnOrder = 8
+        Me.[Approximate Cost].ColumnOrder = 9
+        Me.[% Work Complete].ColumnOrder = 10
+        Me.[Labor Type].ColumnOrder = 11
+        Me.[EHP Issues? (H, E, B)].ColumnOrder = 12
+        Me.[Facility insured?].ColumnOrder = 13
+        Me.[Has Recieved PA grant in prior Stafford Act Disasters?].ColumnOrder = 14
+        Me.[Is there a potential mitigation opportunity?].ColumnOrder = 15
+        Me.[Subrecipient priority (Low, Med, High)].ColumnOrder = 16
+        Me.[Requires Site Inspection].ColumnOrder = 17
+        Me.[DisasterID].ColumnOrder = 18
+        Me.[ApplicantID].ColumnOrder = 19
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandling
+End Sub
+Private Sub Form_Load()
+    If Form.CurrentView = 2 Then Call LODColumnOrder ' 2 is datasheet View
 End Sub

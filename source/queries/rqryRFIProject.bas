@@ -237,75 +237,95 @@ Begin
     End
     Begin
         dbText "Name" ="Full Reference"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="rqryRFIRouting.Application Title"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="Date Sent to Recipient"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="Response Time Requested"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="RFI Reason"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="Transmittal Method"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="JFO Street Address"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="JFO City, State, Zip"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="HSIN Address"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="RFI Response Email Address"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="RfiSatisfied"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="RfiCanceled"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="Reason Requested"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="Name of Site/Facility"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="RfiItemID"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="tblProjects.Application Title"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="Disaster Type"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="State"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="ProjectID"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="Application Title"
+        dbLong "AggregateType" ="-1"
     End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1218
-    Bottom =860
+    Right =920
+    Bottom =664
     Left =-1
     Top =-1
-    Right =1202
-    Bottom =537
+    Right =904
+    Bottom =520
     Left =0
     Top =0
     ColumnsShown =539

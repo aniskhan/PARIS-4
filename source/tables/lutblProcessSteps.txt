@@ -13,3 +13,4 @@
 12	Step 12	Review Queues	PARC	4
 13	Step 13	Obligation	Field	4
 14	Step 14	Determination Memo Process	Field	4
+15	Step 15	Applicant Exit	Field	1

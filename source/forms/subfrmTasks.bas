@@ -16,9 +16,9 @@ Begin Form
     DatasheetFontHeight =11
     ItemSuffix =69
     Left =60
-    Top =525
+    Top =660
     Right =14265
-    Bottom =7965
+    Bottom =8100
     DatasheetGridlinesColor =15132391
     Filter ="[positionTier] = 0 and [ReviewUserID] is Null"
     RecSrcDt = Begin

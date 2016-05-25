@@ -1,31 +1,32 @@
 ﻿Version =20
 VersionRequired =20
 Begin Form
-    RecordSelectors = NotDefault
     AutoCenter = NotDefault
-    NavigationButtons = NotDefault
     DividingLines = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =2
-    ScrollBars =0
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
     Width =10230
     DatasheetFontHeight =11
-    ItemSuffix =9
-    Left =405
-    Top =360
-    Right =23310
-    Bottom =1185
+    ItemSuffix =15
+    Left =345
+    Top =7380
+    Right =13590
+    Bottom =13230
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0xa2d063da14bee440
+        0x4effe20053c2e440
     End
-    RecordSource ="rqry-RFIbyStatus"
-    Caption ="RFIs by Status"
+    RecordSource ="rqry-ProjectsMaxReviewTypeDisp"
+    Caption ="subfrm-ExitBriefing-ProjectsMaxReviewTypeDisp"
     DatasheetFontName ="Calibri"
+    PrtMip = Begin
+        0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
     FilterOnLoad =0
     ShowPageMargins =0
     DisplayOnSharePointSite =1
@@ -70,7 +71,7 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =0
+            Height =1080
             BackColor =15064278
             Name ="FormHeader"
             AutoHeight =1
@@ -78,10 +79,30 @@ Begin Form
             AlternateBackShade =95.0
             BackThemeColorIndex =2
             BackTint =20.0
+            Begin
+                Begin Label
+                    OverlapFlags =85
+                    Left =60
+                    Top =60
+                    Width =9648
+                    Height =1020
+                    FontSize =20
+                    BorderColor =8355711
+                    ForeColor =8355711
+                    Name ="Label14"
+                    Caption ="subfrm-ExitBriefing-ProjectsMaxReviewTypeDisp"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =9708
+                    LayoutCachedHeight =1080
+                End
+            End
         End
         Begin Section
-            Height =2820
+            Height =4800
             Name ="Detail"
+            AutoHeight =1
             AlternateBackColor =15921906
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -98,11 +119,10 @@ Begin Form
                     Width =7260
                     Height =600
                     ColumnWidth =3000
-                    ColumnOrder =0
                     BorderColor =10921638
                     ForeColor =4210752
-                    Name ="DisasterID"
-                    ControlSource ="DisasterID"
+                    Name ="ApplicantID"
+                    ControlSource ="ApplicantID"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2910
@@ -118,8 +138,8 @@ Begin Form
                             Height =330
                             BorderColor =8355711
                             ForeColor =8355711
-                            Name ="DisasterID_Label"
-                            Caption ="DisasterID"
+                            Name ="ApplicantID_Label"
+                            Caption ="ApplicantID"
                             GridlineColor =10921638
                             LayoutCachedLeft =360
                             LayoutCachedTop =360
@@ -136,13 +156,12 @@ Begin Form
                     Top =1080
                     Width =1530
                     Height =330
-                    ColumnWidth =1530
-                    ColumnOrder =3
+                    ColumnWidth =990
                     TabIndex =1
                     BorderColor =10921638
                     ForeColor =4210752
-                    Name ="CANCELED"
-                    ControlSource ="CANCELED"
+                    Name ="ProjectID"
+                    ControlSource ="ProjectID"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2910
@@ -158,8 +177,8 @@ Begin Form
                             Height =330
                             BorderColor =8355711
                             ForeColor =8355711
-                            Name ="CANCELED_Label"
-                            Caption ="CANCELED"
+                            Name ="ProjectID_Label"
+                            Caption ="Project ID"
                             GridlineColor =10921638
                             LayoutCachedLeft =360
                             LayoutCachedTop =1080
@@ -169,27 +188,28 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
                     OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
                     Left =2910
                     Top =1500
-                    Width =1530
-                    Height =330
-                    ColumnWidth =6105
-                    ColumnOrder =1
+                    Width =7260
+                    Height =600
+                    ColumnWidth =855
                     TabIndex =2
                     BorderColor =10921638
                     ForeColor =4210752
-                    Name ="IN PROGRESS"
-                    ControlSource ="IN PROGRESS"
-                    EventProcPrefix ="IN_PROGRESS"
+                    Name ="Lane Assigned"
+                    ControlSource ="Lane Assigned"
+                    EventProcPrefix ="Lane_Assigned"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2910
                     LayoutCachedTop =1500
-                    LayoutCachedWidth =4440
-                    LayoutCachedHeight =1830
+                    LayoutCachedWidth =10170
+                    LayoutCachedHeight =2100
                     Begin
                         Begin Label
                             OverlapFlags =85
@@ -199,9 +219,9 @@ Begin Form
                             Height =330
                             BorderColor =8355711
                             ForeColor =8355711
-                            Name ="IN PROGRESS_Label"
-                            Caption ="IN PROGRESS"
-                            EventProcPrefix ="IN_PROGRESS_Label"
+                            Name ="Lane Assigned_Label"
+                            Caption ="Lane"
+                            EventProcPrefix ="Lane_Assigned_Label"
                             GridlineColor =10921638
                             LayoutCachedLeft =360
                             LayoutCachedTop =1500
@@ -211,80 +231,165 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
                     OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
                     Left =2910
-                    Top =1920
-                    Width =1530
-                    Height =330
-                    ColumnWidth =13560
-                    ColumnOrder =2
+                    Top =2220
+                    Width =7260
+                    Height =600
+                    ColumnWidth =1155
                     TabIndex =3
                     BorderColor =10921638
                     ForeColor =4210752
-                    Name ="PENDING APPLICANT"
-                    ControlSource ="PENDING APPLICANT"
-                    EventProcPrefix ="PENDING_APPLICANT"
+                    Name ="Project Category"
+                    ControlSource ="Project Category"
+                    EventProcPrefix ="Project_Category"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2910
-                    LayoutCachedTop =1920
-                    LayoutCachedWidth =4440
-                    LayoutCachedHeight =2250
+                    LayoutCachedTop =2220
+                    LayoutCachedWidth =10170
+                    LayoutCachedHeight =2820
                     Begin
                         Begin Label
                             OverlapFlags =85
                             Left =360
-                            Top =1920
+                            Top =2220
                             Width =2460
                             Height =330
                             BorderColor =8355711
                             ForeColor =8355711
-                            Name ="PENDING APPLICANT_Label"
-                            Caption ="PENDING APPLICANT"
-                            EventProcPrefix ="PENDING_APPLICANT_Label"
+                            Name ="Project Category_Label"
+                            Caption ="Category"
+                            EventProcPrefix ="Project_Category_Label"
                             GridlineColor =10921638
                             LayoutCachedLeft =360
-                            LayoutCachedTop =1920
+                            LayoutCachedTop =2220
                             LayoutCachedWidth =2820
-                            LayoutCachedHeight =2250
+                            LayoutCachedHeight =2550
                         End
                     End
                 End
                 Begin TextBox
-                    Locked = NotDefault
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
                     OverlapFlags =85
-                    TextAlign =2
                     IMESentenceMode =3
-                    Left =1680
-                    Top =2460
-                    Height =315
+                    Left =2910
+                    Top =2940
+                    Width =7260
+                    Height =600
+                    ColumnWidth =6885
                     TabIndex =4
                     BorderColor =10921638
                     ForeColor =4210752
-                    Name ="COMPLETE"
-                    ControlSource ="COMPLETE"
+                    Name ="Application Title"
+                    ControlSource ="Application Title"
+                    EventProcPrefix ="Application_Title"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =1680
-                    LayoutCachedTop =2460
-                    LayoutCachedWidth =3120
-                    LayoutCachedHeight =2775
+                    LayoutCachedLeft =2910
+                    LayoutCachedTop =2940
+                    LayoutCachedWidth =10170
+                    LayoutCachedHeight =3540
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Top =2460
-                            Width =1050
-                            Height =315
+                            Left =360
+                            Top =2940
+                            Width =2460
+                            Height =330
                             BorderColor =8355711
                             ForeColor =8355711
-                            Name ="Label8"
-                            Caption ="COMPLETE"
+                            Name ="Application Title_Label"
+                            Caption ="Title"
+                            EventProcPrefix ="Application_Title_Label"
                             GridlineColor =10921638
-                            LayoutCachedTop =2460
-                            LayoutCachedWidth =1050
-                            LayoutCachedHeight =2775
+                            LayoutCachedLeft =360
+                            LayoutCachedTop =2940
+                            LayoutCachedWidth =2820
+                            LayoutCachedHeight =3270
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =2910
+                    Top =3660
+                    Width =3660
+                    Height =330
+                    ColumnWidth =2370
+                    TabIndex =5
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="LastOfReviewType"
+                    ControlSource ="LastOfReviewType"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =2910
+                    LayoutCachedTop =3660
+                    LayoutCachedWidth =6570
+                    LayoutCachedHeight =3990
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =360
+                            Top =3660
+                            Width =2460
+                            Height =330
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="LastOfReviewType_Label"
+                            Caption ="Max Review"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =360
+                            LayoutCachedTop =3660
+                            LayoutCachedWidth =2820
+                            LayoutCachedHeight =3990
+                        End
+                    End
+                End
+                Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =2910
+                    Top =4080
+                    Width =7260
+                    Height =600
+                    ColumnWidth =720
+                    TabIndex =6
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="Disposition"
+                    ControlSource ="Disposition"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =2910
+                    LayoutCachedTop =4080
+                    LayoutCachedWidth =10170
+                    LayoutCachedHeight =4680
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =360
+                            Top =4080
+                            Width =2460
+                            Height =330
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Disposition_Label"
+                            Caption ="Disposition"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =360
+                            LayoutCachedTop =4080
+                            LayoutCachedWidth =2820
+                            LayoutCachedHeight =4410
                         End
                     End
                 End

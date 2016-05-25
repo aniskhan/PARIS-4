@@ -15,14 +15,14 @@ Begin Form
     Width =14160
     DatasheetFontHeight =11
     ItemSuffix =274
-    Left =-15600
+    Left =-16680
     Top =6630
     Right =-7215
     Bottom =16335
     DatasheetGridlinesColor =15132391
     OnApplyFilter ="[Event Procedure]"
     RecSrcDt = Begin
-        0x1e3c76a96dc2e440
+        0x9ecb3614d6c0e440
     End
     RecordSource ="fqryRfiItem-Assessment"
     Caption ="RFI Response Assessment"

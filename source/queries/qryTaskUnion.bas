@@ -49,4 +49,52 @@ Begin
         dbText "Name" ="qryTaskRpa.tblReviewTypes.Position"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="Item"
+    End
+    Begin
+        dbText "Name" ="ReviewType"
+    End
+    Begin
+        dbText "Name" ="DisasterID"
+    End
+    Begin
+        dbText "Name" ="ApplicantID"
+    End
+    Begin
+        dbText "Name" ="ProjectID"
+    End
+    Begin
+        dbText "Name" ="Lane Assigned"
+    End
+    Begin
+        dbText "Name" ="SiteID"
+    End
+    Begin
+        dbText "Name" ="DocID"
+    End
+    Begin
+        dbText "Name" ="RfiID"
+    End
+    Begin
+        dbText "Name" ="DmID"
+    End
+    Begin
+        dbText "Name" ="Subrecipient Name"
+    End
+    Begin
+        dbText "Name" ="Application Title"
+    End
+    Begin
+        dbText "Name" ="ReviewUserID"
+    End
+    Begin
+        dbText "Name" ="Position"
+    End
+    Begin
+        dbText "Name" ="FormName"
+    End
+    Begin
+        dbText "Name" ="ReviewEntryDate"
+    End
 End
