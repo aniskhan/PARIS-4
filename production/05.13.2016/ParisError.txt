@@ -1,0 +1,47 @@
+User	akhandka
+Time	05/16/2016 10:43:16
+Procedure	frmStWorkOrderDev.MultiCheck
+Line	0
+Error	3078	The Microsoft Access database engine cannot find the input table or query 'lutblRFIItemType'. Make sure it exists and that its name is spelled correctly.
+Stack
+	frmStWorkOrderDev.cmdDvsSubmit_Click
+	frmStWorkOrderDev.CompleteReview
+	frmStWorkOrderDev.PostDialogCheck
+	frmStWorkOrderDev.MultiCheck
+
+User	akhandka
+Time	05/18/2016 10:37:23
+Procedure	frmEnterListofDamages.ColumnOrder
+Line	0
+Error	2455	You entered an expression that has an invalid reference to the property Form/Report.
+Stack
+	navProjectFormulation.cmdEnterListofDamages_Click
+	frmEnterListofDamages.ColumnOrder
+
+User	akhandka
+Time	05/18/2016 13:37:09
+Procedure	frmEnterListofDamages.ColumnOrder
+Line	0
+Error	2455	You entered an expression that has an invalid reference to the property Form/Report.
+Stack
+	navProjectFormulation.cmdEnterListofDamages_Click
+	frmEnterListofDamages.ColumnOrder
+
+User	akhandka
+Time	05/18/2016 13:39:34
+Procedure	frmEnterListofDamages.ColumnOrder
+Line	0
+Error	2455	You entered an expression that has an invalid reference to the property Form/Report.
+Stack
+	navProjectFormulation.cmdEnterListofDamages_Click
+	frmEnterListofDamages.ColumnOrder
+
+User	akhandka
+Time	05/23/2016 15:05:03
+Procedure	frmEnterListofDamages.ColumnOrder
+Line	0
+Error	2455	You entered an expression that has an invalid reference to the property Form/Report.
+Stack
+	navProjectFormulation.cmdEnterListofDamages_Click
+	frmEnterListofDamages.ColumnOrder
+

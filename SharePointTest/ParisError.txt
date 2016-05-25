@@ -1,0 +1,27 @@
+User	akhandka
+Time	05/13/2016 13:53:09
+Procedure	frmRfiItemAssessment.CompleteReview
+Line	0
+Error	3027	Cannot update. Database or object is read-only.
+Stack
+	frmRfiItemAssessment.tbItemAssessed_Click
+	frmRfiItemAssessment.CompleteReview
+
+User	akhandka
+Time	05/13/2016 13:53:17
+Procedure	frmRfiItemAssessment.CompleteReview
+Line	0
+Error	3027	Cannot update. Database or object is read-only.
+Stack
+	frmRfiItemAssessment.tbItemAssessed_Click
+	frmRfiItemAssessment.CompleteReview
+
+User	akhandka
+Time	05/13/2016 13:53:22
+Procedure	frmRfiItemAssessment.CompleteReview
+Line	0
+Error	3027	Cannot update. Database or object is read-only.
+Stack
+	frmRfiItemAssessment.tbItemRcvd_Click
+	frmRfiItemAssessment.CompleteReview
+

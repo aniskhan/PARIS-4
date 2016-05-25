@@ -7,3 +7,21 @@ Stack
 	navProjectFormulation.cmdEnterListofDamages_Click
 	frmEnterListofDamages.ColumnOrder
 
+User	akhandka
+Time	05/18/2016 14:23:57
+Procedure	frmEnterListofDamages.ColumnOrder
+Line	0
+Error	2455	You entered an expression that has an invalid reference to the property Form/Report.
+Stack
+	navProjectFormulation.cmdEnterListofDamages_Click
+	frmEnterListofDamages.ColumnOrder
+
+User	akhandka
+Time	05/18/2016 14:24:29
+Procedure	frmEnterListofDamages.ColumnOrder
+Line	0
+Error	2455	You entered an expression that has an invalid reference to the property Form/Report.
+Stack
+	navProjectFormulation.cmdEnterListofDamages_Click
+	frmEnterListofDamages.ColumnOrder
+
