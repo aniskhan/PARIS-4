@@ -112,6 +112,9 @@ Begin
         dbText "Name" ="[fqryRfiItems-StatusOfReviewsAll].AssessDisposition"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="FinalAssessStatus"
+    End
 End
 Begin
     State =0

@@ -5,7 +5,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ViewsAllowed =1
@@ -16,7 +15,7 @@ Begin Form
     Width =17640
     DatasheetFontHeight =11
     ItemSuffix =186
-    Right =16215
+    Right =20865
     Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -1098,15 +1097,9 @@ Private Sub cmdConcurrentRFI_Click()
 '///Error Handling
 
 '///Code
-    If MultiCheck("Pending RFI") Then
-        MsgBox ("There is already a Pending RFI. You can not create another.  If you are trying to mark the review as complete pending an RFI, please complete the review and select RFI as the result.")
-        End
-    Else
-            
-            Reviews.CreateRFI GetItemDims(ReviewType)
-            Reviews.EnterReview GetItemDims("RFI")
-            DoCmd.OpenForm "frmRFIRouting", , , GetItemDims.WhereID(False)
-    End If
+    Reviews.CreateRFI GetItemDims("DVS Review")
+    Reviews.EnterReview GetItemDims("RFI")
+    DoCmd.OpenForm "frmRFIRouting", , , GetItemDims.WhereID(False)
         
 '///Code
 

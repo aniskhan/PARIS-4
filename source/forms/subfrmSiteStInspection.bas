@@ -14,7 +14,7 @@ Begin Form
     Width =17040
     DatasheetFontHeight =11
     ItemSuffix =33
-    Right =15465
+    Right =15945
     Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -1559,7 +1559,12 @@ Private Function PostDialogCheck(ReviewType As String, DialogResult As String) A
 
 '///Code
 '   No Check Needed.
-    PostDialogCheck = True
+    If DialogResult = "RW" Then
+        MsgBox "Sites can not be reworked at this point.  Please finish the site inspection forward and then rework the entire project."
+        PostDialogCheck = False
+    Else
+        PostDialogCheck = True
+    End If
 '///Code
 
 '///ErrorHandling

@@ -17,8 +17,8 @@ Begin Form
     Width =15480
     DatasheetFontHeight =11
     ItemSuffix =124
-    Right =24690
-    Bottom =12060
+    Right =15450
+    Bottom =12645
     TimerInterval =30
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -2291,7 +2291,6 @@ Begin Form
                     Overlaps =1
                 End
                 Begin CommandButton
-                    Enabled = NotDefault
                     OverlapFlags =223
                     Left =5880
                     Top =6540
@@ -2301,6 +2300,7 @@ Begin Form
                     ForeColor =4210752
                     Name ="cmdOpenSpecializedLaneDI"
                     Caption ="Specialized Lane"
+                    OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =5880
@@ -3329,7 +3329,6 @@ Begin Form
                     Overlaps =1
                 End
                 Begin CommandButton
-                    Enabled = NotDefault
                     OverlapFlags =247
                     Left =9120
                     Top =5860
@@ -3339,6 +3338,7 @@ Begin Form
                     ForeColor =4210752
                     Name ="Command99"
                     Caption ="Specialized Lane"
+                    OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =9120
@@ -3899,6 +3899,10 @@ Attribute VB_Exposed = False
 Option Compare Database
 Option Explicit
 
+Private Sub cmdOpenSpecializedLaneDI_Click()
+    DoCmd.OpenForm "frmProjectSpIdea", acNormal, , , , acWindowNormal
+End Sub
+
 Private Sub cmdOpenStaffDisasterAdmin_Click()
     DoCmd.OpenForm "navStaffDisasterAdmin", acNormal, , , , acWindowNormal
 End Sub
@@ -4059,6 +4063,10 @@ End Sub
 Private Sub Command122_Click()
 Application.FollowHyperlink "https://intranet.fema.net/org/orr/recovery/pad/NewPA/Pages/default.aspx"
 
+End Sub
+
+Private Sub Command99_Click()
+    DoCmd.OpenForm "frmProjectSpScopingCosting", acNormal, , , , acWindowNormal
 End Sub
 
 Private Sub Form_Load()
