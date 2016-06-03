@@ -17,7 +17,7 @@ Begin Form
     Width =21615
     DatasheetFontHeight =11
     ItemSuffix =93
-    Right =20925
+    Right =15135
     Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -1623,7 +1623,7 @@ Private Sub cmdPDMConcurrence_Click()
 '///Error Handling
 
 '///Code
-    CompleteReview "PDM Concurrence"
+    CompleteReview "DDD Concurrence"
 '///Code
 
 '///ErrorHandling
@@ -1779,7 +1779,7 @@ Private Sub RepaintForm()
     EnableFormArea "Validation"
     EnableFormArea "DDD Entry"
     EnableFormArea "DDD with PDM"
-    EnableFormArea "PDM Concurrence"
+    EnableFormArea "DDD Concurrence"
     EnableFormArea "Applicant Concurrence"
     Me.subHistory.Requery
 '///Code
@@ -1824,7 +1824,7 @@ Private Sub EnableFormArea(AreaName As String, Optional Override As String = "")
         Case "DDD with PDM"
             Me.cmdMeetWithPdmComplete.Enabled = CanEnable
             Me.tbMeetingDate.Enabled = CanEnable
-        Case "PDM Concurrence"
+        Case "DDD Concurrence"
             Me.cmdPDMConcurrence.Enabled = CanEnable
         Case "Applicant Concurrence"
             Me.cmdApplicantReturned.Enabled = CanEnable
@@ -1923,8 +1923,8 @@ Private Sub HandleDisposition(ReviewType As String, frm As Form)
                 Case "DDD Entry"
                     Reviews.EnterReview GetItemDims("DDD with PDM"), Me.[Assigned Data Validation Specialist]
                 Case "DDD with PDM"
-                    Reviews.EnterReview GetItemDims("PDM Concurrence"), GetItemDims(ReviewType).AssignedPDC
-                Case "PDM Concurrence"
+                    Reviews.EnterReview GetItemDims("DDD Concurrence"), GetItemDims(ReviewType).AssignedPDC
+                Case "DDD Concurrence"
                     Reviews.EnterReview GetItemDims("Applicant Concurrence"), GetItemDims(ReviewType).AssignedPDC
                 Case "Applicant Concurrence"
                     Reviews.EnterReview GetItemDims("Costing - EX Lane"), Me.[Assigned Data Validation Specialist]

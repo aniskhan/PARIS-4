@@ -15,8 +15,8 @@ Begin Form
     Width =17580
     DatasheetFontHeight =11
     ItemSuffix =75
-    Right =5265
-    Bottom =9705
+    Right =19470
+    Bottom =12030
     DatasheetGridlinesColor =15132391
     Filter ="[RfiCanceled] = False AND [RfiSatisfied] = False"
     RecSrcDt = Begin
@@ -694,7 +694,6 @@ Begin Form
                     End
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =215
                     Top =4980
                     Width =13380
@@ -1790,7 +1789,7 @@ End Sub
 'ACTION BUTTONS
 
 Private Sub cmdCancelRFI_Click()
-    Dim db As Database
+    Dim Db As Database
     Dim rs As Recordset
     Dim WhereCondition As String
     Dim MsgResult As VbMsgBoxResult
@@ -1808,8 +1807,8 @@ If Me.RfiSatisfied = True Or Me.RfiCanceled = True Then
 Else
     MsgResult = MsgBox("Are you sure you want to do this?  This will end the RFI and return it to the original review.", vbYesNo)
     If MsgResult = vbYes Then
-        Set db = CurrentDb()
-        Set rs = db.OpenRecordset("SELECT * FROM revtblRfi WHERE [RfiID] =" & Me.RfiID & " and [ReviewExitDate] is null")
+        Set Db = CurrentDb()
+        Set rs = Db.OpenRecordset("SELECT * FROM revtblRfi WHERE [RfiID] =" & Me.RfiID & " and [ReviewExitDate] is null")
         
         If rs.BOF And rs.EOF Then
         Else
@@ -2161,7 +2160,12 @@ Private Sub EnableFormArea(AreaName As String, Optional Override As String = "")
 '''          Me.Response_Time_Requested.Enabled = CanEnable
 '''          Me.RFI_Reason.Enabled = CanEnable
             Me.cmdSubmitConcur.Enabled = CanEnable
-            Me.subfrmRfiItems.Enabled = CanEnable
+            'Me.subfrmRfiItems.Enabled = CanEnable
+            Me.subfrmRfiItems!tbRfiItemID.Enabled = CanEnable
+            Me.subfrmRfiItems!cboSiteID.Enabled = CanEnable
+            Me.subfrmRfiItems!tbItemReq.Enabled = CanEnable
+            Me.subfrmRfiItems!tbreasonReq.Enabled = CanEnable
+            Me.subfrmRfiItems.Form.AllowAdditions = CanEnable
         
         Case "RFI Concurrence"
             Me.cmdConcurComplete.Enabled = CanEnable
@@ -2197,7 +2201,7 @@ End Sub
 
 Private Function PreDialogCheck(ReviewType As String) As Boolean
 '    This page specific code checks the form for any issues before opening the dialog.  True = pass
-Dim db As Database
+Dim Db As Database
 Dim rsRfiItem As Recordset
 Dim rs As Recordset
 
@@ -2210,8 +2214,8 @@ Dim rs As Recordset
 
     Select Case ReviewType
         Case "RFI Creation"
-            Set db = CurrentDb()
-            Set rsRfiItem = db.OpenRecordset("SELECT * FROM tblRFIRequestedInformation WHERE [RfiID] =" & Me.RfiID)
+            Set Db = CurrentDb()
+            Set rsRfiItem = Db.OpenRecordset("SELECT * FROM tblRFIRequestedInformation WHERE [RfiID] =" & Me.RfiID)
 
             If rsRfiItem.BOF And rsRfiItem.EOF Then
                 PreDialogCheck = False
@@ -2225,8 +2229,8 @@ Dim rs As Recordset
         
             UserIsDIU = False
             UserIsADM = False
-            Set db = CurrentDb()
-            Set rs = db.OpenRecordset("qryUserPositions")
+            Set Db = CurrentDb()
+            Set rs = Db.OpenRecordset("qryUserPositions")
             rs.MoveFirst
             While Not rs.EOF
                 If rs!Position = "ADM" Then
@@ -2303,7 +2307,7 @@ Private Sub HandleDisposition(ReviewType As String, frm As Form)
 '''NON-STANDARD CODE ... DO NOT COPY!!
 Dim AssignRfiTo As String
 Dim WhereCondition As String
-Dim db As Database
+Dim Db As Database
 Dim rsRfiItem As Recordset
 Dim rsRevTblRfi As Recordset
 Dim ParentItem As classItemDims
@@ -2346,14 +2350,15 @@ Dim ParentItem As classItemDims
                     Reviews.EnterReview GetItemDims("DIU Update EMMIE - RFI")
                     
                     '''Make a concurrent RFI for a ST proj, even if created by DIU. DVS Assignment will be used for RFI Item Assessment
-                    If Me.[Lane Assigned] = "ST" And GetItemDims.AssignedDVS = "" Then
-                        Reviews.EnterReview GetItemDims("Assign DVS")
-                    End If
+'                    If Me.[Lane Assigned] = "ST" And GetItemDims.AssignedDVS = "" Then
+'                        Reviews.EnterReview GetItemDims("Assign DVS"), , "Automatically generated for RFI review.  Please end this review as an RFI if there still is an active RFI."
+'                        Reviews.EnterAllChildren GetItemDims("Assign DVS"), "Assign DVS"
+'                    End If
                     
                     '''Enter a Pending Receipt review for every item requested
-                    Set db = CurrentDb()
-                    Set rsRfiItem = db.OpenRecordset("SELECT * FROM tblRFIRequestedInformation WHERE [RfiID] =" & Me.RfiID)
-                    Set rsRevTblRfi = db.OpenRecordset("revtblRfi", , dbAppendOnly)
+                    Set Db = CurrentDb()
+                    Set rsRfiItem = Db.OpenRecordset("SELECT * FROM tblRFIRequestedInformation WHERE [RfiID] =" & Me.RfiID)
+                    Set rsRevTblRfi = Db.OpenRecordset("revtblRfi", , dbAppendOnly)
                      
                     If rsRfiItem.BOF And rsRfiItem.EOF Then
 

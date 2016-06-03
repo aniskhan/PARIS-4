@@ -191,46 +191,6 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="[DisasterID]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="[Incident Period Start]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblProjects.ApplicantID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="[State]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="[Incident Period End]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="[Disaster Type]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblProjects.[% Work Complete]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblProjects.[Approximate Cost]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="[Declaration Date]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblProjects.[Work Complete \"As OF\" Date]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="tblDisaster.DisasterID"
         dbLong "AggregateType" ="-1"
     End
@@ -243,12 +203,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =920
-    Bottom =664
+    Right =917
+    Bottom =821
     Left =-1
     Top =-1
-    Right =904
-    Bottom =203
+    Right =901
+    Bottom =169
     Left =0
     Top =0
     ColumnsShown =539

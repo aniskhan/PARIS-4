@@ -1,8 +1,8 @@
 ﻿Operation =1
 Option =0
-Where ="(((revtblProject.ReviewType)=\"Inspection Assignment\" Or (revtblProject.ReviewT"
-    "ype)=\"Validation Assignment\") AND ((revtblProject.ReviewExitDate) Is Null) AND"
-    " ((tblProjects.[Lane Assigned])=\"ST\"))"
+Where ="(((tblProjects.[Lane Assigned])=\"ST\") AND ((revtblProject.ReviewType)=\"Inspec"
+    "tion Assignment\" Or (revtblProject.ReviewType)=\"Validation Assignment\") AND ("
+    "(revtblProject.ReviewExitDate) Is Null))"
 Begin InputTables
     Name ="tblProjects"
     Name ="revtblProject"
@@ -11,29 +11,18 @@ Begin OutputColumns
     Expression ="tblProjects.DisasterID"
     Expression ="tblProjects.ApplicantID"
     Expression ="tblProjects.ProjectID"
-    Expression ="revtblProject.ReviewType"
-    Expression ="revtblProject.ReviewExitDate"
     Expression ="tblProjects.[Lane Assigned]"
-    Expression ="tblProjects.[Assigned Data Validation Specialist]"
-    Expression ="tblProjects.[Site Inspection Location]"
-    Expression ="tblProjects.[Scheduled Date of Site Inspection]"
-    Expression ="tblProjects.[Assigned EHP Specialists]"
-    Expression ="tblProjects.[EHP Site Inspection Report Required]"
-    Expression ="tblProjects.[Mitgation Specialists requested]"
-    Expression ="tblProjects.[Assigned Mitigation Specialist]"
-    Expression ="tblProjects.[Mitigation Site Inspection Report Requested]"
-    Expression ="tblProjects.[Insurance Specialist requested for Site Inspection]"
-    Expression ="tblProjects.[Work Order Recieved by SITFL]"
-    Expression ="tblProjects.[SITFL Reviews Work Order]"
-    Expression ="tblProjects.[Assign Site Inspection]"
     Expression ="tblProjects.[SITFL Contacts PDC to schedule]"
+    Expression ="tblProjects.[Scheduled Date of Site Inspection]"
+    Expression ="tblProjects.[Scheduled Time of Site Inspection]"
     Expression ="tblProjects.[Assigned Site Inspector]"
-    Expression ="tblProjects.[Date Assigned]"
-    Expression ="tblProjects.[Assigned Insurance Specialist]"
     Expression ="tblProjects.[Recipient POC]"
     Expression ="tblProjects.[Subrecipient POC]"
+    Expression ="tblProjects.[Site Inspection Location]"
     Expression ="tblProjects.[Inspection Notes]"
-    Expression ="tblProjects.[Scheduled Time of Site Inspection]"
+    Expression ="tblProjects.[Assigned EHP Specialists]"
+    Expression ="tblProjects.[Assigned Mitigation Specialist]"
+    Expression ="tblProjects.[Assigned Insurance Specialist]"
 End
 Begin Joins
     LeftTable ="tblProjects"
@@ -76,23 +65,7 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="revtblProject.ReviewType"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="revtblProject.ReviewExitDate"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblProjects.[Assigned Data Validation Specialist]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="tblProjects.[Assigned Insurance Specialist]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblProjects.[Date Assigned]"
         dbLong "AggregateType" ="-1"
     End
     Begin
@@ -116,23 +89,7 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="tblProjects.[Mitgation Specialists requested]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblProjects.[Assign Site Inspection]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="tblProjects.[Assigned Site Inspector]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblProjects.[Insurance Specialist requested for Site Inspection]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblProjects.[SITFL Reviews Work Order]"
         dbLong "AggregateType" ="-1"
     End
     Begin
@@ -140,19 +97,7 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="tblProjects.[Mitigation Site Inspection Report Requested]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblProjects.[Work Order Recieved by SITFL]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="tblProjects.[Scheduled Date of Site Inspection]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblProjects.[EHP Site Inspection Report Required]"
         dbLong "AggregateType" ="-1"
     End
     Begin
@@ -168,12 +113,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =920
-    Bottom =664
+    Right =917
+    Bottom =821
     Left =-1
     Top =-1
-    Right =904
-    Bottom =499
+    Right =901
+    Bottom =431
     Left =0
     Top =0
     ColumnsShown =539

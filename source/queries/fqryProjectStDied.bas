@@ -33,10 +33,6 @@ dbBoolean "OrderByOnLoad" ="-1"
 dbBoolean "TotalsRow" ="0"
 Begin
     Begin
-        dbText "Name" ="tblProjects.Lane"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="tblProjects.Specialized Lane"
         dbLong "AggregateType" ="-1"
     End
@@ -102,10 +98,6 @@ Begin
     End
     Begin
         dbText "Name" ="tblProjects.Approximate Cost"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblProjects.Recieved Prior Assistance\""
         dbLong "AggregateType" ="-1"
     End
     Begin
@@ -409,12 +401,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =920
-    Bottom =664
+    Right =917
+    Bottom =821
     Left =-1
     Top =-1
-    Right =904
-    Bottom =538
+    Right =901
+    Bottom =487
     Left =0
     Top =0
     ColumnsShown =539

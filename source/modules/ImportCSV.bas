@@ -51,27 +51,27 @@ Private Sub ImportToTable(filePath As String)
     'DoCmd.TransferText acImportDelim, "RpaCsvImport", "importRpa", filePath, True
 End Sub
 Private Sub ClearTables()
-    Dim db As Database
+    Dim Db As Database
     Dim strSQL As String
-    Set db = CurrentDb()
+    Set Db = CurrentDb()
     strSQL = "DELETE * FROM importRpa;"
     
-    db.Execute strSQL
-    Debug.Print db.RecordsAffected & " were cleared from importRpa"
+    Db.Execute strSQL
+    Debug.Print Db.RecordsAffected & " were cleared from importRpa"
     
     
 End Sub
 
 Private Sub TransferRecords()
-    Dim db As Database
+    Dim Db As Database
     Dim recImported As Recordset
     Dim recExisting As Recordset
     Dim strFind As String
     Dim UpdateNotNeeded As Boolean
 
-    Set db = CurrentDb()
-    Set recImported = db.OpenRecordset("importRpa", dbOpenDynaset)
-    Set recExisting = db.OpenRecordset("tblSubRecipient", dbOpenDynaset)
+    Set Db = CurrentDb()
+    Set recImported = Db.OpenRecordset("importRpa", dbOpenDynaset)
+    Set recExisting = Db.OpenRecordset("tblSubRecipient", dbOpenDynaset)
     
     If recImported.BOF And recImported.EOF Then
         'no records imported
@@ -191,7 +191,7 @@ Private Sub TransferRecords()
     recImported.Close
     Set recExisting = Nothing
     Set recImported = Nothing
-    Set db = Nothing
+    Set Db = Nothing
 End Sub
 Private Function GetInsertDims(rst As Recordset) As classItemDims
     Dim ItemDims As New classItemDims

@@ -51,29 +51,17 @@ Begin
         dbBoolean "ColumnHidden" ="0"
         dbLong "AggregateType" ="-1"
     End
-    Begin
-        dbText "Name" ="UserID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="First Name"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Last Name"
-        dbLong "AggregateType" ="-1"
-    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1354
+    Right =917
     Bottom =821
     Left =-1
     Top =-1
-    Right =1338
-    Bottom =521
+    Right =901
+    Bottom =487
     Left =0
     Top =0
     ColumnsShown =539

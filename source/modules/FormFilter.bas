@@ -1,7 +1,7 @@
 Option Compare Database
 Option Explicit
 Public Sub FormPermission(frm As Form, ItemType As String)
-Dim db As Database
+Dim Db As Database
 Dim rs As Recordset
 Dim accessGranted As Boolean
 
@@ -11,10 +11,10 @@ Dim accessGranted As Boolean
 '///Error Handling
 
 '///Code
-Set db = CurrentDb
+Set Db = CurrentDb
 accessGranted = False
 'Set rs = Db.OpenRecordset("qryUserPositions")
-Set rs = db.OpenRecordset("SELECT * FROM [qryUserPositions] WHERE [DisasterID] = '" & [Forms]![navMain].[DisasterID] & "'")
+Set rs = Db.OpenRecordset("SELECT * FROM [qryUserPositions] WHERE [DisasterID] = '" & [Forms]![navMain].[DisasterID] & "'")
 Select Case ItemType
     Case "Admin/DIUS"
         

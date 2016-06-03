@@ -2617,7 +2617,7 @@ Dim UserIsADM As Boolean ' Tracks if the current user is an ADM
 
 'BUTTONS
 Private Sub cmdFinalize_Click()
-Dim db As Database
+Dim Db As Database
 Dim rsRev As Recordset
 Dim rsLastCompRev As Recordset ' last completed DIU EMMIE update
 Dim rsLastChange As Recordset ' last logged change to audit log
@@ -2635,12 +2635,12 @@ Dim DateLastChange As Date
     Me.Dirty = False
     Call RepaintForm(UserIsPDC, UserIsDIU, UserIsADM, UserIsODIU)
 
-Set db = CurrentDb
+Set Db = CurrentDb
 ' Check if an unfinished review exists before adding another
-Set rsRev = db.OpenRecordset("SELECT * FROM [revtblRpa] WHERE ((([revtblRpa].[ReviewType]) = 'DIU Update EMMIE Projections') AND (([revtblRpa].[ReviewExitDate]) Is Null) AND (([revtblRpa].[ApplicantID]) = '" & Me.ApplicantID & "'))")
+Set rsRev = Db.OpenRecordset("SELECT * FROM [revtblRpa] WHERE ((([revtblRpa].[ReviewType]) = 'DIU Update EMMIE Projections') AND (([revtblRpa].[ReviewExitDate]) Is Null) AND (([revtblRpa].[ApplicantID]) = '" & Me.ApplicantID & "'))")
 
-Set rsLastCompRev = db.OpenRecordset("SELECT MAX (ReviewExitDate) As lastCompReview FROM [revtblRpa] WHERE ((([revtblRpa].[ReviewType]) = 'DIU Update EMMIE Projections') AND (([revtblRpa].[ReviewExitDate]) Is Not Null) AND (([revtblRpa].[ApplicantID]) = '" & Me.ApplicantID & "'))")
-Set rsLastChange = db.OpenRecordset("SELECT MAX (EditDate) As lastChange FROM [tblAuditTrail] WHERE ((([tblAuditTrail].[SourceTable]) = 'fqryUpdateRSMProjections') AND  (([tblAuditTrail].[ApplicantID]) = '" & Me.ApplicantID & "'))")
+Set rsLastCompRev = Db.OpenRecordset("SELECT MAX (ReviewExitDate) As lastCompReview FROM [revtblRpa] WHERE ((([revtblRpa].[ReviewType]) = 'DIU Update EMMIE Projections') AND (([revtblRpa].[ReviewExitDate]) Is Not Null) AND (([revtblRpa].[ApplicantID]) = '" & Me.ApplicantID & "'))")
+Set rsLastChange = Db.OpenRecordset("SELECT MAX (EditDate) As lastChange FROM [tblAuditTrail] WHERE ((([tblAuditTrail].[SourceTable]) = 'fqryUpdateRSMProjections') AND  (([tblAuditTrail].[ApplicantID]) = '" & Me.ApplicantID & "'))")
 
 
 DateLastReview = CDate(Nz(rsLastCompRev![lastCompReview], 0))
@@ -2813,10 +2813,10 @@ End Sub
 
 Private Sub Form_Open(Cancel As Integer)
 Dim rs As Recordset
-Dim db As Database
+Dim Db As Database
 Dim countUnfiltered As Integer
 Dim frm As Form
-Set db = CurrentDb
+Set Db = CurrentDb
 Set frm = Me.Form
 
     'Form Open is typically used on forms that have incoming openArg strings
@@ -2840,7 +2840,7 @@ Else
     UserIsADM = False
     UserIsODIU = False
               
-        Set rs = db.OpenRecordset("qryUserPositions")
+        Set rs = Db.OpenRecordset("qryUserPositions")
             rs.MoveFirst
             While Not rs.EOF
                 If rs!Position = "ADM" Then
@@ -2851,7 +2851,7 @@ Else
             Wend
             Set rs = Nothing
         
-        Set rs = db.OpenRecordset("qryUserPositions")
+        Set rs = Db.OpenRecordset("qryUserPositions")
             rs.MoveFirst
             While Not rs.EOF
                 If rs!Position = "DIUL" Or rs!Position = "DIUS" Then
@@ -2862,7 +2862,7 @@ Else
             Wend
             Set rs = Nothing
         
-        Set rs = db.OpenRecordset("qryUserPositions")
+        Set rs = Db.OpenRecordset("qryUserPositions")
             rs.MoveFirst
             While Not rs.EOF
                 If rs!Position = "ODIU" Then

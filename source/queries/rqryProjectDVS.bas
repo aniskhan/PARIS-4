@@ -84,21 +84,17 @@ Begin
         dbText "Name" ="tblProjects.[Lane Assigned]"
         dbLong "AggregateType" ="-1"
     End
-    Begin
-        dbText "Name" ="Full Reference"
-        dbLong "AggregateType" ="-1"
-    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =920
-    Bottom =664
+    Right =917
+    Bottom =821
     Left =-1
     Top =-1
-    Right =904
-    Bottom =538
+    Right =901
+    Bottom =521
     Left =0
     Top =0
     ColumnsShown =539

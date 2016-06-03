@@ -14,17 +14,15 @@ Begin Form
     GridY =24
     Width =12218
     DatasheetFontHeight =11
-    ItemSuffix =69
+    ItemSuffix =70
     Left =60
     Top =660
-    Right =14265
+    Right =15090
     Bottom =8100
     DatasheetGridlinesColor =15132391
-    Filter ="[positionTier] = 0 and [ReviewUserID] is Null"
     RecSrcDt = Begin
-        0xb5c6b4eed5c0e440
+        0xd29e919b91c2e440
     End
-    RecordSource ="qryTaskUnionByUserOversight"
     OnCurrent ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
@@ -579,7 +577,7 @@ Begin Form
                     Top =5025
                     Width =2850
                     Height =315
-                    ColumnWidth =1050
+                    ColumnWidth =1410
                     TabIndex =8
                     LeftMargin =44
                     TopMargin =22
@@ -618,7 +616,7 @@ Begin Form
                             BorderColor =8355711
                             ForeColor =8355711
                             Name ="Label53"
-                            Caption ="UserID"
+                            Caption ="AssignedTo"
                             GroupTable =1
                             BottomPadding =150
                             GridlineColor =10921638
@@ -716,6 +714,7 @@ Begin Form
                     Top =2685
                     Width =2850
                     Height =315
+                    ColumnWidth =780
                     TabIndex =4
                     LeftMargin =44
                     TopMargin =22
@@ -767,6 +766,44 @@ Begin Form
                             RowEnd =4
                             LayoutGroup =1
                             GroupTable =1
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =7860
+                    Top =3420
+                    Height =315
+                    TabIndex =11
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="Assigned PDC"
+                    ControlSource ="Assigned PDC"
+                    StatusBarText ="Assign PDC"
+                    EventProcPrefix ="Assigned_PDC"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =7860
+                    LayoutCachedTop =3420
+                    LayoutCachedWidth =9300
+                    LayoutCachedHeight =3735
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =6060
+                            Top =3420
+                            Width =1335
+                            Height =315
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label69"
+                            Caption ="PDM"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =6060
+                            LayoutCachedTop =3420
+                            LayoutCachedWidth =7395
+                            LayoutCachedHeight =3735
                         End
                     End
                 End

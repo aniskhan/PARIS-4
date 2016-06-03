@@ -18,11 +18,11 @@ Begin Form
     Width =13740
     DatasheetFontHeight =11
     ItemSuffix =120
-    Right =14385
-    Bottom =12645
+    Right =13500
+    Bottom =12060
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0x84c4b2b0b4b9e440
+        0x702a2b8b91c2e440
     End
     RecordSource ="fqryDisasterInfo"
     DatasheetFontName ="Calibri"

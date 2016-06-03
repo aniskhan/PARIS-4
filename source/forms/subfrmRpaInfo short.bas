@@ -16,11 +16,11 @@ Begin Form
     Width =14100
     DatasheetFontHeight =11
     ItemSuffix =117
-    Right =11580
+    Right =13500
     Bottom =12060
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0x6d3a787aada8e440
+        0xbb9ba78a91c2e440
     End
     RecordSource ="fqryRpaInfo"
     DatasheetFontName ="Calibri"
@@ -198,7 +198,7 @@ Begin Form
                     BackStyle =0
                     IMESentenceMode =3
                     Left =4560
-                    Width =7260
+                    Width =5640
                     Height =420
                     ColumnOrder =0
                     FontSize =14
@@ -212,7 +212,7 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =4560
-                    LayoutCachedWidth =11820
+                    LayoutCachedWidth =10200
                     LayoutCachedHeight =420
                     BackShade =95.0
                     ForeThemeColorIndex =-1
@@ -277,7 +277,6 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
-                    Overlaps =1
                 End
             End
         End

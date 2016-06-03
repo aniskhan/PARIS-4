@@ -58,53 +58,17 @@ Begin
         dbText "Name" ="Lane"
         dbLong "AggregateType" ="-1"
     End
-    Begin
-        dbText "Name" ="tblReviewTypes.Step"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Project Count"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblReviewTypes.ItemType"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="revtblProject.DisasterID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="revtblProject.ApplicantID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblReviewTypes.ReviewType"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="CountOfProjectID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="revtblProject.ReviewExitDate"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="revtblProject.ProjectID"
-        dbLong "AggregateType" ="-1"
-    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =920
-    Bottom =664
+    Right =917
+    Bottom =821
     Left =-1
     Top =-1
-    Right =904
-    Bottom =496
+    Right =901
+    Bottom =462
     Left =0
     Top =0
     ColumnsShown =543

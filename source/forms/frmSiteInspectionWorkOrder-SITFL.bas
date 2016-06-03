@@ -1769,14 +1769,14 @@ Private Sub cmdApplyToAll_Click()
     'take all sites shown on the subform and put the information from the form on the site record.
     Dim rec As Recordset
     Dim recfiltered As Recordset
-    Dim db As Database
+    Dim Db As Database
     Dim SiteCount As Integer
     
     'make sure that information on form is stored
     Me.Dirty = False
     
-    Set db = CurrentDb()
-    Set rec = db.OpenRecordset("fqrySiteStInspectionAssignment")
+    Set Db = CurrentDb()
+    Set rec = Db.OpenRecordset("fqrySiteStInspectionAssignment")
     
     rec.Filter = GetItemDims().WhereID(False)
     Set recfiltered = rec.OpenRecordset
@@ -1808,7 +1808,7 @@ Private Sub cmdApplyToAll_Click()
 
 '///ErrorHandling
 PROC_EXIT:
-    Set db = Nothing
+    Set Db = Nothing
     Set rec = Nothing
     
     PopCallStack

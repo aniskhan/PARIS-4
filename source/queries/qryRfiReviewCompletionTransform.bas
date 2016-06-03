@@ -144,8 +144,10 @@ Begin
     End
     Begin
         dbText "Name" ="RFI Concurrence"
+        dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="RFI Transmittal"
+        dbLong "AggregateType" ="-1"
     End
 End

@@ -3,6 +3,7 @@ VersionRequired =20
 Begin Form
     AutoCenter = NotDefault
     DividingLines = NotDefault
+    AllowAdditions = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
     ViewsAllowed =1
@@ -13,8 +14,8 @@ Begin Form
     Width =14805
     DatasheetFontHeight =11
     ItemSuffix =170
-    Right =15930
-    Bottom =12645
+    Right =13500
+    Bottom =12060
     DatasheetGridlinesColor =15132391
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin

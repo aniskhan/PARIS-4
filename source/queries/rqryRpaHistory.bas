@@ -110,34 +110,6 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="DisasterID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="ApplicantID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="ReviewType"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="ReviewEntryDate"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="ReviewCheckOutDate"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="ReviewExitDate"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Disposition"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="revtblRpa.Comments"
         dbLong "AggregateType" ="-1"
     End
@@ -146,12 +118,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =920
-    Bottom =664
+    Right =917
+    Bottom =821
     Left =-1
     Top =-1
-    Right =904
-    Bottom =402
+    Right =901
+    Bottom =385
     Left =0
     Top =0
     ColumnsShown =539

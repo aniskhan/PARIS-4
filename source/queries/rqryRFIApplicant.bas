@@ -66,10 +66,6 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="rqryRFIRouting.fqryRfiBanner.tblRFI.ApplicantID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="rqryRFIRouting.fqryRfiBanner.PhaseName"
         dbLong "AggregateType" ="-1"
     End
@@ -82,43 +78,7 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="rqryRFIRouting.fqryRfiBanner.tblRFI.RfiID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="rqryRFIRouting.fqryRfiBanner.tblRFI.DisasterID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="rqryRFIRouting.fqryRfiBanner.tblRFI.SiteID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="rqryRFIRouting.fqryRfiBanner.CreatedByName"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="rqryRFIRouting.fqryRfiBanner.tblSubRecipient.[Subrecipient Name]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="rqryRFIRouting.tblDisaster.[JFO Street Address]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="rqryRFIRouting.fqryRfiBanner.tblRFI.ItemType"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="rqryRFIRouting.fqryRfiBanner.tblRFI.[Lane Assigned]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="rqryRFIRouting.fqryRfiBanner.tblRFI.ReviewFromStep"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="rqryRFIRouting.fqryRfiBanner.tblRFI.ReviewFrom"
         dbLong "AggregateType" ="-1"
     End
     Begin
@@ -131,10 +91,6 @@ Begin
     End
     Begin
         dbText "Name" ="rqryRFIRouting.tblDisaster.[RFI Response Email Address]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="rqryRFIRouting.fqryRfiBanner.tblRFI.ProjectID"
         dbLong "AggregateType" ="-1"
     End
     Begin
@@ -193,73 +149,17 @@ Begin
         dbText "Name" ="rqryRFIRouting.tblRFI.RfiCanceled"
         dbLong "AggregateType" ="-1"
     End
-    Begin
-        dbText "Name" ="qryNames.[Full Name]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblRFIRequestedInformation.ProjectID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="RFI Response Email Address"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblRFIRequestedInformation.SiteID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Date Sent to Recipient"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblRFIRequestedInformation.[Item Type]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Item Type"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="JFO City, State, Zip"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Reason Requested"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblRFIRequestedInformation.ItemType"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblStaff.[Cell Number]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Response Time Requested"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="JFO Street Address"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="HSIN Address"
-        dbLong "AggregateType" ="-1"
-    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =1211
-    Bottom =860
+    Right =917
+    Bottom =821
     Left =-1
     Top =-1
-    Right =1195
-    Bottom =317
+    Right =901
+    Bottom =300
     Left =334
     Top =192
     ColumnsShown =539

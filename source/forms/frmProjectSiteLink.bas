@@ -450,9 +450,9 @@ Begin Form
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblProjects.ProjectID AS ID, tblProjects.[Application Title] AS Title, tb"
                         "lProjects.[Project Category] AS Cat, revtblProject.ReviewType, revtblProject.Rev"
-                        "iewExitDate FROM tblProjects INNER JOIN revtblProject ON (tblProjects.ProjectID "
-                        "= revtblProject.ProjectID) AND (tblProjects.ApplicantID = revtblProject.Applican"
-                        "tID) AND (tblProjects.DisasterID = revtblProject.DisasterID) WHERE (((revtblProj"
+                        "iewExitDate FROM tblProjects INNER JOIN revtblProject ON (tblProjects.DisasterID"
+                        " = revtblProject.DisasterID) AND (tblProjects.ApplicantID = revtblProject.Applic"
+                        "antID) AND (tblProjects.ProjectID = revtblProject.ProjectID) WHERE (((revtblProj"
                         "ect.ReviewType)=\"Project Entry\") And ((revtblProject.ReviewExitDate) Is Null) "
                         "And ((tblProjects.ApplicantID)=Forms!frmProjectSiteLink![PA ID]) And ((tblProjec"
                         "ts.DisasterID)=Forms!frmProjectSiteLink![Disaster Number])) ORDER BY tblProjects"
@@ -516,9 +516,9 @@ Begin Form
                         "ion], tblSites.[Requires Site Inspection] AS [SI?], tblSites.[% Work Complete] A"
                         "S [% Com], tblSites.[EHP Issues? (H, E, B)] AS EHP, tblSites.[Subrecipient prior"
                         "ity (Low, Med, High)] AS Priority FROM tblSites INNER JOIN revtblSite ON (tblSit"
-                        "es.SiteID = revtblSite.SiteID) AND (tblSites.ProjectID = revtblSite.ProjectID) A"
-                        "ND (tblSites.ApplicantID = revtblSite.ApplicantID) AND (tblSites.DisasterID = re"
-                        "vtblSite.DisasterID) WHERE (((revtblSite.ReviewType)=\"Site Entry\") And ((revtb"
+                        "es.DisasterID = revtblSite.DisasterID) AND (tblSites.ApplicantID = revtblSite.Ap"
+                        "plicantID) AND (tblSites.ProjectID = revtblSite.ProjectID) AND (tblSites.SiteID "
+                        "= revtblSite.SiteID) WHERE (((revtblSite.ReviewType)=\"Site Entry\") And ((revtb"
                         "lSite.ReviewExitDate) Is Null) And ((tblSites.DisasterID)=Forms!frmProjectSiteLi"
                         "nk![Disaster Number]) And ((tblSites.ApplicantID)=Forms!frmProjectSiteLink![PA I"
                         "D])) ORDER BY tblSites.SiteID; "
@@ -662,11 +662,11 @@ Begin Form
                     Name ="cboPaID"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblSubRecipient.ApplicantID, tblSubRecipient.[Subrecipient Name] FROM (tb"
-                        "lSubRecipient INNER JOIN tblProjects ON (tblSubRecipient.[DisasterID] = tblProje"
-                        "cts.[DisasterID]) AND (tblSubRecipient.[ApplicantID] = tblProjects.[ApplicantID]"
-                        ")) INNER JOIN revtblProject ON (tblProjects.DisasterID = revtblProject.DisasterI"
-                        "D) AND (tblProjects.ApplicantID = revtblProject.ApplicantID) AND (tblProjects.Pr"
-                        "ojectID = revtblProject.ProjectID) WHERE (((revtblProject.ReviewType)=\"Project "
+                        "lSubRecipient INNER JOIN tblProjects ON (tblSubRecipient.[ApplicantID] = tblProj"
+                        "ects.[ApplicantID]) AND (tblSubRecipient.[DisasterID] = tblProjects.[DisasterID]"
+                        ")) INNER JOIN revtblProject ON (tblProjects.ProjectID = revtblProject.ProjectID)"
+                        " AND (tblProjects.ApplicantID = revtblProject.ApplicantID) AND (tblProjects.Disa"
+                        "sterID = revtblProject.DisasterID) WHERE (((revtblProject.ReviewType)=\"Project "
                         "Entry\") AND ((revtblProject.ReviewExitDate) Is Null)) GROUP BY tblSubRecipient."
                         "ApplicantID, tblSubRecipient.[Subrecipient Name], tblSubRecipient.DisasterID HAV"
                         "ING (((tblSubRecipient.DisasterID)=[Forms]![navMain]![DisasterID])); "
@@ -1882,7 +1882,7 @@ Private Sub listProjects_AfterUpdate()
 End Sub
 Private Sub UpdateSite(DR As String, ApplicantID As String, ref As Long, Site As Long)
 '    Debug.Print "UpdateSite"
-    Dim db As Database
+    Dim Db As Database
     Dim recEditStatus As Recordset
     Dim WhereCondition As String
     Dim recEditReview As Recordset
@@ -1891,9 +1891,9 @@ Private Sub UpdateSite(DR As String, ApplicantID As String, ref As Long, Site As
     WhereCondition = WhereCondition & " and [ApplicantID]='" & ApplicantID & "'"
     WhereCondition = WhereCondition & " and [SiteID]=" & Site
         
-    Set db = CurrentDb()
+    Set Db = CurrentDb()
     
-    Set recEditStatus = db.OpenRecordset("tblSites", dbOpenDynaset)
+    Set recEditStatus = Db.OpenRecordset("tblSites", dbOpenDynaset)
     
     recEditStatus.FindFirst WhereCondition
     
@@ -1907,7 +1907,7 @@ Private Sub UpdateSite(DR As String, ApplicantID As String, ref As Long, Site As
         recEditStatus.Update
     End If
     
-    Set recEditReview = db.OpenRecordset("revtblSite", dbOpenDynaset)
+    Set recEditReview = Db.OpenRecordset("revtblSite", dbOpenDynaset)
     WhereCondition = WhereCondition & " and [ReviewType]='Site Entry'"
 '    WhereCondition = WhereCondition & " and [ReviewCheckOutDate] is not null"
     WhereCondition = WhereCondition & " and [ReviewExitDate] is null"
@@ -1930,7 +1930,7 @@ Private Sub UpdateSite(DR As String, ApplicantID As String, ref As Long, Site As
     
     recEditStatus.Close
     Set recEditStatus = Nothing
-    Set db = Nothing
+    Set Db = Nothing
 
 End Sub
 Private Sub UpdateCboApplicantRows(AddFilter As Boolean)

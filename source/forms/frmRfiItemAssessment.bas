@@ -15,14 +15,14 @@ Begin Form
     Width =14160
     DatasheetFontHeight =11
     ItemSuffix =274
-    Left =-16680
-    Top =6630
-    Right =-7215
-    Bottom =16335
+    Left =5475
+    Top =2505
+    Right =18975
+    Bottom =14565
     DatasheetGridlinesColor =15132391
     OnApplyFilter ="[Event Procedure]"
     RecSrcDt = Begin
-        0x9ecb3614d6c0e440
+        0x35c8728791c2e440
     End
     RecordSource ="fqryRfiItem-Assessment"
     Caption ="RFI Response Assessment"
@@ -1140,7 +1140,7 @@ If Reviews.CanSee(GetItemDims("Assess RFI Response"), Environ("UserName")) = Tru
     CompleteReview "Assess RFI Response"
     Me.Dirty = False
     Me.Requery
-    Call allItemsAccepted
+
 Else
     MsgBox ("This task cannot be completed by you as assigned. This task is currently assigned to:  " & Me.CurrentReviewUserAssess)
 End If
@@ -1159,7 +1159,7 @@ End Sub
 
 Private Sub cmdCanxItem_Click()
 
-Dim db As Database
+Dim Db As Database
 Dim rsRfiItem As Recordset
 Dim strSQL As String
 Dim strPrompt As String
@@ -1181,9 +1181,9 @@ Else
             CompleteCanxReview "Pending Receipt"
             
             ''' Update tblRFIRequestedInformation
-            Set db = CurrentDb()
+            Set Db = CurrentDb()
             strSQL = "SELECT * FROM [tblRFIRequestedInformation] WHERE RfiItemID =" & Me.RfiItemID
-            Set rsRfiItem = db.OpenRecordset(strSQL)
+            Set rsRfiItem = Db.OpenRecordset(strSQL)
                 With rsRfiItem
                     .Edit
                     !isResponseReceived = "N"
@@ -1191,6 +1191,7 @@ Else
                     !isRequestCanceled = True
                     .Update
                 End With
+            rsRfiItem.Close
             Set rsRfiItem = Nothing
         Else
             
@@ -1199,15 +1200,16 @@ Else
                 CompleteCanxReview "Assess RFI Response"
                 
                 ''' Update tblRFIRequestedInformation
-                Set db = CurrentDb()
+                Set Db = CurrentDb()
                 strSQL = "SELECT * FROM [tblRFIRequestedInformation] WHERE RfiItemID =" & Me.RfiItemID
-                Set rsRfiItem = db.OpenRecordset(strSQL)
+                Set rsRfiItem = Db.OpenRecordset(strSQL)
                     With rsRfiItem
                         .Edit
                         !isRequestSatisfied = "Y"
                         !isRequestCanceled = True
                         .Update
                     End With
+                rsRfiItem.Close
                 Set rsRfiItem = Nothing
                 
                 Else
@@ -1260,8 +1262,8 @@ PROC_ERR:
 End Sub
 
 'OTHER PAGE EVENTS
-Private Sub allItemsAccepted()
-Dim db As Database
+Private Function allItemsAccepted()
+Dim Db As Database
 Dim rsRfiItems As Recordset
 Dim strSQL As String
 '///Error Handling
@@ -1271,14 +1273,15 @@ Dim strSQL As String
 
 '///Code
 
-isRfiComplete = True
 
-Set db = CurrentDb()
+isRfiComplete = True
+Set Db = CurrentDb()
 strSQL = "SELECT * FROM [tblRFIRequestedInformation] WHERE RfiID =" & Me.RfiID
-Set rsRfiItems = db.OpenRecordset(strSQL)
+Set rsRfiItems = Db.OpenRecordset(strSQL)
 
 With rsRfiItems
     .MoveFirst
+    
     Do Until rsRfiItems.EOF Or isRfiComplete = False
         '''Debug.Print !isRequestSatisfied
         If !isRequestSatisfied <> "Y" Or !isRequestSatisfied = "" Then
@@ -1287,7 +1290,8 @@ With rsRfiItems
         End If
     .MoveNext
     Loop
-
+rsRfiItems.Close
+Set rsRfiItems = Nothing
 End With
 Debug.Print "All RFI Items Accepted:  " & isRfiComplete
 '///Code
@@ -1295,13 +1299,13 @@ Debug.Print "All RFI Items Accepted:  " & isRfiComplete
 '///ErrorHandling
 PROC_EXIT:
     PopCallStack
-    Exit Sub
+    Exit Function
     
 PROC_ERR:
     GlobalErrHandler
     Resume PROC_EXIT
 '///ErrorHandling
-End Sub
+End Function
 
 
 Private Sub Form_Load()
@@ -1330,7 +1334,7 @@ End If
 
 Call allItemsAccepted
 
-If isRfiComplete = True Then
+If isRfiComplete Then
     Me.tbAllItemsRcvd.Value = "All requested items have been received and accepted. Please mark the RFI complete."
     '''Allowing User another opportunity to generate Mark RFI Complete Review. Varied results in testing
     Reviews.EnterReview GetItemDims("Mark RFI Complete"), AssignRfiTo
@@ -1597,7 +1601,7 @@ Private Sub HandleDisposition(ReviewType As String, frm As Form)
 
 Dim AssignRfiTo As String
 Dim WhereCondition As String
-Dim db As Database
+Dim Db As Database
 Dim rsRfiItem As Recordset
 Dim strSQL As String
 
@@ -1615,15 +1619,16 @@ Dim strSQL As String
         Case "RW"
             Select Case ReviewType
                 Case "Assess RFI Response"
-                    Set db = CurrentDb()
+                    Set Db = CurrentDb()
                     strSQL = "SELECT * FROM [tblRFIRequestedInformation] WHERE RfiItemID =" & Me.RfiItemID
-                    Set rsRfiItem = db.OpenRecordset(strSQL)
+                    Set rsRfiItem = Db.OpenRecordset(strSQL)
                         With rsRfiItem
                             .Edit
                             !isResponseReceived = "N"
                             !isRequestSatisfied = "N"
                             .Update
                         End With
+                    rsRfiItem.Close
                     Set rsRfiItem = Nothing
 
                     ''' Enter Review
@@ -1641,14 +1646,15 @@ Dim strSQL As String
                    
                     ''' Update tblRFIRequestedInformation
                     
-                    Set db = CurrentDb()
+                    Set Db = CurrentDb()
                     strSQL = "SELECT * FROM [tblRFIRequestedInformation] WHERE RfiItemID =" & Me.RfiItemID
-                    Set rsRfiItem = db.OpenRecordset(strSQL)
+                    Set rsRfiItem = Db.OpenRecordset(strSQL)
                         With rsRfiItem
                             .Edit
                             !isResponseReceived = "Y"
                             .Update
                         End With
+                    rsRfiItem.Close
                     Set rsRfiItem = Nothing
                     
                     '''Review Assignment, default to Assigned DVS
@@ -1681,19 +1687,19 @@ Dim strSQL As String
                     End If
                     
                     ''' Update tblRFIRequestedInformation
-                    Set db = CurrentDb()
+                    Set Db = CurrentDb()
                     strSQL = "SELECT * FROM [tblRFIRequestedInformation] WHERE RfiItemID =" & Me.RfiItemID
-                    Set rsRfiItem = db.OpenRecordset(strSQL)
+                    Set rsRfiItem = Db.OpenRecordset(strSQL)
                         With rsRfiItem
                             .Edit
                             !isRequestSatisfied = "Y"
                             .Update
                         End With
-                    
+                    rsRfiItem.Close
                     Set rsRfiItem = Nothing
                     
                     Call allItemsAccepted
-                    If isRfiComplete = True Then
+                    If isRfiComplete Then
                         Reviews.EnterReview GetItemDims("Mark RFI Complete"), AssignRfiTo
                         MsgBox ("All requested documentation has been received. Please mark the RFI Complete on RFI Processing form.")
                         

@@ -22,19 +22,11 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="qdNames.[Full Name]"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="PDM"
         dbLong "AggregateType" ="-1"
     End
     Begin
         dbText "Name" ="tblSubRecipient.DisasterID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblSubRecipient.[Recovery Scoping Meeting Date]"
         dbLong "AggregateType" ="-1"
     End
     Begin

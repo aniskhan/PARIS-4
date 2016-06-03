@@ -51,10 +51,6 @@ dbByte "RecordsetType" ="0"
 dbBoolean "TotalsRow" ="0"
 Begin
     Begin
-        dbText "Name" ="Full Name"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="lutblReviewDisposition.Disposition"
         dbLong "AggregateType" ="-1"
     End
@@ -71,38 +67,6 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="DisasterID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="ApplicantID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="ProjectID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="ReviewType"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="ReviewEntryDate"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="ReviewCheckOutDate"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="ReviewExitDate"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Disposition"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="revtblProject.Comments"
         dbLong "AggregateType" ="-1"
     End
@@ -111,12 +75,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =920
-    Bottom =664
+    Right =917
+    Bottom =821
     Left =-1
     Top =-1
-    Right =904
-    Bottom =556
+    Right =901
+    Bottom =522
     Left =0
     Top =0
     ColumnsShown =539

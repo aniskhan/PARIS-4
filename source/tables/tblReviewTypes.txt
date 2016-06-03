@@ -9,7 +9,7 @@
 8	RPA	DIU Enter RSM	70	1	5	frmSubrecipientRSM	DIUL	DIUS	
 9	RPA	Enter Projects	70	1	6	navProjectFormulation	PDTFL		
 10	RPA	Ops RPA Eligibility	40	1	2	frmRPAreview	OPSL	ODIU	
-11	RPA	Exit Briefing	80	1	15	frmRPAExitBriefing	PDTFL		
+11	RPA	Exit Briefing	80	4	13		PDTFL		
 12	Project	Project Entry	5	1	7	frmProcessProjectRoutingSheet PDC	PDTFL		Site Entry
 13	Project	DIU Lane Select	10	1	6	frmDIUProcessProjectRoutingSheet	DIUL	DIUS	DIU Lane Select
 14	EXProject	Assign DVS	15	2	9	frmExpeditedLaneDI	EXGL		Assign DVS
@@ -17,7 +17,7 @@
 16	EXProject	DDD Entry	30	2	9	frmExpeditedLaneDI	EXGL	EXDVS	
 17	EXProject	DDD with PDM	40	2	9	frmExpeditedLaneDI	EXGL	EXDVS	
 18	EXProject	Costing - EX Lane	75	3	10	frmExpeditedScopingCosting	EXGL	EXDVS	
-19	EXProject	PDM Concurrence	60	2	9	frmExpeditedLaneDI	PDTFL		
+19	EXProject	DDD Concurrence	60	2	9	frmExpeditedLaneDI	PDTFL		
 20	EXProject	Applicant Concurrence	70	2	9	frmExpeditedLaneDI	PDTFL		
 21	Project	Assign DAS	80	3	10	frmTransitionReview	DIUL	DAS	
 22	Project	DAS Review	90	3	10	frmTransitionReview	DIUL	DAS	

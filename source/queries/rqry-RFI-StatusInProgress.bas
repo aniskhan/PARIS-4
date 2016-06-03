@@ -25,7 +25,7 @@ End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
-dbBoolean "OrderByOn" ="-1"
+dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
 dbByte "DefaultView" ="2"
 dbBoolean "FilterOnLoad" ="0"
@@ -85,12 +85,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =933
+    Right =917
     Bottom =821
     Left =-1
     Top =-1
-    Right =917
-    Bottom =248
+    Right =901
+    Bottom =231
     Left =0
     Top =0
     ColumnsShown =539

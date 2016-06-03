@@ -44,24 +44,6 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="revtblProject.ReviewExitDate"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="revtblProject.ReviewType"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="MaxOfReviewExitDate"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="Lane Assigned"
-        dbInteger "ColumnWidth" ="2850"
-        dbBoolean "ColumnHidden" ="0"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="Lane Assigned Date"
         dbInteger "ColumnWidth" ="2850"
         dbBoolean "ColumnHidden" ="0"
@@ -72,12 +54,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =920
-    Bottom =664
+    Right =917
+    Bottom =821
     Left =-1
     Top =-1
-    Right =904
-    Bottom =572
+    Right =901
+    Bottom =538
     Left =0
     Top =0
     ColumnsShown =543
