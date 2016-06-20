@@ -16,8 +16,8 @@ Begin Form
     GridY =24
     Width =16560
     DatasheetFontHeight =11
-    ItemSuffix =35
-    Right =15465
+    ItemSuffix =50
+    Right =15150
     Bottom =12645
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
@@ -244,7 +244,7 @@ Begin Form
                 Begin Rectangle
                     SpecialEffect =2
                     BackStyle =1
-                    OverlapFlags =85
+                    OverlapFlags =93
                     Left =13740
                     Top =6480
                     Width =2760
@@ -911,6 +911,222 @@ Begin Form
                     BorderThemeColorIndex =4
                     BorderShade =50.0
                 End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =14160
+                    Top =6600
+                    Width =1800
+                    Height =420
+                    TabIndex =14
+                    ForeColor =4210752
+                    Name ="cmdSendToEHP"
+                    Caption ="Send to EHP"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =14160
+                    LayoutCachedTop =6600
+                    LayoutCachedWidth =15960
+                    LayoutCachedHeight =7020
+                    UseTheme =0
+                    BackColor =15123357
+                    BorderColor =15123357
+                    HoverThemeColorIndex =-1
+                    HoverTint =100.0
+                    PressedThemeColorIndex =-1
+                    PressedShade =100.0
+                    HoverForeThemeColorIndex =-1
+                    HoverForeTint =100.0
+                    PressedForeThemeColorIndex =-1
+                    PressedForeTint =100.0
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    Left =14880
+                    Top =7140
+                    Height =315
+                    TabIndex =15
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="tbEhpStatus"
+                    ControlSource ="=DLookUp(\"EhpStatus\",\"qdProjectPreComplianceStatus\",\"[DisasterID]='\" & [Di"
+                        "sasterID] & \"' and [ProjectID]=\" & [ProjectID])"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =14880
+                    LayoutCachedTop =7140
+                    LayoutCachedWidth =16320
+                    LayoutCachedHeight =7455
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =13800
+                            Top =7140
+                            Width =1050
+                            Height =315
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label38"
+                            Caption ="EHP Status"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =13800
+                            LayoutCachedTop =7140
+                            LayoutCachedWidth =14850
+                            LayoutCachedHeight =7455
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =14160
+                    Top =8100
+                    Width =1800
+                    Height =420
+                    TabIndex =16
+                    ForeColor =4210752
+                    Name ="cmdSendToHM"
+                    Caption ="Send to HM"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =14160
+                    LayoutCachedTop =8100
+                    LayoutCachedWidth =15960
+                    LayoutCachedHeight =8520
+                    UseTheme =0
+                    BackColor =15123357
+                    BorderColor =15123357
+                    HoverThemeColorIndex =-1
+                    HoverTint =100.0
+                    PressedThemeColorIndex =-1
+                    PressedShade =100.0
+                    HoverForeThemeColorIndex =-1
+                    HoverForeTint =100.0
+                    PressedForeThemeColorIndex =-1
+                    PressedForeTint =100.0
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    Left =14880
+                    Top =8640
+                    Height =315
+                    TabIndex =17
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="tbHmStatus"
+                    ControlSource ="=DLookUp(\"HmStatus\",\"qdProjectPreComplianceStatus\",\"[DisasterID]='\" & [Dis"
+                        "asterID] & \"' and [ProjectID]=\" & [ProjectID])"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =14880
+                    LayoutCachedTop =8640
+                    LayoutCachedWidth =16320
+                    LayoutCachedHeight =8955
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =13800
+                            Top =8640
+                            Width =1050
+                            Height =315
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label41"
+                            Caption ="HM Status"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =13800
+                            LayoutCachedTop =8640
+                            LayoutCachedWidth =14850
+                            LayoutCachedHeight =8955
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =14160
+                    Top =9540
+                    Width =1800
+                    Height =420
+                    TabIndex =18
+                    ForeColor =4210752
+                    Name ="cmdSendToIns"
+                    Caption ="Send to Ins"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =14160
+                    LayoutCachedTop =9540
+                    LayoutCachedWidth =15960
+                    LayoutCachedHeight =9960
+                    UseTheme =0
+                    BackColor =15123357
+                    BorderColor =15123357
+                    HoverThemeColorIndex =-1
+                    HoverTint =100.0
+                    PressedThemeColorIndex =-1
+                    PressedShade =100.0
+                    HoverForeThemeColorIndex =-1
+                    HoverForeTint =100.0
+                    PressedForeThemeColorIndex =-1
+                    PressedForeTint =100.0
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    Left =14880
+                    Top =10080
+                    Height =315
+                    TabIndex =19
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="tbInsStatus"
+                    ControlSource ="=DLookUp(\"InsStatus\",\"qdProjectPreComplianceStatus\",\"[DisasterID]='\" & [Di"
+                        "sasterID] & \"' and [ProjectID]=\" & [ProjectID])"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =14880
+                    LayoutCachedTop =10080
+                    LayoutCachedWidth =16320
+                    LayoutCachedHeight =10395
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =13800
+                            Top =10080
+                            Width =1050
+                            Height =315
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label45"
+                            Caption ="Ins Status"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =13800
+                            LayoutCachedTop =10080
+                            LayoutCachedWidth =14850
+                            LayoutCachedHeight =10395
+                        End
+                    End
+                End
             End
         End
         Begin FormFooter
@@ -1494,6 +1710,48 @@ PROC_ERR:
 '///ErrorHandline
 End Sub
 
+Private Sub cmdSendToEHP_Click()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cmdSendToEHP_Click"
+
+'///Code
+    Reviews.EnterReview GetItemDims("EHP Review")
+    Me.Requery
+
+'///ErrorHandling
+PROC_EXIT: PopCallStack:     Exit Sub
+PROC_ERR:  GlobalErrHandler: Resume PROC_EXIT
+End Sub
+
+Private Sub cmdSendToHM_Click()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cmdSendToHM_Click"
+
+'///Code
+    Reviews.EnterReview GetItemDims("HM Review")
+    Me.Requery
+
+'///ErrorHandling
+PROC_EXIT: PopCallStack:     Exit Sub
+PROC_ERR:  GlobalErrHandler: Resume PROC_EXIT
+End Sub
+
+Private Sub cmdSendToIns_Click()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cmdSendToIns_Click"
+
+'///Code
+    Reviews.EnterReview GetItemDims("Ins Review")
+    Me.Requery
+
+'///ErrorHandling
+PROC_EXIT: PopCallStack:     Exit Sub
+PROC_ERR:  GlobalErrHandler: Resume PROC_EXIT
+End Sub
+
 'OTHER PAGE EVENTS
 Private Sub Form_Current()
 '///Error Handling
@@ -1592,6 +1850,12 @@ Private Sub EnableFormArea(AreaName As String, Optional Override As String = "")
         Case "Submit in EMMIE"
             Me.tbPwNumber.Enabled = CanEnable
             Me.cmdEmmieSubmittal.Enabled = CanEnable
+            Me.cmdSendToEHP.Enabled = CanEnable
+            Me.cmdSendToHM.Enabled = CanEnable
+            Me.cmdSendToIns.Enabled = CanEnable
+            Me.tbEhpStatus.Enabled = CanEnable
+            Me.tbHmStatus.Enabled = CanEnable
+            Me.tbInsStatus.Enabled = CanEnable
 
         Case Else
             Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & AreaName

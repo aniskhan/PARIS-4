@@ -119,5 +119,11 @@ CREATE TABLE [tblProjects] (
   [Scheduled Time of Site Inspection] DATETIME ,
   [DocumentationAttached] VARCHAR (255),
   [isWithdrawn] BIT DEFAULT No,
+  [EHP Status Comment] VARCHAR (255),
+  [HM Status Comment] VARCHAR (255),
+  [Ins Status Comment] VARCHAR (255),
+  [EHP On-Hold] BIT DEFAULT No,
+  [HM On-Hold] BIT DEFAULT No,
+  [Ins On-Hold] BIT DEFAULT No,
    CONSTRAINT [PrimaryKey] PRIMARY KEY ([DisasterID], [ApplicantID], [ProjectID])
 )

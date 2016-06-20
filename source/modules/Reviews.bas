@@ -718,7 +718,7 @@ Public Sub CompleteReviewStandard(ItemDims As classItemDims, CurrentForm As Form
                         Case "EX"
                             CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "Assign DVS"
                         Case "SP"
-                            CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "Specialized Lane"
+                            CompleteAndPushAll ItemDims.Clone, CurrentUserID, ReviewResultForm.cboResult, Nz(ReviewResultForm.tbComments, ""), "SP Schedule SI"
                         Case Else
                             Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & CurrentForm![Lane Assigned]
                     End Select

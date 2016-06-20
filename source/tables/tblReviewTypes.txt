@@ -68,3 +68,6 @@
 71	SPProject	SP DDD Concurrence	10	2	9	frmProjectSpIdea	PDTFL	DIUS	Specialized Lane-Site
 72	SPProject	SP Scoping and Costing	10	3	9	frmProjectSpScopingCosting	SPGL	COS	Specialized Lane-Site
 73	SPProject	Final Lane Review - SP	10	3	9	frmProjectSpScopingCosting	SPGL		Specialized Lane-Site
+74	Project	EHP Review	110	3	10	frmPreComplianceReview	EHPR		
+75	Project	HM Review	110	3	10	frmPreComplianceReview	MTR		
+76	Project	Ins Review	110	3	10	frmPreComplianceReview	INSP		
