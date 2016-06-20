@@ -5,7 +5,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ViewsAllowed =1
@@ -16,15 +15,14 @@ Begin Form
     Width =16515
     DatasheetFontHeight =11
     ItemSuffix =68
-    Right =16425
-    Bottom =9675
+    Right =10740
+    Bottom =9120
     DatasheetGridlinesColor =15132391
-    Filter ="[DisasterID]='4258' and [ApplicantID]='009-14750-00'"
     RecSrcDt = Begin
-        0x21f33d82d0c1e440
+        0xcc3d1029f7c3e440
     End
     RecordSource ="fqryRPAExitBriefing"
-    Caption ="Compliance Reviews"
+    Caption ="Exit Briefing"
     OnCurrent ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     PrtMip = Begin

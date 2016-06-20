@@ -14,22 +14,24 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =21615
+    Width =16740
     DatasheetFontHeight =11
     ItemSuffix =96
-    Right =13500
-    Bottom =12060
+    Right =10740
+    Bottom =9120
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0xac74c6f13aaee440
+        0xc9cc8f1bf7c3e440
     End
-    RecordSource ="fqryProjectExIdea"
-    Caption ="EX - Damage Intake"
+    RecordSource ="fqryProjectSpIdea"
+    Caption ="SP - Damage Intake"
+    OnCurrent ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
         0x010000006801000000000000a10700000100000001000000
     End
+    OnLoad ="[Event Procedure]"
     AllowDatasheetView =0
     FilterOnLoad =0
     ShowPageMargins =0
@@ -201,23 +203,23 @@ Begin Form
                     BackStyle =1
                     OverlapFlags =223
                     Left =9240
-                    Top =6900
+                    Top =5220
                     Width =4245
-                    Height =2400
+                    Height =2940
                     BackColor =15921906
                     BorderColor =10921638
                     Name ="Box86"
                     GridlineColor =10921638
                     LayoutCachedLeft =9240
-                    LayoutCachedTop =6900
+                    LayoutCachedTop =5220
                     LayoutCachedWidth =13485
-                    LayoutCachedHeight =9300
+                    LayoutCachedHeight =8160
                     BackShade =95.0
                 End
                 Begin Rectangle
                     SpecialEffect =2
                     BackStyle =1
-                    OverlapFlags =85
+                    OverlapFlags =93
                     Left =13800
                     Top =6540
                     Width =2760
@@ -238,7 +240,7 @@ Begin Form
                     Top =9480
                     Width =13620
                     Height =3720
-                    TabIndex =18
+                    TabIndex =10
                     BorderColor =10921638
                     Name ="subHistory"
                     SourceObject ="Form.subfrmProjectReviewHistory"
@@ -286,48 +288,6 @@ Begin Form
                     LayoutCachedHeight =6420
                     BackThemeColorIndex =-1
                 End
-                Begin TextBox
-                    OverlapFlags =215
-                    IMESentenceMode =3
-                    Left =13980
-                    Top =1320
-                    Width =1620
-                    Height =330
-                    ColumnWidth =1620
-                    TabIndex =1
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="Date DIU Scans 90-91 into EMMIE"
-                    ControlSource ="Date DIU Scans 90-91 into EMMIE"
-                    EventProcPrefix ="Date_DIU_Scans_90_91_into_EMMIE"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =13980
-                    LayoutCachedTop =1320
-                    LayoutCachedWidth =15600
-                    LayoutCachedHeight =1650
-                    Begin
-                        Begin Label
-                            OverlapFlags =215
-                            TextAlign =2
-                            Left =13920
-                            Top =600
-                            Width =2400
-                            Height =660
-                            BorderColor =8355711
-                            Name ="Date DIU Scans 90-91 into EMMIE_Label"
-                            Caption ="Date DIU Scans 90-91 into EMMIE"
-                            EventProcPrefix ="Date_DIU_Scans_90_91_into_EMMIE_Label"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =13920
-                            LayoutCachedTop =600
-                            LayoutCachedWidth =16320
-                            LayoutCachedHeight =1260
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                        End
-                    End
-                End
                 Begin Label
                     OldBorderStyle =1
                     OverlapFlags =215
@@ -359,7 +319,7 @@ Begin Form
                     Width =750
                     Height =360
                     ColumnWidth =3000
-                    TabIndex =4
+                    TabIndex =3
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="Disaster Number"
@@ -400,7 +360,7 @@ Begin Form
                     Top =1440
                     Width =13620
                     Height =1260
-                    TabIndex =2
+                    TabIndex =1
                     BorderColor =10921638
                     Name ="subfrmRpaInfo short"
                     SourceObject ="Form.subfrmRpaInfo short"
@@ -425,7 +385,7 @@ Begin Form
                     Width =2160
                     Height =360
                     ColumnWidth =3000
-                    TabIndex =5
+                    TabIndex =4
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="PA ID"
@@ -470,7 +430,7 @@ Begin Form
                     Top =2820
                     Width =13620
                     Height =1320
-                    TabIndex =3
+                    TabIndex =2
                     BorderColor =15921906
                     Name ="tblProjects subform"
                     SourceObject ="Form.subfrmlProjects banner"
@@ -496,7 +456,7 @@ Begin Form
                     Width =2340
                     Height =360
                     ColumnWidth =3000
-                    TabIndex =6
+                    TabIndex =5
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="Reference Number"
@@ -526,52 +486,6 @@ Begin Form
                             LayoutCachedTop =4800
                             LayoutCachedWidth =16200
                             LayoutCachedHeight =5130
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                        End
-                    End
-                End
-                Begin TextBox
-                    Visible = NotDefault
-                    EnterKeyBehavior = NotDefault
-                    ScrollBars =2
-                    OverlapFlags =215
-                    IMESentenceMode =3
-                    Left =13920
-                    Top =6000
-                    Width =2340
-                    Height =360
-                    ColumnWidth =3000
-                    TabIndex =9
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="EMMIE Update Application #"
-                    ControlSource ="EMMIE Update Application #"
-                    EventProcPrefix ="EMMIE_Update_Application__"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =13920
-                    LayoutCachedTop =6000
-                    LayoutCachedWidth =16260
-                    LayoutCachedHeight =6360
-                    Begin
-                        Begin Label
-                            Visible = NotDefault
-                            OverlapFlags =223
-                            Left =13920
-                            Top =5700
-                            Width =2340
-                            Height =330
-                            FontWeight =700
-                            BorderColor =8355711
-                            Name ="EMMIE Update Application #_Label"
-                            Caption ="EMMIE Update Application #"
-                            EventProcPrefix ="EMMIE_Update_Application___Label"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =13920
-                            LayoutCachedTop =5700
-                            LayoutCachedWidth =16260
-                            LayoutCachedHeight =6030
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
                         End
@@ -676,136 +590,6 @@ Begin Form
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
-                Begin TextBox
-                    OverlapFlags =215
-                    IMESentenceMode =3
-                    Left =4320
-                    Top =8880
-                    Width =1740
-                    Height =360
-                    TabIndex =17
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="tbMeetingDate"
-                    ControlSource ="DVS Meeting to Discuss DDD with PDC"
-                    StatusBarText ="EX"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =4320
-                    LayoutCachedTop =8880
-                    LayoutCachedWidth =6060
-                    LayoutCachedHeight =9240
-                    Begin
-                        Begin Label
-                            OldBorderStyle =1
-                            OverlapFlags =223
-                            Left =4320
-                            Top =8580
-                            Width =1740
-                            Height =300
-                            FontSize =12
-                            FontWeight =500
-                            BorderColor =8355711
-                            Name ="Label74"
-                            Caption ="Date:"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =4320
-                            LayoutCachedTop =8580
-                            LayoutCachedWidth =6060
-                            LayoutCachedHeight =8880
-                            ForeTint =100.0
-                        End
-                    End
-                End
-                Begin CommandButton
-                    OverlapFlags =223
-                    Left =9360
-                    Top =8040
-                    Width =3765
-                    Height =480
-                    TabIndex =15
-                    ForeColor =4210752
-                    Name ="cmdApplicantReturned"
-                    Caption ="Applicant Concurrence Returned"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =9360
-                    LayoutCachedTop =8040
-                    LayoutCachedWidth =13125
-                    LayoutCachedHeight =8520
-                    BackColor =15123357
-                    BorderColor =15123357
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
-                    Overlaps =1
-                End
-                Begin CommandButton
-                    OverlapFlags =215
-                    Left =9360
-                    Top =7500
-                    Width =3765
-                    Height =480
-                    TabIndex =14
-                    ForeColor =4210752
-                    Name ="cmdApplicantSent"
-                    Caption ="Applicant Concurrence Sent"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =9360
-                    LayoutCachedTop =7500
-                    LayoutCachedWidth =13125
-                    LayoutCachedHeight =7980
-                    BackColor =15123357
-                    BorderColor =15123357
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
-                    Overlaps =1
-                End
-                Begin TextBox
-                    EnterKeyBehavior = NotDefault
-                    ScrollBars =2
-                    OverlapFlags =215
-                    IMESentenceMode =3
-                    Left =4320
-                    Top =6060
-                    Width =4560
-                    Height =1143
-                    TabIndex =10
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="tbDvsComments"
-                    ControlSource ="DVS Comments"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =4320
-                    LayoutCachedTop =6060
-                    LayoutCachedWidth =8880
-                    LayoutCachedHeight =7203
-                    Begin
-                        Begin Label
-                            OverlapFlags =223
-                            Left =4320
-                            Top =5760
-                            Width =3780
-                            Height =315
-                            FontSize =12
-                            FontWeight =500
-                            BorderColor =8355711
-                            Name ="Label68"
-                            Caption ="Data Validation Specialist Comments"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =4320
-                            LayoutCachedTop =5760
-                            LayoutCachedWidth =8100
-                            LayoutCachedHeight =6075
-                            ForeTint =100.0
-                        End
-                    End
-                End
                 Begin ComboBox
                     OverlapFlags =215
                     IMESentenceMode =3
@@ -814,18 +598,18 @@ Begin Form
                     Top =5520
                     Width =3900
                     Height =480
-                    TabIndex =8
+                    TabIndex =6
                     BorderColor =10921638
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"0\""
-                    Name ="cboAssignDvs"
+                    Name ="cboAssignTs"
                     ControlSource ="Assigned Site Inspector"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT qryNames.UserID, qryNames.[Reverse Full Name] FROM qryNames INNER JOIN tb"
-                        "lStaffRoles ON qryNames.UserID = tblStaffRoles.StaffID WHERE (((tblStaffRoles.[D"
-                        "isasterID])=Forms!frmExpeditedLaneDI![Disaster Number]) And ((tblStaffRoles.EndD"
-                        "ate) Is Null Or (tblStaffRoles.EndDate)>=Date()) And ((tblStaffRoles.Position)=\""
-                        "EXDVS\")); "
+                        "lStaffRoles ON qryNames.UserID = tblStaffRoles.StaffID WHERE (((tblStaffRoles.Di"
+                        "sasterID)=Forms!frmProjectSpIdea![Disaster Number]) And ((tblStaffRoles.EndDate)"
+                        " Is Null Or (tblStaffRoles.EndDate)>=Date()) And ((tblStaffRoles.Position)=\"TS\""
+                        ")); "
                     ColumnWidths ="0;2880"
                     GridlineColor =10921638
 
@@ -858,21 +642,22 @@ Begin Form
                     End
                 End
                 Begin CommandButton
-                    OverlapFlags =223
-                    Left =7020
-                    Top =8580
+                    OverlapFlags =215
+                    Left =5820
+                    Top =7020
                     Width =1800
                     Height =660
-                    TabIndex =16
+                    TabIndex =9
                     ForeColor =4210752
-                    Name ="cmdMeetWithPdmComplete"
-                    Caption ="Meet With PDM Complete"
+                    Name ="cmdDddFormulationComplete"
+                    Caption ="DDD Formulation Complete"
+                    OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =7020
-                    LayoutCachedTop =8580
-                    LayoutCachedWidth =8820
-                    LayoutCachedHeight =9240
+                    LayoutCachedLeft =5820
+                    LayoutCachedTop =7020
+                    LayoutCachedWidth =7620
+                    LayoutCachedHeight =7680
                     BackColor =15123357
                     BorderColor =15123357
                     WebImagePaddingLeft =2
@@ -883,68 +668,21 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =215
-                    Left =7020
-                    Top =7320
+                    Left =5820
+                    Top =8040
                     Width =1800
                     Height =660
-                    TabIndex =13
+                    TabIndex =8
                     ForeColor =4210752
-                    Name ="cmdInputDddComplete"
-                    Caption ="Input DDD/SOW Complete"
+                    Name ="cmdDddLeadReviewComplete"
+                    Caption ="Specialized Lane Lead Review"
+                    OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =7020
-                    LayoutCachedTop =7320
-                    LayoutCachedWidth =8820
-                    LayoutCachedHeight =7980
-                    BackColor =15123357
-                    BorderColor =15123357
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
-                    Overlaps =1
-                End
-                Begin CommandButton
-                    OverlapFlags =215
-                    Left =4320
-                    Top =7320
-                    Width =1800
-                    Height =660
-                    TabIndex =12
-                    ForeColor =4210752
-                    Name ="cmdValidationComplete"
-                    Caption ="Validation Complete"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =4320
-                    LayoutCachedTop =7320
-                    LayoutCachedWidth =6120
-                    LayoutCachedHeight =7980
-                    BackColor =15123357
-                    BorderColor =15123357
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
-                    Overlaps =1
-                End
-                Begin CommandButton
-                    OverlapFlags =215
-                    Left =4320
-                    Top =5160
-                    Width =1800
-                    Height =540
-                    TabIndex =7
-                    ForeColor =4210752
-                    Name ="cmdValidationStart"
-                    Caption ="Validation Started"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =4320
-                    LayoutCachedTop =5160
-                    LayoutCachedWidth =6120
-                    LayoutCachedHeight =5700
+                    LayoutCachedLeft =5820
+                    LayoutCachedTop =8040
+                    LayoutCachedWidth =7620
+                    LayoutCachedHeight =8700
                     BackColor =15123357
                     BorderColor =15123357
                     WebImagePaddingLeft =2
@@ -976,28 +714,10 @@ Begin Form
                     ForeTint =100.0
                 End
                 Begin Label
-                    BorderWidth =2
-                    OverlapFlags =215
-                    TextAlign =2
-                    Left =9360
-                    Top =8520
-                    Width =3945
-                    Height =660
-                    BorderColor =8355711
-                    ForeColor =8355711
-                    Name ="Label48"
-                    Caption ="Clicking \"Applicant Concurrence Complete\" will submit this to Phase 3."
-                    GridlineColor =10921638
-                    LayoutCachedLeft =9360
-                    LayoutCachedTop =8520
-                    LayoutCachedWidth =13305
-                    LayoutCachedHeight =9180
-                End
-                Begin Label
                     FontUnderline = NotDefault
                     OverlapFlags =215
                     Left =9360
-                    Top =7020
+                    Top =5280
                     Width =4005
                     Height =360
                     FontSize =12
@@ -1005,53 +725,32 @@ Begin Form
                     BorderColor =8355711
                     ForeColor =12349952
                     Name ="Label87"
-                    Caption ="Applicant Concurrence"
+                    Caption ="Applicant Response"
                     GridlineColor =10921638
                     LayoutCachedLeft =9360
-                    LayoutCachedTop =7020
+                    LayoutCachedTop =5280
                     LayoutCachedWidth =13365
-                    LayoutCachedHeight =7380
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                End
-                Begin Label
-                    FontUnderline = NotDefault
-                    OverlapFlags =215
-                    TextAlign =2
-                    Left =4320
-                    Top =8220
-                    Width =4500
-                    Height =360
-                    FontSize =12
-                    FontWeight =600
-                    BorderColor =8355711
-                    ForeColor =12349952
-                    Name ="Label88"
-                    Caption ="Meeting with PDM to Discuss DDD"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =4320
-                    LayoutCachedTop =8220
-                    LayoutCachedWidth =8820
-                    LayoutCachedHeight =8580
+                    LayoutCachedHeight =5640
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
                 Begin CommandButton
                     OverlapFlags =215
-                    Left =9240
-                    Top =5700
+                    Left =10560
+                    Top =8460
                     Width =1800
                     Height =660
-                    TabIndex =11
+                    TabIndex =7
                     ForeColor =4210752
                     Name ="cmdPDMConcurrence"
-                    Caption ="PDM Concurrence"
+                    Caption ="PDM DDD Concurrence"
+                    OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =9240
-                    LayoutCachedTop =5700
-                    LayoutCachedWidth =11040
-                    LayoutCachedHeight =6360
+                    LayoutCachedLeft =10560
+                    LayoutCachedTop =8460
+                    LayoutCachedWidth =12360
+                    LayoutCachedHeight =9120
                     BackColor =15123357
                     BorderColor =15123357
                     WebImagePaddingLeft =2
@@ -1066,23 +765,22 @@ Begin Form
                     OverlapFlags =223
                     TextAlign =1
                     IMESentenceMode =3
-                    Left =2100
+                    Left =2160
                     Top =6060
                     Width =1620
                     Height =390
                     FontSize =12
-                    TabIndex =19
+                    TabIndex =11
                     BackColor =13431551
                     BorderColor =10921638
                     ForeColor =4210752
-                    Name ="Date of Site Inspection"
+                    Name ="tbSiDate"
                     ControlSource ="Scheduled Date of Site Inspection"
-                    EventProcPrefix ="Date_of_Site_Inspection"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2100
+                    LayoutCachedLeft =2160
                     LayoutCachedTop =6060
-                    LayoutCachedWidth =3720
+                    LayoutCachedWidth =3780
                     LayoutCachedHeight =6450
                     BackThemeColorIndex =7
                     BackTint =20.0
@@ -1090,7 +788,7 @@ Begin Form
                         Begin Label
                             OverlapFlags =223
                             TextAlign =3
-                            Left =300
+                            Left =360
                             Top =6060
                             Width =1800
                             Height =330
@@ -1102,9 +800,9 @@ Begin Form
                             Caption ="Scheduled Date:"
                             EventProcPrefix ="Date_of_Site_Inspection_Label"
                             GridlineColor =10921638
-                            LayoutCachedLeft =300
+                            LayoutCachedLeft =360
                             LayoutCachedTop =6060
-                            LayoutCachedWidth =2100
+                            LayoutCachedWidth =2160
                             LayoutCachedHeight =6390
                             ForeThemeColorIndex =8
                             ForeTint =100.0
@@ -1117,23 +815,23 @@ Begin Form
                     OverlapFlags =247
                     TextAlign =1
                     IMESentenceMode =3
-                    Left =2100
+                    Left =2160
                     Top =6420
                     Width =1620
                     Height =390
                     FontSize =12
-                    TabIndex =20
+                    TabIndex =12
                     BackColor =13431551
                     BorderColor =10921638
                     ForeColor =4210752
-                    Name ="tbTime"
+                    Name ="tbSiTime"
                     ControlSource ="Scheduled Time of Site Inspection"
                     GridlineColor =10921638
                     ShowDatePicker =0
 
-                    LayoutCachedLeft =2100
+                    LayoutCachedLeft =2160
                     LayoutCachedTop =6420
-                    LayoutCachedWidth =3720
+                    LayoutCachedWidth =3780
                     LayoutCachedHeight =6810
                     BackThemeColorIndex =7
                     BackTint =20.0
@@ -1141,7 +839,7 @@ Begin Form
                         Begin Label
                             OverlapFlags =215
                             TextAlign =3
-                            Left =300
+                            Left =360
                             Top =6420
                             Width =720
                             Height =330
@@ -1152,9 +850,9 @@ Begin Form
                             Name ="Label179"
                             Caption ="Time:"
                             GridlineColor =10921638
-                            LayoutCachedLeft =300
+                            LayoutCachedLeft =360
                             LayoutCachedTop =6420
-                            LayoutCachedWidth =1020
+                            LayoutCachedWidth =1080
                             LayoutCachedHeight =6750
                             ForeThemeColorIndex =8
                             ForeTint =100.0
@@ -1167,10 +865,11 @@ Begin Form
                     Top =6900
                     Width =3420
                     Height =420
-                    TabIndex =21
+                    TabIndex =13
                     ForeColor =4210752
-                    Name ="Command93"
+                    Name ="cmdScheduleSI"
                     Caption ="Site Inspection Scheduled"
+                    OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =240
@@ -1191,10 +890,11 @@ Begin Form
                     Top =7680
                     Width =2160
                     Height =900
-                    TabIndex =22
+                    TabIndex =14
                     ForeColor =4210752
-                    Name ="Command94"
+                    Name ="cmdSiComplete"
                     Caption ="Site Inspection Complete"
+                    OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =780
@@ -1208,6 +908,231 @@ Begin Form
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
                     Overlaps =1
+                End
+                Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    Left =4380
+                    Top =5640
+                    Width =4560
+                    Height =1143
+                    TabIndex =15
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="tbTsComments"
+                    ControlSource ="DVS Comments"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =4380
+                    LayoutCachedTop =5640
+                    LayoutCachedWidth =8940
+                    LayoutCachedHeight =6783
+                    Begin
+                        Begin Label
+                            OverlapFlags =223
+                            Left =4380
+                            Top =5340
+                            Width =3780
+                            Height =315
+                            FontSize =12
+                            FontWeight =500
+                            BorderColor =8355711
+                            Name ="Label68"
+                            Caption ="Technical Specialist Comments"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =4380
+                            LayoutCachedTop =5340
+                            LayoutCachedWidth =8160
+                            LayoutCachedHeight =5655
+                            ForeTint =100.0
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =13980
+                    Top =6660
+                    Width =2280
+                    Height =1200
+                    FontSize =14
+                    FontWeight =700
+                    TabIndex =16
+                    ForeColor =13431551
+                    Name ="cmdConcurrentRFI"
+                    Caption ="Create Concurrent RFI"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =13980
+                    LayoutCachedTop =6660
+                    LayoutCachedWidth =16260
+                    LayoutCachedHeight =7860
+                    ForeThemeColorIndex =7
+                    ForeTint =20.0
+                    UseTheme =1
+                    Gradient =0
+                    BackColor =12874308
+                    BackThemeColorIndex =8
+                    BackTint =100.0
+                    BorderColor =15123357
+                    HoverColor =14282978
+                    HoverThemeColorIndex =9
+                    HoverTint =20.0
+                    PressedColor =12874308
+                    PressedThemeColorIndex =8
+                    HoverForeColor =0
+                    HoverForeThemeColorIndex =0
+                    PressedForeThemeColorIndex =1
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    RowSourceTypeInt =1
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    ListWidth =1440
+                    Left =11820
+                    Top =6060
+                    Width =1560
+                    Height =315
+                    TabIndex =17
+                    BorderColor =10921638
+                    ForeColor =3484194
+                    Name ="cboConcur"
+                    ControlSource ="Subrecipient and Recipient Concur"
+                    RowSourceType ="Value List"
+                    RowSource ="\"Concur\";\"Non-Concur\""
+                    ColumnWidths ="1440"
+                    DefaultValue ="=\"Concur\""
+                    Format ="True/False"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =11820
+                    LayoutCachedTop =6060
+                    LayoutCachedWidth =13380
+                    LayoutCachedHeight =6375
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =9360
+                            Top =5700
+                            Width =3540
+                            Height =320
+                            FontSize =12
+                            BorderColor =8355711
+                            Name ="cmbConcur_Label"
+                            Caption ="Subrecipient and Recipient Concur?"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =9360
+                            LayoutCachedTop =5700
+                            LayoutCachedWidth =12900
+                            LayoutCachedHeight =6020
+                            ForeTint =100.0
+                        End
+                    End
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    ColumnCount =2
+                    ListWidth =1440
+                    Left =11220
+                    Top =6840
+                    Width =2220
+                    Height =330
+                    TabIndex =18
+                    BorderColor =10921638
+                    ForeColor =3484194
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
+                    Name ="cboSowDev"
+                    ControlSource ="Scope of Work Developed by"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT [lutbSOWandCostPreparedby].[ID], lutbSOWandCostPreparedby.[Prepared by] F"
+                        "ROM lutbSOWandCostPreparedby; "
+                    ColumnWidths ="0;1440"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =11220
+                    LayoutCachedTop =6840
+                    LayoutCachedWidth =13440
+                    LayoutCachedHeight =7170
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =9360
+                            Top =6480
+                            Width =2910
+                            Height =315
+                            FontSize =12
+                            BorderColor =8355711
+                            Name ="Scope of Work Developed by_Label"
+                            Caption ="Scope of Work Developed by:"
+                            EventProcPrefix ="Scope_of_Work_Developed_by_Label"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =9360
+                            LayoutCachedTop =6480
+                            LayoutCachedWidth =12270
+                            LayoutCachedHeight =6795
+                            ForeThemeColorIndex =-1
+                            ForeTint =100.0
+                        End
+                    End
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    ColumnCount =2
+                    ListWidth =1440
+                    Left =11220
+                    Top =7620
+                    Width =2220
+                    Height =330
+                    TabIndex =19
+                    BorderColor =10921638
+                    ForeColor =3484194
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
+                    Name ="cboCostDev"
+                    ControlSource ="Cost Estimate Developed by"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT [lutbSOWandCostPreparedby].[ID], [lutbSOWandCostPreparedby].[Prepared by]"
+                        " FROM lutbSOWandCostPreparedby; "
+                    ColumnWidths ="0;1440"
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    LayoutCachedLeft =11220
+                    LayoutCachedTop =7620
+                    LayoutCachedWidth =13440
+                    LayoutCachedHeight =7950
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =9300
+                            Top =7260
+                            Width =2865
+                            Height =315
+                            FontSize =12
+                            BorderColor =8355711
+                            Name ="Cost Estimate Developed by_Label"
+                            Caption ="Cost Estimate Developed by:"
+                            EventProcPrefix ="Cost_Estimate_Developed_by_Label"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =9300
+                            LayoutCachedTop =7260
+                            LayoutCachedWidth =12165
+                            LayoutCachedHeight =7575
+                            ForeThemeColorIndex =-1
+                            ForeTint =100.0
+                        End
+                    End
                 End
             End
         End
@@ -1227,7 +1152,7 @@ Begin Form
                     Width =16440
                     Height =660
                     FontSize =20
-                    BackColor =15788753
+                    BackColor =13611711
                     BorderColor =8355711
                     Name ="lbFooter"
                     Caption ="Intake Damage and Eligibility Analysis"
@@ -1637,3 +1562,447 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+'Commentting on this page will be page specific only.
+'For in depth commentting please refer to frmRpaReview.
+
+Private Const FormItemType As String = "Project" 'used in determining what type of record is handled
+
+'BUTTONS
+Private Sub cmdConcurrentRFI_Click()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cmdConcurrentRFI_Click"
+
+'///Code
+    Reviews.CreateRFI GetItemDims("SP Schedule SI")
+    Reviews.EnterReview GetItemDims("RFI")
+    DoCmd.OpenForm "frmRFIRouting", , , GetItemDims.WhereID(False)
+        
+
+'///ErrorHandling
+PROC_EXIT: PopCallStack:     Exit Sub
+PROC_ERR:  GlobalErrHandler: Resume PROC_EXIT
+End Sub
+
+Private Sub cmdScheduleSI_Click()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cmdScheduleSI_Click"
+
+'///Code
+    CompleteReview "SP Schedule SI"
+
+'///ErrorHandling
+PROC_EXIT: PopCallStack:     Exit Sub
+PROC_ERR:  GlobalErrHandler: Resume PROC_EXIT
+End Sub
+
+Private Sub cmdSiComplete_Click()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cmdSiComplete_Click"
+
+'///Code
+    CompleteReview "SP Site Inspection"
+
+'///ErrorHandling
+PROC_EXIT: PopCallStack:     Exit Sub
+PROC_ERR:  GlobalErrHandler: Resume PROC_EXIT
+End Sub
+
+Private Sub cmdDddFormulationComplete_Click()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cmdDddFormulationComplete_Click"
+
+'///Code
+    CompleteReview "SP DDD Formulation"
+
+'///ErrorHandling
+PROC_EXIT: PopCallStack:     Exit Sub
+PROC_ERR:  GlobalErrHandler: Resume PROC_EXIT
+End Sub
+
+Private Sub cmdDddLeadReviewComplete_Click()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cmdDddLeadReviewComplete_Click"
+
+'///Code
+    CompleteReview "SP DDD Lead Review"
+
+'///ErrorHandling
+PROC_EXIT: PopCallStack:     Exit Sub
+PROC_ERR:  GlobalErrHandler: Resume PROC_EXIT
+End Sub
+
+Private Sub cmdPDMConcurrence_Click()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "cmdPDMConcurrence_Click"
+'///Error Handling
+
+'///Code
+    CompleteReview "SP DDD Concurrence"
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+End Sub
+
+
+
+'OTHER PAGE EVENTS
+Private Sub Form_Current()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "Form_Current"
+'///Error Handling
+
+'///Code
+    RepaintForm
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+End Sub
+
+Private Sub Form_Load()
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "Form_Load"
+'///Error Handling
+
+'///Code
+        FormFilter.RecordFilterCheck Me.Form, FormItemType
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+End Sub
+
+'INTERNAL PAGE SPECIFIC CODE
+
+
+Private Sub RepaintForm()
+
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "RepaintForm"
+'///Error Handling
+
+'///Code
+    EnableFormArea "SP Schedule SI"
+    EnableFormArea "SP Site Inspection"
+    EnableFormArea "SP DDD Formulation"
+    EnableFormArea "SP DDD Lead Review"
+    EnableFormArea "SP DDD Concurrence"
+    Me.subHistory.Requery
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+End Sub
+
+
+Private Sub EnableFormArea(AreaName As String, Optional Override As String = "")
+    Dim CanEnable As Boolean    'used so that CanSee is only called once per run.
+    
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "EnableFormArea"
+'///Error Handling
+
+'///Code
+    If Override = "Disable" Then
+        CanEnable = False
+    Else
+        CanEnable = Reviews.CanSee(GetItemDims(AreaName), Environ("UserName"))
+    End If
+    
+    Select Case AreaName
+        Case "SP Schedule SI"
+            Me.cboAssignTs.Enabled = CanEnable
+            Me.cmdScheduleSI.Enabled = CanEnable
+            Me.tbSiDate.Enabled = CanEnable
+            Me.tbSiTime.Enabled = CanEnable
+        Case "SP Site Inspection"
+            Me.cmdSiComplete.Enabled = CanEnable
+        Case "SP DDD Formulation"
+            Me.tbTsComments.Enabled = CanEnable
+            Me.cmdDddFormulationComplete.Enabled = CanEnable
+        Case "SP DDD Lead Review"
+            Me.cmdDddLeadReviewComplete.Enabled = CanEnable
+        Case "SP DDD Concurrence"
+            Me.cmdPDMConcurrence.Enabled = CanEnable
+            Me.cboConcur.Enabled = CanEnable
+            Me.cboSowDev.Enabled = CanEnable
+            Me.cboCostDev.Enabled = CanEnable
+            
+        Case Else
+            Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & AreaName
+    End Select
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+
+
+End Sub
+
+Private Function PreDialogCheck(ReviewType As String) As Boolean
+'    This page specific code checks the form for any issues before opening the dialog.  True = pass
+
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "PreDialogCheck"
+'///Error Handling
+
+'///Code
+        PreDialogCheck = True
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Function
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+
+End Function
+
+Private Function PostDialogCheck(ReviewType As String, DialogResult As String) As Boolean
+'    This page specific code checks the form for any issues before completing the review. True = pass
+
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "PostDialogCheck"
+'///Error Handling
+
+'///Code
+'   No Check Needed.
+    PostDialogCheck = True
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Function
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+
+End Function
+
+Private Sub HandleDisposition(ReviewType As String, frm As Form)
+
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "HandleDisposition"
+'///Error Handling
+
+'///Code
+    Select Case frm.cboResult
+        Case "DM", "RFI", "RSN", "RW"
+            HandleStandardDisposition ReviewType, frm
+        Case "SUB"
+'            Main section of page specific code. Creates new reviews as needed.
+            Select Case ReviewType
+                Case "SP Schedule SI"
+                    Reviews.EnterReview GetItemDims("SP Site Inspection"), Me.[Assigned Site Inspector]
+                Case "SP Site Inspection"
+                    Reviews.EnterReview GetItemDims("SP DDD Formulation"), Me.[Assigned Site Inspector]
+                Case "SP DDD Formulation"
+                    Reviews.EnterReview GetItemDims("SP DDD Lead Review")
+                Case "SP DDD Lead Review"
+                    Reviews.EnterReview GetItemDims("SP DDD Concurrence"), GetItemDims(ReviewType).AssignedPDC
+                Case "SP DDD Concurrence"
+                    Reviews.EnterReview GetItemDims("SP Scoping and Costing"), Me.[Assigned Site Inspector]
+                Case Else
+                    Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & ReviewType
+            End Select
+        Case Else
+            Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & frm.cboResult
+    End Select
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+
+End Sub
+
+'INTERNAL STANDARD CODE
+
+Private Function GetItemDims(Optional ReviewName As String = "") As classItemDims
+    Dim ItemDims As New classItemDims   ' eventually what is passed out.  Creates new object
+'    each time it is called
+
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "GetItemDims"
+'///Error Handling
+
+'///Code
+    ItemDims.LoadByForm Me, FormItemType, ReviewName
+    Set GetItemDims = ItemDims
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Function
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+End Function
+
+Private Sub StartReview(ReviewType As String)
+
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "StartReview"
+'///Error Handling
+
+'///Code
+    Reviews.StartReview GetItemDims(ReviewType), Environ("UserName")
+    RepaintForm
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+End Sub
+
+Private Sub CompleteReview(ReviewType As String)
+    Dim frm As Form 'used for getting information from frmReviewResult dialog
+    
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "CompleteReview"
+'///Error Handling
+
+'///Code
+    Reviews.StartReview GetItemDims(ReviewType), Environ("UserName"), True
+    If PreDialogCheck(ReviewType) Then
+        DoCmd.OpenForm "frmReviewResult", , , , , acDialog, GetItemDims(ReviewType).OpenString
+        If Access.CurrentProject.AllForms("frmReviewResult").IsLoaded Then
+            Set frm = Forms("frmReviewResult")
+            If PostDialogCheck(ReviewType, frm.cboResult) Then
+                If Reviews.CompleteReview(GetItemDims(ReviewType), Environ("UserName"), frm.cboResult, Nz(frm.tbComments, "")) Then
+                    HandleDisposition ReviewType, frm
+                End If
+            End If
+            DoCmd.Close acForm, "frmReviewResult"
+        Else
+            MsgBox "Review was cancelled"
+        End If
+    End If
+    RepaintForm
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+
+End Sub
+
+Private Sub HandleStandardDisposition(ReviewType As String, frm As Form)
+
+'///Error Handling
+    If gcfHandleErrors Then On Error GoTo PROC_ERR
+    PushCallStack Me.name & "." & "HandleStandardDisposition"
+'///Error Handling
+
+'///Code
+    Select Case frm.cboResult
+'        Most review dispositions have fairly standard code.
+        Case "DM"
+            Reviews.EnterReview GetItemDims("Determination Memo")
+        Case "RFI"
+            Reviews.CreateRFI GetItemDims(ReviewType)
+            Reviews.EnterReview GetItemDims("RFI")
+            DoCmd.OpenForm "frmRFIRouting", , , GetItemDims.WhereID(False)
+        Case "RSN"
+            Reviews.EnterReview GetItemDims(ReviewType), frm.cboAssign, "Reassigned to " & frm.cboAssign
+        Case "RW"
+            Reviews.EnterReview GetItemDims(frm.cboRework), frm.cboAssign
+        Case Else
+            Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & frm.cboResult
+    End Select
+'///Code
+
+'///ErrorHandling
+PROC_EXIT:
+    PopCallStack
+    Exit Sub
+    
+PROC_ERR:
+    GlobalErrHandler
+    Resume PROC_EXIT
+'///ErrorHandline
+
+End Sub

@@ -96,21 +96,28 @@ Public Function GetAssignToPosition(ItemType As String, ReviewType As String) As
     GetAssignToPosition = Position
 End Function
 
-Public Sub StartReview(ItemDims As classItemDims, UserName As String, Optional Silent As Boolean = False)
+Public Sub StartReview(ItemDims As classItemDims, UserName As String, Optional Silent As Boolean = False, Optional WhereIDArg As Boolean = True)
     Dim Db As Database
     Dim recEditStatus As Recordset
     Dim WhereCondition As String
     
-    WhereCondition = ItemDims.WhereID
-    WhereCondition = WhereCondition & " and [ReviewCheckOutDate] is null"
-
+    
+    Select Case WhereIDArg
+        Case True
+            WhereCondition = ItemDims.WhereID
+            WhereCondition = WhereCondition & " and [ReviewCheckOutDate] is null"
+        Case False
+            WhereCondition = ItemDims.WhereID(False)
+            WhereCondition = WhereCondition & " and [ReviewCheckOutDate] is null"
+    End Select
+    
     Set Db = CurrentDb()
     Set recEditStatus = Db.OpenRecordset(ItemDims.ReviewTable, dbOpenDynaset)
     
     recEditStatus.FindFirst WhereCondition
     
     If recEditStatus.NoMatch Then
-        If Not Silent Then
+        If Not Silent And Not WhereIDArg Then ' to supress message when we are iterating to find / withdraw open reviews (using WhereIDArg arbitarily)
             MsgBox "This review has either already been started or is not yet available."
         End If
     Else
@@ -125,19 +132,25 @@ Public Sub StartReview(ItemDims As classItemDims, UserName As String, Optional S
     Set Db = Nothing
 
 End Sub
-Public Function CompleteReview(ItemDims As classItemDims, UserName As String, Disposition As String, Optional Comment As Variant = "") As Boolean
+Public Function CompleteReview(ItemDims As classItemDims, UserName As String, Disposition As String, Optional Comment As Variant = "", Optional WhereIDArg As Boolean = True) As Boolean
     Dim Db As Database
     Dim recEditStatus As Recordset
     Dim WhereCondition As String
     
-    StartReview ItemDims, UserName, True
+    StartReview ItemDims, UserName, True, WhereIDArg
     
     CompleteReview = False
-    
-    WhereCondition = ItemDims.WhereID
-    WhereCondition = WhereCondition & " and [ReviewCheckOutDate] is not null"
-    WhereCondition = WhereCondition & " and [ReviewExitDate] is null"
-
+   
+   Select Case WhereIDArg
+        Case True
+            WhereCondition = ItemDims.WhereID
+            WhereCondition = WhereCondition & " and [ReviewCheckOutDate] is not null"
+            WhereCondition = WhereCondition & " and [ReviewExitDate] is null"
+        Case False
+            WhereCondition = ItemDims.WhereID(False)
+            WhereCondition = WhereCondition & " and [ReviewCheckOutDate] is not null"
+            WhereCondition = WhereCondition & " and [ReviewExitDate] is null"
+    End Select
     Set Db = CurrentDb()
     Set recEditStatus = Db.OpenRecordset(ItemDims.ReviewTable, dbOpenDynaset)
     
@@ -146,7 +159,9 @@ Public Function CompleteReview(ItemDims As classItemDims, UserName As String, Di
     If recEditStatus.NoMatch Then
         'TODO:Additional Checks to find issue
         Debug.Print "Complete Review Failed. No match.", WhereCondition
-        MsgBox "This review needs to be started first."
+        If WhereIDArg Then ' to supress message when we are iterating to find / withdraw open reviews (using WhereIDArg arbitarily)
+            MsgBox "This review needs to be started first."
+        End If
     Else
         recEditStatus.Edit
             recEditStatus![CompletedUserID] = UserName
@@ -767,5 +782,3 @@ Public Sub CompleteReviewStandard(ItemDims As classItemDims, CurrentForm As Form
             Err.Raise vbObjectError + ErrorHandler.CaseElseException, , "Case Else Exception when looking for " & ReviewResultForm.cboResult
     End Select
 End Sub
-
-                   

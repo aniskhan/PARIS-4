@@ -30,5 +30,6 @@ CREATE TABLE [tblSiteInspections] (
   [State PDC Concurs with DDD] BIT ,
   [Subrecipeint Concurs with DDD] BIT ,
   [DIU Attaches DDD in EMMIE] DATETIME ,
-  [Lane Assigned] VARCHAR (255)
+  [Lane Assigned] VARCHAR (255),
+  [isWithdrawn] BIT DEFAULT No
 )

@@ -13,11 +13,11 @@ End
 Begin Joins
     LeftTable ="revtblRpa"
     RightTable ="tblSubRecipient"
-    Expression ="revtblRpa.ApplicantID = tblSubRecipient.ApplicantID"
+    Expression ="revtblRpa.DisasterID = tblSubRecipient.DisasterID"
     Flag =1
     LeftTable ="revtblRpa"
     RightTable ="tblSubRecipient"
-    Expression ="revtblRpa.DisasterID = tblSubRecipient.DisasterID"
+    Expression ="revtblRpa.ApplicantID = tblSubRecipient.ApplicantID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -255,12 +255,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =917
-    Bottom =821
+    Right =733
+    Bottom =625
     Left =-1
     Top =-1
-    Right =901
-    Bottom =402
+    Right =717
+    Bottom =385
     Left =0
     Top =0
     ColumnsShown =539

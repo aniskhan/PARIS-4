@@ -15,11 +15,11 @@ Begin Form
     Width =31680
     DatasheetFontHeight =11
     ItemSuffix =42
-    Right =5265
-    Bottom =9705
+    Right =10740
+    Bottom =9120
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
-        0xaed5e3546dc2e440
+        0x2b4d4a11f7c3e440
     End
     RecordSource ="fqryDisasterSubrecipient"
     Caption ="Project Formulation Menu"

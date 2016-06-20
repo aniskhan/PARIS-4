@@ -16,8 +16,10 @@ Begin Form
     Width =14100
     DatasheetFontHeight =11
     ItemSuffix =117
-    Right =13500
-    Bottom =12060
+    Left =-6480
+    Top =3045
+    Right =6555
+    Bottom =4140
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0xbb9ba78a91c2e440
@@ -198,7 +200,7 @@ Begin Form
                     BackStyle =0
                     IMESentenceMode =3
                     Left =4560
-                    Width =5640
+                    Width =7140
                     Height =420
                     ColumnOrder =0
                     FontSize =14
@@ -212,7 +214,7 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =4560
-                    LayoutCachedWidth =10200
+                    LayoutCachedWidth =11700
                     LayoutCachedHeight =420
                     BackShade =95.0
                     ForeThemeColorIndex =-1

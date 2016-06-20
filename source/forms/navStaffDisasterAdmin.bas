@@ -14,9 +14,9 @@ Begin Form
     GridY =24
     Width =15735
     DatasheetFontHeight =11
-    ItemSuffix =7
-    Right =13875
-    Bottom =12645
+    ItemSuffix =10
+    Right =15405
+    Bottom =13095
     DatasheetGridlinesColor =15132391
     RecSrcDt = Begin
         0xd044d820d9b9e440
@@ -129,7 +129,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =6660
+            Height =8220
             Name ="Detail"
             AlternateBackColor =15921906
             AlternateBackThemeColorIndex =1
@@ -411,6 +411,84 @@ Begin Form
                     WebImagePaddingBottom =1
                     Overlaps =1
                 End
+                Begin Rectangle
+                    SpecialEffect =2
+                    BackStyle =1
+                    BorderWidth =1
+                    OverlapFlags =93
+                    Top =6240
+                    Width =15480
+                    Height =1980
+                    BackColor =16249583
+                    BorderColor =10921638
+                    Name ="Box7"
+                    GridlineColor =10921638
+                    LayoutCachedTop =6240
+                    LayoutCachedWidth =15480
+                    LayoutCachedHeight =8220
+                    BackThemeColorIndex =-1
+                End
+                Begin Label
+                    OverlapFlags =215
+                    Left =120
+                    Top =5820
+                    Width =2460
+                    Height =420
+                    FontSize =14
+                    FontWeight =700
+                    BorderColor =8355711
+                    ForeColor =12874308
+                    Name ="Label8"
+                    Caption ="Operational Actions"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =120
+                    LayoutCachedTop =5820
+                    LayoutCachedWidth =2580
+                    LayoutCachedHeight =6240
+                    ForeThemeColorIndex =8
+                    ForeTint =100.0
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =480
+                    Top =6660
+                    Width =2805
+                    Height =1200
+                    FontSize =14
+                    FontWeight =700
+                    TabIndex =5
+                    ForeColor =16777215
+                    Name ="cmdOpenProjSiteMgmt"
+                    Caption ="Project / Site Management"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =480
+                    LayoutCachedTop =6660
+                    LayoutCachedWidth =3285
+                    LayoutCachedHeight =7860
+                    ForeThemeColorIndex =1
+                    ForeTint =100.0
+                    Gradient =0
+                    BackColor =12874308
+                    BackThemeColorIndex =8
+                    BackTint =100.0
+                    BorderColor =15123357
+                    HoverColor =15788753
+                    HoverThemeColorIndex =-1
+                    HoverTint =100.0
+                    PressedThemeColorIndex =-1
+                    PressedShade =100.0
+                    HoverForeColor =0
+                    HoverForeTint =100.0
+                    PressedForeColor =0
+                    PressedForeTint =100.0
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
+                End
             End
         End
         Begin FormFooter
@@ -425,8 +503,8 @@ Begin Form
             Begin
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =8760
-                    Top =180
+                    Left =13860
+                    Top =120
                     Width =1290
                     Height =405
                     ForeColor =4210752
@@ -435,10 +513,10 @@ Begin Form
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =8760
-                    LayoutCachedTop =180
-                    LayoutCachedWidth =10050
-                    LayoutCachedHeight =585
+                    LayoutCachedLeft =13860
+                    LayoutCachedTop =120
+                    LayoutCachedWidth =15150
+                    LayoutCachedHeight =525
                     UseTheme =0
                     BackColor =15123357
                     BorderColor =15123357
@@ -491,11 +569,15 @@ Private Sub cmdOpenDisasterSetup_Click()
     DoCmd.OpenForm "frmDisasterInformation", acNormal
 End Sub
 
-
+Private Sub cmdOpenProjSiteMgmt_Click()
+    DoCmd.OpenForm "frmProjectSiteMgmt", acNormal
+End Sub
 
 Private Sub cmdRPAImport_Click()
     ImportCSV.ImportFiles
 End Sub
+
+
 
 Private Sub Form_Load()
 FormFilter.FormPermission Me.Form, FormItemType

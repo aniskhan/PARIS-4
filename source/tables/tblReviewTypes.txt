@@ -61,3 +61,10 @@
 64	Site	DVS Review	30	2	11	frmStDvsSiteReview	STGL	STDVS	
 65	RFI	DIU Update EMMIE - RFI	40	1	1	frmRFIRouting	DIUS		
 66	RPA	DIU Enter Exit Briefing Date	90	1	15	frmRPAExitBriefing	DIUL	DIUS	
+67	SPProject	SP Schedule SI	10	2	9	frmProjectSpIdea	SPGL	TS	Specialized Lane-Site
+68	SPProject	SP Site Inspection	10	2	9	frmProjectSpIdea	SPGL	TS	Specialized Lane-Site
+69	SPProject	SP DDD Formulation	10	2	9	frmProjectSpIdea	SPGL	TS	Specialized Lane-Site
+70	SPProject	SP DDD Lead Review	10	2	9	frmProjectSpIdea	SPGL		Specialized Lane-Site
+71	SPProject	SP DDD Concurrence	10	2	9	frmProjectSpIdea	PDTFL	DIUS	Specialized Lane-Site
+72	SPProject	SP Scoping and Costing	10	3	9	frmProjectSpScopingCosting	SPGL	COS	Specialized Lane-Site
+73	SPProject	Final Lane Review - SP	10	3	9	frmProjectSpScopingCosting	SPGL		Specialized Lane-Site

@@ -17,8 +17,8 @@ Begin Form
     Width =16620
     DatasheetFontHeight =11
     ItemSuffix =71
-    Right =5265
-    Bottom =9705
+    Right =14175
+    Bottom =7830
     DatasheetGridlinesColor =15132391
     OnApplyFilter ="[Event Procedure]"
     RecSrcDt = Begin

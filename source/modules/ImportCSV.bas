@@ -103,7 +103,7 @@ Private Sub TransferRecords()
                     If Not IsNull(recImported![Alternate Contact Title]) Then recExisting![Alt Subrecipient POC Title] = recImported![Alternate Contact Title]
                     If Not IsNull(recImported![Alternate Business Number]) Then recExisting![Alt Subrecipient POC Contact Number] = recImported![Alternate Business Number]
                     If Not IsNull(recImported![Alternate Contact Email]) Then recExisting![Alt Subrecipient POC Contact Email] = recImported![Alternate Contact Email]
-                    If Not IsNull(recImported![Exit Briefing Date]) Then recExisting![Exit Briefing Date] = CDate(recImported![Exit Briefing Date])
+
                 
                 recExisting.Update
                 

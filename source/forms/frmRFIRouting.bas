@@ -15,8 +15,8 @@ Begin Form
     Width =17580
     DatasheetFontHeight =11
     ItemSuffix =75
-    Right =19470
-    Bottom =12030
+    Right =15360
+    Bottom =9120
     DatasheetGridlinesColor =15132391
     Filter ="[RfiCanceled] = False AND [RfiSatisfied] = False"
     RecSrcDt = Begin
@@ -1764,7 +1764,6 @@ End Sub
 Private Sub cmdHelpCanxRFI_Click()
 Call getHelpText(Me.name, Screen.ActiveControl.name, CInt(Screen.ActiveControl.tag))
 End Sub
-
 Private Sub cmdHelpSubmitConcur_Click()
 Call getHelpText(Me.name, Screen.ActiveControl.name, CInt(Screen.ActiveControl.tag))
 End Sub
@@ -1791,6 +1790,7 @@ End Sub
 Private Sub cmdCancelRFI_Click()
     Dim Db As Database
     Dim rs As Recordset
+    Dim rsItem As Recordset
     Dim WhereCondition As String
     Dim MsgResult As VbMsgBoxResult
     Dim ParentItem As classItemDims
@@ -1824,6 +1824,23 @@ Else
         
                 rs.MoveNext
             Wend
+            rs.Close
+            Set rs = Nothing
+            
+            Set rsItem = Db.OpenRecordset("SELECT * FROM tblRFIRequestedInformation WHERE [RfiID] =" & Me.RfiID)
+                If rsItem.BOF And rsItem.EOF Then
+                Else
+                rsItem.MoveFirst
+                    While Not rsItem.EOF
+                        rsItem.Edit
+                            rsItem![isRequestSatisfied] = "Y"
+                            rsItem![isRequestCanceled] = True
+                        rsItem.Update
+                        rsItem.MoveNext
+                    Wend
+                End If
+            rsItem.Close
+            Set rsItem = Nothing
             
             Set ParentItem = GetItemDims
             ParentItem.ItemType = [ItemType] 'Replaces formItemType(RFI) with RFI's Itemtype (Project or RPA from tblRFI)
@@ -1851,7 +1868,8 @@ End If
     Me.subHistory.Requery
     Me.subformlRFIbanner.Requery
 
-
+Db.Close
+Set Db = Nothing
 RepaintForm
 '///Code
 

@@ -69,4 +69,8 @@ Begin
         dbText "Name" ="tblRFI.ApplicantID"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="tblRFIItemType.FurthestProgression"
+        dbLong "AggregateType" ="-1"
+    End
 End

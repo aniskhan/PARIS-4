@@ -7,7 +7,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    OrderByOn = NotDefault
     AllowDesignChanges = NotDefault
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
@@ -16,14 +15,14 @@ Begin Form
     Width =9000
     DatasheetFontHeight =11
     ItemSuffix =24
-    Left =32580
-    Top =2505
-    Right =-18436
-    Bottom =15150
+    Left =4875
+    Top =1215
+    Right =15615
+    Bottom =10335
     DatasheetGridlinesColor =15132391
-    OrderBy ="[Subrecipient Name] DESC"
+    OrderBy ="[Subrecipient Name]"
     RecSrcDt = Begin
-        0xce04b0ae90a5e440
+        0xaecb0313f7c3e440
     End
     RecordSource ="qryRpaSearch"
     DatasheetFontName ="Calibri"

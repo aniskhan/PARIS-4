@@ -12,7 +12,7 @@ Private Const mcintIncrementStackSize As Integer = 10   ' The number of elements
 
 
 '///DEBUGGING CONSTANTS
-Public Const gcfHandleErrors As Boolean = True         ' Change Value for error handling/testing. False will suppress all error handling.
+Public Const gcfHandleErrors As Boolean = False         ' Change Value for error handling/testing. False will suppress all error handling.
 
 Public Const FilterForm As Boolean = True              ' Change Value for testing. False will suppress all filters and use optional record source
 Public Const AlwayUseAltSource As Boolean = True        ' Change Value when testing. True will force the alt record set to be used.

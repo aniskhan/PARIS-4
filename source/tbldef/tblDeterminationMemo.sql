@@ -25,5 +25,6 @@ CREATE TABLE [tblDeterminationMemo] (
   [ReviewFromStep] LONG DEFAULT 0,
   [DMCanceled] BIT DEFAULT No,
   [CreatedBy] VARCHAR (255),
-  [Comments] LONGTEXT 
+  [Comments] LONGTEXT ,
+  [isWithdrawn] BIT DEFAULT No
 )

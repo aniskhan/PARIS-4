@@ -118,5 +118,6 @@ CREATE TABLE [tblProjects] (
   [Cost Estimate Developed by] LONG DEFAULT 0,
   [Scheduled Time of Site Inspection] DATETIME ,
   [DocumentationAttached] VARCHAR (255),
+  [isWithdrawn] BIT DEFAULT No,
    CONSTRAINT [PrimaryKey] PRIMARY KEY ([DisasterID], [ApplicantID], [ProjectID])
 )
